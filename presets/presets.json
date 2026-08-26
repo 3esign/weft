@@ -1,0 +1,2038 @@
+{
+ "generated": "2026-08-26",
+ "machine": "Bambu Lab A1 (256×256×256)",
+ "howToUse": "Serve this folder (node bridge/serve.js) and pick a preset from the sidebar, or use 'load parameters (.json)' and choose this file. Presets marked shipped:false are not included as STL — load the preset and press Download STL.",
+ "rules": [
+  "Calibrate the single-line bead per machine with C1 FIRST, then set bead before exporting anything else.",
+  "Brim or glue on every lattice plate — a lattice has almost no first-layer contact.",
+  "Route B G-code needs a start block harvested from Bambu Studio for THIS machine.",
+  "Slice Route A with 1 wall loop, no top/bottom, no infill; the preview must show one continuous line per wall.",
+  "Dome density has a floor the node-gap check does not catch: on the R60 dome λ=5 and λ=6 collide (99 and 72 overlaps) while still passing the gap floor. λ>=7 is clean. The overlap detector, not the floor, is what makes this safe — curvature is not in the floor's formula.",
+  "Lean grading measured identical to dyadic auto-LOD on this dome at λ=8 and λ=16 (same weld count, same thread length to the millimetre). It is a stated policy, not a different outcome, in this window."
+ ],
+ "presets": [
+  {
+   "file": "C1_calibration_ladder",
+   "kind": "stl",
+   "day": 1,
+   "note": "Bead calibration, run FIRST on every machine. Chord-only cycle = pure single-line rails, no webs. 3 beads x 3 spans. Measure the rail width with calipers; that number is the bead for everything else.",
+   "shipped": true,
+   "measured": {
+    "layers": 450,
+    "weldNodes": 0,
+    "size_mm": [
+     103.6,
+     80.6,
+     11.8
+    ],
+    "overlaps": 0,
+    "estPrint": "32 min",
+    "stlBytes": 3090084
+   },
+   "params": {
+    "mode": "batch",
+    "webType": "staple",
+    "w": 5,
+    "lambda": 8,
+    "bead": 0.45,
+    "lh": 0.24,
+    "dwell": 0.6,
+    "jitter": 0,
+    "flowBoost": 1.25,
+    "speed": 30,
+    "bridgeSpeed": 18,
+    "temp": 215,
+    "bed": 55,
+    "fan": 100,
+    "altPhase": true,
+    "autoLOD": true,
+    "minGap": 1.4,
+    "amp": 0,
+    "ampF": 1,
+    "checkOv": true,
+    "overshoot": 1,
+    "gradeLean": false,
+    "cycle": [
+     "chord"
+    ],
+    "maxBridge": 12,
+    "specW": 28,
+    "specH": 12,
+    "grid": 3,
+    "sweepX": "bead",
+    "sweepY": "w",
+    "machine": "a1"
+   }
+  },
+  {
+   "file": "E1_web_x_overhang",
+   "kind": "stl",
+   "day": 1,
+   "note": "THE FORK. Rows = web type (diagonal/perp/staple/sine), cols = overhang e (0/0.6/1.2/1.8). Run on TWO machines — the pair is the between-machine replication.",
+   "shipped": true,
+   "measured": {
+    "layers": 1072,
+    "weldNodes": 7140,
+    "size_mm": [
+     141.4,
+     122,
+     15.8
+    ],
+    "overlaps": 0,
+    "estPrint": "64 min",
+    "stlBytes": 13476084
+   },
+   "params": {
+    "mode": "batch",
+    "webType": "staple",
+    "w": 5,
+    "lambda": 8,
+    "bead": 0.45,
+    "lh": 0.24,
+    "dwell": 0.6,
+    "jitter": 0,
+    "flowBoost": 1.25,
+    "speed": 30,
+    "bridgeSpeed": 18,
+    "temp": 215,
+    "bed": 55,
+    "fan": 100,
+    "altPhase": true,
+    "autoLOD": true,
+    "minGap": 1.4,
+    "amp": 0,
+    "ampF": 1,
+    "checkOv": true,
+    "overshoot": 1,
+    "gradeLean": false,
+    "cycle": [
+     "chord",
+     "web"
+    ],
+    "maxBridge": 12,
+    "specW": 28,
+    "specH": 16,
+    "grid": 4,
+    "sweepX": "overshoot",
+    "sweepY": "web",
+    "machine": "a1"
+   }
+  },
+  {
+   "file": "P2_lambda_x_web",
+   "kind": "stl",
+   "day": 1,
+   "note": "Density x grammar. Cols = node spacing lambda (5/7/9/12 mm), rows = web type.",
+   "shipped": true,
+   "measured": {
+    "layers": 1072,
+    "weldNodes": 7932,
+    "size_mm": [
+     141.4,
+     120.4,
+     15.8
+    ],
+    "overlaps": 0,
+    "estPrint": "66 min",
+    "stlBytes": 14710084
+   },
+   "params": {
+    "mode": "batch",
+    "webType": "staple",
+    "w": 5,
+    "lambda": 8,
+    "bead": 0.45,
+    "lh": 0.24,
+    "dwell": 0.6,
+    "jitter": 0,
+    "flowBoost": 1.25,
+    "speed": 30,
+    "bridgeSpeed": 18,
+    "temp": 215,
+    "bed": 55,
+    "fan": 100,
+    "altPhase": true,
+    "autoLOD": true,
+    "minGap": 1.4,
+    "amp": 0,
+    "ampF": 1,
+    "checkOv": true,
+    "overshoot": 1,
+    "gradeLean": false,
+    "cycle": [
+     "chord",
+     "web"
+    ],
+    "maxBridge": 12,
+    "specW": 28,
+    "specH": 16,
+    "grid": 4,
+    "sweepX": "lambda",
+    "sweepY": "web",
+    "machine": "a1"
+   }
+  },
+  {
+   "file": "P3_span_x_overhang",
+   "kind": "stl",
+   "day": 1,
+   "note": "Geometry scaling. Cols = wall span w (3/5/7/10 mm), rows = overhang e. Shorter specimens to keep the file slicer-friendly.",
+   "shipped": true,
+   "measured": {
+    "layers": 800,
+    "weldNodes": 6016,
+    "size_mm": [
+     151.5,
+     133.3,
+     11.8
+    ],
+    "overlaps": 0,
+    "estPrint": "57 min",
+    "stlBytes": 16585684
+   },
+   "params": {
+    "mode": "batch",
+    "webType": "staple",
+    "w": 5,
+    "lambda": 8,
+    "bead": 0.45,
+    "lh": 0.24,
+    "dwell": 0.6,
+    "jitter": 0,
+    "flowBoost": 1.25,
+    "speed": 30,
+    "bridgeSpeed": 18,
+    "temp": 215,
+    "bed": 55,
+    "fan": 100,
+    "altPhase": true,
+    "autoLOD": true,
+    "minGap": 1.4,
+    "amp": 0,
+    "ampF": 1,
+    "checkOv": true,
+    "overshoot": 1,
+    "gradeLean": false,
+    "cycle": [
+     "chord",
+     "web"
+    ],
+    "maxBridge": 12,
+    "specW": 30,
+    "specH": 12,
+    "grid": 4,
+    "sweepX": "w",
+    "sweepY": "overshoot",
+    "machine": "a1"
+   }
+  },
+  {
+   "file": "R1_coupon_routeA",
+   "kind": "stl",
+   "day": 2,
+   "note": "Route A twin — same coupon through Bambu Studio/Arachne. Print 3 of these.",
+   "shipped": true,
+   "measured": {
+    "layers": 67,
+    "weldNodes": 1486,
+    "size_mm": [
+     90,
+     7.4,
+     15.8
+    ],
+    "overlaps": 0,
+    "estPrint": "12 min",
+    "stlBytes": 4502284
+   },
+   "params": {
+    "mode": "wall",
+    "webType": "staple",
+    "w": 5,
+    "lambda": 8,
+    "bead": 0.45,
+    "lh": 0.24,
+    "dwell": 0.6,
+    "jitter": 0,
+    "flowBoost": 1.25,
+    "speed": 30,
+    "bridgeSpeed": 18,
+    "temp": 215,
+    "bed": 55,
+    "fan": 100,
+    "altPhase": true,
+    "autoLOD": true,
+    "minGap": 1.4,
+    "amp": 0,
+    "ampF": 1,
+    "checkOv": true,
+    "overshoot": 1.2,
+    "gradeLean": false,
+    "cycle": [
+     "chord",
+     "web"
+    ],
+    "maxBridge": 12,
+    "specW": 28,
+    "specH": 16,
+    "grid": 4,
+    "wallH": 16,
+    "plan": [
+     {
+      "x": -45,
+      "y": 0
+     },
+     {
+      "x": 45,
+      "y": 0
+     }
+    ],
+    "machine": "a1"
+   }
+  },
+  {
+   "file": "R1_coupon_routeB",
+   "kind": "gcode",
+   "day": 2,
+   "note": "Route B twin — motion-only G-code WITH per-node flow boost. PASTE A HARVESTED A1 HEADER before printing. The A/B pair isolates the flow boost.",
+   "shipped": true,
+   "measured": {
+    "layers": 67,
+    "weldNodes": 1486,
+    "size_mm": [
+     90,
+     7.4,
+     15.8
+    ],
+    "overlaps": 0,
+    "estPrint": "12 min",
+    "stlBytes": 640716
+   },
+   "params": {
+    "mode": "wall",
+    "webType": "staple",
+    "w": 5,
+    "lambda": 8,
+    "bead": 0.45,
+    "lh": 0.24,
+    "dwell": 0.6,
+    "jitter": 0,
+    "flowBoost": 1.25,
+    "speed": 30,
+    "bridgeSpeed": 18,
+    "temp": 215,
+    "bed": 55,
+    "fan": 100,
+    "altPhase": true,
+    "autoLOD": true,
+    "minGap": 1.4,
+    "amp": 0,
+    "ampF": 1,
+    "checkOv": true,
+    "overshoot": 1.2,
+    "gradeLean": false,
+    "cycle": [
+     "chord",
+     "web"
+    ],
+    "maxBridge": 12,
+    "specW": 28,
+    "specH": 16,
+    "grid": 4,
+    "wallH": 16,
+    "plan": [
+     {
+      "x": -45,
+      "y": 0
+     },
+     {
+      "x": 45,
+      "y": 0
+     }
+    ],
+    "machine": "a1"
+   }
+  },
+  {
+   "file": "X1_spiral",
+   "kind": "stl",
+   "day": 3,
+   "note": "Exhibition specimen: an Archimedean spiral wall — one continuous thread made visible as a continuous form. 0 overlaps verified. Params only — the STL is ~31 MB; load the preset and press Download STL.",
+   "shipped": false,
+   "measured": {
+    "layers": 100,
+    "weldNodes": 10650,
+    "size_mm": [
+     73,
+     77.1,
+     23.8
+    ],
+    "overlaps": 0,
+    "estPrint": "63 min",
+    "stlBytes": 31320084
+   },
+   "params": {
+    "mode": "wall",
+    "webType": "eight",
+    "w": 5,
+    "lambda": 7,
+    "bead": 0.45,
+    "lh": 0.24,
+    "dwell": 0.6,
+    "jitter": 0,
+    "flowBoost": 1.25,
+    "speed": 30,
+    "bridgeSpeed": 18,
+    "temp": 215,
+    "bed": 55,
+    "fan": 100,
+    "altPhase": true,
+    "autoLOD": true,
+    "minGap": 1.4,
+    "amp": 0,
+    "ampF": 1,
+    "checkOv": true,
+    "overshoot": 1,
+    "gradeLean": false,
+    "cycle": [
+     "chord",
+     "web"
+    ],
+    "maxBridge": 12,
+    "specW": 28,
+    "specH": 16,
+    "grid": 4,
+    "wallH": 24,
+    "plan": [
+     {
+      "x": 9.0,
+      "y": 0.0
+     },
+     {
+      "x": 9.105,
+      "y": 0.529
+     },
+     {
+      "x": 9.178,
+      "y": 1.069
+     },
+     {
+      "x": 9.219,
+      "y": 1.62
+     },
+     {
+      "x": 9.226,
+      "y": 2.18
+     },
+     {
+      "x": 9.199,
+      "y": 2.745
+     },
+     {
+      "x": 9.137,
+      "y": 3.315
+     },
+     {
+      "x": 9.04,
+      "y": 3.886
+     },
+     {
+      "x": 8.907,
+      "y": 4.457
+     },
+     {
+      "x": 8.738,
+      "y": 5.026
+     },
+     {
+      "x": 8.532,
+      "y": 5.59
+     },
+     {
+      "x": 8.29,
+      "y": 6.146
+     },
+     {
+      "x": 8.012,
+      "y": 6.694
+     },
+     {
+      "x": 7.698,
+      "y": 7.229
+     },
+     {
+      "x": 7.349,
+      "y": 7.75
+     },
+     {
+      "x": 6.964,
+      "y": 8.255
+     },
+     {
+      "x": 6.546,
+      "y": 8.74
+     },
+     {
+      "x": 6.095,
+      "y": 9.205
+     },
+     {
+      "x": 5.611,
+      "y": 9.647
+     },
+     {
+      "x": 5.097,
+      "y": 10.063
+     },
+     {
+      "x": 4.553,
+      "y": 10.451
+     },
+     {
+      "x": 3.981,
+      "y": 10.81
+     },
+     {
+      "x": 3.382,
+      "y": 11.138
+     },
+     {
+      "x": 2.759,
+      "y": 11.432
+     },
+     {
+      "x": 2.113,
+      "y": 11.691
+     },
+     {
+      "x": 1.446,
+      "y": 11.913
+     },
+     {
+      "x": 0.761,
+      "y": 12.096
+     },
+     {
+      "x": 0.059,
+      "y": 12.24
+     },
+     {
+      "x": -0.657,
+      "y": 12.343
+     },
+     {
+      "x": -1.384,
+      "y": 12.403
+     },
+     {
+      "x": -2.121,
+      "y": 12.42
+     },
+     {
+      "x": -2.865,
+      "y": 12.393
+     },
+     {
+      "x": -3.612,
+      "y": 12.321
+     },
+     {
+      "x": -4.361,
+      "y": 12.204
+     },
+     {
+      "x": -5.108,
+      "y": 12.042
+     },
+     {
+      "x": -5.85,
+      "y": 11.833
+     },
+     {
+      "x": -6.586,
+      "y": 11.578
+     },
+     {
+      "x": -7.311,
+      "y": 11.278
+     },
+     {
+      "x": -8.023,
+      "y": 10.932
+     },
+     {
+      "x": -8.72,
+      "y": 10.541
+     },
+     {
+      "x": -9.398,
+      "y": 10.105
+     },
+     {
+      "x": -10.055,
+      "y": 9.627
+     },
+     {
+      "x": -10.687,
+      "y": 9.105
+     },
+     {
+      "x": -11.293,
+      "y": 8.543
+     },
+     {
+      "x": -11.869,
+      "y": 7.941
+     },
+     {
+      "x": -12.412,
+      "y": 7.3
+     },
+     {
+      "x": -12.921,
+      "y": 6.623
+     },
+     {
+      "x": -13.393,
+      "y": 5.911
+     },
+     {
+      "x": -13.826,
+      "y": 5.167
+     },
+     {
+      "x": -14.217,
+      "y": 4.393
+     },
+     {
+      "x": -14.564,
+      "y": 3.59
+     },
+     {
+      "x": -14.866,
+      "y": 2.761
+     },
+     {
+      "x": -15.12,
+      "y": 1.91
+     },
+     {
+      "x": -15.325,
+      "y": 1.039
+     },
+     {
+      "x": -15.479,
+      "y": 0.15
+     },
+     {
+      "x": -15.582,
+      "y": -0.754
+     },
+     {
+      "x": -15.631,
+      "y": -1.668
+     },
+     {
+      "x": -15.627,
+      "y": -2.591
+     },
+     {
+      "x": -15.567,
+      "y": -3.519
+     },
+     {
+      "x": -15.452,
+      "y": -4.449
+     },
+     {
+      "x": -15.282,
+      "y": -5.377
+     },
+     {
+      "x": -15.055,
+      "y": -6.3
+     },
+     {
+      "x": -14.772,
+      "y": -7.215
+     },
+     {
+      "x": -14.434,
+      "y": -8.118
+     },
+     {
+      "x": -14.04,
+      "y": -9.006
+     },
+     {
+      "x": -13.591,
+      "y": -9.875
+     },
+     {
+      "x": -13.089,
+      "y": -10.722
+     },
+     {
+      "x": -12.534,
+      "y": -11.544
+     },
+     {
+      "x": -11.927,
+      "y": -12.337
+     },
+     {
+      "x": -11.27,
+      "y": -13.099
+     },
+     {
+      "x": -10.565,
+      "y": -13.826
+     },
+     {
+      "x": -9.813,
+      "y": -14.514
+     },
+     {
+      "x": -9.016,
+      "y": -15.162
+     },
+     {
+      "x": -8.177,
+      "y": -15.765
+     },
+     {
+      "x": -7.299,
+      "y": -16.322
+     },
+     {
+      "x": -6.383,
+      "y": -16.83
+     },
+     {
+      "x": -5.433,
+      "y": -17.286
+     },
+     {
+      "x": -4.451,
+      "y": -17.689
+     },
+     {
+      "x": -3.44,
+      "y": -18.035
+     },
+     {
+      "x": -2.405,
+      "y": -18.323
+     },
+     {
+      "x": -1.347,
+      "y": -18.551
+     },
+     {
+      "x": -0.271,
+      "y": -18.718
+     },
+     {
+      "x": 0.819,
+      "y": -18.822
+     },
+     {
+      "x": 1.921,
+      "y": -18.862
+     },
+     {
+      "x": 3.03,
+      "y": -18.838
+     },
+     {
+      "x": 4.143,
+      "y": -18.748
+     },
+     {
+      "x": 5.255,
+      "y": -18.591
+     },
+     {
+      "x": 6.364,
+      "y": -18.369
+     },
+     {
+      "x": 7.463,
+      "y": -18.08
+     },
+     {
+      "x": 8.551,
+      "y": -17.725
+     },
+     {
+      "x": 9.622,
+      "y": -17.305
+     },
+     {
+      "x": 10.674,
+      "y": -16.819
+     },
+     {
+      "x": 11.701,
+      "y": -16.269
+     },
+     {
+      "x": 12.7,
+      "y": -15.657
+     },
+     {
+      "x": 13.667,
+      "y": -14.983
+     },
+     {
+      "x": 14.598,
+      "y": -14.25
+     },
+     {
+      "x": 15.49,
+      "y": -13.458
+     },
+     {
+      "x": 16.339,
+      "y": -12.611
+     },
+     {
+      "x": 17.142,
+      "y": -11.71
+     },
+     {
+      "x": 17.895,
+      "y": -10.759
+     },
+     {
+      "x": 18.595,
+      "y": -9.759
+     },
+     {
+      "x": 19.238,
+      "y": -8.714
+     },
+     {
+      "x": 19.823,
+      "y": -7.628
+     },
+     {
+      "x": 20.346,
+      "y": -6.502
+     },
+     {
+      "x": 20.805,
+      "y": -5.342
+     },
+     {
+      "x": 21.198,
+      "y": -4.15
+     },
+     {
+      "x": 21.521,
+      "y": -2.93
+     },
+     {
+      "x": 21.775,
+      "y": -1.687
+     },
+     {
+      "x": 21.956,
+      "y": -0.425
+     },
+     {
+      "x": 22.063,
+      "y": 0.854
+     },
+     {
+      "x": 22.096,
+      "y": 2.143
+     },
+     {
+      "x": 22.054,
+      "y": 3.438
+     },
+     {
+      "x": 21.934,
+      "y": 4.736
+     },
+     {
+      "x": 21.739,
+      "y": 6.032
+     },
+     {
+      "x": 21.466,
+      "y": 7.321
+     },
+     {
+      "x": 21.117,
+      "y": 8.598
+     },
+     {
+      "x": 20.691,
+      "y": 9.859
+     },
+     {
+      "x": 20.19,
+      "y": 11.1
+     },
+     {
+      "x": 19.614,
+      "y": 12.315
+     },
+     {
+      "x": 18.965,
+      "y": 13.501
+     },
+     {
+      "x": 18.244,
+      "y": 14.653
+     },
+     {
+      "x": 17.453,
+      "y": 15.766
+     },
+     {
+      "x": 16.594,
+      "y": 16.837
+     },
+     {
+      "x": 15.67,
+      "y": 17.861
+     },
+     {
+      "x": 14.682,
+      "y": 18.833
+     },
+     {
+      "x": 13.634,
+      "y": 19.752
+     },
+     {
+      "x": 12.528,
+      "y": 20.611
+     },
+     {
+      "x": 11.368,
+      "y": 21.409
+     },
+     {
+      "x": 10.158,
+      "y": 22.141
+     },
+     {
+      "x": 8.902,
+      "y": 22.804
+     },
+     {
+      "x": 7.602,
+      "y": 23.396
+     },
+     {
+      "x": 6.263,
+      "y": 23.913
+     },
+     {
+      "x": 4.89,
+      "y": 24.354
+     },
+     {
+      "x": 3.487,
+      "y": 24.715
+     },
+     {
+      "x": 2.058,
+      "y": 24.995
+     },
+     {
+      "x": 0.609,
+      "y": 25.193
+     },
+     {
+      "x": -0.856,
+      "y": 25.306
+     },
+     {
+      "x": -2.333,
+      "y": 25.333
+     },
+     {
+      "x": -3.815,
+      "y": 25.274
+     },
+     {
+      "x": -5.299,
+      "y": 25.127
+     },
+     {
+      "x": -6.778,
+      "y": 24.894
+     },
+     {
+      "x": -8.248,
+      "y": 24.573
+     },
+     {
+      "x": -9.703,
+      "y": 24.165
+     },
+     {
+      "x": -11.138,
+      "y": 23.67
+     },
+     {
+      "x": -12.549,
+      "y": 23.09
+     },
+     {
+      "x": -13.93,
+      "y": 22.426
+     },
+     {
+      "x": -15.275,
+      "y": 21.679
+     },
+     {
+      "x": -16.581,
+      "y": 20.851
+     },
+     {
+      "x": -17.842,
+      "y": 19.944
+     },
+     {
+      "x": -19.053,
+      "y": 18.961
+     },
+     {
+      "x": -20.21,
+      "y": 17.904
+     },
+     {
+      "x": -21.308,
+      "y": 16.777
+     },
+     {
+      "x": -22.343,
+      "y": 15.582
+     },
+     {
+      "x": -23.311,
+      "y": 14.324
+     },
+     {
+      "x": -24.208,
+      "y": 13.005
+     },
+     {
+      "x": -25.03,
+      "y": 11.631
+     },
+     {
+      "x": -25.773,
+      "y": 10.204
+     },
+     {
+      "x": -26.436,
+      "y": 8.731
+     },
+     {
+      "x": -27.013,
+      "y": 7.215
+     },
+     {
+      "x": -27.503,
+      "y": 5.661
+     },
+     {
+      "x": -27.904,
+      "y": 4.075
+     },
+     {
+      "x": -28.213,
+      "y": 2.461
+     },
+     {
+      "x": -28.428,
+      "y": 0.825
+     },
+     {
+      "x": -28.548,
+      "y": -0.828
+     },
+     {
+      "x": -28.572,
+      "y": -2.492
+     },
+     {
+      "x": -28.498,
+      "y": -4.161
+     },
+     {
+      "x": -28.326,
+      "y": -5.83
+     },
+     {
+      "x": -28.057,
+      "y": -7.494
+     },
+     {
+      "x": -27.689,
+      "y": -9.145
+     },
+     {
+      "x": -27.224,
+      "y": -10.779
+     },
+     {
+      "x": -26.662,
+      "y": -12.389
+     },
+     {
+      "x": -26.005,
+      "y": -13.971
+     },
+     {
+      "x": -25.254,
+      "y": -15.517
+     },
+     {
+      "x": -24.41,
+      "y": -17.024
+     },
+     {
+      "x": -23.476,
+      "y": -18.484
+     },
+     {
+      "x": -22.455,
+      "y": -19.894
+     },
+     {
+      "x": -21.349,
+      "y": -21.247
+     },
+     {
+      "x": -20.162,
+      "y": -22.538
+     },
+     {
+      "x": -18.896,
+      "y": -23.763
+     },
+     {
+      "x": -17.556,
+      "y": -24.916
+     },
+     {
+      "x": -16.146,
+      "y": -25.994
+     },
+     {
+      "x": -14.669,
+      "y": -26.991
+     },
+     {
+      "x": -13.131,
+      "y": -27.905
+     },
+     {
+      "x": -11.536,
+      "y": -28.73
+     },
+     {
+      "x": -9.89,
+      "y": -29.465
+     },
+     {
+      "x": -8.196,
+      "y": -30.104
+     },
+     {
+      "x": -6.462,
+      "y": -30.646
+     },
+     {
+      "x": -4.693,
+      "y": -31.088
+     },
+     {
+      "x": -2.894,
+      "y": -31.427
+     },
+     {
+      "x": -1.072,
+      "y": -31.662
+     },
+     {
+      "x": 0.768,
+      "y": -31.791
+     },
+     {
+      "x": 2.62,
+      "y": -31.812
+     },
+     {
+      "x": 4.476,
+      "y": -31.726
+     },
+     {
+      "x": 6.331,
+      "y": -31.531
+     },
+     {
+      "x": 8.179,
+      "y": -31.227
+     },
+     {
+      "x": 10.012,
+      "y": -30.814
+     },
+     {
+      "x": 11.825,
+      "y": -30.294
+     },
+     {
+      "x": 13.611,
+      "y": -29.667
+     },
+     {
+      "x": 15.364,
+      "y": -28.934
+     },
+     {
+      "x": 17.078,
+      "y": -28.097
+     },
+     {
+      "x": 18.746,
+      "y": -27.158
+     },
+     {
+      "x": 20.363,
+      "y": -26.121
+     },
+     {
+      "x": 21.922,
+      "y": -24.987
+     },
+     {
+      "x": 23.417,
+      "y": -23.759
+     },
+     {
+      "x": 24.844,
+      "y": -22.443
+     },
+     {
+      "x": 26.197,
+      "y": -21.04
+     },
+     {
+      "x": 27.47,
+      "y": -19.555
+     },
+     {
+      "x": 28.659,
+      "y": -17.994
+     },
+     {
+      "x": 29.759,
+      "y": -16.36
+     },
+     {
+      "x": 30.766,
+      "y": -14.659
+     },
+     {
+      "x": 31.675,
+      "y": -12.897
+     },
+     {
+      "x": 32.483,
+      "y": -11.078
+     },
+     {
+      "x": 33.186,
+      "y": -9.208
+     },
+     {
+      "x": 33.781,
+      "y": -7.294
+     },
+     {
+      "x": 34.266,
+      "y": -5.342
+     },
+     {
+      "x": 34.638,
+      "y": -3.359
+     },
+     {
+      "x": 34.894,
+      "y": -1.35
+     },
+     {
+      "x": 35.033,
+      "y": 0.677
+     },
+     {
+      "x": 35.055,
+      "y": 2.716
+     },
+     {
+      "x": 34.957,
+      "y": 4.76
+     },
+     {
+      "x": 34.741,
+      "y": 6.801
+     },
+     {
+      "x": 34.404,
+      "y": 8.833
+     },
+     {
+      "x": 33.948,
+      "y": 10.849
+     },
+     {
+      "x": 33.375,
+      "y": 12.842
+     },
+     {
+      "x": 32.683,
+      "y": 14.805
+     },
+     {
+      "x": 31.876,
+      "y": 16.73
+     },
+     {
+      "x": 30.956,
+      "y": 18.611
+     },
+     {
+      "x": 29.924,
+      "y": 20.442
+     },
+     {
+      "x": 28.784,
+      "y": 22.216
+     },
+     {
+      "x": 27.538,
+      "y": 23.926
+     },
+     {
+      "x": 26.191,
+      "y": 25.566
+     },
+     {
+      "x": 24.746,
+      "y": 27.129
+     },
+     {
+      "x": 23.207,
+      "y": 28.611
+     },
+     {
+      "x": 21.58,
+      "y": 30.006
+     },
+     {
+      "x": 19.868,
+      "y": 31.308
+     },
+     {
+      "x": 18.079,
+      "y": 32.512
+     },
+     {
+      "x": 16.216,
+      "y": 33.613
+     },
+     {
+      "x": 14.286,
+      "y": 34.607
+     },
+     {
+      "x": 12.295,
+      "y": 35.491
+     },
+     {
+      "x": 10.25,
+      "y": 36.259
+     },
+     {
+      "x": 8.157,
+      "y": 36.909
+     },
+     {
+      "x": 6.022,
+      "y": 37.439
+     },
+     {
+      "x": 3.854,
+      "y": 37.844
+     },
+     {
+      "x": 1.659,
+      "y": 38.124
+     },
+     {
+      "x": -0.555,
+      "y": 38.276
+     },
+     {
+      "x": -2.781,
+      "y": 38.299
+     },
+     {
+      "x": -5.012,
+      "y": 38.192
+     },
+     {
+      "x": -7.24,
+      "y": 37.956
+     },
+     {
+      "x": -9.458,
+      "y": 37.588
+     },
+     {
+      "x": -11.657,
+      "y": 37.091
+     },
+     {
+      "x": -13.83,
+      "y": 36.466
+     },
+     {
+      "x": -15.969,
+      "y": 35.712
+     },
+     {
+      "x": -18.068,
+      "y": 34.833
+     },
+     {
+      "x": -20.118,
+      "y": 33.83
+     },
+     {
+      "x": -22.112,
+      "y": 32.707
+     },
+     {
+      "x": -24.044,
+      "y": 31.465
+     },
+     {
+      "x": -25.905,
+      "y": 30.11
+     },
+     {
+      "x": -27.691,
+      "y": 28.644
+     },
+     {
+      "x": -29.393,
+      "y": 27.072
+     },
+     {
+      "x": -31.005,
+      "y": 25.398
+     },
+     {
+      "x": -32.522,
+      "y": 23.629
+     }
+    ],
+    "machine": "a1"
+   }
+  },
+  {
+   "file": "X2_letter_C",
+   "kind": "stl",
+   "day": 3,
+   "note": "Exhibition specimen: a single-stroke letter as the plan curve — language woven into a lattice wall. 0 overlaps verified.",
+   "shipped": true,
+   "measured": {
+    "layers": 100,
+    "weldNodes": 4350,
+    "size_mm": [
+     60.8,
+     75,
+     23.8
+    ],
+    "overlaps": 0,
+    "estPrint": "30 min",
+    "stlBytes": 13310084
+   },
+   "params": {
+    "mode": "wall",
+    "webType": "staple",
+    "w": 5,
+    "lambda": 7,
+    "bead": 0.45,
+    "lh": 0.24,
+    "dwell": 0.6,
+    "jitter": 0,
+    "flowBoost": 1.25,
+    "speed": 30,
+    "bridgeSpeed": 18,
+    "temp": 215,
+    "bed": 55,
+    "fan": 100,
+    "altPhase": true,
+    "autoLOD": true,
+    "minGap": 1.4,
+    "amp": 0,
+    "ampF": 1,
+    "checkOv": true,
+    "overshoot": 1,
+    "gradeLean": false,
+    "cycle": [
+     "chord",
+     "web"
+    ],
+    "maxBridge": 12,
+    "specW": 28,
+    "specH": 16,
+    "grid": 4,
+    "wallH": 24,
+    "plan": [
+     {
+      "x": -21.672,
+      "y": -26.197
+     },
+     {
+      "x": -20.157,
+      "y": -27.38
+     },
+     {
+      "x": -18.577,
+      "y": -28.476
+     },
+     {
+      "x": -16.938,
+      "y": -29.48
+     },
+     {
+      "x": -15.245,
+      "y": -30.391
+     },
+     {
+      "x": -13.503,
+      "y": -31.204
+     },
+     {
+      "x": -11.718,
+      "y": -31.917
+     },
+     {
+      "x": -9.895,
+      "y": -32.528
+     },
+     {
+      "x": -8.041,
+      "y": -33.035
+     },
+     {
+      "x": -6.161,
+      "y": -33.437
+     },
+     {
+      "x": -4.261,
+      "y": -33.732
+     },
+     {
+      "x": -2.348,
+      "y": -33.919
+     },
+     {
+      "x": -0.427,
+      "y": -33.997
+     },
+     {
+      "x": 1.495,
+      "y": -33.967
+     },
+     {
+      "x": 3.412,
+      "y": -33.828
+     },
+     {
+      "x": 5.319,
+      "y": -33.581
+     },
+     {
+      "x": 7.208,
+      "y": -33.227
+     },
+     {
+      "x": 9.075,
+      "y": -32.767
+     },
+     {
+      "x": 10.912,
+      "y": -32.201
+     },
+     {
+      "x": 12.715,
+      "y": -31.533
+     },
+     {
+      "x": 14.476,
+      "y": -30.764
+     },
+     {
+      "x": 16.192,
+      "y": -29.897
+     },
+     {
+      "x": 17.856,
+      "y": -28.934
+     },
+     {
+      "x": 19.463,
+      "y": -27.878
+     },
+     {
+      "x": 21.007,
+      "y": -26.734
+     },
+     {
+      "x": 22.485,
+      "y": -25.504
+     },
+     {
+      "x": 23.89,
+      "y": -24.192
+     },
+     {
+      "x": 25.219,
+      "y": -22.803
+     },
+     {
+      "x": 26.468,
+      "y": -21.342
+     },
+     {
+      "x": 27.632,
+      "y": -19.811
+     },
+     {
+      "x": 28.707,
+      "y": -18.218
+     },
+     {
+      "x": 29.691,
+      "y": -16.567
+     },
+     {
+      "x": 30.58,
+      "y": -14.862
+     },
+     {
+      "x": 31.371,
+      "y": -13.11
+     },
+     {
+      "x": 32.062,
+      "y": -11.316
+     },
+     {
+      "x": 32.65,
+      "y": -9.486
+     },
+     {
+      "x": 33.134,
+      "y": -7.625
+     },
+     {
+      "x": 33.512,
+      "y": -5.74
+     },
+     {
+      "x": 33.783,
+      "y": -3.837
+     },
+     {
+      "x": 33.946,
+      "y": -1.922
+     },
+     {
+      "x": 34.0,
+      "y": 0.0
+     },
+     {
+      "x": 33.946,
+      "y": 1.922
+     },
+     {
+      "x": 33.783,
+      "y": 3.837
+     },
+     {
+      "x": 33.512,
+      "y": 5.74
+     },
+     {
+      "x": 33.134,
+      "y": 7.625
+     },
+     {
+      "x": 32.65,
+      "y": 9.486
+     },
+     {
+      "x": 32.062,
+      "y": 11.316
+     },
+     {
+      "x": 31.371,
+      "y": 13.11
+     },
+     {
+      "x": 30.58,
+      "y": 14.862
+     },
+     {
+      "x": 29.691,
+      "y": 16.567
+     },
+     {
+      "x": 28.707,
+      "y": 18.218
+     },
+     {
+      "x": 27.632,
+      "y": 19.811
+     },
+     {
+      "x": 26.468,
+      "y": 21.342
+     },
+     {
+      "x": 25.219,
+      "y": 22.803
+     },
+     {
+      "x": 23.89,
+      "y": 24.192
+     },
+     {
+      "x": 22.485,
+      "y": 25.504
+     },
+     {
+      "x": 21.007,
+      "y": 26.734
+     },
+     {
+      "x": 19.463,
+      "y": 27.878
+     },
+     {
+      "x": 17.856,
+      "y": 28.934
+     },
+     {
+      "x": 16.192,
+      "y": 29.897
+     },
+     {
+      "x": 14.476,
+      "y": 30.764
+     },
+     {
+      "x": 12.715,
+      "y": 31.533
+     },
+     {
+      "x": 10.912,
+      "y": 32.201
+     },
+     {
+      "x": 9.075,
+      "y": 32.767
+     },
+     {
+      "x": 7.208,
+      "y": 33.227
+     },
+     {
+      "x": 5.319,
+      "y": 33.581
+     },
+     {
+      "x": 3.412,
+      "y": 33.828
+     },
+     {
+      "x": 1.495,
+      "y": 33.967
+     },
+     {
+      "x": -0.427,
+      "y": 33.997
+     },
+     {
+      "x": -2.348,
+      "y": 33.919
+     },
+     {
+      "x": -4.261,
+      "y": 33.732
+     },
+     {
+      "x": -6.161,
+      "y": 33.437
+     },
+     {
+      "x": -8.041,
+      "y": 33.035
+     },
+     {
+      "x": -9.895,
+      "y": 32.528
+     },
+     {
+      "x": -11.718,
+      "y": 31.917
+     },
+     {
+      "x": -13.503,
+      "y": 31.204
+     },
+     {
+      "x": -15.245,
+      "y": 30.391
+     },
+     {
+      "x": -16.938,
+      "y": 29.48
+     },
+     {
+      "x": -18.577,
+      "y": 28.476
+     },
+     {
+      "x": -20.157,
+      "y": 27.38
+     },
+     {
+      "x": -21.672,
+      "y": 26.197
+     }
+    ],
+    "machine": "a1"
+   }
+  },
+  {
+   "file": "D2_dome_lambda07",
+   "kind": "stl",
+   "day": 2,
+   "note": "Overhang-vs-density ladder, λ=7 mm rung — one machine each. 270° dome (NOT 360°: a closed revolve collides at the seam), R60, auto-LOD on. Load, then Download STL (~44 MB, too large to ship). Photograph in profile and record the lean angle where the weave first fails.",
+   "shipped": false,
+   "measured": {
+    "weldNodes": 17066,
+    "minNodeGap_mm": 1.87,
+    "overlaps": 0,
+    "estPrint": "105 min",
+    "layers": 212
+   },
+   "params": {
+    "mode": "dome",
+    "webType": "staple",
+    "w": 5,
+    "lambda": 7,
+    "bead": 0.45,
+    "lh": 0.24,
+    "dwell": 0.6,
+    "jitter": 0,
+    "flowBoost": 1.25,
+    "speed": 30,
+    "bridgeSpeed": 18,
+    "temp": 215,
+    "bed": 55,
+    "fan": 100,
+    "altPhase": true,
+    "autoLOD": true,
+    "minGap": 1.4,
+    "amp": 0,
+    "ampF": 1,
+    "checkOv": true,
+    "overshoot": 1,
+    "gradeLean": false,
+    "cycle": [
+     "chord",
+     "web"
+    ],
+    "maxBridge": 12,
+    "specW": 28,
+    "specH": 16,
+    "grid": 4,
+    "domeR": 60,
+    "sweep": 270,
+    "hFrac": 0.85,
+    "capClose": true,
+    "machine": "a1"
+   }
+  },
+  {
+   "file": "D2_dome_lambda09",
+   "kind": "stl",
+   "day": 2,
+   "note": "Overhang-vs-density ladder, λ=9 mm rung — one machine each. 270° dome (NOT 360°: a closed revolve collides at the seam), R60, auto-LOD on. Load, then Download STL (~44 MB, too large to ship). Photograph in profile and record the lean angle where the weave first fails.",
+   "shipped": false,
+   "measured": {
+    "weldNodes": 13250,
+    "minNodeGap_mm": 2.4,
+    "overlaps": 0,
+    "estPrint": "96 min",
+    "layers": 212
+   },
+   "params": {
+    "mode": "dome",
+    "webType": "staple",
+    "w": 5,
+    "lambda": 9,
+    "bead": 0.45,
+    "lh": 0.24,
+    "dwell": 0.6,
+    "jitter": 0,
+    "flowBoost": 1.25,
+    "speed": 30,
+    "bridgeSpeed": 18,
+    "temp": 215,
+    "bed": 55,
+    "fan": 100,
+    "altPhase": true,
+    "autoLOD": true,
+    "minGap": 1.4,
+    "amp": 0,
+    "ampF": 1,
+    "checkOv": true,
+    "overshoot": 1,
+    "gradeLean": false,
+    "cycle": [
+     "chord",
+     "web"
+    ],
+    "maxBridge": 12,
+    "specW": 28,
+    "specH": 16,
+    "grid": 4,
+    "domeR": 60,
+    "sweep": 270,
+    "hFrac": 0.85,
+    "capClose": true,
+    "machine": "a1"
+   }
+  },
+  {
+   "file": "D2_dome_lambda12",
+   "kind": "stl",
+   "day": 2,
+   "note": "Overhang-vs-density ladder, λ=12 mm rung — one machine each. 270° dome (NOT 360°: a closed revolve collides at the seam), R60, auto-LOD on. Load, then Download STL (~44 MB, too large to ship). Photograph in profile and record the lean angle where the weave first fails.",
+   "shipped": false,
+   "measured": {
+    "weldNodes": 10070,
+    "minNodeGap_mm": 3.2,
+    "overlaps": 0,
+    "estPrint": "89 min",
+    "layers": 212
+   },
+   "params": {
+    "mode": "dome",
+    "webType": "staple",
+    "w": 5,
+    "lambda": 12,
+    "bead": 0.45,
+    "lh": 0.24,
+    "dwell": 0.6,
+    "jitter": 0,
+    "flowBoost": 1.25,
+    "speed": 30,
+    "bridgeSpeed": 18,
+    "temp": 215,
+    "bed": 55,
+    "fan": 100,
+    "altPhase": true,
+    "autoLOD": true,
+    "minGap": 1.4,
+    "amp": 0,
+    "ampF": 1,
+    "checkOv": true,
+    "overshoot": 1,
+    "gradeLean": false,
+    "cycle": [
+     "chord",
+     "web"
+    ],
+    "maxBridge": 12,
+    "specW": 28,
+    "specH": 16,
+    "grid": 4,
+    "domeR": 60,
+    "sweep": 270,
+    "hFrac": 0.85,
+    "capClose": true,
+    "machine": "a1"
+   }
+  },
+  {
+   "file": "D2_dome_lambda16",
+   "kind": "stl",
+   "day": 2,
+   "note": "Overhang-vs-density ladder, λ=16 mm rung — one machine each. 270° dome (NOT 360°: a closed revolve collides at the seam), R60, auto-LOD on. Load, then Download STL (~44 MB, too large to ship). Photograph in profile and record the lean angle where the weave first fails.",
+   "shipped": false,
+   "measured": {
+    "weldNodes": 7526,
+    "minNodeGap_mm": 4.27,
+    "overlaps": 0,
+    "estPrint": "83 min",
+    "layers": 212
+   },
+   "params": {
+    "mode": "dome",
+    "webType": "staple",
+    "w": 5,
+    "lambda": 16,
+    "bead": 0.45,
+    "lh": 0.24,
+    "dwell": 0.6,
+    "jitter": 0,
+    "flowBoost": 1.25,
+    "speed": 30,
+    "bridgeSpeed": 18,
+    "temp": 215,
+    "bed": 55,
+    "fan": 100,
+    "altPhase": true,
+    "autoLOD": true,
+    "minGap": 1.4,
+    "amp": 0,
+    "ampF": 1,
+    "checkOv": true,
+    "overshoot": 1,
+    "gradeLean": false,
+    "cycle": [
+     "chord",
+     "web"
+    ],
+    "maxBridge": 12,
+    "specW": 28,
+    "specH": 16,
+    "grid": 4,
+    "domeR": 60,
+    "sweep": 270,
+    "hFrac": 0.85,
+    "capClose": true,
+    "machine": "a1"
+   }
+  }
+ ]
+}

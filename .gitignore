@@ -6,3 +6,6 @@ exports/
 *.stl
 *.gcode
 !specimens/**
+presets/*.stl
+presets/*.gcode
+bridge/log/

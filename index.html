@@ -142,7 +142,7 @@ textarea{width:100%;background:#0a0f14;border:1px solid var(--line);border-radiu
 
   <div class="sec" id="secBatch" style="display:none">
     <div class="st">Specimen array</div>
-    <div class="hint" style="margin-top:0">Tiles test walls across the 330&nbsp;mm bed, sweeping two variables. Every specimen shares identical machine conditions — one job, comparable data.</div>
+    <div class="hint" style="margin-top:0">Tiles test walls across the <span id="batchBed">330</span>&nbsp;mm bed, sweeping two variables. Every specimen shares identical machine conditions — one job, comparable data.</div>
     <div class="ctl" style="margin-top:10px"><div class="row"><label>Rows × Cols</label><span class="val" id="v_grid"></span></div><input type="range" id="grid" min="2" max="6" step="1"></div>
     <div class="row" style="margin-bottom:4px"><label>Sweep X →</label></div>
     <div class="seg sm" id="sweepXSeg">
@@ -198,6 +198,8 @@ textarea{width:100%;background:#0a0f14;border:1px solid var(--line);border-radiu
 
   <div class="sec">
     <div class="st">Print</div>
+    <div class="row" style="margin-bottom:4px"><label>Machine</label></div>
+    <div class="seg sm" id="machSeg"><button data-m="a2l" class="on">A2L 330×320</button><button data-m="a1">A1 256×256</button></div>
     <div class="ctl"><div class="row"><label>Speed</label><span class="val" id="v_speed"></span></div><input type="range" id="speed" min="5" max="120" step="1"></div>
     <div class="ctl adv"><div class="row"><label>Bridge speed</label><span class="val" id="v_bridgeSpeed"></span></div><input type="range" id="bridgeSpeed" min="3" max="50" step="1"></div>
     <div class="ctl adv"><div class="row"><label>Part fan (＞L1)</label><span class="val" id="v_fan"></span></div><input type="range" id="fan" min="0" max="100" step="5"></div>
@@ -209,15 +211,39 @@ textarea{width:100%;background:#0a0f14;border:1px solid var(--line);border-radiu
     <div class="st">Export</div>
     <button class="act" id="expStl">Download STL</button>
     <button class="act warp" id="expGcode">Download G-code</button>
-    <button class="mini" id="howBtn" style="width:100%;padding:7px 0;margin-bottom:8px">▸ how to print safely on the A2L</button>
+    <button class="mini" id="howBtn" style="width:100%;padding:7px 0;margin-bottom:8px">▸ how to print safely</button>
     <details>
-      <summary>A2L G-code header / footer</summary>
-      <div class="hint" style="margin-top:0">Paste a header harvested from any object sliced in Bambu Studio for your A2L (everything before the first print move). This keeps startup, bed mesh and cooling machine-correct — WEFT only writes motion.</div>
+      <summary>harvested G-code header / footer</summary>
+      <div class="hint" style="margin-top:0">Paste a header harvested from any object sliced in Bambu Studio for your <span id="gHeadMach">Bambu A2L</span> (everything before the first print move). This keeps startup, bed mesh and cooling machine-correct — WEFT only writes motion.</div>
       <textarea id="gHead" style="height:120px;margin-top:6px"></textarea>
       <textarea id="gFoot" style="height:70px"></textarea>
     </details>
   </div>
 </div>
+
+<div class="sec">
+    <div class="st">Presets &amp; parameters</div>
+    <div class="hint" style="margin-top:0">A preset is just a parameter vector. Loading one rebuilds the model exactly — which is how a plate too large to ship as an STL still reproduces in one click.</div>
+    <select id="presetSel" style="width:100%;margin:8px 0 6px"><option value="">— preset —</option></select>
+    <div class="hint" id="presetNote" style="margin-top:0"></div>
+    <button class="mini" id="paramLoadBtn" style="width:100%;padding:7px 0;margin-top:8px">load parameters (.json)</button>
+    <input type="file" id="paramFile" accept=".json" style="display:none">
+    <button class="mini" id="paramSaveBtn" style="width:100%;padding:7px 0;margin-bottom:8px">save parameters (.json)</button>
+  </div>
+
+<div class="sec" id="secAI" style="display:none">
+    <div class="st">Design by language</div>
+    <div class="hint" style="margin-top:0">The model proposes <b>parameters</b>; WEFT builds them and answers with a verdict. Invalid answers go back with the errors attached. Every run is logged to <code>bridge/log/</code>.</div>
+    <div class="row" style="margin-top:8px;margin-bottom:4px"><label>Model</label><span class="val" id="v_aiStat">–</span></div>
+    <select id="aiProv" style="width:100%;margin-bottom:6px"></select>
+    <select id="aiModel" style="width:100%;margin-bottom:6px"></select>
+    <textarea id="aiBrief" style="height:66px" placeholder="a 90 mm wall that leans into an S, dense weave, no bridges over 8 mm"></textarea>
+    <div class="row" style="margin:6px 0 4px"><label>Repair attempts</label><span class="val" id="v_aiTries">3</span></div>
+    <input type="range" id="aiTries" min="1" max="5" step="1" value="3">
+    <button class="act" id="aiGo">Design</button>
+    <button class="mini" id="aiSave" style="width:100%;padding:7px 0;margin-bottom:8px">save run to log</button>
+    <div class="hint" id="aiOut" style="white-space:pre-wrap;max-height:190px;overflow:auto"></div>
+  </div>
 
 <div id="status">
   <div class="st">Model</div>
@@ -230,7 +256,7 @@ textarea{width:100%;background:#0a0f14;border:1px solid var(--line);border-radiu
   <div class="srow"><span class="k">wall width</span><span class="v" id="s_width">–</span></div>
   <div class="srow"><span class="k">overlaps</span><span class="v" id="s_ov">–</span></div>
   <div class="srow" id="leanRow" style="display:none"><span class="k">top lean</span><span class="v" id="s_lean">–</span></div>
-  <div class="srow" id="fitRow"><span class="k">bed fit (330×320)</span><span class="v" id="s_fit">–</span></div>
+  <div class="srow" id="fitRow"><span class="k">bed fit (<span id="bedRect">330×320</span>)</span><span class="v" id="s_fit">–</span></div>
     <div class="srow"><span class="k">stl size</span><span class="v" id="s_stl">-</span></div>
 <div class="srow"><span class="k">est. time</span><span class="v" id="s_time">–</span></div>
 </div>
@@ -278,7 +304,24 @@ if(typeof THREE==='undefined'){
   document.getElementById('loading').textContent='vendor/three.min.js missing — app cannot start';
   throw new Error('three.js not loaded');
 }
-const BED=330, BEDY=320;   /* A2L build plate: 330 (X) × 320 (Y) mm */
+/* Machine profiles. BED/BEDY are LET, not const: the bed outline, the fit check,
+   the batch tiling clamp and the G-code origin shift all read them, so switching
+   machines has to move all four together. Default stays a2l — the E1 plate's batch
+   pitch is computed from BED, and its bit-for-bit reproducibility with it. */
+const MACHINES={
+  a2l:{id:'a2l', label:'Bambu A2L', bx:330, by:320, bedMax:80,  hotMax:300},
+  a1 :{id:'a1',  label:'Bambu A1',  bx:256, by:256, bedMax:100, hotMax:300}
+};
+let MACHINE='a2l', BED=MACHINES.a2l.bx, BEDY=MACHINES.a2l.by;
+function setMachine(id){
+  const m=MACHINES[id]; if(!m) return;
+  MACHINE=id; BED=m.bx; BEDY=m.by;
+  const t=(elid,txt)=>{const e=document.getElementById(elid); if(e) e.textContent=txt;};
+  t('bedRect',m.bx+'×'+m.by); t('batchBed',m.bx); t('gHeadMach',m.label);
+  const bs=document.getElementById('bed');
+  if(bs){ bs.max=m.bedMax; if(P.bed>m.bedMax){ P.bed=m.bedMax; bs.value=P.bed; t('v_bed',P.bed+'°C'); } }
+  rebuildBed();
+}
 const P={
   mode:'wall', wallH:28, domeR:45, sweep:270, hFrac:0.8, capClose:true,
   noz:0.4, bead:0.45, lh:0.24,
@@ -810,6 +853,15 @@ const matCur=new THREE.MeshStandardMaterial({color:0x35e0ff,roughness:.5,emissiv
 const matNode=new THREE.MeshStandardMaterial({color:0xffb63b,roughness:.5,emissive:0x3a2703});
 const matOv=new THREE.MeshStandardMaterial({color:0xff4d5e,roughness:.5,emissive:0x400a10});
 function matFor(L){return L.role==='cap'?matCap:(L.role==='chord'?matChord:matWeb);}
+let bedGrid=null, bedOutline=null;
+function rebuildBed(){
+  if(!scene) return;
+  if(bedGrid){ scene.remove(bedGrid); bedGrid.geometry.dispose(); }
+  if(bedOutline){ scene.remove(bedOutline); bedOutline.geometry.dispose(); }
+  bedGrid=new THREE.GridHelper(BED,33,0x223140,0x15202b); bedGrid.position.y=-0.01; scene.add(bedGrid);
+  bedOutline=new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.PlaneGeometry(BED,BEDY)),new THREE.LineBasicMaterial({color:0x2a3a48}));
+  bedOutline.rotation.x=-Math.PI/2; scene.add(bedOutline);
+}
 function initScene(){
   scene=new THREE.Scene();scene.background=new THREE.Color(0x0a0e12);scene.fog=new THREE.Fog(0x0a0e12,320,720);
   camera=new THREE.PerspectiveCamera(45,innerWidth/innerHeight,0.5,1600);
@@ -818,10 +870,7 @@ function initScene(){
   scene.add(new THREE.AmbientLight(0x8fa3b5,.55));
   const d1=new THREE.DirectionalLight(0xffffff,.75);d1.position.set(60,120,80);scene.add(d1);
   const d2=new THREE.DirectionalLight(0x6fd8ff,.25);d2.position.set(-80,40,-60);scene.add(d2);
-  const grid=new THREE.GridHelper(BED,33,0x223140,0x15202b);grid.position.y=-0.01;scene.add(grid);
-  // bed outline
-  const bo=new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.PlaneGeometry(BED,BEDY)),new THREE.LineBasicMaterial({color:0x2a3a48}));
-  bo.rotation.x=-Math.PI/2;scene.add(bo);
+  rebuildBed();
   root=new THREE.Group();scene.add(root);
   addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight);});
 }
@@ -921,6 +970,104 @@ function updateStats(){
 function updateBar(){document.getElementById('curL').textContent=visK;
   document.getElementById('maxL').textContent=Math.max(0,layers.length-1);
   const L=layers[visK];document.getElementById('roleLbl').textContent=L?(L.role==='cap'?'spiral cap':L.role==='chord'?'chord · rails':'web · '+(L.webType||P.webType)):'–';}
+
+/* ---------- JSON parameter interface + validity report ----------
+   The contract a language model is held to: it proposes PARAMETERS, never
+   geometry. WEFT builds them and answers with a machine-readable verdict.
+   The compiler is the governor; the model never touches the toolpath. */
+const PARAM_KEYS=['mode','wallH','domeR','sweep','hFrac','capClose','noz','bead','lh','webType',
+  'cycle','w','lambda','amp','ampF','altPhase','autoLOD','minGap','gradeLean','lambdaS','overshoot',
+  'dwell','jitter','flowBoost','maxBridge','checkOv','speed','bridgeSpeed','temp','bed','fan',
+  'grid','sweepX','sweepY','specW','specH'];
+const PARAM_RANGE={bead:[0.2,1.2],lh:[0.08,0.4],w:[2,40],lambda:[3,40],overshoot:[0,6],dwell:[0,3],
+  jitter:[0,1],flowBoost:[1,2],speed:[5,200],bridgeSpeed:[3,80],temp:[180,300],bed:[0,100],fan:[0,100],
+  wallH:[1,300],domeR:[10,160],sweep:[10,360],hFrac:[0.1,1],amp:[0,8],ampF:[0,8],minGap:[0.4,10],
+  lambdaS:[1,20],maxBridge:[2,60],grid:[2,6],specW:[8,120],specH:[4,120],noz:[0.2,0.8]};
+const ENUMS={mode:['wall','dome','import','batch'],webType:['diagonal','perp','staple','sine','eight'],
+  sweepX:['lambda','overshoot','w','web','speed','bead'],sweepY:['lambda','overshoot','w','web','speed','bead']};
+
+function weftParams(){
+  const o={machine:MACHINE};
+  for(const k of PARAM_KEYS) o[k]=Array.isArray(P[k])?P[k].slice():P[k];
+  if(P.mode==='wall') o.plan=planPts.map(q=>({x:+q.x.toFixed(3),y:+q.y.toFixed(3)}));
+  return o;
+}
+/* Returns {applied:[], rejected:[{key,value,why}]} — a bad key is REFUSED and
+   reported, never silently coerced: a repair loop needs to know what was wrong. */
+function applyWeftParams(o){
+  const applied=[], rejected=[];
+  if(o.machine && MACHINES[o.machine]){ setMachine(o.machine); applied.push('machine'); }
+  for(const k of PARAM_KEYS){
+    if(!(k in o)) continue;
+    let v=o[k];
+    if(ENUMS[k] && !ENUMS[k].includes(v)){ rejected.push({key:k,value:v,why:'not one of '+ENUMS[k].join('|')}); continue; }
+    if(k==='cycle'){
+      if(!Array.isArray(v)||!v.length||!v.every(r=>['chord','web'].includes(r))){ rejected.push({key:k,value:v,why:'cycle must be a non-empty array of "chord"/"web"'}); continue; }
+    } else if(PARAM_RANGE[k]){
+      const n=+v, [lo,hi]=PARAM_RANGE[k];
+      if(!isFinite(n)||n<lo||n>hi){ rejected.push({key:k,value:v,why:`out of range ${lo}..${hi}`}); continue; }
+      v=n;
+    }
+    P[k]=Array.isArray(v)?v.slice():v; applied.push(k);
+  }
+  if(Array.isArray(o.plan)&&o.plan.length>=2){
+    const pl=o.plan.filter(q=>isFinite(+q.x)&&isFinite(+q.y)).map(q=>({x:+q.x,y:+q.y}));
+    if(pl.length>=2){ planPts=pl; applied.push('plan'); } else rejected.push({key:'plan',value:'…',why:'needs >=2 finite points'});
+  }
+  return {applied,rejected};
+}
+/* The verdict. errors = will not print / not the method; warnings = printable but
+   outside the design intent. Numbers are the same ones the status panel shows. */
+function validityReport(){
+  const errors=[], warnings=[];
+  /* same aggregation as updateStats — one source of truth for the numbers the
+     UI shows and the numbers a model is answered with */
+  let len=0,nodes=0,ov=0,t=0,minGap=1e9,zmax=0;
+  for(const L of layers){
+    len+=L.len; nodes+=L.apexes.length; ov+=(L.ov?L.ov.length:0);
+    zmax=Math.max(zmax,(L.zBot||0)+P.lh);
+    if(L.nodeGap!=null) minGap=Math.min(minGap,L.nodeGap);
+    const base=L.speed||P.speed;
+    const spd=L.zBot===0?Math.min(base,15):(L.role==='chord'?Math.min(P.bridgeSpeed,base):base);
+    t+=L.len/spd+0.6;
+  }
+  const AwS=P.w/2+P.overshoot; let webSpan, chordSpan;
+  if(P.webType==='staple'){ webSpan=P.w+2*P.overshoot; chordSpan=P.lambda/2; }
+  else if(P.webType==='perp'){ webSpan=Math.max(P.w+2*P.overshoot, P.lambda/2); chordSpan=P.lambda/2; }
+  else { webSpan=Math.hypot(P.lambda/2, 2*AwS); chordSpan=P.lambda; }
+  const bb=bbox(), gapFloor=Math.max(P.minGap,P.bead*2.2);
+  const fits=bb.w<=BED-10&&bb.h<=BEDY-10;
+  let tris=0; for(const L of layers) if(L.geo) tris+=L.geo.idx.length/3;
+
+  if(!layers.length) errors.push('no geometry: the build produced zero layers');
+  if(!fits) errors.push(`does not fit the ${MACHINES[MACHINE].label} plate: ${bb.w.toFixed(0)}×${bb.h.toFixed(0)} mm in ${BED}×${BEDY}`);
+  if(ov) errors.push(`${ov} unintended same-layer overlaps — threads would fuse where they should cross`);
+  if(minGap<1e8&&minGap<gapFloor*0.99) errors.push(`weld nodes ${minGap.toFixed(2)} mm apart, below the ${gapFloor.toFixed(2)} mm floor (2.2 beads)`);
+  if(P.temp>MACHINES[MACHINE].hotMax) errors.push(`nozzle ${P.temp} °C exceeds the ${MACHINES[MACHINE].label} limit of ${MACHINES[MACHINE].hotMax} °C`);
+  if(P.bed>MACHINES[MACHINE].bedMax) errors.push(`bed ${P.bed} °C exceeds the ${MACHINES[MACHINE].label} limit of ${MACHINES[MACHINE].bedMax} °C`);
+  if(webSpan>P.maxBridge) warnings.push(`web bridges ${webSpan.toFixed(1)} mm, over the ${P.maxBridge} mm limit — expect droop`);
+  if(chordSpan>P.maxBridge) warnings.push(`chord spans ${chordSpan.toFixed(1)} mm between welds, over the ${P.maxBridge} mm limit`);
+  if(P.bead<P.noz*0.9||P.bead>P.noz*2.2) warnings.push(`bead ${P.bead} mm is outside the single-line range of a ${P.noz} mm nozzle`);
+  if(P.lh>P.bead*0.8) warnings.push(`layer ${P.lh} mm against bead ${P.bead} mm: too little squish for reliable welds`);
+  if(P.mode==='batch') warnings.push('batch mode: span figures describe the restored parameter set, not each swept cell');
+
+  return { valid:errors.length===0, errors, warnings,
+    machine:MACHINES[MACHINE].label, bed:[BED,BEDY],
+    layers:layers.length, weldNodes:nodes, threadLength_mm:+len.toFixed(0),
+    size_mm:[+bb.w.toFixed(1),+bb.h.toFixed(1),+zmax.toFixed(1)], bedFit:fits,
+    overlaps:ov, minNodeGap_mm:minGap<1e8?+minGap.toFixed(2):null, nodeGapFloor_mm:+gapFloor.toFixed(2),
+    maxWebSpan_mm:+webSpan.toFixed(1), maxChordSpan_mm:+chordSpan.toFixed(1),
+    wallWidth_mm:+(P.w+2*Math.max(0,P.overshoot)).toFixed(2),
+    estPrint_min:Math.round(t/60), triangles:tris };
+}
+/* one call for the harness: params in → build → verdict out */
+function weftEvaluate(o){
+  const r=applyWeftParams(o||{});
+  fullBuild();
+  const v=validityReport();
+  if(r.rejected.length) v.errors=r.rejected.map(x=>`parameter "${x.key}"=${JSON.stringify(x.value)} rejected: ${x.why}`).concat(v.errors), v.valid=false;
+  return {...v, applied:r.applied, rejected:r.rejected, params:weftParams()};
+}
 
 /* ---------- exports ---------- */
 function dl(blob,name){const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),4000);}
@@ -1151,6 +1298,9 @@ document.getElementById('modeSeg').querySelectorAll('button').forEach(b=>b.oncli
   document.getElementById('secDome').style.display=P.mode==='dome'?'block':'none';
   document.getElementById('secImport').style.display=P.mode==='import'?'block':'none';
   document.getElementById('secBatch').style.display=P.mode==='batch'?'block':'none';scheduleBuild();});
+document.getElementById('machSeg').querySelectorAll('button').forEach(b=>b.onclick=()=>{
+  document.getElementById('machSeg').querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));
+  setMachine(b.dataset.m);scheduleBuild();});
 document.getElementById('objBtn').onclick=()=>document.getElementById('objFile').click();
 document.getElementById('objFile').onchange=e=>{const fl=e.target.files[0];if(!fl)return;
   const rd=new FileReader();rd.onload=()=>{parseOBJ(rd.result);scheduleBuild();};rd.readAsText(fl);};
@@ -1178,6 +1328,98 @@ document.body.classList.add('ess');syncDwell();
 initScene();bindOrbit();drawPlan();drawCycle();fullBuild();
 document.getElementById('loading').remove();
 (function loop(){requestAnimationFrame(loop);updateCam();renderer.render(scene,camera);})();
+
+/* ---------- presets + parameter files ---------- */
+(function initPresets(){
+  const sel=document.getElementById('presetSel'), note=document.getElementById('presetNote');
+  let table=null;
+  const apply=(entry)=>{
+    const v=weftEvaluate(entry.params);
+    note.innerHTML=(entry.note||'')+`<br><b>${v.valid?'valid':'INVALID'}</b> · ${v.layers} layers · ${v.weldNodes} welds · ${v.size_mm.join('×')} mm · ~${v.estPrint_min} min`
+      + (v.errors.length?'<br><span class="warn">'+v.errors.join('<br>')+'</span>':'');
+    const N=Math.max(0,layers.length-1); const sl=document.getElementById('laySlider');
+    sl.max=N; if(visK>N){visK=N; sl.value=N;} updateBar(); updateVisibility();
+  };
+  const fill=(t)=>{ table=t;
+    sel.innerHTML='<option value="">— preset —</option>'+t.map((e,i)=>`<option value="${i}">${e.file}</option>`).join('');
+    sel.onchange=()=>{ const e=table[+sel.value]; if(e) apply(e); }; };
+  /* served (bridge or any http server) → the shipped table; file:// → use the buttons */
+  fetch('presets/presets.json').then(r=>r.ok?r.json():null).then(j=>{ if(j&&j.presets) fill(j.presets); }).catch(()=>{});
+
+  document.getElementById('paramLoadBtn').onclick=()=>document.getElementById('paramFile').click();
+  document.getElementById('paramFile').onchange=e=>{ const f=e.target.files[0]; if(!f) return;
+    const rd=new FileReader();
+    rd.onload=()=>{ try{ const o=JSON.parse(rd.result);
+        if(o.presets){ fill(o.presets); note.textContent=o.presets.length+' presets loaded — pick one above'; return; }
+        apply({params:o.params||o, note:o.note||f.name});
+      }catch(err){ note.innerHTML='<span class="warn">not readable as parameters: '+err.message+'</span>'; } };
+    rd.readAsText(f); };
+  document.getElementById('paramSaveBtn').onclick=()=>{
+    const body={ note:'WEFT parameters', saved:new Date().toISOString(), params:weftParams(), report:validityReport() };
+    dl(new Blob([JSON.stringify(body,null,2)],{type:'application/json'}),'weft_params.json'); };
+})();
+
+/* ---------- Design by language (optional; needs bridge/serve.js) ----------
+   Nothing here synthesises geometry. The model returns parameters, WEFT builds
+   them, and validityReport() is the verdict that either accepts them or goes
+   back as the next prompt. The compiler is the governor. */
+(async function initAI(){
+  const el=id=>document.getElementById(id);
+  let providers=[]; let run=null;
+  try{
+    const r=await fetch('/weft/providers'); if(!r.ok) return;
+    providers=(await r.json()).providers.filter(p=>p.available);
+  }catch{ return; }                       // opened as a file:// page — panel stays hidden
+  if(!providers.length){ el('secAI').style.display='block'; el('v_aiStat').textContent='no CLI found'; return; }
+  el('secAI').style.display='block';
+  el('aiProv').innerHTML=providers.map(p=>`<option value="${p.id}">${p.label}</option>`).join('');
+  const fillModels=()=>{ const p=providers.find(x=>x.id===el('aiProv').value);
+    el('aiModel').innerHTML=p.models.map(m=>`<option value="${m.id}">${m.label}</option>`).join(''); };
+  el('aiProv').onchange=fillModels; fillModels();
+  el('v_aiStat').textContent=providers.length+' available';
+  el('aiTries').oninput=()=>el('v_aiTries').textContent=el('aiTries').value;
+
+  const say=(t,cls)=>{ const o=el('aiOut'); o.innerHTML+=(o.innerHTML?'\n':'')+(cls?`<span class="${cls}">${t}</span>`:t); o.scrollTop=o.scrollHeight; };
+
+  el('aiGo').onclick=async ()=>{
+    const brief=el('aiBrief').value.trim(); if(!brief) return;
+    const provider=el('aiProv').value, model=el('aiModel').value, maxTries=+el('aiTries').value;
+    el('aiOut').innerHTML=''; el('aiGo').disabled=true;
+    run={ brief, provider, model, started:new Date().toISOString(), attempts:[],
+          startParams:weftParams(), summary:{} };
+    let report=null, params=weftParams(), accepted=false;
+    for(let attempt=1; attempt<=maxTries; attempt++){
+      say(`▸ attempt ${attempt} — asking ${provider}/${model} …`);
+      let resp;
+      try{ resp=await (await fetch('/weft/ask',{method:'POST',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({provider,model,brief,params,report,attempt})})).json(); }
+      catch(e){ say('  bridge unreachable: '+e.message,'warn'); break; }
+      if(!resp.ok){ say('  CLI failed: '+resp.error,'warn'); run.attempts.push({attempt,error:resp.error}); break; }
+      if(resp.parseFailed){ say(`  no JSON in the reply (${(resp.ms/1000).toFixed(1)} s) — counted as a failed attempt`,'warn');
+        run.attempts.push({attempt,ms:resp.ms,parseFailed:true,raw:resp.raw}); report={valid:false,errors:['your reply contained no JSON object'],warnings:[]}; continue; }
+      say(`  ${(resp.ms/1000).toFixed(1)} s · ${Object.keys(resp.params).length} keys${resp.cleanJSON?'':' · JSON needed extracting'}`);
+      const v=weftEvaluate(resp.params);
+      run.attempts.push({attempt,ms:resp.ms,strategy:resp.strategy,cleanJSON:resp.cleanJSON,
+        proposed:resp.params,applied:v.applied,rejected:v.rejected,report:{valid:v.valid,errors:v.errors,warnings:v.warnings},raw:resp.raw});
+      params=v.params; report=v;
+      if(v.valid){ say(`  ✓ VALID — ${v.layers} layers, ${v.weldNodes} welds, ${v.size_mm.join('×')} mm, ~${v.estPrint_min} min`,'good');
+        (v.warnings||[]).forEach(w=>say('    warning: '+w));
+        accepted=true; break; }
+      v.errors.forEach(e=>say('  ✗ '+e,'warn'));
+    }
+    run.summary={ valid:accepted, attempts:run.attempts.length, provider, model,
+      totalMs:run.attempts.reduce((a,x)=>a+(x.ms||0),0), brief };
+    run.finalParams=weftParams(); run.finalReport=report;
+    say(accepted?'▸ accepted after '+run.attempts.length+' attempt(s)':'▸ no valid design within the attempt budget');
+    el('aiGo').disabled=false;
+  };
+
+  el('aiSave').onclick=async ()=>{
+    if(!run) return;
+    try{ const r=await (await fetch('/weft/log',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(run)})).json();
+      say('▸ saved '+r.file,'good'); }catch(e){ say('save failed: '+e.message,'warn'); }
+  };
+})();
 </script>
 </body>
 </html>

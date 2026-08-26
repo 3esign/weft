@@ -38,7 +38,10 @@ const E1_PARAMS = { mode:'batch', grid:4, sweepX:'overshoot', sweepY:'web', spec
   altPhase:true, autoLOD:true, minGap:1.4, amp:0, ampF:1, checkOv:true, overshoot:1.0,
   webType:'staple', gradeLean:false, temp:215, bed:55 };
 
-const browser = await chromium.launch();
+const browser = await chromium.launch({executablePath: process.env.WEFT_CHROMIUM || undefined,
+  /* headless pages are treated as background: setTimeout(...,0) gets clamped to ~1 s,
+     and the chunked exporters yield every 10 layers — 1072 layers took 130 s. */
+  args:['--disable-background-timer-throttling','--disable-renderer-backgrounding','--disable-backgrounding-occluded-windows']});
 const page = await browser.newPage({ viewport:{width:1600,height:1000} });
 page.on('pageerror', e=>console.error('PAGE ERROR:', e.message));
 await page.goto(pathToFileURL(APP).href, {waitUntil:'domcontentloaded'});  // don't wait for web fonts — offline is a supported mode
@@ -334,6 +337,113 @@ let regenTris=0;
   check('T12 L-corner: no inner-rail folds, 0 overlaps', r.corner.folds===0&&r.corner.ov===0, `folds ${r.corner.folds}, overlaps ${r.corner.ov}`);
   check('T12b hostile zigzag: no folds, 0 overlaps', r.zigzag.folds===0&&r.zigzag.ov===0, `folds ${r.zigzag.folds}, overlaps ${r.zigzag.ov}`);
   check('T12c S-arc preset: 0 overlaps (was ~203)', r.arc.ov===0, `overlaps ${r.arc.ov}, folds ${r.arc.folds}`);
+}
+
+/* ---------- T13 machine profiles: A2L / A1 ---------- */
+{
+  const r = await page.evaluate(async ()=>{
+    const smallWall = ()=>{ Object.assign(P,{mode:'wall',wallH:2.4,webType:'staple',w:5,lambda:8,overshoot:1.0,
+      bead:0.45,lh:0.24,amp:0,ampF:1,jitter:0,altPhase:true,autoLOD:true,minGap:1.4,checkOv:false,gradeLean:false});
+      preset('straight'); buildLayers(); };
+    const xyRange = (g)=>{ let mnx=1e9,mny=1e9,mxx=-1e9,mxy=-1e9;
+      for(const ln of g.split('\n')){ const m=/^G1 X([-\d.]+) Y([-\d.]+)/.exec(ln); if(!m) continue;
+        const x=+m[1], y=+m[2]; if(x<mnx)mnx=x; if(x>mxx)mxx=x; if(y<mny)mny=y; if(y>mxy)mxy=y; }
+      return {mnx,mny,mxx,mxy}; };
+
+    setMachine('a2l'); smallWall();
+    const a2l = { bed:[BED,BEDY], g:xyRange(await buildGcodeText()) };
+
+    setMachine('a1'); smallWall();
+    const a1  = { bed:[BED,BEDY], g:xyRange(await buildGcodeText()),
+                  label:(document.getElementById('bedRect')||{}).textContent,
+                  bedSliderMax:+document.getElementById('bed').max };
+
+    // the E1 batch geometry itself must fit an A1 plate
+    Object.assign(P,{mode:'batch',grid:4,sweepX:'overshoot',sweepY:'web',specW:28,specH:16,
+      w:5,lambda:8,bead:0.45,lh:0.24,dwell:0.6,jitter:0,altPhase:true,autoLOD:true,minGap:1.4,
+      amp:0,ampF:1,checkOv:true,overshoot:1.0,webType:'staple',gradeLean:false});
+    buildLayers();
+    let mnx=1e9,mny=1e9,mxx=-1e9,mxy=-1e9;
+    for(const L of layers) for(const q of L.pts){ if(q.x<mnx)mnx=q.x; if(q.x>mxx)mxx=q.x; if(q.y<mny)mny=q.y; if(q.y>mxy)mxy=q.y; }
+    const plate={w:mxx-mnx,h:mxy-mny,ov:layers.reduce((a,L)=>a+(L.ov||[]).length,0)};
+
+    setMachine('a2l');   // restore — later blocks and the screenshot assume the default machine
+    return {a2l,a1,plate};
+  });
+  const dx = r.a1.g.mnx - r.a2l.g.mnx, dy = r.a1.g.mny - r.a2l.g.mny;
+  check('T13 machine profile: A1 bed is 256×256 and label follows',
+    r.a1.bed[0]===256 && r.a1.bed[1]===256 && r.a1.label==='256×256',
+    `A2L ${r.a2l.bed.join('×')} → A1 ${r.a1.bed.join('×')}, label "${r.a1.label}"`);
+  check('T13b machine profile: G-code origin shifts by exactly half the bed delta',
+    Math.abs(dx+37)<1e-6 && Math.abs(dy+32)<1e-6,
+    `ΔX ${dx.toFixed(3)} (want -37), ΔY ${dy.toFixed(3)} (want -32)`);
+  check('T13c machine profile: A1 bed-temp ceiling is 100 °C',
+    r.a1.bedSliderMax===100, `slider max ${r.a1.bedSliderMax} °C`);
+  check('T13d E1 plate geometry fits an A1 plate with margin',
+    r.plate.w<=246 && r.plate.h<=246 && r.plate.ov===0,
+    `${r.plate.w.toFixed(1)}×${r.plate.h.toFixed(1)} mm in 256×256, ${r.plate.ov} overlaps`);
+}
+
+/* ---------- T14 the governor: JSON params in, verdict out ---------- */
+{
+  const r = await page.evaluate(()=>{
+    setMachine('a1');
+    const good = weftEvaluate({ machine:'a1', mode:'wall', wallH:12, webType:'staple', w:5, lambda:8,
+      overshoot:1.0, bead:0.45, lh:0.24, plan:[{x:-40,y:0},{x:40,y:0}], temp:215, bed:55 });
+    // node spacing far below the 2.2-bead floor. With auto-LOD ON the system is
+    // designed to rescue it by dyadic decimation; with it OFF the governor must refuse.
+    const rescued  = weftEvaluate({ lambda:3, bead:0.9, minGap:0.4, autoLOD:true });
+    const tooDense = weftEvaluate({ lambda:3, bead:0.9, minGap:0.4, autoLOD:false });
+    // nonsense values must come back named, not coerced
+    const junk = weftEvaluate({ bead:5, webType:'zigzag', lh:0.24, cycle:['chord','sideways'] });
+    // a wall far bigger than the A1 plate must fail the fit check
+    const tooBig = weftEvaluate({ mode:'wall', wallH:12, bead:0.45, lambda:8, w:5, minGap:1.4,
+      plan:[{x:-200,y:0},{x:200,y:0}] });
+    const rt = weftParams();
+    setMachine('a2l');
+    return {good, rescued, tooDense, junk, tooBig, rtKeys:Object.keys(rt).length, rtMachine:rt.machine};
+  });
+  check('T14 governor: a sound brief is accepted with numbers attached',
+    r.good.valid && r.good.layers>0 && r.good.weldNodes>0 && r.good.estPrint_min>0,
+    `valid=${r.good.valid}, ${r.good.layers} layers, ${r.good.weldNodes} welds, ~${r.good.estPrint_min} min`);
+  check('T14b governor: under-floor node spacing — LOD rescues it, or it is refused',
+    r.rescued.valid && r.rescued.minNodeGap_mm>=r.rescued.nodeGapFloor_mm*0.99 &&
+    !r.tooDense.valid && r.tooDense.errors.some(e=>/floor/.test(e)),
+    `auto-LOD on: ${r.rescued.minNodeGap_mm} mm ≥ floor ${r.rescued.nodeGapFloor_mm} mm, valid=${r.rescued.valid} · off: ${r.tooDense.errors[0]||'NO ERROR'}`);
+  check('T14c governor: junk parameters are named and rejected, not coerced',
+    !r.junk.valid && r.junk.rejected.length===3 &&
+    r.junk.rejected.map(x=>x.key).sort().join(',')==='bead,cycle,webType',
+    r.junk.rejected.map(x=>`${x.key}: ${x.why}`).join(' | ') || 'nothing rejected');
+  check('T14d governor: geometry off the plate fails the fit check',
+    !r.tooBig.valid && r.tooBig.errors.some(e=>/plate/.test(e)), r.tooBig.errors[0] || 'no error raised');
+  check('T14e governor: parameter round-trip carries the whole set',
+    r.rtKeys>=36 && r.rtMachine==='a1', `${r.rtKeys} keys, machine "${r.rtMachine}"`);
+}
+
+/* ---------- T15 shipped presets still reproduce ---------- */
+{
+  const presetPath = path.join(path.dirname(APP), 'presets', 'presets.json');
+  if(fs.existsSync(presetPath)){
+    const table = JSON.parse(fs.readFileSync(presetPath,'utf8')).presets;
+    const r = await page.evaluate((tbl)=>tbl.map(e=>{
+      const v = weftEvaluate(e.params);
+      return { file:e.file, valid:v.valid, ov:v.overlaps, layers:v.layers, nodes:v.weldNodes,
+               size:v.size_mm, errors:v.errors, want:e.measured };
+    }), table);
+    const bad = r.filter(x=>!x.valid || x.ov!==0);
+    check('T15 every shipped preset builds valid with zero overlaps',
+      bad.length===0, bad.length? bad.map(b=>`${b.file}: ${b.errors[0]||b.ov+' overlaps'}`).join(' | ')
+        : `${r.length} presets, all valid, 0 overlaps`);
+    const drift = r.filter(x=>x.want && (x.layers!==x.want.layers ||
+      (x.want.size_mm && Math.abs(x.size[0]-x.want.size_mm[0])>0.05) ||
+      (x.want.weldNodes!=null && x.nodes!==x.want.weldNodes)));
+    check('T15b preset measurements still match the shipped table',
+      drift.length===0, drift.length? drift.map(d=>`${d.file}: ${d.layers}L/${d.nodes}n vs ${d.want.layers}L/${d.want.weldNodes}n`).join(' | ')
+        : `${r.filter(x=>x.want).length} measured presets match`);
+    await page.evaluate(()=>setMachine('a2l'));
+  } else {
+    check('T15 shipped presets present', false, 'presets/presets.json not found');
+  }
 }
 
 /* ---------- optional screenshot ---------- */

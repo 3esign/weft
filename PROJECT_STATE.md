@@ -31,12 +31,30 @@ vendor/         three.min.js vendored from npm → app runs fully OFFLINE
 paper/          WEFT_draft.docx — method paper, experiments pending; refs need verifying
 specimens/      knowledge base. README.md = manifest schema.
   2026-08_E1_pending/   Experiment 1 plate: STL + manifest + PRINT_INSTRUCTIONS
+bridge/         OPTIONAL Node server: local CLI models behind the app (serve.js,
+                cli.js, README.md, log/ = one JSON per design run)
+presets/        presets.json (parameter vectors + measured numbers) plus the print
+                files small enough to ship; big ones are params-only
+tools_make_presets.mjs  headless preset generator (same code path as the UI buttons)
 exports/        scratch for STL/G-code (gitignored)
 PROJECT_STATE.md  this file
 README.md       user-facing overview + run + safety workflow
 ```
 
 Run: double-click `index.html` (offline-capable). Or `python -m http.server`.
+
+## 2b. Machines (profiles in the app, 2026-08-26)
+
+`MACHINES` carries both plates, and the picker moves all four dependants together:
+bed outline, fit check, batch tiling clamp, G-code origin shift.
+
+- **a2l** - Bambu A2L, 330 x 320, bed <= 80 C. DEFAULT, and it must stay the default:
+  the E1 plate's batch pitch is computed from BED, and its bit-for-bit
+  reproducibility with it.
+- **a1** - Bambu A1, 256 x 256 x 256, 0.4 nozzle fitted, hotend <= 300 C, bed <= 100 C,
+  PLA/PETG/TPU, textured PEI. Four are available for the experiment program. The E1
+  plate is 141 x 122 mm, so the SAME file prints on every machine - which is what
+  makes the between-machine replication experiment possible at all.
 
 ## 3. Hardware facts (verified via web search 2026-08)
 
@@ -147,7 +165,8 @@ flow boost (G-code only). Node markers sit at TRUE crossings, not apexes
 
 The invariants below are no longer a claim from a lost session — they run as
 `tests/run_tests.mjs` (Playwright + headless Chromium against the real
-index.html; 30 checks). Measured 2026-08-06, all passing:
+index.html; **44 checks** as of 2026-08-26, all passing). The core set was
+measured 2026-08-06:
 
 Angular phase lock across dome layers 8.9e-16 rad (< 1e-9) · width-wave
 zeros on nodes 7.9e-14 mm (< 1e-12; the old "<1e-14" was a shade optimistic)
@@ -164,6 +183,26 @@ coordinate checksum match the shipped STL; asserted in the suite) · G-code:
 all 16 first layers ≤15 mm/s, fan on after layer 1, 1071 retract+hop pairs
 between specimens, clean footer · STL: outward winding (signed volume
 +7409.5 mm³), stored normals agree with winding on every sampled facet.
+
+## 8b. The parameter interface and the governor (2026-08-26)
+
+`weftParams()` exports the whole vector; `applyWeftParams()` takes one back and
+REFUSES bad keys by name instead of coercing them; `validityReport()` returns the
+machine-readable verdict (errors = will not print, or is not the method; warnings =
+printable but outside the design intent), computed from the same aggregation the
+status panel uses - one source of truth. `weftEvaluate(params)` is the whole loop:
+params in, build, verdict out.
+
+This is the contract the language-model work is held to: **the model proposes
+parameters, never geometry.** The compiler is the governor. `bridge/serve.js` puts
+local CLIs (Claude Code / Codex / Antigravity, discovered by probing `--version`,
+ordered-strategy fallback as in Svemir's cli_bridge) behind that contract and logs
+every exchange to `bridge/log/` - brief, each attempt, raw reply, what was applied,
+what was rejected and why, the verdict, the final parameters. That log is the
+dataset for the paper's benchmark; attempts-to-valid per model is a number.
+
+The app is unchanged when the bridge is absent: the panel only appears if
+`/weft/providers` answers, so `index.html` alone is still the whole product.
 
 ## 9. Experiment 1 — READY, NOT PRINTED
 
@@ -198,11 +237,46 @@ adhesive (welds govern; e + flow boost are the levers).
   printability — the checker still reports honestly whatever remains.
 - Converging plan walls don't merge into one bead (dome cap is the only merge
   case). Planned: Clipper-style offset-union + medial axis; splice, not weave.
+- **CLOSED REVOLVES SEAM (measured 2026-08-26).** A 360 deg dome puts ~800-2200
+  unintended overlaps into every model - every web type, every lambda. They sit at
+  +/-178-180 deg, on WEB layers only (which are closed:false), i.e. exactly where the
+  pattern's two ends meet. Open sweeps and walls are clean (0 overlaps at 270 deg).
+  Snapping lambda to a whole number of waves around the equator was tried and does
+  NOT fix it - the seam is the web layer's endpoints meeting, not pitch
+  commensurability - and that attempt was reverted rather than left in place looking
+  like a fix. Real fix: generate closed-revolve webs over [0, arc) and mark them
+  closed so the wrap-around exclusion applies. Deferred until after E1.
+  **Until then: print domes at 270 deg.**
+- **THE NODE-GAP FLOOR IS NOT SUFFICIENT ON CURVED CENTERLINES (measured
+  2026-08-26).** On the R60 dome, lambda=5 and lambda=6 produce 99 and 72 overlaps
+  while still passing the gap floor (1.42 and 1.60 mm against a 1.40 mm floor): the
+  staple's lateral excursion collides before node spacing does, because curvature is
+  not in the floor's formula. lambda >= 7 is clean there. The independent overlap
+  detector - not the floor - is what makes this safe, which is the honest form of
+  the "valid by construction" claim.
+- **LEAN GRADING ~= DYADIC AUTO-LOD IN THE TESTED WINDOW (measured 2026-08-26).**
+  On the R60 270 deg dome, graded and ungraded produced identical weld counts and
+  identical thread length to the millimetre at both lambda=8 and lambda=16. The
+  graded target is clamped to the same floor and quantised onto the same dyadic
+  rungs, so it lands where auto-LOD already lands. Grading is a stated POLICY, not a
+  different outcome, in this parameter range - the paper must say so rather than
+  implying graded geometry differs.
 - Structural frame solver: sequenced AFTER E1 (E1 measures the joint
   stiffness it needs).
 - Lean grading for imports (needs per-slice normal estimation).
 - Manifest export FROM the app UI (E1's manifest was generated headlessly;
   wiring a "download manifest" button in batch mode is a good next code task).
+
+## 10b. Presets (2026-08-26)
+
+`presets/presets.json` holds twelve parameter vectors with their measured numbers
+(layers, welds, size, overlaps, estimated time) for the three-day, four-A1 program:
+C1 calibration ladder, E1 web x overhang, P2 lambda x web, P3 span x overhang,
+R1 Route A / Route B coupon pair, D2 dome lambda-ladder (7/9/12/16), X1 spiral,
+X2 single-stroke letter. Files <= 20 MB ship beside it; the rest are params-only
+(load the preset, press Download STL). The suite asserts every preset still builds
+valid with zero overlaps AND still matches its recorded numbers, so a preset cannot
+drift away from the app unnoticed.
 
 ## 11. Immediate next steps, in order
 
@@ -316,3 +390,23 @@ amp≥2, staple crowding on tightly curved plans, arc-length import drift.
   (weft_pilot_routeB.gcode): validated on-bed, 67 layers, first layer
   ≤15 mm/s, fan from layer 2, single continuous thread per layer,
   brim loops post-spliced. Awaiting print.
+
+2026-08-26 addendum (A1 machines, parameter interface, model harness, presets):
+- Machine profiles added (2b). Default stays A2L; the E1 plate still regenerates
+  bit-for-bit. New checks: A1 bed 256x256 with the label following, G-code origin
+  shifting by exactly half the bed delta (dX -37, dY -32), A1 bed ceiling 100 C,
+  and the E1 plate fitting an A1 plate with margin.
+- JSON parameter interface, machine-readable validity report and weftEvaluate (8b),
+  with a preset picker and load/save parameter files in the sidebar.
+- bridge/ - optional Node server putting local CLI models behind the governor
+  contract, logging every design run as the benchmark dataset.
+- presets/ - twelve verified parameter vectors for the three-day program (10b),
+  generated headlessly by tools_make_presets.mjs through the app's own exporters.
+- Three measured findings, all limits rather than wins, recorded in 10:
+  the closed-revolve seam, the insufficiency of the node-gap floor on curved
+  centerlines, and lean grading being indistinguishable from auto-LOD here. Two of
+  the three were caught by the suite refusing to let a preset ship.
+- Headless export note: Chromium backgrounds the page and clamps setTimeout(...,0)
+  to ~1 s, so the chunked exporters crawled (130 s for the E1 STL). The harness and
+  the generator now launch with background-timer throttling disabled.
+- Test count 30 -> 44.
