@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WEFT · continuous lattice toolpath studio · phase 2</title>
+<script src="vendor/three.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0e12; --panel:#10161c; --panel2:#0d1217; --line:#1d2731;
+  --text:#c9d3dc; --dim:#66737f; --accent:#3fe0ff; --node:#ffb63b;
+  --danger:#ff4d5e; --ok:#59e0a0; --warp:#8a6bff;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;overflow:hidden}
+body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:11px}
+#view{position:fixed;inset:0}
+canvas{display:block}
+#panel{position:fixed;top:0;left:0;bottom:0;width:266px;overflow-y:auto;
+  background:linear-gradient(180deg,var(--panel),var(--panel2));border-right:1px solid var(--line);
+  padding:16px 16px 90px;z-index:10}
+#panel::-webkit-scrollbar{width:6px}
+#panel::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:22px;letter-spacing:.06em;color:#eef4f8}
+h1 span{color:var(--accent)}
+.tag{color:var(--dim);font-size:9px;letter-spacing:.14em;text-transform:uppercase;margin:2px 0 14px}
+.sec{border-top:1px solid var(--line);padding:12px 0 4px;margin-top:8px}
+.sec>.st{font-size:9px;letter-spacing:.18em;color:var(--dim);text-transform:uppercase;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center}
+.ctl{margin-bottom:11px}
+.ctl .row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px}
+.ctl label{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--text)}
+.ctl .val{color:var(--accent);font-weight:600;font-size:11px}
+input[type=range]{width:100%;-webkit-appearance:none;appearance:none;height:2px;background:var(--line);outline:none}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:11px;height:11px;background:var(--accent);border-radius:2px;cursor:pointer}
+input[type=range]::-moz-range-thumb{width:11px;height:11px;background:var(--accent);border-radius:2px;border:none;cursor:pointer}
+.seg{display:flex;border:1px solid var(--line);border-radius:3px;overflow:hidden;margin-bottom:12px}
+.seg button{flex:1;background:transparent;border:none;color:var(--dim);font-family:inherit;font-size:10px;
+  letter-spacing:.1em;text-transform:uppercase;padding:7px 2px;cursor:pointer}
+.seg button.on{background:var(--accent);color:#04252e;font-weight:600}
+.seg.sm button{font-size:9px;letter-spacing:.06em;padding:6px 1px}
+body.ess .adv{display:none}
+.tgl{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.tgl label{font-size:10px;letter-spacing:.08em;text-transform:uppercase}
+.sw{position:relative;width:30px;height:16px;background:var(--line);border-radius:9px;cursor:pointer;transition:background .15s;flex:none}
+.sw.on{background:var(--accent)}
+.sw::after{content:'';position:absolute;top:2px;left:2px;width:12px;height:12px;background:#0a0e12;border-radius:50%;transition:left .15s}
+.sw.on::after{left:16px}
+button.act{width:100%;background:transparent;border:1px solid var(--accent);color:var(--accent);
+  font-family:inherit;font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;
+  padding:9px 0;border-radius:3px;cursor:pointer;margin-bottom:8px;transition:all .15s}
+button.act:hover{background:var(--accent);color:#04252e}
+button.act.warp{border-color:var(--warp);color:var(--warp)}
+button.act.warp:hover{background:var(--warp);color:#0a0e12}
+button.mini{background:transparent;border:1px solid var(--line);color:var(--dim);font-family:inherit;
+  font-size:9px;letter-spacing:.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;cursor:pointer}
+button.mini:hover{border-color:var(--accent);color:var(--accent)}
+.presetrow{display:flex;gap:6px;margin-bottom:8px;flex-wrap:wrap}
+#planEd{width:100%;height:150px;background:#0a0f14;border:1px solid var(--line);border-radius:3px;cursor:crosshair;touch-action:none}
+.hint{color:var(--dim);font-size:9px;line-height:1.5;margin-top:6px}
+details{margin-bottom:8px}
+summary{color:var(--dim);font-size:9px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;padding:4px 0}
+textarea{width:100%;background:#0a0f14;border:1px solid var(--line);border-radius:3px;color:var(--text);
+  font-family:inherit;font-size:9px;padding:6px;resize:vertical}
+.cyc{display:flex;gap:3px;margin-bottom:6px;flex-wrap:wrap}
+.cyc .slot{border:1px solid var(--line);border-radius:3px;padding:4px 6px;font-size:9px;letter-spacing:.05em;
+  text-transform:uppercase;cursor:pointer;color:var(--dim);user-select:none}
+.cyc .slot.chord{border-color:#4a5560;color:#aeb9c4}
+.cyc .slot.web{border-color:var(--warp);color:var(--warp)}
+#status{position:fixed;top:14px;right:52px;width:226px;background:rgba(16,22,28,.92);border:1px solid var(--line);
+  border-radius:4px;padding:12px 14px;z-index:10;backdrop-filter:blur(4px)}
+#status .st{font-size:9px;letter-spacing:.18em;color:var(--dim);text-transform:uppercase;margin-bottom:8px}
+.srow{display:flex;justify-content:space-between;margin-bottom:4px;font-size:10px}
+.srow .k{color:var(--dim)} .srow .v{color:var(--text);font-weight:500}
+.srow .v.warn{color:var(--danger)} .srow .v.good{color:var(--ok)} .srow .v.acc{color:var(--accent)}
+#layerbar{position:fixed;left:calc(50% + 120px);bottom:16px;transform:translateX(-50%);display:flex;align-items:center;
+  gap:14px;background:rgba(16,22,28,.92);border:1px solid var(--line);border-radius:4px;padding:10px 16px;z-index:10;backdrop-filter:blur(4px)}
+#layerbar input[type=range]{width:260px}
+#layerLbl{min-width:150px;font-size:10px} #layerLbl b{color:var(--accent);font-weight:600}
+#roleLbl{color:var(--dim);text-transform:uppercase;letter-spacing:.1em;font-size:9px}
+#loom{position:fixed;right:14px;top:14px;bottom:14px;width:22px;z-index:10;display:flex;flex-direction:column}
+#loomTitle{writing-mode:vertical-rl;color:var(--dim);font-size:8px;letter-spacing:.25em;text-transform:uppercase;text-align:center;margin-bottom:6px}
+#loomCv{flex:1;width:22px;background:rgba(16,22,28,.85);border:1px solid var(--line);border-radius:3px;cursor:pointer}
+#loading{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:var(--bg);z-index:100;
+  font-size:10px;letter-spacing:.2em;color:var(--dim);text-transform:uppercase}
+#modal{position:fixed;inset:0;background:rgba(6,9,12,.82);z-index:200;display:none;align-items:center;justify-content:center}
+#modalBox{width:460px;max-height:80vh;overflow-y:auto;background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:22px}
+#modalBox h2{font-family:'Syne',sans-serif;font-size:16px;color:#eef4f8;margin-bottom:12px}
+#modalBox p,#modalBox li{font-size:10px;line-height:1.7;color:var(--text);margin-bottom:8px}
+#modalBox ol{padding-left:18px} #modalBox b{color:var(--accent)}
+#modalBox .close{float:right;cursor:pointer;color:var(--dim);font-size:14px}
+</style>
+</head>
+<body>
+<div id="loading">weaving toolpaths…</div>
+<div id="view"></div>
+
+<div id="panel">
+  <h1>WEFT<span>.</span></h1>
+  <div class="tag">continuous lattice toolpath studio · phase 2 · A2L</div>
+
+  <div class="seg" id="modeSeg">
+    <button data-m="wall" class="on">Wall</button>
+    <button data-m="dome">Dome</button>
+    <button data-m="import">Import</button>
+    <button data-m="batch">Batch</button>
+  </div>
+  <div class="seg sm" id="viewSeg">
+    <button data-v="ess" class="on">Essential</button>
+    <button data-v="full">Full</button>
+  </div>
+
+  <div class="sec" id="secWall">
+    <div class="st">Plan curve <span style="letter-spacing:0"><button class="mini" id="undoPt">undo</button></span></div>
+    <div class="presetrow">
+      <button class="mini" data-p="straight">Straight</button>
+      <button class="mini" data-p="corner">L-corner</button>
+      <button class="mini" data-p="arc">S-arc</button>
+    </div>
+    <canvas id="planEd" width="232" height="150"></canvas>
+    <div class="hint">click line to insert · empty space appends · drag to move · right-click deletes · grid 10&nbsp;mm</div>
+    <div class="ctl" style="margin-top:10px"><div class="row"><label>Wall height</label><span class="val" id="v_wallH"></span></div>
+      <input type="range" id="wallH" min="6" max="120" step="1"></div>
+  </div>
+
+  <div class="sec" id="secDome" style="display:none">
+    <div class="st">Partial dome</div>
+    <div class="ctl"><div class="row"><label>Radius</label><span class="val" id="v_domeR"></span></div><input type="range" id="domeR" min="15" max="150" step="1"></div>
+    <div class="ctl"><div class="row"><label>Sweep</label><span class="val" id="v_sweep"></span></div><input type="range" id="sweep" min="60" max="360" step="5"></div>
+    <div class="ctl"><div class="row"><label>Height / hemisphere</label><span class="val" id="v_hFrac"></span></div><input type="range" id="hFrac" min="0.2" max="1.0" step="0.01"></div>
+    <div class="tgl"><label>Spiral cap closure</label><div class="sw on" id="capClose"></div></div>
+  </div>
+
+  <div class="sec" id="secImport" style="display:none">
+    <div class="st">Import surface (.obj)</div>
+    <button class="act" id="objBtn">Load .OBJ</button>
+    <input type="file" id="objFile" accept=".obj" style="display:none">
+    <div class="seg sm" id="axSeg"><button data-a="z" class="on">Z up</button><button data-a="y">Y up (Blender)</button></div>
+    <div class="hint" id="objInfo">Open single-surface meshes work best — a wall or shell sheet, not a solid. Each layer is sliced from the mesh and the grammar runs along the slice. Registration is arc-length based, so strongly tapered shapes drift phase (v1 limit).</div>
+  </div>
+
+  <div class="sec" id="secBatch" style="display:none">
+    <div class="st">Specimen array</div>
+    <div class="hint" style="margin-top:0">Tiles test walls across the 330&nbsp;mm bed, sweeping two variables. Every specimen shares identical machine conditions — one job, comparable data.</div>
+    <div class="ctl" style="margin-top:10px"><div class="row"><label>Rows × Cols</label><span class="val" id="v_grid"></span></div><input type="range" id="grid" min="2" max="6" step="1"></div>
+    <div class="row" style="margin-bottom:4px"><label>Sweep X →</label></div>
+    <div class="seg sm" id="sweepXSeg">
+      <button data-s="lambda" class="on">λ node</button><button data-s="overshoot">overshoot</button><button data-s="w">span</button></div>
+    <div class="row" style="margin-bottom:4px"><label>Sweep Y ↑</label></div>
+    <div class="seg sm" id="sweepYSeg">
+      <button data-s="web" class="on">web type</button><button data-s="speed">speed</button><button data-s="bead">bead</button></div>
+    <div class="ctl"><div class="row"><label>Specimen size</label><span class="val" id="v_specW"></span></div><input type="range" id="specW" min="18" max="45" step="1"></div>
+    <div class="ctl"><div class="row"><label>Specimen height</label><span class="val" id="v_specH"></span></div><input type="range" id="specH" min="8" max="40" step="1"></div>
+  </div>
+
+  <div class="sec">
+    <div class="st">Thread · A2L nozzle</div>
+    <div class="seg sm" id="nozSeg">
+      <button data-n="0.2">0.2</button><button data-n="0.4" class="on">0.4</button><button data-n="0.6">0.6</button><button data-n="0.8">0.8</button></div>
+    <div class="ctl"><div class="row"><label>Bead width</label><span class="val" id="v_bead"></span></div><input type="range" id="bead" min="0.2" max="1.4" step="0.02"></div>
+    <div class="ctl"><div class="row"><label>Layer height</label><span class="val" id="v_lh"></span></div><input type="range" id="lh" min="0.08" max="0.7" step="0.02"></div>
+  </div>
+
+  <div class="sec">
+    <div class="st">Web grammar</div>
+    <div class="row" style="margin-bottom:4px"><label>Web layer type</label></div>
+    <div class="seg sm" id="webSeg">
+      <button data-w="diagonal">Diag</button><button data-w="perp">Perp</button><button data-w="staple" class="on">Staple</button><button data-w="sine">Sine</button><button data-w="eight">8</button></div>
+    <div class="cyc" id="cycView"></div>
+    <div class="hint" style="margin-top:0;margin-bottom:8px">Layer cycle (bottom→top repeats). Diag = truss. Perp = square wave, runs beyond the chords. Staple = runs on the chords + overhang tabs. Sine = self-bracing. 8 = self-crossing cells with a mid-weld per loop.</div>
+    <div class="ctl"><div class="row"><label>Wall span (w)</label><span class="val" id="v_w"></span></div><input type="range" id="w" min="2" max="24" step="0.5"></div>
+    <div class="ctl"><div class="row"><label>Node spacing (λ)</label><span class="val" id="v_lambda"></span></div><input type="range" id="lambda" min="3" max="30" step="0.5"></div>
+    <div class="tgl"><label>Auto density (LOD)</label><div class="sw on" id="autoLOD"></div></div>
+    <div class="ctl"><div class="row"><label>Min node gap</label><span class="val" id="v_minGap"></span></div><input type="range" id="minGap" min="0.6" max="6" step="0.1"></div>
+    <div class="tgl"><label>Grade by lean</label><div class="sw" id="gradeLean"></div></div>
+    <div class="ctl"><div class="row"><label>Steep spacing (λs)</label><span class="val" id="v_lambdaS"></span></div><input type="range" id="lambdaS" min="1.5" max="30" step="0.5"></div>
+    <div class="hint adv" style="margin-top:-4px;margin-bottom:8px">Grading: spacing stays near λ at gentle lean, tightens toward λs above ~30°, dyadically quantized so weld columns stay registered. Dome mode only for now.</div>
+    <div class="ctl adv"><div class="row"><label>Width wave amp</label><span class="val" id="v_amp"></span></div><input type="range" id="amp" min="0" max="4" step="0.1"></div>
+    <div class="ctl adv"><div class="row"><label>Width wave freq</label><span class="val" id="v_ampF"></span></div><input type="range" id="ampF" min="1" max="4" step="1"></div>
+    <div class="tgl adv"><label>Alternate web phase</label><div class="sw on" id="altPhase"></div></div>
+  </div>
+
+  <div class="sec">
+    <div class="st">Weld <span style="color:var(--node)">nodes</span></div>
+    <div class="ctl"><div class="row"><label>Overhang ext (e)</label><span class="val" id="v_overshoot"></span></div><input type="range" id="overshoot" min="0" max="4" step="0.1"></div>
+    <div class="ctl adv" id="dwellWrap"><div class="row"><label>Apex dwell</label><span class="val" id="v_dwell"></span></div><input type="range" id="dwell" min="0" max="3" step="0.1"></div>
+    <div class="ctl adv"><div class="row"><label>Phase jitter</label><span class="val" id="v_jitter"></span></div><input type="range" id="jitter" min="0" max="1" step="0.05"></div>
+    <div class="ctl adv"><div class="row"><label>Node flow boost</label><span class="val" id="v_flowBoost"></span></div><input type="range" id="flowBoost" min="1" max="1.8" step="0.05"></div>
+    <div class="tgl"><label>Show weld nodes</label><div class="sw on" id="showNodes"></div></div>
+  </div>
+
+  <div class="sec">
+    <div class="st">Checks</div>
+    <div class="ctl adv"><div class="row"><label>Max bridge</label><span class="val" id="v_maxBridge"></span></div><input type="range" id="maxBridge" min="3" max="30" step="0.5"></div>
+    <div class="tgl adv"><label>Overlap detection</label><div class="sw on" id="checkOv"></div></div>
+  </div>
+
+  <div class="sec">
+    <div class="st">Print</div>
+    <div class="ctl"><div class="row"><label>Speed</label><span class="val" id="v_speed"></span></div><input type="range" id="speed" min="5" max="120" step="1"></div>
+    <div class="ctl adv"><div class="row"><label>Bridge speed</label><span class="val" id="v_bridgeSpeed"></span></div><input type="range" id="bridgeSpeed" min="3" max="50" step="1"></div>
+    <div class="ctl adv"><div class="row"><label>Part fan (＞L1)</label><span class="val" id="v_fan"></span></div><input type="range" id="fan" min="0" max="100" step="5"></div>
+    <div class="ctl"><div class="row"><label>Nozzle temp</label><span class="val" id="v_temp"></span></div><input type="range" id="temp" min="180" max="300" step="5"></div>
+    <div class="ctl adv"><div class="row"><label>Bed temp</label><span class="val" id="v_bed"></span></div><input type="range" id="bed" min="0" max="80" step="5"></div>
+  </div>
+
+  <div class="sec">
+    <div class="st">Export</div>
+    <button class="act" id="expStl">Download STL</button>
+    <button class="act warp" id="expGcode">Download G-code</button>
+    <button class="mini" id="howBtn" style="width:100%;padding:7px 0;margin-bottom:8px">▸ how to print safely on the A2L</button>
+    <details>
+      <summary>A2L G-code header / footer</summary>
+      <div class="hint" style="margin-top:0">Paste a header harvested from any object sliced in Bambu Studio for your A2L (everything before the first print move). This keeps startup, bed mesh and cooling machine-correct — WEFT only writes motion.</div>
+      <textarea id="gHead" style="height:120px;margin-top:6px"></textarea>
+      <textarea id="gFoot" style="height:70px"></textarea>
+    </details>
+  </div>
+</div>
+
+<div id="status">
+  <div class="st">Model</div>
+  <div class="srow"><span class="k">layers</span><span class="v" id="s_layers">–</span></div>
+  <div class="srow"><span class="k">thread length</span><span class="v" id="s_len">–</span></div>
+  <div class="srow"><span class="k">weld nodes</span><span class="v acc" id="s_nodes">–</span></div>
+  <div class="srow"><span class="k">web span</span><span class="v" id="s_webspan">–</span></div>
+  <div class="srow"><span class="k">chord span</span><span class="v" id="s_chordspan">–</span></div>
+  <div class="srow"><span class="k">min node gap</span><span class="v" id="s_gap">–</span></div>
+  <div class="srow"><span class="k">wall width</span><span class="v" id="s_width">–</span></div>
+  <div class="srow"><span class="k">overlaps</span><span class="v" id="s_ov">–</span></div>
+  <div class="srow" id="leanRow" style="display:none"><span class="k">top lean</span><span class="v" id="s_lean">–</span></div>
+  <div class="srow" id="fitRow"><span class="k">bed fit (330×320)</span><span class="v" id="s_fit">–</span></div>
+    <div class="srow"><span class="k">stl size</span><span class="v" id="s_stl">-</span></div>
+<div class="srow"><span class="k">est. time</span><span class="v" id="s_time">–</span></div>
+</div>
+
+<div id="layerbar">
+  <span id="layerLbl">layer <b id="curL">0</b> / <span id="maxL">0</span> · <span id="roleLbl">chord</span></span>
+  <input type="range" id="laySlider" min="0" max="0" step="1" value="0">
+  <button class="mini" id="isoBtn">isolate: off</button>
+</div>
+
+<div id="loom"><div id="loomTitle">layer loom</div><canvas id="loomCv" width="22" height="600"></canvas></div>
+
+<div id="modal"><div id="modalBox">
+  <span class="close" id="modalClose">✕</span>
+  <h2>Printing WEFT on the A2L, safely</h2>
+  <p>You will not damage the machine with these files, because <b>you preview before you print</b>. Two routes, and running both cross-checks your work:</p>
+  <p><b>Route A — STL (trust first).</b> Set bead width to your calibrated single-line width for the mounted nozzle, download the STL, open it in Bambu Studio normally. Arachne recovers each layer as one continuous bead. Studio owns all machine-specific startup — nothing to worry about. Print this first to confirm the geometry and the machine.</p>
+  <p><b>Route B — G-code (weld control).</b> This is the same paths plus flow-boost and dwell at every node — the actual method. To keep startup machine-correct:</p>
+  <ol>
+    <li>In Bambu Studio, slice any small object for your A2L and export its G-code.</li>
+    <li>Open it, copy everything <b>before</b> the first extruding move (the whole start block) into WEFT's header field; copy the end block into the footer.</li>
+    <li>Download WEFT's G-code, then <b>drag the .gcode file onto Bambu Studio's Preview tab</b> (it opens preview-only; there is no File→Import menu entry for G-code) and <b>look at the preview</b>. Every move renders. If anything shoots off the plate you'll see it instantly.</li>
+    <li>Only then send to print. Watch the first layer.</li>
+  </ol>
+  <p>If the G-code preview matches the STL slice, your emitter is sound. That agreement is the safety net.</p>
+</div></div>
+
+<script>
+/* ============================================================
+   WEFT phase 2
+   - web grammar: diagonal (truss) | perp (Vierendeel) | sine
+   - editable layer cycle
+   - weld: overshoot amplitude, apex dwell, seeded phase jitter, flow boost
+   - dome spiral-cap closure when slice radius < w/2+bead
+   - batch specimen array for the A2L (330×320 bed), 2-axis parameter sweep
+   - dual export; G-code uses a pasted machine header (no guessed startup)
+   parameter-space first: pattern synthesized in (u, lateral), mapped via slice curve.
+   2026-08-06 revision (see PROJECT_STATE.md changelog): first-layer speed by
+   z (not array index), part-fan control, retract+z-hop on inter-specimen
+   travels, slicer-standard extrusion area, outward STL winding, per-layer
+   overshoot stamps in overlap check, deterministic jitter seed per build,
+   330×320 bed fit, full-model initial view.
+============================================================ */
+if(typeof THREE==='undefined'){
+  document.getElementById('loading').textContent='vendor/three.min.js missing — app cannot start';
+  throw new Error('three.js not loaded');
+}
+const BED=330, BEDY=320;   /* A2L build plate: 330 (X) × 320 (Y) mm */
+const P={
+  mode:'wall', wallH:28, domeR:45, sweep:270, hFrac:0.8, capClose:true,
+  noz:0.4, bead:0.45, lh:0.24,
+  webType:'staple', cycle:['chord','web'], w:5, lambda:8, amp:0, ampF:1, altPhase:true,
+  autoLOD:true, minGap:1.4, gradeLean:false, lambdaS:4,
+  overshoot:1.0, dwell:0.6, jitter:0, flowBoost:1.25,
+  maxBridge:12, checkOv:true,
+  speed:30, bridgeSpeed:18, temp:215, bed:55, fan:100,
+  // batch
+  grid:3, sweepX:'lambda', sweepY:'web', specW:28, specH:16
+};
+const STEP=0.7, FIL_AREA=Math.PI*Math.pow(1.75/2,2);
+let planPts=[], layers=[], visK=1e9, isolate=false;  // visK starts huge → first build clamps it to the top layer (whole model visible on load)
+let seed=1337; function rnd(){ seed=(seed*1664525+1013904223)&0x7fffffff; return seed/0x7fffffff; }
+
+/* ---------- plan presets ---------- */
+function preset(n){
+  if(n==='straight') planPts=[{x:-45,y:0},{x:45,y:0}];
+  else if(n==='corner') planPts=[{x:-40,y:-22},{x:18,y:-22},{x:18,y:30}];
+  else { planPts=[]; for(let i=0;i<=8;i++){const x=-45+90*i/8; planPts.push({x,y:16*Math.sin(x/45*Math.PI*0.85)});} }
+}
+preset('arc');
+
+/* ---------- centerlines ---------- */
+/* Corner policy: a plan corner sharper than the wall can physically make
+   (inner flange radius <= 0) used to fold the inner rail over itself.
+   Every interior corner is now replaced by an arc with radius >= the wall's
+   lateral reach (w/2 + e + bead), clamped to 45% of each adjacent edge.
+   Straight plans pass through UNCHANGED (bit-identical E1 geometry). */
+function roundPlanCorners(src){
+  const rMin=P.w/2+P.overshoot+P.bead;
+  const out=[src[0]];
+  for(let i=1;i<src.length-1;i++){
+    const A=src[i-1],C=src[i],B=src[i+1];
+    const v1x=C.x-A.x,v1y=C.y-A.y,l1=Math.hypot(v1x,v1y);
+    const v2x=B.x-C.x,v2y=B.y-C.y,l2=Math.hypot(v2x,v2y);
+    if(l1<1e-6||l2<1e-6){out.push(C);continue;}
+    const u1x=v1x/l1,u1y=v1y/l1,u2x=v2x/l2,u2y=v2y/l2;
+    const dot=Math.max(-1,Math.min(1,u1x*u2x+u1y*u2y));
+    const th=Math.acos(dot);
+    if(th<0.09){out.push(C);continue;}          // < ~5 deg: treat as straight
+    const tanH=Math.tan(th/2);
+    const t=Math.min(rMin*tanH, 0.45*l1, 0.45*l2);
+    const r=t/tanH;                              // effective radius after clamp
+    const p1={x:C.x-u1x*t,y:C.y-u1y*t}, p2={x:C.x+u2x*t,y:C.y+u2y*t};
+    const bx=u2x-u1x,by=u2y-u1y,bl=Math.hypot(bx,by)||1;
+    const d=r/Math.cos(th/2);
+    const cx=C.x+bx/bl*d, cy=C.y+by/bl*d;
+    const a1=Math.atan2(p1.y-cy,p1.x-cx), a2=Math.atan2(p2.y-cy,p2.x-cx);
+    let da=a2-a1; while(da>Math.PI)da-=2*Math.PI; while(da<-Math.PI)da+=2*Math.PI;
+    const n=Math.max(2,Math.ceil(Math.abs(da)*r/STEP));
+    out.push(p1);
+    for(let k=1;k<n;k++){const a=a1+da*k/n; out.push({x:cx+r*Math.cos(a),y:cy+r*Math.sin(a)});}
+    out.push(p2);
+  }
+  out.push(src[src.length-1]);
+  return out;
+}
+function resamplePlan(src){
+  if(src.length<2) return null;
+  src=roundPlanCorners(src);
+  const acc=[src[0]];
+  for(let i=1;i<src.length;i++){const a=src[i-1],b=src[i],d=Math.hypot(b.x-a.x,b.y-a.y),n=Math.max(1,Math.round(d/STEP));
+    for(let j=1;j<=n;j++) acc.push({x:a.x+(b.x-a.x)*j/n,y:a.y+(b.y-a.y)*j/n});}
+  const pts=[],nrm=[],cum=[0];
+  for(let i=0;i<acc.length;i++){const p0=acc[Math.max(0,i-1)],p1=acc[Math.min(acc.length-1,i+1)];
+    let tx=p1.x-p0.x,ty=p1.y-p0.y;const l=Math.hypot(tx,ty)||1;tx/=l;ty/=l;
+    pts.push(acc[i]);nrm.push({x:-ty,y:tx});
+    if(i>0) cum.push(cum[i-1]+Math.hypot(acc[i].x-acc[i-1].x,acc[i].y-acc[i-1].y));}
+  return {pts,nrm,cum,total:cum[cum.length-1],kind:'wall'};
+}
+function domeCl(zc,R){const r=Math.sqrt(Math.max(1e-4,R*R-zc*zc));
+  const sw=P.sweep*Math.PI/180,arc=r*sw,n=Math.max(10,Math.ceil(arc/STEP));const pts=[],nrm=[],cum=[0];
+  for(let i=0;i<=n;i++){const a=i/n*sw-sw/2;pts.push({x:r*Math.cos(a),y:r*Math.sin(a)});nrm.push({x:Math.cos(a),y:Math.sin(a)});
+    if(i>0)cum.push(cum[i-1]+arc/n);}
+  return {pts,nrm,cum,total:arc,r,R,kind:'dome'};}
+function clSample(cl,u){u=Math.max(0,Math.min(cl.total,u));let lo=0,hi=cl.cum.length-1;
+  while(hi-lo>1){const m=(lo+hi)>>1;if(cl.cum[m]<=u)lo=m;else hi=m;}
+  const d=cl.cum[hi]-cl.cum[lo]||1,t=(u-cl.cum[lo])/d,p0=cl.pts[lo],p1=cl.pts[hi],n0=cl.nrm[lo],n1=cl.nrm[hi];
+  let nx=n0.x+(n1.x-n0.x)*t,ny=n0.y+(n1.y-n0.y)*t;const nl=Math.hypot(nx,ny)||1;
+  return {x:p0.x+(p1.x-p0.x)*t,y:p0.y+(p1.y-p0.y)*t,nx:nx/nl,ny:ny/nl};}
+function mapUV(cl,u,lat){const s=clSample(cl,u);return {x:s.x+s.nx*lat,y:s.y+s.ny*lat};}
+function phaseAt(cl,u){return cl.kind==='wall'?2*Math.PI*u/P.lambda:2*Math.PI*(u/cl.r)/(P.lambda/cl.R);}
+function halfWave(cl){return cl.kind==='wall'?P.lambda/2:(P.lambda/(2*cl.R))*cl.r;}
+/* auto density: when physical node spacing shrinks below the floor (tight dome
+   radii), DOUBLE the spacing dyadically — knitting decreases. Powers of two keep
+   surviving node columns exactly on the base angular grid, so vertical weld
+   registration survives every decimation boundary. */
+function decimatedHalf(cl){
+  const base=halfWave(cl);
+  const smin=Math.max(P.minGap, P.bead*2.2);
+  let h=base, m=1;
+  if(P.gradeLean && cl.kind==='dome'){
+    /* density POLICY: physical node spacing follows the lean angle instead of
+       accidentally tracking radius. Spacing eases at gentle lean (your lambda),
+       tightens toward lambda_steep above ~30 deg (smoothstep to ~80 deg) —
+       overhang capability earned by densification, made explicit.
+       Quantized to the dyadic grid (refinement to 4x allowed), so existing weld
+       columns stay stacked and new columns begin cleanly on the chords. */
+    const lean=Math.asin(Math.min(1,Math.sqrt(Math.max(0,1-(cl.r/cl.R)**2))))*180/Math.PI;
+    const t=Math.max(0,Math.min(1,(lean-30)/50)), tt=t*t*(3-2*t);
+    const sDes=Math.max(smin, (P.lambda/2)*(1-tt) + (P.lambdaS/2)*tt);
+    let k=Math.round(Math.log2(sDes/base));
+    k=Math.max(-2, Math.min(6, k));
+    h=base*Math.pow(2,k); m=Math.pow(2,k);
+  }
+  if(P.autoLOD){ while(h<smin && m<64){ h*=2; m*=2; } }
+  return {h,m};
+}
+function apexUs(cl,webIdx,jit){
+  const {h:half,m}=decimatedHalf(cl);
+  const off=(P.altPhase&&webIdx%2===1)?half:0;
+  const us=[],sides=[];let j=0;
+  while(true){let u=off+j*half; if(u>cl.total+1e-6) break;
+    if(jit&&j>0&&u<cl.total-half*0.5) u+=(rnd()-0.5)*half*jit;
+    us.push(Math.max(0,Math.min(cl.total,u))); sides.push(j%2===0?1:-1); j++; }
+  return {us,sides,half,m};
+}
+
+/* ---------- one layer's paths (role + web type) ---------- */
+function chordLayer(cl,zBot,off){
+  const A=P.w/2, pts=[];
+  for(let u=0;u<=cl.total;u+=STEP) pts.push(mapUV(cl,u, A+P.amp*Math.sin(P.ampF*phaseAt(cl,u)+off)));
+  pts.push(mapUV(cl,cl.total, A+P.amp*Math.sin(P.ampF*phaseAt(cl,cl.total)+off)));
+  const l1=A+P.amp*Math.sin(P.ampF*phaseAt(cl,cl.total)+off);
+  for(let t=1;t<=4;t++) pts.push(mapUV(cl,cl.total, l1-(2*l1)*t/4));
+  for(let u=cl.total;u>=0;u-=STEP) pts.push(mapUV(cl,u, -(A+P.amp*Math.sin(P.ampF*phaseAt(cl,u)+off))));
+  pts.push(mapUV(cl,0, -(A+P.amp*Math.sin(P.ampF*phaseAt(cl,0)+off))));
+  const l0=A+P.amp*Math.sin(P.ampF*phaseAt(cl,0)+off);
+  for(let t=1;t<=4;t++) pts.push(mapUV(cl,0, -l0+(2*l0)*t/4));
+  return {pts, apexes:[], closed:true};
+}
+function filletParam(v,r){
+  /* corner rounding via quadratic-bezier fillets: trims min(r, 45% of each edge)
+     around every real corner (>~20 deg), independent of sample density */
+  if(v.length<3) return v;
+  const out=[v[0]];
+  for(let i=1;i<v.length-1;i++){
+    const Pm=v[i-1],C=v[i],Pn=v[i+1];
+    const d1=Math.hypot(C[0]-Pm[0],C[1]-Pm[1]), d2=Math.hypot(Pn[0]-C[0],Pn[1]-C[1]);
+    if(d1<1e-6||d2<1e-6){ out.push(C); continue; }
+    const a1=[(C[0]-Pm[0])/d1,(C[1]-Pm[1])/d1], a2=[(Pn[0]-C[0])/d2,(Pn[1]-C[1])/d2];
+    if(a1[0]*a2[0]+a1[1]*a2[1]>0.94){ out.push(C); continue; }
+    const d=Math.min(r, d1*0.45, d2*0.45);
+    const p0=[C[0]-a1[0]*d, C[1]-a1[1]*d], p2=[C[0]+a2[0]*d, C[1]+a2[1]*d];
+    // adaptive: enough bezier segments that no interior turn exceeds ~22 deg
+    const ang=Math.acos(Math.max(-1,Math.min(1,a1[0]*a2[0]+a1[1]*a2[1])));
+    const n=Math.max(3, Math.ceil(ang/(Math.PI/8)));
+    for(let t=0;t<=n;t++){const s=t/n, q=1-s;
+      out.push([q*q*p0[0]+2*q*s*C[0]+s*s*p2[0], q*q*p0[1]+2*q*s*C[1]+s*s*p2[1]]);}
+  }
+  out.push(v[v.length-1]);
+  return out;
+}
+function emitParam(cl,v,pts){
+  const cu=u=>Math.max(0,Math.min(cl.total,u));
+  pts.push(mapUV(cl,cu(v[0][0]),v[0][1]));
+  for(let i=0;i<v.length-1;i++){const a=v[i],b=v[i+1];
+    const m=Math.max(1,Math.ceil(Math.max(Math.abs(b[0]-a[0]),Math.abs(b[1]-a[1]))/STEP));
+    for(let j=1;j<=m;j++){const t=j/m; pts.push(mapUV(cl,cu(a[0]+(b[0]-a[0])*t),a[1]+(b[1]-a[1])*t));}}
+}
+/* breathing chord line: width modulation amp + integer freq keeps zeros at node
+   positions, so weld registration survives the modulation */
+function AfAt(cl,u){ return P.w/2 + P.amp*Math.sin(P.ampF*phaseAt(cl,u)); }
+
+function webLayer(cl,zBot,webIdx){
+  const A=P.w/2, e=P.overshoot, Aw=A+e;
+  const {us,sides,half}=apexUs(cl,webIdx, P.jitter);
+  const pts=[], apexes=[]; webLayer._lastGap=half;
+  if(us.length<2){ for(let u=0;u<=cl.total;u+=STEP) pts.push(mapUV(cl,u,0)); return {pts,apexes,closed:false}; }
+  const runV=(v,u0,u1,latFn)=>{ const m=Math.max(1,Math.ceil(Math.abs(u1-u0)/STEP));
+    for(let j=1;j<=m;j++){const uu=u0+(u1-u0)*j/m; v.push([uu,latFn(uu)]);} };
+
+  if(P.webType==='staple'){
+    /* runs ON the chords (stack on the rails below); staple rungs with symmetric
+       overhang tabs; corners chaikin-rounded */
+    const D=Math.max(P.bead*1.15,0.5);
+    const v=[]; let cs=sides[0], uc=0;
+    v.push([0, cs*AfAt(cl,0)]);
+    for(let i=0;i<us.length;i++){
+      const u0=Math.max(uc, Math.min(us[i], cl.total-2*D));
+      if(u0<uc-1e-6) continue;
+      if(rungTooTight(cl,u0+D,D)) continue;   // corner too tight: run stays on the rail
+      runV(v,uc,u0,(uu)=>cs*AfAt(cl,uu));
+      const a0=AfAt(cl,u0), a1=AfAt(cl,u0+D), a2=AfAt(cl,u0+2*D);
+      v.push([u0, cs*(a0+e)]);
+      v.push([u0+D, cs*(a1+e)], [u0+D, -cs*(a1+e)]);
+      v.push([u0+2*D, -cs*(a2+e)], [u0+2*D, -cs*a2]);
+      apexes.push(objAt(cl,u0+D, a1, zBot), objAt(cl,u0+D, -a1, zBot));
+      cs=-cs; uc=u0+2*D;
+    }
+    if(uc<cl.total-1e-6) runV(v,uc,cl.total,(uu)=>cs*AfAt(cl,uu));
+    emitParam(cl, filletParam(v,Math.max(P.bead*0.8,0.45)), pts);
+
+  } else if(P.webType==='perp'){
+    /* regular square wave: runs sit BEYOND the chords by e (never on top of the
+       longitudinal lines below); single vertical rungs cross both chords;
+       chaikin-rounded corners */
+    const v=[]; let cs=sides[0], uc=0;
+    v.push([0, cs*(AfAt(cl,0)+e)]);
+    for(let i=0;i<us.length;i++){
+      const u0=Math.max(uc, us[i]); if(u0<uc-1e-6) continue;
+      if(rungTooTight(cl,u0,P.lambda/2)) continue;   // corner too tight: skip crossing
+      runV(v,uc,u0,(uu)=>cs*(AfAt(cl,uu)+e));
+      const a0=AfAt(cl,u0);
+      v.push([u0, -cs*(a0+e)]);
+      apexes.push(objAt(cl,u0, a0, zBot), objAt(cl,u0, -a0, zBot));
+      cs=-cs; uc=u0;
+    }
+    if(uc<cl.total-1e-6) runV(v,uc,cl.total,(uu)=>cs*(AfAt(cl,uu)+e));
+    emitParam(cl, filletParam(v,Math.max(P.bead*0.8,0.45)), pts);
+
+  } else if(P.webType==='sine'){
+    const dense=Math.max(us.length*8, Math.ceil(cl.total/STEP));
+    const shift=(P.altPhase&&webIdx%2)?Math.PI:0;
+    for(let k=0;k<=dense;k++){ const u=cl.total*k/dense;
+      pts.push(mapUV(cl,u,(AfAt(cl,u)+e)*Math.sin(phaseAt(cl,u)+shift))); }
+    const dPh = Aw>A+1e-6 ? (Math.PI/2 - Math.asin(A/Aw)) : 0;
+    const dU = dPh*(2*half)/(2*Math.PI);
+    us.forEach((u,i)=>{
+      if(dU<1e-4) apexes.push(objAt(cl,u,sides[i]*A,zBot));
+      else { if(u-dU>=0) apexes.push(objAt(cl,u-dU,sides[i]*A,zBot));
+             if(u+dU<=cl.total) apexes.push(objAt(cl,u+dU,sides[i]*A,zBot)); } });
+
+  } else if(P.webType==='eight'){
+    /* loop stitch (prolate cycloid): lat=-(Af+e)cos(ph), u=c(ph-k*sin(ph)), k>1
+       -> u-progress reverses at alternating apexes, so the thread loops back over
+       itself AND hooks around the chord below: mechanical interlock, knit logic.
+       altPhase flips which flange gets the loops each web layer.
+       Self-crossings are intentional; overlap detection skips these layers. */
+    const kap=1.8, c=(2*half)/(2*Math.PI);
+    const shift=(P.altPhase&&webIdx%2)?Math.PI:0;
+    let ph=0, guard=0, pu=null, pl=null, pa=null;
+    while(guard++<40000){
+      const u=c*(ph - kap*Math.sin(ph));
+      if(u>cl.total) break;
+      const uu=Math.max(0,Math.min(cl.total,u));
+      const Au=AfAt(cl,uu), lat=-(Au+e)*Math.cos(ph+shift);
+      pts.push(mapUV(cl,uu,lat));
+      if(pl!==null){                       // numeric weld detection: chord crossings
+        for(const s of [1,-1]){
+          const c0=pl-s*pa, c1=lat-s*Au;
+          if(c0*c1<0){ const t=c0/(c0-c1);
+            const un=Math.max(0,Math.min(cl.total,pu+(uu-pu)*t));
+            apexes.push(objAt(cl,un,s*AfAt(cl,un),zBot)); }
+        }
+      }
+      pu=uu; pl=lat; pa=Au; ph+=Math.PI/24;
+    }
+
+  } else { /* diagonal truss */
+    const dw2=Math.min(P.dwell/2, half*0.3);
+    const via=[];
+    for(let i=0;i<us.length;i++){
+      const u=us[i], l=sides[i]*Aw;
+      if(dw2>0.02 && i>0 && i<us.length-1) via.push([Math.max(0,u-dw2),l],[Math.min(cl.total,u+dw2),l]);
+      else via.push([u,l]);
+    }
+    for(let i=0;i<via.length-1;i++){
+      const u0=via[i][0],l0=via[i][1],u1=via[i+1][0],l1=via[i+1][1];
+      const m=Math.max(1,Math.ceil(Math.max(Math.abs(u1-u0),Math.abs(l1-l0))/STEP));
+      for(let j=(i===0?0:1);j<=m;j++){const t=j/m; pts.push(mapUV(cl,u0+(u1-u0)*t,l0+(l1-l0)*t));}
+    }
+    const dU = Aw>A+1e-6 ? half*(Aw-A)/(2*Aw) : 0;
+    us.forEach((u,i)=>{
+      if(dU<1e-4) apexes.push(objAt(cl,u,sides[i]*A,zBot));
+      else { if(u-dU>=0) apexes.push(objAt(cl,u-dU,sides[i]*A,zBot));
+             if(u+dU<=cl.total) apexes.push(objAt(cl,u+dU,sides[i]*A,zBot)); }
+    });
+  }
+  return {pts,apexes,closed:false};
+}
+function objAt(cl,u,lat,z){const p=mapUV(cl,u,lat);return {x:p.x,y:p.y,z};}
+/* signed centerline curvature at u (rad/mm); + = turning toward +lateral side */
+function curvAt(cl,u){
+  const d=Math.min(1.5, cl.total/4);
+  const u0=Math.max(0,u-d), u1=Math.min(cl.total,u+d);
+  if(u1-u0<1e-6) return 0;
+  const a=clSample(cl,u0), b=clSample(cl,u1);
+  const dot=Math.max(-1,Math.min(1,a.nx*b.nx+a.ny*b.ny));
+  const cross=a.nx*b.ny-a.ny*b.nx;
+  return (cross>=0?1:-1)*Math.acos(dot)/(u1-u0);
+}
+/* a crossing is only printable if, on the inner side of the curve, its legs
+   still land >= one bead apart. Tighter than that, the rung is SKIPPED and the
+   run stays on its rail — fewer welds at the corner beats fused blobs. */
+function rungTooTight(cl,u,spacing){
+  const k=Math.abs(curvAt(cl,u));
+  if(k<1e-4) return false;
+  const reach=P.w/2+P.overshoot;
+  return (1-reach*k)*spacing < P.bead;
+}
+
+/* ---------- assemble a wall/dome from a centerline factory ---------- */
+function buildFrom(clFor, N, ox, oy){
+  const out=[];
+  let webCount=0;
+  for(let k=0;k<N;k++){
+    const zBot=k*P.lh, zTop=(k+1)*P.lh, zc=zBot+P.lh/2;
+    const cl=clFor(zc); if(!cl) continue;
+    // dome spiral-cap closure: take over once the slice arc can't hold the pattern
+    // (either too few wavelengths, OR flanges converging) — this is what actually closes the top
+    if(P.mode==='dome'&&P.capClose&&cl.kind==='dome'){
+      // trigger on RADIUS: cap the top few mm where the slice is too tight for the pattern.
+      // absolute floor (a handful of node-spacings or bead widths) closes the dome reliably;
+      // wide sweeps keep long arcs at small r, so an arc test would miss this.
+      const minR = Math.max(P.autoLOD?0:P.lambda*0.75, P.w/2+P.bead*2, P.bead*8);
+      if(cl.r < minR){
+        const rr0=Math.max(cl.r, P.w/2+P.bead);
+        const turns=Math.max(1.5, rr0/(P.bead*2)), dense=48;
+        const nT=Math.ceil(dense*turns), pts=[];
+        for(let t=0;t<=nT;t++){const a=t/dense*2*Math.PI, rad=rr0*(1-t/nT);
+          pts.push({x:rad*Math.cos(a), y:rad*Math.sin(a)});}
+        const L={role:'cap',pts:offsetPts(pts,ox,oy),apexes:[],zBot,zTop,closed:false,cl,
+                 bead:P.bead, speed:P.speed, wSpan:P.w, ovh:P.overshoot};
+        L.len=plen(L.pts); out.push(L);
+        continue;
+      }
+    }
+    if(cl.total<P.lambda*0.6) continue;
+    const role=P.cycle[k%P.cycle.length];
+    let r;
+    if(role==='chord'){ const off=(P.amp>0? (k%2? Math.PI:0):0); r=chordLayer(cl,zBot,off); }
+    else { r=webLayer(cl,zBot,webCount++); }
+    const nodeGap = role==='web' ? webLayer._lastGap : null;
+    const L={role, pts:offsetPts(r.pts,ox,oy), apexes:r.apexes.map(a=>({x:a.x+ox,y:a.y+oy,z:a.z})),
+             zBot,zTop,closed:r.closed,cl,
+             bead:P.bead, speed:P.speed, wSpan:P.w, ovh:P.overshoot, webType:P.webType, nodeGap};
+    L.len=plen(L.pts); out.push(L);
+  }
+  return out;
+}
+function offsetPts(pts,ox,oy){ return (ox||oy)? pts.map(p=>({x:p.x+ox,y:p.y+oy})) : pts; }
+function plen(pts){let s=0;for(let i=1;i<pts.length;i++)s+=Math.hypot(pts[i].x-pts[i-1].x,pts[i].y-pts[i-1].y);return s;}
+
+/* ---------- batch specimen array ---------- */
+const SWEEP_VALS={
+  lambda:[5,7,9,12,16,20], overshoot:[0,0.6,1.2,1.8,2.5,3.2], w:[3,5,7,10,13,16],
+  web:['diagonal','perp','staple','sine','eight','staple'], speed:[20,35,50,70,90,110], bead:[0.35,0.45,0.6,0.75,0.9,1.1]
+};
+function buildBatch(){
+  layers=[]; seed=1337;
+  const g=P.grid;
+  const maxPitch=(BED-20)/g;
+  const gap=Math.min(P.specW*0.35, Math.max(6,maxPitch-P.specW));
+  let pitch=P.specW+Math.max(6,gap);
+  if(pitch*g>BED-16) pitch=(BED-16)/g;
+  const span=(g-1)*pitch, x0=-span/2, y0=-span/2;
+  const saved={lambda:P.lambda,overshoot:P.overshoot,w:P.w,webType:P.webType,speed:P.speed,bead:P.bead};
+  const N=Math.max(1,Math.round(P.specH/P.lh));
+  for(let gy=0;gy<g;gy++) for(let gx=0;gx<g;gx++){
+    const vx=SWEEP_VALS[P.sweepX][gx%6], vy=SWEEP_VALS[P.sweepY][gy%6];
+    applySweep(P.sweepX,vx); applySweep(P.sweepY,vy);
+    const ox=x0+gx*pitch, oy=y0+gy*pitch;
+    const clFor=(zc)=>{const c=resamplePlan([{x:-P.specW/2,y:0},{x:P.specW/2,y:0}]); return c;};
+    const specLayers=buildFrom(clFor,N,ox,oy);
+    specLayers.forEach(L=>{L.spec={gx,gy,vx,vy}; layers.push(L);});
+  }
+  Object.assign(P,saved);
+  // sort by z so layer slider + continuity behave
+  layers.sort((a,b)=>a.zBot-b.zBot);
+}
+function applySweep(axis,v){ if(axis==='web') P.webType=v; else P[axis]=v; }
+
+/* ---------- OBJ import ---------- */
+let MESH=null, RAWV=null, objAxis='z';
+function parseOBJ(txt){
+  RAWV=[]; const tris=[];
+  for(const ln of txt.split('\n')){
+    const t=ln.trim().split(/\s+/);
+    if(t[0]==='v') RAWV.push([+t[1],+t[2],+t[3]]);
+    else if(t[0]==='f'){
+      const ids=t.slice(1).map(s=>{let i=parseInt(s.split('/')[0]); return i<0?RAWV.length+i:i-1;});
+      for(let i=1;i<ids.length-1;i++) tris.push([ids[0],ids[i],ids[i+1]]);
+    }
+  }
+  MESH={tris}; normalizeMesh();
+}
+function normalizeMesh(){
+  if(!RAWV||!MESH) return;
+  const v=RAWV.map(p=>objAxis==='y'?[p[0],-p[2],p[1]]:[p[0],p[1],p[2]]);
+  let mnx=1e9,mny=1e9,mnz=1e9,mxx=-1e9,mxy=-1e9,mxz=-1e9;
+  for(const p of v){mnx=Math.min(mnx,p[0]);mny=Math.min(mny,p[1]);mnz=Math.min(mnz,p[2]);
+    mxx=Math.max(mxx,p[0]);mxy=Math.max(mxy,p[1]);mxz=Math.max(mxz,p[2]);}
+  const cx=(mnx+mxx)/2, cy=(mny+mxy)/2;
+  MESH.v=v.map(p=>[p[0]-cx,p[1]-cy,p[2]-mnz]);
+  MESH.zMax=mxz-mnz;
+  const nb=Math.max(1,Math.ceil(MESH.zMax)+1);
+  MESH.bins=Array.from({length:nb},()=>[]);
+  MESH.tris.forEach((t,ti)=>{
+    const zs=[MESH.v[t[0]][2],MESH.v[t[1]][2],MESH.v[t[2]][2]];
+    const z0=Math.min(zs[0],zs[1],zs[2]), z1=Math.max(zs[0],zs[1],zs[2]);
+    for(let b=Math.max(0,Math.floor(z0));b<=Math.min(nb-1,Math.floor(z1));b++) MESH.bins[b].push(ti);
+  });
+  const info=document.getElementById('objInfo');
+  if(info) info.textContent=MESH.tris.length+' tris · '+MESH.zMax.toFixed(1)+' mm tall · centered on bed';
+}
+function meshSlice(zc){
+  if(!MESH||!MESH.v||zc>=MESH.zMax) return null;
+  const z=zc+1e-4;
+  const bin=MESH.bins[Math.min(MESH.bins.length-1,Math.max(0,Math.floor(z)))]||[];
+  const segs=[];
+  for(const ti of bin){
+    const T=MESH.tris[ti], a=MESH.v[T[0]], b=MESH.v[T[1]], c=MESH.v[T[2]];
+    const cr=[];
+    for(const [p,q] of [[a,b],[b,c],[c,a]]){
+      const d1=p[2]-z, d2=q[2]-z;
+      if(d1*d2<0){const t=d1/(d1-d2); cr.push([p[0]+(q[0]-p[0])*t, p[1]+(q[1]-p[1])*t]);}
+    }
+    if(cr.length===2) segs.push(cr);
+  }
+  if(!segs.length) return null;
+  const key=p=>Math.round(p[0]*40)+'_'+Math.round(p[1]*40);
+  const adj=new Map();
+  segs.forEach((s,i)=>{for(const e of [0,1]){const k=key(s[e]);
+    if(!adj.has(k)) adj.set(k,[]); adj.get(k).push([i,e]);}});
+  const used=new Array(segs.length).fill(false);
+  let best=null, bestLen=0;
+  const starts=[];
+  for(const lst of adj.values()) if(lst.length===1) starts.push(lst[0]);
+  segs.forEach((s,i)=>starts.push([i,0]));
+  for(const [si,se] of starts){
+    if(used[si]) continue;
+    let p0=segs[si][se], p1=segs[si][1-se];
+    const chain=[p0,p1]; used[si]=true;
+    let len=Math.hypot(p1[0]-p0[0],p1[1]-p0[1]);
+    while(true){
+      const lst=(adj.get(key(p1))||[]).filter(x=>!used[x[0]]);
+      if(!lst.length) break;
+      const ni=lst[0][0], ne=lst[0][1];
+      used[ni]=true;
+      const nx=segs[ni][1-ne];
+      len+=Math.hypot(nx[0]-p1[0],nx[1]-p1[1]);
+      chain.push(nx); p1=nx;
+    }
+    if(len>bestLen){bestLen=len; best=chain;}
+  }
+  if(!best||best.length<2) return null;
+  return resamplePlan(best.map(p=>({x:p[0],y:p[1]})));
+}
+
+/* ---------- top-level build ---------- */
+function buildLayers(){
+  seed=1337;   // deterministic jitter for EVERY build — a manifest's jitter_seed must reproduce the geometry (batch already did this; walls/domes drifted per rebuild)
+  if(P.mode==='batch'){ buildBatch(); if(P.checkOv) detectOverlaps(); return; }
+  if(P.mode==='import'){
+    if(!MESH||!MESH.v){ layers=[]; return; }
+    const N=Math.max(1,Math.floor(MESH.zMax/P.lh));
+    layers=buildFrom((zc)=>meshSlice(zc), N, 0,0);
+    if(P.checkOv) detectOverlaps(); return;
+  }
+  if(P.mode==='wall'){
+    const base=resamplePlan(planPts); if(!base) { layers=[]; return; }
+    const N=Math.max(1,Math.round(P.wallH/P.lh));
+    layers=buildFrom(()=>base, N, 0,0);
+  } else {
+    const N=Math.max(1,Math.floor(P.domeR*P.hFrac/P.lh));
+    layers=buildFrom((zc)=>domeCl(zc,P.domeR), N, 0,0);
+  }
+  if(P.checkOv) detectOverlaps();
+}
+function detectOverlaps(){
+  for(const L of layers){
+    if(L.role==='web'&&L.webType==='eight'){ L.ov=[]; continue; }  // self-crossings are the point
+    const lb=L.bead||P.bead, lw=L.wSpan||P.w, lo=(L.ovh!=null?L.ovh:P.overshoot);
+    const minD=lb*0.95, cell=Math.max(minD,0.5);
+    // skipGap must cover the perp rung+tab excursion (A+Aw+e ≈ w+2e) so deliberate
+    // weld tabs aren't flagged as overlaps. Uses the layer's STAMPED overshoot —
+    // in batch sweeps P.overshoot is already restored by the time we run.
+    const skipGap=Math.ceil(Math.max(lw+2*lo+2, 3*lb)/STEP)+2;
+    L.ov=[]; const map=new Map(); const key=(a,b)=>a+'_'+b;
+    L.pts.forEach((p,i)=>{const cx=Math.floor(p.x/cell),cy=Math.floor(p.y/cell);
+      for(let dx=-1;dx<=1;dx++)for(let dy=-1;dy<=1;dy++){const bk=map.get(key(cx+dx,cy+dy));if(!bk)continue;
+        for(const j of bk){const gap=Math.abs(i-j);if(gap<skipGap)continue;if(L.closed&&gap>L.pts.length-skipGap)continue;
+          const q=L.pts[j];if(Math.hypot(p.x-q.x,p.y-q.y)<minD){L.ov.push({x:p.x,y:p.y,z:L.zBot+P.lh/2});break;}}}
+      const kk=key(cx,cy);if(!map.has(kk))map.set(kk,[]);map.get(kk).push(i);});
+    if(L.ov.length>120) L.ov=L.ov.filter((_,i)=>i%Math.ceil(L.ov.length/120)===0);
+  }
+}
+
+/* ---------- ribbon geometry ---------- */
+function simplifyPts(pts,tol,maxSeg){
+  if(pts.length<3) return pts;
+  const out=[pts[0]];
+  for(let i=1;i<pts.length-1;i++){
+    const a=out[out.length-1], b=pts[i+1], p=pts[i];
+    const dx=b.x-a.x, dy=b.y-a.y, L=Math.hypot(dx,dy)||1;
+    const d=Math.abs((p.x-a.x)*dy-(p.y-a.y)*dx)/L;
+    if(d>tol || Math.hypot(p.x-a.x,p.y-a.y)>maxSeg) out.push(p);
+  }
+  out.push(pts[pts.length-1]);
+  return out;
+}
+function ribbon(pts,hw,z0,z1){
+  // dedupe consecutive duplicates (tabs/landings can emit repeats; slicer-safe)
+  const q=[pts[0]];
+  for(let i=1;i<pts.length;i++){const p=pts[i],l=q[q.length-1];
+    if(Math.hypot(p.x-l.x,p.y-l.y)>1e-6) q.push(p);}
+  const q2=simplifyPts(q,0.03,4);
+  const n=q2.length; if(n<2) return null;
+  // per-segment unit normals, then MITERED joins (clamped) so 90-degree turns
+  // keep constant bead width instead of self-intersecting
+  const sn=[];
+  for(let i=0;i<n-1;i++){let tx=q2[i+1].x-q2[i].x,ty=q2[i+1].y-q2[i].y;const l=Math.hypot(tx,ty)||1;
+    sn.push({x:-ty/l,y:tx/l});}
+  const pos=new Float32Array(n*12), idx=[];
+  for(let i=0;i<n;i++){
+    const nA=sn[Math.max(0,i-1)], nB=sn[Math.min(n-2,i)];
+    let mx=nA.x+nB.x, my=nA.y+nB.y, ml=Math.hypot(mx,my), ox,oy;
+    if(ml<1e-4){ ox=nB.x*hw; oy=nB.y*hw; }              // 180-degree reversal fallback
+    else{ mx/=ml; my/=ml;
+      const s=Math.min(2.0, 1/Math.max(0.5, mx*nB.x+my*nB.y)); // miter, clamped
+      ox=mx*hw*s; oy=my*hw*s; }
+    const p=q2[i], b=i*12;
+    pos[b]=p.x+ox;pos[b+1]=z0;pos[b+2]=p.y+oy; pos[b+3]=p.x-ox;pos[b+4]=z0;pos[b+5]=p.y-oy;
+    pos[b+6]=p.x+ox;pos[b+7]=z1;pos[b+8]=p.y+oy; pos[b+9]=p.x-ox;pos[b+10]=z1;pos[b+11]=p.y-oy;}
+  for(let i=0;i<n-1;i++){const a=i*4,c=(i+1)*4;
+    idx.push(a+2,c+2,c+3,a+2,c+3,a+3, a,c+1,c,a,a+1,c+1, a,c,c+2,a,c+2,a+2, a+1,c+3,c+1,a+1,a+3,c+3);}
+  idx.push(0,1,3,0,3,2);const e=(n-1)*4;idx.push(e,e+3,e+1,e,e+2,e+3);
+  return {pos,idx:new Uint32Array(idx)};
+}
+
+/* ---------- three.js ---------- */
+let scene,camera,renderer,root,nodeMesh=null,ovMesh=null;
+const matChord=new THREE.MeshStandardMaterial({color:0xd8dde2,roughness:.85,metalness:.05,side:THREE.DoubleSide});
+const matWeb=new THREE.MeshStandardMaterial({color:0xa99bde,roughness:.82,metalness:.05,side:THREE.DoubleSide});
+const matCap=new THREE.MeshStandardMaterial({color:0x7fd8a8,roughness:.7,side:THREE.DoubleSide});
+const matCur=new THREE.MeshStandardMaterial({color:0x35e0ff,roughness:.5,emissive:0x0a3945,side:THREE.DoubleSide});
+const matNode=new THREE.MeshStandardMaterial({color:0xffb63b,roughness:.5,emissive:0x3a2703});
+const matOv=new THREE.MeshStandardMaterial({color:0xff4d5e,roughness:.5,emissive:0x400a10});
+function matFor(L){return L.role==='cap'?matCap:(L.role==='chord'?matChord:matWeb);}
+function initScene(){
+  scene=new THREE.Scene();scene.background=new THREE.Color(0x0a0e12);scene.fog=new THREE.Fog(0x0a0e12,320,720);
+  camera=new THREE.PerspectiveCamera(45,innerWidth/innerHeight,0.5,1600);
+  renderer=new THREE.WebGLRenderer({antialias:true});renderer.setSize(innerWidth,innerHeight);
+  renderer.setPixelRatio(Math.min(devicePixelRatio,2));document.getElementById('view').appendChild(renderer.domElement);
+  scene.add(new THREE.AmbientLight(0x8fa3b5,.55));
+  const d1=new THREE.DirectionalLight(0xffffff,.75);d1.position.set(60,120,80);scene.add(d1);
+  const d2=new THREE.DirectionalLight(0x6fd8ff,.25);d2.position.set(-80,40,-60);scene.add(d2);
+  const grid=new THREE.GridHelper(BED,33,0x223140,0x15202b);grid.position.y=-0.01;scene.add(grid);
+  // bed outline
+  const bo=new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.PlaneGeometry(BED,BEDY)),new THREE.LineBasicMaterial({color:0x2a3a48}));
+  bo.rotation.x=-Math.PI/2;scene.add(bo);
+  root=new THREE.Group();scene.add(root);
+  addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight);});
+}
+const orb={theta:-.7,phi:1.02,rad:210,tx:0,ty:14,tz:0,drag:false,pan:false,px:0,py:0};
+function bindOrbit(){const el=renderer.domElement;
+  el.addEventListener('pointerdown',e=>{orb.drag=true;orb.pan=(e.button===2||e.shiftKey);orb.px=e.clientX;orb.py=e.clientY;});
+  addEventListener('pointerup',()=>orb.drag=false);
+  addEventListener('pointermove',e=>{if(!orb.drag)return;const dx=e.clientX-orb.px,dy=e.clientY-orb.py;orb.px=e.clientX;orb.py=e.clientY;
+    if(orb.pan){const s=orb.rad*0.0014;orb.tx-=Math.cos(orb.theta)*dx*s;orb.tz-=Math.sin(orb.theta)*dx*s;orb.ty+=dy*s;}
+    else{orb.theta-=dx*0.006;orb.phi=Math.max(.08,Math.min(1.52,orb.phi-dy*0.006));}});
+  el.addEventListener('wheel',e=>{e.preventDefault();orb.rad=Math.max(30,Math.min(900,orb.rad*(1+Math.sign(e.deltaY)*0.09)));},{passive:false});
+  el.addEventListener('contextmenu',e=>e.preventDefault());}
+function updateCam(){camera.position.set(orb.tx+orb.rad*Math.sin(orb.phi)*Math.cos(orb.theta),orb.ty+orb.rad*Math.cos(orb.phi),
+  orb.tz+orb.rad*Math.sin(orb.phi)*Math.sin(orb.theta));camera.lookAt(orb.tx,orb.ty,orb.tz);}
+
+function rebuildScene(){
+  while(root.children.length){const c=root.children.pop();c.geometry&&c.geometry.dispose();root.remove(c);}
+  for(const L of layers){const g=ribbon(L.pts,(L.bead||P.bead)/2,L.zBot,L.zTop);if(!g)continue;L.geo=g;
+    const bg=new THREE.BufferGeometry();bg.setAttribute('position',new THREE.BufferAttribute(g.pos,3));
+    bg.setIndex(new THREE.BufferAttribute(g.idx,1));bg.computeVertexNormals();
+    const m=new THREE.Mesh(bg,matFor(L));L.mesh=m;root.add(m);}
+  updateVisibility();
+}
+function updateVisibility(){
+  const dummy=new THREE.Object3D();
+  layers.forEach((L,k)=>{if(!L.mesh)return;L.mesh.visible=isolate?k===visK:k<=visK;L.mesh.material=(k===visK&&P.mode!=='batch')?matCur:matFor(L);});
+  if(nodeMesh){root.remove(nodeMesh);nodeMesh.geometry.dispose();nodeMesh=null;}
+  if(ovMesh){root.remove(ovMesh);ovMesh.geometry.dispose();ovMesh=null;}
+  if(P.showNodes){const pts=[];layers.forEach((L,k)=>{if(isolate?k===visK:k<=visK)for(const a of L.apexes)pts.push(a);});
+    if(pts.length){nodeMesh=new THREE.InstancedMesh(new THREE.SphereGeometry(P.bead*0.62,8,6),matNode,pts.length);
+      pts.forEach((p,i)=>{dummy.position.set(p.x,p.z,p.y);dummy.updateMatrix();nodeMesh.setMatrixAt(i,dummy.matrix);});
+      nodeMesh.instanceMatrix.needsUpdate=true;root.add(nodeMesh);}}
+  if(P.checkOv){const pts=[];layers.forEach((L,k)=>{if(isolate?k===visK:k<=visK)for(const o of(L.ov||[]))pts.push(o);});
+    if(pts.length){ovMesh=new THREE.InstancedMesh(new THREE.SphereGeometry(P.bead*0.8,8,6),matOv,pts.length);
+      pts.forEach((p,i)=>{dummy.position.set(p.x,p.z,p.y);dummy.updateMatrix();ovMesh.setMatrixAt(i,dummy.matrix);});
+      ovMesh.instanceMatrix.needsUpdate=true;root.add(ovMesh);}}
+  drawLoom();updateBar();
+}
+
+/* ---------- loom ---------- */
+const loomCv=document.getElementById('loomCv');
+function drawLoom(){const h=loomCv.parentElement.clientHeight-20;loomCv.height=h;loomCv.width=22;
+  const ctx=loomCv.getContext('2d');ctx.clearRect(0,0,22,h);const N=layers.length;if(!N)return;const rh=h/N;
+  for(let k=0;k<N;k++){const y=h-(k+1)*rh;
+    if(k===visK)ctx.fillStyle='#3fe0ff';
+    else if(k>visK&&!isolate)ctx.fillStyle='#141b22';
+    else ctx.fillStyle=layers[k].role==='cap'?'#2f5a44':(layers[k].role==='chord'?'#39424c':'#3a3556');
+    ctx.fillRect(3,y,16,Math.max(1,rh-0.6));
+    if(layers[k].ov&&layers[k].ov.length){ctx.fillStyle='#ff4d5e';ctx.fillRect(0,y,2,Math.max(1,rh-0.6));}}}
+loomCv.addEventListener('pointerdown',e=>{const r=loomCv.getBoundingClientRect();
+  const k=layers.length-1-Math.floor((e.clientY-r.top)/r.height*layers.length);
+  if(k>=0&&k<layers.length){visK=k;document.getElementById('laySlider').value=k;updateVisibility();}});
+
+/* ---------- stats ---------- */
+const f=(v,d=1)=>v.toFixed(d);
+function bbox(){let mnx=1e9,mny=1e9,mxx=-1e9,mxy=-1e9;for(const L of layers)for(const p of L.pts){
+  if(p.x<mnx)mnx=p.x;if(p.y<mny)mny=p.y;if(p.x>mxx)mxx=p.x;if(p.y>mxy)mxy=p.y;}return {w:mxx-mnx,h:mxy-mny};}
+function updateStats(){
+  const N=layers.length;
+  if(!N){ ['s_layers','s_len','s_nodes','s_webspan','s_chordspan','s_gap','s_ov','s_fit','s_stl','s_time'].forEach(id=>{
+    const x=document.getElementById(id); if(x){x.textContent='–';x.className='v';}}); return; }let len=0,nodes=0,ov=0,t=0;
+  for(const L of layers){len+=L.len;nodes+=L.apexes.length;ov+=(L.ov?L.ov.length:0);
+    const base=L.speed||P.speed;
+    const spd=L.zBot===0?Math.min(base,15):(L.role==='chord'?Math.min(P.bridgeSpeed,base):base);t+=L.len/spd+0.6;}
+  const el=id=>document.getElementById(id);
+  el('s_layers').textContent=N;
+  el('s_len').textContent=len>1000?f(len/1000,2)+' m':f(len,0)+' mm';
+  el('s_nodes').textContent=nodes;
+  // unsupported spans differ per web type:
+  //  perp: the RUNG is the bridge (w + 2e); runs are fully supported; chords hit every lambda/2
+  //  diagonal/sine: full member between apexes; chords hit every lambda
+  const AwS=P.w/2+P.overshoot;
+  let webSpan, chordSpan;
+  if(P.webType==='staple'){ webSpan=P.w+2*P.overshoot; chordSpan=P.lambda/2; }
+  else if(P.webType==='perp'){ webSpan=Math.max(P.w+2*P.overshoot, P.lambda/2); chordSpan=P.lambda/2; }
+  else { webSpan=Math.hypot(P.lambda/2, 2*AwS); chordSpan=P.lambda; }
+  if(P.mode==='dome'){const zTop=(N-0.5)*P.lh;
+    el('leanRow').style.display='flex';el('s_lean').textContent=f(Math.asin(Math.min(1,zTop/P.domeR))*180/Math.PI,1)+'°';}
+  else el('leanRow').style.display='none';
+  el('s_webspan').textContent=f(webSpan,1)+' mm';
+  el('s_webspan').className='v '+(webSpan>P.maxBridge?'warn':'good');
+  el('s_chordspan').textContent=f(chordSpan,1)+' mm';
+  el('s_chordspan').className='v '+(chordSpan>P.maxBridge?'warn':'good');
+  let mg=1e9; for(const L of layers) if(L.nodeGap!=null) mg=Math.min(mg,L.nodeGap);
+  el('s_gap').textContent=mg<1e8?f(mg,2)+' mm':'–';
+  el('s_gap').className='v '+(mg<1e8&&mg<Math.max(P.minGap,P.bead*2.2)*0.99?'warn':'good');
+  el('s_width').textContent=f(P.w+2*Math.max(0,P.overshoot),1)+' mm';
+  el('s_ov').textContent=ov;el('s_ov').className='v '+(ov?'warn':'good');
+  const bb=bbox();const fits=bb.w<=BED-10&&bb.h<=BEDY-10;
+  el('s_fit').textContent=f(bb.w,0)+'×'+f(bb.h,0)+' '+(fits?'✓':'✗ over');el('s_fit').className='v '+(fits?'good':'warn');
+  el('s_time').textContent=f(t/60,0)+' min';
+  let tr=0; for(const L of layers) if(L.geo) tr+=L.geo.idx.length/3;
+  const mb=(84+tr*50)/1e6;
+  el('s_stl').textContent=tr?f(mb,1)+' MB':'-';
+  el('s_stl').className='v '+(mb>150?'warn':(mb>60?'':'good'));
+}
+function updateBar(){document.getElementById('curL').textContent=visK;
+  document.getElementById('maxL').textContent=Math.max(0,layers.length-1);
+  const L=layers[visK];document.getElementById('roleLbl').textContent=L?(L.role==='cap'?'spiral cap':L.role==='chord'?'chord · rails':'web · '+(L.webType||P.webType)):'–';}
+
+/* ---------- exports ---------- */
+function dl(blob,name){const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),4000);}
+let exporting=false;
+/* pure builder: returns the binary STL as an array of ArrayBuffers.
+   Kept free of DOM/download concerns so the headless test suite can call it. */
+async function buildSTLParts(onProgress){
+    let tris=0; for(const L of layers) if(L.geo) tris+=L.geo.idx.length/3;
+    const head=new ArrayBuffer(84); new DataView(head).setUint32(80,tris,true);
+    const parts=[head];
+    const a=new THREE.Vector3(),b=new THREE.Vector3(),c=new THREE.Vector3(),n=new THREE.Vector3(),v=new THREE.Vector3();
+    for(let li=0; li<layers.length; li++){
+      const L=layers[li]; if(!L.geo) continue;
+      const p=L.geo.pos, ix=L.geo.idx;
+      const buf=new ArrayBuffer((ix.length/3)*50), dv=new DataView(buf); let off=0;
+      for(let i=0;i<ix.length;i+=3){
+        // vertex order reversed (a,c,b): scene coords are y-up, the STL is z-up,
+        // and that axis swap mirrors chirality — reversing the winding keeps
+        // every facet outward (earlier exports sliced inside-out). The normal is
+        // (c-a)×(b-a): equal to the file-space winding normal after the y/z swap.
+        a.fromArray(p,ix[i]*3); b.fromArray(p,ix[i+2]*3); c.fromArray(p,ix[i+1]*3);
+        n.copy(c).sub(a); v.copy(b).sub(a); n.cross(v).normalize();
+        dv.setFloat32(off,n.x,true);dv.setFloat32(off+4,n.z,true);dv.setFloat32(off+8,n.y,true);
+        dv.setFloat32(off+12,a.x,true);dv.setFloat32(off+16,a.z,true);dv.setFloat32(off+20,a.y,true);
+        dv.setFloat32(off+24,b.x,true);dv.setFloat32(off+28,b.z,true);dv.setFloat32(off+32,b.y,true);
+        dv.setFloat32(off+36,c.x,true);dv.setFloat32(off+40,c.z,true);dv.setFloat32(off+44,c.y,true);
+        dv.setUint16(off+48,0,true); off+=50;
+      }
+      parts.push(buf);
+      if(li%10===0){ onProgress&&onProgress(Math.round(100*li/layers.length));
+        await new Promise(r=>setTimeout(r,0)); }
+    }
+    return parts;
+}
+async function exportSTL(){
+  if(exporting||!layers.length) return; exporting=true;
+  const btn=document.getElementById('expStl'), label=btn.textContent;
+  try{
+    const parts=await buildSTLParts(p=>{ btn.textContent='Exporting '+p+'%'; });
+    dl(new Blob(parts,{type:'model/stl'}),'weft.stl');
+  } finally { btn.textContent=label; exporting=false; }
+}
+const FOOT_DEF=`; --- WEFT end ---
+M106 S0
+G1 E-2 F1800
+M104 S0
+M140 S0
+G91
+G1 Z10 F600
+G90
+M84`;
+const HEAD_HINT=`; ⚠ PASTE YOUR A2L START BLOCK HERE
+; In Bambu Studio: slice any object for the A2L, export G-code,
+; and copy everything up to the first extruding G1 ...E... move.
+; That block homes, meshes the bed and sets temps correctly.
+; Until you paste it, this file uses a minimal generic start:
+M83
+G21
+G90
+M140 S{BED}
+M104 S{TEMP}
+G28
+M190 S{BED}
+M109 S{TEMP}
+G1 Z2 F600`;
+/* pure builder: returns the full G-code as one string (reads header/footer
+   from the two textareas). DOM/download handling lives in exportGcode. */
+async function buildGcodeText(onProgress){
+  const head=document.getElementById('gHead').value.replace(/\{TEMP\}/g,P.temp).replace(/\{BED\}/g,P.bed);
+  const out=[head]; let cur=null, lastSpec=null, fanOn=false;
+  const nodeR=Math.max(1.0,P.bead*2), RETRACT=0.8, HOP=0.4;
+  // the model frame is bed-CENTERED; the A2L (like most printers) puts G-code
+  // origin at the FRONT-LEFT corner. Without this shift the print lands half
+  // off the plate — caught on the first real harvested-header dry run.
+  const OX=BED/2, OY=BEDY/2;
+  for(let k=0;k<layers.length;k++){
+    const L=layers[k];
+    let pts=simplifyPts(L.pts,0.02,2);
+    if(cur){
+      if(L.closed){let best=0,bd=1e9;for(let i=0;i<pts.length;i++){const d=Math.hypot(pts[i].x-cur.x,pts[i].y-cur.y);if(d<bd){bd=d;best=i;}}
+        pts=pts.slice(best).concat(pts.slice(0,best));pts=pts.concat([pts[0]]);}
+      else{const dS=Math.hypot(pts[0].x-cur.x,pts[0].y-cur.y),dE=Math.hypot(pts[pts.length-1].x-cur.x,pts[pts.length-1].y-cur.y);if(dE<dS)pts=[...pts].reverse();}
+    }
+    const first=L.zBot===0;   // TRUE bed layer — by height, not array position (batch interleaves 16 first layers)
+    out.push(`; layer ${k} ${L.role}`);
+    // part cooling: off while anything is still printing on the bed, on above it
+    if(!first&&!fanOn){ out.push(`M106 S${Math.round(P.fan*2.55)}`); fanOn=true; }
+    const p0=pts[0];
+    const travel=cur?Math.hypot(p0.x-cur.x,p0.y-cur.y):0;
+    const lw=L.wSpan||P.w, lo=(L.ovh!=null?L.ovh:P.overshoot);
+    const spec=L.spec||null;
+    const crossSpec=!!(spec&&lastSpec&&(spec.gx!==lastSpec.gx||spec.gy!==lastSpec.gy));
+    // within one object the thread stays wet and unretracted (continuity is the
+    // method); hops between separate specimens get retract + z-hop so the nozzle
+    // neither strings across the plate nor ploughs through fresh lattice
+    if(cur&&(crossSpec||travel>Math.max(6,lw+2*lo+2))){
+      out.push(`G1 E-${RETRACT} F1800`);
+      out.push(`G1 Z${(L.zTop+HOP).toFixed(3)} F600`);
+      out.push(`G0 X${(p0.x+OX).toFixed(3)} Y${(p0.y+OY).toFixed(3)} F9000`);
+      out.push(`G1 Z${L.zTop.toFixed(3)} F600`);
+      out.push(`G1 E${RETRACT} F1800`);
+    } else {
+      out.push(`G1 Z${L.zTop.toFixed(3)} F600`);
+      if(!cur||travel>0.4) out.push(`G0 X${(p0.x+OX).toFixed(3)} Y${(p0.y+OY).toFixed(3)} F9000`);
+    }
+    const bridge=L.role==='chord'&&L.zBot>0;   // chords above the bed ride on discrete nodes
+    const apx=L.apexes.length?L.apexes:(k>0&&layers[k-1]?layers[k-1].apexes:[]);
+    const lb=L.bead||P.bead;
+    // slicer-standard stadium cross-section (w−h)·h + π(h/2)² — matches what
+    // Arachne assumes on Route A, so Route B lays the same volume per mm
+    const bArea=lb>P.lh ? (lb-P.lh)*P.lh+Math.PI*P.lh*P.lh/4 : Math.PI*lb*lb/4;
+    let prev=p0;
+    for(let i=1;i<pts.length;i++){const p=pts[i],d=Math.hypot(p.x-prev.x,p.y-prev.y);if(d<1e-5){prev=p;continue;}
+      const baseSpd=L.speed||P.speed;
+      let flow=1,spd=first?Math.min(baseSpd,15):(bridge?Math.min(P.bridgeSpeed,baseSpd):baseSpd);
+      if(apx.length){const mx=(p.x+prev.x)/2,my=(p.y+prev.y)/2;
+        for(const A of apx){if(Math.hypot(A.x-mx,A.y-my)<nodeR){flow=P.flowBoost;spd*=0.65;break;}}}
+      const e=d*bArea/FIL_AREA*flow;
+      out.push(`G1 X${(p.x+OX).toFixed(3)} Y${(p.y+OY).toFixed(3)} E${e.toFixed(5)} F${Math.round(spd*60)}`);
+      prev=p;}
+    cur=prev; if(spec) lastSpec=spec;
+    if(k%10===0){ onProgress&&onProgress(Math.round(100*k/layers.length));
+      await new Promise(r=>setTimeout(r,0)); }
+  }
+  out.push(document.getElementById('gFoot').value);
+  return out.join('\n');
+}
+async function exportGcode(){
+  if(exporting||!layers.length) return; exporting=true;
+  const btn=document.getElementById('expGcode'), label=btn.textContent;
+  try{
+    const txt=await buildGcodeText(p=>{ btn.textContent='Exporting '+p+'%'; });
+    dl(new Blob([txt],{type:'text/plain'}),'weft.gcode');
+  } finally { btn.textContent=label; exporting=false; }
+}
+
+/* ---------- plan editor ---------- */
+const ed=document.getElementById('planEd'),ec=ed.getContext('2d');
+function e2w(px,py){return {x:(px/ed.width-0.5)*2*66,y:-(py/ed.height-0.5)*2*50};}
+function w2e(p){return {x:(p.x/(2*66)+0.5)*ed.width,y:(-p.y/(2*50)+0.5)*ed.height};}
+function drawPlan(){ec.clearRect(0,0,ed.width,ed.height);ec.strokeStyle='#141c24';ec.lineWidth=1;
+  for(let g=-60;g<=60;g+=10){const a=w2e({x:g,y:0});ec.beginPath();ec.moveTo(a.x,0);ec.lineTo(a.x,ed.height);ec.stroke();}
+  for(let g=-40;g<=40;g+=10){const a=w2e({x:0,y:g});ec.beginPath();ec.moveTo(0,a.y);ec.lineTo(ed.width,a.y);ec.stroke();}
+  if(planPts.length){ec.strokeStyle='#3fe0ff';ec.lineWidth=1.6;ec.beginPath();
+    planPts.forEach((p,i)=>{const s=w2e(p);i?ec.lineTo(s.x,s.y):ec.moveTo(s.x,s.y);});ec.stroke();
+    planPts.forEach((p,i)=>{const s=w2e(p);
+      if(i===hoverIdx||i===dragIdx){ec.fillStyle='#3fe0ff';ec.fillRect(s.x-3.5,s.y-3.5,7,7);}
+      else{ec.fillStyle='#eef4f8';ec.fillRect(s.x-2.5,s.y-2.5,5,5);}});}}
+let dragIdx=-1, hoverIdx=-1;
+function edXY(e){const r=ed.getBoundingClientRect();
+  return [(e.clientX-r.left)*ed.width/r.width,(e.clientY-r.top)*ed.height/r.height];}
+function hitPoint(px,py){return planPts.findIndex(p=>{const s=w2e(p);return Math.hypot(s.x-px,s.y-py)<9;});}
+function hitSegment(px,py){
+  let best=-1,bd=7;
+  for(let i=0;i<planPts.length-1;i++){
+    const a=w2e(planPts[i]),b=w2e(planPts[i+1]);
+    const dx=b.x-a.x,dy=b.y-a.y,L2=dx*dx+dy*dy||1;
+    let t=((px-a.x)*dx+(py-a.y)*dy)/L2; t=Math.max(0,Math.min(1,t));
+    const d=Math.hypot(px-(a.x+dx*t),py-(a.y+dy*t));
+    if(d<bd){bd=d;best=i;}
+  }
+  return best;
+}
+ed.addEventListener('contextmenu',e=>e.preventDefault());
+ed.addEventListener('pointerdown',e=>{
+  const [px,py]=edXY(e);
+  if(e.button===2){                                 // right-click: delete point
+    const hi=hitPoint(px,py);
+    if(hi>=0&&planPts.length>2){planPts.splice(hi,1);hoverIdx=-1;drawPlan();scheduleBuild();}
+    return;
+  }
+  dragIdx=hitPoint(px,py);
+  if(dragIdx<0){
+    const si=hitSegment(px,py);
+    if(si>=0){ planPts.splice(si+1,0,e2w(px,py)); dragIdx=si+1; }  // insert on the line, then drag
+    else { planPts.push(e2w(px,py)); dragIdx=planPts.length-1; }   // append at end, then drag
+    drawPlan(); scheduleBuild();
+  }
+  ed.setPointerCapture(e.pointerId);
+});
+ed.addEventListener('pointermove',e=>{
+  const [px,py]=edXY(e);
+  if(dragIdx>=0){ planPts[dragIdx]=e2w(px,py); drawPlan(); scheduleBuild(); return; }
+  const h=hitPoint(px,py);
+  if(h!==hoverIdx){ hoverIdx=h; ed.style.cursor=h>=0?'grab':'crosshair'; drawPlan(); }
+});
+addEventListener('pointerup',()=>{ if(dragIdx>=0){dragIdx=-1; drawPlan();} });
+document.getElementById('undoPt').onclick=()=>{if(planPts.length>2){planPts.pop();drawPlan();scheduleBuild();}};
+document.querySelectorAll('.presetrow .mini').forEach(b=>b.onclick=()=>{preset(b.dataset.p);drawPlan();scheduleBuild();});
+
+/* ---------- cycle view ---------- */
+function drawCycle(){const el=document.getElementById('cycView');el.innerHTML='';
+  P.cycle.forEach((r,i)=>{const s=document.createElement('div');s.className='slot '+(r==='chord'?'chord':'web');
+    s.textContent=r==='chord'?'chord':P.webType;s.title='click to toggle';
+    s.onclick=()=>{P.cycle[i]=r==='chord'?'web':'chord';drawCycle();scheduleBuild();};el.appendChild(s);});
+  const add=document.createElement('div');add.className='slot';add.textContent='+';add.style.borderStyle='dashed';
+  add.onclick=()=>{if(P.cycle.length<6){P.cycle.push('web');drawCycle();scheduleBuild();}};el.appendChild(add);
+  const rem=document.createElement('div');rem.className='slot';rem.textContent='−';rem.style.borderStyle='dashed';
+  rem.onclick=()=>{if(P.cycle.length>2){P.cycle.pop();drawCycle();scheduleBuild();}};el.appendChild(rem);}
+
+/* ---------- UI wiring ---------- */
+const UNITS={wallH:' mm',domeR:' mm',sweep:'°',hFrac:'',bead:' mm',lh:' mm',w:' mm',lambda:' mm',amp:' mm',ampF:'×',minGap:' mm',lambdaS:' mm',
+  overshoot:' mm',dwell:' mm',jitter:'',flowBoost:'×',maxBridge:' mm',speed:' mm/s',bridgeSpeed:' mm/s',temp:'°C',bed:'°C',fan:' %',
+  grid:'',specW:' mm',specH:' mm'};
+function bindRange(id){const el=document.getElementById(id),lbl=document.getElementById('v_'+id);el.value=P[id];
+  const show=()=>{lbl.textContent=id==='hFrac'?Math.round(P[id]*100)+'%':(id==='grid'?P.grid+'×'+P.grid:P[id]+(UNITS[id]||''));};show();
+  el.addEventListener('input',()=>{P[id]=parseFloat(el.value);show();scheduleBuild();});}
+['wallH','domeR','sweep','hFrac','bead','lh','w','lambda','amp','ampF','minGap','lambdaS','overshoot','dwell','jitter','flowBoost','maxBridge','speed','bridgeSpeed','fan','temp','bed','grid','specW','specH'].forEach(bindRange);
+function bindSwitch(id){const el=document.getElementById(id);el.classList.toggle('on',P[id]);
+  el.onclick=()=>{P[id]=!P[id];el.classList.toggle('on',P[id]);scheduleBuild();};}
+['altPhase','showNodes','checkOv','capClose','autoLOD','gradeLean'].forEach(bindSwitch);
+function bindSeg(segId,key,attr,after){document.getElementById(segId).querySelectorAll('button').forEach(b=>b.onclick=()=>{
+  P[key]=isNaN(+b.dataset[attr])?b.dataset[attr]:+b.dataset[attr];
+  document.getElementById(segId).querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));after&&after();scheduleBuild();});}
+function syncDwell(){document.getElementById('dwellWrap').style.display=P.webType==='diagonal'?'':'none';}
+bindSeg('webSeg','webType','w',()=>{drawCycle();syncDwell();});
+document.getElementById('viewSeg').querySelectorAll('button').forEach(b=>b.onclick=()=>{
+  document.getElementById('viewSeg').querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));
+  document.body.classList.toggle('ess', b.dataset.v==='ess');});
+bindSeg('sweepXSeg','sweepX','s');
+bindSeg('sweepYSeg','sweepY','s');
+document.getElementById('nozSeg').querySelectorAll('button').forEach(b=>b.onclick=()=>{
+  P.noz=+b.dataset.n;document.getElementById('nozSeg').querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));
+  P.bead=+(P.noz*1.1).toFixed(2);document.getElementById('bead').value=P.bead;document.getElementById('v_bead').textContent=P.bead+' mm';scheduleBuild();});
+document.getElementById('modeSeg').querySelectorAll('button').forEach(b=>b.onclick=()=>{
+  P.mode=b.dataset.m;document.getElementById('modeSeg').querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));
+  document.getElementById('secWall').style.display=P.mode==='wall'?'block':'none';
+  document.getElementById('secDome').style.display=P.mode==='dome'?'block':'none';
+  document.getElementById('secImport').style.display=P.mode==='import'?'block':'none';
+  document.getElementById('secBatch').style.display=P.mode==='batch'?'block':'none';scheduleBuild();});
+document.getElementById('objBtn').onclick=()=>document.getElementById('objFile').click();
+document.getElementById('objFile').onchange=e=>{const fl=e.target.files[0];if(!fl)return;
+  const rd=new FileReader();rd.onload=()=>{parseOBJ(rd.result);scheduleBuild();};rd.readAsText(fl);};
+document.getElementById('axSeg').querySelectorAll('button').forEach(b=>b.onclick=()=>{
+  objAxis=b.dataset.a;
+  document.getElementById('axSeg').querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));
+  normalizeMesh();scheduleBuild();});
+document.getElementById('gHead').value=HEAD_HINT;document.getElementById('gFoot').value=FOOT_DEF;
+document.getElementById('expStl').onclick=exportSTL;
+document.getElementById('expGcode').onclick=exportGcode;
+const slider=document.getElementById('laySlider');
+slider.addEventListener('input',()=>{visK=parseInt(slider.value);updateVisibility();});
+document.getElementById('isoBtn').onclick=function(){isolate=!isolate;this.textContent='isolate: '+(isolate?'on':'off');updateVisibility();};
+document.getElementById('howBtn').onclick=()=>document.getElementById('modal').style.display='flex';
+document.getElementById('modalClose').onclick=()=>document.getElementById('modal').style.display='none';
+document.getElementById('modal').onclick=e=>{if(e.target.id==='modal')document.getElementById('modal').style.display='none';};
+
+/* ---------- orchestration ---------- */
+let buildT=null;
+function scheduleBuild(){clearTimeout(buildT);buildT=setTimeout(fullBuild,150);}
+function fullBuild(){buildLayers();const N=Math.max(0,layers.length-1);slider.max=N;
+  if(visK>N||parseInt(slider.value)>N){visK=N;slider.value=N;}rebuildScene();updateStats();}
+
+document.body.classList.add('ess');syncDwell();
+initScene();bindOrbit();drawPlan();drawCycle();fullBuild();
+document.getElementById('loading').remove();
+(function loop(){requestAnimationFrame(loop);updateCam();renderer.render(scene,camera);})();
+</script>
+</body>
+</html>

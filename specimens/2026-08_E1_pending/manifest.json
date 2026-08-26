@@ -1,0 +1,515 @@
+{
+  "experiment": "E1 weld rigidity fork (web type x overhang extension)",
+  "date_generated": "2026-08-05",
+  "printer": "Bambu A2L",
+  "nozzle_mm": 0.4,
+  "material": "PLA",
+  "route": "A (STL through Bambu Studio / Arachne)",
+  "bead_note": "STL cut at bead 0.45mm. Recalibrate single-line width on your machine; if it differs by >0.03mm, set bead in WEFT batch mode and re-export.",
+  "orientation": "Fiducial 8mm bar sits outside the corner nearest to row 0, col 0. Rows (Y, away from fiducial): diagonal, perp, staple, sine. Cols (X): e = 0, 0.6, 1.2, 1.8 mm.",
+  "fixed": {
+    "wall_span_mm": 5,
+    "lambda_mm": 8,
+    "layer_mm": 0.24,
+    "spec_w_mm": 28,
+    "spec_h_mm": 16
+  },
+  "specimens": [
+    {
+      "grid": {
+        "row": 0,
+        "col": 0
+      },
+      "web_type": "diagonal",
+      "overhang_e_mm": 0,
+      "params": {
+        "bead_mm": 0.45,
+        "layer_mm": 0.24,
+        "wall_span_mm": 5,
+        "lambda_mm": 8,
+        "dwell_mm": 0.6,
+        "jitter": 0,
+        "jitter_seed": 1337,
+        "flow_boost": 1.25,
+        "speed_mms": 30,
+        "bridge_speed_mms": 18,
+        "nozzle_C": 215,
+        "bed_C": 55,
+        "alt_phase": true,
+        "autoLOD": true,
+        "min_gap_mm": 1.4
+      },
+      "outcomes": {
+        "survived_removal": null,
+        "torsion_feel": null,
+        "failure_mode": null,
+        "notes": ""
+      }
+    },
+    {
+      "grid": {
+        "row": 0,
+        "col": 1
+      },
+      "web_type": "diagonal",
+      "overhang_e_mm": 0.6,
+      "params": {
+        "bead_mm": 0.45,
+        "layer_mm": 0.24,
+        "wall_span_mm": 5,
+        "lambda_mm": 8,
+        "dwell_mm": 0.6,
+        "jitter": 0,
+        "jitter_seed": 1337,
+        "flow_boost": 1.25,
+        "speed_mms": 30,
+        "bridge_speed_mms": 18,
+        "nozzle_C": 215,
+        "bed_C": 55,
+        "alt_phase": true,
+        "autoLOD": true,
+        "min_gap_mm": 1.4
+      },
+      "outcomes": {
+        "survived_removal": null,
+        "torsion_feel": null,
+        "failure_mode": null,
+        "notes": ""
+      }
+    },
+    {
+      "grid": {
+        "row": 0,
+        "col": 2
+      },
+      "web_type": "diagonal",
+      "overhang_e_mm": 1.2,
+      "params": {
+        "bead_mm": 0.45,
+        "layer_mm": 0.24,
+        "wall_span_mm": 5,
+        "lambda_mm": 8,
+        "dwell_mm": 0.6,
+        "jitter": 0,
+        "jitter_seed": 1337,
+        "flow_boost": 1.25,
+        "speed_mms": 30,
+        "bridge_speed_mms": 18,
+        "nozzle_C": 215,
+        "bed_C": 55,
+        "alt_phase": true,
+        "autoLOD": true,
+        "min_gap_mm": 1.4
+      },
+      "outcomes": {
+        "survived_removal": null,
+        "torsion_feel": null,
+        "failure_mode": null,
+        "notes": ""
+      }
+    },
+    {
+      "grid": {
+        "row": 0,
+        "col": 3
+      },
+      "web_type": "diagonal",
+      "overhang_e_mm": 1.8,
+      "params": {
+        "bead_mm": 0.45,
+        "layer_mm": 0.24,
+        "wall_span_mm": 5,
+        "lambda_mm": 8,
+        "dwell_mm": 0.6,
+        "jitter": 0,
+        "jitter_seed": 1337,
+        "flow_boost": 1.25,
+        "speed_mms": 30,
+        "bridge_speed_mms": 18,
+        "nozzle_C": 215,
+        "bed_C": 55,
+        "alt_phase": true,
+        "autoLOD": true,
+        "min_gap_mm": 1.4
+      },
+      "outcomes": {
+        "survived_removal": null,
+        "torsion_feel": null,
+        "failure_mode": null,
+        "notes": ""
+      }
+    },
+    {
+      "grid": {
+        "row": 1,
+        "col": 0
+      },
+      "web_type": "perp",
+      "overhang_e_mm": 0,
+      "params": {
+        "bead_mm": 0.45,
+        "layer_mm": 0.24,
+        "wall_span_mm": 5,
+        "lambda_mm": 8,
+        "dwell_mm": 0.6,
+        "jitter": 0,
+        "jitter_seed": 1337,
+        "flow_boost": 1.25,
+        "speed_mms": 30,
+        "bridge_speed_mms": 18,
+        "nozzle_C": 215,
+        "bed_C": 55,
+        "alt_phase": true,
+        "autoLOD": true,
+        "min_gap_mm": 1.4
+      },
+      "outcomes": {
+        "survived_removal": null,
+        "torsion_feel": null,
+        "failure_mode": null,
+        "notes": ""
+      }
+    },
+    {
+      "grid": {
+        "row": 1,
+        "col": 1
+      },
+      "web_type": "perp",
+      "overhang_e_mm": 0.6,
+      "params": {
+        "bead_mm": 0.45,
+        "layer_mm": 0.24,
+        "wall_span_mm": 5,
+        "lambda_mm": 8,
+        "dwell_mm": 0.6,
+        "jitter": 0,
+        "jitter_seed": 1337,
+        "flow_boost": 1.25,
+        "speed_mms": 30,
+        "bridge_speed_mms": 18,
+        "nozzle_C": 215,
+        "bed_C": 55,
+        "alt_phase": true,
+        "autoLOD": true,
+        "min_gap_mm": 1.4
+      },
+      "outcomes": {
+        "survived_removal": null,
+        "torsion_feel": null,
+        "failure_mode": null,
+        "notes": ""
+      }
+    },
+    {
+      "grid": {
+        "row": 1,
+        "col": 2
+      },
+      "web_type": "perp",
+      "overhang_e_mm": 1.2,
+      "params": {
+        "bead_mm": 0.45,
+        "layer_mm": 0.24,
+        "wall_span_mm": 5,
+        "lambda_mm": 8,
+        "dwell_mm": 0.6,
+        "jitter": 0,
+        "jitter_seed": 1337,
+        "flow_boost": 1.25,
+        "speed_mms": 30,
+        "bridge_speed_mms": 18,
+        "nozzle_C": 215,
+        "bed_C": 55,
+        "alt_phase": true,
+        "autoLOD": true,
+        "min_gap_mm": 1.4
+      },
+      "outcomes": {
+        "survived_removal": null,
+        "torsion_feel": null,
+        "failure_mode": null,
+        "notes": ""
+      }
+    },
+    {
+      "grid": {
+        "row": 1,
+        "col": 3
+      },
+      "web_type": "perp",
+      "overhang_e_mm": 1.8,
+      "params": {
+        "bead_mm": 0.45,
+        "layer_mm": 0.24,
+        "wall_span_mm": 5,
+        "lambda_mm": 8,
+        "dwell_mm": 0.6,
+        "jitter": 0,
+        "jitter_seed": 1337,
+        "flow_boost": 1.25,
+        "speed_mms": 30,
+        "bridge_speed_mms": 18,
+        "nozzle_C": 215,
+        "bed_C": 55,
+        "alt_phase": true,
+        "autoLOD": true,
+        "min_gap_mm": 1.4
+      },
+      "outcomes": {
+        "survived_removal": null,
+        "torsion_feel": null,
+        "failure_mode": null,
+        "notes": ""
+      }
+    },
+    {
+      "grid": {
+        "row": 2,
+        "col": 0
+      },
+      "web_type": "staple",
+      "overhang_e_mm": 0,
+      "params": {
+        "bead_mm": 0.45,
+        "layer_mm": 0.24,
+        "wall_span_mm": 5,
+        "lambda_mm": 8,
+        "dwell_mm": 0.6,
+        "jitter": 0,
+        "jitter_seed": 1337,
+        "flow_boost": 1.25,
+        "speed_mms": 30,
+        "bridge_speed_mms": 18,
+        "nozzle_C": 215,
+        "bed_C": 55,
+        "alt_phase": true,
+        "autoLOD": true,
+        "min_gap_mm": 1.4
+      },
+      "outcomes": {
+        "survived_removal": null,
+        "torsion_feel": null,
+        "failure_mode": null,
+        "notes": ""
+      }
+    },
+    {
+      "grid": {
+        "row": 2,
+        "col": 1
+      },
+      "web_type": "staple",
+      "overhang_e_mm": 0.6,
+      "params": {
+        "bead_mm": 0.45,
+        "layer_mm": 0.24,
+        "wall_span_mm": 5,
+        "lambda_mm": 8,
+        "dwell_mm": 0.6,
+        "jitter": 0,
+        "jitter_seed": 1337,
+        "flow_boost": 1.25,
+        "speed_mms": 30,
+        "bridge_speed_mms": 18,
+        "nozzle_C": 215,
+        "bed_C": 55,
+        "alt_phase": true,
+        "autoLOD": true,
+        "min_gap_mm": 1.4
+      },
+      "outcomes": {
+        "survived_removal": null,
+        "torsion_feel": null,
+        "failure_mode": null,
+        "notes": ""
+      }
+    },
+    {
+      "grid": {
+        "row": 2,
+        "col": 2
+      },
+      "web_type": "staple",
+      "overhang_e_mm": 1.2,
+      "params": {
+        "bead_mm": 0.45,
+        "layer_mm": 0.24,
+        "wall_span_mm": 5,
+        "lambda_mm": 8,
+        "dwell_mm": 0.6,
+        "jitter": 0,
+        "jitter_seed": 1337,
+        "flow_boost": 1.25,
+        "speed_mms": 30,
+        "bridge_speed_mms": 18,
+        "nozzle_C": 215,
+        "bed_C": 55,
+        "alt_phase": true,
+        "autoLOD": true,
+        "min_gap_mm": 1.4
+      },
+      "outcomes": {
+        "survived_removal": null,
+        "torsion_feel": null,
+        "failure_mode": null,
+        "notes": ""
+      }
+    },
+    {
+      "grid": {
+        "row": 2,
+        "col": 3
+      },
+      "web_type": "staple",
+      "overhang_e_mm": 1.8,
+      "params": {
+        "bead_mm": 0.45,
+        "layer_mm": 0.24,
+        "wall_span_mm": 5,
+        "lambda_mm": 8,
+        "dwell_mm": 0.6,
+        "jitter": 0,
+        "jitter_seed": 1337,
+        "flow_boost": 1.25,
+        "speed_mms": 30,
+        "bridge_speed_mms": 18,
+        "nozzle_C": 215,
+        "bed_C": 55,
+        "alt_phase": true,
+        "autoLOD": true,
+        "min_gap_mm": 1.4
+      },
+      "outcomes": {
+        "survived_removal": null,
+        "torsion_feel": null,
+        "failure_mode": null,
+        "notes": ""
+      }
+    },
+    {
+      "grid": {
+        "row": 3,
+        "col": 0
+      },
+      "web_type": "sine",
+      "overhang_e_mm": 0,
+      "params": {
+        "bead_mm": 0.45,
+        "layer_mm": 0.24,
+        "wall_span_mm": 5,
+        "lambda_mm": 8,
+        "dwell_mm": 0.6,
+        "jitter": 0,
+        "jitter_seed": 1337,
+        "flow_boost": 1.25,
+        "speed_mms": 30,
+        "bridge_speed_mms": 18,
+        "nozzle_C": 215,
+        "bed_C": 55,
+        "alt_phase": true,
+        "autoLOD": true,
+        "min_gap_mm": 1.4
+      },
+      "outcomes": {
+        "survived_removal": null,
+        "torsion_feel": null,
+        "failure_mode": null,
+        "notes": ""
+      }
+    },
+    {
+      "grid": {
+        "row": 3,
+        "col": 1
+      },
+      "web_type": "sine",
+      "overhang_e_mm": 0.6,
+      "params": {
+        "bead_mm": 0.45,
+        "layer_mm": 0.24,
+        "wall_span_mm": 5,
+        "lambda_mm": 8,
+        "dwell_mm": 0.6,
+        "jitter": 0,
+        "jitter_seed": 1337,
+        "flow_boost": 1.25,
+        "speed_mms": 30,
+        "bridge_speed_mms": 18,
+        "nozzle_C": 215,
+        "bed_C": 55,
+        "alt_phase": true,
+        "autoLOD": true,
+        "min_gap_mm": 1.4
+      },
+      "outcomes": {
+        "survived_removal": null,
+        "torsion_feel": null,
+        "failure_mode": null,
+        "notes": ""
+      }
+    },
+    {
+      "grid": {
+        "row": 3,
+        "col": 2
+      },
+      "web_type": "sine",
+      "overhang_e_mm": 1.2,
+      "params": {
+        "bead_mm": 0.45,
+        "layer_mm": 0.24,
+        "wall_span_mm": 5,
+        "lambda_mm": 8,
+        "dwell_mm": 0.6,
+        "jitter": 0,
+        "jitter_seed": 1337,
+        "flow_boost": 1.25,
+        "speed_mms": 30,
+        "bridge_speed_mms": 18,
+        "nozzle_C": 215,
+        "bed_C": 55,
+        "alt_phase": true,
+        "autoLOD": true,
+        "min_gap_mm": 1.4
+      },
+      "outcomes": {
+        "survived_removal": null,
+        "torsion_feel": null,
+        "failure_mode": null,
+        "notes": ""
+      }
+    },
+    {
+      "grid": {
+        "row": 3,
+        "col": 3
+      },
+      "web_type": "sine",
+      "overhang_e_mm": 1.8,
+      "params": {
+        "bead_mm": 0.45,
+        "layer_mm": 0.24,
+        "wall_span_mm": 5,
+        "lambda_mm": 8,
+        "dwell_mm": 0.6,
+        "jitter": 0,
+        "jitter_seed": 1337,
+        "flow_boost": 1.25,
+        "speed_mms": 30,
+        "bridge_speed_mms": 18,
+        "nozzle_C": 215,
+        "bed_C": 55,
+        "alt_phase": true,
+        "autoLOD": true,
+        "min_gap_mm": 1.4
+      },
+      "outcomes": {
+        "survived_removal": null,
+        "torsion_feel": null,
+        "failure_mode": null,
+        "notes": ""
+      }
+    }
+  ]
+}
