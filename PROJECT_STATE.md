@@ -165,7 +165,7 @@ flow boost (G-code only). Node markers sit at TRUE crossings, not apexes
 
 The invariants below are no longer a claim from a lost session — they run as
 `tests/run_tests.mjs` (Playwright + headless Chromium against the real
-index.html; **44 checks** as of 2026-08-26, all passing). The core set was
+index.html; **52 checks** as of 2026-08-26, all passing). The core set was
 measured 2026-08-06:
 
 Angular phase lock across dome layers 8.9e-16 rad (< 1e-9) · width-wave
@@ -237,16 +237,36 @@ adhesive (welds govern; e + flow boost are the levers).
   printability — the checker still reports honestly whatever remains.
 - Converging plan walls don't merge into one bead (dome cap is the only merge
   case). Planned: Clipper-style offset-union + medial axis; splice, not weave.
-- **CLOSED REVOLVES SEAM (measured 2026-08-26).** A 360 deg dome puts ~800-2200
-  unintended overlaps into every model - every web type, every lambda. They sit at
-  +/-178-180 deg, on WEB layers only (which are closed:false), i.e. exactly where the
-  pattern's two ends meet. Open sweeps and walls are clean (0 overlaps at 270 deg).
-  Snapping lambda to a whole number of waves around the equator was tried and does
-  NOT fix it - the seam is the web layer's endpoints meeting, not pitch
-  commensurability - and that attempt was reverted rather than left in place looking
-  like a fix. Real fix: generate closed-revolve webs over [0, arc) and mark them
-  closed so the wrap-around exclusion applies. Deferred until after E1.
-  **Until then: print domes at 270 deg.**
+- **CLOSED REVOLVES: DIAGNOSED AND FIXED 2026-08-26.** A 360 deg dome used to put
+  ~800-2200 unintended overlaps into every model, at every web type and every lambda.
+  Two independent causes, both now fixed and locked by tests T16a-f:
+  (1) the CHORD ring - on a closed turn u=0 and u=total are the same place, so the
+  wall's racetrack put BOTH cross-connectors on one angle, one exactly on top of the
+  other: 8 overlaps per chord layer, 799 per dome, all at +/-180 deg. A closed turn is
+  now drawn as outer turn -> ONE radial crossover -> inner turn, each turn stopping a
+  step short of its own start, so no point on the path is ever revisited.
+  (2) the WEB pattern did not TILE the turn - the apex grid was laid out from u=0 with
+  a pitch that did not divide the circumference (measured: 95 apexes, the last one
+  0.99 mm from the first against a 4 mm pitch). The pitch is now snapped so a whole
+  number of waves fits the turn (rounded to a multiple of 16 half-waves so dyadic LOD
+  keeps dividing it exactly), the apex count is derived from that, and the grid is
+  offset by half a BASE half-wave so the seam falls on a plain run between nodes.
+  Anchoring that offset to the base grid rather than the decimated one is what keeps
+  weld columns stacked through every LOD band - the first attempt anchored it to the
+  layer's own pitch and put m=2 columns exactly between the m=1 columns, which the
+  phase-lock test caught.
+  A third consequence had to be fixed with it: the width wave's zeros must sit ON the
+  node columns, and the half-step offset moved the nodes onto the wave's EXTREMA, so
+  the flanges pinched exactly where the rungs cross (13 overlaps at amp 1.0, 7873 at
+  1.5, while 180/270 deg domes and every wall stayed clean). The wave is now shifted a
+  quarter period on closed turns.
+  VERIFIED after the fix: 0 overlaps at 180/270/360 deg for staple, diagonal, sine and
+  perp; with jitter; with lean grading; with width modulation to amp 2.0; on R40, R60
+  and R71; thread continuous across the seam (max segment 1.25 mm, no jumps); G-code
+  clean with no NaN and no travel over 3.8 mm. Walls are untouched - the E1 plate still
+  regenerates bit-for-bit. NOTE: on a closed revolve lambda is now QUANTISED by the
+  snap (at R60, lambda 9 and 10 both land on an effective 9.42 mm); T1b bounds the
+  distortion to 10% of the requested value.
 - **THE NODE-GAP FLOOR IS NOT SUFFICIENT ON CURVED CENTERLINES (measured
   2026-08-26).** On the R60 dome, lambda=5 and lambda=6 produce 99 and 72 overlaps
   while still passing the gap floor (1.42 and 1.60 mm against a 1.40 mm floor): the
@@ -272,8 +292,8 @@ adhesive (welds govern; e + flow boost are the levers).
 `presets/presets.json` holds twelve parameter vectors with their measured numbers
 (layers, welds, size, overlaps, estimated time) for the three-day, four-A1 program:
 C1 calibration ladder, E1 web x overhang, P2 lambda x web, P3 span x overhang,
-R1 Route A / Route B coupon pair, D2 dome lambda-ladder (7/9/12/16), X1 spiral,
-X2 single-stroke letter. Files <= 20 MB ship beside it; the rest are params-only
+R1 Route A / Route B coupon pair, D2 dome lambda-ladder (7/9/12/16, FULL 360 deg domes since
+the closed-revolve fix), X1 spiral, X2 single-stroke letter. Files <= 20 MB ship beside it; the rest are params-only
 (load the preset, press Download STL). The suite asserts every preset still builds
 valid with zero overlaps AND still matches its recorded numbers, so a preset cannot
 drift away from the app unnoticed.
@@ -410,3 +430,20 @@ amp≥2, staple crowding on tightly curved plans, arc-length import drift.
   to ~1 s, so the chunked exporters crawled (130 s for the E1 STL). The harness and
   the generator now launch with background-timer throttling disabled.
 - Test count 30 -> 44.
+
+2026-08-26 later the same day (closed revolves solved):
+- The 360 deg dome/sphere defect was diagnosed to two independent causes and fixed;
+  a third (the width wave sliding off the node columns) was introduced by the fix and
+  fixed with it. Full account in section 10. Six new checks T16a-f lock it: no
+  overlaps on any web grammar at 360 deg, exact tiling (seam gap == node pitch),
+  decimated bands still on the base column grid, the chord ring never revisiting a
+  point, width modulation clean at amp 1.5 freq 2, and thread continuity across the
+  seam. T1 was rewritten to test the invariant that actually matters - every weld
+  column on ONE angular grid across every LOD band - plus T1b bounding the pitch snap
+  and T1c asserting open sweeps still sit on the exact lambda/(2R) grid.
+- Dome presets moved to full 360 deg domes; the lambda ladder is now 7/9/12/16.
+- The bridge was exercised end to end against a real Claude Code CLI: brief in,
+  parameters out, built and validated by the app, accepted on the first attempt in
+  53.8 s, run written to bridge/log/. The panel, the picker, the repair loop and the
+  logging all work as described.
+- Test count 44 -> 52.

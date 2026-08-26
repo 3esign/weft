@@ -56,18 +56,39 @@ await page.waitForTimeout(400); // let the debounced first build settle
 }
 
 /* ---------- T1 angular phase lock on domes ---------- */
+/* The invariant is that every weld column across every layer and every LOD band sits on
+   ONE angular grid. On an OPEN sweep that grid is lambda/(2R). On a CLOSED revolve the
+   pitch is snapped so a whole number of waves fits the turn (an unsnapped pitch cannot
+   tile a ring) and the grid is offset by half a step so the seam falls between nodes —
+   so the test asks for membership in THAT grid, and separately bounds how far the snap
+   is allowed to move the requested lambda. */
 {
   const r = await page.evaluate(()=>{
     Object.assign(P,{mode:'dome',domeR:71,sweep:360,lambda:8,w:5,jitter:0,altPhase:false,autoLOD:true,minGap:1.4,gradeLean:false,bead:0.45});
-    const baseAng=P.lambda/(2*71); let worst=0,n=0;
+    const cl0=domeCl(0.12,71);
+    const Kb=closedHalves(cl0);                 // half-waves per turn, after snapping
+    const step=2*Math.PI/Kb;                    // angular pitch of the base grid
+    let worst=0,n=0;
     for(let zc=0.12; zc<71*0.97; zc+=3.7){
       const cl=domeCl(zc,71); const {us}=apexUs(cl,0,0);
-      for(const u of us){ const a=u/cl.r; const k=Math.round(a/baseAng);
-        worst=Math.max(worst,Math.abs(a-k*baseAng)); n++; }
+      for(const u of us){ const a=u/cl.r; const k=Math.round(a/step-0.5);
+        worst=Math.max(worst,Math.abs(a-(k+0.5)*step)); n++; }
     }
-    return {worst,n};
+    const openCl=(()=>{ const keep=P.sweep; P.sweep=270; const c=domeCl(0.12,71); P.sweep=keep; return c; })();
+    let worstOpen=0,nOpen=0; const baseAng=P.lambda/(2*71);
+    for(let zc=0.12; zc<71*0.97; zc+=3.7){
+      const keep=P.sweep; P.sweep=270; const cl=domeCl(zc,71); P.sweep=keep;
+      const {us}=apexUs(cl,0,0);
+      for(const u of us){ const a=u/cl.r; const k=Math.round(a/baseAng);
+        worstOpen=Math.max(worstOpen,Math.abs(a-k*baseAng)); nOpen++; }
+    }
+    return {worst,n,worstOpen,nOpen,Kb,lamEff:lamEff(cl0),lam:P.lambda};
   });
-  check('T1 dome apex angles on base grid < 1e-9 rad', r.worst<1e-9, `worst ${r.worst.toExponential(2)} over ${r.n} nodes`);
+  check('T1b closed-revolve pitch snap stays within 10% of the requested lambda',
+    Math.abs(r.lamEff-r.lam)/r.lam < 0.10, `lambda ${r.lam} -> ${r.lamEff.toFixed(3)} mm (${r.Kb} half-waves per turn)`);
+  check('T1c open-sweep apex angles still on the exact lambda/(2R) grid',
+    r.worstOpen<1e-9, `worst ${r.worstOpen.toExponential(2)} over ${r.nOpen} nodes`);
+  check('T1 dome apex angles on one angular grid < 1e-9 rad', r.worst<1e-9, `worst ${r.worst.toExponential(2)} over ${r.n} nodes, all LOD bands`);
 }
 
 /* ---------- T2 width-wave zeros on node positions ---------- */
@@ -444,6 +465,64 @@ let regenTris=0;
   } else {
     check('T15 shipped presets present', false, 'presets/presets.json not found');
   }
+}
+
+/* ---------- T16 closed revolves (the full sphere/dome) ---------- */
+{
+  const r = await page.evaluate(()=>{
+    setMachine('a1');
+    const B={mode:'dome',domeR:60,sweep:360,hFrac:0.85,capClose:true,w:5,bead:0.45,lh:0.24,
+      overshoot:1.0,dwell:0.6,jitter:0,altPhase:true,autoLOD:true,minGap:1.4,amp:0,ampF:1,
+      checkOv:true,cycle:['chord','web'],maxBridge:12,noz:0.4,gradeLean:false,lambda:8};
+    const byWeb={};
+    for(const web of ['staple','diagonal','sine','perp']){
+      Object.assign(P,B,{webType:web}); buildLayers();
+      let chord=0, webov=0, maxSeg=0;
+      for(const L of layers){ const n=(L.ov||[]).length;
+        if(L.role==='chord') chord+=n; else webov+=n;
+        for(let i=1;i<L.pts.length;i++) maxSeg=Math.max(maxSeg,Math.hypot(L.pts[i].x-L.pts[i-1].x,L.pts[i].y-L.pts[i-1].y)); }
+      byWeb[web]={chord,webov,maxSeg:+maxSeg.toFixed(2)};
+    }
+    // width modulation on a closed turn: the wave's zeros must stay under the nodes
+    Object.assign(P,B,{webType:'staple',amp:1.5,ampF:2}); buildLayers();
+    let modOv=0; for(const L of layers) modOv+=(L.ov||[]).length;
+
+    // exact tiling: the gap across the seam equals the pitch, not a remainder
+    Object.assign(P,B,{webType:'staple',amp:0}); buildLayers();
+    const cl=domeCl(0,60); const a=apexUs(cl,0,0);
+    const seamGap=cl.total-a.us[a.us.length-1]+a.us[0];
+
+    // dyadic registration: a decimated band must be a SUBSET of the base columns
+    const Kb=closedHalves(cl), hb=cl.total/Kb;
+    const onBase=(u)=>{ const k=(u/hb)-0.5; return Math.abs(k-Math.round(k)); };
+    let worstOnBase=0;
+    for(const zc of [0.12,20,40,52,56]){
+      const c2=domeCl(zc,60), a2=apexUs(c2,0,0);
+      for(const u of a2.us) worstOnBase=Math.max(worstOnBase, onBase(u*cl.total/c2.total));
+    }
+    // the chord ring must not revisit a point (that was 8 overlaps per layer)
+    const C=layers.find(L=>L.role==='chord');
+    let minFar=1e9;
+    for(let i=0;i<C.pts.length;i+=3) for(let j=i+40;j<C.pts.length;j+=3)
+      minFar=Math.min(minFar,Math.hypot(C.pts[i].x-C.pts[j].x,C.pts[i].y-C.pts[j].y));
+    setMachine('a2l');
+    return {byWeb,modOv,seamGap:+seamGap.toFixed(4),pitch:+a.half.toFixed(4),
+      worstOnBase:+worstOnBase.toExponential(2),minFar:+minFar.toFixed(3),bead:0.45};
+  });
+  const anyOv=Object.values(r.byWeb).some(x=>x.chord||x.webov);
+  check('T16 full 360° dome: no unintended overlaps on any web grammar', !anyOv,
+    Object.entries(r.byWeb).map(([k,v])=>`${k} ${v.chord}/${v.webov}`).join(' · ') + ' (chord/web)');
+  check('T16b closed revolve tiles exactly: seam gap equals the node pitch',
+    Math.abs(r.seamGap-r.pitch)<1e-6, `seam ${r.seamGap} mm vs pitch ${r.pitch} mm`);
+  check('T16c decimated bands stay on the base column grid',
+    r.worstOnBase<1e-9, `worst offset ${r.worstOnBase} of a base step`);
+  check('T16d chord ring on a closed turn never revisits a point',
+    r.minFar>r.bead, `closest non-adjacent approach ${r.minFar} mm > bead ${r.bead} mm`);
+  check('T16e width modulation stays clean on a closed turn',
+    r.modOv===0, `${r.modOv} overlaps at amp 1.5, freq 2`);
+  check('T16f thread stays continuous across the seam',
+    Object.values(r.byWeb).every(x=>x.maxSeg<3), 'max segment ' +
+      Object.entries(r.byWeb).map(([k,v])=>`${k} ${v.maxSeg}`).join(' / ') + ' mm');
 }
 
 /* ---------- optional screenshot ---------- */

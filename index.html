@@ -98,7 +98,7 @@ textarea{width:100%;background:#0a0f14;border:1px solid var(--line);border-radiu
 
 <div id="panel">
   <h1>WEFT<span>.</span></h1>
-  <div class="tag">continuous lattice toolpath studio · phase 2 · A2L</div>
+  <div class="tag">continuous lattice toolpath studio · phase 2 · <span id="tagMach">A2L</span></div>
 
   <div class="seg" id="modeSeg">
     <button data-m="wall" class="on">Wall</button>
@@ -155,7 +155,7 @@ textarea{width:100%;background:#0a0f14;border:1px solid var(--line);border-radiu
   </div>
 
   <div class="sec">
-    <div class="st">Thread · A2L nozzle</div>
+    <div class="st">Thread · <span id="nozMach">A2L</span> nozzle</div>
     <div class="seg sm" id="nozSeg">
       <button data-n="0.2">0.2</button><button data-n="0.4" class="on">0.4</button><button data-n="0.6">0.6</button><button data-n="0.8">0.8</button></div>
     <div class="ctl"><div class="row"><label>Bead width</label><span class="val" id="v_bead"></span></div><input type="range" id="bead" min="0.2" max="1.4" step="0.02"></div>
@@ -318,6 +318,7 @@ function setMachine(id){
   MACHINE=id; BED=m.bx; BEDY=m.by;
   const t=(elid,txt)=>{const e=document.getElementById(elid); if(e) e.textContent=txt;};
   t('bedRect',m.bx+'×'+m.by); t('batchBed',m.bx); t('gHeadMach',m.label);
+  t('tagMach',m.label.replace('Bambu ','')); t('nozMach',m.label.replace('Bambu ',''));
   const bs=document.getElementById('bed');
   if(bs){ bs.max=m.bedMax; if(P.bed>m.bedMax){ P.bed=m.bedMax; bs.value=P.bed; t('v_bed',P.bed+'°C'); } }
   rebuildBed();
@@ -397,15 +398,26 @@ function domeCl(zc,R){const r=Math.sqrt(Math.max(1e-4,R*R-zc*zc));
   const sw=P.sweep*Math.PI/180,arc=r*sw,n=Math.max(10,Math.ceil(arc/STEP));const pts=[],nrm=[],cum=[0];
   for(let i=0;i<=n;i++){const a=i/n*sw-sw/2;pts.push({x:r*Math.cos(a),y:r*Math.sin(a)});nrm.push({x:Math.cos(a),y:Math.sin(a)});
     if(i>0)cum.push(cum[i-1]+arc/n);}
-  return {pts,nrm,cum,total:arc,r,R,kind:'dome'};}
-function clSample(cl,u){u=Math.max(0,Math.min(cl.total,u));let lo=0,hi=cl.cum.length-1;
+  return {pts,nrm,cum,total:arc,r,R,kind:'dome',closed:P.sweep>=359.9};}
+function clSample(cl,u){u=cl.closed?((u%cl.total)+cl.total)%cl.total:Math.max(0,Math.min(cl.total,u));let lo=0,hi=cl.cum.length-1;
   while(hi-lo>1){const m=(lo+hi)>>1;if(cl.cum[m]<=u)lo=m;else hi=m;}
   const d=cl.cum[hi]-cl.cum[lo]||1,t=(u-cl.cum[lo])/d,p0=cl.pts[lo],p1=cl.pts[hi],n0=cl.nrm[lo],n1=cl.nrm[hi];
   let nx=n0.x+(n1.x-n0.x)*t,ny=n0.y+(n1.y-n0.y)*t;const nl=Math.hypot(nx,ny)||1;
   return {x:p0.x+(p1.x-p0.x)*t,y:p0.y+(p1.y-p0.y)*t,nx:nx/nl,ny:ny/nl};}
 function mapUV(cl,u,lat){const s=clSample(cl,u);return {x:s.x+s.nx*lat,y:s.y+s.ny*lat};}
-function phaseAt(cl,u){return cl.kind==='wall'?2*Math.PI*u/P.lambda:2*Math.PI*(u/cl.r)/(P.lambda/cl.R);}
-function halfWave(cl){return cl.kind==='wall'?P.lambda/2:(P.lambda/(2*cl.R))*cl.r;}
+/* On a CLOSED revolve the pattern meets itself at u=0, so the node pitch has to be
+   commensurate with the circumference or the last wave lands on the first. The wave
+   count around the equator is 4*pi*R/lambda and is independent of the slice radius,
+   so one global snap fixes every layer at once. It is rounded to a multiple of 16 so
+   that dyadic LOD (m = 2,4,8,16) keeps dividing it exactly and weld columns stay
+   stacked through every decimation band. Open sweeps and walls are untouched. */
+function closedHalves(cl){
+  const n=4*Math.PI*cl.R/P.lambda;
+  return Math.max(16, Math.round(n/16)*16);
+}
+function lamEff(cl){ return cl.closed ? 4*Math.PI*cl.R/closedHalves(cl) : P.lambda; }
+function phaseAt(cl,u){return cl.kind==='wall'?2*Math.PI*u/P.lambda:2*Math.PI*(u/cl.r)/(lamEff(cl)/cl.R);}
+function halfWave(cl){return cl.kind==='wall'?P.lambda/2:(lamEff(cl)/(2*cl.R))*cl.r;}
 /* auto density: when physical node spacing shrinks below the floor (tight dome
    radii), DOUBLE the spacing dyadically — knitting decreases. Powers of two keep
    surviving node columns exactly on the base angular grid, so vertical weld
@@ -432,7 +444,32 @@ function decimatedHalf(cl){
   return {h,m};
 }
 function apexUs(cl,webIdx,jit){
-  const {h:half,m}=decimatedHalf(cl);
+  const {h:h0,m}=decimatedHalf(cl);
+  if(cl.closed){
+    /* EXACT tiling: K half-waves fit the turn with no remainder, and the last apex
+       stops one pitch short of the first instead of landing next to it. Measured
+       before this: K=95 with the final apex 0.99 mm from the first against a 4 mm
+       pitch — the crowding that showed up as seam overlaps on every web layer. */
+    const Kb=closedHalves(cl), hb=cl.total/Kb;      // the BASE grid for this revolve
+    let K=Math.max(2,Math.round(Kb/m)); if(K%2) K++;
+    const half=cl.total/K;
+    /* The offset is half of the BASE half-wave, not of this layer's decimated one.
+       That matters: anchoring it to the base grid keeps every decimation band a strict
+       SUBSET of {hb/2 + i*hb}, so weld columns still stack exactly through every LOD
+       transition (anchoring it to the layer's own pitch put m=2 columns precisely
+       between the m=1 columns — caught by the phase-lock test). The half-step itself
+       is what keeps the seam at u=0 sitting on a plain run instead of inside a rung.
+       altPhase cannot move the apex SET on a perfectly tiled ring — shifting by one
+       half-wave maps it onto itself — so on a closed turn it flips the side pattern,
+       which is what alternating phase means on a ring. */
+    const s0=(P.altPhase&&webIdx%2===1)?1:0;
+    const us=[],sides=[];
+    for(let j=0;j<K;j++){ let u=hb*0.5+j*half;
+      if(jit) u+=(rnd()-0.5)*half*jit;
+      us.push(Math.max(0,Math.min(cl.total,u))); sides.push((j+s0)%2===0?1:-1); }
+    return {us,sides,half,m,K};
+  }
+  const half=h0;
   const off=(P.altPhase&&webIdx%2===1)?half:0;
   const us=[],sides=[];let j=0;
   while(true){let u=off+j*half; if(u>cl.total+1e-6) break;
@@ -444,13 +481,29 @@ function apexUs(cl,webIdx,jit){
 /* ---------- one layer's paths (role + web type) ---------- */
 function chordLayer(cl,zBot,off){
   const A=P.w/2, pts=[];
-  for(let u=0;u<=cl.total;u+=STEP) pts.push(mapUV(cl,u, A+P.amp*Math.sin(P.ampF*phaseAt(cl,u)+off)));
-  pts.push(mapUV(cl,cl.total, A+P.amp*Math.sin(P.ampF*phaseAt(cl,cl.total)+off)));
-  const l1=A+P.amp*Math.sin(P.ampF*phaseAt(cl,cl.total)+off);
+  if(cl.closed){
+    /* A closed revolve has no far end to turn around at: u=0 and u=total are the same
+       place, so the wall's racetrack puts BOTH cross-connectors at the same angle, one
+       exactly on top of the other. Measured: 8 overlaps per chord layer, 799 per dome,
+       all at +/-180 deg. Here the layer is drawn as outer turn -> ONE radial crossover
+       -> inner turn, each turn stopping one step short of its own start, so no point on
+       the path is ever revisited and the ring needs no closure exclusion at all. */
+    const lat=(u,s)=>s*(A+P.amp*Math.sin(widthPhase(cl,u)+off));
+    const uX=cl.total-STEP;                       // the crossover angle
+    for(let u=0;u<uX-1e-9;u+=STEP) pts.push(mapUV(cl,u,lat(u,1)));
+    const lX=lat(uX,1);
+    for(let t=0;t<=4;t++) pts.push(mapUV(cl,uX, lX-(2*lX)*t/4));
+    for(let u=uX-STEP;u>1e-9;u-=STEP) pts.push(mapUV(cl,u,lat(u,-1)));
+    pts.push(mapUV(cl,0,lat(0,-1)));
+    return {pts, apexes:[], closed:false};
+  }
+  for(let u=0;u<=cl.total;u+=STEP) pts.push(mapUV(cl,u, A+P.amp*Math.sin(widthPhase(cl,u)+off)));
+  pts.push(mapUV(cl,cl.total, A+P.amp*Math.sin(widthPhase(cl,cl.total)+off)));
+  const l1=A+P.amp*Math.sin(widthPhase(cl,cl.total)+off);
   for(let t=1;t<=4;t++) pts.push(mapUV(cl,cl.total, l1-(2*l1)*t/4));
-  for(let u=cl.total;u>=0;u-=STEP) pts.push(mapUV(cl,u, -(A+P.amp*Math.sin(P.ampF*phaseAt(cl,u)+off))));
-  pts.push(mapUV(cl,0, -(A+P.amp*Math.sin(P.ampF*phaseAt(cl,0)+off))));
-  const l0=A+P.amp*Math.sin(P.ampF*phaseAt(cl,0)+off);
+  for(let u=cl.total;u>=0;u-=STEP) pts.push(mapUV(cl,u, -(A+P.amp*Math.sin(widthPhase(cl,u)+off))));
+  pts.push(mapUV(cl,0, -(A+P.amp*Math.sin(widthPhase(cl,0)+off))));
+  const l0=A+P.amp*Math.sin(widthPhase(cl,0)+off);
   for(let t=1;t<=4;t++) pts.push(mapUV(cl,0, -l0+(2*l0)*t/4));
   return {pts, apexes:[], closed:true};
 }
@@ -477,7 +530,7 @@ function filletParam(v,r){
   return out;
 }
 function emitParam(cl,v,pts){
-  const cu=u=>Math.max(0,Math.min(cl.total,u));
+  const cu=u=>cl.closed?u:Math.max(0,Math.min(cl.total,u));
   pts.push(mapUV(cl,cu(v[0][0]),v[0][1]));
   for(let i=0;i<v.length-1;i++){const a=v[i],b=v[i+1];
     const m=Math.max(1,Math.ceil(Math.max(Math.abs(b[0]-a[0]),Math.abs(b[1]-a[1]))/STEP));
@@ -485,7 +538,15 @@ function emitParam(cl,v,pts){
 }
 /* breathing chord line: width modulation amp + integer freq keeps zeros at node
    positions, so weld registration survives the modulation */
-function AfAt(cl,u){ return P.w/2 + P.amp*Math.sin(P.ampF*phaseAt(cl,u)); }
+/* The width wave's zeros must land ON the node columns — that is what keeps
+   registration exact through modulation. On a closed revolve the apex grid sits at
+   (j+1/2) half-waves (so the seam falls between nodes), which puts the nodes on the
+   wave's EXTREMA instead of its zeros: the flanges pinch to w/2-amp exactly where the
+   rungs cross, and at amp>=1 they collide (measured 13 overlaps at amp 1.0, 7873 at
+   1.5 — while 180 deg and 270 deg domes and every wall stayed clean). Shifting the wave
+   by a quarter period on closed turns puts the zeros back under the nodes. */
+function widthPhase(cl,u){ return P.ampF*(phaseAt(cl,u) - (cl.closed?Math.PI/2:0)); }
+function AfAt(cl,u){ return P.w/2 + P.amp*Math.sin(widthPhase(cl,u)); }
 
 function webLayer(cl,zBot,webIdx){
   const A=P.w/2, e=P.overshoot, Aw=A+e;
@@ -577,8 +638,15 @@ function webLayer(cl,zBot,webIdx){
     const via=[];
     for(let i=0;i<us.length;i++){
       const u=us[i], l=sides[i]*Aw;
-      if(dw2>0.02 && i>0 && i<us.length-1) via.push([Math.max(0,u-dw2),l],[Math.min(cl.total,u+dw2),l]);
+      const interior = cl.closed || (i>0 && i<us.length-1);   // a ring has no end apexes
+      if(dw2>0.02 && interior) via.push([u-dw2,l],[u+dw2,l]);
       else via.push([u,l]);
+    }
+    /* on a closed turn the truss has to cross the seam too: repeat the first apex one
+       turn later so the last member is drawn, then let emitParam wrap u back */
+    if(cl.closed){
+      const l0=sides[0]*Aw, u0=us[0]+cl.total;
+      if(dw2>0.02) via.push([u0-dw2,l0],[u0+dw2,l0]); else via.push([u0,l0]);
     }
     for(let i=0;i<via.length-1;i++){
       const u0=via[i][0],l0=via[i][1],u1=via[i+1][0],l1=via[i+1][1];
@@ -592,7 +660,7 @@ function webLayer(cl,zBot,webIdx){
              if(u+dU<=cl.total) apexes.push(objAt(cl,u+dU,sides[i]*A,zBot)); }
     });
   }
-  return {pts,apexes,closed:false};
+  return {pts,apexes,closed:!!cl.closed};
 }
 function objAt(cl,u,lat,z){const p=mapUV(cl,u,lat);return {x:p.x,y:p.y,z};}
 /* signed centerline curvature at u (rad/mm); + = turning toward +lateral side */

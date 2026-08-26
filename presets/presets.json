@@ -7,7 +7,9 @@
   "Brim or glue on every lattice plate — a lattice has almost no first-layer contact.",
   "Route B G-code needs a start block harvested from Bambu Studio for THIS machine.",
   "Slice Route A with 1 wall loop, no top/bottom, no infill; the preview must show one continuous line per wall.",
-  "Dome density has a floor the node-gap check does not catch: on the R60 dome λ=5 and λ=6 collide (99 and 72 overlaps) while still passing the gap floor. λ>=7 is clean. The overlap detector, not the floor, is what makes this safe — curvature is not in the floor's formula.",
+  "Full 360° domes are printable again: the closed-revolve seam (chord ring putting both crossovers on one angle, plus a web pattern that did not tile the turn) was fixed 2026-08-26 and is locked by tests T16a-f. Verified 0 overlaps at 180/270/360° for every web grammar, with jitter, with grading and with width modulation up to amp 2.",
+  "Dome density still has a floor the node-gap check does not catch: on the R60 dome λ=5 and λ=6 collide (27 and 1 overlaps at 360°, 99 and 72 at 270°) while passing the gap floor. λ>=7 is clean. The independent overlap detector, not the floor, is what makes this safe — curvature is not in the floor's formula.",
+  "On a closed revolve λ is QUANTISED: the pitch is snapped so a whole number of waves fits the turn (rounded to a multiple of 16 half-waves so dyadic LOD keeps dividing it). At R60, λ=9 and λ=10 both land on the same effective 9.42 mm. The snap is bounded to 10% of the requested λ by test T1b.",
   "Lean grading measured identical to dyadic auto-LOD on this dome at λ=8 and λ=16 (same weld count, same thread length to the millimetre). It is a stated policy, not a different outcome, in this window."
  ],
  "presets": [
@@ -1834,14 +1836,19 @@
    "file": "D2_dome_lambda07",
    "kind": "stl",
    "day": 2,
-   "note": "Overhang-vs-density ladder, λ=7 mm rung — one machine each. 270° dome (NOT 360°: a closed revolve collides at the seam), R60, auto-LOD on. Load, then Download STL (~44 MB, too large to ship). Photograph in profile and record the lean angle where the weave first fails.",
+   "note": "Overhang-vs-density ladder, λ=7 mm rung — one machine each. FULL 360° dome (the closed-revolve seam was fixed 2026-08-26; verified 0 overlaps). R60, auto-LOD on, ~68 MB STL so it is params-only: load the preset and press Download STL. Photograph in profile and record the lean angle where the weave first fails.",
    "shipped": false,
    "measured": {
-    "weldNodes": 17066,
-    "minNodeGap_mm": 1.87,
+    "weldNodes": 23744,
+    "minNodeGap_mm": 1.79,
     "overlaps": 0,
-    "estPrint": "105 min",
-    "layers": 212
+    "estPrint": "141 min",
+    "layers": 212,
+    "size_mm": [
+     127,
+     127,
+     50.9
+    ]
    },
    "params": {
     "mode": "dome",
@@ -1875,7 +1882,7 @@
     "specH": 16,
     "grid": 4,
     "domeR": 60,
-    "sweep": 270,
+    "sweep": 360,
     "hFrac": 0.85,
     "capClose": true,
     "machine": "a1"
@@ -1885,14 +1892,19 @@
    "file": "D2_dome_lambda09",
    "kind": "stl",
    "day": 2,
-   "note": "Overhang-vs-density ladder, λ=9 mm rung — one machine each. 270° dome (NOT 360°: a closed revolve collides at the seam), R60, auto-LOD on. Load, then Download STL (~44 MB, too large to ship). Photograph in profile and record the lean angle where the weave first fails.",
+   "note": "Overhang-vs-density ladder, λ=9 mm rung — one machine each. FULL 360° dome (the closed-revolve seam was fixed 2026-08-26; verified 0 overlaps). R60, auto-LOD on, ~51 MB STL so it is params-only: load the preset and press Download STL. Photograph in profile and record the lean angle where the weave first fails.",
    "shipped": false,
    "measured": {
-    "weldNodes": 13250,
-    "minNodeGap_mm": 2.4,
+    "weldNodes": 16960,
+    "minNodeGap_mm": 2.51,
     "overlaps": 0,
-    "estPrint": "96 min",
-    "layers": 212
+    "estPrint": "125 min",
+    "layers": 212,
+    "size_mm": [
+     127,
+     127,
+     50.9
+    ]
    },
    "params": {
     "mode": "dome",
@@ -1926,7 +1938,7 @@
     "specH": 16,
     "grid": 4,
     "domeR": 60,
-    "sweep": 270,
+    "sweep": 360,
     "hFrac": 0.85,
     "capClose": true,
     "machine": "a1"
@@ -1936,14 +1948,19 @@
    "file": "D2_dome_lambda12",
    "kind": "stl",
    "day": 2,
-   "note": "Overhang-vs-density ladder, λ=12 mm rung — one machine each. 270° dome (NOT 360°: a closed revolve collides at the seam), R60, auto-LOD on. Load, then Download STL (~44 MB, too large to ship). Photograph in profile and record the lean angle where the weave first fails.",
+   "note": "Overhang-vs-density ladder, λ=12 mm rung — one machine each. FULL 360° dome (the closed-revolve seam was fixed 2026-08-26; verified 0 overlaps). R60, auto-LOD on, ~43 MB STL so it is params-only: load the preset and press Download STL. Photograph in profile and record the lean angle where the weave first fails.",
    "shipped": false,
    "measured": {
-    "weldNodes": 10070,
-    "minNodeGap_mm": 3.2,
+    "weldNodes": 13568,
+    "minNodeGap_mm": 3.14,
     "overlaps": 0,
-    "estPrint": "89 min",
-    "layers": 212
+    "estPrint": "117 min",
+    "layers": 212,
+    "size_mm": [
+     126.9,
+     126.9,
+     50.9
+    ]
    },
    "params": {
     "mode": "dome",
@@ -1977,7 +1994,7 @@
     "specH": 16,
     "grid": 4,
     "domeR": 60,
-    "sweep": 270,
+    "sweep": 360,
     "hFrac": 0.85,
     "capClose": true,
     "machine": "a1"
@@ -1987,14 +2004,19 @@
    "file": "D2_dome_lambda16",
    "kind": "stl",
    "day": 2,
-   "note": "Overhang-vs-density ladder, λ=16 mm rung — one machine each. 270° dome (NOT 360°: a closed revolve collides at the seam), R60, auto-LOD on. Load, then Download STL (~44 MB, too large to ship). Photograph in profile and record the lean angle where the weave first fails.",
+   "note": "Overhang-vs-density ladder, λ=16 mm rung — one machine each. FULL 360° dome (the closed-revolve seam was fixed 2026-08-26; verified 0 overlaps). R60, auto-LOD on, ~35 MB STL so it is params-only: load the preset and press Download STL. Photograph in profile and record the lean angle where the weave first fails.",
    "shipped": false,
    "measured": {
-    "weldNodes": 7526,
-    "minNodeGap_mm": 4.27,
+    "weldNodes": 10176,
+    "minNodeGap_mm": 4.19,
     "overlaps": 0,
-    "estPrint": "83 min",
-    "layers": 212
+    "estPrint": "109 min",
+    "layers": 212,
+    "size_mm": [
+     126.8,
+     126.8,
+     50.9
+    ]
    },
    "params": {
     "mode": "dome",
@@ -2028,7 +2050,7 @@
     "specH": 16,
     "grid": 4,
     "domeR": 60,
-    "sweep": 270,
+    "sweep": 360,
     "hFrac": 0.85,
     "capClose": true,
     "machine": "a1"

@@ -9,3 +9,6 @@ exports/
 presets/*.stl
 presets/*.gcode
 bridge/log/
+
+# the pilot benchmark data is experiment evidence — keep it
+!bridge/log/*.json
