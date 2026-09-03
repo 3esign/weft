@@ -14,19 +14,36 @@
 
    requires: playwright (npm i -D playwright) with a chromium build.
    ============================================================ */
-import { chromium } from 'playwright';
-import { pathToFileURL } from 'url';
+import { createRequire } from 'module';
+import { fileURLToPath, pathToFileURL } from 'url';
 import path from 'path';
 import fs from 'fs';
 
+/* createRequire keeps the harness usable with either the local devDependency or
+   a workspace-provided NODE_PATH; the buildless app itself still has no runtime
+   dependency. */
+const require = createRequire(import.meta.url);
+const { chromium } = require('playwright');
+
 const args = process.argv.slice(2);
 function argOf(flag){ const i=args.indexOf(flag); return i>=0? args[i+1] : null; }
-const APP  = path.resolve(argOf('--app') || path.join(path.dirname(new URL(import.meta.url).pathname), '..', 'index.html'));
+const APP  = path.resolve(argOf('--app') || path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'index.html'));
 const SHOT = argOf('--shot') ? path.resolve(argOf('--shot')) : null;
 const GCODE_OUT = argOf('--gcode-out') ? path.resolve(argOf('--gcode-out')) : null;
 
 const results=[];
 function check(name, pass, detail){ results.push({name, pass:!!pass, detail}); }
+
+/* The 2026-09-03 MERA build exposed a policy bug: UNANCHORED_MEMBRANE was counted and printed,
+   but omitted from the final exit-code sum. A red diagnostic with exit 0 is not a gate. */
+{
+  const gate=fs.readFileSync(path.resolve(path.dirname(APP),'check_gcode.py'),'utf8');
+  const i=gate.indexOf('fail =');
+  const policy=i>=0?gate.slice(i,gate.indexOf('gaps.sort',i)):'';
+  check('T18 gate exit policy includes unanchored membranes',
+    policy.includes("stats['unanchored_membrane']"),
+    policy.includes("stats['unanchored_membrane']")?'hard-fail term present':'diagnostic could exit 0');
+}
 
 /* E1 reference values, measured once from the shipped plate STL
    (specimens/2026-08_E1_pending/weft_batch_4x4.stl) with the 8 mm
@@ -449,7 +466,7 @@ let regenTris=0;
     const r = await page.evaluate((tbl)=>tbl.map(e=>{
       const v = weftEvaluate(e.params);
       return { file:e.file, valid:v.valid, ov:v.overlaps, layers:v.layers, nodes:v.weldNodes,
-               size:v.size_mm, errors:v.errors, want:e.measured };
+               size:v.size_mm, errors:v.errors, want:e.measured, crown:v.crown, firstLayer:v.firstLayer };
     }), table);
     const bad = r.filter(x=>!x.valid || x.ov!==0);
     check('T15 every shipped preset builds valid with zero overlaps',
@@ -461,6 +478,11 @@ let regenTris=0;
     check('T15b preset measurements still match the shipped table',
       drift.length===0, drift.length? drift.map(d=>`${d.file}: ${d.layers}L/${d.nodes}n vs ${d.want.layers}L/${d.want.weldNodes}n`).join(' | ')
         : `${r.filter(x=>x.want).length} measured presets match`);
+    const large=r.find(x=>x.file==='D5_large_closed_dome_R90_lambda18_foundation');
+    check('T15c large R90 dome preset: closed crown, built-in foundation, A1 fit',
+      !!large && large.valid && large.ov===0 && large.crown.closed && large.crown.capLayers>=1 &&
+      large.firstLayer.mode==='foundation' && large.firstLayer.paths===1 && large.size[0]>190 && large.size[0]<230,
+      large?`${large.size.join('×')} mm · ${large.crown.capLayers} cap layers · ${large.firstLayer.threadLength_mm} mm foundation`:'preset missing');
     await page.evaluate(()=>setMachine('a2l'));
   } else {
     check('T15 shipped presets present', false, 'presets/presets.json not found');
@@ -473,7 +495,8 @@ let regenTris=0;
     setMachine('a1');
     const B={mode:'dome',domeR:60,sweep:360,hFrac:0.85,capClose:true,w:5,bead:0.45,lh:0.24,
       overshoot:1.0,dwell:0.6,jitter:0,altPhase:true,autoLOD:true,minGap:1.4,amp:0,ampF:1,
-      checkOv:true,cycle:['chord','web'],maxBridge:12,noz:0.4,gradeLean:false,lambda:8};
+      checkOv:true,cycle:['chord','web'],maxBridge:12,noz:0.4,gradeLean:false,lambda:8,
+      adhesion:'none',adhesionWidth:8,firstLayerBead:0.45,firstLayerSpeed:15};
     const byWeb={};
     for(const web of ['staple','diagonal','sine','perp']){
       Object.assign(P,B,{webType:web}); buildLayers();
@@ -525,10 +548,50 @@ let regenTris=0;
       Object.entries(r.byWeb).map(([k,v])=>`${k} ${v.maxSeg}`).join(' / ') + ' mm');
 }
 
+/* ---------- T17 crown closure + first-layer adhesion contract ---------- */
+{
+  const r = await page.evaluate(async ()=>{
+    setMachine('a1');
+    const v=weftEvaluate({mode:'dome',domeR:32,sweep:360,hFrac:0.95,capClose:true,
+      webType:'staple',w:5,lambda:18,bead:0.45,lh:0.24,overshoot:1,
+      dwell:0.6,jitter:0,altPhase:true,autoLOD:true,minGap:1.4,amp:0,ampF:1,
+      checkOv:true,cycle:['chord','web'],maxBridge:12,noz:0.4,gradeLean:false,
+      adhesion:'foundation',adhesionWidth:8,firstLayerBead:0.52,firstLayerSpeed:12});
+    const A=layers.find(L=>L.role==='adhesion');
+    const firstBody=layers.find(L=>L.role==='chord'&&L.zBot===0);
+    const rr=A.pts.map(p=>Math.hypot(p.x,p.y));
+    document.getElementById('gHead').value='; TEST-FIRST-LAYER';
+    const g=await buildGcodeText();
+    let z=0,maxF=0,firstExtrusions=0;
+    for(const ln of g.split('\n')){
+      const zm=/^G1 Z([-\d.]+)/.exec(ln); if(zm) z=+zm[1];
+      const em=/^G1 X[-\d.]+ Y[-\d.]+ E[-\d.]+ F(\d+)/.exec(ln);
+      if(em&&Math.abs(z-0.24)<1e-6){firstExtrusions++;maxF=Math.max(maxF,+em[1]);}
+    }
+    const cl=domeCl(P.lh/2,P.domeR), inner=cl.r-P.w/2, outer=cl.r+P.w/2+P.adhesionWidth;
+    setMachine('a2l');
+    return {valid:v.valid,errors:v.errors,ov:v.overlaps,crown:v.crown,first:v.firstLayer,
+      firstRole:layers[0].role,firstBodyBead:firstBody&&firstBody.bead,minR:Math.min(...rr),maxR:Math.max(...rr),
+      wantInner:inner,wantOuter:outer,maxF,firstExtrusions,
+      comments:g.includes('; WEFT adhesion: foundation 8 mm')&&g.includes('; WEFT first layer: 0.52 mm bead @ 12 mm/s')};
+  });
+  check('T17 95% dome cap closes instead of leaving the photographed crown hole',
+    r.valid&&r.ov===0&&r.crown.closed&&r.crown.opening_mm===0&&r.crown.capLayers>=1,
+    `valid=${r.valid}, ${r.crown.capLayers} cap layers, opening ${r.crown.opening_mm} mm${r.errors.length?' · '+r.errors.join(' | '):''}`);
+  check('T17b filled ring covers the dome footprint and its 8 mm outside brim',
+    r.firstRole==='adhesion'&&r.first.mode==='foundation'&&r.first.paths===1&&
+    r.minR<=r.wantInner+0.05&&r.maxR>=r.wantOuter-0.05,
+    `radial ${r.minR.toFixed(2)}..${r.maxR.toFixed(2)} mm, target ${r.wantInner.toFixed(2)}..${r.wantOuter.toFixed(2)} mm`);
+  check('T17c first-layer bead and speed are stamped into geometry and G-code',
+    Math.abs(r.firstBodyBead-0.52)<1e-9&&r.firstExtrusions>0&&r.maxF<=720&&r.comments,
+    `body bead ${r.firstBodyBead} mm · ${r.firstExtrusions} moves · max F${r.maxF}`);
+}
+
 /* ---------- optional screenshot ---------- */
 if(SHOT){
   await page.evaluate(()=>{ // reset to the default wall view for the screenshot
-    Object.assign(P,{mode:'wall',webType:'staple',w:5,lambda:8,overshoot:1.0,bead:0.45,lh:0.24,amp:0,jitter:0,checkOv:true});
+    Object.assign(P,{mode:'wall',webType:'staple',w:5,lambda:8,overshoot:1.0,bead:0.45,lh:0.24,amp:0,jitter:0,checkOv:true,
+      adhesion:'none',firstLayerBead:0.45,firstLayerSpeed:15});
     preset('arc'); buildLayers();
     const N=Math.max(0,layers.length-1);
     document.getElementById('laySlider').max=N;

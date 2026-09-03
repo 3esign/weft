@@ -447,3 +447,45 @@ amp≥2, staple crowding on tightly curved plans, arc-length import drift.
   53.8 s, run written to bridge/log/. The panel, the picker, the repair loop and the
   logging all work as described.
 - Test count 44 -> 52.
+# 2026-08-30 — large closed dome + first-layer adhesion
+
+- D4 physical evidence proved the 360° seam but exposed an open crown: its
+  `hFrac:0.95` terminal ring never reached the old fixed cap trigger.
+- Crown closure now starts from a radius bound that scales with layer height
+  and sphere radius, and the spiral pitch is below one bead so the cap is a
+  deliberately filled membrane. A 95% R32 regression closes with two cap
+  layers; the R90 hemisphere closes with three.
+- First-layer settings are explicit parameters: `firstLayerBead`,
+  `firstLayerSpeed`, `adhesion` (`none|brim|foundation`) and `adhesionWidth`.
+  Dome adhesion is one continuous annular spiral and is exported identically
+  in STL and G-code. Filled cap/foundation proximity is intentional and is
+  excluded from the unintended-overlap detector.
+- Print-ready D5 lives in
+  `specimens/2026-08_D5_large_dome_pending/`: 200.8 × 200.6 × 90 mm,
+  376 paths/layers, 22,912 weld nodes, 0 unintended overlaps, 3 cap layers,
+  17.999 m foundation, 81,458,884-byte STL, SHA-256
+  `1204eb15f00c013589eb4d4c3f3004acf3440525c88f6a4e4528258d2d47d989`.
+- Verification: **56/56 passed** in system Chrome. The Windows harness now
+  resolves its own path with `fileURLToPath`; `createRequire` also allows the
+  workspace Playwright runtime without installing packages into WEFT.
+
+Honest verdict: software geometry and export are ready. Physical success is
+not yet proven at R90; the first complete annular foundation is the decisive
+smoke test, and Bambu Studio—not WEFT's kinematic estimate—owns real print time.
+## 2026-09-03 · MERA A2L 4×4 v1
+
+Built the first shallow measurement plate after the 240 mm Penjač physically broke during printing.
+`plate_geometry.py` emits sixteen open instruments on a 60 mm grid and one connected first layer;
+`make_suma.mjs` now accepts grammar/wall/tab/lambda overrides per contour, reports the actual plate
+envelope and refuses an off-plate build. The delivered package is
+`specimens/2026-09-03_MERA_A2L_4x4_v1_pending/MERA_A2L_4x4_v1_A2L.gcode.3mf`.
+
+Measured final-package result: 220.8 × 223.4 × 22.08 mm, 92 object layers, 43.0 g, about 5 h 02 min;
+0 floating paths, 0 long bridges, 0 cantilevers, 0 bad/unanchored membranes, first layer 1 island,
+354,196 checked points, 4/4 membrane anchors = 1.000, 0 same-layer overlaps. The first cap attempt was
+correctly refused at 2–4% anchor and deleted; the fix offsets each membrane by the local wall normal
+onto the inner chord rail. During that refusal another gate defect was found: unanchored membranes were
+reported but omitted from the exit-code sum. It is fixed and guarded by T18.
+
+The legacy browser suite remains 44/56 before this work; with T18 it is 45/57 if no older failure moves.
+Those failures predate MERA and are still open. The final MERA G-code gate is independently green.
