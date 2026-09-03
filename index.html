@@ -1211,8 +1211,15 @@ async function buildGcodeText(onProgress){
   // origin at the FRONT-LEFT corner. Without this shift the print lands half
   // off the plate — caught on the first real harvested-header dry run.
   const OX=BED/2, OY=BEDY/2;
+  let gcZ=null, gcLayer=0;
   for(let k=0;k<layers.length;k++){
     const L=layers[k];
+    /* A build with many bodies is still one printer timeline. Every body at z=N must be emitted
+       before any body at z=N+1; otherwise the nozzle later descends into already-built material.
+       Equal Z values are intentional (one pass per body), decreasing Z is never intentional. */
+    if(gcZ!==null&&L.zTop<gcZ-1e-6){
+      throw new Error(`WEFT global Z order violated at path ${k}: ${L.zTop.toFixed(3)} after ${gcZ.toFixed(3)}`);
+    }
     let pts=simplifyPts(L.pts,0.02,2);
     if(cur){
       if(L.closed){let best=0,bd=1e9;for(let i=0;i<pts.length;i++){const d=Math.hypot(pts[i].x-cur.x,pts[i].y-cur.y);if(d<bd){bd=d;best=i;}}
@@ -1220,6 +1227,13 @@ async function buildGcodeText(onProgress){
       else{const dS=Math.hypot(pts[0].x-cur.x,pts[0].y-cur.y),dE=Math.hypot(pts[pts.length-1].x-cur.x,pts[pts.length-1].y-cur.y);if(dE<dS)pts=[...pts].reverse();}
     }
     const first=L.zBot===0;   // TRUE bed layer — by height, not array position (batch interleaves 16 first layers)
+    /* Bambu Studio's preview does not infer layers from Z moves. Its G-code dialect requires the
+       spaced CHANGE_LAYER / Z_HEIGHT / LAYER_HEIGHT comments used by a real Studio export. */
+    if(gcZ===null||Math.abs(L.zTop-gcZ)>1e-6){
+      out.push('; CHANGE_LAYER', `; Z_HEIGHT: ${L.zTop.toFixed(3)}`,
+        `; LAYER_HEIGHT: ${(L.zTop-L.zBot).toFixed(3)}`);
+      gcZ=L.zTop; gcLayer++;
+    }
     out.push(`; layer ${k} ${L.role}`);
     // part cooling: off while anything is still printing on the bed, on above it
     if(!first&&!fanOn){ out.push(`M106 S${Math.round(P.fan*2.55)}`); fanOn=true; }

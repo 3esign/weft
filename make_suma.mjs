@@ -91,7 +91,16 @@ const report=await page.evaluate(async ([G,web,e,machine,name])=>{
     if(layRole==='web') webCount++;
     perLayer.push({k,z:lay.zBot,contours:lay.contours.length,a:lay.a,b:lay.b,rho:lay.rho,nodes:lay.contours.reduce((s,c)=>s+c.nodes.length,0)});
   }
+  /* Sixteen specimens are not sixteen sequential prints. They share one global Z clock: first all
+     contours at z=0, then all at z=lh, and so on. This is the same contour-tree principle used by
+     Penjac when several legs exist at one height. Stable sorting preserves each layer's tile order. */
   layers=out.sort((a,b)=>a.zBot-b.zBot);
+  for(let i=1;i<layers.length;i++) if(layers[i].zBot<layers[i-1].zBot-1e-6)
+    throw new Error(`global Z order violated: ${layers[i].zBot} after ${layers[i-1].zBot}`);
+  const globalZLevels=new Set(layers.map(L=>L.zBot.toFixed(4))).size;
+  const expectedZLevels=G.layers.filter(l=>l.contours.length||(l.caps&&l.caps.length)).length;
+  if(globalZLevels!==expectedZLevels)
+    throw new Error(`global Z level mismatch: emitted ${globalZLevels}, geometry ${expectedZLevels}`);
   detectOverlaps();
   let seamOv=0;
   for(const L of layers){ if(L.role!=='chord'||!L.cl||!L.ov.length) continue;
@@ -103,6 +112,7 @@ const report=await page.evaluate(async ([G,web,e,machine,name])=>{
   const ovLayers=layers.filter(L=>L.ov.length).slice(0,12).map(L=>({z:+L.zBot.toFixed(2),role:L.role,ov:L.ov.length,contour:L.contour}));
   const grammarCounts={}; for(const L of layers) if(L.role==='web') grammarCounts[L.webType]=(grammarCounts[L.webType]||0)+1;
   return {name,machine:MACHINES[MACHINE].label,bed_mm:[BED,BEDY],layers:layers.length,
+    globalZLevels,expectedZLevels,maxBodiesPerZ:Math.max(...G.layers.map(l=>l.contours.length)),
     size_mm:[+(mxx-mnx+A.bead).toFixed(1),+(mxy-mny+A.bead).toFixed(1),G.summary.H],
     plate_mm:[+(mnx+BED/2).toFixed(1),+(mny+BEDY/2).toFixed(1),+(mxx+BED/2).toFixed(1),+(mxy+BEDY/2).toFixed(1)],
     fitsPlate:(mnx+BED/2)>8&&(mny+BEDY/2)>8&&(mxx+BED/2)<BED-8&&(mxy+BEDY/2)<BEDY-8,

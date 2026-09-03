@@ -317,6 +317,16 @@ let regenTris=0;
   check('T10e gcode: no NaN/undefined emitted', !g.includes('NaN') && !g.includes('undefined'), 'clean');
   const foot = g.slice(-400);
   check('T10f gcode: footer turns fan + heaters off', foot.includes('M106 S0') && foot.includes('M104 S0'), 'M106 S0 + M104 S0 present in footer');
+  const changes=(g.match(/^; CHANGE_LAYER$/gm)||[]).length;
+  const zHeights=(g.match(/^; Z_HEIGHT: [-\d.]+$/gm)||[]).length;
+  const layerHeights=(g.match(/^; LAYER_HEIGHT: [-\d.]+$/gm)||[]).length;
+  const markedZ=[...g.matchAll(/^; Z_HEIGHT: ([-\d.]+)$/gm)].map(m=>Number(m[1]));
+  check('T10g Bambu Preview receives its native layer markers',
+    changes>1&&changes===zHeights&&changes===layerHeights&&!g.includes(';LAYER_CHANGE'),
+    `${changes} CHANGE_LAYER / ${zHeights} Z_HEIGHT / ${layerHeights} LAYER_HEIGHT`);
+  check('T10h multi-body build has one strictly rising global Z clock',
+    markedZ.every((z,i)=>i===0||z>markedZ[i-1]),
+    `${markedZ.length} unique ordered Z levels, ${markedZ[0]}…${markedZ.at(-1)} mm`);
 }
 
 /* ---------- T11 STL export end-to-end (E1 state still loaded) ---------- */

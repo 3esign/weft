@@ -39,7 +39,7 @@ for ln in src:
         absE = True
     elif s.startswith('M83'):
         absE = False
-    elif s.startswith(';LAYER_CHANGE'):
+    elif s.startswith('; CHANGE_LAYER') or s.startswith(';LAYER_CHANGE'):
         layer_marks += 1
     if not (s.startswith('G0') or s.startswith('G1')):
         continue

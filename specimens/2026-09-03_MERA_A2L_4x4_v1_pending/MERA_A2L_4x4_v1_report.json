@@ -7,6 +7,9 @@
       320
     ],
     "layers": 1548,
+    "globalZLevels": 92,
+    "expectedZLevels": 92,
+    "maxBodiesPerZ": 16,
     "size_mm": [
       220.8,
       223.4,

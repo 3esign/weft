@@ -15,11 +15,16 @@ and wide enough that wobble is not the experiment.
 - 92 object layers at 0.24 mm; 43.0 g estimate; about **5 h 02 min** including acceleration allowance
 - first layer: one connected island, 16 annular brims joined by a thin grid
 - final packaged G-code gate: **PASS — 0 problems** over 354,196 checked points
+- Bambu layer dialect: **92 `CHANGE_LAYER` markers**; Studio must show layers 1–92, not only layer 1
 - four internal membranes: anchoring **1.000 / 1.000 / 1.000 / 1.000**
 - same-layer unintended overlaps: **0**
 
 Open the `.gcode.3mf` in Bambu Studio and inspect Preview before sending it. It is already machine G-code;
 do not reslice it. Clean the plate and use the usual thin glue layer for WEFT lattice prints.
+
+The package generated earlier on 2026-09-03 used Cura-style layer comments. Semir caught that Bambu Studio
+flattened its Preview into layer 1. That artifact was withdrawn and this file was regenerated in Bambu's own
+`CHANGE_LAYER / Z_HEIGHT / LAYER_HEIGHT` dialect. **The Preview layer slider must end at 92 before printing.**
 
 ## What the grid means
 

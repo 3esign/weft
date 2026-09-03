@@ -489,3 +489,14 @@ reported but omitted from the exit-code sum. It is fixed and guarded by T18.
 
 The legacy browser suite remains 44/56 before this work; with T18 it is 45/57 if no older failure moves.
 Those failures predate MERA and are still open. The final MERA G-code gate is independently green.
+
+### Correction caught in Bambu Studio
+
+Semir opened the delivered package and found the entire structure displayed on layer 1. Z moves were present
+and the gate had counted 93 physical Z planes, but the emitter used Cura-style `;LAYER_CHANGE / ;Z / ;HEIGHT`
+comments. Bambu Studio requires its own spaced `; CHANGE_LAYER / ; Z_HEIGHT / ; LAYER_HEIGHT` dialect.
+The artifact was not printable because a preview that lies is a failed artifact, regardless of the machine
+moves beneath it. The emitter and header counter now accept the Bambu dialect, T10g locks all three markers,
+and the A2L package was regenerated with 92 strictly rising Bambu layer groups. T10h also locks the deeper
+multi-body invariant already present in Penjač: all contours at one height share a global Z level before any
+body advances. The regenerated package still requires Semir's visual Bambu Studio confirmation before print.

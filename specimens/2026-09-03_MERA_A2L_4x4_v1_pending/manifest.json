@@ -21,16 +21,25 @@
     "checked_points": 354196,
     "first_layer_islands": 1,
     "membrane_anchoring": [1.0, 1.0, 1.0, 1.0],
-    "unintended_same_layer_overlaps": 0
+    "unintended_same_layer_overlaps": 0,
+    "global_z_levels": 92,
+    "bodies_per_z_level": 16,
+    "bambu_layer_markers": {
+      "change_layer": 92,
+      "z_height": 92,
+      "layer_height": 92,
+      "legacy_layer_change": 0,
+      "strictly_rising": true
+    }
   },
   "files": {
     "MERA_A2L_4x4_v1_A2L.gcode.3mf": {
-      "bytes": 3564200,
-      "sha256": "3b059c1795ea7b1f5ad9d1b2f822fca3a5be1432e0c2bbeee58958f0676f4c6e"
+      "bytes": 3564575,
+      "sha256": "4b2d371ebd95af33f874d7928f4e17db2a0731bcfaea43120ae758a3bfca18bc"
     },
     "MERA_A2L_4x4_v1_routeB.gcode": {
-      "bytes": 13311522,
-      "sha256": "7b6a82fac7913f0438f97548670a9d6b4d66827ccae7eb063bec288c6d808d0d"
+      "bytes": 13313178,
+      "sha256": "e112592e79f79bdae8c146c6ae834a64df37d93c16a7943a702eafb47ac61bdc"
     },
     "MERA_A2L_4x4_v1_geometry.json": {
       "bytes": 7866775,
