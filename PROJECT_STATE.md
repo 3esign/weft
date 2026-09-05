@@ -478,7 +478,7 @@ Built the first shallow measurement plate after the 240 mm Penjač physically br
 `plate_geometry.py` emits sixteen open instruments on a 60 mm grid and one connected first layer;
 `make_suma.mjs` now accepts grammar/wall/tab/lambda overrides per contour, reports the actual plate
 envelope and refuses an off-plate build. The delivered package is
-`specimens/2026-09-03_MERA_A2L_4x4_v1_pending/MERA_A2L_4x4_v1_A2L.gcode.3mf`.
+`specimens/2026-09-03_MERA_A2L_4x4_v1_physical/MERA_A2L_4x4_v1_A2L.gcode.3mf`.
 
 Measured final-package result: 220.8 × 223.4 × 22.08 mm, 92 object layers, 43.0 g, about 5 h 02 min;
 0 floating paths, 0 long bridges, 0 cantilevers, 0 bad/unanchored membranes, first layer 1 island,
@@ -500,3 +500,30 @@ moves beneath it. The emitter and header counter now accept the Bambu dialect, T
 and the A2L package was regenerated with 92 strictly rising Bambu layer groups. T10h also locks the deeper
 multi-body invariant already present in Penjač: all contours at one height share a global Z level before any
 body advances. The regenerated package still requires Semir's visual Bambu Studio confirmation before print.
+
+### 2026-09-05 — OBLAK / GORA, the double gate, open arcs and the breathing wall
+- `sculpture_geometry.py` — analytic level-2 generator for two large instrumented sculptures (sphere for the A2L,
+  twisted rounded square for the Ender): closed rings, OPEN arcs between windows (`closed:false` → the app's
+  racetrack), typed `bridge` paths for the crown iris, `breath` (period of the wall-depth wave) and `amp` per
+  contour, per-layer wall/tab/grammar, a dyadic weld-column ladder that is doubled in the sine/eight/diagonal bands
+  (a rail is touched only every other node there), its own refusing checks (plate margin, 28 cm envelope, body
+  motion ≤ bead/2+allow, crown approach ≤ tab+reach, node gap ≤ 16, concave radius ≥ w/2+e+bead, horns back
+  before the crown) and `summary.experiments` (declared zones).
+- `make_suma.mjs` — honours `closed:false`, `breath` (a `widthPhase` override; `P.lambda` stays the sine's
+  wavelength), `amp`; `--allow-experimental-bridge` raises the gate ceiling bound from 24 to 60 mm only with
+  `summary.experiments`, and then runs the gate a SECOND time at the evidenced 16 mm and refuses unless every
+  finding lands in a declared zone (report → `gateAtEvidencedCeiling`).
+- `weft.py` — model `sculpture`, `--allow-experimental-bridge`, accepts `<name>_routeB.gcode`.
+- `sculpture_preview.py` — PNG preview (used as the 3mf thumbnail).
+- Three faults found by the gate during the build, each now a rule: (1) `P.lambda` had two masters — the wall
+  breathing period and the sine web wavelength — three sine waves on a ring left 150 mm of chord in the air;
+  (2) the lintel ring must be a chord layer (even k), a web lintel zigzags 81 mm over the window; (3) a web on an
+  open arc ends on one rail, so arcs get a weld column 2.5 mm from each end (lintel runs measured 52.4 for the
+  50 mm window instead of 56.6–59). The perp rung's tab is a retraced spike: perp contours carry tab 0.
+- Results (unprinted): OBLAK 274 × 264.5 × 190.8, 795 levels, 990.5 m, 73,882 welds, gate 60 clean, gate 16 →
+  6 lintel + 4 iris chords; GORA 151.5 × 153.7 × 191.2, 956 levels, 583.2 m, 60,506 welds, gate 60 clean, gate 16
+  → 8 lintel + 2 iris chords. `specimens/SCULPTURES_2026-09-05.md`.
+- Tests: `limit16.test.mjs` PASS and `mcp.test.mjs` 11/11 after the builder change (run in the cloud container);
+  the legacy `run_tests.mjs` is 49/61 exactly as before (`index.html` was not touched).
+- Specimen folders of printed objects renamed `_pending` → `_physical` (six); `machines.json` containerTemplate
+  follows. PI itself was reorganised (`../MOVE_LOG_2026-09-05.md`).

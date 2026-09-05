@@ -1,0 +1,122 @@
+{
+ "file": "/tmp/oblak/OBLAK_A2L_X1_routeB.gcode",
+ "layers": 796,
+ "params": {
+  "bead": 0.45,
+  "allow": 0.6,
+  "maxbridge": 60.0,
+  "res": 0.2,
+  "bedz": 0.5,
+  "maxislands": 1,
+  "maxcantilever": 4.8
+ },
+ "stats": {
+  "floating": 0,
+  "long_bridge": 0,
+  "cantilever": 0,
+  "bridges": 84196,
+  "bad_membrane": 0,
+  "unanchored_membrane": 0,
+  "checked_paths": 1070,
+  "checked_points": 921345,
+  "exempt_layers": 3,
+  "first_layer_islands": 1
+ },
+ "byRole": {},
+ "worstGaps": [
+  [
+   125.52,
+   "chord",
+   21.59,
+   25.51
+  ],
+  [
+   189.6,
+   "bridge",
+   9.63,
+   9.63
+  ],
+  [
+   189.6,
+   "bridge",
+   9.62,
+   9.63
+  ],
+  [
+   189.84,
+   "bridge",
+   7.0,
+   7.0
+  ],
+  [
+   189.84,
+   "bridge",
+   7.0,
+   7.0
+  ],
+  [
+   190.08,
+   "bridge",
+   7.0,
+   7.0
+  ],
+  [
+   190.08,
+   "bridge",
+   6.85,
+   7.0
+  ],
+  [
+   190.8,
+   "bridge",
+   6.4,
+   6.4
+  ],
+  [
+   190.8,
+   "bridge",
+   6.4,
+   6.4
+  ],
+  [
+   190.32,
+   "bridge",
+   4.77,
+   5.09
+  ],
+  [
+   190.32,
+   "bridge",
+   4.77,
+   5.09
+  ],
+  [
+   190.56,
+   "bridge",
+   4.98,
+   5.09
+  ],
+  [
+   190.56,
+   "bridge",
+   4.95,
+   4.95
+  ],
+  [
+   26.16,
+   "chord",
+   3.93,
+   4.75
+  ],
+  [
+   22.8,
+   "chord",
+   4.15,
+   4.6
+  ]
+ ],
+ "membranes": [],
+ "problems": [],
+ "problem_count": 0,
+ "PASS": true
+}

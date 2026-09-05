@@ -1,0 +1,21 @@
+{
+  "schema": "weft.membrane-process-status.v1",
+  "recorded": "2026-09-04",
+  "specimen_family": "MERA_A2L_4x4_2026-09-03",
+  "cells": [9, 10, 11, 12],
+  "process": "single-layer-inward-spiral/mera-4x4-2026-09-03",
+  "physical_status": "failed",
+  "historical_geometric_gate": {
+    "pass": true,
+    "rim_anchor_fractions": [1.0, 1.0, 1.0, 1.0],
+    "meaning": "outer-rim contact only; not same-layer inward process qualification"
+  },
+  "physical_observation": "approximately one centre mostly formed and three collapsed into loose filament",
+  "evidence": [
+    "outcomes.md",
+    "photos/2026-09-04_semir/manifest.json"
+  ],
+  "artifact_identity": "unresolved between historical v1/v2 files from cropped photographs",
+  "operator_action": "withdraw all printable artifacts in this folder from qualified reuse",
+  "manifest_policy": "manifest.json is an immutable historical receipt and was not overwritten"
+}

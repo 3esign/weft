@@ -1,0 +1,387 @@
+{
+ "name": "GORA_ENDER3V4_X1",
+ "machine": "Creality Ender-3 V4",
+ "bed_mm": [
+  220,
+  220
+ ],
+ "layers": 1429,
+ "globalZLevels": 956,
+ "expectedZLevels": 956,
+ "logicalCells": null,
+ "experimentalMembraneOverride": false,
+ "maxBodiesPerZ": 1,
+ "size_mm": [
+  151.5,
+  153.7,
+  191.2
+ ],
+ "plate_mm": [
+  34.4,
+  33.3,
+  185.6,
+  186.7
+ ],
+ "fitsPlate": true,
+ "grammarCounts": {
+  "staple": 581,
+  "perp": 28,
+  "sine": 29,
+  "eight": 24,
+  "diagonal": 19
+ },
+ "threadLength_m": 583.2,
+ "weldNodes": 60506,
+ "rawPaths": 12,
+ "unintendedOverlaps": 115,
+ "seamClosures": 27,
+ "overlapSamples": [
+  {
+   "z": 68.2,
+   "role": "web",
+   "ov": 1,
+   "contour": 1
+  },
+  {
+   "z": 68.6,
+   "role": "web",
+   "ov": 1,
+   "contour": 1
+  },
+  {
+   "z": 69,
+   "role": "web",
+   "ov": 1,
+   "contour": 1
+  },
+  {
+   "z": 69.4,
+   "role": "web",
+   "ov": 2,
+   "contour": 1
+  },
+  {
+   "z": 69.8,
+   "role": "web",
+   "ov": 2,
+   "contour": 1
+  },
+  {
+   "z": 70.2,
+   "role": "web",
+   "ov": 2,
+   "contour": 1
+  },
+  {
+   "z": 70.6,
+   "role": "web",
+   "ov": 1,
+   "contour": 0
+  },
+  {
+   "z": 70.6,
+   "role": "web",
+   "ov": 2,
+   "contour": 1
+  },
+  {
+   "z": 77.4,
+   "role": "web",
+   "ov": 6,
+   "contour": 0
+  },
+  {
+   "z": 77.8,
+   "role": "web",
+   "ov": 6,
+   "contour": 0
+  },
+  {
+   "z": 78.2,
+   "role": "web",
+   "ov": 13,
+   "contour": 0
+  },
+  {
+   "z": 78.6,
+   "role": "web",
+   "ov": 9,
+   "contour": 0
+  }
+ ],
+ "kinematic_h": 5.4,
+ "routeA_estimate_h": 50.9,
+ "caps": [],
+ "events": [
+  {
+   "z": 15.2,
+   "k": 76,
+   "event": "foot -> belly"
+  },
+  {
+   "z": 26.6,
+   "k": 133,
+   "event": "belly -> wave"
+  },
+  {
+   "z": 38,
+   "k": 190,
+   "event": "wave -> windows"
+  },
+  {
+   "z": 87.4,
+   "k": 437,
+   "event": "windows -> knot"
+  },
+  {
+   "z": 96.8,
+   "k": 484,
+   "event": "knot -> truss"
+  },
+  {
+   "z": 104.4,
+   "k": 522,
+   "event": "truss -> horns"
+  },
+  {
+   "z": 115,
+   "k": 575,
+   "event": "horns -> instruments"
+  },
+  {
+   "z": 117.8,
+   "k": 589,
+   "event": "instruments -> horns"
+  },
+  {
+   "z": 170.2,
+   "k": 851,
+   "event": "horns -> instruments"
+  },
+  {
+   "z": 190,
+   "k": 950,
+   "event": "crown-approach -> crown-iris (crown-woven-iris/v1)"
+  }
+ ],
+ "contourCounts": [
+  [
+   0,
+   1
+  ],
+  [
+   47.6,
+   2
+  ],
+  [
+   56.6,
+   3
+  ],
+  [
+   65.6,
+   4
+  ],
+  [
+   83.6,
+   1
+  ]
+ ],
+ "perLayerSample": [
+  {
+   "k": 0,
+   "z": 0,
+   "contours": 1,
+   "paths": 0,
+   "nodes": 96
+  },
+  {
+   "k": 40,
+   "z": 8,
+   "contours": 1,
+   "paths": 0,
+   "nodes": 96
+  },
+  {
+   "k": 80,
+   "z": 16,
+   "contours": 1,
+   "paths": 0,
+   "nodes": 96
+  },
+  {
+   "k": 120,
+   "z": 24,
+   "contours": 1,
+   "paths": 0,
+   "nodes": 96
+  },
+  {
+   "k": 160,
+   "z": 32,
+   "contours": 1,
+   "paths": 0,
+   "nodes": 192
+  },
+  {
+   "k": 200,
+   "z": 40,
+   "contours": 1,
+   "paths": 0,
+   "nodes": 83
+  },
+  {
+   "k": 240,
+   "z": 48,
+   "contours": 2,
+   "paths": 0,
+   "nodes": 72
+  },
+  {
+   "k": 280,
+   "z": 56,
+   "contours": 2,
+   "paths": 0,
+   "nodes": 72
+  },
+  {
+   "k": 320,
+   "z": 64,
+   "contours": 3,
+   "paths": 0,
+   "nodes": 61
+  },
+  {
+   "k": 360,
+   "z": 72,
+   "contours": 4,
+   "paths": 0,
+   "nodes": 52
+  },
+  {
+   "k": 400,
+   "z": 80,
+   "contours": 4,
+   "paths": 0,
+   "nodes": 50
+  },
+  {
+   "k": 440,
+   "z": 88,
+   "contours": 1,
+   "paths": 0,
+   "nodes": 96
+  },
+  {
+   "k": 480,
+   "z": 96,
+   "contours": 1,
+   "paths": 0,
+   "nodes": 96
+  },
+  {
+   "k": 520,
+   "z": 104,
+   "contours": 1,
+   "paths": 0,
+   "nodes": 96
+  },
+  {
+   "k": 560,
+   "z": 112,
+   "contours": 1,
+   "paths": 0,
+   "nodes": 48
+  },
+  {
+   "k": 600,
+   "z": 120,
+   "contours": 1,
+   "paths": 0,
+   "nodes": 48
+  },
+  {
+   "k": 640,
+   "z": 128,
+   "contours": 1,
+   "paths": 0,
+   "nodes": 49
+  },
+  {
+   "k": 680,
+   "z": 136,
+   "contours": 1,
+   "paths": 0,
+   "nodes": 48
+  },
+  {
+   "k": 720,
+   "z": 144,
+   "contours": 1,
+   "paths": 0,
+   "nodes": 51
+  },
+  {
+   "k": 760,
+   "z": 152,
+   "contours": 1,
+   "paths": 0,
+   "nodes": 51
+  },
+  {
+   "k": 800,
+   "z": 160,
+   "contours": 1,
+   "paths": 0,
+   "nodes": 54
+  },
+  {
+   "k": 840,
+   "z": 168,
+   "contours": 1,
+   "paths": 0,
+   "nodes": 48
+  },
+  {
+   "k": 880,
+   "z": 176,
+   "contours": 1,
+   "paths": 0,
+   "nodes": 24
+  },
+  {
+   "k": 920,
+   "z": 184,
+   "contours": 1,
+   "paths": 0,
+   "nodes": 24
+  }
+ ]
+}
+GCODE /tmp/gora/GORA_ENDER3V4_X1_routeB.gcode 24383594 bytes 704125 lines
+EXPERIMENTAL BRIDGE CEILING 60 mm declared (evidence: 16 mm)
+957 layers, 1430 extruded paths, grid 859x955 @ 0.2 mm
+{
+ "layers": 957,
+ "stats": {
+  "floating": 0,
+  "long_bridge": 0,
+  "cantilever": 0,
+  "bridges": 63753,
+  "bad_membrane": 0,
+  "unanchored_membrane": 0,
+  "checked_paths": 1371,
+  "checked_points": 689396,
+  "exempt_layers": 3,
+  "first_layer_islands": 1
+ },
+ "byRole": {},
+ "problem_count": 0,
+ "PASS": true
+}
+worst gaps (z, role, p99, max): [[83.8, 'chord', 23.09, 25.05], [190.2, 'bridge', 6.7, 6.8], [190.2, 'bridge', 6.7, 6.8], [190.4, 'bridge', 5.94, 6.2], [190.4, 'bridge', 5.94, 6.2], [190.6, 'bridge', 5.83, 5.91], [190.6, 'bridge', 5.83, 5.91], [191.2, 'bridge', 5.6, 5.6]]
+GATE passed
+header rewritten: 956 layers, 20923.8 mm filament, 63.4 g, max Z 191.20, 10h 37m 11s (kinematic)
+  NOTE: 6 header field(s) not present in this start block: ; model printing time:.*, ; total layer number:.*, ; total filament length [mm][^:]*:.*, ; total filament volume [cm^3][^:]*:.*, ; total filament weight [g][^:]*:.*, ; max_z_height:.*
+957 layers, 1430 extruded paths, grid 859x955 @ 0.2 mm
+gate at the evidenced 16 mm: 10 findings, 0 outside the declared zones { 'lintel 20': 8, 'crown iris': 2 }
+membranes: 0 emitted, 0 undeclared, 0 divergent (tol 0.1)

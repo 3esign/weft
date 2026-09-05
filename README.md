@@ -58,6 +58,10 @@ weft/
   (spacing follows overhang demand instead of radius).
 - **Checks**: same-layer overlap detection, web/chord span vs. max-bridge,
   min node gap, bed fit, STL size estimate, layer slider + loom navigator.
+- **First layer**: independently stamped bead width and speed, plus dome-only
+  built-in **brim** or **filled annular foundation**. The same support geometry
+  is present in Route A STL and Route B G-code; crown closure uses filled,
+  overlapping spiral turns and scales to large hemispheres.
 - **Export**: thin-wall **STL** (Route A — slice normally in Bambu Studio;
   Arachne recovers each layer as one continuous bead) and native **G-code**
   (Route B — motion only; paste the start/end blocks harvested from any file
@@ -68,13 +72,15 @@ weft/
   exports are chunked/async with progress; paths are simplified
   (0.02–0.03 mm tolerance) before emission.
 
-## Print safety workflow (A2L)
+## Print safety workflow (A1 / A2L)
 
 1. Calibrate: find the exact single-line width Arachne accepts for your nozzle;
    set it as bead width.
 2. **Route A first**: export STL → open in Bambu Studio → slice → check the
    preview shows single continuous lines → print. Studio owns all
    machine-specific startup; there is nothing to break.
+   When built-in adhesion is enabled, set elephant-foot compensation and XY
+   contour compensation to 0 and do not add a second slicer brim.
 3. **Route B**: slice any small object in Studio, copy everything before the
    first extruding move into WEFT's header field (and the end block into the
    footer). Export G-code → **drag the .gcode file onto Bambu Studio's
@@ -91,11 +97,13 @@ suite against the real app:
 
 ```
 npm install        # dev-only: playwright
-npm test           # 30 checks, ~40 s
+npm test           # 56 checks, ~20 s on the current PC
 ```
 
 The E1 plate in `specimens/` regenerates from the app bit-for-bit
 (triangle count, bbox and coordinate checksum are asserted in the suite).
+The large D5 R90 preset is separately locked by crown, foundation, bed-fit,
+overlap, first-layer speed and first-layer bead assertions.
 
 ## Roadmap (honest)
 

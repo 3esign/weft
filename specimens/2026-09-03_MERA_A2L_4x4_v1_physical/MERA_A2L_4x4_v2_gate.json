@@ -1,0 +1,175 @@
+{
+ "file": "D:\\Svemir\\!Projekti\\PI\\weft\\specimens\\2026-09-03_MERA_A2L_4x4_v1_pending\\MERA_A2L_4x4_v2_routeB.gcode",
+ "layers": 93,
+ "params": {
+  "bead": 0.45,
+  "allow": 0.6,
+  "maxbridge": 12.0,
+  "res": 0.2,
+  "bedz": 0.5,
+  "maxislands": 1,
+  "maxcantilever": 3.0
+ },
+ "stats": {
+  "floating": 0,
+  "long_bridge": 0,
+  "cantilever": 0,
+  "bridges": 39937,
+  "bad_membrane": 0,
+  "unanchored_membrane": 0,
+  "checked_paths": 1444,
+  "checked_points": 354196,
+  "exempt_layers": 3,
+  "first_layer_islands": 1
+ },
+ "byRole": {},
+ "worstGaps": [
+  [
+   8.64,
+   "cap",
+   10.33,
+   11.29
+  ],
+  [
+   8.64,
+   "cap",
+   10.72,
+   10.88
+  ],
+  [
+   8.64,
+   "cap",
+   6.79,
+   7.92
+  ],
+  [
+   8.64,
+   "cap",
+   7.14,
+   7.2
+  ],
+  [
+   1.2,
+   "chord",
+   4.3,
+   4.65
+  ],
+  [
+   1.68,
+   "chord",
+   4.3,
+   4.65
+  ],
+  [
+   2.16,
+   "chord",
+   4.3,
+   4.65
+  ],
+  [
+   2.64,
+   "chord",
+   4.3,
+   4.65
+  ],
+  [
+   3.12,
+   "chord",
+   4.3,
+   4.65
+  ],
+  [
+   3.6,
+   "chord",
+   4.3,
+   4.65
+  ],
+  [
+   4.08,
+   "chord",
+   4.3,
+   4.65
+  ],
+  [
+   4.56,
+   "chord",
+   4.3,
+   4.65
+  ],
+  [
+   5.04,
+   "chord",
+   4.3,
+   4.65
+  ],
+  [
+   5.52,
+   "chord",
+   4.3,
+   4.65
+  ],
+  [
+   6.0,
+   "chord",
+   4.3,
+   4.65
+  ]
+ ],
+ "membranes": [
+  {
+   "z": 8.64,
+   "line": 152127,
+   "at": [
+    75.13,
+    129.99
+   ],
+   "radius_mm": 11.56,
+   "anchoredFrac": 1.0,
+   "outerTurnGap_mm": 0.0,
+   "turnGap_mm": 0.39,
+   "points": 1531
+  },
+  {
+   "z": 8.64,
+   "line": 153665,
+   "at": [
+    135.13,
+    129.99
+   ],
+   "radius_mm": 11.56,
+   "anchoredFrac": 1.0,
+   "outerTurnGap_mm": 0.0,
+   "turnGap_mm": 0.39,
+   "points": 1539
+  },
+  {
+   "z": 8.64,
+   "line": 155211,
+   "at": [
+    195.2,
+    130.0
+   ],
+   "radius_mm": 12.83,
+   "anchoredFrac": 1.0,
+   "outerTurnGap_mm": 0.0,
+   "turnGap_mm": 0.38,
+   "points": 1156
+  },
+  {
+   "z": 8.64,
+   "line": 156374,
+   "at": [
+    255.14,
+    130.0
+   ],
+   "radius_mm": 11.92,
+   "anchoredFrac": 1.0,
+   "outerTurnGap_mm": 0.0,
+   "turnGap_mm": 0.37,
+   "points": 1495
+  }
+ ],
+ "problems": [],
+ "problem_count": 0,
+ "PASS": true
+}

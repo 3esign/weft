@@ -4,7 +4,11 @@
   "description": "WEFT continuous lattice toolpath studio - the app itself is buildless (open index.html); this package exists only for the headless test harness.",
   "type": "module",
   "scripts": {
-    "test": "node tests/run_tests.mjs"
+    "test": "node tests/run_all.mjs",
+    "test:legacy": "node tests/run_tests.mjs",
+    "test:mcp": "node tests/mcp.test.mjs",
+    "test:limit16": "node tests/limit16.test.mjs",
+    "mcp": "node mcp/server.mjs"
   },
   "devDependencies": {
     "playwright": "^1.56.0"

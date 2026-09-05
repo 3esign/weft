@@ -1,0 +1,53 @@
+{
+  "_note": "The machine owns the numbers. bead and lh are NOT free parameters of a design — they are properties of a calibrated printer, and every geometry rule (rho, tip floor, self-approach, node gap, bridge budget) is derived from them. beadSource says whether the number was measured in plastic or assumed; anything built on an assumed bead is a guess wearing a report.",
+  "a2l": {
+    "label": "Bambu Lab A2L",
+    "plate": [330, 320],
+    "maxZ": 325,
+    "nozzle": 0.4,
+    "bead": 0.45,
+    "beadSource": "measured",
+    "beadEvidence": "specimens/2026-08-31_D5_R140_A2L_physical and specimens/2026-09-02_P0_suma_2x2_physical — both printed to completion at this bead",
+    "lh": 0.24,
+    "firstLayerBead": 0.52,
+    "temp": 220,
+    "bed": 55,
+    "start": "exports/a2l_start_block_template_2026-09-02.gcode",
+    "end": "exports/a2l_end_block_harvested_2026-09-02.gcode",
+    "route": "bambu3mf",
+    "containerTemplate": "specimens/2026-09-02_P0_suma_4x4_v2_physical/P0_suma_4x4_v2.gcode.3mf"
+  },
+  "a1": {
+    "label": "Bambu Lab A1",
+    "plate": [256, 256],
+    "maxZ": 256,
+    "nozzle": 0.4,
+    "bead": 0.45,
+    "beadSource": "ASSUMED",
+    "beadEvidence": "carried over from the A2L; never calibrated on this machine",
+    "lh": 0.24,
+    "firstLayerBead": 0.52,
+    "temp": 220,
+    "bed": 55,
+    "start": "exports/a2l_start_block_template_2026-09-02.gcode",
+    "end": "exports/a2l_end_block_harvested_2026-09-02.gcode",
+    "route": "bambu3mf",
+    "containerTemplate": "specimens/2026-09-02_P0_suma_4x4_v2_physical/P0_suma_4x4_v2.gcode.3mf"
+  },
+  "ender": {
+    "label": "Creality Ender-3 V4",
+    "plate": [220, 220],
+    "maxZ": 235,
+    "nozzle": 0.4,
+    "bead": 0.42,
+    "beadSource": "ASSUMED",
+    "beadEvidence": "NEVER CALIBRATED. Run the C1 thin-wall test on this machine and put the measured width here before trusting anything built for it.",
+    "lh": 0.20,
+    "firstLayerBead": 0.48,
+    "temp": 220,
+    "bed": 60,
+    "start": "exports/ender_start.gcode",
+    "end": "exports/ender_end.gcode",
+    "route": "gcode"
+  }
+}

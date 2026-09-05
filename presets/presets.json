@@ -406,8 +406,8 @@
     "wallH": 24,
     "plan": [
      {
-      "x": 9.0,
-      "y": 0.0
+      "x": 9,
+      "y": 0
      },
      {
       "x": 9.105,
@@ -1665,8 +1665,8 @@
       "y": -1.922
      },
      {
-      "x": 34.0,
-      "y": 0.0
+      "x": 34,
+      "y": 0
      },
      {
       "x": 33.946,
@@ -2054,6 +2054,53 @@
     "hFrac": 0.85,
     "capClose": true,
     "machine": "a1"
+   }
+  },
+  {
+   "file": "D5_large_closed_dome_R75_lambda18_foundation",
+   "kind": "stl",
+   "day": 3,
+   "note": "Scaled down to R75 to fit A1 mini 180x180 bed. Large print candidate: a full R90 hemisphere, closed 360° revolve and filled spiral crown. The built-in 8 mm filled-ring foundation is emitted in both STL and G-code; first layer is 0.52 mm at 12 mm/s. Fits the A1 with more than 25 mm total diameter margin. This scales the physically documented D4 λ18 grammar while closing the crown and stabilising the bed contact.",
+   "shipped": true,
+   "measured": {},
+   "params": {
+    "machine": "a1",
+    "mode": "dome",
+    "domeR": 75,
+    "sweep": 360,
+    "hFrac": 1,
+    "capClose": true,
+    "webType": "staple",
+    "w": 5,
+    "lambda": 18,
+    "bead": 0.45,
+    "lh": 0.24,
+    "overshoot": 1,
+    "dwell": 0.6,
+    "jitter": 0,
+    "flowBoost": 1.25,
+    "speed": 30,
+    "bridgeSpeed": 18,
+    "temp": 215,
+    "bed": 55,
+    "fan": 100,
+    "altPhase": true,
+    "autoLOD": true,
+    "minGap": 1.4,
+    "amp": 0,
+    "ampF": 1,
+    "checkOv": true,
+    "gradeLean": false,
+    "cycle": [
+     "chord",
+     "web"
+    ],
+    "maxBridge": 12,
+    "noz": 0.4,
+    "firstLayerBead": 0.52,
+    "firstLayerSpeed": 12,
+    "adhesion": "foundation",
+    "adhesionWidth": 8
    }
   }
  ]

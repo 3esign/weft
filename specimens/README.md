@@ -5,6 +5,8 @@ One folder per print job: `specimens/YYYY-MM-DD_shortname/` containing:
 - `manifest.json` — the settings vector (schema below)
 - `photos/` — fixed-rig photos, repeatable angles (tripod + turntable marks)
 - `outcomes.md` — measured results per specimen
+- `membrane_process_status.json` — when caps exist, the current machine-readable
+  `qualified | experimental | failed` decision for the exact process/version/span
 
 ## manifest.json schema (per specimen / grid cell)
 
@@ -28,4 +30,18 @@ One folder per print job: `specimens/YYYY-MM-DD_shortname/` containing:
 ```
 
 Rules: never overwrite a manifest after printing; photograph before handling;
-record the seed whenever jitter is nonzero.
+record the seed whenever jitter is nonzero. A manifest preserves what was believed
+when the artifact was emitted. After plastic exists, `outcomes.md` and
+`membrane_process_status.json` are the current decision surface and may withdraw
+an older ready-to-print claim without rewriting that historical receipt.
+
+## Latest builds (unprinted)
+
+OBLAK (A2L) and GORA (Ender-3 V4), 2026-09-05: `SCULPTURES_2026-09-05.md`, folders `2026-09-05_*_X1_experimental/`. Folder suffixes: `_physical` = printed, `_pending` = built and waiting, `_experimental` = declared over the evidence.
+
+## Latest physical result
+
+The paired A2L / Ender-3 V4 LIMIT16 run from 2026-09-04 is consolidated in
+[LIMIT16_2026-09-04_RESULTS.md](LIMIT16_2026-09-04_RESULTS.md). Its exact
+single-layer inward-spiral membrane process failed on both machines; that
+versioned process identity is now blocked from future builds.

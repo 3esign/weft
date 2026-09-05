@@ -1,0 +1,580 @@
+{
+  "report": {
+    "name": "OBLAK_A2L_X1",
+    "machine": "Bambu A2L",
+    "bed_mm": [
+      330,
+      320
+    ],
+    "layers": 1127,
+    "globalZLevels": 795,
+    "expectedZLevels": 795,
+    "logicalCells": null,
+    "experimentalMembraneOverride": false,
+    "maxBodiesPerZ": 1,
+    "size_mm": [
+      274,
+      264.5,
+      190.8
+    ],
+    "plate_mm": [
+      27.9,
+      32.2,
+      301.4,
+      296.2
+    ],
+    "fitsPlate": true,
+    "grammarCounts": {
+      "staple": 406,
+      "perp": 36,
+      "sine": 35,
+      "eight": 28,
+      "diagonal": 23
+    },
+    "threadLength_m": 990.5,
+    "weldNodes": 73882,
+    "rawPaths": 12,
+    "unintendedOverlaps": 321,
+    "seamClosures": 0,
+    "overlapSamples": [
+      {
+        "z": 94.32,
+        "role": "web",
+        "ov": 1,
+        "contour": 1
+      },
+      {
+        "z": 94.8,
+        "role": "web",
+        "ov": 1,
+        "contour": 1
+      },
+      {
+        "z": 95.28,
+        "role": "web",
+        "ov": 1,
+        "contour": 1
+      },
+      {
+        "z": 96.24,
+        "role": "web",
+        "ov": 2,
+        "contour": 1
+      },
+      {
+        "z": 96.72,
+        "role": "web",
+        "ov": 2,
+        "contour": 1
+      },
+      {
+        "z": 97.2,
+        "role": "web",
+        "ov": 2,
+        "contour": 1
+      },
+      {
+        "z": 97.68,
+        "role": "web",
+        "ov": 2,
+        "contour": 1
+      },
+      {
+        "z": 98.16,
+        "role": "web",
+        "ov": 3,
+        "contour": 1
+      },
+      {
+        "z": 98.64,
+        "role": "web",
+        "ov": 3,
+        "contour": 0
+      },
+      {
+        "z": 99.12,
+        "role": "web",
+        "ov": 3,
+        "contour": 0
+      },
+      {
+        "z": 99.6,
+        "role": "web",
+        "ov": 3,
+        "contour": 0
+      },
+      {
+        "z": 100.08,
+        "role": "web",
+        "ov": 3,
+        "contour": 0
+      }
+    ],
+    "kinematic_h": 9.17,
+    "routeA_estimate_h": 86.5,
+    "caps": [],
+    "events": [
+      {
+        "z": 20.88,
+        "k": 87,
+        "event": "foot -> belly"
+      },
+      {
+        "z": 37.92,
+        "k": 158,
+        "event": "belly -> wave"
+      },
+      {
+        "z": 54.96,
+        "k": 229,
+        "event": "wave -> knot"
+      },
+      {
+        "z": 68.16,
+        "k": 284,
+        "event": "knot -> truss"
+      },
+      {
+        "z": 79.44,
+        "k": 331,
+        "event": "truss -> instruments"
+      },
+      {
+        "z": 80.16,
+        "k": 334,
+        "event": "instruments -> windows"
+      },
+      {
+        "z": 125.04,
+        "k": 521,
+        "event": "windows -> horns"
+      },
+      {
+        "z": 176.88,
+        "k": 737,
+        "event": "horns -> instruments"
+      },
+      {
+        "z": 182.16,
+        "k": 759,
+        "event": "instruments -> crown-approach"
+      },
+      {
+        "z": 189.36,
+        "k": 789,
+        "event": "crown-approach -> crown-iris (crown-woven-iris/v1)"
+      }
+    ],
+    "contourCounts": [
+      [
+        0,
+        1
+      ],
+      [
+        89.28,
+        2
+      ],
+      [
+        98.4,
+        3
+      ],
+      [
+        125.28,
+        1
+      ]
+    ],
+    "perLayerSample": [
+      {
+        "k": 0,
+        "z": 0,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 96
+      },
+      {
+        "k": 40,
+        "z": 9.6,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 96
+      },
+      {
+        "k": 80,
+        "z": 19.2,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 96
+      },
+      {
+        "k": 120,
+        "z": 28.8,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 96
+      },
+      {
+        "k": 160,
+        "z": 38.4,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 192
+      },
+      {
+        "k": 200,
+        "z": 48,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 192
+      },
+      {
+        "k": 240,
+        "z": 57.6,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 192
+      },
+      {
+        "k": 280,
+        "z": 67.2,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 192
+      },
+      {
+        "k": 320,
+        "z": 76.8,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 192
+      },
+      {
+        "k": 360,
+        "z": 86.4,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 91
+      },
+      {
+        "k": 400,
+        "z": 96,
+        "contours": 2,
+        "paths": 0,
+        "nodes": 88
+      },
+      {
+        "k": 440,
+        "z": 105.6,
+        "contours": 3,
+        "paths": 0,
+        "nodes": 84
+      },
+      {
+        "k": 480,
+        "z": 115.2,
+        "contours": 3,
+        "paths": 0,
+        "nodes": 84
+      },
+      {
+        "k": 520,
+        "z": 124.8,
+        "contours": 3,
+        "paths": 0,
+        "nodes": 83
+      },
+      {
+        "k": 560,
+        "z": 134.4,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 100
+      },
+      {
+        "k": 600,
+        "z": 144,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 102
+      },
+      {
+        "k": 640,
+        "z": 153.6,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 100
+      },
+      {
+        "k": 680,
+        "z": 163.2,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 104
+      },
+      {
+        "k": 720,
+        "z": 172.8,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 96
+      },
+      {
+        "k": 760,
+        "z": 182.4,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 48
+      }
+    ],
+    "gateAtEvidencedCeiling": {
+      "maxbridge_mm": 16,
+      "findings": 10,
+      "byZone": {
+        "lintel 30": 6,
+        "crown iris": 4
+      },
+      "outsideDeclaredZones": 0,
+      "outsideSamples": []
+    }
+  },
+  "geometry": {
+    "name": "OBLAK X1",
+    "variant": "oblak",
+    "N": 795,
+    "H": 190.8,
+    "args": {
+      "lh": 0.24,
+      "bead": 0.45,
+      "firstLayerBead": 0.52,
+      "firstLayerSpeed": 12,
+      "w": 2.8,
+      "r0": 110.05,
+      "K": 96,
+      "foundation": 8,
+      "maxbridge": 60,
+      "maxcantilever": 4.8,
+      "allow": 0.6,
+      "minanchor": 0.5,
+      "maxCapRadius": 36,
+      "speed": 30,
+      "bridgeSpeed": 18,
+      "temp": 220,
+      "bed": 55,
+      "fan": 100,
+      "turns": 0.35
+    },
+    "design": {
+      "family": "OBLAK / GORA - the two big sculptures (2026-09-05)",
+      "shape": "truncated sphere R127, base lean 30 deg, 3 lobes + 5/7-fold drift + 24-fold corrugation, twist 0.35 turns",
+      "wallDepth": "breathes with the lobes (amp 25% of w), foot 3.6 -> body 2.8 -> top 2.4 -> crown 1.8",
+      "grammarBands": [
+        {
+          "from": 0,
+          "to": 0.11,
+          "web": "staple",
+          "name": "foot"
+        },
+        {
+          "from": 0.11,
+          "to": 0.2,
+          "web": "perp",
+          "name": "belly"
+        },
+        {
+          "from": 0.2,
+          "to": 0.29,
+          "web": "sine",
+          "name": "wave"
+        },
+        {
+          "from": 0.29,
+          "to": 0.36,
+          "web": "eight",
+          "name": "knot"
+        },
+        {
+          "from": 0.36,
+          "to": 0.42,
+          "web": "diagonal",
+          "name": "truss"
+        },
+        {
+          "from": 0.42,
+          "to": 1.01,
+          "web": "staple",
+          "name": "instruments"
+        }
+      ],
+      "openCrown": false,
+      "caps": 0,
+      "compiler": "analytic surface -> WEFT level-2 layers (contours, open arcs, typed bridge paths)",
+      "physicalBasis": "specimens/LIMIT16_2026-09-04_RESULTS.md; D5 R140 dome; Suma; MERA; Vrtlog",
+      "experimental": true
+    },
+    "experiments": {
+      "declaredBridgeCeiling_mm": 60,
+      "evidencedBridge_mm": 16,
+      "lintels": [
+        {
+          "W_mm": 30,
+          "azimuth_deg": 30,
+          "zBottom": 98.4,
+          "zLintel": 125.28,
+          "measuredChord_mm": 28.9
+        },
+        {
+          "W_mm": 40,
+          "azimuth_deg": 150,
+          "zBottom": 89.28,
+          "zLintel": 125.28,
+          "measuredChord_mm": 41
+        },
+        {
+          "W_mm": 50,
+          "azimuth_deg": 270,
+          "zBottom": 80.16,
+          "zLintel": 125.28,
+          "measuredChord_mm": 49.7
+        }
+      ],
+      "horns": [
+        {
+          "P_mm": 30,
+          "azimuth_deg": 90,
+          "rate_mm_per_layer": 0.8,
+          "zStart": 125.04,
+          "zEnd": 144.24
+        },
+        {
+          "P_mm": 40,
+          "azimuth_deg": 210,
+          "rate_mm_per_layer": 0.8,
+          "zStart": 134.4,
+          "zEnd": 159.36
+        },
+        {
+          "P_mm": 50,
+          "azimuth_deg": 330,
+          "rate_mm_per_layer": 0.8,
+          "zStart": 145.92,
+          "zEnd": 177.12
+        }
+      ],
+      "crown": {
+        "process": "crown-woven-iris/v1",
+        "physicalStatus": "experimental",
+        "hole_diameter_mm": 35.7,
+        "layers": 6,
+        "firstLayerFreeSpan_mm": 30.7,
+        "laterLayersMaxFreeSpan_mm": 14.3,
+        "evidenceBasis": "LIMIT16 2026-09-04: bridges to 16 mm continuous on both machines; the single-layer inward spiral (limit16-18mm-v1) FAILED on both and is not used here",
+        "expected": "first-layer chords sag; later grids land on them; a woven disc with ~5-8 mm openings"
+      },
+      "twist": {
+        "turns": 0.35,
+        "tangentialMove_mm_per_layer_at_widest": 0.354
+      },
+      "protocol": "gate at the declared ceiling must be clean; gate at the evidenced ceiling must attribute every finding to one of the zones above (z ranges), otherwise the build is refused"
+    },
+    "supportCheck": {
+      "reach_mm": 0.825,
+      "worstBodyMove_mm": 0.81,
+      "atLayer": 757,
+      "worstCrownApproachMove_mm": 1.49,
+      "crownAtLayer": 787,
+      "crownReachWithTab_mm": 2.225,
+      "hornRate_mm_per_layer": 0.8
+    },
+    "nodeDensity": {
+      "maxNodeGap_mm": 9.5,
+      "limit_mm": 16,
+      "ladder": [
+        96,
+        48,
+        24,
+        12
+      ]
+    },
+    "geometry": {
+      "minConcaveRadius_mm": 2.95,
+      "maxHornTipRadius_mm": 136.6
+    },
+    "foundation": {
+      "paths": 58,
+      "rings": 10,
+      "spokes": 48,
+      "islandsExpected": 1
+    },
+    "wallWidth": {
+      "min": 1.8,
+      "max": 3.6
+    },
+    "bbox_mm": [
+      -135.18,
+      -126.1,
+      133.74,
+      134.15
+    ],
+    "size_mm": [
+      272.5,
+      263.9,
+      190.8
+    ],
+    "events": [
+      {
+        "z": 20.88,
+        "k": 87,
+        "event": "foot -> belly"
+      },
+      {
+        "z": 37.92,
+        "k": 158,
+        "event": "belly -> wave"
+      },
+      {
+        "z": 54.96,
+        "k": 229,
+        "event": "wave -> knot"
+      },
+      {
+        "z": 68.16,
+        "k": 284,
+        "event": "knot -> truss"
+      },
+      {
+        "z": 79.44,
+        "k": 331,
+        "event": "truss -> instruments"
+      },
+      {
+        "z": 80.16,
+        "k": 334,
+        "event": "instruments -> windows"
+      },
+      {
+        "z": 125.04,
+        "k": 521,
+        "event": "windows -> horns"
+      },
+      {
+        "z": 176.88,
+        "k": 737,
+        "event": "horns -> instruments"
+      },
+      {
+        "z": 182.16,
+        "k": 759,
+        "event": "instruments -> crown-approach"
+      },
+      {
+        "z": 189.36,
+        "k": 789,
+        "event": "crown-approach -> crown-iris (crown-woven-iris/v1)"
+      }
+    ],
+    "violations": [],
+    "warnings": [
+      "PRINTABILITY UNPROVEN",
+      "lintels [30.0, 40.0, 50.0] mm are 3.1x over the evidenced bridge"
+    ]
+  }
+}

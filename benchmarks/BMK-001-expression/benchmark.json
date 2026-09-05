@@ -1,0 +1,86 @@
+{
+  "schema": "weft.benchmark/v1",
+  "id": "BMK-001-expression",
+  "title": "WEFT model expression and experimental discipline",
+  "version": 1,
+  "purpose": "Compare models on the same fabrication task without confusing fluent text with printable evidence.",
+  "controls": {
+    "seed": 1337,
+    "units": "mm",
+    "maxToolCalls": 12,
+    "maxRepairRounds": 2,
+    "record": [
+      "model",
+      "provider",
+      "model_settings",
+      "prompt_hash",
+      "schema_hash",
+      "machine_profile_hash",
+      "tool_trace",
+      "elapsed_ms",
+      "token_usage"
+    ]
+  },
+  "briefs": {
+    "expressive": {
+      "id": "E",
+      "prompt": "Create a shallow open 2 x 2 family expressing calm, tension, rupture, and recovery. The four bodies must be related but distinguishable in a finished photograph. State one measurable physical question and use only capabilities declared by WEFT."
+    },
+    "technical": {
+      "id": "T",
+      "prompt": "Create a 2 x 4 coupon matrix comparing four bridge spans and two anchoring strategies. Vary only span and anchoring strategy, hold all other declared factors constant, and give every cell a stable identifier."
+    }
+  },
+  "layers": {
+    "B0": {
+      "name": "brief_understanding",
+      "submission": "A concise JSON object containing goal, controlled, varied, measured, and material_questions."
+    },
+    "B1": {
+      "name": "design_spec",
+      "submission": "One weft.design/v1 object."
+    },
+    "B2": {
+      "name": "mcp_composition",
+      "submission": "A DesignSpec plus the ordered MCP tool trace used to obtain and validate it."
+    },
+    "B3": {
+      "name": "gate_driven_repair",
+      "submission": "The corrected DesignSpec, identified cause, and minimal list of changes after one supplied validation failure."
+    },
+    "B4": {
+      "name": "cross_machine_transfer",
+      "submission": "One unchanged DesignSpec hash, at least two machine profile IDs, design_changed=false, and a short adapter rationale."
+    },
+    "B5": {
+      "name": "novel_expression",
+      "submission": "A valid DesignSpec whose semantic distinctions remain measurable rather than purely rhetorical."
+    }
+  },
+  "modes": {
+    "A": { "name": "free_text", "access": "brief only" },
+    "B": { "name": "schema_only", "access": "brief plus DesignSpec schema" },
+    "C": { "name": "mcp", "access": "brief plus WEFT MCP" },
+    "D": { "name": "mcp_repair", "access": "brief plus WEFT MCP plus one repair round" }
+  },
+  "scoring": {
+    "total": 100,
+    "dimensions": {
+      "brief_understanding": 15,
+      "schema_validity": 15,
+      "experimental_clarity": 15,
+      "compiled_validity": 15,
+      "tool_efficiency": 10,
+      "repair_fidelity": 10,
+      "semantic_distinction": 10,
+      "cross_machine_separation": 5,
+      "economy": 5
+    },
+    "policy": [
+      "MCP V1 scores only mechanically evidenced dimensions.",
+      "Semantic quality requires blind human review.",
+      "Physical quality requires a printed and measured specimen.",
+      "A failed safety gate can never receive printable status regardless of total score."
+    ]
+  }
+}

@@ -1,0 +1,266 @@
+{
+ "file": "/tmp/oblak/OBLAK_A2L_X1_routeB.gcode",
+ "layers": 796,
+ "params": {
+  "bead": 0.45,
+  "allow": 0.6,
+  "maxbridge": 16.0,
+  "res": 0.2,
+  "bedz": 0.5,
+  "maxislands": 1,
+  "maxcantilever": 4.8
+ },
+ "stats": {
+  "floating": 0,
+  "long_bridge": 10,
+  "cantilever": 0,
+  "bridges": 84186,
+  "bad_membrane": 0,
+  "unanchored_membrane": 0,
+  "checked_paths": 1070,
+  "checked_points": 921345,
+  "exempt_layers": 3,
+  "first_layer_islands": 1
+ },
+ "byRole": {
+  "chord": {
+   "floating": 0,
+   "long_bridge": 6,
+   "cantilever": 0,
+   "worst_mm": 52.43
+  },
+  "bridge": {
+   "floating": 0,
+   "long_bridge": 4,
+   "cantilever": 0,
+   "worst_mm": 28.91
+  }
+ },
+ "worstGaps": [
+  [
+   125.52,
+   "chord",
+   21.59,
+   25.51
+  ],
+  [
+   189.6,
+   "bridge",
+   9.63,
+   9.63
+  ],
+  [
+   189.6,
+   "bridge",
+   9.62,
+   9.63
+  ],
+  [
+   189.84,
+   "bridge",
+   7.0,
+   7.0
+  ],
+  [
+   189.84,
+   "bridge",
+   7.0,
+   7.0
+  ],
+  [
+   190.08,
+   "bridge",
+   7.0,
+   7.0
+  ],
+  [
+   190.08,
+   "bridge",
+   6.85,
+   7.0
+  ],
+  [
+   190.8,
+   "bridge",
+   6.4,
+   6.4
+  ],
+  [
+   190.8,
+   "bridge",
+   6.4,
+   6.4
+  ],
+  [
+   190.32,
+   "bridge",
+   4.77,
+   5.09
+  ],
+  [
+   190.32,
+   "bridge",
+   4.77,
+   5.09
+  ],
+  [
+   190.56,
+   "bridge",
+   4.98,
+   5.09
+  ],
+  [
+   190.56,
+   "bridge",
+   4.95,
+   4.95
+  ],
+  [
+   26.16,
+   "chord",
+   3.93,
+   4.75
+  ],
+  [
+   22.8,
+   "chord",
+   4.15,
+   4.6
+  ]
+ ],
+ "membranes": [],
+ "problems": [
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "chord",
+   "z": 125.52,
+   "line": 625004,
+   "length_mm": 27.46,
+   "limit_mm": 16.0,
+   "worst_gap_mm": 13.72,
+   "at": [
+    133.18,
+    265.18
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "chord",
+   "z": 125.52,
+   "line": 625004,
+   "length_mm": 39.83,
+   "limit_mm": 16.0,
+   "worst_gap_mm": 20.65,
+   "at": [
+    88.04,
+    85.16
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "chord",
+   "z": 125.52,
+   "line": 625004,
+   "length_mm": 52.43,
+   "limit_mm": 16.0,
+   "worst_gap_mm": 25.51,
+   "at": [
+    267.67,
+    122.93
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "chord",
+   "z": 125.52,
+   "line": 625004,
+   "length_mm": 50.44,
+   "limit_mm": 16.0,
+   "worst_gap_mm": 24.75,
+   "at": [
+    276.8,
+    172.39
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "chord",
+   "z": 125.52,
+   "line": 625004,
+   "length_mm": 45.04,
+   "limit_mm": 16.0,
+   "worst_gap_mm": 20.28,
+   "at": [
+    114.84,
+    55.5
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "chord",
+   "z": 125.52,
+   "line": 625004,
+   "length_mm": 32.75,
+   "limit_mm": 16.0,
+   "worst_gap_mm": 14.54,
+   "at": [
+    106.33,
+    254.21
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 189.6,
+   "line": 933456,
+   "length_mm": 28.91,
+   "limit_mm": 16.0,
+   "worst_gap_mm": 9.63,
+   "at": [
+    150.79,
+    167.14
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 189.6,
+   "line": 933537,
+   "length_mm": 28.41,
+   "limit_mm": 16.0,
+   "worst_gap_mm": 9.63,
+   "at": [
+    179.21,
+    152.86
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 190.08,
+   "line": 934419,
+   "length_mm": 17.86,
+   "limit_mm": 16.0,
+   "worst_gap_mm": 7.0,
+   "at": [
+    158.89,
+    161.2
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 190.08,
+   "line": 934503,
+   "length_mm": 17.86,
+   "limit_mm": 16.0,
+   "worst_gap_mm": 7.0,
+   "at": [
+    171.11,
+    158.8
+   ]
+  }
+ ],
+ "problem_count": 10,
+ "PASS": false
+}

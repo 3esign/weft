@@ -1,0 +1,316 @@
+{
+  "report": {
+    "name": "MERA_A2L_4x4_v2",
+    "machine": "Bambu A2L",
+    "bed_mm": [
+      330,
+      320
+    ],
+    "layers": 1548,
+    "globalZLevels": 92,
+    "expectedZLevels": 92,
+    "maxBodiesPerZ": 16,
+    "size_mm": [
+      220.8,
+      223.4,
+      22.08
+    ],
+    "plate_mm": [
+      54.7,
+      47,
+      275,
+      270
+    ],
+    "fitsPlate": true,
+    "grammarCounts": {
+      "staple": 506,
+      "perp": 46,
+      "diagonal": 92,
+      "sine": 46,
+      "eight": 46
+    },
+    "threadLength_m": 307.3,
+    "weldNodes": 21374,
+    "unintendedOverlaps": 0,
+    "seamClosures": 95,
+    "overlapSamples": [],
+    "kinematic_h": 2.85,
+    "routeA_estimate_h": 26.8,
+    "caps": [
+      {
+        "z": 8.4,
+        "span": 23,
+        "len": 1202
+      },
+      {
+        "z": 8.4,
+        "span": 23,
+        "len": 1203
+      },
+      {
+        "z": 8.4,
+        "span": 20,
+        "len": 1047
+      },
+      {
+        "z": 8.4,
+        "span": 20,
+        "len": 1500
+      }
+    ],
+    "contourCounts": [
+      [
+        0,
+        16
+      ]
+    ],
+    "perLayerSample": [
+      {
+        "k": 0,
+        "z": 0,
+        "contours": 16,
+        "nodes": 262
+      },
+      {
+        "k": 40,
+        "z": 9.6,
+        "contours": 16,
+        "nodes": 266
+      },
+      {
+        "k": 80,
+        "z": 19.2,
+        "contours": 16,
+        "nodes": 274
+      }
+    ]
+  },
+  "geometry": {
+    "name": "MERA_A2L_4x4_v1",
+    "N": 92,
+    "H": 22.08,
+    "centers": [
+      [
+        -90,
+        90
+      ],
+      [
+        -30,
+        90
+      ],
+      [
+        30,
+        90
+      ],
+      [
+        90,
+        90
+      ],
+      [
+        -90,
+        30
+      ],
+      [
+        -30,
+        30
+      ],
+      [
+        30,
+        30
+      ],
+      [
+        90,
+        30
+      ],
+      [
+        -90,
+        -30
+      ],
+      [
+        -30,
+        -30
+      ],
+      [
+        30,
+        -30
+      ],
+      [
+        90,
+        -30
+      ],
+      [
+        -90,
+        -90
+      ],
+      [
+        -30,
+        -90
+      ],
+      [
+        30,
+        -90
+      ],
+      [
+        90,
+        -90
+      ]
+    ],
+    "plateIntent_mm": [
+      240,
+      240
+    ],
+    "tilePitch_mm": 60,
+    "tileCount": 16,
+    "args": {
+      "lh": 0.24,
+      "bead": 0.45,
+      "w": 5,
+      "e": 1,
+      "r0": 15,
+      "K": 18,
+      "foundation": 3,
+      "maxbridge": 12,
+      "temp": 220,
+      "bed": 55
+    },
+    "tiles": [
+      {
+        "id": 1,
+        "name": "nagib-0",
+        "kind": "circle",
+        "web": "staple"
+      },
+      {
+        "id": 2,
+        "name": "nagib-8",
+        "kind": "circle",
+        "web": "staple"
+      },
+      {
+        "id": 3,
+        "name": "nagib-15",
+        "kind": "circle",
+        "web": "staple"
+      },
+      {
+        "id": 4,
+        "name": "nagib-22",
+        "kind": "circle",
+        "web": "staple"
+      },
+      {
+        "id": 5,
+        "name": "staple",
+        "kind": "circle",
+        "web": "staple"
+      },
+      {
+        "id": 6,
+        "name": "perp",
+        "kind": "circle",
+        "web": "perp"
+      },
+      {
+        "id": 7,
+        "name": "diagonal",
+        "kind": "circle",
+        "web": "diagonal"
+      },
+      {
+        "id": 8,
+        "name": "sine",
+        "kind": "circle",
+        "web": "sine"
+      },
+      {
+        "id": 9,
+        "name": "core-0",
+        "kind": "circle",
+        "web": "staple",
+        "core": 0
+      },
+      {
+        "id": 10,
+        "name": "core-06",
+        "kind": "circle",
+        "web": "staple",
+        "core": 0.6
+      },
+      {
+        "id": 11,
+        "name": "peanut-cap",
+        "kind": "peanut",
+        "web": "staple",
+        "core": 1.2
+      },
+      {
+        "id": 12,
+        "name": "clover-cap",
+        "kind": "clover",
+        "web": "staple",
+        "core": 2
+      },
+      {
+        "id": 13,
+        "name": "ellipse",
+        "kind": "ellipse",
+        "web": "staple"
+      },
+      {
+        "id": 14,
+        "name": "square",
+        "kind": "square",
+        "web": "staple"
+      },
+      {
+        "id": 15,
+        "name": "peanut",
+        "kind": "peanut",
+        "web": "diagonal"
+      },
+      {
+        "id": 16,
+        "name": "clover",
+        "kind": "clover",
+        "web": "eight"
+      }
+    ],
+    "caps": [
+      {
+        "tile": 9,
+        "z": 8.4,
+        "shape": "circle",
+        "coreRadius_mm": 0,
+        "declaredAnchor": 1
+      },
+      {
+        "tile": 10,
+        "z": 8.4,
+        "shape": "circle",
+        "coreRadius_mm": 0.6,
+        "declaredAnchor": 1
+      },
+      {
+        "tile": 11,
+        "z": 8.4,
+        "shape": "peanut",
+        "coreRadius_mm": 1.2,
+        "declaredAnchor": 1
+      },
+      {
+        "tile": 12,
+        "z": 8.4,
+        "shape": "clover",
+        "coreRadius_mm": 2,
+        "declaredAnchor": 1
+      }
+    ],
+    "experiment": {
+      "row1": "radial lean: 0, 8, 15, 22 degrees approximately",
+      "row2": "same circle, four weave grammars",
+      "row3": "four rim-anchored membranes; core and boundary shape vary",
+      "row4": "ellipse, rounded square, peanut and clover contours",
+      "readout": "photograph whole plate from above and rows 1/2 in raking side light"
+    }
+  }
+}

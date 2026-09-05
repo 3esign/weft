@@ -1,0 +1,122 @@
+{
+ "file": "/tmp/gora/GORA_ENDER3V4_X1_routeB.gcode",
+ "layers": 957,
+ "params": {
+  "bead": 0.42,
+  "allow": 0.6,
+  "maxbridge": 60.0,
+  "res": 0.2,
+  "bedz": 0.5,
+  "maxislands": 1,
+  "maxcantilever": 4.8
+ },
+ "stats": {
+  "floating": 0,
+  "long_bridge": 0,
+  "cantilever": 0,
+  "bridges": 63753,
+  "bad_membrane": 0,
+  "unanchored_membrane": 0,
+  "checked_paths": 1371,
+  "checked_points": 689396,
+  "exempt_layers": 3,
+  "first_layer_islands": 1
+ },
+ "byRole": {},
+ "worstGaps": [
+  [
+   83.8,
+   "chord",
+   23.09,
+   25.05
+  ],
+  [
+   190.2,
+   "bridge",
+   6.7,
+   6.8
+  ],
+  [
+   190.2,
+   "bridge",
+   6.7,
+   6.8
+  ],
+  [
+   190.4,
+   "bridge",
+   5.94,
+   6.2
+  ],
+  [
+   190.4,
+   "bridge",
+   5.94,
+   6.2
+  ],
+  [
+   190.6,
+   "bridge",
+   5.83,
+   5.91
+  ],
+  [
+   190.6,
+   "bridge",
+   5.83,
+   5.91
+  ],
+  [
+   191.2,
+   "bridge",
+   5.6,
+   5.6
+  ],
+  [
+   191.2,
+   "bridge",
+   5.6,
+   5.6
+  ],
+  [
+   190.8,
+   "bridge",
+   4.64,
+   4.68
+  ],
+  [
+   190.8,
+   "bridge",
+   4.64,
+   4.68
+  ],
+  [
+   191.0,
+   "bridge",
+   4.25,
+   4.25
+  ],
+  [
+   191.0,
+   "bridge",
+   4.24,
+   4.24
+  ],
+  [
+   14.2,
+   "chord",
+   3.58,
+   4.2
+  ],
+  [
+   15.8,
+   "chord",
+   3.19,
+   4.2
+  ]
+ ],
+ "membranes": [],
+ "problems": [],
+ "problem_count": 0,
+ "PASS": true
+}

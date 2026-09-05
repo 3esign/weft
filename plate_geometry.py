@@ -197,10 +197,16 @@ for k in range(N):
             membrane_outer = tile['r0'] - a.w / 2.0
             rec = {'pts': pts, 'cx': cx, 'cy': cy, 'r_ins': membrane_outer,
                    'span_mm': round(2.0 * membrane_outer, 2), 'anchoredFrac': 1.0,
-                   'coreRadius_mm': tile['core'], 'shape': tile['kind'], 'tile': tile['id']}
+                   'coreRadius_mm': tile['core'], 'shape': tile['kind'], 'tile': tile['id'],
+                   'process': 'single-layer-inward-spiral/mera-4x4-2026-09-03',
+                   'physicalStatus': 'failed',
+                   'evidence': 'specimens/2026-09-03_MERA_A2L_4x4_v1_physical/outcomes.md'}
             layer['caps'].append(rec)
             caps_summary.append({'tile': tile['id'], 'z': z, 'shape': tile['kind'],
-                                 'coreRadius_mm': tile['core'], 'declaredAnchor': 1.0})
+                                 'coreRadius_mm': tile['core'], 'declaredAnchor': 1.0,
+                                 'process': 'single-layer-inward-spiral/mera-4x4-2026-09-03',
+                                 'physicalStatus': 'failed',
+                                 'evidence': 'specimens/2026-09-03_MERA_A2L_4x4_v1_physical/outcomes.md'})
     layers.append(layer)
 
 summary = {

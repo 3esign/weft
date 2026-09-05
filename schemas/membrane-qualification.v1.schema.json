@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "weft.membrane-qualification.v1",
+  "title": "WEFT physical membrane qualification receipt",
+  "type": "object",
+  "required": [
+    "schema",
+    "decision",
+    "observed",
+    "process",
+    "span_mm",
+    "path_sha256",
+    "machine",
+    "bead_mm",
+    "layer_height_mm",
+    "artifact",
+    "artifact_sha256",
+    "photos_manifest"
+  ],
+  "properties": {
+    "schema": {"const": "weft.membrane-qualification.v1"},
+    "decision": {"const": "qualified"},
+    "observed": {"const": "pass"},
+    "process": {"type": "string", "minLength": 1},
+    "span_mm": {"type": "number", "exclusiveMinimum": 0},
+    "path_sha256": {"type": "string", "pattern": "^[0-9a-fA-F]{64}$"},
+    "machine": {"type": "string", "minLength": 1},
+    "bead_mm": {"type": "number", "exclusiveMinimum": 0},
+    "layer_height_mm": {"type": "number", "exclusiveMinimum": 0},
+    "artifact": {"type": "string", "minLength": 1},
+    "artifact_sha256": {"type": "string", "pattern": "^[0-9a-fA-F]{64}$"},
+    "photos_manifest": {"type": "string", "minLength": 1},
+    "recorded": {"type": "string"},
+    "notes": {"type": "string"}
+  },
+  "additionalProperties": false
+}

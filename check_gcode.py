@@ -14,10 +14,12 @@ Method, per layer k (everything at or below --bedz is on the plate and is exempt
       - a run bounded by supported points at both ends, arc length <= maxbridge -> bridge (ok)
       - the same, longer than maxbridge           -> LONG_BRIDGE       (fail)
       - a run touching a free end of an open path -> CANTILEVER, fails over `allow` of arc length
-  * a path emitted as a CAP is a filled spiral and is judged by the rule that makes a spiral
-    self-supporting instead: at least --minanchor of its OUTERMOST TURN must land on the material
-    below, and consecutive turns must be no more than a bead apart, so every turn welds to the one
-    just laid. Judging a membrane by the diameter of the hole it closes would condemn a construction
+  * a path emitted as a CAP is a filled spiral and is judged geometrically: at least --minanchor of
+    its OUTERMOST TURN must land on the material below, and consecutive turns must be no more than a
+    bead apart. This does not qualify the molten same-layer accretion process: the MERA A2L plate
+    returned about one mostly formed membrane and three collapsed centres despite 1.000 rim anchoring.
+    make_suma.mjs therefore requires a separate physical process status and explicit experimental opt-in.
+    Judging a membrane by the diameter of the hole it closes would condemn a construction
     that works; judging it by whether any point of it grazes something lets a disc fly (Suma 4x4,
     2026-09-03: twelve membranes printed 6-29 mm above nothing and this checker called them warnings).
     A membrane with NO supported point is FLOATING; one whose rim misses is UNANCHORED_MEMBRANE.

@@ -208,6 +208,17 @@ textarea{width:100%;background:#0a0f14;border:1px solid var(--line);border-radiu
   </div>
 
   <div class="sec">
+    <div class="st">First layer</div>
+    <div class="row" style="margin-bottom:4px"><label>Built-in adhesion</label></div>
+    <div class="seg sm" id="adhesionSeg">
+      <button data-a="none" class="on">Off</button><button data-a="brim">Brim</button><button data-a="foundation">Filled ring</button></div>
+    <div class="ctl"><div class="row"><label>First-layer bead</label><span class="val" id="v_firstLayerBead"></span></div><input type="range" id="firstLayerBead" min="0.3" max="1.4" step="0.02"></div>
+    <div class="ctl"><div class="row"><label>First-layer speed</label><span class="val" id="v_firstLayerSpeed"></span></div><input type="range" id="firstLayerSpeed" min="5" max="30" step="1"></div>
+    <div class="ctl"><div class="row"><label>Adhesion width</label><span class="val" id="v_adhesionWidth"></span></div><input type="range" id="adhesionWidth" min="2" max="20" step="0.5"></div>
+    <div class="hint" style="margin-top:0">Dome mode: <b>brim</b> adds an outside spiral; <b>filled ring</b> fills the whole annular footprint plus the brim. Both are real first-layer geometry in STL and real motion in G-code. Keep slicer elephant-foot and XY contour compensation at 0.</div>
+  </div>
+
+  <div class="sec">
     <div class="st">Export</div>
     <button class="act" id="expStl">Download STL</button>
     <button class="act warp" id="expGcode">Download G-code</button>
@@ -255,6 +266,8 @@ textarea{width:100%;background:#0a0f14;border:1px solid var(--line);border-radiu
   <div class="srow"><span class="k">min node gap</span><span class="v" id="s_gap">–</span></div>
   <div class="srow"><span class="k">wall width</span><span class="v" id="s_width">–</span></div>
   <div class="srow"><span class="k">overlaps</span><span class="v" id="s_ov">–</span></div>
+  <div class="srow"><span class="k">first layer</span><span class="v" id="s_adhesion">–</span></div>
+  <div class="srow" id="crownRow" style="display:none"><span class="k">crown</span><span class="v" id="s_crown">–</span></div>
   <div class="srow" id="leanRow" style="display:none"><span class="k">top lean</span><span class="v" id="s_lean">–</span></div>
   <div class="srow" id="fitRow"><span class="k">bed fit (<span id="bedRect">330×320</span>)</span><span class="v" id="s_fit">–</span></div>
     <div class="srow"><span class="k">stl size</span><span class="v" id="s_stl">-</span></div>
@@ -273,7 +286,7 @@ textarea{width:100%;background:#0a0f14;border:1px solid var(--line);border-radiu
   <span class="close" id="modalClose">✕</span>
   <h2>Printing WEFT on the A2L, safely</h2>
   <p>You will not damage the machine with these files, because <b>you preview before you print</b>. Two routes, and running both cross-checks your work:</p>
-  <p><b>Route A — STL (trust first).</b> Set bead width to your calibrated single-line width for the mounted nozzle, download the STL, open it in Bambu Studio normally. Arachne recovers each layer as one continuous bead. Studio owns all machine-specific startup — nothing to worry about. Print this first to confirm the geometry and the machine.</p>
+  <p><b>Route A — STL (trust first).</b> Set bead width to your calibrated single-line width for the mounted nozzle, download the STL, open it in Bambu Studio normally. Arachne recovers each layer as one continuous bead. Built-in brim/foundation and the wider first layer are already geometry: set elephant-foot and XY contour compensation to 0, and do not add a second slicer brim. Studio owns machine-specific startup.</p>
   <p><b>Route B — G-code (weld control).</b> This is the same paths plus flow-boost and dwell at every node — the actual method. To keep startup machine-correct:</p>
   <ol>
     <li>In Bambu Studio, slice any small object for your A2L and export its G-code.</li>
@@ -290,7 +303,8 @@ textarea{width:100%;background:#0a0f14;border:1px solid var(--line);border-radiu
    - web grammar: diagonal (truss) | perp (Vierendeel) | sine
    - editable layer cycle
    - weld: overshoot amplitude, apex dwell, seeded phase jitter, flow boost
-   - dome spiral-cap closure when slice radius < w/2+bead
+  - dome spiral-cap closure with a bounded, filled crown transition
+  - first-layer bead/speed plus built-in dome brim or filled-ring foundation
    - batch specimen array for the A2L (330×320 bed), 2-axis parameter sweep
    - dual export; G-code uses a pasted machine header (no guessed startup)
    parameter-space first: pattern synthesized in (u, lateral), mapped via slice curve.
@@ -310,7 +324,8 @@ if(typeof THREE==='undefined'){
    pitch is computed from BED, and its bit-for-bit reproducibility with it. */
 const MACHINES={
   a2l:{id:'a2l', label:'Bambu A2L', bx:330, by:320, bedMax:80,  hotMax:300},
-  a1 :{id:'a1',  label:'Bambu A1',  bx:256, by:256, bedMax:100, hotMax:300}
+  a1 :{id:'a1',  label:'Bambu A1',  bx:256, by:256, bedMax:100, hotMax:300},
+  ender:{id:'ender', label:'Creality Ender-3 V4', bx:220, by:220, bedMax:110, hotMax:300}
 };
 let MACHINE='a2l', BED=MACHINES.a2l.bx, BEDY=MACHINES.a2l.by;
 function setMachine(id){
@@ -331,6 +346,7 @@ const P={
   overshoot:1.0, dwell:0.6, jitter:0, flowBoost:1.25,
   maxBridge:12, checkOv:true,
   speed:30, bridgeSpeed:18, temp:215, bed:55, fan:100,
+  firstLayerBead:0.45, firstLayerSpeed:15, adhesion:'none', adhesionWidth:8,
   // batch
   grid:3, sweepX:'lambda', sweepY:'web', specW:28, specH:16
 };
@@ -440,7 +456,12 @@ function decimatedHalf(cl){
     k=Math.max(-2, Math.min(6, k));
     h=base*Math.pow(2,k); m=Math.pow(2,k);
   }
-  if(P.autoLOD){ while(h<smin && m<64){ h*=2; m*=2; } }
+  let innerRatio = 1.0;
+  if(cl.kind === 'dome' && cl.r > 1e-4) {
+    const A = Math.min(P.w/2, cl.r * 0.85);
+    innerRatio = Math.max(0.1, (cl.r - A) / cl.r);
+  }
+  if(P.autoLOD){ while(h*innerRatio < smin && m<64){ h*=2; m*=2; } }
   return {h,m};
 }
 function apexUs(cl,webIdx,jit){
@@ -480,7 +501,7 @@ function apexUs(cl,webIdx,jit){
 
 /* ---------- one layer's paths (role + web type) ---------- */
 function chordLayer(cl,zBot,off){
-  const A=P.w/2, pts=[];
+  const A=halfWidthFor(cl), pts=[];
   if(cl.closed){
     /* A closed revolve has no far end to turn around at: u=0 and u=total are the same
        place, so the wall's racetrack puts BOTH cross-connectors at the same angle, one
@@ -488,14 +509,26 @@ function chordLayer(cl,zBot,off){
        all at +/-180 deg. Here the layer is drawn as outer turn -> ONE radial crossover
        -> inner turn, each turn stopping one step short of its own start, so no point on
        the path is ever revisited and the ring needs no closure exclusion at all. */
-    const lat=(u,s)=>s*(A+P.amp*Math.sin(widthPhase(cl,u)+off));
+    /* WEFT-06: the ring is opened AT A WELD COLUMN. The seam is the one place a chord ring has two
+       free ends, and a free end over air is a cantilever — the gate counted twenty of them, 3 to 7 mm
+       each. At a weld column the web below crossed between the rails, so BOTH ends land on material.
+       Anywhere else is a coin toss. */
+    const uS=(cl.nodes&&cl.nodes.length)?cl.nodes[0]:0;
+    const WR=(u)=>{const t=u%cl.total; return t<0?t+cl.total:t;};
+    const lat=(u,s)=>s*(A+P.amp*Math.sin(widthPhase(cl,WR(u))+off));
     const uX=cl.total-STEP;                       // the crossover angle
-    for(let u=0;u<uX-1e-9;u+=STEP) pts.push(mapUV(cl,u,lat(u,1)));
-    const lX=lat(uX,1);
-    for(let t=0;t<=4;t++) pts.push(mapUV(cl,uX, lX-(2*lX)*t/4));
-    for(let u=uX-STEP;u>1e-9;u-=STEP) pts.push(mapUV(cl,u,lat(u,-1)));
-    pts.push(mapUV(cl,0,lat(0,-1)));
-    return {pts, apexes:[], closed:false};
+    for(let u=0;u<uX-1e-9;u+=STEP) pts.push(mapUV(cl,WR(uS+u),lat(uS+u,1)));
+    const lX=lat(uS+uX,1);
+    for(let t=0;t<=4;t++) pts.push(mapUV(cl,WR(uS+uX), lX-(2*lX)*t/4));
+    for(let u=uX-STEP;u>1e-9;u-=STEP) pts.push(mapUV(cl,WR(uS+u),lat(uS+u,-1)));
+    pts.push(mapUV(cl,WR(uS),lat(uS,-1)));
+    /* and CLOSE it: a second radial crossover at the seam brings the thread back to where it
+       started. The ring used to be left open here, which put two free ends on every chord layer —
+       and a free end over air is a cantilever, not a bridge. The two crossovers sit a whole turn
+       apart, so no point is revisited. */
+    const lS=lat(uS,1);
+    for(let t=1;t<=4;t++) pts.push(mapUV(cl,WR(uS), -lS+(2*lS)*t/4));
+    return {pts, apexes:[], closed:true};
   }
   for(let u=0;u<=cl.total;u+=STEP) pts.push(mapUV(cl,u, A+P.amp*Math.sin(widthPhase(cl,u)+off)));
   pts.push(mapUV(cl,cl.total, A+P.amp*Math.sin(widthPhase(cl,cl.total)+off)));
@@ -546,66 +579,152 @@ function emitParam(cl,v,pts){
    1.5 — while 180 deg and 270 deg domes and every wall stayed clean). Shifting the wave
    by a quarter period on closed turns puts the zeros back under the nodes. */
 function widthPhase(cl,u){ return P.ampF*(phaseAt(cl,u) - (cl.closed?Math.PI/2:0)); }
-function AfAt(cl,u){ return P.w/2 + P.amp*Math.sin(widthPhase(cl,u)); }
+/* Half web amplitude for a centerline. Dome slices shrink the amplitude near
+   the crown so the web never crosses the axis; every other centerline (wall,
+   batch specimen, open sweep) has no radius and keeps the full P.w/2. Without
+   this guard cl.r is undefined there and the whole layer collapses to NaN. */
+function halfWidthFor(cl){ return (cl&&cl.kind==='dome'&&cl.r>1e-4) ? Math.min(P.w/2, cl.r*0.85) : P.w/2; }
+function AfAt(cl,u){ return halfWidthFor(cl) + P.amp*Math.sin(widthPhase(cl,u)); }
 
 function webLayer(cl,zBot,webIdx){
-  const A=P.w/2, e=P.overshoot, Aw=A+e;
+  const A=halfWidthFor(cl), e=P.overshoot, Aw=A+e;
   const {us,sides,half}=apexUs(cl,webIdx, P.jitter);
   const pts=[], apexes=[]; webLayer._lastGap=half;
-  if(us.length<2){ for(let u=0;u<=cl.total;u+=STEP) pts.push(mapUV(cl,u,0)); return {pts,apexes,closed:false}; }
+  /* WEFT-02 telemetry, read by the builders: how many crossings this layer failed to
+     place, and the longest arc a chord rail above will have to span unsupported.
+     sine / diagonal / eight cross at every node, so their rail run is the node gap;
+     staple and perp overwrite both with what they actually emitted. */
+  webLayer._skipped=0; webLayer._plain=0;
+  webLayer._maxRail = us.length? Math.max(us[0], cl.total-us[us.length-1],
+    ...us.slice(1).map((u,j)=>u-us[j])) : cl.total;
+  if(us.length<2){ /* no node grid: a bare centreline, touching neither rail and welding nothing */
+    webLayer._skipped=Math.max(1,us.length); webLayer._maxRail=cl.total;
+    for(let u=0;u<=cl.total;u+=STEP) pts.push(mapUV(cl,u,0)); return {pts,apexes,closed:false}; }
   const runV=(v,u0,u1,latFn)=>{ const m=Math.max(1,Math.ceil(Math.abs(u1-u0)/STEP));
     for(let j=1;j<=m;j++){const uu=u0+(u1-u0)*j/m; v.push([uu,latFn(uu)]);} };
 
   if(P.webType==='staple'){
-    /* runs ON the chords (stack on the rails below); staple rungs with symmetric
-       overhang tabs; corners chaikin-rounded */
-    const D=Math.max(P.bead*1.15,0.5);
+    /* Runs sit ON the chord rails (they stack on the rails below); every node gets a
+       staple rung that crosses to the opposite rail, with symmetric overhang tabs.
+
+       WEFT-02 (2026-09-02). The rung half-step D used to be sized ONCE, from the
+       curvature at the MIDDLE of the contour, and then every rung was tested against
+       its OWN local curvature. On any contour that is not a perfect circle the test
+       therefore failed wherever the curve is tighter than its midpoint, and the rung
+       was dropped in silence. Measured on P2 Penjac: 38% of all rungs dropped, and on
+       half the web layers every single rung went - a "woven" layer with no welds at
+       all, and the chord rail above it hanging in the air for up to 65 mm. Exactly the
+       WEFT-01 class of fault: one global number deciding a local question.
+
+       D is now chosen from the curvature where the rung actually lands, and a rung that
+       is still too tight gives up its overhang tab (reach shrinks toward w/2) BEFORE it
+       is ever allowed to be dropped: the tab is decoration, the rung is structure. A
+       rung is skipped only when the corner cannot carry a crossing at any tab length,
+       and the count and the worst rail run are published so a caller can refuse. */
+    const Dmin=Math.max(P.bead*1.15,0.5);
+    /* WEFT-03: the ceiling on a staple's half-step is 0.45 of the gap to the NEXT column, and that
+       gap is local. Using the smallest gap anywhere on the ring — which is what `half` is — let one
+       tight pair of columns shrink every staple on the contour and drop the ones that no longer fit
+       (measured: 143 rungs, a 19.3 mm unwelded rail). Same fault as WEFT-01 and WEFT-02, one level
+       further down: a global number answering a local question. */
+    const gapAfter=(i)=>{ const n=us.length;
+      if(i<n-1) return us[i+1]-us[i];
+      return cl.closed ? (cl.total-us[n-1]+us[0]) : (cl.total-us[n-1]); };
+    const Dfor=(u,rch,cap)=>{ const k=Math.abs(curvAt(cl,u));
+      let d=Dmin; if(k>1e-4 && 1-rch*k>0) d=Math.max(d,(P.bead*1.05)/(1-rch*k));
+      return Math.min(d,cap); };
+    /* the crossing lands at u0+D and D depends on the curvature there: one refinement
+       is enough, since D moves the sample by less than a bead. */
+    const solveRung=(u0,cap)=>{
+      for(let s=0;s<=4;s++){
+        const et=e*(1-s/4), rch=AfAt(cl,u0)+et;
+        let d=Dfor(u0,rch,cap); d=Dfor(u0+d,rch,cap);
+        if(d>=P.bead*1.05 && rungFits(cl,u0+d,d,rch)) return {d,e:et};
+      }
+      return null;
+    };
+    let skipped=0, plain=0, maxRail=0, lastRung=0;
     const v=[]; let cs=sides[0], uc=0;
     v.push([0, cs*AfAt(cl,0)]);
+    const clampU=(u,D)=>cl.closed? u : Math.min(u, cl.total-2*D);   // a ring has no end to clamp to
     for(let i=0;i<us.length;i++){
-      const u0=Math.max(uc, Math.min(us[i], cl.total-2*D));
-      if(u0<uc-1e-6) continue;
-      if(rungTooTight(cl,u0+D,D)) continue;   // corner too tight: run stays on the rail
+      if(us[i]<uc-1e-6){ skipped++; continue; }        // the previous staple already ran past this node
+      const cap=Math.max(Dmin, 0.45*Math.max(gapAfter(i), 1e-6));
+      const sol=solveRung(Math.max(uc, clampU(us[i],Dmin)), cap);
+      if(!sol){
+        /* WEFT-03: a corner too tight for a staple still gets a CROSSING. A plain radial crossing
+           has no longitudinal legs, so there is nothing that can converge and fuse — it is always
+           printable, it welds both rails, and it costs one segment. Dropping the weld instead is
+           how a chord rail ended up running 19.5 mm with nothing under it. */
+        const u0=Math.max(uc, clampU(us[i],Dmin));
+        if(u0<uc-1e-6){ skipped++; continue; }
+        runV(v,uc,u0,(uu)=>cs*AfAt(cl,uu));
+        const a0=AfAt(cl,u0);
+        v.push([u0, cs*a0], [u0, -cs*a0]);
+        apexes.push(objAt(cl,u0, a0, zBot), objAt(cl,u0, -a0, zBot));
+        maxRail=Math.max(maxRail, u0-lastRung); lastRung=u0;
+        cs=-cs; uc=u0; plain++; continue;
+      }
+      const D=sol.d, et=sol.e;
+      const u0=Math.max(uc, clampU(us[i],D));
       runV(v,uc,u0,(uu)=>cs*AfAt(cl,uu));
       const a0=AfAt(cl,u0), a1=AfAt(cl,u0+D), a2=AfAt(cl,u0+2*D);
-      v.push([u0, cs*(a0+e)]);
-      v.push([u0+D, cs*(a1+e)], [u0+D, -cs*(a1+e)]);
-      v.push([u0+2*D, -cs*(a2+e)], [u0+2*D, -cs*a2]);
+      v.push([u0, cs*(a0+et)]);
+      v.push([u0+D, cs*(a1+et)], [u0+D, -cs*(a1+et)]);
+      v.push([u0+2*D, -cs*(a2+et)], [u0+2*D, -cs*a2]);
       apexes.push(objAt(cl,u0+D, a1, zBot), objAt(cl,u0+D, -a1, zBot));
+      maxRail=Math.max(maxRail, u0-lastRung); lastRung=u0+2*D;
       cs=-cs; uc=u0+2*D;
     }
     if(uc<cl.total-1e-6) runV(v,uc,cl.total,(uu)=>cs*AfAt(cl,uu));
+    maxRail=Math.max(maxRail, cl.total-lastRung);
+    webLayer._skipped=skipped; webLayer._maxRail=maxRail; webLayer._plain=plain;
     emitParam(cl, filletParam(v,Math.max(P.bead*0.8,0.45)), pts);
 
   } else if(P.webType==='perp'){
-    /* regular square wave: runs sit BEYOND the chords by e (never on top of the
-       longitudinal lines below); single vertical rungs cross both chords;
-       chaikin-rounded corners */
-    const v=[]; let cs=sides[0], uc=0;
-    v.push([0, cs*(AfAt(cl,0)+e)]);
+    /* Regular square wave: one straight rung crosses both chords at each weld column, and the runs
+       between them rest ON the rails.
+       WEFT-06 (2026-09-02): the runs used to sit a tab BEYOND the rails, deliberately, so as never
+       to stack on the longitudinal lines below. The intent was clean crossings; the effect was that
+       the only part of the layer touching anything was the instant a rung swept past a rail, and
+       wherever the body had moved a millimetre those instants were missed — 12 to 14 mm of run in
+       the air. The tab is now a spike at the column; the run rests on the rail. */
+    /* WEFT-02: a crossing that will not fit gives up its tab before it gives up the
+       weld — the same rule as the staple rung. Only a corner that cannot carry the
+       crossing at zero tab is skipped, and the skip is counted. */
+    const tabAt=(u0)=>{
+      for(let s=0;s<=4;s++){ const ee=e*(1-s/4);
+        if(rungFits(cl,u0,half,AfAt(cl,u0)+ee)) return ee; }
+      return null; };
+    const v=[]; let cs=sides[0], uc=0, skipped=0, plain=0, maxRail=0, lastRung=0;
+    v.push([0, cs*AfAt(cl,0)]);
     for(let i=0;i<us.length;i++){
-      const u0=Math.max(uc, us[i]); if(u0<uc-1e-6) continue;
-      if(rungTooTight(cl,u0,P.lambda/2)) continue;   // corner too tight: skip crossing
-      runV(v,uc,u0,(uu)=>cs*(AfAt(cl,uu)+e));
+      const u0=Math.max(uc, us[i]); if(us[i]<uc-1e-6){ skipped++; continue; }
+      let et=tabAt(u0);
+      if(et===null){ et=0; plain++; }   // too tight even at zero tab: cross flat rather than not at all
+      runV(v,uc,u0,(uu)=>cs*AfAt(cl,uu));
       const a0=AfAt(cl,u0);
-      v.push([u0, -cs*(a0+e)]);
+      if(et>0.02) v.push([u0, cs*(a0+et)]);       // the tab, a spike at the column
+      v.push([u0, -cs*(a0+et)]);
+      if(et>0.02) v.push([u0, -cs*a0]);           // and back down onto the far rail
       apexes.push(objAt(cl,u0, a0, zBot), objAt(cl,u0, -a0, zBot));
+      maxRail=Math.max(maxRail,u0-lastRung); lastRung=u0;
       cs=-cs; uc=u0;
     }
-    if(uc<cl.total-1e-6) runV(v,uc,cl.total,(uu)=>cs*(AfAt(cl,uu)+e));
+    if(uc<cl.total-1e-6) runV(v,uc,cl.total,(uu)=>cs*AfAt(cl,uu));
+    maxRail=Math.max(maxRail, cl.total-lastRung);
+    webLayer._skipped=skipped; webLayer._maxRail=maxRail; webLayer._plain=plain;
     emitParam(cl, filletParam(v,Math.max(P.bead*0.8,0.45)), pts);
 
   } else if(P.webType==='sine'){
+    /* WEFT-06: the wave's crests ride ON the rails. Swinging a tab further put the only part of the
+       curve that dwells (the crest, where the derivative is zero) outside the material below, and a
+       sine that never rests on a rail is one long bridge. */
     const dense=Math.max(us.length*8, Math.ceil(cl.total/STEP));
     const shift=(P.altPhase&&webIdx%2)?Math.PI:0;
     for(let k=0;k<=dense;k++){ const u=cl.total*k/dense;
-      pts.push(mapUV(cl,u,(AfAt(cl,u)+e)*Math.sin(phaseAt(cl,u)+shift))); }
-    const dPh = Aw>A+1e-6 ? (Math.PI/2 - Math.asin(A/Aw)) : 0;
-    const dU = dPh*(2*half)/(2*Math.PI);
-    us.forEach((u,i)=>{
-      if(dU<1e-4) apexes.push(objAt(cl,u,sides[i]*A,zBot));
-      else { if(u-dU>=0) apexes.push(objAt(cl,u-dU,sides[i]*A,zBot));
-             if(u+dU<=cl.total) apexes.push(objAt(cl,u+dU,sides[i]*A,zBot)); } });
+      pts.push(mapUV(cl,u,AfAt(cl,u)*Math.sin(phaseAt(cl,u)+shift))); }
+    us.forEach((u,i)=>{ apexes.push(objAt(cl,u,sides[i]*AfAt(cl,u),zBot)); });
 
   } else if(P.webType==='eight'){
     /* loop stitch (prolate cycloid): lat=-(Af+e)cos(ph), u=c(ph-k*sin(ph)), k>1
@@ -620,45 +739,62 @@ function webLayer(cl,zBot,webIdx){
       const u=c*(ph - kap*Math.sin(ph));
       if(u>cl.total) break;
       const uu=Math.max(0,Math.min(cl.total,u));
-      const Au=AfAt(cl,uu), lat=-(Au+e)*Math.cos(ph+shift);
+      /* WEFT-06: the loop rides the rails. Reaching a tab past them left the stitch touching
+         nothing on a layer whose body had shifted; the hook is the loop's own reversal in u, not
+         the tab. */
+      const Au=AfAt(cl,uu), lat=-Au*Math.cos(ph+shift);
       pts.push(mapUV(cl,uu,lat));
-      if(pl!==null){                       // numeric weld detection: chord crossings
-        for(const s of [1,-1]){
-          const c0=pl-s*pa, c1=lat-s*Au;
-          if(c0*c1<0){ const t=c0/(c0-c1);
-            const un=Math.max(0,Math.min(cl.total,pu+(uu-pu)*t));
-            apexes.push(objAt(cl,un,s*AfAt(cl,un),zBot)); }
-        }
-      }
       pu=uu; pl=lat; pa=Au; ph+=Math.PI/24;
     }
+    /* The weld is the EXTREME of the loop, where it rests on a rail — cos(ph+shift) = +/-1.
+       It used to be found by watching for a sign change of (lat -/+ A), which only worked while the
+       loop reached a tab PAST the rail. Riding the rail makes that a tangency, not a crossing, and
+       the detector silently returned no welds at all: 170 layers reported as unwoven. Solve for the
+       extremes instead — they are exactly where the stitch touches. */
+    for(let m=0;;m++){
+      const phm=m*Math.PI - shift;
+      if(phm<0) continue;
+      const um=c*(phm - kap*Math.sin(phm));
+      if(um>cl.total) break;
+      const uu=Math.max(0,Math.min(cl.total,um));
+      apexes.push(objAt(cl,uu,-Math.cos(phm+shift)*AfAt(cl,uu),zBot));
+      if(m>40000) break;
+    }
+    webLayer._maxRail = us.length>1 ? Math.max(...us.slice(1).map((u,j)=>u-us[j]),
+                                               us[0], cl.total-us[us.length-1]) : cl.total;
 
   } else { /* diagonal truss */
+    /* WEFT-06 (2026-09-02). The dwell used to sit at +/-(A+e) — a tab BEYOND the rail. A truss
+       member is a bridge, and a bridge needs its ends on something: the material under this layer is
+       the two chord rails at +/-A, and the dwell was the one part of the path that could land on
+       them. Sitting a tab outside meant the apex touched nothing, and wherever the body had moved a
+       millimetre sideways the whole zigzag came away from the layer below — the gate measured a
+       22.8 mm member hanging in air where the geometry had promised 6.5 mm.
+       The dwell is now ON the rail, and the tab is a spike beyond it: contact first, ornament after. */
     const dw2=Math.min(P.dwell/2, half*0.3);
     const via=[];
+    const node=(u,sgn,arr)=>{ const a0=AfAt(cl,u);
+      if(dw2>0.02){ arr.push([u-dw2,sgn*a0]);
+                    if(e>0.02) arr.push([u,sgn*(a0+e)]);
+                    arr.push([u+dw2,sgn*a0]); }
+      else arr.push([u,sgn*a0]); };
     for(let i=0;i<us.length;i++){
-      const u=us[i], l=sides[i]*Aw;
       const interior = cl.closed || (i>0 && i<us.length-1);   // a ring has no end apexes
-      if(dw2>0.02 && interior) via.push([u-dw2,l],[u+dw2,l]);
-      else via.push([u,l]);
+      if(interior) node(us[i],sides[i],via);
+      else via.push([us[i],sides[i]*AfAt(cl,us[i])]);
     }
     /* on a closed turn the truss has to cross the seam too: repeat the first apex one
        turn later so the last member is drawn, then let emitParam wrap u back */
-    if(cl.closed){
-      const l0=sides[0]*Aw, u0=us[0]+cl.total;
-      if(dw2>0.02) via.push([u0-dw2,l0],[u0+dw2,l0]); else via.push([u0,l0]);
-    }
+    if(cl.closed) node(us[0]+cl.total,sides[0],via);
     for(let i=0;i<via.length-1;i++){
       const u0=via[i][0],l0=via[i][1],u1=via[i+1][0],l1=via[i+1][1];
       const m=Math.max(1,Math.ceil(Math.max(Math.abs(u1-u0),Math.abs(l1-l0))/STEP));
       for(let j=(i===0?0:1);j<=m;j++){const t=j/m; pts.push(mapUV(cl,u0+(u1-u0)*t,l0+(l1-l0)*t));}
     }
-    const dU = Aw>A+1e-6 ? half*(Aw-A)/(2*Aw) : 0;
-    us.forEach((u,i)=>{
-      if(dU<1e-4) apexes.push(objAt(cl,u,sides[i]*A,zBot));
-      else { if(u-dU>=0) apexes.push(objAt(cl,u-dU,sides[i]*A,zBot));
-             if(u+dU<=cl.total) apexes.push(objAt(cl,u+dU,sides[i]*A,zBot)); }
-    });
+    /* the welds are where the dwell rests on the rail, which is now exactly +/-A at the node */
+    us.forEach((u,i)=>{ apexes.push(objAt(cl,u,sides[i]*AfAt(cl,u),zBot)); });
+    webLayer._maxRail = us.length>1 ? Math.max(...us.slice(1).map((u,j)=>u-us[j]),
+                                               us[0], cl.total-us[us.length-1]) : cl.total;
   }
   return {pts,apexes,closed:!!cl.closed};
 }
@@ -673,14 +809,57 @@ function curvAt(cl,u){
   const cross=a.nx*b.ny-a.ny*b.nx;
   return (cross>=0?1:-1)*Math.acos(dot)/(u1-u0);
 }
-/* a crossing is only printable if, on the inner side of the curve, its legs
-   still land >= one bead apart. Tighter than that, the rung is SKIPPED and the
-   run stays on its rail — fewer welds at the corner beats fused blobs. */
-function rungTooTight(cl,u,spacing){
+/* A crossing is printable only if, on the inner side of the curve, its legs still
+   land >= one bead apart. WEFT-02 (2026-09-02): this used to be called with a global
+   reach (P.w/2+P.overshoot) and a global spacing, and a failure meant the rung was
+   dropped. Both branches of webLayer now solve for the local reach and spacing
+   themselves and shrink the tab before they will drop a weld, so this helper is kept
+   only as the shared statement of the criterion — pass the LOCAL reach and spacing. */
+function rungFits(cl,u,spacing,reach){
   const k=Math.abs(curvAt(cl,u));
-  if(k<1e-4) return false;
-  const reach=P.w/2+P.overshoot;
-  return (1-reach*k)*spacing < P.bead;
+  if(k<1e-4) return spacing>=P.bead;
+  return (1-reach*k)*spacing >= P.bead;
+}
+
+/* A cap has to engage before the final sampled ring disappears. The old fixed
+   3.6 mm trigger missed large hemispheres because their last layer can still
+   have a 7-9 mm radius. maxBridge is the explicit physical bound; the square-
+   root term guarantees at least one cap layer even at the largest supported R. */
+function domeCapStartRadius(R){
+  return Math.max(P.maxBridge, P.w/2+P.bead*2, P.bead*8, Math.sqrt(2*R*P.lh*1.5));
+}
+
+/* One continuous Archimedean spiral, sampled by angle. Used for the crown and
+   for the first-layer annulus. pitch <= bead means the ribbons overlap slightly
+   instead of leaving the unprintable gaps produced by the old 2*bead cap pitch. */
+function radialSpiral(rOuter,rInner,pitch,startAngle=-Math.PI){
+  rOuter=Math.max(0,rOuter); rInner=Math.max(0,Math.min(rOuter,rInner));
+  const span=rOuter-rInner, turns=Math.max(0.75,span/Math.max(0.05,pitch));
+  const n=Math.max(48,Math.ceil(turns*64)), pts=[];
+  for(let i=0;i<=n;i++){
+    const t=i/n, a=startAngle+t*turns*2*Math.PI, r=rOuter-span*t;
+    pts.push({x:r*Math.cos(a),y:r*Math.sin(a)});
+  }
+  return pts;
+}
+
+/* Built-in first-layer adhesion for a closed dome. Brim is an outside spiral;
+   foundation fills the complete annular footprint and continues outward as a
+   brim. It is model geometry, so Route A and Route B receive the same support. */
+function buildDomeAdhesion(){
+  if(P.mode!=='dome'||P.adhesion==='none'||P.sweep<359.9) return [];
+  const cl=domeCl(P.lh/2,P.domeR), pitch=P.firstLayerBead*0.82;
+  const baseOuter=cl.r+P.w/2;
+  const rOuter=baseOuter+P.adhesionWidth;
+  const rInner=P.adhesion==='foundation'
+    ? Math.max(P.firstLayerBead,cl.r-P.w/2)
+    : baseOuter+pitch*0.82;
+  const pts=radialSpiral(rOuter,rInner,pitch);
+  const L={role:'adhesion',adhesion:P.adhesion,pts,apexes:[],zBot:0,zTop:P.lh,
+    closed:false,cl,bead:P.firstLayerBead,speed:P.firstLayerSpeed,
+    wSpan:P.w,ovh:P.overshoot,nodeGap:null};
+  L.len=plen(pts); L.ov=[];
+  return [L];
 }
 
 /* ---------- assemble a wall/dome from a centerline factory ---------- */
@@ -696,13 +875,10 @@ function buildFrom(clFor, N, ox, oy){
       // trigger on RADIUS: cap the top few mm where the slice is too tight for the pattern.
       // absolute floor (a handful of node-spacings or bead widths) closes the dome reliably;
       // wide sweeps keep long arcs at small r, so an arc test would miss this.
-      const minR = Math.max(P.autoLOD?0:P.lambda*0.75, P.w/2+P.bead*2, P.bead*8);
+      const minR = Math.max(P.autoLOD?0:P.lambda*0.75, domeCapStartRadius(cl.R));
       if(cl.r < minR){
         const rr0=Math.max(cl.r, P.w/2+P.bead);
-        const turns=Math.max(1.5, rr0/(P.bead*2)), dense=48;
-        const nT=Math.ceil(dense*turns), pts=[];
-        for(let t=0;t<=nT;t++){const a=t/dense*2*Math.PI, rad=rr0*(1-t/nT);
-          pts.push({x:rad*Math.cos(a), y:rad*Math.sin(a)});}
+        const pts=radialSpiral(rr0,0,P.bead*0.82);
         const L={role:'cap',pts:offsetPts(pts,ox,oy),apexes:[],zBot,zTop,closed:false,cl,
                  bead:P.bead, speed:P.speed, wSpan:P.w, ovh:P.overshoot};
         L.len=plen(L.pts); out.push(L);
@@ -715,9 +891,13 @@ function buildFrom(clFor, N, ox, oy){
     if(role==='chord'){ const off=(P.amp>0? (k%2? Math.PI:0):0); r=chordLayer(cl,zBot,off); }
     else { r=webLayer(cl,zBot,webCount++); }
     const nodeGap = role==='web' ? webLayer._lastGap : null;
+    const skipped = role==='web' ? webLayer._skipped : null;
+    const maxRail = role==='web' ? webLayer._maxRail : null;   // WEFT-02: what the chord above must span
+    const layerBead=zBot===0?P.firstLayerBead:P.bead;
     const L={role, pts:offsetPts(r.pts,ox,oy), apexes:r.apexes.map(a=>({x:a.x+ox,y:a.y+oy,z:a.z})),
              zBot,zTop,closed:r.closed,cl,
-             bead:P.bead, speed:P.speed, wSpan:P.w, ovh:P.overshoot, webType:P.webType, nodeGap};
+             bead:layerBead, speed:zBot===0?P.firstLayerSpeed:P.speed,
+             wSpan:P.w, ovh:P.overshoot, webType:P.webType, nodeGap, skipped, maxRail};
     L.len=plen(L.pts); out.push(L);
   }
   return out;
@@ -847,12 +1027,14 @@ function buildLayers(){
     layers=buildFrom(()=>base, N, 0,0);
   } else {
     const N=Math.max(1,Math.floor(P.domeR*P.hFrac/P.lh));
-    layers=buildFrom((zc)=>domeCl(zc,P.domeR), N, 0,0);
+    const body=buildFrom((zc)=>domeCl(zc,P.domeR), N, 0,0);
+    layers=buildDomeAdhesion().concat(body);
   }
   if(P.checkOv) detectOverlaps();
 }
 function detectOverlaps(){
   for(const L of layers){
+    if(L.role==='adhesion'||L.role==='cap'){ L.ov=[]; continue; } // deliberate same-layer fill
     if(L.role==='web'&&L.webType==='eight'){ L.ov=[]; continue; }  // self-crossings are the point
     const lb=L.bead||P.bead, lw=L.wSpan||P.w, lo=(L.ovh!=null?L.ovh:P.overshoot);
     const minD=lb*0.95, cell=Math.max(minD,0.5);
@@ -917,10 +1099,11 @@ let scene,camera,renderer,root,nodeMesh=null,ovMesh=null;
 const matChord=new THREE.MeshStandardMaterial({color:0xd8dde2,roughness:.85,metalness:.05,side:THREE.DoubleSide});
 const matWeb=new THREE.MeshStandardMaterial({color:0xa99bde,roughness:.82,metalness:.05,side:THREE.DoubleSide});
 const matCap=new THREE.MeshStandardMaterial({color:0x7fd8a8,roughness:.7,side:THREE.DoubleSide});
+const matAdhesion=new THREE.MeshStandardMaterial({color:0xd9a85b,roughness:.78,side:THREE.DoubleSide});
 const matCur=new THREE.MeshStandardMaterial({color:0x35e0ff,roughness:.5,emissive:0x0a3945,side:THREE.DoubleSide});
 const matNode=new THREE.MeshStandardMaterial({color:0xffb63b,roughness:.5,emissive:0x3a2703});
 const matOv=new THREE.MeshStandardMaterial({color:0xff4d5e,roughness:.5,emissive:0x400a10});
-function matFor(L){return L.role==='cap'?matCap:(L.role==='chord'?matChord:matWeb);}
+function matFor(L){return L.role==='adhesion'?matAdhesion:(L.role==='cap'?matCap:(L.role==='chord'?matChord:matWeb));}
 let bedGrid=null, bedOutline=null;
 function rebuildBed(){
   if(!scene) return;
@@ -985,7 +1168,7 @@ function drawLoom(){const h=loomCv.parentElement.clientHeight-20;loomCv.height=h
   for(let k=0;k<N;k++){const y=h-(k+1)*rh;
     if(k===visK)ctx.fillStyle='#3fe0ff';
     else if(k>visK&&!isolate)ctx.fillStyle='#141b22';
-    else ctx.fillStyle=layers[k].role==='cap'?'#2f5a44':(layers[k].role==='chord'?'#39424c':'#3a3556');
+    else ctx.fillStyle=layers[k].role==='adhesion'?'#6d522c':(layers[k].role==='cap'?'#2f5a44':(layers[k].role==='chord'?'#39424c':'#3a3556'));
     ctx.fillRect(3,y,16,Math.max(1,rh-0.6));
     if(layers[k].ov&&layers[k].ov.length){ctx.fillStyle='#ff4d5e';ctx.fillRect(0,y,2,Math.max(1,rh-0.6));}}}
 loomCv.addEventListener('pointerdown',e=>{const r=loomCv.getBoundingClientRect();
@@ -996,13 +1179,21 @@ loomCv.addEventListener('pointerdown',e=>{const r=loomCv.getBoundingClientRect()
 const f=(v,d=1)=>v.toFixed(d);
 function bbox(){let mnx=1e9,mny=1e9,mxx=-1e9,mxy=-1e9;for(const L of layers)for(const p of L.pts){
   if(p.x<mnx)mnx=p.x;if(p.y<mny)mny=p.y;if(p.x>mxx)mxx=p.x;if(p.y>mxy)mxy=p.y;}return {w:mxx-mnx,h:mxy-mny};}
+function domeClosureState(){
+  if(P.mode!=='dome') return {applicable:false,requested:false,closed:false,capLayers:0,opening_mm:null};
+  const caps=layers.filter(L=>L.role==='cap');
+  const last=[...layers].reverse().find(L=>L.cl&&L.cl.kind==='dome');
+  const opening=caps.length?0:(last?Math.max(0,2*(last.cl.r-P.w/2)):null);
+  return {applicable:true,requested:!!P.capClose,closed:caps.length>0,capLayers:caps.length,
+    opening_mm:opening==null?null:+opening.toFixed(1),startRadius_mm:+domeCapStartRadius(P.domeR).toFixed(1)};
+}
 function updateStats(){
   const N=layers.length;
-  if(!N){ ['s_layers','s_len','s_nodes','s_webspan','s_chordspan','s_gap','s_ov','s_fit','s_stl','s_time'].forEach(id=>{
+  if(!N){ ['s_layers','s_len','s_nodes','s_webspan','s_chordspan','s_gap','s_ov','s_adhesion','s_crown','s_fit','s_stl','s_time'].forEach(id=>{
     const x=document.getElementById(id); if(x){x.textContent='–';x.className='v';}}); return; }let len=0,nodes=0,ov=0,t=0;
   for(const L of layers){len+=L.len;nodes+=L.apexes.length;ov+=(L.ov?L.ov.length:0);
     const base=L.speed||P.speed;
-    const spd=L.zBot===0?Math.min(base,15):(L.role==='chord'?Math.min(P.bridgeSpeed,base):base);t+=L.len/spd+0.6;}
+    const spd=L.zBot===0?base:(L.role==='chord'?Math.min(P.bridgeSpeed,base):base);t+=L.len/spd+0.6;}
   const el=id=>document.getElementById(id);
   el('s_layers').textContent=N;
   el('s_len').textContent=len>1000?f(len/1000,2)+' m':f(len,0)+' mm';
@@ -1015,7 +1206,7 @@ function updateStats(){
   if(P.webType==='staple'){ webSpan=P.w+2*P.overshoot; chordSpan=P.lambda/2; }
   else if(P.webType==='perp'){ webSpan=Math.max(P.w+2*P.overshoot, P.lambda/2); chordSpan=P.lambda/2; }
   else { webSpan=Math.hypot(P.lambda/2, 2*AwS); chordSpan=P.lambda; }
-  if(P.mode==='dome'){const zTop=(N-0.5)*P.lh;
+  if(P.mode==='dome'){const zTop=Math.max(...layers.map(L=>L.zBot))+P.lh/2;
     el('leanRow').style.display='flex';el('s_lean').textContent=f(Math.asin(Math.min(1,zTop/P.domeR))*180/Math.PI,1)+'°';}
   else el('leanRow').style.display='none';
   el('s_webspan').textContent=f(webSpan,1)+' mm';
@@ -1027,6 +1218,12 @@ function updateStats(){
   el('s_gap').className='v '+(mg<1e8&&mg<Math.max(P.minGap,P.bead*2.2)*0.99?'warn':'good');
   el('s_width').textContent=f(P.w+2*Math.max(0,P.overshoot),1)+' mm';
   el('s_ov').textContent=ov;el('s_ov').className='v '+(ov?'warn':'good');
+  const ad=layers.filter(L=>L.role==='adhesion');
+  el('s_adhesion').textContent=ad.length?`${P.adhesion} · ${P.firstLayerBead} mm @ ${P.firstLayerSpeed}`:'off';
+  el('s_adhesion').className='v '+(ad.length?'good':'');
+  const crown=domeClosureState(); el('crownRow').style.display=crown.applicable?'flex':'none';
+  if(crown.applicable){el('s_crown').textContent=crown.closed?`closed · ${crown.capLayers} layers`:`open · ${crown.opening_mm} mm`;
+    el('s_crown').className='v '+(crown.closed?'good':(crown.requested?'warn':''));}
   const bb=bbox();const fits=bb.w<=BED-10&&bb.h<=BEDY-10;
   el('s_fit').textContent=f(bb.w,0)+'×'+f(bb.h,0)+' '+(fits?'✓':'✗ over');el('s_fit').className='v '+(fits?'good':'warn');
   el('s_time').textContent=f(t/60,0)+' min';
@@ -1037,7 +1234,7 @@ function updateStats(){
 }
 function updateBar(){document.getElementById('curL').textContent=visK;
   document.getElementById('maxL').textContent=Math.max(0,layers.length-1);
-  const L=layers[visK];document.getElementById('roleLbl').textContent=L?(L.role==='cap'?'spiral cap':L.role==='chord'?'chord · rails':'web · '+(L.webType||P.webType)):'–';}
+  const L=layers[visK];document.getElementById('roleLbl').textContent=L?(L.role==='adhesion'?'first layer · '+L.adhesion:L.role==='cap'?'spiral cap':L.role==='chord'?'chord · rails':'web · '+(L.webType||P.webType)):'–';}
 
 /* ---------- JSON parameter interface + validity report ----------
    The contract a language model is held to: it proposes PARAMETERS, never
@@ -1046,12 +1243,15 @@ function updateBar(){document.getElementById('curL').textContent=visK;
 const PARAM_KEYS=['mode','wallH','domeR','sweep','hFrac','capClose','noz','bead','lh','webType',
   'cycle','w','lambda','amp','ampF','altPhase','autoLOD','minGap','gradeLean','lambdaS','overshoot',
   'dwell','jitter','flowBoost','maxBridge','checkOv','speed','bridgeSpeed','temp','bed','fan',
+  'firstLayerBead','firstLayerSpeed','adhesion','adhesionWidth',
   'grid','sweepX','sweepY','specW','specH'];
 const PARAM_RANGE={bead:[0.2,1.2],lh:[0.08,0.4],w:[2,40],lambda:[3,40],overshoot:[0,6],dwell:[0,3],
   jitter:[0,1],flowBoost:[1,2],speed:[5,200],bridgeSpeed:[3,80],temp:[180,300],bed:[0,100],fan:[0,100],
+  firstLayerBead:[0.3,1.4],firstLayerSpeed:[5,30],adhesionWidth:[2,20],
   wallH:[1,300],domeR:[10,160],sweep:[10,360],hFrac:[0.1,1],amp:[0,8],ampF:[0,8],minGap:[0.4,10],
   lambdaS:[1,20],maxBridge:[2,60],grid:[2,6],specW:[8,120],specH:[4,120],noz:[0.2,0.8]};
 const ENUMS={mode:['wall','dome','import','batch'],webType:['diagonal','perp','staple','sine','eight'],
+  adhesion:['none','brim','foundation'],
   sweepX:['lambda','overshoot','w','web','speed','bead'],sweepY:['lambda','overshoot','w','web','speed','bead']};
 
 function weftParams(){
@@ -1096,13 +1296,21 @@ function validityReport(){
     zmax=Math.max(zmax,(L.zBot||0)+P.lh);
     if(L.nodeGap!=null) minGap=Math.min(minGap,L.nodeGap);
     const base=L.speed||P.speed;
-    const spd=L.zBot===0?Math.min(base,15):(L.role==='chord'?Math.min(P.bridgeSpeed,base):base);
+    const spd=L.zBot===0?base:(L.role==='chord'?Math.min(P.bridgeSpeed,base):base);
     t+=L.len/spd+0.6;
   }
   const AwS=P.w/2+P.overshoot; let webSpan, chordSpan;
   if(P.webType==='staple'){ webSpan=P.w+2*P.overshoot; chordSpan=P.lambda/2; }
   else if(P.webType==='perp'){ webSpan=Math.max(P.w+2*P.overshoot, P.lambda/2); chordSpan=P.lambda/2; }
   else { webSpan=Math.hypot(P.lambda/2, 2*AwS); chordSpan=P.lambda; }
+  /* WEFT-02: the chord span is not P.lambda/2 — it is the longest arc the web actually
+     left without a crossing. A parameter cannot answer this; only the emitted layer can. */
+  let railMax=0, skippedRungs=0, deadWebs=0;
+  for(const L of layers){ if(L.role!=='web') continue;
+    if(L.maxRail!=null) railMax=Math.max(railMax,L.maxRail);
+    skippedRungs+=(L.skipped||0);
+    if(!L.apexes.length) deadWebs++; }
+  if(railMax>0) chordSpan=Math.max(chordSpan, railMax);
   const bb=bbox(), gapFloor=Math.max(P.minGap,P.bead*2.2);
   const fits=bb.w<=BED-10&&bb.h<=BEDY-10;
   let tris=0; for(const L of layers) if(L.geo) tris+=L.geo.idx.length/3;
@@ -1113,8 +1321,20 @@ function validityReport(){
   if(minGap<1e8&&minGap<gapFloor*0.99) errors.push(`weld nodes ${minGap.toFixed(2)} mm apart, below the ${gapFloor.toFixed(2)} mm floor (2.2 beads)`);
   if(P.temp>MACHINES[MACHINE].hotMax) errors.push(`nozzle ${P.temp} °C exceeds the ${MACHINES[MACHINE].label} limit of ${MACHINES[MACHINE].hotMax} °C`);
   if(P.bed>MACHINES[MACHINE].bedMax) errors.push(`bed ${P.bed} °C exceeds the ${MACHINES[MACHINE].label} limit of ${MACHINES[MACHINE].bedMax} °C`);
+  const adhesionPaths=layers.filter(L=>L.role==='adhesion');
+  if(P.adhesion!=='none'&&(P.mode!=='dome'||P.sweep<359.9)) errors.push('built-in adhesion currently requires a closed 360° dome');
+  if(P.adhesion!=='none'&&!adhesionPaths.length) errors.push(`adhesion ${P.adhesion} was requested but no first-layer path was generated`);
+  if(P.firstLayerBead<P.bead) warnings.push(`first-layer bead ${P.firstLayerBead} mm is narrower than the ${P.bead} mm body bead`);
+  if(P.firstLayerBead<P.noz*0.9||P.firstLayerBead>P.noz*2.2) warnings.push(`first-layer bead ${P.firstLayerBead} mm is outside the single-line range of a ${P.noz} mm nozzle`);
+  const crown=domeClosureState();
+  if(crown.applicable&&crown.requested&&!crown.closed){
+    const msg=`cap closure did not engage: a ${crown.opening_mm} mm crown opening remains at this height`;
+    if(P.hFrac>=0.99) errors.push(msg); else warnings.push(msg+' (partial dome)');
+  }
   if(webSpan>P.maxBridge) warnings.push(`web bridges ${webSpan.toFixed(1)} mm, over the ${P.maxBridge} mm limit — expect droop`);
-  if(chordSpan>P.maxBridge) warnings.push(`chord spans ${chordSpan.toFixed(1)} mm between welds, over the ${P.maxBridge} mm limit`);
+  if(chordSpan>P.maxBridge) errors.push(`chord spans ${chordSpan.toFixed(1)} mm between welds, over the ${P.maxBridge} mm limit`);
+  if(deadWebs) errors.push(`${deadWebs} web layers placed no crossing at all — the chord above them is unsupported for a whole turn`);
+  if(skippedRungs) warnings.push(`${skippedRungs} rungs could not be placed (corner too tight even at zero tab)`);
   if(P.bead<P.noz*0.9||P.bead>P.noz*2.2) warnings.push(`bead ${P.bead} mm is outside the single-line range of a ${P.noz} mm nozzle`);
   if(P.lh>P.bead*0.8) warnings.push(`layer ${P.lh} mm against bead ${P.bead} mm: too little squish for reliable welds`);
   if(P.mode==='batch') warnings.push('batch mode: span figures describe the restored parameter set, not each swept cell');
@@ -1124,8 +1344,13 @@ function validityReport(){
     layers:layers.length, weldNodes:nodes, threadLength_mm:+len.toFixed(0),
     size_mm:[+bb.w.toFixed(1),+bb.h.toFixed(1),+zmax.toFixed(1)], bedFit:fits,
     overlaps:ov, minNodeGap_mm:minGap<1e8?+minGap.toFixed(2):null, nodeGapFloor_mm:+gapFloor.toFixed(2),
+    skippedRungs, deadWebLayers:deadWebs,
     maxWebSpan_mm:+webSpan.toFixed(1), maxChordSpan_mm:+chordSpan.toFixed(1),
     wallWidth_mm:+(P.w+2*Math.max(0,P.overshoot)).toFixed(2),
+    firstLayer:{mode:P.adhesion,bead_mm:P.firstLayerBead,speed_mm_s:P.firstLayerSpeed,
+      width_mm:P.adhesion==='none'?0:P.adhesionWidth,paths:adhesionPaths.length,
+      threadLength_mm:+adhesionPaths.reduce((s,L)=>s+L.len,0).toFixed(0)},
+    crown,
     estPrint_min:Math.round(t/60), triangles:tris };
 }
 /* one call for the harness: params in → build → verdict out */
@@ -1205,7 +1430,11 @@ G1 Z2 F600`;
    from the two textareas). DOM/download handling lives in exportGcode. */
 async function buildGcodeText(onProgress){
   const head=document.getElementById('gHead').value.replace(/\{TEMP\}/g,P.temp).replace(/\{BED\}/g,P.bed);
-  const out=[head]; let cur=null, lastSpec=null, fanOn=false;
+  const out=[head,
+    `; WEFT first layer: ${P.firstLayerBead} mm bead @ ${P.firstLayerSpeed} mm/s`,
+    `; WEFT adhesion: ${P.adhesion}${P.adhesion==='none'?'':` ${P.adhesionWidth} mm`}`,
+    '; Slicer Route A: elephant-foot compensation 0; XY contour compensation 0; do not add a second brim when built-in adhesion is on'];
+  let cur=null, lastSpec=null, fanOn=false;
   const nodeR=Math.max(1.0,P.bead*2), RETRACT=0.8, HOP=0.4;
   // the model frame is bed-CENTERED; the A2L (like most printers) puts G-code
   // origin at the FRONT-LEFT corner. Without this shift the print lands half
@@ -1220,7 +1449,7 @@ async function buildGcodeText(onProgress){
     if(gcZ!==null&&L.zTop<gcZ-1e-6){
       throw new Error(`WEFT global Z order violated at path ${k}: ${L.zTop.toFixed(3)} after ${gcZ.toFixed(3)}`);
     }
-    let pts=simplifyPts(L.pts,0.02,2);
+    let pts=L.preservePoints?L.pts:simplifyPts(L.pts,0.02,2);
     if(cur){
       if(L.closed){let best=0,bd=1e9;for(let i=0;i<pts.length;i++){const d=Math.hypot(pts[i].x-cur.x,pts[i].y-cur.y);if(d<bd){bd=d;best=i;}}
         pts=pts.slice(best).concat(pts.slice(0,best));pts=pts.concat([pts[0]]);}
@@ -1228,13 +1457,23 @@ async function buildGcodeText(onProgress){
     }
     const first=L.zBot===0;   // TRUE bed layer — by height, not array position (batch interleaves 16 first layers)
     /* Bambu Studio's preview does not infer layers from Z moves. Its G-code dialect requires the
-       spaced CHANGE_LAYER / Z_HEIGHT / LAYER_HEIGHT comments used by a real Studio export. */
+       spaced CHANGE_LAYER / Z_HEIGHT / LAYER_HEIGHT comments used by a real Studio export. The
+       Cura-style LAYER_CHANGE / Z / HEIGHT spelling flattens the preview into layer 1 and reports
+       model time as zero. Comments only: they change nothing that is printed. */
     if(gcZ===null||Math.abs(L.zTop-gcZ)>1e-6){
       out.push('; CHANGE_LAYER', `; Z_HEIGHT: ${L.zTop.toFixed(3)}`,
         `; LAYER_HEIGHT: ${(L.zTop-L.zBot).toFixed(3)}`);
       gcZ=L.zTop; gcLayer++;
     }
-    out.push(`; layer ${k} ${L.role}`);
+    /* The harvested Bambu start block ends in `FEATURE: Custom`. Bambu Studio keeps that role
+       until another FEATURE tag appears; while it is active, every G1 is classified as startup
+       motion, its displayed Z is forced to the first-layer height, and model time stays zero.
+       Repeat the role and width for every emitted body/path, exactly as the earlier annotated
+       Route-B pilot did. This is preview metadata only; it does not change machine motion. */
+    const previewRole=L.role==='adhesion'?'Brim':L.role==='bridge'?'Bridge':'Outer wall';
+    const previewWidth=L.bead||P.bead;
+    out.push(`; layer ${k} ${L.role}`, `; FEATURE: ${previewRole}`,
+      `; LINE_WIDTH: ${previewWidth.toFixed(3)}`);
     // part cooling: off while anything is still printing on the bed, on above it
     if(!first&&!fanOn){ out.push(`M106 S${Math.round(P.fan*2.55)}`); fanOn=true; }
     const p0=pts[0];
@@ -1255,16 +1494,16 @@ async function buildGcodeText(onProgress){
       out.push(`G1 Z${L.zTop.toFixed(3)} F600`);
       if(!cur||travel>0.4) out.push(`G0 X${(p0.x+OX).toFixed(3)} Y${(p0.y+OY).toFixed(3)} F9000`);
     }
-    const bridge=L.role==='chord'&&L.zBot>0;   // chords above the bed ride on discrete nodes
+    const bridge=L.role==='bridge'||(L.role==='chord'&&L.zBot>0); // explicit bridges + woven chords on discrete nodes
     const apx=L.apexes.length?L.apexes:(k>0&&layers[k-1]?layers[k-1].apexes:[]);
-    const lb=L.bead||P.bead;
+    const lb=previewWidth;
     // slicer-standard stadium cross-section (w−h)·h + π(h/2)² — matches what
     // Arachne assumes on Route A, so Route B lays the same volume per mm
     const bArea=lb>P.lh ? (lb-P.lh)*P.lh+Math.PI*P.lh*P.lh/4 : Math.PI*lb*lb/4;
     let prev=p0;
     for(let i=1;i<pts.length;i++){const p=pts[i],d=Math.hypot(p.x-prev.x,p.y-prev.y);if(d<1e-5){prev=p;continue;}
       const baseSpd=L.speed||P.speed;
-      let flow=1,spd=first?Math.min(baseSpd,15):(bridge?Math.min(P.bridgeSpeed,baseSpd):baseSpd);
+      let flow=1,spd=first?baseSpd:(bridge?Math.min(P.bridgeSpeed,baseSpd):baseSpd);
       if(apx.length){const mx=(p.x+prev.x)/2,my=(p.y+prev.y)/2;
         for(const A of apx){if(Math.hypot(A.x-mx,A.y-my)<nodeR){flow=P.flowBoost;spd*=0.65;break;}}}
       const e=d*bArea/FIL_AREA*flow;
@@ -1353,24 +1592,40 @@ function drawCycle(){const el=document.getElementById('cycView');el.innerHTML=''
 /* ---------- UI wiring ---------- */
 const UNITS={wallH:' mm',domeR:' mm',sweep:'°',hFrac:'',bead:' mm',lh:' mm',w:' mm',lambda:' mm',amp:' mm',ampF:'×',minGap:' mm',lambdaS:' mm',
   overshoot:' mm',dwell:' mm',jitter:'',flowBoost:'×',maxBridge:' mm',speed:' mm/s',bridgeSpeed:' mm/s',temp:'°C',bed:'°C',fan:' %',
-  grid:'',specW:' mm',specH:' mm'};
+  firstLayerBead:' mm',firstLayerSpeed:' mm/s',adhesionWidth:' mm',grid:'',specW:' mm',specH:' mm'};
 function bindRange(id){const el=document.getElementById(id),lbl=document.getElementById('v_'+id);el.value=P[id];
   const show=()=>{lbl.textContent=id==='hFrac'?Math.round(P[id]*100)+'%':(id==='grid'?P.grid+'×'+P.grid:P[id]+(UNITS[id]||''));};show();
   el.addEventListener('input',()=>{P[id]=parseFloat(el.value);show();scheduleBuild();});}
-['wallH','domeR','sweep','hFrac','bead','lh','w','lambda','amp','ampF','minGap','lambdaS','overshoot','dwell','jitter','flowBoost','maxBridge','speed','bridgeSpeed','fan','temp','bed','grid','specW','specH'].forEach(bindRange);
+const RANGE_IDS=['wallH','domeR','sweep','hFrac','bead','lh','w','lambda','amp','ampF','minGap','lambdaS','overshoot','dwell','jitter','flowBoost','maxBridge','speed','bridgeSpeed','fan','temp','bed','firstLayerBead','firstLayerSpeed','adhesionWidth','grid','specW','specH'];
+RANGE_IDS.forEach(bindRange);
 function bindSwitch(id){const el=document.getElementById(id);el.classList.toggle('on',P[id]);
   el.onclick=()=>{P[id]=!P[id];el.classList.toggle('on',P[id]);scheduleBuild();};}
-['altPhase','showNodes','checkOv','capClose','autoLOD','gradeLean'].forEach(bindSwitch);
+const SWITCH_IDS=['altPhase','showNodes','checkOv','capClose','autoLOD','gradeLean'];
+SWITCH_IDS.forEach(bindSwitch);
 function bindSeg(segId,key,attr,after){document.getElementById(segId).querySelectorAll('button').forEach(b=>b.onclick=()=>{
   P[key]=isNaN(+b.dataset[attr])?b.dataset[attr]:+b.dataset[attr];
   document.getElementById(segId).querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));after&&after();scheduleBuild();});}
 function syncDwell(){document.getElementById('dwellWrap').style.display=P.webType==='diagonal'?'':'none';}
 bindSeg('webSeg','webType','w',()=>{drawCycle();syncDwell();});
+bindSeg('adhesionSeg','adhesion','a');
 document.getElementById('viewSeg').querySelectorAll('button').forEach(b=>b.onclick=()=>{
   document.getElementById('viewSeg').querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));
   document.body.classList.toggle('ess', b.dataset.v==='ess');});
 bindSeg('sweepXSeg','sweepX','s');
 bindSeg('sweepYSeg','sweepY','s');
+function syncParamUI(){
+  for(const id of RANGE_IDS){const x=document.getElementById(id),v=document.getElementById('v_'+id); if(!x||!v) continue;
+    x.value=P[id]; v.textContent=id==='hFrac'?Math.round(P[id]*100)+'%':(id==='grid'?P.grid+'×'+P.grid:P[id]+(UNITS[id]||''));}
+  for(const id of SWITCH_IDS){const x=document.getElementById(id); if(x)x.classList.toggle('on',!!P[id]);}
+  const seg=(id,attr,value)=>document.getElementById(id).querySelectorAll('button').forEach(b=>b.classList.toggle('on',String(b.dataset[attr])===String(value)));
+  seg('modeSeg','m',P.mode); seg('webSeg','w',P.webType); seg('adhesionSeg','a',P.adhesion);
+  seg('sweepXSeg','s',P.sweepX); seg('sweepYSeg','s',P.sweepY); seg('machSeg','m',MACHINE); seg('nozSeg','n',P.noz);
+  document.getElementById('secWall').style.display=P.mode==='wall'?'block':'none';
+  document.getElementById('secDome').style.display=P.mode==='dome'?'block':'none';
+  document.getElementById('secImport').style.display=P.mode==='import'?'block':'none';
+  document.getElementById('secBatch').style.display=P.mode==='batch'?'block':'none';
+  drawCycle(); syncDwell();
+}
 document.getElementById('nozSeg').querySelectorAll('button').forEach(b=>b.onclick=()=>{
   P.noz=+b.dataset.n;document.getElementById('nozSeg').querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));
   P.bead=+(P.noz*1.1).toFixed(2);document.getElementById('bead').value=P.bead;document.getElementById('v_bead').textContent=P.bead+' mm';scheduleBuild();});
@@ -1417,6 +1672,7 @@ document.getElementById('loading').remove();
   let table=null;
   const apply=(entry)=>{
     const v=weftEvaluate(entry.params);
+    syncParamUI();
     note.innerHTML=(entry.note||'')+`<br><b>${v.valid?'valid':'INVALID'}</b> · ${v.layers} layers · ${v.weldNodes} welds · ${v.size_mm.join('×')} mm · ~${v.estPrint_min} min`
       + (v.errors.length?'<br><span class="warn">'+v.errors.join('<br>')+'</span>':'');
     const N=Math.max(0,layers.length-1); const sl=document.getElementById('laySlider');

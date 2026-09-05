@@ -1,0 +1,26 @@
+{
+  "received": "2026-09-04",
+  "subject": "MERA_A2L_4x4 shallow plate (pre-LIMIT16)",
+  "source": "Semir, Codex thread attachments",
+  "file_count": 16,
+  "unique_content_count": 16,
+  "files": [
+    {"name":"MERA_A_01.jpg","bytes":193193,"sha256":"24ee8b6d0e8608286146a4ef63f46a8da548784c3c078ef1b4d74e3ff3f74f4a"},
+    {"name":"MERA_A_02.jpg","bytes":199280,"sha256":"34c66415d82eb8b1da0b54e2fb2101213aa8727d72a0dee9ab7de4ae927249d5"},
+    {"name":"MERA_A_03.jpg","bytes":179386,"sha256":"9649c7b95b50e6198d1293265b96f00bd6053d25398959f323eb73929e0ee8f5"},
+    {"name":"MERA_B_01.jpg","bytes":168274,"sha256":"a7f0c4573632791c97f6659d4812f0a2bd5c16313c032058953a50149b98ff6c"},
+    {"name":"MERA_B_02.jpg","bytes":132336,"sha256":"316eaef5dd133e1b742630bbeb97f268f6dc3eb712a9762f2ee152c5d9291329"},
+    {"name":"MERA_B_03.jpg","bytes":131422,"sha256":"e19fbe3bd8a8f50da172c7315e93987298a0b75fd54606253742630f9fb1de2a"},
+    {"name":"MERA_B_04.jpg","bytes":190804,"sha256":"93f2a0862a8c83207c35322290f9e2d14156e18ba470e291011a34e70ab775a6"},
+    {"name":"MERA_B_05.jpg","bytes":190453,"sha256":"bf8a497c8b773116e810bcefc56ccf1e6be8b7b0ef60c78c14effec053b0b366"},
+    {"name":"MERA_C_01.jpg","bytes":186206,"sha256":"de2bd17b55f3743f14b5dc54d37cfb2685a6ec70ad71e30caf9776531df5949e"},
+    {"name":"MERA_C_02.jpg","bytes":197373,"sha256":"a3bd99e83c9c55671b6b4c8c053f1d9dce634a24a88816b395477f9b87415343"},
+    {"name":"MERA_C_03.jpg","bytes":208990,"sha256":"6a727f1c2db29a9b65a33f9dc3ebc8679152ed02f5307e4191d542f8f387c290"},
+    {"name":"MERA_C_04.jpg","bytes":192243,"sha256":"84080d53fa303d4e0fb6b4948e725a4bab7535530c86f91d9378e73c241e2b32"},
+    {"name":"MERA_C_05.jpg","bytes":155854,"sha256":"1d3c0b6a28e7936d3c8ba738889c7ff5309aa61881d2bec5c9bca8f479f6bd1b"},
+    {"name":"MERA_D_01.jpg","bytes":209657,"sha256":"71e1c41c6cc45f16936e36f5bd5813065fd411174b4baac99123bcbbb6fbaf50"},
+    {"name":"MERA_D_02.jpg","bytes":205941,"sha256":"ecce32c5aaa0c9982dc8c87fb181a4329763c78934e3680666c8302341340d13"},
+    {"name":"MERA_D_03.jpg","bytes":220635,"sha256":"792de76ddedb66d0fe5aa627ad34f2136f308b2b0c1e425920eca04e902fe4be"}
+  ]
+}
+

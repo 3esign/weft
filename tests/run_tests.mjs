@@ -282,7 +282,7 @@ let regenTris=0;
 /* ---------- T10 G-code emitter checks (E1 state is still loaded) ---------- */
 {
   const g = await page.evaluate(async ()=>{
-    document.getElementById('gHead').value='; TEST-HEADER {TEMP} {BED}';
+    document.getElementById('gHead').value='; TEST-HEADER {TEMP} {BED}\n; FEATURE: Custom\n; MACHINE_START_GCODE_END';
     return await buildGcodeText();
   });
   if(GCODE_OUT) fs.writeFileSync(GCODE_OUT, g);
@@ -327,6 +327,22 @@ let regenTris=0;
   check('T10h multi-body build has one strictly rising global Z clock',
     markedZ.every((z,i)=>i===0||z>markedZ[i-1]),
     `${markedZ.length} unique ordered Z levels, ${markedZ[0]}…${markedZ.at(-1)} mm`);
+  let previewRole='none', previewWidth=null, semanticExtrusions=0, customExtrusions=0, widthlessExtrusions=0;
+  for(const ln of lines){
+    const role=ln.match(/^; FEATURE: (.+)$/); if(role) previewRole=role[1];
+    const width=ln.match(/^; LINE_WIDTH: ([\d.]+)$/); if(width) previewWidth=Number(width[1]);
+    if(/^G1\b.*\bE(?:0|[1-9])[\d.]*\b/.test(ln)&&!/\bE-/.test(ln)){
+      semanticExtrusions++;
+      if(previewRole==='Custom'||previewRole==='none') customExtrusions++;
+      if(!(previewWidth>0)) widthlessExtrusions++;
+    }
+  }
+  check('T10i Bambu Preview exits startup Custom role before model extrusion',
+    semanticExtrusions>0&&customExtrusions===0,
+    `${semanticExtrusions} extrusions, ${customExtrusions} still classified Custom`);
+  check('T10j every model path carries positive Bambu line width metadata',
+    semanticExtrusions>0&&widthlessExtrusions===0,
+    `${semanticExtrusions} extrusions, ${widthlessExtrusions} without line width`);
 }
 
 /* ---------- T11 STL export end-to-end (E1 state still loaded) ---------- */

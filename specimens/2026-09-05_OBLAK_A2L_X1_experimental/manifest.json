@@ -1,0 +1,116 @@
+{
+ "name": "OBLAK_A2L_X1",
+ "model": "sculpture",
+ "variant": "oblak",
+ "built": "2026-09-05T02:33:29Z (cloud container)",
+ "machine": {
+  "id": "a2l",
+  "label": "Bambu Lab A2L",
+  "plate": [
+   330,
+   320
+  ],
+  "maxZ": 325,
+  "bead": 0.45,
+  "beadSource": "measured",
+  "beadEvidence": "specimens/2026-08-31_D5_R140_A2L_physical and specimens/2026-09-02_P0_suma_2x2_physical \u2014 both printed to completion at this bead",
+  "lh": 0.24,
+  "firstLayerBead": 0.52,
+  "temp": 220,
+  "bed": 55,
+  "start": "exports/a2l_start_block_template_2026-09-02.gcode",
+  "end": "exports/a2l_end_block_harvested_2026-09-02.gcode",
+  "route": "bambu3mf"
+ },
+ "containerTemplate": "specimens/2026-09-02_P0_suma_4x4_v2_physical/P0_suma_4x4_v2.gcode.3mf (Semir's own A2L export)",
+ "geometry": "OBLAK_A2L_X1_geometry.json.gz (gzip; 20.9 MB uncompressed \u2014 over the 20 MB bridge limit)",
+ "shipped": [
+  "OBLAK_A2L_X1.gcode.3mf",
+  "OBLAK_A2L_X1_routeB.gcode"
+ ],
+ "printThis": "OBLAK_A2L_X1.gcode.3mf",
+ "gate": "OBLAK_A2L_X1_gate.json",
+ "gate_at_evidenced_ceiling": "OBLAK_A2L_X1_gate_at_16mm.json",
+ "report": "OBLAK_A2L_X1_report.json",
+ "sha256": {
+  "OBLAK_A2L_X1.gcode.3mf": "df66e345088c1240c3e340441563e1bf534119fb46a60070dcd38872c41454fd",
+  "OBLAK_A2L_X1_routeB.gcode": "3ef59d066c20b818d222e85b6720765490ac77139e72c0969a0d978bad1bce4e"
+ },
+ "declaredExperiment": {
+  "declaredBridgeCeiling_mm": 60.0,
+  "evidencedBridge_mm": 16.0,
+  "lintels": [
+   {
+    "W_mm": 30.0,
+    "azimuth_deg": 30.0,
+    "zBottom": 98.4,
+    "zLintel": 125.28,
+    "measuredChord_mm": 28.9
+   },
+   {
+    "W_mm": 40.0,
+    "azimuth_deg": 150.0,
+    "zBottom": 89.28,
+    "zLintel": 125.28,
+    "measuredChord_mm": 41.0
+   },
+   {
+    "W_mm": 50.0,
+    "azimuth_deg": 270.0,
+    "zBottom": 80.16,
+    "zLintel": 125.28,
+    "measuredChord_mm": 49.7
+   }
+  ],
+  "horns": [
+   {
+    "P_mm": 30.0,
+    "azimuth_deg": 90.0,
+    "rate_mm_per_layer": 0.8,
+    "zStart": 125.04,
+    "zEnd": 144.24
+   },
+   {
+    "P_mm": 40.0,
+    "azimuth_deg": 210.0,
+    "rate_mm_per_layer": 0.8,
+    "zStart": 134.4,
+    "zEnd": 159.36
+   },
+   {
+    "P_mm": 50.0,
+    "azimuth_deg": 330.0,
+    "rate_mm_per_layer": 0.8,
+    "zStart": 145.92,
+    "zEnd": 177.12
+   }
+  ],
+  "crown": {
+   "process": "crown-woven-iris/v1",
+   "physicalStatus": "experimental",
+   "hole_diameter_mm": 35.7,
+   "layers": 6,
+   "firstLayerFreeSpan_mm": 30.7,
+   "laterLayersMaxFreeSpan_mm": 14.3,
+   "evidenceBasis": "LIMIT16 2026-09-04: bridges to 16 mm continuous on both machines; the single-layer inward spiral (limit16-18mm-v1) FAILED on both and is not used here",
+   "expected": "first-layer chords sag; later grids land on them; a woven disc with ~5-8 mm openings"
+  },
+  "twist": {
+   "turns": 0.35,
+   "tangentialMove_mm_per_layer_at_widest": 0.354
+  },
+  "protocol": "gate at the declared ceiling must be clean; gate at the evidenced ceiling must attribute every finding to one of the zones above (z ranges), otherwise the build is refused"
+ },
+ "size_mm": [
+  274,
+  264.5,
+  190.8
+ ],
+ "threadLength_m": 990.5,
+ "weldNodes": 73882,
+ "kinematic_h_lower_bound": 9.17,
+ "packerEstimate": "16h 12m (accel fudge 1.10) \u2014 the D5 dome took ~26 h for 61 m of filament; expect 20\u201330 h",
+ "filament": "43.03 m / 130.4 g (packer, PLA 1.26 g/cm3)",
+ "command": "python sculpture_geometry.py --variant oblak --bead 0.45 --lh 0.24 --plate 330 320 --out OBLAK_A2L_X1_geometry.json ; node make_suma.mjs --geo \u2026 --name OBLAK_A2L_X1 --machine a2l --head exports/a2l_start_block_template_2026-09-02.gcode --foot exports/a2l_end_block_harvested_2026-09-02.gcode --nostl --allow-experimental-bridge ; python pack_bambu_3mf.py --gcode \u2026 --template <containerTemplate> --thumb OBLAK_A2L_X1_preview.png",
+ "outcome": "NOT PRINTED \u2014 fill this in after the print, with photographs; then rename the folder _experimental -> _physical"
+}
