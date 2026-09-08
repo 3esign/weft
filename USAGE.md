@@ -2,14 +2,45 @@
 
 One command, and it refuses. If you find yourself typing `--bead`, you are already off the path.
 
+## Since 2026-09-08: the chain runs on Node alone
+
+    node weft.mjs machines
+    node weft.mjs presets
+    node weft.mjs build --preset D2_dome_lambda09 --machine a2l --out specimens/<folder>
+    node weft.mjs build --design my_params.json  --machine a2l --out specimens/<folder>
+    node weft.mjs build --geo  <name>_geometry.json --machine a2l --out specimens/<folder>
+    node weft.mjs build climber --machine a2l --H 240 --legs 3 --out specimens/<folder>
+    node weft.mjs check FILE.gcode|FILE.gcode.3mf --machine a2l [--maxbridge 16.2 --maxcantilever 4.8]
+    node weft.mjs serve            # index.html at http://127.0.0.1:8765 with the presets table
+
+No browser, no Playwright, no Python, no model. The thread is made by `core/weft_core.js` (the engine
+extracted from `index.html` — the SAME file the app loads, so there is one source of truth), the gate is
+`core/weft_gate.js` (a port of `check_gcode.py`, held to it number for number by `tests/gate_parity.test.mjs`),
+the header rewrite and the Bambu container are in `core/weft_build.mjs`. `tests/build_parity.test.mjs` proves
+the Node chain reproduces the PRINTED LIMIT16 A2L package byte for byte (G-code and all 17 members of the
+.gcode.3mf); `tests/core_parity.test.mjs` proves the core in Node emits the same bytes as `index.html` in
+Chromium for walls, domes, batch plates and every grammar.
+
+What a person needs to make a printable object without a model: a preset name (`node weft.mjs presets`) or a
+parameter file (the app's own "save parameters (.json)" button writes one; the schema is `weftParams()` —
+mode, plan, grammar, wall, lambda, tab, …), a calibrated machine in `machines.json`, and `--out`. Machine
+numbers in a design file are ignored on purpose: `bead` and `lh` come from the machine.
+
+The level-2 geometry generators (`*_geometry.py`: topology, merges, weld columns, caps) are still Python
+(numpy/scipy/scikit-image). Their JSON output is consumed by `--geo` without Python, so a geometry made on
+one computer builds, gates and packages on any other. The browser builders (`make_suma.mjs`, `make_climber.mjs`)
+and the Python gate remain as reference implementations and are still exercised by the tests.
+
+`index.html` now runs the gate too: **Download G-code (gated)** checks the file before it is offered and
+refuses a failing one (tick "download the rejected file" only to look at it in a viewer). A batch plate
+declares grid² first-layer islands itself; everything else must be one piece.
+
+## The old three commands (still valid; the same chain through Python)
+
     python weft.py machines
     python weft.py build climber --machine a2l --H 240 --legs 3 \
            --out specimens/2026-09-03_P2b_A2L_pending --name P2b_penjac_3_A2L
     python weft.py check FILE.gcode --machine a2l [--dump worst.png]
-
-`check` also accepts a `.gcode.3mf` — it reads the machine's G-code out of the container. For G-code a
-slicer wrote rather than WEFT (a Route A STL exported through Bambu Studio) add `--slicer-types`, which
-reads the slicer's own `;TYPE:` feature comments as roles so a failure still names the feature.
 
 ## The one rule that this file exists to enforce
 
@@ -29,8 +60,8 @@ says so. Today: **A2L measured; A1 and the Ender assumed.**
 | step | what it does | what stops it |
 |---|---|---|
 | 1 · geometry | `<model>_geometry.py`: topology, weld columns, caps, foundation, and the wall each layer can carry | exits non-zero on its own violations; writes `<out>.rejected` instead |
-| 2 · builder | `make_<model>.mjs`: the thread, STL, G-code, thinning the layers that need it | refuses on a failed weave; **deletes** any output the gate rejects |
-| 3 · gate | `check_gcode.py` on the FINAL G-code — nothing exempt | any FLOATING, LONG_BRIDGE, CANTILEVER, UNANCHORED_MEMBRANE, BAD_MEMBRANE, a first layer in pieces, or a generator whose declared anchoring disagrees with the measured one by more than 0.10 |
+| 2 · builder | `core/weft_build.mjs` (or the browser twins `make_<model>.mjs`): the thread, STL, G-code, thinning the layers that need it | refuses on a failed weave; **deletes** any output the gate rejects |
+| 3 · gate | `core/weft_gate.js` (= `check_gcode.py`) on the FINAL G-code — nothing exempt | any FLOATING, LONG_BRIDGE, CANTILEVER, UNANCHORED_MEMBRANE, BAD_MEMBRANE, a first layer in pieces, or a generator whose declared anchoring disagrees with the measured one by more than 0.10 |
 | 3a · header | `fix_header.py` rewrites the HEADER_BLOCK from the file's own moves | — (the harvested start blocks carry the statistics of the print they came from) |
 | 4 · package | `.gcode.3mf` for Bambu, plain `.gcode` for Klipper | a missing container template |
 | 5 · manifest | what was built, from which numbers, on whose authority, and `outcome: NOT PRINTED` | — |
@@ -116,7 +147,7 @@ so none is silently `qualified`.
 
 * **C1 bead calibration** on any machine marked ASSUMED — a thin-wall test, measured with calipers,
   then edit `machines.json`.
-* **`suma_geometry.py` and `make_parasol.mjs` are not in the chain yet.** They predate all of this.
-  They have no per-layer ρ, no refusal, and have never seen the gate.
+* **`make_parasol.mjs` is not in the chain.** It predates all of this: STL only, no gate. (`suma_geometry.py`
+  is reachable through `node weft.mjs build suma …` and its builder strategy is gated like every other.)
 * **Printing, photographing, and filling in `outcome` in the manifest.** No amount of checking is
   evidence. See `../journal/2026-09-02_HANDOFF.md`.

@@ -1,5 +1,10 @@
 # WEFT — Continuous Lattice Toolpath Studio
 
+> **2026-09-08 — runs without a browser and without a model.** `node weft.mjs build --preset <name> --machine a2l --out DIR`
+> makes the thread, the G-code, runs the final-G-code gate, rewrites the header and packs the Bambu container with
+> Node alone (`core/weft_core.js` is the engine the app itself loads; `core/weft_gate.js` is `check_gcode.py` in
+> JavaScript). `index.html` runs the same gate before it offers a download. See `USAGE.md`.
+
 Research software for a method of extrusion 3D printing in which walls are built as
 **woven lattices**: a single continuous thread per layer, with structure arising from
 discrete **weld nodes** where each layer's thread crosses the one below, rather than

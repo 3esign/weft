@@ -527,3 +527,54 @@ body advances. The regenerated package still requires Semir's visual Bambu Studi
   the legacy `run_tests.mjs` is 49/61 exactly as before (`index.html` was not touched).
 - Specimen folders of printed objects renamed `_pending` → `_physical` (six); `machines.json` containerTemplate
   follows. PI itself was reorganised (`../MOVE_LOG_2026-09-05.md`).
+
+## 2026-09-08 — the engine leaves the browser: `core/`, `weft.mjs`, the gate in JavaScript (Svemir / Claude Fable 5.1, Cowork)
+
+Why: P15 (STATE.md) — the builders ran only inside Chromium through Playwright, the gate only under Python+scipy,
+and the PC's default `python` is Inkscape's. A person without a model, or a machine without Chrome, could not build.
+"Works without an LLM" had to mean: a preset or a parameter file, one command, the same artefact — or nothing.
+
+What changed (no geometry rule was touched; every emitted byte is proven identical):
+- `core/weft_core.js` — the level-3 engine extracted from `index.html` lines 325–1518 (MACHINES, P, centrelines,
+  registration, the five grammars, dome cap/adhesion, batch, OBJ slicing, overlap detector, ribbon, the parameter
+  interface, `validityReport`, `weftEvaluate`, STL and G-code builders). A classic script with no import/export, so
+  the same file is `<script src>` in the app and `import` in Node. `createWeftCore()` returns live accessors onto the
+  engine's state and functions; builders still override `apexUs`/`widthPhase` at runtime. Three DOM dependencies
+  became hooks (`onMachineChange`, `onMeshInfo`, `fullBuild`); `buildGcodeText(onProgress, head, foot)` takes the
+  header/footer as arguments; `buildSTLParts` no longer needs three.js.
+- `core/weft_gate.js` — `check_gcode.py` in JavaScript: parser, raster, exact EDT (Felzenszwalb), classification,
+  spiral metrics, outermost turn, first-layer islands, the same report shape. Python's round-half-to-even is
+  reproduced (`pyround`) because Math.round moves a point one raster cell at exact halves.
+- `core/weft_build.mjs` — the two builder strategies as Node code (`layersFromGeometry` = make_suma.mjs,
+  `layersFromClimber` = make_climber.mjs with the thinning negotiation), `fixHeader` (= fix_header.py),
+  `packBambu3mf` + a minimal ZIP reader/writer (= pack_bambu_3mf.py), `runGate`.
+- `weft.mjs` — the one command: `machines · presets · build (--preset | --design | --geo | <model>) · check · serve`.
+  Refuses at every step exactly as `weft.py`: assumed bead needs `--i-know-the-bead-is-a-guess`; membrane contract;
+  experimental bridge → double gate; belief-vs-measurement ±0.10; the packaged container is re-read and re-gated.
+- `index.html` — loads the two core scripts, exposes their state/functions as page globals (accessors, so
+  `apexUs=function…` overrides and the legacy harness keep working), and **runs the gate before offering a G-code
+  download** ("Download G-code (gated)", "run the gate only", a `gate` row in the stats). A refused file is not
+  downloaded unless the diagnosis box is ticked (then as `.REJECTED.gcode`).
+- tests: `core_parity` (6 designs: Node core == index.html in Chromium, G-code + STL + report byte-identical),
+  `gate_parity` (JS gate == Python gate on the P2 regression fixture — 479 problems, 4 FLOATING, 2 UNANCHORED, 2
+  islands — and on the printed LIMIT16 A2L), `build_parity` (Node chain == the PRINTED LIMIT16 A2L: G-code
+  byte-identical after the header rewrite, all 17 members of the .gcode.3mf identical to the package that ran),
+  `browser_gate` (the in-page gate passes the default wall, refuses a plate of loose feet declared as one object).
+  `tests/run_all.mjs` runs the Node-only tests first and skips the Chromium ones with a notice when absent.
+
+Measured after the change: legacy suite 49/61 — the SAME twelve failures as before (T5, T6, T9b/d/e/f, T13d,
+T15/b/c, T16, T16d); mcp 11/11; limit16 PASS; core_parity 6/6; gate_parity all; build_parity all; browser_gate all.
+Timings in the cloud container: LIMIT16 thread 0.1 s, gate 2.7 s; D2 dome (212 layers) end-to-end incl. 3MF 20 s;
+the regression fixture (682 layers, 122k points) gates in 21 s in JS vs 20 s in Python.
+
+Found on the way, not fixed (they are findings, not regressions):
+- `node weft.mjs build --preset E1_web_x_overhang` is refused by the design validity (446 same-layer overlaps):
+  the E1 plate as designed has been invalid since WEFT-06 moved the diagonal/sine webs onto the rails (P1). The
+  chain refuses it honestly; the reference has to be regenerated consciously or the preset retired.
+- `node weft.mjs build vase --machine ender --H 60 --turns 0.5 --maxbridge 16`: the geometry passes its own
+  rail-motion check (worst 15.24 mm) and the final G-code shows 19.64 mm — refused by the gate. Level 2 still
+  cannot see where level 3 lays the rail (CHALLENGE part 1, P10), now visible in one command.
+- The old LIMIT16 geometry JSON (built before the membrane contract) is refused by `validateMembraneGeometry`
+  — correct: it carries no process identity; regenerate it with `build limit16` to get one.
+
+Still by hand / still Python: the level-2 generators (`*_geometry.py`), the C1 bead calibration, printing.
