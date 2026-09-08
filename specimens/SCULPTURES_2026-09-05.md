@@ -1,5 +1,14 @@
 # OBLAK / GORA — the two big sculptures (2026-09-05)
 
+> **Update 2026-09-08 — both printed (5–6 September), both standing.** Read from Semir's sixteen photographs and the printed
+> G-code files; answers to each prediction sheet in `2026-09-05_OBLAK_A2L_X1_experimental/outcomes.md` and
+> `2026-09-05_GORA_ENDER3V4_X1_experimental/outcomes.md`, photographs with SHA-256 manifests under `photos/2026-09-08_semir/`
+> in each folder, ledger rows 27–28. In one line each: OBLAK — full height; lintels 30/40/50 held (sag unmeasured); 50 mm horn tip
+> frayed; crown approach wavy (inner rail stepping 0.9→3.1 mm per chord layer on 24 tabs), iris chords straight; 412 void travels
+> (45.6 m) are the strings in the windows. GORA — full height in ≤ 21 h on the assumed bead; lintels 20–50 held; one horn tip frayed
+> with a small tear under it; iris closed as a clean triangular mesh on a 0.11 mm/layer approach; 584 void travels (32.4 m).
+> "Neither is printed yet" below is the 5 September state and is kept as written. Folder rename `_experimental → _physical` pending (protocol step).
+
 One instrument language, two bodies, two machines. Built in a cloud session from `sculpture_geometry.py`
 through the extended `make_suma.mjs` (open arcs, breathing wall, declared experimental bridge with a double
 gate), transferred to the PC in SHA-256-verified chunks. Neither is printed yet.

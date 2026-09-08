@@ -1,0 +1,86 @@
+{
+ "schema": "weft.photo-evidence-manifest.v1",
+ "received": "2026-09-08 (chat, 21:40–22:01 Z) and 2026-09-08/09 (chat, 22:09–22:12 Z)",
+ "subject": "GORA X1 physical print (printed 5–6 September 2026)",
+ "source": "Semir Poturak, Galaxy S23 FE, sent in the Cowork chat; copied unchanged (EXIF intact)",
+ "operator_attribution": "clear print on the Creality Ender-3 V4 (yellow first layers)",
+ "artifact": "../../GORA_ENDER3V4_X1_routeB.gcode",
+ "artifact_sha256": "aa7b687e957e85763814a93783be40c3b88d3ca1b39a611fb9efb643452075b5 (re-verified in the cloud on 8 September)",
+ "binding": "the photographs are bound to the artifact by colour, machine, the unique geometry (horns, windows, iris) and the build date; no printer-history receipt was supplied",
+ "file_count": 9,
+ "read_by": "svemir-claude-fable-cowork, every frame opened at full resolution on 8 September 2026",
+ "files": [
+  {
+   "name": "GORA_01_20260905_150659.jpg",
+   "exif_time": "20260905 15:06:59",
+   "camera": "Galaxy S23 FE",
+   "bytes": 1983787,
+   "sha256": "913e30aff5860e2452a7ef13d05b1ae36097e0e9a62f6db8f2c941d82303e808",
+   "shows": "first layers on the Ender: foundation rings and spokes in yellow, wall rails yellow then clear webs; one connected piece"
+  },
+  {
+   "name": "GORA_02_20260905_203901.jpg",
+   "exif_time": "20260905 20:39:01",
+   "camera": "Galaxy S23 FE",
+   "bytes": 1623975,
+   "sha256": "e0cf694df1930f6bcdba3d279ac84d46ec6d3a299dbb5bd9d0f7eee1bf45799a",
+   "shows": "mid-print, top edge from above: staple web tabs, a corner; no dropped layer"
+  },
+  {
+   "name": "GORA_03_20260906_121931.jpg",
+   "exif_time": "20260906 12:19:31",
+   "camera": "Galaxy S23 FE",
+   "bytes": 3731214,
+   "sha256": "fcf1ed2068fee6640013f0ab83dcb324c67a18bc791fede24b97253a6fe48cf6",
+   "shows": "full height, front: window with flat lintel, second window at the left face, two horns, chimney top; yellow brim"
+  },
+  {
+   "name": "GORA_04_20260906_121947.jpg",
+   "exif_time": "20260906 12:19:47",
+   "camera": "Galaxy S23 FE",
+   "bytes": 2361298,
+   "sha256": "4fbdec8e98762fd1a7c3e50b1ad5d06aff72918f05bc3aa9d8f7ff5e2d266f89",
+   "shows": "full height, front, second frame"
+  },
+  {
+   "name": "GORA_05_20260906_121948.jpg",
+   "exif_time": "20260906 12:19:48",
+   "camera": "Galaxy S23 FE",
+   "bytes": 2433793,
+   "sha256": "66621259b62b3761db30f792674d5c08ce5ee48fb15bd8dcfc94da6df4783a9c",
+   "shows": "full height, front, third frame; travel strings at the window corner"
+  },
+  {
+   "name": "GORA_06_20260909_001140.jpg",
+   "exif_time": "20260909 00:11:40",
+   "camera": "Galaxy S23 FE",
+   "bytes": 1311802,
+   "sha256": "f419295716a7d7750909ad652fa58363e21285313b5fc91a26a13bb1ae5f4d65",
+   "shows": "crown from above: iris chords as a triangular mesh over the hole, rim tabs regular"
+  },
+  {
+   "name": "GORA_07_20260909_001158.jpg",
+   "exif_time": "20260909 00:11:58",
+   "camera": "Galaxy S23 FE",
+   "bytes": 1485848,
+   "sha256": "ed261321f1a8f145ffcf3c82cedaf8091d6670763b4b52810006192f71a1353e",
+   "shows": "a horn from below: stepped underside, fringe of separated loops along the tip edge, tip intact"
+  },
+  {
+   "name": "GORA_08_20260909_001209.jpg",
+   "exif_time": "20260909 00:12:09",
+   "camera": "Galaxy S23 FE",
+   "bytes": 1269699,
+   "sha256": "139c5052a32eb5f8d1709d2f95e522512a15da86e1fdbc0df1c55b1909fe7e56",
+   "shows": "a horn from the side, intact tip; window opening with travel strings at the right"
+  },
+  {
+   "name": "GORA_09_20260909_001228.jpg",
+   "exif_time": "20260909 00:12:28",
+   "camera": "Galaxy S23 FE",
+   "bytes": 1296736,
+   "sha256": "db71fa58ea75f2cb249d86d5bbb12575cde855e068c84dc53b75337a9cd96275",
+   "shows": "a horn with a frayed tip and a small hole in the wall below it; strings at a window edge (top right)"
+  }
+ ]
+}

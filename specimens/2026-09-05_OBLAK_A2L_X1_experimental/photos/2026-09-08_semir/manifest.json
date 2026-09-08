@@ -1,0 +1,70 @@
+{
+ "schema": "weft.photo-evidence-manifest.v1",
+ "received": "2026-09-08 (chat, 21:40–22:01 Z) and 2026-09-08/09 (chat, 22:09–22:12 Z)",
+ "subject": "OBLAK X1 physical print (printed 5–6 September 2026)",
+ "source": "Semir Poturak, Galaxy S23 FE, sent in the Cowork chat; copied unchanged (EXIF intact)",
+ "operator_attribution": "black print on the Bambu Lab A2L (green first layers)",
+ "artifact": "../../OBLAK_A2L_X1.gcode.3mf (printThis) · raw ../../OBLAK_A2L_X1_routeB.gcode",
+ "artifact_sha256": "3ef59d066c20b818d222e85b6720765490ac77139e72c0969a0d978bad1bce4e (routeB.gcode, re-verified in the cloud on 8 September; 3mf df66e345…)",
+ "binding": "the photographs are bound to the artifact by colour, machine, the unique geometry (horns, windows, iris) and the build date; no printer-history receipt was supplied",
+ "file_count": 7,
+ "read_by": "svemir-claude-fable-cowork, every frame opened at full resolution on 8 September 2026",
+ "files": [
+  {
+   "name": "OBLAK_01_20260906_121956.jpg",
+   "exif_time": "20260906 12:19:56",
+   "camera": "Galaxy S23 FE",
+   "bytes": 2257492,
+   "sha256": "17457bfe008904fa19faa3a5657e6aaee695f1b87732d84ac64dba0f95fbf6ff",
+   "shows": "side view from the plate level: window with lintel, two horns, crown; A2L in the background"
+  },
+  {
+   "name": "OBLAK_02_20260906_122013.jpg",
+   "exif_time": "20260906 12:20:13",
+   "camera": "Galaxy S23 FE",
+   "bytes": 2286557,
+   "sha256": "2af99de5ced3b8c07c7c318314079e4db951f5b4d86c9a2c5dbd4ab1fd73d50e",
+   "shows": "upper body close: right horn, twisted weld columns, crown approach"
+  },
+  {
+   "name": "OBLAK_03_20260909_000938.jpg",
+   "exif_time": "20260909 00:09:38",
+   "camera": "Galaxy S23 FE",
+   "bytes": 1926578,
+   "sha256": "45b5c19e787819b41e40dd466034c5498910737f4543d05491224016c3b2293d",
+   "shows": "crown close: iris chords (star), wavy rim, openings left between chords"
+  },
+  {
+   "name": "OBLAK_04_20260909_000942.jpg",
+   "exif_time": "20260909 00:09:42",
+   "camera": "Galaxy S23 FE",
+   "bytes": 2447080,
+   "sha256": "2ba71f202192eb476255ee63270e5f4c1d372742a05c0723ded35d582d5ce038",
+   "shows": "crown from above: wavy last rings of the approach, iris chords straight over the hole"
+  },
+  {
+   "name": "OBLAK_05_20260909_000955.jpg",
+   "exif_time": "20260909 00:09:55",
+   "camera": "Galaxy S23 FE",
+   "bytes": 3188957,
+   "sha256": "eab46c3e3e702d026806024c344d805187cf8d6c11703c4d3a2926a669a5f2c1",
+   "shows": "window jamb: stacked arc ends, strings (travel hairs) across the opening"
+  },
+  {
+   "name": "OBLAK_06_20260909_001015.jpg",
+   "exif_time": "20260909 00:10:15",
+   "camera": "Galaxy S23 FE",
+   "bytes": 1706263,
+   "sha256": "bd318eca657a8801a7ce550b2f63864386d2a960a23a833e22b4506ab7f5a888",
+   "shows": "50 mm horn tip: frayed crest of separated web loops; horn body intact"
+  },
+  {
+   "name": "OBLAK_07_20260909_001027.jpg",
+   "exif_time": "20260909 00:10:27",
+   "camera": "Galaxy S23 FE",
+   "bytes": 2602676,
+   "sha256": "0651681077750e6291b219454d7b35201365930706252a388cc0f7d814bd63a1",
+   "shows": "overhead: three lobes, three horns, crown with iris chords, two windows as dark openings"
+  }
+ ]
+}
