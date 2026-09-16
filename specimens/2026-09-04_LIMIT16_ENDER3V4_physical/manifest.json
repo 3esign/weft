@@ -1,0 +1,31 @@
+{
+  "name": "LIMIT16_ENDER3V4_v1",
+  "status": "calibration-required-gcode-unprinted-experiment",
+  "machine": "Creality Ender-3 V4 / Creality OS / Klipper",
+  "nozzle_mm": 0.4,
+  "bead_mm": 0.42,
+  "bead_source": "ASSUMED",
+  "layer_height_mm": 0.2,
+  "model_levels": 48,
+  "size_mm": [179.9, 179.9, 9.6],
+  "plate_bbox_mm": [19.0, 19.0, 198.5, 198.5],
+  "estimate": {"time": "50m49s", "filament_m": 2.54, "mass_g": 7.7},
+  "gate": {
+    "artifact": "EXPERIMENTAL_LIMIT16_ENDER3V4_ASSUMED_BEAD_v1.gcode",
+    "pass": true,
+    "floating": 0,
+    "long_bridge": 0,
+    "cantilever_over_limit": 0,
+    "bad_membrane": 0,
+    "unanchored_membrane": 0,
+    "first_layer_islands": 1,
+    "membrane_anchor_fraction": 1.0,
+    "max_bridge_mm": 16.2,
+    "max_cantilever_mm": 4.8
+  },
+  "sha256": {
+    "EXPERIMENTAL_LIMIT16_ENDER3V4_ASSUMED_BEAD_v1.gcode": "E33CB4CA97F9C88812C89F0EF0E1DC504C93513905FFFD6409684E95A4022A2B",
+    "LIMIT16_ENDER3V4_v1_geometry.json": "7093E0D46542297C63A5475E2ACC73E5BC5B1B7FB454D5DCED64F5DE94D8DE7A"
+  },
+  "physical_print_verified": false
+}

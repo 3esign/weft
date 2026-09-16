@@ -1,0 +1,608 @@
+{
+  "report": {
+    "name": "V1_vrtlog_ender",
+    "machine": "Creality Ender-3 V4",
+    "bed": [
+      220,
+      220
+    ],
+    "layers": 1272,
+    "weave": {
+      "maxUnweldedRail_mm": 5.3,
+      "skippedRungs": 0,
+      "webLayersWithNoCrossing": 0,
+      "maxBridge_mm": 12
+    },
+    "size_mm": [
+      90,
+      86.9,
+      130
+    ],
+    "plate_mm": [
+      64.2,
+      67.8,
+      153.8,
+      154.2
+    ],
+    "fitsPlate": true,
+    "threadLength_m": 225.4,
+    "weldNodes": 23049,
+    "unintendedOverlaps": 0,
+    "seamClosures": 1276,
+    "kinematic_h": 2.5,
+    "caps": [
+      {
+        "z": 49.6,
+        "kind": "death",
+        "span": 0.344
+      },
+      {
+        "z": 92,
+        "kind": "hole",
+        "span": 0.344
+      },
+      {
+        "z": 129.8,
+        "kind": "death",
+        "span": 0.344
+      }
+    ],
+    "bands": [
+      {
+        "z": 0,
+        "phase": "foot",
+        "web": "staple",
+        "tab": 0.691,
+        "w": 1.661
+      },
+      {
+        "z": 20.8,
+        "phase": "belly",
+        "web": "perp",
+        "tab": 0.455,
+        "w": 1.721
+      },
+      {
+        "z": 39,
+        "phase": "eyes",
+        "web": "diagonal",
+        "tab": 0.485,
+        "w": 1.453
+      },
+      {
+        "z": 72.8,
+        "phase": "knot",
+        "web": "eight",
+        "tab": 1.2,
+        "w": 2.5
+      },
+      {
+        "z": 91,
+        "phase": "neck",
+        "web": "sine",
+        "tab": 0.882,
+        "w": 2.794
+      },
+      {
+        "z": 109.2,
+        "phase": "mouth",
+        "web": "staple",
+        "tab": 0.635,
+        "w": 2.294
+      }
+    ],
+    "wallWidth": {
+      "emitted_min": 0.9,
+      "emitted_max": 6.05,
+      "thinnedLayers": 299,
+      "minScale": 0,
+      "stuckAtFloor": 0,
+      "passes": 14,
+      "residual": [],
+      "singleThreadLayers": [
+        1,
+        1.8,
+        2.6,
+        5.8,
+        7,
+        9,
+        9.8,
+        10.2,
+        10.6,
+        11,
+        11.4,
+        12.2,
+        12.6,
+        13,
+        13.4,
+        13.8,
+        14.2,
+        14.6,
+        15,
+        15.8,
+        16.2,
+        17,
+        17.4,
+        18.2,
+        19,
+        19.4,
+        20.2,
+        20.6,
+        21,
+        21.4,
+        21.8,
+        22.2,
+        22.6,
+        23,
+        23.4,
+        23.8,
+        24.2,
+        24.6,
+        25,
+        25.4,
+        25.8,
+        26.2,
+        26.6,
+        27,
+        27.4,
+        27.8,
+        28.2,
+        28.6,
+        29,
+        29.4,
+        29.8,
+        30.2,
+        30.6,
+        31,
+        31.4,
+        31.8,
+        32.2,
+        32.6,
+        33,
+        33.4,
+        33.8,
+        34.2,
+        34.6,
+        35,
+        35.4,
+        35.8,
+        36.2,
+        36.6,
+        37,
+        37.4,
+        37.8,
+        38.2,
+        38.6,
+        109.4,
+        111.4,
+        111.8,
+        112.2,
+        112.6,
+        113,
+        113.8,
+        115,
+        115.4,
+        115.8,
+        116.2,
+        116.6,
+        117.4,
+        119,
+        120.6,
+        121.8,
+        122.2,
+        122.6,
+        123,
+        127.8,
+        128.2,
+        129,
+        129.4,
+        114.6
+      ],
+      "stuckAt": []
+    },
+    "geometryWall": {
+      "nominal": [
+        1.6,
+        9
+      ],
+      "emitted_min": 0.9,
+      "emitted_max": 6.053,
+      "note": "clamped per layer by the largest circle that fits in THIS layer mask"
+    },
+    "supportCheck": {
+      "rule": "each layer steps within its OWN cone (w(z)/2 + tab(z)) or bridges <= maxBridge",
+      "maxStep_mm": 1.724,
+      "worst": [
+        [
+          40.1,
+          1.724,
+          0.887
+        ],
+        [
+          92.1,
+          1.479,
+          0.693
+        ],
+        [
+          40.3,
+          1.26,
+          0.92
+        ],
+        [
+          40.5,
+          1.085,
+          1.385
+        ],
+        [
+          91.9,
+          1.035,
+          0.918
+        ],
+        [
+          92.3,
+          1.02,
+          0.683
+        ],
+        [
+          39.7,
+          0.917,
+          0.72
+        ],
+        [
+          39.9,
+          0.902,
+          0.7
+        ]
+      ],
+      "bridges": 9,
+      "violations": []
+    }
+  },
+  "geometry": {
+    "N": 650,
+    "H": 130,
+    "strands": 3,
+    "turns": 0.72,
+    "args": {
+      "turns": 0.72,
+      "H": 130,
+      "lh": 0.2,
+      "e": 1,
+      "bead": 0.42,
+      "w0": 1.6,
+      "w1": 9,
+      "K": 10,
+      "res": 0.28,
+      "foundation": 7,
+      "rib": 2.6,
+      "maxbridge": 12,
+      "plate": [
+        220,
+        220
+      ],
+      "out": "/tmp/V1/V1_vrtlog_ender_geometry.json",
+      "allow_fail": false
+    },
+    "RHO_note": "per layer: w_nominal(z)/2 + e + bead + 0.3",
+    "RHO_max": 2.02,
+    "contourCounts": [
+      [
+        0,
+        1
+      ],
+      [
+        40,
+        4
+      ],
+      [
+        49.8,
+        3
+      ],
+      [
+        92,
+        1
+      ]
+    ],
+    "events": [
+      {
+        "z": 0.1,
+        "type": "birth",
+        "id": 1,
+        "onFoundation": true
+      },
+      {
+        "z": 40.1,
+        "type": "split",
+        "id": 1,
+        "to": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "z": 49.7,
+        "type": "death-cap",
+        "r_mm": 2.31
+      },
+      {
+        "z": 49.9,
+        "type": "death",
+        "id": 3
+      },
+      {
+        "z": 92.1,
+        "type": "hole-birth",
+        "count": 1
+      },
+      {
+        "z": 92.1,
+        "type": "merge",
+        "id": 1,
+        "from": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "z": 129.9,
+        "type": "death-cap",
+        "r_mm": 19.38
+      }
+    ],
+    "phases": [
+      [
+        0,
+        "foot",
+        "staple",
+        0.691,
+        1.661
+      ],
+      [
+        20.8,
+        "belly",
+        "perp",
+        0.455,
+        1.721
+      ],
+      [
+        39,
+        "eyes",
+        "diagonal",
+        0.485,
+        1.453
+      ],
+      [
+        72.8,
+        "knot",
+        "eight",
+        1.2,
+        2.5
+      ],
+      [
+        91,
+        "neck",
+        "sine",
+        0.882,
+        2.794
+      ],
+      [
+        109.2,
+        "mouth",
+        "staple",
+        0.635,
+        2.294
+      ]
+    ],
+    "singleThread": {
+      "layers": [],
+      "why": "the neck at that instant is a sliver: one thread on the centreline instead of two rails"
+    },
+    "railMotion": {
+      "rule": "longest contiguous arc whose distance to the layer below exceeds tab(below) + bead/2 — the bridge the rail actually has to make",
+      "limit_mm": 12,
+      "worst": [
+        [
+          40,
+          5.14,
+          0.7
+        ],
+        [
+          40.2,
+          4.46,
+          0.78
+        ],
+        [
+          39.6,
+          4.4,
+          0.704
+        ],
+        [
+          92,
+          4.33,
+          0.773
+        ],
+        [
+          40.4,
+          3.92,
+          0.859
+        ],
+        [
+          91.8,
+          3.81,
+          0.852
+        ]
+      ],
+      "violations": 0
+    },
+    "wallRate": {
+      "limit_mm_per_layer": 0.24,
+      "worst_rail_step_mm": 0.201,
+      "note": "a rail moves (dw/2 + dtab) sideways per layer; over a bead it lands on air"
+    },
+    "nodeDensity": {
+      "K": 10,
+      "doubledLayers": 819,
+      "contours": 1219,
+      "maxNodeGap_mm": 5.372,
+      "note": "columns are doubled dyadically until the weld gap is inside maxBridge; the wall then takes what the corners allow"
+    },
+    "supportCheck": {
+      "rule": "each layer steps within its OWN cone (w(z)/2 + tab(z)) or bridges <= maxBridge",
+      "maxStep_mm": 1.724,
+      "worst": [
+        [
+          40.1,
+          1.724,
+          0.887
+        ],
+        [
+          92.1,
+          1.479,
+          0.693
+        ],
+        [
+          40.3,
+          1.26,
+          0.92
+        ],
+        [
+          40.5,
+          1.085,
+          1.385
+        ],
+        [
+          91.9,
+          1.035,
+          0.918
+        ],
+        [
+          92.3,
+          1.02,
+          0.683
+        ],
+        [
+          39.7,
+          0.917,
+          0.72
+        ],
+        [
+          39.9,
+          0.902,
+          0.7
+        ]
+      ],
+      "bridges": 9,
+      "violations": []
+    },
+    "tipCrowding": {
+      "floor_mm": 0.84,
+      "worst": [
+        [
+          49.6,
+          0.84
+        ],
+        [
+          52.2,
+          0.84
+        ],
+        [
+          76,
+          0.84
+        ],
+        [
+          80,
+          0.84
+        ],
+        [
+          80.4,
+          0.84
+        ],
+        [
+          82,
+          0.84
+        ]
+      ],
+      "violations": 0
+    },
+    "railSelfApproach": {
+      "floor_mm": 0.849,
+      "appFloor_mm": 0.399,
+      "worst": [
+        [
+          39.9,
+          0.975
+        ],
+        [
+          107.3,
+          1.3
+        ],
+        [
+          109.3,
+          1.381
+        ],
+        [
+          107.9,
+          1.406
+        ],
+        [
+          108.3,
+          1.464
+        ],
+        [
+          107.1,
+          1.483
+        ]
+      ],
+      "violations": 0
+    },
+    "openEnds": {
+      "rule": "material with no successor, wider than the wall that would cover it",
+      "count": 0,
+      "worst": []
+    },
+    "caps": {
+      "death": 2,
+      "hole": 1,
+      "maxRadius_mm": 19.38,
+      "pitch_mm": 0.344,
+      "notSelfSupporting": 0
+    },
+    "foundation": {
+      "zBot": 0,
+      "zTop": 0.2,
+      "rings": 57,
+      "kind": "annular brims joined by ribs",
+      "islands": 1,
+      "openings": 5,
+      "ribWidth_mm": 2.6,
+      "ribs": 4,
+      "componentsOnFoundation": [
+        true
+      ]
+    },
+    "wallWidth": {
+      "nominal": [
+        1.6,
+        9
+      ],
+      "emitted_min": 0.9,
+      "emitted_max": 6.053,
+      "note": "clamped per layer by the largest circle that fits in THIS layer mask"
+    },
+    "bbox_mm": [
+      -41.68,
+      -41.58,
+      45.02,
+      42.88
+    ],
+    "size_mm": [
+      95.7,
+      93.5,
+      130
+    ],
+    "violations": []
+  }
+}

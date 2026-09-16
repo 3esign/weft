@@ -1,0 +1,1309 @@
+{
+  "report": {
+    "name": "P0_suma_4x4_v2",
+    "machine": "Bambu A2L",
+    "layers": 1771,
+    "size_mm": [
+      158.8,
+      200.8,
+      56.612
+    ],
+    "threadLength_m": 503.2,
+    "weldNodes": 35486,
+    "unintendedOverlaps": 16,
+    "seamClosures": 477,
+    "overlapSamples": [
+      {
+        "z": 10.8,
+        "role": "web",
+        "ov": 1,
+        "contour": 0
+      },
+      {
+        "z": 10.8,
+        "role": "web",
+        "ov": 1,
+        "contour": 1
+      },
+      {
+        "z": 10.8,
+        "role": "web",
+        "ov": 1,
+        "contour": 2
+      },
+      {
+        "z": 10.8,
+        "role": "web",
+        "ov": 1,
+        "contour": 3
+      },
+      {
+        "z": 10.8,
+        "role": "web",
+        "ov": 1,
+        "contour": 4
+      },
+      {
+        "z": 10.8,
+        "role": "web",
+        "ov": 1,
+        "contour": 5
+      },
+      {
+        "z": 10.8,
+        "role": "web",
+        "ov": 1,
+        "contour": 6
+      },
+      {
+        "z": 10.8,
+        "role": "web",
+        "ov": 1,
+        "contour": 7
+      },
+      {
+        "z": 10.8,
+        "role": "web",
+        "ov": 1,
+        "contour": 8
+      },
+      {
+        "z": 10.8,
+        "role": "web",
+        "ov": 1,
+        "contour": 9
+      },
+      {
+        "z": 10.8,
+        "role": "web",
+        "ov": 1,
+        "contour": 10
+      },
+      {
+        "z": 10.8,
+        "role": "web",
+        "ov": 1,
+        "contour": 11
+      }
+    ],
+    "kinematic_h": 4.66,
+    "routeA_estimate_h": 43.9,
+    "caps": [
+      {
+        "z": 24.72,
+        "span": 6.54,
+        "len": 812
+      },
+      {
+        "z": 24.72,
+        "span": 6.54,
+        "len": 812
+      },
+      {
+        "z": 24.72,
+        "span": 6.54,
+        "len": 812
+      },
+      {
+        "z": 24.72,
+        "span": 6.54,
+        "len": 812
+      },
+      {
+        "z": 25.92,
+        "span": 4.66,
+        "len": 664
+      },
+      {
+        "z": 25.92,
+        "span": 4.66,
+        "len": 664
+      },
+      {
+        "z": 25.92,
+        "span": 4.66,
+        "len": 664
+      },
+      {
+        "z": 25.92,
+        "span": 4.66,
+        "len": 664
+      },
+      {
+        "z": 34.32,
+        "span": 11.1,
+        "len": 1236
+      },
+      {
+        "z": 34.32,
+        "span": 11.1,
+        "len": 1236
+      },
+      {
+        "z": 34.56,
+        "span": 1.5,
+        "len": 448
+      },
+      {
+        "z": 34.56,
+        "span": 1.5,
+        "len": 448
+      },
+      {
+        "z": 34.56,
+        "span": 1.5,
+        "len": 448
+      },
+      {
+        "z": 34.56,
+        "span": 1.5,
+        "len": 448
+      },
+      {
+        "z": 35.04,
+        "span": 9.4,
+        "len": 1068
+      },
+      {
+        "z": 35.04,
+        "span": 9.4,
+        "len": 1068
+      },
+      {
+        "z": 37.68,
+        "span": 5.35,
+        "len": 716
+      },
+      {
+        "z": 37.68,
+        "span": 5.35,
+        "len": 716
+      },
+      {
+        "z": 38.16,
+        "span": 4.29,
+        "len": 636
+      },
+      {
+        "z": 38.16,
+        "span": 4.29,
+        "len": 636
+      },
+      {
+        "z": 38.4,
+        "span": 11.18,
+        "len": 1244
+      }
+    ],
+    "events": [
+      {
+        "z": 0.12,
+        "type": "birth",
+        "id": 1,
+        "onFoundation": true
+      },
+      {
+        "z": 0.12,
+        "type": "birth",
+        "id": 2,
+        "onFoundation": true
+      },
+      {
+        "z": 0.12,
+        "type": "birth",
+        "id": 3,
+        "onFoundation": true
+      },
+      {
+        "z": 0.12,
+        "type": "birth",
+        "id": 4,
+        "onFoundation": true
+      },
+      {
+        "z": 0.12,
+        "type": "birth",
+        "id": 5,
+        "onFoundation": true
+      },
+      {
+        "z": 0.12,
+        "type": "birth",
+        "id": 6,
+        "onFoundation": true
+      },
+      {
+        "z": 0.12,
+        "type": "birth",
+        "id": 7,
+        "onFoundation": true
+      },
+      {
+        "z": 0.12,
+        "type": "birth",
+        "id": 8,
+        "onFoundation": true
+      },
+      {
+        "z": 0.12,
+        "type": "birth",
+        "id": 9,
+        "onFoundation": true
+      },
+      {
+        "z": 0.12,
+        "type": "birth",
+        "id": 10,
+        "onFoundation": true
+      },
+      {
+        "z": 0.12,
+        "type": "birth",
+        "id": 11,
+        "onFoundation": true
+      },
+      {
+        "z": 0.12,
+        "type": "birth",
+        "id": 12,
+        "onFoundation": true
+      },
+      {
+        "z": 0.12,
+        "type": "birth",
+        "id": 13,
+        "onFoundation": true
+      },
+      {
+        "z": 0.12,
+        "type": "birth",
+        "id": 14,
+        "onFoundation": true
+      },
+      {
+        "z": 0.12,
+        "type": "birth",
+        "id": 15,
+        "onFoundation": true
+      },
+      {
+        "z": 0.12,
+        "type": "birth",
+        "id": 16,
+        "onFoundation": true
+      },
+      {
+        "z": 12.84,
+        "type": "merge",
+        "id": 1,
+        "from": [
+          1,
+          2
+        ]
+      },
+      {
+        "z": 12.84,
+        "type": "merge",
+        "id": 2,
+        "from": [
+          3,
+          4
+        ]
+      },
+      {
+        "z": 12.84,
+        "type": "merge",
+        "id": 3,
+        "from": [
+          5,
+          6
+        ]
+      },
+      {
+        "z": 12.84,
+        "type": "merge",
+        "id": 4,
+        "from": [
+          7,
+          8
+        ]
+      },
+      {
+        "z": 12.84,
+        "type": "merge",
+        "id": 5,
+        "from": [
+          9,
+          10
+        ]
+      },
+      {
+        "z": 12.84,
+        "type": "merge",
+        "id": 6,
+        "from": [
+          11,
+          12
+        ]
+      },
+      {
+        "z": 12.84,
+        "type": "merge",
+        "id": 7,
+        "from": [
+          13,
+          14
+        ]
+      },
+      {
+        "z": 12.84,
+        "type": "merge",
+        "id": 8,
+        "from": [
+          15,
+          16
+        ]
+      },
+      {
+        "z": 24.84,
+        "type": "merge",
+        "id": 1,
+        "from": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "z": 24.84,
+        "type": "merge",
+        "id": 2,
+        "from": [
+          5,
+          6,
+          7,
+          8
+        ]
+      },
+      {
+        "z": 24.84,
+        "type": "hole-cap",
+        "n": 4,
+        "span_mm": 6.54
+      },
+      {
+        "z": 26.04,
+        "type": "hole-cap",
+        "n": 4,
+        "span_mm": 4.66
+      },
+      {
+        "z": 34.44,
+        "type": "hole-cap",
+        "n": 2,
+        "span_mm": 11.1
+      },
+      {
+        "z": 34.68,
+        "type": "hole-cap",
+        "n": 4,
+        "span_mm": 1.5
+      },
+      {
+        "z": 35.16,
+        "type": "hole-cap",
+        "n": 2,
+        "span_mm": 9.4
+      },
+      {
+        "z": 37.8,
+        "type": "merge",
+        "id": 1,
+        "from": [
+          1,
+          2
+        ]
+      },
+      {
+        "z": 37.8,
+        "type": "hole-cap",
+        "n": 2,
+        "span_mm": 5.35
+      },
+      {
+        "z": 38.28,
+        "type": "hole-cap",
+        "n": 2,
+        "span_mm": 4.29
+      },
+      {
+        "z": 38.52,
+        "type": "hole-cap",
+        "n": 1,
+        "span_mm": 11.18
+      }
+    ],
+    "contourCounts": [
+      [
+        0,
+        16
+      ],
+      [
+        12.72,
+        8
+      ],
+      [
+        24.72,
+        4
+      ],
+      [
+        34.32,
+        2
+      ],
+      [
+        38.4,
+        1
+      ]
+    ],
+    "perLayerSample": [
+      {
+        "k": 0,
+        "z": 0,
+        "contours": 16,
+        "a": 8,
+        "b": 8,
+        "rho": 10.25,
+        "nodes": 256
+      },
+      {
+        "k": 40,
+        "z": 9.6,
+        "contours": 16,
+        "a": 8,
+        "b": 8,
+        "rho": 4.25,
+        "nodes": 256
+      },
+      {
+        "k": 80,
+        "z": 19.2,
+        "contours": 8,
+        "a": 11.088,
+        "b": 11.088,
+        "rho": 4.25,
+        "nodes": 240
+      },
+      {
+        "k": 120,
+        "z": 28.8,
+        "contours": 4,
+        "a": 18.087,
+        "b": 18.087,
+        "rho": 4.25,
+        "nodes": 272
+      },
+      {
+        "k": 160,
+        "z": 38.4,
+        "contours": 1,
+        "a": 24.489,
+        "b": 24.489,
+        "rho": 4.25,
+        "nodes": 146
+      },
+      {
+        "k": 200,
+        "z": 48,
+        "contours": 1,
+        "a": 27.282,
+        "b": 27.282,
+        "rho": 4.25,
+        "nodes": 128
+      }
+    ]
+  },
+  "geometry": {
+    "N": 236,
+    "H": 56.612,
+    "centers": [
+      [
+        -46,
+        -67
+      ],
+      [
+        -20,
+        -67
+      ],
+      [
+        20,
+        -67
+      ],
+      [
+        46,
+        -67
+      ],
+      [
+        -46,
+        -27
+      ],
+      [
+        -20,
+        -27
+      ],
+      [
+        20,
+        -27
+      ],
+      [
+        46,
+        -27
+      ],
+      [
+        -46,
+        27
+      ],
+      [
+        -20,
+        27
+      ],
+      [
+        20,
+        27
+      ],
+      [
+        46,
+        27
+      ],
+      [
+        -46,
+        67
+      ],
+      [
+        -20,
+        67
+      ],
+      [
+        20,
+        67
+      ],
+      [
+        46,
+        67
+      ]
+    ],
+    "plan": [
+      [
+        10.24,
+        13.415714285714287,
+        8,
+        11.0875
+      ],
+      [
+        19.415714285714287,
+        26.615714285714287,
+        11.0875,
+        18.0875
+      ],
+      [
+        32.61571428571429,
+        39.81571428571429,
+        18.0875,
+        25.0875
+      ],
+      [
+        45.81571428571429,
+        50.612040810903544,
+        25.0875,
+        29.75059523282288
+      ]
+    ],
+    "Z_SPLIT": [
+      0.24,
+      0.24
+    ],
+    "Z_COL": [
+      0.24,
+      10.24
+    ],
+    "RHO_MIN": 4.25,
+    "grid": [
+      -92.75059523282289,
+      92.75059523282289,
+      -113.75059523282289,
+      113.75059523282289
+    ],
+    "args": {
+      "cols": 4,
+      "rows": 4,
+      "r0": 8,
+      "s1": 26,
+      "s2": 40,
+      "s3": 54,
+      "lh": 0.24,
+      "w": 5,
+      "e": 1,
+      "bead": 0.45,
+      "K": 16,
+      "res": 0.2,
+      "out": "/tmp/suma_4x4_v2.json",
+      "step": 0.35,
+      "hold": 6,
+      "foundation": 6
+    },
+    "contourCounts": [
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "events": [
+      {
+        "z": 0.12,
+        "type": "birth",
+        "id": 1,
+        "onFoundation": true
+      },
+      {
+        "z": 0.12,
+        "type": "birth",
+        "id": 2,
+        "onFoundation": true
+      },
+      {
+        "z": 0.12,
+        "type": "birth",
+        "id": 3,
+        "onFoundation": true
+      },
+      {
+        "z": 0.12,
+        "type": "birth",
+        "id": 4,
+        "onFoundation": true
+      },
+      {
+        "z": 0.12,
+        "type": "birth",
+        "id": 5,
+        "onFoundation": true
+      },
+      {
+        "z": 0.12,
+        "type": "birth",
+        "id": 6,
+        "onFoundation": true
+      },
+      {
+        "z": 0.12,
+        "type": "birth",
+        "id": 7,
+        "onFoundation": true
+      },
+      {
+        "z": 0.12,
+        "type": "birth",
+        "id": 8,
+        "onFoundation": true
+      },
+      {
+        "z": 0.12,
+        "type": "birth",
+        "id": 9,
+        "onFoundation": true
+      },
+      {
+        "z": 0.12,
+        "type": "birth",
+        "id": 10,
+        "onFoundation": true
+      },
+      {
+        "z": 0.12,
+        "type": "birth",
+        "id": 11,
+        "onFoundation": true
+      },
+      {
+        "z": 0.12,
+        "type": "birth",
+        "id": 12,
+        "onFoundation": true
+      },
+      {
+        "z": 0.12,
+        "type": "birth",
+        "id": 13,
+        "onFoundation": true
+      },
+      {
+        "z": 0.12,
+        "type": "birth",
+        "id": 14,
+        "onFoundation": true
+      },
+      {
+        "z": 0.12,
+        "type": "birth",
+        "id": 15,
+        "onFoundation": true
+      },
+      {
+        "z": 0.12,
+        "type": "birth",
+        "id": 16,
+        "onFoundation": true
+      },
+      {
+        "z": 12.84,
+        "type": "merge",
+        "id": 1,
+        "from": [
+          1,
+          2
+        ]
+      },
+      {
+        "z": 12.84,
+        "type": "merge",
+        "id": 2,
+        "from": [
+          3,
+          4
+        ]
+      },
+      {
+        "z": 12.84,
+        "type": "merge",
+        "id": 3,
+        "from": [
+          5,
+          6
+        ]
+      },
+      {
+        "z": 12.84,
+        "type": "merge",
+        "id": 4,
+        "from": [
+          7,
+          8
+        ]
+      },
+      {
+        "z": 12.84,
+        "type": "merge",
+        "id": 5,
+        "from": [
+          9,
+          10
+        ]
+      },
+      {
+        "z": 12.84,
+        "type": "merge",
+        "id": 6,
+        "from": [
+          11,
+          12
+        ]
+      },
+      {
+        "z": 12.84,
+        "type": "merge",
+        "id": 7,
+        "from": [
+          13,
+          14
+        ]
+      },
+      {
+        "z": 12.84,
+        "type": "merge",
+        "id": 8,
+        "from": [
+          15,
+          16
+        ]
+      },
+      {
+        "z": 24.84,
+        "type": "merge",
+        "id": 1,
+        "from": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "z": 24.84,
+        "type": "merge",
+        "id": 2,
+        "from": [
+          5,
+          6,
+          7,
+          8
+        ]
+      },
+      {
+        "z": 24.84,
+        "type": "hole-cap",
+        "n": 4,
+        "span_mm": 6.54
+      },
+      {
+        "z": 26.04,
+        "type": "hole-cap",
+        "n": 4,
+        "span_mm": 4.66
+      },
+      {
+        "z": 34.44,
+        "type": "hole-cap",
+        "n": 2,
+        "span_mm": 11.1
+      },
+      {
+        "z": 34.68,
+        "type": "hole-cap",
+        "n": 4,
+        "span_mm": 1.5
+      },
+      {
+        "z": 35.16,
+        "type": "hole-cap",
+        "n": 2,
+        "span_mm": 9.4
+      },
+      {
+        "z": 37.8,
+        "type": "merge",
+        "id": 1,
+        "from": [
+          1,
+          2
+        ]
+      },
+      {
+        "z": 37.8,
+        "type": "hole-cap",
+        "n": 2,
+        "span_mm": 5.35
+      },
+      {
+        "z": 38.28,
+        "type": "hole-cap",
+        "n": 2,
+        "span_mm": 4.29
+      },
+      {
+        "z": 38.52,
+        "type": "hole-cap",
+        "n": 1,
+        "span_mm": 11.18
+      }
+    ],
+    "supportCheck": {
+      "rule": "centerline step per layer vs allowed band (w/2 + e = chord must land inside the previous rung+tab span)",
+      "allowed_mm": 3.5,
+      "maxStep_mm": 1.78,
+      "worstLayers": [
+        [
+          37.8,
+          1.78
+        ],
+        [
+          38.04,
+          1.531
+        ],
+        [
+          37.32,
+          1.414
+        ],
+        [
+          24.84,
+          1.299
+        ],
+        [
+          37.56,
+          1.265
+        ],
+        [
+          25.08,
+          1.25
+        ],
+        [
+          24.6,
+          1.084
+        ],
+        [
+          24.36,
+          1.067
+        ]
+      ],
+      "violations": []
+    },
+    "tipCrowding": {
+      "rule": "minimum distance between inner rung tips in a layer; below ~2*bead the tips fuse into a knot",
+      "floor_mm": 0.9,
+      "worst": [
+        [
+          24.24,
+          0.437
+        ],
+        [
+          24.48,
+          0.441
+        ],
+        [
+          0,
+          0.658
+        ],
+        [
+          12.24,
+          0.71
+        ],
+        [
+          24,
+          0.726
+        ],
+        [
+          37.2,
+          0.851
+        ],
+        [
+          11.76,
+          0.873
+        ],
+        [
+          12.48,
+          0.885
+        ]
+      ],
+      "violations": [
+        [
+          0,
+          0.658
+        ],
+        [
+          11.76,
+          0.873
+        ],
+        [
+          12.24,
+          0.71
+        ],
+        [
+          12.48,
+          0.885
+        ],
+        [
+          24,
+          0.726
+        ],
+        [
+          24.24,
+          0.437
+        ],
+        [
+          24.48,
+          0.441
+        ],
+        [
+          37.2,
+          0.851
+        ]
+      ]
+    },
+    "holeRule": {
+      "minHoleRadius_mm": 9.25,
+      "maxBridge_mm": 12,
+      "policy": "a hole below the minimum radius is CAPPED with a filled spiral membrane in one layer, then filled above (fix from the P0 2x2 tangle, 2026-09-02)",
+      "caps": [
+        {
+          "z": 24.84,
+          "type": "hole-cap",
+          "n": 4,
+          "span_mm": 6.54
+        },
+        {
+          "z": 26.04,
+          "type": "hole-cap",
+          "n": 4,
+          "span_mm": 4.66
+        },
+        {
+          "z": 34.44,
+          "type": "hole-cap",
+          "n": 2,
+          "span_mm": 11.1
+        },
+        {
+          "z": 34.68,
+          "type": "hole-cap",
+          "n": 4,
+          "span_mm": 1.5
+        },
+        {
+          "z": 35.16,
+          "type": "hole-cap",
+          "n": 2,
+          "span_mm": 9.4
+        },
+        {
+          "z": 37.8,
+          "type": "hole-cap",
+          "n": 2,
+          "span_mm": 5.35
+        },
+        {
+          "z": 38.28,
+          "type": "hole-cap",
+          "n": 2,
+          "span_mm": 4.29
+        },
+        {
+          "z": 38.52,
+          "type": "hole-cap",
+          "n": 1,
+          "span_mm": 11.18
+        }
+      ]
+    }
+  }
+}

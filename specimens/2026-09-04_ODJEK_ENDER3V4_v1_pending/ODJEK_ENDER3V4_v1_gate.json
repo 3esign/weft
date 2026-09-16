@@ -1,0 +1,122 @@
+{
+ "file": "D:\\Svemir\\!Projekti\\PI\\weft\\specimens\\2026-09-04_ODJEK_ENDER3V4_v1_pending\\ODJEK_ENDER3V4_v1.gcode",
+ "layers": 241,
+ "params": {
+  "bead": 0.42,
+  "allow": 0.6,
+  "maxbridge": 10.0,
+  "res": 0.2,
+  "bedz": 0.5,
+  "maxislands": 1,
+  "maxcantilever": 3.0
+ },
+ "stats": {
+  "floating": 0,
+  "long_bridge": 0,
+  "cantilever": 0,
+  "bridges": 12092,
+  "bad_membrane": 0,
+  "unanchored_membrane": 0,
+  "checked_paths": 238,
+  "checked_points": 151744,
+  "exempt_layers": 3,
+  "first_layer_islands": 1
+ },
+ "byRole": {},
+ "worstGaps": [
+  [
+   14.8,
+   "web",
+   1.7,
+   1.8
+  ],
+  [
+   16.0,
+   "web",
+   1.71,
+   1.8
+  ],
+  [
+   16.4,
+   "web",
+   1.7,
+   1.8
+  ],
+  [
+   16.8,
+   "web",
+   1.7,
+   1.8
+  ],
+  [
+   17.2,
+   "web",
+   1.65,
+   1.8
+  ],
+  [
+   17.6,
+   "web",
+   1.61,
+   1.8
+  ],
+  [
+   18.0,
+   "web",
+   1.56,
+   1.8
+  ],
+  [
+   31.2,
+   "web",
+   1.7,
+   1.8
+  ],
+  [
+   31.6,
+   "web",
+   1.71,
+   1.8
+  ],
+  [
+   15.2,
+   "web",
+   1.7,
+   1.79
+  ],
+  [
+   15.6,
+   "web",
+   1.7,
+   1.79
+  ],
+  [
+   29.2,
+   "web",
+   1.6,
+   1.79
+  ],
+  [
+   30.4,
+   "web",
+   1.6,
+   1.79
+  ],
+  [
+   30.8,
+   "web",
+   1.65,
+   1.79
+  ],
+  [
+   29.6,
+   "web",
+   1.56,
+   1.72
+  ]
+ ],
+ "membranes": [],
+ "problems": [],
+ "problem_count": 0,
+ "PASS": true
+}

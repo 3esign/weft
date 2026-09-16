@@ -1,0 +1,32 @@
+{
+  "schema": "c3d-design-intent/v1",
+  "status": "intent-only; WEFT is the executed backend",
+  "primitive": {
+    "type": "profile-array",
+    "count": 5,
+    "profile": "ellipse"
+  },
+  "operations": [
+    {
+      "op": "loft",
+      "along": "Z",
+      "height": 91.2
+    },
+    {
+      "op": "twist",
+      "turns": 0.58
+    },
+    {
+      "op": "bend",
+      "axis": "centerline"
+    },
+    {
+      "op": "radial-cantilever-fields",
+      "count": 5
+    },
+    {
+      "op": "preserve-voids-between-ribs"
+    }
+  ],
+  "manufacturingBackend": "WEFT alternating chord/web layers"
+}

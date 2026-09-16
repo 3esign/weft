@@ -1,0 +1,26 @@
+{
+  "name": "RASEP_A2L_X1",
+  "model": "aero",
+  "built": "2026-09-04",
+  "status": "EXTREME EXPERIMENT — NOT PRINTED",
+  "machine": {
+    "id": "a2l",
+    "label": "Bambu Lab A2L",
+    "plate": [330, 320],
+    "maxZ": 325,
+    "bead": 0.45,
+    "beadSource": "measured",
+    "lh": 0.24,
+    "route": "bambu3mf"
+  },
+  "geometry": "RASEP_A2L_X1_geometry.json",
+  "c3dIntent": "RASEP_A2L_X1_c3d_intent.json",
+  "preview": ["RASEP_A2L_X1_preview.svg", "RASEP_A2L_X1_preview.png"],
+  "shipped": ["RASEP_A2L_X1.gcode", "RASEP_A2L_X1.gcode.3mf"],
+  "gate": "RASEP_A2L_X1_gate.json",
+  "report": "RASEP_A2L_X1_report.json",
+  "sha256": {
+    "RASEP_A2L_X1.gcode.3mf": "4E8C51575A4FF763022C502910152E49DCB2F80F13F67B7ED63537B0610CA8E8"
+  },
+  "outcome": "NOT PRINTED — add photographs before making any success claim"
+}

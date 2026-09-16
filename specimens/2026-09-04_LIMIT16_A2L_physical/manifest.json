@@ -1,0 +1,32 @@
+{
+  "name": "LIMIT16_A2L_v1",
+  "status": "machine-qualified-gcode-unprinted-experiment",
+  "machine": "Bambu Lab A2L",
+  "nozzle_mm": 0.4,
+  "bead_mm": 0.45,
+  "bead_source": "measured",
+  "layer_height_mm": 0.24,
+  "model_levels": 40,
+  "size_mm": [179.9, 179.9, 9.6],
+  "plate_bbox_mm": [74.0, 69.0, 253.5, 248.5],
+  "estimate": {"time": "45m36s", "filament_m": 2.54, "mass_g": 7.7},
+  "gate": {
+    "artifact": "PRINT_LIMIT16_A2L_v1.gcode.3mf",
+    "pass": true,
+    "floating": 0,
+    "long_bridge": 0,
+    "cantilever_over_limit": 0,
+    "bad_membrane": 0,
+    "unanchored_membrane": 0,
+    "first_layer_islands": 1,
+    "membrane_anchor_fraction": 1.0,
+    "max_bridge_mm": 16.2,
+    "max_cantilever_mm": 4.8
+  },
+  "sha256": {
+    "PRINT_LIMIT16_A2L_v1.gcode.3mf": "2C6EEAEDE913CB31290795E96A8254C3C41971A5891B40F9A5BCAB08589F41B6",
+    "LIMIT16_A2L_v1_geometry.json": "7650E398FDD05762F791687E1A2A77A9E7830D68C24BF7AD0BB30316B9F08AF8"
+  },
+  "physical_print_verified": false
+}
+

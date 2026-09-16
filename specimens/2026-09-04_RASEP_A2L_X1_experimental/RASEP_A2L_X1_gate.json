@@ -1,0 +1,122 @@
+{
+ "file": "specimens\\2026-09-04_RASEP_A2L_X1_experimental\\RASEP_A2L_X1.gcode",
+ "layers": 381,
+ "params": {
+  "bead": 0.45,
+  "allow": 0.6,
+  "maxbridge": 16.0,
+  "res": 0.2,
+  "bedz": 0.5,
+  "maxislands": 1,
+  "maxcantilever": 3.0
+ },
+ "stats": {
+  "floating": 0,
+  "long_bridge": 0,
+  "cantilever": 0,
+  "bridges": 1603,
+  "bad_membrane": 0,
+  "unanchored_membrane": 0,
+  "checked_paths": 1890,
+  "checked_points": 62465,
+  "exempt_layers": 3,
+  "first_layer_islands": 1
+ },
+ "byRole": {},
+ "worstGaps": [
+  [
+   20.4,
+   "chord",
+   1.79,
+   1.84
+  ],
+  [
+   20.88,
+   "chord",
+   1.79,
+   1.84
+  ],
+  [
+   21.84,
+   "chord",
+   1.75,
+   1.84
+  ],
+  [
+   44.4,
+   "chord",
+   1.81,
+   1.81
+  ],
+  [
+   42.96,
+   "chord",
+   1.72,
+   1.8
+  ],
+  [
+   43.44,
+   "chord",
+   1.73,
+   1.8
+  ],
+  [
+   43.92,
+   "chord",
+   1.8,
+   1.8
+  ],
+  [
+   45.84,
+   "chord",
+   1.72,
+   1.8
+  ],
+  [
+   54.0,
+   "chord",
+   1.77,
+   1.8
+  ],
+  [
+   19.92,
+   "chord",
+   1.73,
+   1.79
+  ],
+  [
+   19.44,
+   "chord",
+   1.72,
+   1.72
+  ],
+  [
+   53.04,
+   "chord",
+   1.72,
+   1.72
+  ],
+  [
+   44.88,
+   "chord",
+   1.68,
+   1.71
+  ],
+  [
+   51.6,
+   "chord",
+   1.67,
+   1.71
+  ],
+  [
+   52.08,
+   "chord",
+   1.66,
+   1.71
+  ]
+ ],
+ "membranes": [],
+ "problems": [],
+ "problem_count": 0,
+ "PASS": true
+}

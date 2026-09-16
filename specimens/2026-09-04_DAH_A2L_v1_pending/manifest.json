@@ -1,0 +1,32 @@
+{
+ "name": "DAH_A2L_v1",
+ "model": "paired",
+ "built": "2026-09-04T16:03:10",
+ "machine": {
+  "id": "a2l",
+  "label": "Bambu Lab A2L",
+  "plate": [
+   330,
+   320
+  ],
+  "maxZ": 325,
+  "bead": 0.45,
+  "beadSource": "measured",
+  "beadEvidence": "specimens/2026-08-31_D5_R140_A2L_physical and specimens/2026-09-02_P0_suma_2x2_physical \u2014 both printed to completion at this bead",
+  "lh": 0.24,
+  "firstLayerBead": 0.52,
+  "temp": 220,
+  "bed": 55,
+  "start": "exports/a2l_start_block_template_2026-09-02.gcode",
+  "end": "exports/a2l_end_block_harvested_2026-09-02.gcode",
+  "route": "bambu3mf"
+ },
+ "geometry": "DAH_A2L_v1_geometry.json",
+ "shipped": [
+  "DAH_A2L_v1.gcode",
+  "DAH_A2L_v1.gcode.3mf"
+ ],
+ "gate": "DAH_A2L_v1_gate.json",
+ "report": "DAH_A2L_v1_report.json",
+ "outcome": "NOT PRINTED \u2014 fill this in after the print, with photographs"
+}

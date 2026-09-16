@@ -1,0 +1,30 @@
+{
+  "schema": "weft.membrane-process-status.v1",
+  "recorded": "2026-09-04",
+  "artifact": "PRINT_LIMIT16_A2L_v1.gcode.3mf",
+  "artifact_sha256": "2C6EEAEDE913CB31290795E96A8254C3C41971A5891B40F9A5BCAB08589F41B6",
+  "cell": 15,
+  "process": "single-layer-inward-spiral/limit16-18mm-v1",
+  "span_mm": 18.0,
+  "physical_status": "failed",
+  "historical_geometric_gate": {
+    "pass": true,
+    "rim_anchor_fraction": 1.0,
+    "meaning": "outer-rim contact only; not same-layer inward process qualification"
+  },
+  "basis": "../LIMIT16_2026-09-04_RESULTS.md",
+  "physical_result": {
+    "observed": "2026-09-04",
+    "outcome": "failed-to-close",
+    "summary": "outer annulus formed, but a large crescent opening and lifted inner spiral left the 18 mm membrane open",
+    "evidence": [
+      "outcomes.md",
+      "photos/2026-09-04_semir/A2L_A_04.jpg",
+      "photos/2026-09-04_semir/A2L_A_05.jpg",
+      "photos/2026-09-04_semir/A2L_OVERVIEW_01.jpg"
+    ]
+  },
+  "operator_action": "do not reuse or promote this exact process identity",
+  "rebuild_requires": "a new versioned membrane process identity; --allow-experimental-membrane cannot override failed v1",
+  "manifest_policy": "manifest.json is an immutable historical receipt and was not overwritten"
+}

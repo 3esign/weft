@@ -1,0 +1,120 @@
+{
+ "file": "/tmp/P2c/P2b_penjac_3_A2L.gcode",
+ "layers": 1001,
+ "params": {
+  "bead": 0.45,
+  "allow": 0.6,
+  "maxbridge": 12.0,
+  "res": 0.2,
+  "bedz": 0.5,
+  "maxislands": 1,
+  "maxcantilever": 3.0
+ },
+ "stats": {
+  "floating": 0,
+  "long_bridge": 0,
+  "cantilever": 0,
+  "bridges": 31181,
+  "bad_membrane": 0,
+  "checked_paths": 1411,
+  "checked_points": 303558,
+  "exempt_layers": 3,
+  "first_layer_islands": 1
+ },
+ "byRole": {},
+ "worstGaps": [
+  [
+   195.12,
+   "chord",
+   2.95,
+   3.94
+  ],
+  [
+   102.0,
+   "chord",
+   3.53,
+   3.93
+  ],
+  [
+   187.92,
+   "chord",
+   3.47,
+   3.8
+  ],
+  [
+   144.72,
+   "chord",
+   3.41,
+   3.68
+  ],
+  [
+   196.08,
+   "chord",
+   2.86,
+   3.62
+  ],
+  [
+   197.04,
+   "chord",
+   2.83,
+   3.6
+  ],
+  [
+   107.76,
+   "chord",
+   3.31,
+   3.49
+  ],
+  [
+   188.88,
+   "chord",
+   3.36,
+   3.49
+  ],
+  [
+   99.6,
+   "chord",
+   3.22,
+   3.42
+  ],
+  [
+   192.72,
+   "chord",
+   2.91,
+   3.42
+  ],
+  [
+   194.64,
+   "chord",
+   2.88,
+   3.42
+  ],
+  [
+   100.08,
+   "chord",
+   3.25,
+   3.4
+  ],
+  [
+   101.04,
+   "chord",
+   3.32,
+   3.4
+  ],
+  [
+   101.52,
+   "chord",
+   3.23,
+   3.4
+  ],
+  [
+   187.44,
+   "chord",
+   3.36,
+   3.4
+  ]
+ ],
+ "problems": [],
+ "problem_count": 0,
+ "PASS": true
+}

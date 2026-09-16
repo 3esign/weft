@@ -1,0 +1,122 @@
+{
+ "file": "D:\\Svemir\\!Projekti\\PI\\weft\\specimens\\2026-09-04_DAH_A2L_v1_pending\\DAH_A2L_v1.gcode",
+ "layers": 221,
+ "params": {
+  "bead": 0.45,
+  "allow": 0.6,
+  "maxbridge": 10.0,
+  "res": 0.2,
+  "bedz": 0.5,
+  "maxislands": 1,
+  "maxcantilever": 3.0
+ },
+ "stats": {
+  "floating": 0,
+  "long_bridge": 0,
+  "cantilever": 0,
+  "bridges": 11433,
+  "bad_membrane": 0,
+  "unanchored_membrane": 0,
+  "checked_paths": 218,
+  "checked_points": 149280,
+  "exempt_layers": 3,
+  "first_layer_islands": 1
+ },
+ "byRole": {},
+ "worstGaps": [
+  [
+   25.44,
+   "web",
+   2.0,
+   2.06
+  ],
+  [
+   25.92,
+   "web",
+   2.0,
+   2.06
+  ],
+  [
+   27.36,
+   "web",
+   2.0,
+   2.06
+  ],
+  [
+   29.28,
+   "web",
+   1.98,
+   2.06
+  ],
+  [
+   24.0,
+   "web",
+   1.99,
+   2.04
+  ],
+  [
+   24.96,
+   "web",
+   1.99,
+   2.04
+  ],
+  [
+   26.4,
+   "web",
+   2.0,
+   2.04
+  ],
+  [
+   26.88,
+   "web",
+   1.99,
+   2.04
+  ],
+  [
+   29.76,
+   "web",
+   2.0,
+   2.04
+  ],
+  [
+   22.56,
+   "web",
+   1.99,
+   2.01
+  ],
+  [
+   23.52,
+   "web",
+   1.98,
+   2.01
+  ],
+  [
+   24.48,
+   "web",
+   1.97,
+   2.01
+  ],
+  [
+   27.84,
+   "web",
+   2.0,
+   2.01
+  ],
+  [
+   28.32,
+   "web",
+   1.98,
+   2.01
+  ],
+  [
+   28.8,
+   "web",
+   1.99,
+   2.01
+  ]
+ ],
+ "membranes": [],
+ "problems": [],
+ "problem_count": 0,
+ "PASS": true
+}

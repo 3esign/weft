@@ -1,0 +1,74 @@
+{
+  "experiment": "P0 Suma 2x2: foundation slab -> courtyard ring + outline -> 4 columns -> 2 -> 1; first WEFT object with compiler-made merges/splits",
+  "date_generated": "2026-09-02",
+  "printer": "Bambu A2L",
+  "nozzle_mm": 0.4,
+  "material": "PLA white (planned)",
+  "route": "B (WEFT G-code, harvested A2L start/end blocks) — Route A STL as fallback",
+  "generator": "weft/suma_geometry.py --cols 2 --rows 2 ; weft/make_suma.mjs (seed 1337, jitter 0)",
+  "params": {
+    "bead_mm": 0.45,
+    "layer_mm": 0.24,
+    "wall_span_mm": 5,
+    "overhang_e_mm": 1.0,
+    "web_type": "staple",
+    "K_per_turn": 16,
+    "column_r_mm": 8,
+    "s1_mm": 26,
+    "s2_mm": 40,
+    "rho_min_mm": 4.25,
+    "max_step_per_layer_mm": 0.35,
+    "flow_boost": 1.25,
+    "speed_mms": 30,
+    "bridge_speed_mms": 18,
+    "nozzle_C": 215,
+    "bed_C": 55,
+    "fan_pct": 100,
+    "first_layer_bead_mm": 0.52,
+    "first_layer_speed_mms": 12,
+    "foundation_width_mm": 6,
+    "alt_phase": false
+  },
+  "compiler": {
+    "unintended_overlaps": 4,
+    "seam_closures": 125,
+    "support_check": {
+      "allowed_mm": 3.5,
+      "max_step_mm": 2.402,
+      "violations": 0,
+      "note": "passed (max step 2.4 mm) and the print confirms the cone rule held everywhere; the failure was at a hole DEATH, which the check does not yet cover"
+    },
+    "events": [
+      "birth@0.12 on foundation",
+      "split@5.16 1->2",
+      "split@17.4 2->4",
+      "merge@32.04 4->2",
+      "merge@44.28 2->1",
+      "courtyard death ~53.5"
+    ]
+  },
+  "outcomes": {
+    "print_completed": true,
+    "route_used": "A (STL through Bambu Studio) — CORRECTED 2026-09-02 from Semir's exported P1_parasol_2t_H240.gcode.3mf, whose plate is P0_suma_2x2.stl: 250 layers @0.20, max_z 59.96, 11.73 m / 35.55 g, Bambu estimate 6h 14m. Route B has NOT been printed yet.",
+    "duration_h": 6.25,
+    "slab_adhesion": "held",
+    "courtyard_ring": "printed as designed on the slab",
+    "split_5mm": "ok",
+    "split_17mm": "ok, four clean columns",
+    "columns": "clean, bores circular, weld columns continuous",
+    "neck_32mm": "welded, single curve, no doubled wall",
+    "neck_44mm": "welded, clover formed",
+    "courtyard_close_53mm": "FAILED — ring shrank to r 5.1 mm then vanished with no cap; loose loops and a knot",
+    "weld_through_necks": "looks fused; not pull-tested",
+    "wall_gap": "one ~5x12 mm hole through the wall, cause undetermined",
+    "notes": "See outcomes.md. Same failure class as the D5 crown: a death event with no closure rule.",
+    "filament": {
+      "m": 11.73,
+      "g": 35.55,
+      "studio_layers": 250,
+      "studio_layer_height_mm": 0.2,
+      "studio_estimate": "6h 14m 49s",
+      "studio_added_brim": "auto_brim 5 mm (Studio added its own brim despite the built-in foundation)"
+    }
+  }
+}

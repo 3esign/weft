@@ -1,0 +1,122 @@
+{
+ "file": "specimens\\2026-09-04_VEO_ENDER3V4_X1_experimental\\VEO_ENDER3V4_X1.gcode",
+ "layers": 391,
+ "params": {
+  "bead": 0.42,
+  "allow": 0.6,
+  "maxbridge": 16.0,
+  "res": 0.2,
+  "bedz": 0.5,
+  "maxislands": 1,
+  "maxcantilever": 3.0
+ },
+ "stats": {
+  "floating": 0,
+  "long_bridge": 0,
+  "cantilever": 0,
+  "bridges": 1261,
+  "bad_membrane": 0,
+  "unanchored_membrane": 0,
+  "checked_paths": 1552,
+  "checked_points": 49119,
+  "exempt_layers": 3,
+  "first_layer_islands": 1
+ },
+ "byRole": {},
+ "worstGaps": [
+  [
+   34.6,
+   "chord",
+   1.72,
+   1.8
+  ],
+  [
+   40.6,
+   "chord",
+   1.68,
+   1.8
+  ],
+  [
+   41.0,
+   "chord",
+   1.72,
+   1.8
+  ],
+  [
+   41.4,
+   "chord",
+   1.7,
+   1.8
+  ],
+  [
+   33.4,
+   "chord",
+   1.72,
+   1.72
+  ],
+  [
+   33.8,
+   "chord",
+   1.67,
+   1.71
+  ],
+  [
+   55.4,
+   "chord",
+   1.65,
+   1.71
+  ],
+  [
+   55.8,
+   "chord",
+   1.66,
+   1.71
+  ],
+  [
+   44.6,
+   "chord",
+   1.66,
+   1.7
+  ],
+  [
+   45.0,
+   "chord",
+   1.66,
+   1.7
+  ],
+  [
+   56.2,
+   "chord",
+   1.66,
+   1.7
+  ],
+  [
+   63.0,
+   "chord",
+   1.7,
+   1.7
+  ],
+  [
+   63.4,
+   "chord",
+   1.7,
+   1.7
+  ],
+  [
+   41.8,
+   "chord",
+   1.65,
+   1.65
+  ],
+  [
+   29.8,
+   "chord",
+   1.61,
+   1.61
+  ]
+ ],
+ "membranes": [],
+ "problems": [],
+ "problem_count": 0,
+ "PASS": true
+}

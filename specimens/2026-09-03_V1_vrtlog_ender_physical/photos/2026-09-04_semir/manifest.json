@@ -1,0 +1,20 @@
+{
+  "received": "2026-09-04",
+  "subject": "V1_vrtlog_ender",
+  "source": "Semir, Codex thread attachments",
+  "file_count": 7,
+  "unique_content_count": 6,
+  "files": [
+    {"name":"VRTLOG_A_01.jpg","bytes":87877,"sha256":"4a3809a120ca5f2c723b2ac7bfd0455c2a2ab2894b05d527ec15df8ae25bd599"},
+    {"name":"VRTLOG_A_02.jpg","bytes":86313,"sha256":"674f0804eb23212a5395be9a31b2bb673823ca145a9e405bac6e52a4d502afb2"},
+    {"name":"VRTLOG_A_03.jpg","bytes":78241,"sha256":"9fc442926c96116b6d8e3d6e79d13debd6aabd961bf641e289438867b982f263"},
+    {"name":"VRTLOG_A_04.jpg","bytes":71992,"sha256":"12e9d3dd9df653ef2d8b2e08f72c80fbea87c435e74a804caf48dfd971f891c8"},
+    {"name":"VRTLOG_A_05.jpg","bytes":84687,"sha256":"b605d4a26ccaf6c29bc4e90da6126f83f671eb6cd12e1b614225b5cbe709a5ea"},
+    {"name":"VRTLOG_B_01.jpg","bytes":84687,"sha256":"b605d4a26ccaf6c29bc4e90da6126f83f671eb6cd12e1b614225b5cbe709a5ea"},
+    {"name":"VRTLOG_B_02.jpg","bytes":92399,"sha256":"e3c44d73eb22f933b272d4255d1a8765f5232458cfc569f5e0a30d4414a05ee9"}
+  ],
+  "duplicates": [
+    ["VRTLOG_A_05.jpg", "VRTLOG_B_01.jpg"]
+  ]
+}
+

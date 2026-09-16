@@ -16,7 +16,14 @@ from bulk material contact. Layer roles alternate by a grammar (chords / webs), 
 phase-locked registration so weld columns stack vertically. The long-term target is
 continuous-toolpath concrete printing; polymer is the research vehicle.
 
-Author: Semir Poturak · poturaksemir@gmail.com
+Author: Semir Poturak · poturaksemir@gmail.com · MIT licence (`LICENSE`)
+
+**Paper.** *Printable Intelligence: The Leap into Micro-Structures and Tracing Human-AI Fabrication*
+(Poturak, Mitrović, Končarević, Vračarić, Stojiljković; submitted to STRAND / ON ARCHITECTURE 2026, Belgrade).
+The manuscript's numbers are recomputable from this repository: the thirteen specimens are in `specimens/`
+(geometry, gate verdicts, reports, manifests, outcomes; photographs are listed by manifest), the Gate is
+`check_gcode.py` / `core/weft_gate.js`, and `npm test` reproduces the printed LIMIT16 package byte for byte.
+Photographs and the large printed-object G-code files are not in the repository for size; ask the author.
 
 ---
 

@@ -1,0 +1,31 @@
+{
+  "name": "RASEP_A2L_X1",
+  "machine": "Bambu Lab A2L",
+  "design": "five twisting skeletal ribbons with five staggered radial cantilever fields",
+  "dimensions_mm": [73.8, 81.5, 91.2],
+  "objectLayers": 380,
+  "emittedPaths": 1907,
+  "threadLength_m": 42.7,
+  "filament": {"length_mm": 3381.0, "weight_g": 10.2},
+  "packedEstimate": "1h 03m 32s",
+  "weft": {
+    "gatePass": true,
+    "floating": 0,
+    "longBridge": 0,
+    "cantileverGateErrors": 0,
+    "firstLayerIslands": 1,
+    "checkedPoints": 62465,
+    "worstGap_mm": 1.84,
+    "unintendedSameLayerOverlaps": 0
+  },
+  "risk": {
+    "level": "EXTREME",
+    "supportAllowance_mm": 1.005,
+    "worstContourMove_mm": 1.1862,
+    "supportRatio": 1.18,
+    "allGeometryLayersThinnedByEmitter": true,
+    "singleThreadWebLayers": 190,
+    "expectedFailureModes": ["outward cantilever curl", "branch vibration", "stringing across voids", "rib detachment"]
+  },
+  "honestVerdict": "Machine code passes computational gates, but lateral motion exceeds the conservative support allowance and has not been physically printed."
+}

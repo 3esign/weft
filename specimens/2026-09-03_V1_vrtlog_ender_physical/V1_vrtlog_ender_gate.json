@@ -1,0 +1,120 @@
+{
+ "file": "/tmp/V1/V1_vrtlog_ender.gcode",
+ "layers": 651,
+ "params": {
+  "bead": 0.42,
+  "allow": 0.6,
+  "maxbridge": 12.0,
+  "res": 0.2,
+  "bedz": 0.5,
+  "maxislands": 1,
+  "maxcantilever": 3.0
+ },
+ "stats": {
+  "floating": 0,
+  "long_bridge": 0,
+  "cantilever": 0,
+  "bridges": 21754,
+  "bad_membrane": 0,
+  "checked_paths": 1220,
+  "checked_points": 270141,
+  "exempt_layers": 3,
+  "first_layer_islands": 1
+ },
+ "byRole": {},
+ "worstGaps": [
+  [
+   130.0,
+   "cap",
+   17.52,
+   18.53
+  ],
+  [
+   45.0,
+   "chord",
+   3.67,
+   3.8
+  ],
+  [
+   53.8,
+   "chord",
+   3.53,
+   3.61
+  ],
+  [
+   53.8,
+   "chord",
+   3.4,
+   3.61
+  ],
+  [
+   53.8,
+   "chord",
+   3.59,
+   3.61
+  ],
+  [
+   76.2,
+   "chord",
+   3.23,
+   3.61
+  ],
+  [
+   54.2,
+   "chord",
+   3.39,
+   3.58
+  ],
+  [
+   80.6,
+   "chord",
+   3.15,
+   3.56
+  ],
+  [
+   45.4,
+   "chord",
+   3.42,
+   3.54
+  ],
+  [
+   54.2,
+   "chord",
+   3.47,
+   3.54
+  ],
+  [
+   75.8,
+   "chord",
+   3.27,
+   3.54
+  ],
+  [
+   54.6,
+   "chord",
+   3.38,
+   3.5
+  ],
+  [
+   55.0,
+   "chord",
+   3.16,
+   3.5
+  ],
+  [
+   75.4,
+   "chord",
+   3.39,
+   3.5
+  ],
+  [
+   80.2,
+   "chord",
+   3.21,
+   3.5
+  ]
+ ],
+ "problems": [],
+ "problem_count": 0,
+ "PASS": true
+}

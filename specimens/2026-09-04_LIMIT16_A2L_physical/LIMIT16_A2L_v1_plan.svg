@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" viewBox="-98 -98 196 196">
+<rect x="-98" y="-98" width="196" height="196" fill="#f3f0e7"/>
+<g fill="#fbfaf6" stroke="#173f38" stroke-width="0.55">
+<rect x="-89.5" y="-89.5" width="41" height="41" rx="3"/>
+<rect x="-43.5" y="-89.5" width="41" height="41" rx="3"/>
+<rect x="2.5" y="-89.5" width="41" height="41" rx="3"/>
+<rect x="48.5" y="-89.5" width="41" height="41" rx="3"/>
+<rect x="-89.5" y="-43.5" width="41" height="41" rx="3"/>
+<rect x="-43.5" y="-43.5" width="41" height="41" rx="3"/>
+<rect x="2.5" y="-43.5" width="41" height="41" rx="3"/>
+<rect x="48.5" y="-43.5" width="41" height="41" rx="3"/>
+<rect x="-89.5" y="2.5" width="41" height="41" rx="3"/>
+<rect x="-43.5" y="2.5" width="41" height="41" rx="3"/>
+<rect x="2.5" y="2.5" width="41" height="41" rx="3"/>
+<rect x="48.5" y="2.5" width="41" height="41" rx="3"/>
+<rect x="-89.5" y="48.5" width="41" height="41" rx="3"/>
+<rect x="-43.5" y="48.5" width="41" height="41" rx="3"/>
+<rect x="2.5" y="48.5" width="41" height="41" rx="3"/>
+<rect x="48.5" y="48.5" width="41" height="41" rx="3"/>
+</g><g stroke="#24a37a" stroke-width="1.0" fill="none">
+<path d="M -71.0 -75.0 V -63.0 M -67.0 -75.0 V -63.0 M -71.0 -69.0 H -67.0"/>
+<path d="M -27.0 -75.0 V -63.0 M -19.0 -75.0 V -63.0 M -27.0 -69.0 H -19.0"/>
+<path d="M 17.0 -75.0 V -63.0 M 29.0 -75.0 V -63.0 M 17.0 -69.0 H 29.0"/>
+<path d="M 61.0 -75.0 V -63.0 M 77.0 -75.0 V -63.0 M 61.0 -69.0 H 77.0"/>
+<path d="M -74.5 -29.0 V -17.0 M -74.5 -23.0 h 1.7600000000000002"/>
+<path d="M -28.5 -29.0 V -17.0 M -28.5 -23.0 h 3.9600000000000004"/>
+<path d="M 17.5 -29.0 V -17.0 M 17.5 -23.0 h 6.6000000000000005"/>
+<path d="M 63.5 -29.0 V -17.0 M 63.5 -23.0 h 9.9"/>
+<circle cx="-69.0" cy="23.0" r="8.5" stroke-width="1.02"/>
+<circle cx="-23.0" cy="23.0" r="8.5" stroke-width="1.35"/>
+<circle cx="23.0" cy="23.0" r="8.5" stroke-width="1.98"/>
+<path d="M 56.0 13.0 H 82.0 V 17.0 H 56.0 V 21.0 H 82.0 V 25.0 H 56.0 V 29.0 H 82.0"/>
+<circle cx="-69.0" cy="69.0" r="6"/><circle cx="-69.0" cy="69.0" r="11"/>
+<circle cx="-23.0" cy="69.0" r="6"/><circle cx="-23.0" cy="69.0" r="11"/>
+<circle cx="23.0" cy="69.0" r="9"/><circle cx="23.0" cy="69.0" r="5"/><circle cx="23.0" cy="69.0" r="1"/>
+<path d="M 63.0 62.0 V 76.0 M 69.0 64.0 V 76.0 M 75.0 67.0 V 76.0 M 63.0 69.0 H 75.0"/>
+</g><g font-family="Segoe UI,sans-serif" fill="#173f38" text-anchor="middle">
+<text x="-69.0" y="-83.0" font-size="3.2" font-weight="700">01 B04</text>
+<text x="-69.0" y="-53.0" font-size="2.5">bridge-4</text>
+<text x="-23.0" y="-83.0" font-size="3.2" font-weight="700">02 B08</text>
+<text x="-23.0" y="-53.0" font-size="2.5">bridge-8</text>
+<text x="23.0" y="-83.0" font-size="3.2" font-weight="700">03 B12</text>
+<text x="23.0" y="-53.0" font-size="2.5">bridge-12</text>
+<text x="69.0" y="-83.0" font-size="3.2" font-weight="700">04 B16</text>
+<text x="69.0" y="-53.0" font-size="2.5">bridge-16</text>
+<text x="-69.0" y="-37.0" font-size="3.2" font-weight="700">05 C08</text>
+<text x="-69.0" y="-7.0" font-size="2.5">cantilever-0.8</text>
+<text x="-23.0" y="-37.0" font-size="3.2" font-weight="700">06 C18</text>
+<text x="-23.0" y="-7.0" font-size="2.5">cantilever-1.8</text>
+<text x="23.0" y="-37.0" font-size="3.2" font-weight="700">07 C30</text>
+<text x="23.0" y="-7.0" font-size="2.5">cantilever-3.0</text>
+<text x="69.0" y="-37.0" font-size="3.2" font-weight="700">08 C45</text>
+<text x="69.0" y="-7.0" font-size="2.5">cantilever-4.5</text>
+<text x="-69.0" y="9.0" font-size="3.2" font-weight="700">09 W34</text>
+<text x="-69.0" y="39.0" font-size="2.5">wall-0.34</text>
+<text x="-23.0" y="9.0" font-size="3.2" font-weight="700">10 WNM</text>
+<text x="-23.0" y="39.0" font-size="2.5">wall-0.45</text>
+<text x="23.0" y="9.0" font-size="3.2" font-weight="700">11 W66</text>
+<text x="23.0" y="39.0" font-size="2.5">wall-0.66</text>
+<text x="69.0" y="9.0" font-size="3.2" font-weight="700">12 LONG</text>
+<text x="69.0" y="39.0" font-size="2.5">long-serpent</text>
+<text x="-69.0" y="55.0" font-size="3.2" font-weight="700">13 L17</text>
+<text x="-69.0" y="85.0" font-size="2.5">weft-lean-17</text>
+<text x="-23.0" y="55.0" font-size="3.2" font-weight="700">14 L32</text>
+<text x="-23.0" y="85.0" font-size="2.5">weft-lean-32</text>
+<text x="23.0" y="55.0" font-size="3.2" font-weight="700">15 MEM</text>
+<text x="23.0" y="85.0" font-size="2.5">membrane-18</text>
+<text x="69.0" y="55.0" font-size="3.2" font-weight="700">16 MIX</text>
+<text x="69.0" y="85.0" font-size="2.5">mixed-height</text>
+</g><text x="0" y="96" font-family="Segoe UI,sans-serif" font-size="3" text-anchor="middle" fill="#173f38">LIMIT16 · Bambu Lab A2L · 9.6 mm</text></svg>

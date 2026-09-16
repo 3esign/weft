@@ -1,0 +1,134 @@
+{
+  "report": {
+    "name": "DAH_A2L_v1",
+    "machine": "Bambu A2L",
+    "bed": [
+      330,
+      320
+    ],
+    "layers": 231,
+    "experimentalMembraneOverride": false,
+    "weave": {
+      "maxUnweldedRail_mm": 2.4,
+      "skippedRungs": 0,
+      "webLayersWithNoCrossing": 0,
+      "maxBridge_mm": 10
+    },
+    "size_mm": [
+      79.5,
+      77.1,
+      52.8
+    ],
+    "plate_mm": [
+      124.4,
+      121.9,
+      203.4,
+      198.6
+    ],
+    "fitsPlate": true,
+    "threadLength_m": 105.9,
+    "weldNodes": 14080,
+    "unintendedOverlaps": 0,
+    "seamClosures": 0,
+    "kinematic_h": 1.18,
+    "caps": [],
+    "bands": [
+      {
+        "z": 0,
+        "phase": "inhale",
+        "web": "staple",
+        "tab": 0.7,
+        "w": 3
+      },
+      {
+        "z": 18,
+        "phase": "turn",
+        "web": "staple",
+        "tab": 0.7,
+        "w": 3.932
+      },
+      {
+        "z": 37.92,
+        "phase": "release",
+        "web": "staple",
+        "tab": 0.7,
+        "w": 3.711
+      }
+    ],
+    "wallWidth": {
+      "emitted_min": 3,
+      "emitted_max": 4.2,
+      "thinnedLayers": 0,
+      "minScale": 1,
+      "stuckAtFloor": 0,
+      "passes": 0,
+      "residual": [],
+      "singleThreadLayers": [],
+      "stuckAt": []
+    },
+    "supportCheck": {
+      "allowance_mm": 0.925,
+      "worstContourStep_mm": 0.2141,
+      "worstRailMove_mm": 0.2218
+    }
+  },
+  "geometry": {
+    "name": "paired-sculpture-dah-v1",
+    "variant": "dah",
+    "N": 220,
+    "H": 52.8,
+    "args": {
+      "lh": 0.24,
+      "bead": 0.45,
+      "firstLayerBead": 0.51,
+      "firstLayerSpeed": 12,
+      "w0": 3,
+      "w1": 4.2,
+      "K": 16,
+      "foundation": 7,
+      "maxbridge": 10,
+      "speed": 26,
+      "bridgeSpeed": 15,
+      "temp": 220,
+      "bed": 55,
+      "fan": 100
+    },
+    "design": {
+      "family": "Dah / Odjek",
+      "lobes": 3,
+      "turns": 0.32,
+      "openCrown": true,
+      "caps": 0,
+      "membrane": "none; failed LIMIT16 inward spiral deliberately excluded",
+      "grammar": "staple only",
+      "physicalBasis": "LIMIT16_2026-09-04_RESULTS.md"
+    },
+    "supportCheck": {
+      "allowance_mm": 0.925,
+      "worstContourStep_mm": 0.2141,
+      "worstRailMove_mm": 0.2218
+    },
+    "nodeDensity": {
+      "maxNodeGap_mm": 3.4004,
+      "limit_mm": 4.5
+    },
+    "foundation": {
+      "paths": 11,
+      "rings": 10,
+      "connectedBy": "one radial rib",
+      "islandsExpected": 1
+    },
+    "bbox_mm": [
+      -36.24,
+      -37.64,
+      40.63,
+      38.54
+    ],
+    "size_mm": [
+      81.1,
+      80.4,
+      52.8
+    ],
+    "violations": []
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "name": "VEO_ENDER3V4_X1",
+  "machine": "Creality Ender-3 V4",
+  "design": "four counter-twisting skeletal ribbons with paired lateral sail cantilevers",
+  "dimensions_mm": [67.9, 74.8, 78.0],
+  "objectLayers": 390,
+  "emittedPaths": 1566,
+  "threadLength_m": 33.6,
+  "filament": {"length_mm": 2402.5, "weight_g": 7.3},
+  "kinematicEstimate": "43m 27s",
+  "weft": {
+    "gatePass": true,
+    "floating": 0,
+    "longBridge": 0,
+    "cantileverGateErrors": 0,
+    "firstLayerIslands": 1,
+    "checkedPoints": 49119,
+    "worstGap_mm": 1.80,
+    "unintendedSameLayerOverlaps": 0
+  },
+  "risk": {
+    "level": "EXTREME",
+    "supportAllowance_mm": 0.89,
+    "worstContourMove_mm": 1.1025,
+    "supportRatio": 1.239,
+    "thinnedGeometryLayers": 367,
+    "singleThreadWebLayers": 195,
+    "beadCalibration": "ASSUMED",
+    "expectedFailureModes": ["outward cantilever curl", "branch vibration", "stringing across voids", "rib detachment"]
+  },
+  "honestVerdict": "Machine code passes computational gates, but lateral motion exceeds the conservative support allowance, bead is assumed and the object has not been physically printed."
+}

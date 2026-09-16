@@ -1,0 +1,38 @@
+{
+  "schema": "weft.photo-evidence-manifest.v1",
+  "received": "2026-09-04",
+  "subject": "LIMIT16 Ender-3 V4 v1 physical print",
+  "source": "Semir Poturak, Codex thread attachments",
+  "source_root": "D:/Svemir/.codex-remote-attachments/01a068ec-16a3-7930-80c1-290cbff558db",
+  "operator_attribution": "yellow print = Creality Ender-3 V4",
+  "artifact": "../../EXPERIMENTAL_LIMIT16_ENDER3V4_ASSUMED_BEAD_v1.gcode",
+  "artifact_sha256": "E33CB4CA97F9C88812C89F0EF0E1DC504C93513905FFFD6409684E95A4022A2B",
+  "file_count": 17,
+  "unique_content_count": 17,
+  "copy_verification": {
+    "algorithm": "SHA-256",
+    "source_files_matched": 17,
+    "missing": 0,
+    "extra": 0,
+    "duplicates": []
+  },
+  "files": [
+    {"name":"ENDER_A_01.jpg","source":"a34d25f9-c3ef-4a0f-9feb-a277a40ad7c5/2-Photo-2.jpg","scope":"detail-batch-a","bytes":168998,"sha256":"29f972d79051d65a3a72793a365f2763e937dbd4e184c788cbd5ad3819c2eb24"},
+    {"name":"ENDER_A_02.jpg","source":"a34d25f9-c3ef-4a0f-9feb-a277a40ad7c5/3-Photo-3.jpg","scope":"detail-batch-a","bytes":213518,"sha256":"c7e19bb2ebb3b820437f808511374764b529207b60c5ffe568a7bfd37690d3ff"},
+    {"name":"ENDER_A_03.jpg","source":"a34d25f9-c3ef-4a0f-9feb-a277a40ad7c5/4-Photo-4.jpg","scope":"detail-batch-a","bytes":216836,"sha256":"bc0603bf8e7b4d6bde73e220347a3370f2eeed902e38131f130c8ec21e411513"},
+    {"name":"ENDER_A_04.jpg","source":"a34d25f9-c3ef-4a0f-9feb-a277a40ad7c5/5-Photo-5.jpg","scope":"detail-batch-a","bytes":203814,"sha256":"d3fde8c468a30cd29bf55af2ec75fcc408cd2fe9782bc50dffbf26049cf14426"},
+    {"name":"ENDER_B_01.jpg","source":"37b378d1-b1b4-4c67-8ad8-daea8d487daa/1-Photo-1.jpg","scope":"detail-batch-b","bytes":206354,"sha256":"98fa85cba1ff1b754d74bc8f2d411d0514894ac1ef988dfcd73d3609263f23d9"},
+    {"name":"ENDER_B_02.jpg","source":"37b378d1-b1b4-4c67-8ad8-daea8d487daa/2-Photo-2.jpg","scope":"detail-batch-b","bytes":193909,"sha256":"d99611efce0ded2c9b9ea58dce04bd2a7c2e0cfd7d2c6d6ae2f2744ff97e5886"},
+    {"name":"ENDER_B_03.jpg","source":"37b378d1-b1b4-4c67-8ad8-daea8d487daa/3-Photo-3.jpg","scope":"detail-batch-b","bytes":188328,"sha256":"840fb0182b9bfbae2e3398a4a1b79cc01ec3cd42063396ab2c04aabfbc9c039b"},
+    {"name":"ENDER_B_04.jpg","source":"37b378d1-b1b4-4c67-8ad8-daea8d487daa/4-Photo-4.jpg","scope":"cell-15","bytes":168830,"sha256":"6fdfe942d649c967a18a2f836ddb97770e1594824f86176947c13b859986e0bb"},
+    {"name":"ENDER_B_05.jpg","source":"37b378d1-b1b4-4c67-8ad8-daea8d487daa/5-Photo-5.jpg","scope":"cell-15","bytes":152319,"sha256":"1d022c98667dcef8350b4da1d6b16448de15e0da667d45cea832d80e49cbce90"},
+    {"name":"ENDER_C_01.jpg","source":"8a5250cd-5ef1-40c1-b642-163ee89fc088/1-Photo-1.jpg","scope":"detail-batch-c","bytes":169275,"sha256":"da56c33dcdba9666b09143084ad3cb5108f2cd8d8dbf79fc1afdf19c28d2630b"},
+    {"name":"ENDER_C_02.jpg","source":"8a5250cd-5ef1-40c1-b642-163ee89fc088/2-Photo-2.jpg","scope":"detail-batch-c","bytes":180471,"sha256":"eda6c386fd08f85be1e8a1a71de9fc636502acea1ff63df0c99d171655d69e3f"},
+    {"name":"ENDER_C_03.jpg","source":"8a5250cd-5ef1-40c1-b642-163ee89fc088/3-Photo-3.jpg","scope":"detail-batch-c","bytes":182416,"sha256":"771cc93eee8485322e27f2612a026afee9d298df8bbeead0ab7b33a80f06e208"},
+    {"name":"ENDER_C_04.jpg","source":"8a5250cd-5ef1-40c1-b642-163ee89fc088/4-Photo-4.jpg","scope":"cells-01-16-overview","bytes":155698,"sha256":"a44a31ad8d1bd4ad41bd94917f2c2b21af569fff3773f3f8d93d91d48b4cb491"},
+    {"name":"ENDER_C_05.jpg","source":"8a5250cd-5ef1-40c1-b642-163ee89fc088/5-Photo-5.jpg","scope":"cells-01-16-overview","bytes":151468,"sha256":"1ae0a46dc819ae763867dd8a885894c6093f023a1655a0b95b7ca695630550f4"},
+    {"name":"ENDER_MEASURE_01.jpg","source":"e3300f87-135b-48c5-853a-3056aae583d3/4-Photo-4.jpg","scope":"cells-09-10-11-unordered","bytes":107167,"sha256":"f9474023d141b63a955dc5385ef1f2530423d10bea37d7826d9fdbc52025e152"},
+    {"name":"ENDER_MEASURE_02.jpg","source":"e3300f87-135b-48c5-853a-3056aae583d3/5-Photo-5.jpg","scope":"cells-09-10-11-unordered","bytes":105648,"sha256":"6754a74464e257382683216ee3a16ea6f7ecad0e751c5c71a5cf8e3035d2ca72"},
+    {"name":"ENDER_MEASURE_03.jpg","source":"b0d4caeb-4350-4f9f-802a-97f14dfa4ba7/1-Photo-1.jpg","scope":"cells-09-10-11-unordered","bytes":97682,"sha256":"6cb0d5c8b105b5d001b813690493749f6cc8264006b6df2e43642c08f28fbb56"}
+  ]
+}

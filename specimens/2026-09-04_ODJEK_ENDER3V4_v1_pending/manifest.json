@@ -1,0 +1,31 @@
+{
+ "name": "ODJEK_ENDER3V4_v1",
+ "model": "paired",
+ "built": "2026-09-04T16:03:07",
+ "machine": {
+  "id": "ender",
+  "label": "Creality Ender-3 V4",
+  "plate": [
+   220,
+   220
+  ],
+  "maxZ": 235,
+  "bead": 0.42,
+  "beadSource": "ASSUMED",
+  "beadEvidence": "NEVER CALIBRATED. Run the C1 thin-wall test on this machine and put the measured width here before trusting anything built for it.",
+  "lh": 0.2,
+  "firstLayerBead": 0.48,
+  "temp": 220,
+  "bed": 60,
+  "start": "exports/ender_start.gcode",
+  "end": "exports/ender_end.gcode",
+  "route": "gcode"
+ },
+ "geometry": "ODJEK_ENDER3V4_v1_geometry.json",
+ "shipped": [
+  "ODJEK_ENDER3V4_v1.gcode"
+ ],
+ "gate": "ODJEK_ENDER3V4_v1_gate.json",
+ "report": "ODJEK_ENDER3V4_v1_report.json",
+ "outcome": "NOT PRINTED \u2014 fill this in after the print, with photographs"
+}

@@ -1,0 +1,130 @@
+{
+ "name": "P2b_penjac_3_A2L",
+ "model": "climber",
+ "built": "2026-09-02T22:08:52",
+ "machine": {
+  "id": "a2l",
+  "label": "Bambu Lab A2L",
+  "plate": [
+   330,
+   320
+  ],
+  "maxZ": 325,
+  "bead": 0.45,
+  "beadSource": "measured",
+  "beadEvidence": "specimens/2026-08-31_D5_R140_A2L_physical and specimens/2026-09-02_P0_suma_2x2_physical \u2014 both printed to completion at this bead",
+  "lh": 0.24,
+  "firstLayerBead": 0.52,
+  "temp": 220,
+  "bed": 55,
+  "start": "exports/a2l_start_block_template_2026-09-02.gcode",
+  "end": "exports/a2l_end_block_harvested_2026-09-02.gcode",
+  "route": "bambu3mf"
+ },
+ "design": {
+  "legs": 3,
+  "H_mm": 240,
+  "size_mm": [
+   99.5,
+   91.1,
+   240.0
+  ],
+  "layers": 1000,
+  "threadLength_m": 220.3,
+  "weldNodes": 20851,
+  "singleThreadLayers": [
+   34.32,
+   65.52
+  ],
+  "wall_mm": [
+   0.9,
+   7.167
+  ],
+  "bands": [
+   [
+    0,
+    "legs",
+    "staple"
+   ],
+   [
+    57.6,
+    "hips",
+    "eight"
+   ],
+   [
+    96,
+    "reach1",
+    "diagonal"
+   ],
+   [
+    113.76,
+    "grip1",
+    "perp"
+   ],
+   [
+    120.48,
+    "pull1",
+    "eight"
+   ],
+   [
+    140.4,
+    "reach2",
+    "diagonal"
+   ],
+   [
+    156.96,
+    "grip2",
+    "perp"
+   ],
+   [
+    163.68,
+    "pull2",
+    "eight"
+   ],
+   [
+    183.6,
+    "reach3",
+    "diagonal"
+   ],
+   [
+    200.16,
+    "grip3",
+    "perp"
+   ],
+   [
+    206.88,
+    "pull3",
+    "eight"
+   ],
+   [
+    226.8,
+    "head",
+    "sine"
+   ]
+  ]
+ },
+ "sliced": {
+  "filament_m": 9.86,
+  "filament_g": 29.9,
+  "estimate": "4h 15m",
+  "maxZ_mm": 240.0,
+  "plate_bbox": [
+   119.745,
+   118.945,
+   210.255,
+   201.055
+  ]
+ },
+ "gate": {
+  "PASS": true,
+  "problems": 0,
+  "checked_points": 303558
+ },
+ "shipped": [
+  "P2b_penjac_3_A2L.gcode.3mf",
+  "P2b_penjac_3_A2L.gcode",
+  "P2b_penjac_3_A2L.stl.zip"
+ ],
+ "seed": 1337,
+ "outcome": "NOT PRINTED \u2014 fill this in after the print, with photographs"
+}

@@ -1,0 +1,343 @@
+{
+  "report": {
+    "name": "LIMIT16_ENDER3V4_v1",
+    "machine": "Creality Ender-3 V4",
+    "bed_mm": [
+      220,
+      220
+    ],
+    "layers": 1156,
+    "globalZLevels": 48,
+    "expectedZLevels": 48,
+    "logicalCells": 16,
+    "maxBodiesPerZ": 16,
+    "size_mm": [
+      179.9,
+      179.9,
+      9.6
+    ],
+    "plate_mm": [
+      19,
+      19,
+      198.5,
+      198.5
+    ],
+    "fitsPlate": true,
+    "grammarCounts": {
+      "staple": 48
+    },
+    "threadLength_m": 52.8,
+    "weldNodes": 1248,
+    "rawPaths": 939,
+    "unintendedOverlaps": 0,
+    "seamClosures": 0,
+    "overlapSamples": [],
+    "kinematic_h": 0.49,
+    "routeA_estimate_h": 4.6,
+    "caps": [
+      {
+        "z": 9.4,
+        "span": 18,
+        "len": 777
+      }
+    ],
+    "contourCounts": [
+      [
+        0,
+        2
+      ]
+    ],
+    "perLayerSample": [
+      {
+        "k": 0,
+        "z": 0,
+        "contours": 2,
+        "paths": 20,
+        "nodes": 22
+      },
+      {
+        "k": 40,
+        "z": 8,
+        "contours": 2,
+        "paths": 18,
+        "nodes": 30
+      }
+    ]
+  },
+  "geometry": {
+    "name": "LIMIT16_ENDER_v1",
+    "machine": "ender",
+    "machineLabel": "Creality Ender-3 V4",
+    "machineQualification": {
+      "beadSource": "ASSUMED",
+      "beadEvidence": "NEVER CALIBRATED. Run the C1 thin-wall test on this machine and put the measured width here before trusting anything built for it.",
+      "assumedAcknowledged": true
+    },
+    "N": 48,
+    "H": 9.6,
+    "tileCount": 16,
+    "tilePitch_mm": 46,
+    "centers": [
+      [
+        -69,
+        69
+      ],
+      [
+        -23,
+        69
+      ],
+      [
+        23,
+        69
+      ],
+      [
+        69,
+        69
+      ],
+      [
+        -69,
+        23
+      ],
+      [
+        -23,
+        23
+      ],
+      [
+        23,
+        23
+      ],
+      [
+        69,
+        23
+      ],
+      [
+        -69,
+        -23
+      ],
+      [
+        -23,
+        -23
+      ],
+      [
+        23,
+        -23
+      ],
+      [
+        69,
+        -23
+      ],
+      [
+        -69,
+        -69
+      ],
+      [
+        -23,
+        -69
+      ],
+      [
+        23,
+        -69
+      ],
+      [
+        69,
+        -69
+      ]
+    ],
+    "plateIntent_mm": [
+      182,
+      182
+    ],
+    "args": {
+      "lh": 0.2,
+      "bead": 0.42,
+      "firstLayerBead": 0.48,
+      "firstLayerSpeed": 12,
+      "w": 3,
+      "e": 0.7,
+      "r0": 9,
+      "K": 14,
+      "foundation": 1.3,
+      "maxbridge": 16.2,
+      "maxcantilever": 4.8,
+      "allow": 0.6,
+      "minanchor": 0.5,
+      "maxCapRadius": 20,
+      "speed": 26,
+      "bridgeSpeed": 15,
+      "temp": 220,
+      "bed": 60,
+      "fan": 100
+    },
+    "gatePolicy": {
+      "meaning": "experimental admission ceiling, not a claim that every coupon will succeed",
+      "bridge_mm": 16.2,
+      "cantilever_mm": 4.8,
+      "membrane_min_anchor": 0.5,
+      "first_layer_max_islands": 1
+    },
+    "tiles": [
+      {
+        "id": 1,
+        "code": "B04",
+        "name": "bridge-4",
+        "family": "bridge",
+        "value_mm": 4,
+        "question": "short bridge control",
+        "readout": "underside straightness"
+      },
+      {
+        "id": 2,
+        "code": "B08",
+        "name": "bridge-8",
+        "family": "bridge",
+        "value_mm": 8,
+        "question": "medium bridge",
+        "readout": "underside sag"
+      },
+      {
+        "id": 3,
+        "code": "B12",
+        "name": "bridge-12",
+        "family": "bridge",
+        "value_mm": 12,
+        "question": "current gate boundary",
+        "readout": "sag and strand separation"
+      },
+      {
+        "id": 4,
+        "code": "B16",
+        "name": "bridge-16",
+        "family": "bridge",
+        "value_mm": 16,
+        "question": "deliberate bridge extension",
+        "readout": "failure onset"
+      },
+      {
+        "id": 5,
+        "code": "C08",
+        "name": "cantilever-0.8",
+        "family": "cantilever",
+        "value_mm": 0.8,
+        "question": "short free end control",
+        "readout": "tip curl"
+      },
+      {
+        "id": 6,
+        "code": "C18",
+        "name": "cantilever-1.8",
+        "family": "cantilever",
+        "value_mm": 1.8,
+        "question": "medium free end",
+        "readout": "tip displacement"
+      },
+      {
+        "id": 7,
+        "code": "C30",
+        "name": "cantilever-3.0",
+        "family": "cantilever",
+        "value_mm": 3,
+        "question": "current gate boundary",
+        "readout": "curl and nozzle contact"
+      },
+      {
+        "id": 8,
+        "code": "C45",
+        "name": "cantilever-4.5",
+        "family": "cantilever",
+        "value_mm": 4.5,
+        "question": "deliberate cantilever extension",
+        "readout": "survival and curl"
+      },
+      {
+        "id": 9,
+        "code": "W34",
+        "name": "wall-0.34",
+        "family": "line_width",
+        "value_mm": 0.34,
+        "question": "thin single road",
+        "readout": "continuity and measured width"
+      },
+      {
+        "id": 10,
+        "code": "WNM",
+        "name": "wall-0.42",
+        "family": "line_width",
+        "value_mm": 0.42,
+        "question": "machine bead control",
+        "readout": "measured width"
+      },
+      {
+        "id": 11,
+        "code": "W66",
+        "name": "wall-0.66",
+        "family": "line_width",
+        "value_mm": 0.66,
+        "question": "wide road on 0.4 nozzle",
+        "readout": "ridging and width"
+      },
+      {
+        "id": 12,
+        "code": "LONG",
+        "name": "long-serpent",
+        "family": "path",
+        "value_mm": null,
+        "question": "long uninterrupted path with 24 reversals",
+        "readout": "flow drift and corner buildup"
+      },
+      {
+        "id": 13,
+        "code": "L17",
+        "name": "weft-lean-17",
+        "family": "lean",
+        "value_deg": 17,
+        "question": "native WEFT moderate radial lean",
+        "readout": "side profile and welds"
+      },
+      {
+        "id": 14,
+        "code": "L32",
+        "name": "weft-lean-32",
+        "family": "lean",
+        "value_deg": 32,
+        "question": "native WEFT steep radial lean",
+        "readout": "first degraded layer"
+      },
+      {
+        "id": 15,
+        "code": "MEM",
+        "name": "membrane-18",
+        "family": "membrane",
+        "value_mm": 18,
+        "question": "rim-anchored single-layer membrane",
+        "readout": "turn fusion and center closure"
+      },
+      {
+        "id": 16,
+        "code": "MIX",
+        "name": "mixed-height",
+        "family": "scheduler",
+        "value_mm": 9.6,
+        "question": "three bodies ending at 1/3, 2/3 and full height",
+        "readout": "clean Z schedule and junctions"
+      }
+    ],
+    "caps": [
+      {
+        "tile": 15,
+        "z": 9.4,
+        "span_mm": 18,
+        "declaredAnchor": 1
+      }
+    ],
+    "experiment": {
+      "matrix": [
+        "bridges: 4 / 8 / 12 / 16 mm",
+        "cantilevers: 0.8 / 1.8 / 3.0 / 4.5 mm",
+        "roads: 0.34 / 0.42 / 0.66 mm plus long serpent",
+        "native WEFT lean 17 / 32 deg, membrane, mixed-height scheduler"
+      ],
+      "photo": "photograph whole plate from above, then rows 1, 2 and 4 in low side light",
+      "measure": "record pass/fail plus bridge sag, cantilever curl and actual road widths"
+    }
+  }
+}

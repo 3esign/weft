@@ -1,0 +1,26 @@
+{
+  "name": "VEO_ENDER3V4_X1",
+  "model": "aero",
+  "built": "2026-09-04",
+  "status": "EXTREME EXPERIMENT — NOT PRINTED",
+  "machine": {
+    "id": "ender",
+    "label": "Creality Ender-3 V4",
+    "plate": [220, 220],
+    "maxZ": 235,
+    "bead": 0.42,
+    "beadSource": "ASSUMED",
+    "lh": 0.20,
+    "route": "gcode"
+  },
+  "geometry": "VEO_ENDER3V4_X1_geometry.json",
+  "c3dIntent": "VEO_ENDER3V4_X1_c3d_intent.json",
+  "preview": ["VEO_ENDER3V4_X1_preview.svg", "VEO_ENDER3V4_X1_preview.png"],
+  "shipped": ["VEO_ENDER3V4_X1.gcode"],
+  "gate": "VEO_ENDER3V4_X1_gate.json",
+  "report": "VEO_ENDER3V4_X1_report.json",
+  "sha256": {
+    "VEO_ENDER3V4_X1.gcode": "C548D40DAED0396854D23D22ADA4C6E485B2FA31EAD860B657798FD5927530BF"
+  },
+  "outcome": "NOT PRINTED — add photographs before making any success claim"
+}

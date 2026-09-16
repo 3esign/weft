@@ -1,0 +1,31 @@
+{
+  "schema": "weft.membrane-process-status.v1",
+  "recorded": "2026-09-04",
+  "artifact": "EXPERIMENTAL_LIMIT16_ENDER3V4_ASSUMED_BEAD_v1.gcode",
+  "artifact_sha256": "E33CB4CA97F9C88812C89F0EF0E1DC504C93513905FFFD6409684E95A4022A2B",
+  "cell": 15,
+  "process": "single-layer-inward-spiral/limit16-18mm-v1",
+  "span_mm": 18.0,
+  "physical_status": "failed",
+  "historical_geometric_gate": {
+    "pass": true,
+    "rim_anchor_fraction": 1.0,
+    "meaning": "outer-rim contact only; not same-layer inward process qualification"
+  },
+  "basis": "../LIMIT16_2026-09-04_RESULTS.md",
+  "physical_result": {
+    "observed": "2026-09-04",
+    "outcome": "failed-to-close",
+    "summary": "outer wall and part of the disk formed, but two large open zones and an isolated central spiral left the 18 mm membrane open",
+    "evidence": [
+      "outcomes.md",
+      "photos/2026-09-04_semir/ENDER_B_04.jpg",
+      "photos/2026-09-04_semir/ENDER_B_05.jpg",
+      "photos/2026-09-04_semir/ENDER_C_04.jpg"
+    ]
+  },
+  "operator_action": "do not reuse or promote this exact process identity",
+  "rebuild_requires": "a new versioned membrane process identity; --allow-experimental-membrane cannot override failed v1",
+  "machine_note": "Ender bead 0.42 mm is still assumed",
+  "manifest_policy": "manifest.json is an immutable historical receipt and was not overwritten"
+}

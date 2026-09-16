@@ -1,0 +1,136 @@
+{
+ "file": "specimens\\2026-09-04_LIMIT16_ENDER3V4_pending\\EXPERIMENTAL_LIMIT16_ENDER3V4_ASSUMED_BEAD_v1.gcode",
+ "layers": 49,
+ "params": {
+  "bead": 0.42,
+  "allow": 0.6,
+  "maxbridge": 16.2,
+  "res": 0.2,
+  "bedz": 0.5,
+  "maxislands": 1,
+  "maxcantilever": 4.8
+ },
+ "stats": {
+  "floating": 0,
+  "long_bridge": 0,
+  "cantilever": 0,
+  "bridges": 1340,
+  "bad_membrane": 0,
+  "unanchored_membrane": 0,
+  "checked_paths": 992,
+  "checked_points": 36423,
+  "exempt_layers": 3,
+  "first_layer_islands": 1
+ },
+ "byRole": {},
+ "worstGaps": [
+  [
+   9.6,
+   "cap",
+   8.09,
+   8.88
+  ],
+  [
+   9.6,
+   "bridge",
+   7.84,
+   8.0
+  ],
+  [
+   9.6,
+   "bridge",
+   7.84,
+   8.0
+  ],
+  [
+   9.6,
+   "bridge",
+   7.84,
+   8.0
+  ],
+  [
+   9.6,
+   "bridge",
+   5.88,
+   6.0
+  ],
+  [
+   9.6,
+   "bridge",
+   5.88,
+   6.0
+  ],
+  [
+   9.6,
+   "bridge",
+   5.88,
+   6.0
+  ],
+  [
+   9.6,
+   "cantilever",
+   4.35,
+   4.4
+  ],
+  [
+   9.6,
+   "cantilever",
+   4.35,
+   4.4
+  ],
+  [
+   9.6,
+   "cantilever",
+   4.35,
+   4.4
+  ],
+  [
+   9.6,
+   "bridge",
+   3.92,
+   4.0
+  ],
+  [
+   9.6,
+   "bridge",
+   3.92,
+   4.0
+  ],
+  [
+   9.6,
+   "bridge",
+   3.92,
+   4.0
+  ],
+  [
+   9.6,
+   "cantilever",
+   3.0,
+   3.0
+  ],
+  [
+   3.2,
+   "bridge",
+   2.8,
+   2.8
+  ]
+ ],
+ "membranes": [
+  {
+   "z": 9.6,
+   "line": 47557,
+   "at": [
+    133.02,
+    41.09
+   ],
+   "radius_mm": 9.0,
+   "anchoredFrac": 1.0,
+   "outerTurnGap_mm": 0.0,
+   "turnGap_mm": 0.35,
+   "points": 1231
+  }
+ ],
+ "problems": [],
+ "problem_count": 0,
+ "PASS": true
+}
