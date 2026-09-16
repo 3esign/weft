@@ -41,15 +41,18 @@ const die = (msg, code = 1) => { console.error(`\n  REFUSED: ${msg}\n`); process
 const MACHINES = loadMachines();
 
 /* level-2 models: which Python generator and which strategy (the builder file it used to go through) */
+/* Since 2026-09-16 every level-2 generator also exists in JavaScript (core/weft_<model>_geometry.mjs), a
+   port held to the Python original byte for byte by tests/<model>_geom_parity.test.mjs. The JS twin is the
+   default; --python runs the original (needs numpy/scipy/scikit-image). Same flags either way. */
 const MODELS = {
-  climber:   { geometry:'climber_geometry.py',          strategy:'climber', extra:['legs','H','K','w0','w1','foundation','rib','maxbridge'] },
-  vase:      { geometry:'vase_geometry.py',             strategy:'climber', extra:['turns','H','K','w0','w1','foundation','rib','maxbridge'] },
-  paired:    { geometry:'paired_sculpture_geometry.py', strategy:'climber', extra:['variant','turns','H','K','w0','w1','foundation','maxbridge'] },
-  aero:      { geometry:'aero_tower_geometry.py',       strategy:'climber', extra:['variant','turns','H','K','w0','w1','foundation','maxbridge'] },
-  sculpture: { geometry:'sculpture_geometry.py',        strategy:'suma',    extra:['variant','turns','H','K','R','maxbridge','lintels','fins','fin-rate','relief'] },
-  suma:      { geometry:'suma_geometry.py',             strategy:'suma',    extra:['cols','rows','H','K'] },
-  plate:     { geometry:'plate_geometry.py',            strategy:'suma',    extra:[] },
-  limit16:   { geometry:'limit16_geometry.py',          strategy:'suma',    extra:[] },
+  climber:   { geometry:'climber_geometry.py',          js:'core/weft_climber_geometry.mjs',   strategy:'climber', extra:['legs','H','K','w0','w1','foundation','rib','maxbridge'] },
+  vase:      { geometry:'vase_geometry.py',             js:'core/weft_vase_geometry.mjs',      strategy:'climber', extra:['turns','H','K','w0','w1','foundation','rib','maxbridge'] },
+  paired:    { geometry:'paired_sculpture_geometry.py', js:'core/weft_paired_geometry.mjs',    strategy:'climber', extra:['variant','turns','H','K','w0','w1','foundation','maxbridge'] },
+  aero:      { geometry:'aero_tower_geometry.py',       js:'core/weft_aero_geometry.mjs',      strategy:'climber', extra:['variant','turns','H','K','w0','w1','foundation','maxbridge'] },
+  sculpture: { geometry:'sculpture_geometry.py',        js:'core/weft_sculpture_geometry.mjs', strategy:'suma',    extra:['variant','turns','H','K','R','maxbridge','lintels','fins','fin-rate','relief'] },
+  suma:      { geometry:'suma_geometry.py',             js:'core/weft_suma_geometry.mjs',      strategy:'suma',    extra:['cols','rows','H','K'] },
+  plate:     { geometry:'plate_geometry.py',            js:'core/weft_plate_geometry.mjs',     strategy:'suma',    extra:[] },
+  limit16:   { geometry:'limit16_geometry.py',          js:'core/weft_limit16_geometry.mjs',   strategy:'suma',    extra:[] },
 };
 
 function machineOrDie(id){
@@ -109,13 +112,16 @@ async function cmdBuild(){
     const mod = MODELS[model]; if(!mod) die(`unknown model ${JSON.stringify(model)}; known: ${Object.keys(MODELS).join(', ')} — or use --preset / --design / --geo`);
     name = name || `${model}_${machineId}`;
     geoFile = path.join(outDir, `${name}_geometry.json`);
+    const usePython = flag('python') || !mod.js || !fs.existsSync(path.join(WEFT_ROOT, mod.js));
     const py = process.env.WEFT_PYTHON || (process.platform === 'win32' ? 'python' : 'python3');
-    const g = [path.join(WEFT_ROOT, mod.geometry), '--bead', String(m.bead), '--lh', String(m.lh), '--plate', String(m.plate[0]), String(m.plate[1]), '--out', geoFile];
+    const exe = usePython ? py : process.execPath;
+    const script = usePython ? mod.geometry : mod.js;
+    const g = [path.join(WEFT_ROOT, script), '--bead', String(m.bead), '--lh', String(m.lh), '--plate', String(m.plate[0]), String(m.plate[1]), '--out', geoFile];
     for(const f of mod.extra){ const v = opt(f); if(v != null) g.push('--' + f, String(v)); }
-    if(model === 'limit16' || model === 'plate'){ g.length = 0; g.push(path.join(WEFT_ROOT, mod.geometry), '--machine', machineId, '--out', geoFile); if(m.beadSource !== 'measured') g.push('--allow-assumed-bead'); }
-    console.log(`\n=== geometry (Python: ${mod.geometry}) ===\n$ ${py} ${g.join(' ')}`);
-    const r = spawnSync(py, g, { cwd:WEFT_ROOT, stdio:'inherit' });
-    if(r.error) die(`the geometry generator needs Python 3 with numpy/scipy/scikit-image (${r.error.message}). Make the geometry elsewhere and pass it with --geo.`);
+    if(model === 'limit16' || model === 'plate'){ g.length = 0; g.push(path.join(WEFT_ROOT, script), '--machine', machineId, '--out', geoFile); if(m.beadSource !== 'measured') g.push('--allow-assumed-bead'); }
+    console.log(`\n=== geometry (${usePython ? 'Python' : 'JavaScript'}: ${script}) ===\n$ ${usePython ? py : 'node'} ${g.join(' ')}`);
+    const r = spawnSync(exe, g, { cwd:WEFT_ROOT, stdio:'inherit' });
+    if(r.error) die(usePython ? `the geometry generator needs Python 3 with numpy/scipy/scikit-image (${r.error.message}). Make the geometry elsewhere and pass it with --geo.` : `the geometry generator could not start (${r.error.message})`);
     if(r.status !== 0) die(`geometry did not pass its own checks (exit ${r.status}). Nothing was written.`, r.status || 1);
     strategy = mod.strategy;
   } else if(opt('geo')){
@@ -222,17 +228,29 @@ async function cmdBuild(){
       if(outside.length){ gate.problems = outside; gate.problem_count = outside.length; refuse('the file exceeds the evidence somewhere the design did not declare'); }
     }
     /* belief vs measurement: the generator's anchoring and the gate's must describe the same object */
+    /* A cap record gives its centre as cx/cy (suma, plate, limit16) or as c:[x,y] (the death caps of climber,
+       vase, paired, aero — 2026-09-16: these carry no anchoredFrac, so they used to be refused as "undeclared"
+       although the generator declared them; now a declared cap without a belief is reported as such and only
+       an emitted membrane with NO cap record within 3 mm counts as undeclared). */
     const declared = [];
-    for(const lay of geo.layers) if(lay.caps) for(const c of lay.caps) declared.push({ z:lay.zBot, cx:c.cx + m.plate[0] / 2, cy:c.cy + m.plate[1] / 2, believed:c.anchoredFrac });
+    for(const lay of geo.layers) if(lay.caps) for(const c of lay.caps){
+      const cx = c.cx != null ? c.cx : (Array.isArray(c.c) ? c.c[0] : NaN), cy = c.cy != null ? c.cy : (Array.isArray(c.c) ? c.c[1] : NaN);
+      /* the suma strategy keeps the geometry origin at the plate centre; the climber strategy centres the
+         geometry's bounding box on the plate and reports that shift as placement.{ox,oy} */
+      const ox = report.placement ? report.placement.ox : 0, oy = report.placement ? report.placement.oy : 0;
+      declared.push({ z:lay.zBot, cx:cx + ox + m.plate[0] / 2, cy:cy + oy + m.plate[1] / 2, believed:(c.anchoredFrac != null ? c.anchoredFrac : null) });
+    }
     const TOL = 0.10; const rows = [];
     for(const mm of (gate.membranes || [])){
       let best = null, bd = 1e9;
       for(const d of declared){ const q = Math.hypot(d.cx - mm.at[0], d.cy - mm.at[1]); if(q < bd){ bd = q; best = d; } }
-      rows.push({ z:mm.z, at:mm.at, measured:mm.anchoredFrac, believed:(bd <= 3.0 && best && best.believed != null) ? best.believed : null, dist:+bd.toFixed(2) });
+      const found = bd <= 3.0 && best;
+      rows.push({ z:mm.z, at:mm.at, measured:mm.anchoredFrac, believed:(found && best.believed != null) ? best.believed : null, declared:!!found, dist:+bd.toFixed(2) });
     }
-    const undeclared = rows.filter(r => r.believed === null), diverged = rows.filter(r => r.believed !== null && Math.abs(r.believed - r.measured) > TOL);
-    if(rows.length) console.log(`membranes: ${rows.length} emitted, ${undeclared.length} undeclared, ${diverged.length} divergent (tol ${TOL})`);
-    for(const r of rows) console.log(`   z ${r.z}  at [${r.at}]  believed ${r.believed === null ? '—' : r.believed.toFixed(3)}  measured ${r.measured.toFixed(3)}`);
+    const undeclared = rows.filter(r => !r.declared), noBelief = rows.filter(r => r.declared && r.believed === null),
+          diverged = rows.filter(r => r.believed !== null && Math.abs(r.believed - r.measured) > TOL);
+    if(rows.length) console.log(`membranes: ${rows.length} emitted, ${undeclared.length} undeclared, ${noBelief.length} declared without a belief, ${diverged.length} divergent (tol ${TOL})`);
+    for(const r of rows) console.log(`   z ${r.z}  at [${r.at}]  believed ${r.believed === null ? (r.declared ? 'none' : 'UNDECLARED') : r.believed.toFixed(3)}  measured ${r.measured.toFixed(3)}`);
     if(undeclared.length || diverged.length){ gate.problems = rows; gate.problem_count = rows.length; refuse('BELIEF/MEASUREMENT DIVERGENCE — the generator and the gate do not describe the same object'); }
     extra.membranes = rows;
   }

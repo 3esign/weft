@@ -1,5 +1,9 @@
 # WEFT — Continuous Lattice Toolpath Studio
 
+> **2026-09-16 — the whole chain, level 2 included, runs on Node alone.** Every Python geometry generator has a
+> byte-identical JavaScript twin (`core/weft_<model>_geometry.mjs`); `node weft.mjs build <model> ...` no longer
+> needs Python. A machine-profile wizard turns any slicer export into a `machines.json` candidate. See `docs/`.
+>
 > **2026-09-08 — runs without a browser and without a model.** `node weft.mjs build --preset <name> --machine a2l --out DIR`
 > makes the thread, the G-code, runs the final-G-code gate, rewrites the header and packs the Bambu container with
 > Node alone (`core/weft_core.js` is the engine the app itself loads; `core/weft_gate.js` is `check_gcode.py` in

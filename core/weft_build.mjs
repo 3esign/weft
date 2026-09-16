@@ -266,7 +266,7 @@ export function layersFromClimber(W, geo, o){
   const railMax = Math.max(0, ...webs.map(L => L.maxRail || 0));
   const skippedRungs = webs.reduce((s, L) => s + (L.skipped || 0), 0);
   const deadWebs = webs.filter(L => !L.apexes.length).length;
-  return { name, machine:W.MACHINES[W.MACHINE].label, bed:[BED, BEDY], layers:layers.length,
+  return { name, machine:W.MACHINES[W.MACHINE].label, bed:[BED, BEDY], layers:layers.length, placement:{ ox, oy, bbox:bb.slice() },
     experimentalMembraneOverride:allowExperimental && caps.some(L => L.membraneStatus === 'experimental'),
     weave:{ maxUnweldedRail_mm:+railMax.toFixed(1), skippedRungs, webLayersWithNoCrossing:deadWebs, maxBridge_mm:P.maxBridge },
     size_mm:[+(mxx - mnx + P.bead).toFixed(1), +(mxy - mny + P.bead).toFixed(1), +mz.toFixed(1)],

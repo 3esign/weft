@@ -2,6 +2,19 @@
 
 One command, and it refuses. If you find yourself typing `--bead`, you are already off the path.
 
+## Since 2026-09-16: the level-2 generators run on Node too
+
+    node weft.mjs build climber   --machine a2l --H 240 --legs 3 --out DIR --allow-experimental-membrane
+    node weft.mjs build sculpture --machine ender --variant gora --out DIR --allow-experimental-bridge --i-know-the-bead-is-a-guess
+    node weft.mjs build limit16   --machine a2l --out DIR
+    node weft.mjs build <model> ... --python        # the original Python generator instead (needs numpy/scipy/scikit-image)
+    node core/weft_machine_wizard.mjs FILE.gcode.3mf --id a1_lab03 --label "Bambu A1 lab 3" --out DIR   # a profile candidate from any slicer export
+
+Every `*_geometry.py` has a JavaScript twin in `core/weft_<model>_geometry.mjs` that reproduces the Python output
+byte for byte (`tests/<model>_geom_parity.test.mjs`; the printed LIMIT16, P2b, V1, GORA and ODJEK files come out of
+the JS chain with the same SHA-256 as the shipped ones). Nothing in the chain needs Python any more. `--python`
+runs the original for comparison. See `docs/STATE_2026-09-16.md` and `docs/APP_PLAN_v1_2026-09-16.md`.
+
 ## Since 2026-09-08: the chain runs on Node alone
 
     node weft.mjs machines

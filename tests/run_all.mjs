@@ -17,6 +17,19 @@ const plan=[
   ['paired_sculptures.test.mjs',[]],
   ['limit16.test.mjs',[]],
   ['mcp.test.mjs',[]],
+  ['machine_wizard.test.mjs',[]],                                 // slicer export -> machine profile candidate
+  ['limit16_js_build_parity.test.mjs',[]],                        // JS level-2 geometry -> the printed LIMIT16 bytes
+  ['paired_js_build_parity.test.mjs',[]],                         // JS level-2 geometry -> recorded DAH/ODJEK gate + report
+  // JS level-2 generators == the Python originals, byte for byte (each spawns python3; skipped without numpy/scipy)
+  ['limit16_geom_parity.test.mjs',[],'python'],
+  ['plate_geom_parity.test.mjs',[],'python'],
+  ['suma_geom_parity.test.mjs',[],'python'],
+  ['sculpture_geom_parity.test.mjs',[],'python'],
+  ['paired_geom_parity.test.mjs',[],'python'],
+  ['aero_geom_parity.test.mjs',[],'python'],
+  ['c1_geom_parity.test.mjs',[],'python'],
+  ['climber_geom_parity.test.mjs',['--quick'],'python'],
+  ['vase_geom_parity.test.mjs',['--quick'],'python'],
   ['core_parity.test.mjs',[],'chromium'],                         // core in Node == index.html in Chromium, byte for byte
   ['browser_gate.test.mjs',[],'chromium'],                        // the gate inside the page
   ['run_tests.mjs',[],'chromium'],                                // legacy browser suite (49/61 known)
@@ -24,6 +37,7 @@ const plan=[
 let failed=0;
 for(const [test,args,needs] of plan){
   if(needs==='chromium'&&!chromium){ console.log(`SKIP  ${test} (no Playwright/Chromium — set WEFT_CHROMIUM or npm install)`); continue; }
+  if(needs==='python'&&!python){ console.log(`SKIP  ${test} (no python3 with numpy/scipy — the JS generator is the one that ships; parity against the Python original needs it)`); continue; }
   console.log(`\n===== ${test} =====`);
   const result=spawnSync(process.execPath,[path.join(ROOT,'tests',test),...args],{cwd:ROOT,env:process.env,stdio:'inherit'});
   if(result.error) throw result.error;
