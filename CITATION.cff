@@ -1,0 +1,53 @@
+cff-version: 1.2.0
+message: "If you use WEFT, please cite the paper and the software."
+title: "WEFT: a compiler for woven single-thread walls with a refusing gate on the final G-code"
+type: software
+license: MIT
+repository-code: "https://github.com/3esign/weft"
+date-released: 2026-09-16
+version: "2026-09-16"
+authors:
+  - family-names: Poturak
+    given-names: Semir
+    email: poturaksemir@gmail.com
+    affiliation: "Faculty of Construction Management, University \"Union – Nikola Tesla\", Belgrade, Serbia"
+  - family-names: Mitrović
+    given-names: Jelena
+    affiliation: "Faculty of Construction Management, University \"Union – Nikola Tesla\", Belgrade, Serbia"
+  - family-names: Končarević
+    given-names: Bojan
+    affiliation: "Faculty of Construction Management, University \"Union – Nikola Tesla\", Belgrade, Serbia"
+  - family-names: Vračarić
+    given-names: Matija
+    affiliation: "Faculty of Construction Management, University \"Union – Nikola Tesla\", Belgrade, Serbia"
+  - family-names: Stojiljković
+    given-names: Tara
+    affiliation: "Faculty of Construction Management, University \"Union – Nikola Tesla\", Belgrade, Serbia"
+keywords:
+  - 3D printing
+  - continuous toolpath
+  - woven lattice
+  - G-code verification
+  - procedural compiler
+  - 3D concrete printing
+  - computational design
+  - architecture
+preferred-citation:
+  type: conference-paper
+  title: "Printable Intelligence: The Leap into Micro-Structures and Tracing Human-AI Fabrication"
+  conference:
+    name: "STRAND / ON ARCHITECTURE 2026"
+    city: Belgrade
+    country: RS
+  year: 2026
+  authors:
+    - family-names: Poturak
+      given-names: Semir
+    - family-names: Mitrović
+      given-names: Jelena
+    - family-names: Končarević
+      given-names: Bojan
+    - family-names: Vračarić
+      given-names: Matija
+    - family-names: Stojiljković
+      given-names: Tara
