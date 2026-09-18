@@ -39,10 +39,17 @@ export function generateZigurat3(o) {
   const BEAD = m.bead, LH = m.lh, FIRST_BEAD = m.firstLayerBead, ALLOW = 0.6, GAP_MAX = 9.5;
   const MARGIN = o.margin != null ? +o.margin : 20;
   const FOOTPRINT = o.footprint != null ? +o.footprint : Math.min(m.plate[0], m.plate[1]) - 2 * MARGIN;
+  const opt = (n, d) => { const i = process.argv.indexOf('--' + n); return i >= 0 ? process.argv[i + 1] : d; };
+  const CANTILEVER = parseFloat(opt('cantilever', 2.0));
   const TIERS = o.tiers != null ? +o.tiers : 3;
   const N_WALL = 30; // layers per vertical wall
-  const N_TERRACE = 10; // *pairs* of layers per horizontal plate (20 layers total)
-  const W_WALL = 3.0, W_RAMP = 3.0, W_FOOT = 3.4;
+  
+  // Calculate N_TERRACE based on the desired cantilever (c/2)
+  // S_current shrinks to S_current/2. Total shrink is S_current/2.
+  // Shrink per cycle is c. We want cantilever = c/2.
+  const N_TERRACE = Math.ceil(FOOTPRINT / 2 / (CANTILEVER * 2));
+  
+  const W_WALL = 3.0, W_FOOT = 3.4;
   const E_WALL = 0.7, E_RAMP = 1.0;
   const BRIM = 6.0;
 
@@ -99,7 +106,8 @@ export function generateZigurat3(o) {
       nodesU.sort((a,b)=>a-b);
       nodesU = densifyNodes(nodesU, cum[pts.length], true, 1.0);
       
-      const rec = record(pts, true, nodesU, W_RAMP, E_RAMP, 'staple', cum[pts.length]/4, 0, `terrace${t+1}`, t);
+      const wRamp = c + 2.0; // Extend to cross the previous layer's rails (cantilever)
+      const rec = record(pts, true, nodesU, wRamp, E_RAMP, 'staple', cum[pts.length]/4, 0, `terrace${t+1}`, t);
       layers.push({ k: k_global, zBot: rr(z, 4), zTop: rr(z+LH, 4), phase: `terrace ${t+1}`, contours: [rec], speed: 18 });
       k_global++;
     }
@@ -136,7 +144,7 @@ export function generateZigurat3(o) {
       protocol: 'This relies on extremely long bridges (up to S mm) anchoring on previous bridges. Requires bridgeSpeed tuning.',
       zones: [{name: 'full volume', z0: 0, z1: size[2], longestChord_mm: 180}]
     },
-    args: { lh: LH, bead: BEAD, firstLayerBead: FIRST_BEAD, firstLayerSpeed: 12, maxbridge: 180, maxcantilever: 4.8, allow: ALLOW, minanchor: 0.5, maxCapRadius: 20, speed: 30, bridgeSpeed: 18, temp: m.temp, bed: m.bed, fan: 100 }
+    args: { lh: LH, bead: BEAD, firstLayerBead: FIRST_BEAD, firstLayerSpeed: 12, maxbridge: 180, maxcantilever: 12.0, allow: ALLOW, minanchor: 0.5, maxCapRadius: 20, speed: 30, bridgeSpeed: 18, temp: m.temp, bed: m.bed, fan: 100 }
   };
 
   function svg() {

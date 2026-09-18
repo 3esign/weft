@@ -193,7 +193,8 @@ async function cmdBuild(){
     if(!ex || !Number.isFinite(+ex.evidencedBridge_mm) || !(ex.lintels || ex.horns || ex.crown || ex.zones)) die('a bridge ceiling above 24 mm needs summary.experiments (evidencedBridge_mm + declared zones)');
     console.log(`EXPERIMENTAL BRIDGE CEILING ${maxBridge} mm declared (evidence: ${ex.evidencedBridge_mm} mm)`);
   }
-  const gateOpts = { bead:m.bead, maxbridge:maxBridge, maxcantilever:bounded(opt('maxcantilever', A.maxcantilever), 3, 0.2, 8, 'maxcantilever'),
+  const maxCantilever = bounded(opt('maxcantilever', A.maxcantilever), 3, 0.2, allowExperimentalBridge ? 12.0 : 3.0, 'maxcantilever');
+  const gateOpts = { bead:m.bead, maxbridge:maxBridge, maxcantilever:maxCantilever,
     allow:bounded(opt('allow', A.allow), 0.6, 0.1, 1.5, 'allow'), minanchor:bounded(opt('minanchor', A.minanchor), 0.5, 0.5, 1.0, 'minanchor'),
     maxCapRadius:bounded(opt('max-cap-radius', A.maxCapRadius), 36, 2, 40, 'maxCapRadius'), maxislands:maxIslands, file:gc };
   const t0 = Date.now();
