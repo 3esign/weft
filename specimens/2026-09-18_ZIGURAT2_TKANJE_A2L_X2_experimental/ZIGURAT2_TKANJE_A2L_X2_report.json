@@ -1,0 +1,646 @@
+{
+  "report": {
+    "name": "ZIGURAT2_TKANJE_A2L_X2",
+    "machine": "Bambu A2L",
+    "bed_mm": [
+      330,
+      320
+    ],
+    "layers": 582,
+    "globalZLevels": 503,
+    "expectedZLevels": 503,
+    "logicalCells": null,
+    "experimentalMembraneOverride": false,
+    "maxBodiesPerZ": 2,
+    "size_mm": [
+      192.6,
+      192.6,
+      null
+    ],
+    "plate_mm": [
+      68.9,
+      63.9,
+      261.1,
+      256.1
+    ],
+    "fitsPlate": true,
+    "grammarCounts": {
+      "staple": 94,
+      "diagonal": 59,
+      "sine": 46,
+      "eight": 37,
+      "perp": 15
+    },
+    "threadLength_m": 500.3,
+    "weldNodes": 48229,
+    "rawPaths": 12,
+    "unintendedOverlaps": 28,
+    "seamClosures": 1,
+    "overlapSamples": [
+      {
+        "z": 115.92,
+        "role": "web",
+        "ov": 8,
+        "contour": 0
+      },
+      {
+        "z": 116.4,
+        "role": "web",
+        "ov": 4,
+        "contour": 0
+      },
+      {
+        "z": 116.88,
+        "role": "web",
+        "ov": 16,
+        "contour": 0
+      }
+    ],
+    "kinematic_h": 4.63,
+    "routeA_estimate_h": 43.7,
+    "caps": [],
+    "events": [
+      {
+        "z": 7.2,
+        "k": 30,
+        "event": "tier 1 -> cut 1"
+      },
+      {
+        "z": 36.96,
+        "k": 154,
+        "event": "cut 1 -> tier 2"
+      },
+      {
+        "z": 44.16,
+        "k": 184,
+        "event": "tier 2 -> cut 2"
+      },
+      {
+        "z": 65.28,
+        "k": 272,
+        "event": "cut 2 -> tier 3"
+      },
+      {
+        "z": 72.48,
+        "k": 302,
+        "event": "tier 3 -> cut 3"
+      },
+      {
+        "z": 87.36,
+        "k": 364,
+        "event": "cut 3 -> tier 4"
+      },
+      {
+        "z": 94.56,
+        "k": 394,
+        "event": "tier 4 -> cut 4"
+      },
+      {
+        "z": 105.12,
+        "k": 438,
+        "event": "cut 4 -> tier 5"
+      },
+      {
+        "z": 112.32,
+        "k": 468,
+        "event": "tier 5 -> crown-approach"
+      },
+      {
+        "z": 117.84,
+        "k": 491,
+        "event": "crown-approach -> crown-grid"
+      }
+    ],
+    "contourCounts": [
+      [
+        0,
+        1
+      ]
+    ],
+    "perLayerSample": [
+      {
+        "k": 0,
+        "z": 0,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 192
+      },
+      {
+        "k": 40,
+        "z": 9.6,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 192
+      },
+      {
+        "k": 80,
+        "z": 19.2,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 192
+      },
+      {
+        "k": 120,
+        "z": 28.8,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 192
+      },
+      {
+        "k": 160,
+        "z": 38.4,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 192
+      },
+      {
+        "k": 200,
+        "z": 48,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 192
+      },
+      {
+        "k": 240,
+        "z": 57.6,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 96
+      },
+      {
+        "k": 280,
+        "z": 67.2,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 96
+      },
+      {
+        "k": 320,
+        "z": 76.8,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 96
+      },
+      {
+        "k": 360,
+        "z": 86.4,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 96
+      },
+      {
+        "k": 400,
+        "z": 96,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 96
+      },
+      {
+        "k": 440,
+        "z": 105.6,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 48
+      },
+      {
+        "k": 480,
+        "z": 115.2,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 48
+      }
+    ],
+    "gateAtEvidencedCeiling": {
+      "maxbridge_mm": 16.2,
+      "findings": 2,
+      "byZone": {
+        "crown": 2
+      },
+      "outsideDeclaredZones": 0,
+      "outsideSamples": []
+    },
+    "membranes": []
+  },
+  "geometry": {
+    "name": "ZIGURAT2_TKANJE_A2L_X2",
+    "variant": "tkanje",
+    "title": "TKANJE",
+    "concept": "the sampler: one grammar per tier, a quilt of pillows on the walls, pleated ramps, the 45 degree rotation coming from the cut itself, Peano roof 3-9-27",
+    "generator": "core/weft_zigurat2_geometry.mjs",
+    "generatedAt": "2026-09-18",
+    "machine": "a2l",
+    "machineLabel": "Bambu Lab A2L",
+    "machineQualification": {
+      "beadSource": "measured",
+      "beadEvidence": "specimens/2026-08-31_D5_R140_A2L_physical and specimens/2026-09-02_P0_suma_2x2_physical — both printed to completion at this bead",
+      "assumedAcknowledged": false
+    },
+    "principle": "terrace-corner-cut/v1: a step is made by cutting 45 degree chords across the four corners and growing them a little each layer until they meet at the edge midpoints, which leaves a square rotated 45 degrees with side a/sqrt(2). The chord's ends land on solid material; only its middle overhangs, by 0.5 mm. Consecutive chords cross, so the terrace is woven. Only the lowest tier stands on the plate.",
+    "size_mm": [
+      192.2,
+      192.2,
+      120.72
+    ],
+    "footprint_mm": 193,
+    "margin_mm": 15,
+    "height_mm": 120.72,
+    "cycles": 4,
+    "tiers": 5,
+    "totalLayers": 503,
+    "tiers_detail": [
+      {
+        "tier": 1,
+        "side_mm": 175.6,
+        "rotation_deg": 0,
+        "grammar": "staple",
+        "zFrom": 0
+      },
+      {
+        "tier": 2,
+        "side_mm": 124.17,
+        "rotation_deg": 45,
+        "grammar": "diagonal",
+        "zFrom": 36.96
+      },
+      {
+        "tier": 3,
+        "side_mm": 87.8,
+        "rotation_deg": 90,
+        "grammar": "sine",
+        "zFrom": 65.28
+      },
+      {
+        "tier": 4,
+        "side_mm": 62.08,
+        "rotation_deg": 135,
+        "grammar": "eight",
+        "zFrom": 87.36
+      },
+      {
+        "tier": 5,
+        "side_mm": 43.9,
+        "rotation_deg": 180,
+        "grammar": "perp",
+        "zFrom": 105.12
+      }
+    ],
+    "cuts": [
+      {
+        "cut": 1,
+        "fromSide_mm": 175.6,
+        "toSide_mm": 124.17,
+        "layers": 124,
+        "rise_mm": 29.76,
+        "inward_mm": 62.08,
+        "slope_deg": 25.6,
+        "rate_mm_per_layer": 0.5,
+        "zFrom": 7.2,
+        "chordAtEnd_mm": 124.2,
+        "K": 192,
+        "nodePitch_mm": 3.59,
+        "pleats": 16,
+        "pleatAmp_mm": 1.4,
+        "wall_mm": 3.06,
+        "tab_mm": 1.4
+      },
+      {
+        "cut": 2,
+        "fromSide_mm": 124.17,
+        "toSide_mm": 87.8,
+        "layers": 88,
+        "rise_mm": 21.12,
+        "inward_mm": 43.9,
+        "slope_deg": 25.7,
+        "rate_mm_per_layer": 0.5,
+        "zFrom": 44.16,
+        "chordAtEnd_mm": 87.8,
+        "K": 192,
+        "nodePitch_mm": 2.53,
+        "pleats": 12,
+        "pleatAmp_mm": 1.4,
+        "wall_mm": 4,
+        "tab_mm": 1.4
+      },
+      {
+        "cut": 3,
+        "fromSide_mm": 87.8,
+        "toSide_mm": 62.08,
+        "layers": 62,
+        "rise_mm": 14.88,
+        "inward_mm": 31.04,
+        "slope_deg": 25.6,
+        "rate_mm_per_layer": 0.5,
+        "zFrom": 72.48,
+        "chordAtEnd_mm": 62.1,
+        "K": 96,
+        "nodePitch_mm": 3.55,
+        "pleats": 8,
+        "pleatAmp_mm": 1.4,
+        "wall_mm": 4,
+        "tab_mm": 1.4
+      },
+      {
+        "cut": 4,
+        "fromSide_mm": 62.08,
+        "toSide_mm": 43.9,
+        "layers": 44,
+        "rise_mm": 10.56,
+        "inward_mm": 21.95,
+        "slope_deg": 25.7,
+        "rate_mm_per_layer": 0.5,
+        "zFrom": 94.56,
+        "chordAtEnd_mm": 43.9,
+        "K": 96,
+        "nodePitch_mm": 2.48,
+        "pleats": 8,
+        "pleatAmp_mm": 1.4,
+        "wall_mm": 4,
+        "tab_mm": 1.4
+      }
+    ],
+    "crown": {
+      "approachLayers": 23,
+      "holeSide_mm": 30,
+      "rate_mm_per_layer": 0.3
+    },
+    "stiffening": {
+      "cutRate_mm_per_layer": 0.5,
+      "overhangProfile": "zero at the chord ends, maximum at its middle",
+      "pleatsPerCut": [
+        16,
+        12,
+        8,
+        8
+      ],
+      "pleatAmplitude_mm": 1.4,
+      "pleatLock": "polar angle, so the corrugation does not slide as the section changes shape",
+      "pleatFadeLayers": 10,
+      "weldColumnsOnCut": "doubled where the pitch allows",
+      "wallOnCut_mm": 4,
+      "tabOnCut_mm": 1.4,
+      "note": "the cut geometry and the rate are evidenced (OBLAK's upper hemisphere); the pleats, the doubled columns and the deeper wall are reasoned, not measured"
+    },
+    "roof": {
+      "process": "crown-woven-grid/v1",
+      "schedule": "3 -> 9 -> 27",
+      "innerSpan_mm": 27.2,
+      "layers": 12,
+      "perLayer": [
+        {
+          "k": 491,
+          "z": 117.84,
+          "level": 1,
+          "grid": "3x3",
+          "dir": "X",
+          "pitch_mm": 9.07,
+          "freeSpan_mm": 27.2,
+          "inQualifiedDomain": false
+        },
+        {
+          "k": 492,
+          "z": 118.08,
+          "level": 1,
+          "grid": "3x3",
+          "dir": "X",
+          "pitch_mm": 9.07,
+          "freeSpan_mm": 27.2,
+          "inQualifiedDomain": false
+        },
+        {
+          "k": 493,
+          "z": 118.32,
+          "level": 1,
+          "grid": "3x3",
+          "dir": "Y",
+          "pitch_mm": 9.07,
+          "freeSpan_mm": 9.07,
+          "inQualifiedDomain": true
+        },
+        {
+          "k": 494,
+          "z": 118.56,
+          "level": 1,
+          "grid": "3x3",
+          "dir": "Y",
+          "pitch_mm": 9.07,
+          "freeSpan_mm": 9.07,
+          "inQualifiedDomain": true
+        },
+        {
+          "k": 495,
+          "z": 118.8,
+          "level": 2,
+          "grid": "9x9",
+          "dir": "X",
+          "pitch_mm": 3.02,
+          "freeSpan_mm": 9.07,
+          "inQualifiedDomain": true
+        },
+        {
+          "k": 496,
+          "z": 119.04,
+          "level": 2,
+          "grid": "9x9",
+          "dir": "Y",
+          "pitch_mm": 3.02,
+          "freeSpan_mm": 3.02,
+          "inQualifiedDomain": true
+        },
+        {
+          "k": 497,
+          "z": 119.28,
+          "level": 2,
+          "grid": "9x9",
+          "dir": "X",
+          "pitch_mm": 3.02,
+          "freeSpan_mm": 3.02,
+          "inQualifiedDomain": true
+        },
+        {
+          "k": 498,
+          "z": 119.52,
+          "level": 2,
+          "grid": "9x9",
+          "dir": "Y",
+          "pitch_mm": 3.02,
+          "freeSpan_mm": 3.02,
+          "inQualifiedDomain": true
+        },
+        {
+          "k": 499,
+          "z": 119.76,
+          "level": 3,
+          "grid": "27x27",
+          "dir": "X",
+          "pitch_mm": 1.01,
+          "freeSpan_mm": 3.02,
+          "inQualifiedDomain": true
+        },
+        {
+          "k": 500,
+          "z": 120,
+          "level": 3,
+          "grid": "27x27",
+          "dir": "Y",
+          "pitch_mm": 1.01,
+          "freeSpan_mm": 1.01,
+          "inQualifiedDomain": true
+        },
+        {
+          "k": 501,
+          "z": 120.24,
+          "level": 3,
+          "grid": "27x27",
+          "dir": "X",
+          "pitch_mm": 1.01,
+          "freeSpan_mm": 1.01,
+          "inQualifiedDomain": true
+        },
+        {
+          "k": 502,
+          "z": 120.48,
+          "level": 3,
+          "grid": "27x27",
+          "dir": "Y",
+          "pitch_mm": 1.01,
+          "freeSpan_mm": 1.01,
+          "inQualifiedDomain": true
+        }
+      ],
+      "firstFreeSpan_mm": 27.2
+    },
+    "horns": [],
+    "args": {
+      "lh": 0.24,
+      "bead": 0.45,
+      "firstLayerBead": 0.52,
+      "firstLayerSpeed": 12,
+      "w": 3,
+      "e": 0.7,
+      "r0": 87.8,
+      "K": 192,
+      "foundation": 6,
+      "maxbridge": 36,
+      "maxcantilever": 4.8,
+      "allow": 0.6,
+      "minanchor": 0.5,
+      "maxCapRadius": 20,
+      "speed": 30,
+      "bridgeSpeed": 18,
+      "temp": 220,
+      "bed": 55,
+      "fan": 100
+    },
+    "gatePolicy": {
+      "meaning": "the only declared span is the crown; a cut that produces findings is a design error, not an experiment",
+      "bridge_mm": 36,
+      "cantilever_mm": 4.8,
+      "membrane_min_anchor": 0.5,
+      "first_layer_max_islands": 1,
+      "secondGate_mm": 16.2
+    },
+    "estimates": {
+      "threadLength_m": 394,
+      "worstLayerMove_mm": 0.708,
+      "worstLayerMoveAt": [
+        "cut",
+        152
+      ],
+      "reachWithTab_mm": 2.225,
+      "minConcaveRadius_mm": 7.93,
+      "maxNodeGap_mm": 4.771
+    },
+    "foundation": {
+      "paths": 67,
+      "islandsExpected": 1,
+      "kind": "rings + spokes under the lowest tier only"
+    },
+    "experiments": {
+      "declaredBridgeCeiling_mm": 36,
+      "evidencedBridge_mm": 16.2,
+      "crown": {
+        "process": "crown-woven-grid/v1",
+        "physicalStatus": "experimental",
+        "layers": 12,
+        "firstLayerFreeSpan_mm": 27.2
+      },
+      "zones": [
+        {
+          "name": "crown",
+          "z0": 112.32,
+          "z1": 121.72,
+          "longestChord_mm": 27.2
+        }
+      ],
+      "horns": [],
+      "protocol": "gate at the declared ceiling must be clean; at the evidenced ceiling every finding must fall in the crown or a horn"
+    },
+    "events": [
+      {
+        "z": 7.2,
+        "k": 30,
+        "event": "tier 1 -> cut 1"
+      },
+      {
+        "z": 36.96,
+        "k": 154,
+        "event": "cut 1 -> tier 2"
+      },
+      {
+        "z": 44.16,
+        "k": 184,
+        "event": "tier 2 -> cut 2"
+      },
+      {
+        "z": 65.28,
+        "k": 272,
+        "event": "cut 2 -> tier 3"
+      },
+      {
+        "z": 72.48,
+        "k": 302,
+        "event": "tier 3 -> cut 3"
+      },
+      {
+        "z": 87.36,
+        "k": 364,
+        "event": "cut 3 -> tier 4"
+      },
+      {
+        "z": 94.56,
+        "k": 394,
+        "event": "tier 4 -> cut 4"
+      },
+      {
+        "z": 105.12,
+        "k": 438,
+        "event": "cut 4 -> tier 5"
+      },
+      {
+        "z": 112.32,
+        "k": 468,
+        "event": "tier 5 -> crown-approach"
+      },
+      {
+        "z": 117.84,
+        "k": 491,
+        "event": "crown-approach -> crown-grid"
+      }
+    ],
+    "violations": [],
+    "warnings": []
+  },
+  "design": null,
+  "preset": null,
+  "builder": "weft.mjs (core/weft_core.js + core/weft_gate.js, no browser, no Python)",
+  "gate": {
+    "bead": 0.45,
+    "maxbridge": 36,
+    "maxcantilever": 4.8,
+    "allow": 0.6,
+    "minanchor": 0.5,
+    "maxCapRadius": 20,
+    "maxislands": 1,
+    "file": "/home/claude/weftapp/weft/specimens/2026-09-18_ZIGURAT2_TKANJE_A2L_X2_experimental/ZIGURAT2_TKANJE_A2L_X2.gcode"
+  }
+}

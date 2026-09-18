@@ -1,0 +1,226 @@
+{
+ "name": "ZIGURAT2_VRTLOG_ENDER3V4_X2",
+ "model": "zigurat2",
+ "built": "2026-09-18T08:03:50",
+ "machine": {
+  "id": "ender",
+  "label": "Creality Ender-3 V4",
+  "plate": [
+   220,
+   220
+  ],
+  "maxZ": 235,
+  "bead": 0.42,
+  "beadSource": "ASSUMED",
+  "beadEvidence": "NEVER CALIBRATED. Run the C1 thin-wall test on this machine and put the measured width here before trusting anything built for it.",
+  "lh": 0.2,
+  "firstLayerBead": 0.48,
+  "temp": 220,
+  "bed": 60,
+  "start": "exports/ender_start.gcode",
+  "end": "exports/ender_end.gcode",
+  "route": "gcode"
+ },
+ "geometry": "ZIGURAT2_VRTLOG_ENDER3V4_X2_geometry.json.gz",
+ "shipped": [
+  "ZIGURAT2_VRTLOG_ENDER3V4_X2.gcode"
+ ],
+ "gate": "ZIGURAT2_VRTLOG_ENDER3V4_X2_gate.json",
+ "report": "ZIGURAT2_VRTLOG_ENDER3V4_X2_report.json",
+ "builder": "weft.mjs",
+ "core": "core-2026-09-08",
+ "outcome": "NOT PRINTED \u2014 fill this in after the print, with photographs",
+ "variant": "vrtlog",
+ "generator": "core/weft_zigurat2_geometry.mjs",
+ "principle": "terrace-corner-cut/v1: a step is made by cutting 45 degree chords across the four corners and growing them a little each layer until they meet at the edge midpoints, which leaves a square rotated 45 degrees with side a/sqrt(2). The chord's ends land on solid material; only its middle overhangs, by 0.5 mm. Consecutive chords cross, so the terrace is woven. Only the lowest tier stands on the plate.",
+ "gate_at_evidenced_ceiling": "ZIGURAT2_VRTLOG_ENDER3V4_X2_gate_at_16.2mm.json",
+ "declaredExperiment": {
+  "declaredBridgeCeiling_mm": 36,
+  "evidencedBridge_mm": 16.2,
+  "crown": {
+   "process": "crown-woven-grid/v1",
+   "physicalStatus": "experimental",
+   "layers": 12,
+   "firstLayerFreeSpan_mm": 25.2
+  },
+  "zones": [
+   {
+    "name": "crown",
+    "z0": 62.2,
+    "z1": 69.2,
+    "longestChord_mm": 25.2
+   },
+   {
+    "name": "horn 8",
+    "z0": 56.6,
+    "z1": 61.8,
+    "longestChord_mm": 8
+   }
+  ],
+  "horns": [
+   {
+    "P_mm": 8,
+    "rate_mm_per_layer": 0.8,
+    "zStart": 56.8,
+    "zEnd": 61.6
+   }
+  ],
+  "protocol": "gate at the declared ceiling must be clean; at the evidenced ceiling every finding must fall in the crown or a horn"
+ },
+ "size_mm": [
+  126.2,
+  126.2,
+  68.2
+ ],
+ "tiers": [
+  {
+   "tier": 1,
+   "side_mm": 109.6,
+   "rotation_deg": 0,
+   "grammar": "sine",
+   "zFrom": 0
+  },
+  {
+   "tier": 2,
+   "side_mm": 77.5,
+   "rotation_deg": 45,
+   "grammar": "sine",
+   "zFrom": 22.4
+  },
+  {
+   "tier": 3,
+   "side_mm": 54.8,
+   "rotation_deg": 90,
+   "grammar": "sine",
+   "zFrom": 40.4
+  },
+  {
+   "tier": 4,
+   "side_mm": 38.75,
+   "rotation_deg": 135,
+   "grammar": "sine",
+   "zFrom": 55.2
+  }
+ ],
+ "cuts": [
+  {
+   "cut": 1,
+   "fromSide_mm": 109.6,
+   "toSide_mm": 77.5,
+   "layers": 77,
+   "rise_mm": 15.4,
+   "inward_mm": 38.75,
+   "slope_deg": 21.7,
+   "rate_mm_per_layer": 0.5,
+   "zFrom": 7,
+   "chordAtEnd_mm": 77.5,
+   "K": 96,
+   "nodePitch_mm": 4.46,
+   "pleats": 8,
+   "pleatAmp_mm": 1.4,
+   "wall_mm": 3.02,
+   "tab_mm": 1.4
+  },
+  {
+   "cut": 2,
+   "fromSide_mm": 77.5,
+   "toSide_mm": 54.8,
+   "layers": 55,
+   "rise_mm": 11,
+   "inward_mm": 27.4,
+   "slope_deg": 21.9,
+   "rate_mm_per_layer": 0.5,
+   "zFrom": 29.4,
+   "chordAtEnd_mm": 54.8,
+   "K": 96,
+   "nodePitch_mm": 3.12,
+   "pleats": 8,
+   "pleatAmp_mm": 1.4,
+   "wall_mm": 4,
+   "tab_mm": 1.4
+  },
+  {
+   "cut": 3,
+   "fromSide_mm": 54.8,
+   "toSide_mm": 38.75,
+   "layers": 39,
+   "rise_mm": 7.8,
+   "inward_mm": 19.37,
+   "slope_deg": 21.9,
+   "rate_mm_per_layer": 0.5,
+   "zFrom": 47.4,
+   "chordAtEnd_mm": 38.7,
+   "K": 48,
+   "nodePitch_mm": 4.35,
+   "pleats": 8,
+   "pleatAmp_mm": 1.4,
+   "wall_mm": 4,
+   "tab_mm": 1.4
+  }
+ ],
+ "crown": {
+  "approachLayers": 18,
+  "holeSide_mm": 28,
+  "rate_mm_per_layer": 0.3
+ },
+ "roof": {
+  "process": "crown-woven-grid/v1",
+  "schedule": "2 -> 4 -> 8 -> 16",
+  "innerSpan_mm": 25.2,
+  "layers": 12,
+  "firstFreeSpan_mm": 25.2
+ },
+ "stiffening": {
+  "cutRate_mm_per_layer": 0.5,
+  "overhangProfile": "zero at the chord ends, maximum at its middle",
+  "pleatsPerCut": [
+   8,
+   8,
+   8
+  ],
+  "pleatAmplitude_mm": 1.4,
+  "pleatLock": "polar angle, so the corrugation does not slide as the section changes shape",
+  "pleatFadeLayers": 10,
+  "weldColumnsOnCut": "doubled where the pitch allows",
+  "wallOnCut_mm": 4,
+  "tabOnCut_mm": 1.4,
+  "note": "the cut geometry and the rate are evidenced (OBLAK's upper hemisphere); the pleats, the doubled columns and the deeper wall are reasoned, not measured"
+ },
+ "threadLength_m": 171.5,
+ "weldNodes": 13104,
+ "paths": 409,
+ "kinematic_h_lower_bound": 1.59,
+ "gateSummary": {
+  "declared_mm": 36,
+  "declaredGate": {
+   "PASS": true,
+   "problems": 0,
+   "points": 154369,
+   "layers": 342,
+   "first_layer_islands": 1
+  },
+  "evidencedGate_16.2": {
+   "findings": 8,
+   "byZone": {
+    "horn 8": 7,
+    "crown": 1
+   },
+   "outsideDeclaredZones": 0,
+   "note": "no finding in any corner cut"
+  }
+ },
+ "warning": "Built in the cloud 2026-09-18. Nothing printed. The corner cuts are geometry, not spans; the only declared span is the crown.",
+ "sha256": {
+  "PREDICTIONS.md": "a1d0028d9b2dcf23cad8970a899766ada8f041cc889dd6e2e17c03e4b194ec0e",
+  "PROTOCOL.md": "0a4e5eb7943903e3b6831f48f9bde0915188490c7f34c6124fc7f9340f08125a",
+  "README.md": "f650fb603e80d87339b6009cf9d8392cccff0994ab025c6eb5ad7f44969434d0",
+  "ZIGURAT2_VRTLOG_ENDER3V4_X2.gcode": "7a459a4e97b61d7579f0e5964fcae7323184fd6a4fd214bb571ee1073d290e57",
+  "ZIGURAT2_VRTLOG_ENDER3V4_X2_gate.json": "b611e6fe505b70af74e6affd13a6b61aacbb31c228ce75a7a194dd156eeb746e",
+  "ZIGURAT2_VRTLOG_ENDER3V4_X2_gate_at_16.2mm.json": "d5ce738d152ed59060784616a8ab422cb78fd7864460671aacd49b4b9d21a139",
+  "ZIGURAT2_VRTLOG_ENDER3V4_X2_geometry.json.gz": "83f2d8d7da636646d2de0e3f5dfa49a2cbb45d78d08368dc98508ad503cc6456",
+  "ZIGURAT2_VRTLOG_ENDER3V4_X2_preview.png": "654ca01bbdcdf42dac878f6631784bf264c880eaf4bc9e1c62e67054469370bc",
+  "ZIGURAT2_VRTLOG_ENDER3V4_X2_preview.svg": "3444a4158b8b98c36b28ae0c9861e1007020fb94c8b5984903a3097689f1790d",
+  "ZIGURAT2_VRTLOG_ENDER3V4_X2_report.json": "12ffa112ce8c248966e0a9aace82a5d987c20ecbbbf826f29952d1a24e9a7c19",
+  "build.log": "f8b5bf0ca1fae5e08ae2350f3e805cebc70538ff3667189cd9866072044a9187"
+ }
+}

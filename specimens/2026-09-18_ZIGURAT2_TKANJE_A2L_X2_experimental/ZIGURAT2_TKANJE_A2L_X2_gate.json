@@ -1,0 +1,122 @@
+{
+ "file": "/home/claude/weftapp/weft/specimens/2026-09-18_ZIGURAT2_TKANJE_A2L_X2_experimental/ZIGURAT2_TKANJE_A2L_X2.gcode",
+ "layers": 504,
+ "params": {
+  "bead": 0.45,
+  "allow": 0.6,
+  "maxbridge": 36,
+  "res": 0.2,
+  "bedz": 0.5,
+  "maxislands": 1,
+  "maxcantilever": 4.8
+ },
+ "stats": {
+  "floating": 0,
+  "long_bridge": 0,
+  "cantilever": 0,
+  "bridges": 80827,
+  "bad_membrane": 0,
+  "unanchored_membrane": 0,
+  "checked_paths": 513,
+  "checked_points": 521362,
+  "exempt_layers": 3,
+  "first_layer_islands": 1
+ },
+ "byRole": {},
+ "worstGaps": [
+  [
+   118.08,
+   "bridge",
+   9,
+   9
+  ],
+  [
+   118.56,
+   "bridge",
+   4.4,
+   4.4
+  ],
+  [
+   119.04,
+   "bridge",
+   4.2,
+   4.2
+  ],
+  [
+   103.44,
+   "chord",
+   3.81,
+   3.98
+  ],
+  [
+   98.64,
+   "chord",
+   3.92,
+   3.96
+  ],
+  [
+   104.4,
+   "chord",
+   3.78,
+   3.94
+  ],
+  [
+   99.12,
+   "chord",
+   3.67,
+   3.88
+  ],
+  [
+   102.96,
+   "chord",
+   3.79,
+   3.85
+  ],
+  [
+   103.92,
+   "chord",
+   3.67,
+   3.85
+  ],
+  [
+   104.88,
+   "chord",
+   3.67,
+   3.85
+  ],
+  [
+   99.6,
+   "chord",
+   3.56,
+   3.76
+  ],
+  [
+   102.48,
+   "chord",
+   3.58,
+   3.76
+  ],
+  [
+   100.08,
+   "chord",
+   3.4,
+   3.58
+  ],
+  [
+   102,
+   "chord",
+   3.55,
+   3.58
+  ],
+  [
+   52.56,
+   "chord",
+   3.2,
+   3.5
+  ]
+ ],
+ "membranes": [],
+ "problems": [],
+ "problem_count": 0,
+ "PASS": true
+}

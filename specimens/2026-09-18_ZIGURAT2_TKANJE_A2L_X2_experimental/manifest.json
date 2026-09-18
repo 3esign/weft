@@ -1,0 +1,241 @@
+{
+ "name": "ZIGURAT2_TKANJE_A2L_X2",
+ "model": "zigurat2",
+ "built": "2026-09-18T08:06:40",
+ "machine": {
+  "id": "a2l",
+  "label": "Bambu Lab A2L",
+  "plate": [
+   330,
+   320
+  ],
+  "maxZ": 325,
+  "bead": 0.45,
+  "beadSource": "measured",
+  "beadEvidence": "specimens/2026-08-31_D5_R140_A2L_physical and specimens/2026-09-02_P0_suma_2x2_physical \u2014 both printed to completion at this bead",
+  "lh": 0.24,
+  "firstLayerBead": 0.52,
+  "temp": 220,
+  "bed": 55,
+  "start": "exports/a2l_start_block_template_2026-09-02.gcode",
+  "end": "exports/a2l_end_block_harvested_2026-09-02.gcode",
+  "route": "bambu3mf"
+ },
+ "geometry": "ZIGURAT2_TKANJE_A2L_X2_geometry.json.gz",
+ "shipped": [
+  "ZIGURAT2_TKANJE_A2L_X2.gcode",
+  "ZIGURAT2_TKANJE_A2L_X2.gcode.3mf"
+ ],
+ "gate": "ZIGURAT2_TKANJE_A2L_X2_gate.json",
+ "report": "ZIGURAT2_TKANJE_A2L_X2_report.json",
+ "builder": "weft.mjs",
+ "core": "core-2026-09-08",
+ "outcome": "NOT PRINTED \u2014 fill this in after the print, with photographs",
+ "variant": "tkanje",
+ "generator": "core/weft_zigurat2_geometry.mjs",
+ "principle": "terrace-corner-cut/v1: a step is made by cutting 45 degree chords across the four corners and growing them a little each layer until they meet at the edge midpoints, which leaves a square rotated 45 degrees with side a/sqrt(2). The chord's ends land on solid material; only its middle overhangs, by 0.5 mm. Consecutive chords cross, so the terrace is woven. Only the lowest tier stands on the plate.",
+ "gate_at_evidenced_ceiling": "ZIGURAT2_TKANJE_A2L_X2_gate_at_16.2mm.json",
+ "declaredExperiment": {
+  "declaredBridgeCeiling_mm": 36,
+  "evidencedBridge_mm": 16.2,
+  "crown": {
+   "process": "crown-woven-grid/v1",
+   "physicalStatus": "experimental",
+   "layers": 12,
+   "firstLayerFreeSpan_mm": 27.2
+  },
+  "zones": [
+   {
+    "name": "crown",
+    "z0": 112.32,
+    "z1": 121.72,
+    "longestChord_mm": 27.2
+   }
+  ],
+  "horns": [],
+  "protocol": "gate at the declared ceiling must be clean; at the evidenced ceiling every finding must fall in the crown or a horn"
+ },
+ "size_mm": [
+  192.2,
+  192.2,
+  120.72
+ ],
+ "tiers": [
+  {
+   "tier": 1,
+   "side_mm": 175.6,
+   "rotation_deg": 0,
+   "grammar": "staple",
+   "zFrom": 0
+  },
+  {
+   "tier": 2,
+   "side_mm": 124.17,
+   "rotation_deg": 45,
+   "grammar": "diagonal",
+   "zFrom": 36.96
+  },
+  {
+   "tier": 3,
+   "side_mm": 87.8,
+   "rotation_deg": 90,
+   "grammar": "sine",
+   "zFrom": 65.28
+  },
+  {
+   "tier": 4,
+   "side_mm": 62.08,
+   "rotation_deg": 135,
+   "grammar": "eight",
+   "zFrom": 87.36
+  },
+  {
+   "tier": 5,
+   "side_mm": 43.9,
+   "rotation_deg": 180,
+   "grammar": "perp",
+   "zFrom": 105.12
+  }
+ ],
+ "cuts": [
+  {
+   "cut": 1,
+   "fromSide_mm": 175.6,
+   "toSide_mm": 124.17,
+   "layers": 124,
+   "rise_mm": 29.76,
+   "inward_mm": 62.08,
+   "slope_deg": 25.6,
+   "rate_mm_per_layer": 0.5,
+   "zFrom": 7.2,
+   "chordAtEnd_mm": 124.2,
+   "K": 192,
+   "nodePitch_mm": 3.59,
+   "pleats": 16,
+   "pleatAmp_mm": 1.4,
+   "wall_mm": 3.06,
+   "tab_mm": 1.4
+  },
+  {
+   "cut": 2,
+   "fromSide_mm": 124.17,
+   "toSide_mm": 87.8,
+   "layers": 88,
+   "rise_mm": 21.12,
+   "inward_mm": 43.9,
+   "slope_deg": 25.7,
+   "rate_mm_per_layer": 0.5,
+   "zFrom": 44.16,
+   "chordAtEnd_mm": 87.8,
+   "K": 192,
+   "nodePitch_mm": 2.53,
+   "pleats": 12,
+   "pleatAmp_mm": 1.4,
+   "wall_mm": 4,
+   "tab_mm": 1.4
+  },
+  {
+   "cut": 3,
+   "fromSide_mm": 87.8,
+   "toSide_mm": 62.08,
+   "layers": 62,
+   "rise_mm": 14.88,
+   "inward_mm": 31.04,
+   "slope_deg": 25.6,
+   "rate_mm_per_layer": 0.5,
+   "zFrom": 72.48,
+   "chordAtEnd_mm": 62.1,
+   "K": 96,
+   "nodePitch_mm": 3.55,
+   "pleats": 8,
+   "pleatAmp_mm": 1.4,
+   "wall_mm": 4,
+   "tab_mm": 1.4
+  },
+  {
+   "cut": 4,
+   "fromSide_mm": 62.08,
+   "toSide_mm": 43.9,
+   "layers": 44,
+   "rise_mm": 10.56,
+   "inward_mm": 21.95,
+   "slope_deg": 25.7,
+   "rate_mm_per_layer": 0.5,
+   "zFrom": 94.56,
+   "chordAtEnd_mm": 43.9,
+   "K": 96,
+   "nodePitch_mm": 2.48,
+   "pleats": 8,
+   "pleatAmp_mm": 1.4,
+   "wall_mm": 4,
+   "tab_mm": 1.4
+  }
+ ],
+ "crown": {
+  "approachLayers": 23,
+  "holeSide_mm": 30,
+  "rate_mm_per_layer": 0.3
+ },
+ "roof": {
+  "process": "crown-woven-grid/v1",
+  "schedule": "3 -> 9 -> 27",
+  "innerSpan_mm": 27.2,
+  "layers": 12,
+  "firstFreeSpan_mm": 27.2
+ },
+ "stiffening": {
+  "cutRate_mm_per_layer": 0.5,
+  "overhangProfile": "zero at the chord ends, maximum at its middle",
+  "pleatsPerCut": [
+   16,
+   12,
+   8,
+   8
+  ],
+  "pleatAmplitude_mm": 1.4,
+  "pleatLock": "polar angle, so the corrugation does not slide as the section changes shape",
+  "pleatFadeLayers": 10,
+  "weldColumnsOnCut": "doubled where the pitch allows",
+  "wallOnCut_mm": 4,
+  "tabOnCut_mm": 1.4,
+  "note": "the cut geometry and the rate are evidenced (OBLAK's upper hemisphere); the pleats, the doubled columns and the deeper wall are reasoned, not measured"
+ },
+ "threadLength_m": 500.3,
+ "weldNodes": 48229,
+ "paths": 582,
+ "kinematic_h_lower_bound": 4.63,
+ "gateSummary": {
+  "declared_mm": 36,
+  "declaredGate": {
+   "PASS": true,
+   "problems": 0,
+   "points": 521362,
+   "layers": 504,
+   "first_layer_islands": 1
+  },
+  "evidencedGate_16.2": {
+   "findings": 2,
+   "byZone": {
+    "crown": 2
+   },
+   "outsideDeclaredZones": 0,
+   "note": "no finding in any corner cut"
+  }
+ },
+ "warning": "Built in the cloud 2026-09-18. Nothing printed. The corner cuts are geometry, not spans; the only declared span is the crown.",
+ "sha256": {
+  "PREDICTIONS.md": "96b8ca0a9ad0f91794d8e4b56c66c57283d48e46473d73ff2fa6c34e13f3092b",
+  "PROTOCOL.md": "0a4e5eb7943903e3b6831f48f9bde0915188490c7f34c6124fc7f9340f08125a",
+  "README.md": "f8ff77a263023a1447dde98a6ca4addafcdd3327a0dfcd49579eacbd1037d69c",
+  "ZIGURAT2_TKANJE_A2L_X2.gcode": "ba0896bdb300e69f2ae908282b8c60ea8379da1c0282110ecf14aefd072a4624",
+  "ZIGURAT2_TKANJE_A2L_X2.gcode.3mf": "96724c01c73c544ee7346d12797cbb4af316c4002be56fd512fe200193fb5be9",
+  "ZIGURAT2_TKANJE_A2L_X2_gate.json": "e79ff6d5a2f498cddb74b9834c020e3f5765211123e7d1e797fd723af1ae5645",
+  "ZIGURAT2_TKANJE_A2L_X2_gate_at_16.2mm.json": "0829f2c83e40d6593d72d023bff57f11ee35d9f1d31b3aaf025f058d39b7aa32",
+  "ZIGURAT2_TKANJE_A2L_X2_geometry.json.gz": "56c4ca34dc8153814060238e9a6485b6615e1dd6daf7a8e23bddb0de52f5e8b8",
+  "ZIGURAT2_TKANJE_A2L_X2_package_gate.json": "c7c6e712a60a9e6a30a16cafb187ed46a1ed09fc6865c88c666cabd1106abd3d",
+  "ZIGURAT2_TKANJE_A2L_X2_preview.png": "97ff578520f4d131daffaa7e8703acd250a6f2468c50d0355b59012f6ef733d1",
+  "ZIGURAT2_TKANJE_A2L_X2_preview.svg": "f40631c76245fc5070df4df6285f06f16d03ccb1cbccb7a2bbb118bd39b1be1d",
+  "ZIGURAT2_TKANJE_A2L_X2_report.json": "4c6faf131eef41a713b93e5fe60894134e7f24c71f73f4ccd8e25aa83ff88ab9",
+  "build.log": "c9f056f05c404ded9acb7eebe1f27f60a9998f319e94a8be3bbf8885ff1e0533"
+ }
+}

@@ -1,0 +1,122 @@
+{
+ "file": "/home/claude/weftapp/weft/specimens/2026-09-18_ZIGURAT2_VRTLOG_ENDER3V4_X2_experimental/ZIGURAT2_VRTLOG_ENDER3V4_X2.gcode",
+ "layers": 342,
+ "params": {
+  "bead": 0.42,
+  "allow": 0.6,
+  "maxbridge": 36,
+  "res": 0.2,
+  "bedz": 0.5,
+  "maxislands": 1,
+  "maxcantilever": 4.8
+ },
+ "stats": {
+  "floating": 0,
+  "long_bridge": 0,
+  "cantilever": 0,
+  "bridges": 25131,
+  "bad_membrane": 0,
+  "unanchored_membrane": 0,
+  "checked_paths": 351,
+  "checked_points": 154369,
+  "exempt_layers": 3,
+  "first_layer_islands": 1
+ },
+ "byRole": {},
+ "worstGaps": [
+  [
+   66,
+   "bridge",
+   12.17,
+   12.19
+  ],
+  [
+   66.4,
+   "bridge",
+   6.22,
+   6.22
+  ],
+  [
+   66.8,
+   "bridge",
+   6.22,
+   6.22
+  ],
+  [
+   40.2,
+   "chord",
+   3.23,
+   3.39
+  ],
+  [
+   3.8,
+   "chord",
+   2.84,
+   3.22
+  ],
+  [
+   47.8,
+   "chord",
+   3.06,
+   3.22
+  ],
+  [
+   48.2,
+   "chord",
+   3.06,
+   3.22
+  ],
+  [
+   4.2,
+   "chord",
+   2.84,
+   3.21
+  ],
+  [
+   47,
+   "chord",
+   3,
+   3.2
+  ],
+  [
+   47.4,
+   "chord",
+   3.05,
+   3.16
+  ],
+  [
+   53.8,
+   "chord",
+   2.84,
+   3.16
+  ],
+  [
+   3.4,
+   "chord",
+   2.86,
+   3.13
+  ],
+  [
+   4.6,
+   "chord",
+   2.83,
+   3.13
+  ],
+  [
+   9,
+   "chord",
+   2.87,
+   3.11
+  ],
+  [
+   40.6,
+   "chord",
+   3.05,
+   3.11
+  ]
+ ],
+ "membranes": [],
+ "problems": [],
+ "problem_count": 0,
+ "PASS": true
+}

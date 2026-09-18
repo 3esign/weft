@@ -1,0 +1,240 @@
+{
+ "file": "/home/claude/weftapp/weft/specimens/2026-09-18_ZIGURAT2_VRTLOG_ENDER3V4_X2_experimental/ZIGURAT2_VRTLOG_ENDER3V4_X2.gcode",
+ "layers": 342,
+ "params": {
+  "bead": 0.42,
+  "allow": 0.6,
+  "maxbridge": 16.2,
+  "res": 0.2,
+  "bedz": 0.5,
+  "maxislands": 1,
+  "maxcantilever": 4.8
+ },
+ "stats": {
+  "floating": 0,
+  "long_bridge": 8,
+  "cantilever": 0,
+  "bridges": 25123,
+  "bad_membrane": 0,
+  "unanchored_membrane": 0,
+  "checked_paths": 351,
+  "checked_points": 154369,
+  "exempt_layers": 3,
+  "first_layer_islands": 1
+ },
+ "byRole": {
+  "chord": {
+   "floating": 0,
+   "long_bridge": 7,
+   "cantilever": 0,
+   "worst_mm": 27.31
+  },
+  "bridge": {
+   "floating": 0,
+   "long_bridge": 1,
+   "cantilever": 0,
+   "worst_mm": 23.92
+  }
+ },
+ "worstGaps": [
+  [
+   66,
+   "bridge",
+   12.17,
+   12.19
+  ],
+  [
+   66.4,
+   "bridge",
+   6.22,
+   6.22
+  ],
+  [
+   66.8,
+   "bridge",
+   6.22,
+   6.22
+  ],
+  [
+   40.2,
+   "chord",
+   3.23,
+   3.39
+  ],
+  [
+   3.8,
+   "chord",
+   2.84,
+   3.22
+  ],
+  [
+   47.8,
+   "chord",
+   3.06,
+   3.22
+  ],
+  [
+   48.2,
+   "chord",
+   3.06,
+   3.22
+  ],
+  [
+   4.2,
+   "chord",
+   2.84,
+   3.21
+  ],
+  [
+   47,
+   "chord",
+   3,
+   3.2
+  ],
+  [
+   47.4,
+   "chord",
+   3.05,
+   3.16
+  ],
+  [
+   53.8,
+   "chord",
+   2.84,
+   3.16
+  ],
+  [
+   3.4,
+   "chord",
+   2.86,
+   3.13
+  ],
+  [
+   4.6,
+   "chord",
+   2.83,
+   3.13
+  ],
+  [
+   9,
+   "chord",
+   2.87,
+   3.11
+  ],
+  [
+   40.6,
+   "chord",
+   3.05,
+   3.11
+  ]
+ ],
+ "membranes": [],
+ "problems": [
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "chord",
+   "z": 58.2,
+   "line": 137521,
+   "length_mm": 24.98,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 2.84,
+   "at": [
+    99.44,
+    84.74
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "chord",
+   "z": 58.2,
+   "line": 137521,
+   "length_mm": 16.83,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 2.83,
+   "at": [
+    134.5,
+    99.03
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "chord",
+   "z": 58.2,
+   "line": 137521,
+   "length_mm": 25.73,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 2.86,
+   "at": [
+    121.02,
+    134.39
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "chord",
+   "z": 58.6,
+   "line": 138151,
+   "length_mm": 27.24,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 2.97,
+   "at": [
+    98.06,
+    84.85
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "chord",
+   "z": 58.6,
+   "line": 138151,
+   "length_mm": 27.18,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3,
+   "at": [
+    134.94,
+    97.98
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "chord",
+   "z": 58.6,
+   "line": 138151,
+   "length_mm": 27.31,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3,
+   "at": [
+    121.83,
+    135.43
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "chord",
+   "z": 58.6,
+   "line": 138151,
+   "length_mm": 16.77,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 2.97,
+   "at": [
+    84.78,
+    121.91
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 66,
+   "line": 152236,
+   "length_mm": 23.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 12.19,
+   "at": [
+    101.72,
+    118.28
+   ]
+  }
+ ],
+ "problem_count": 8,
+ "PASS": false
+}
