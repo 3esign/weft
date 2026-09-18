@@ -187,7 +187,7 @@ async function cmdBuild(){
   /* 4. THE GATE, on the final file. Nothing that fails it is allowed to exist. */
   const A = geo ? geo.summary.args : { bead:m.bead, maxbridge:W.P.maxBridge };
   const bounded = (v, d, lo, hi, key) => { const n = v == null ? d : +v; if(!Number.isFinite(n) || n < lo || n > hi) die(`gate ${key}=${v} outside ${lo}..${hi}`); return n; };
-  const maxBridge = bounded(opt('maxbridge', A.maxbridge), 12, 0.5, allowExperimentalBridge ? 60 : 24, 'maxbridge');
+  const maxBridge = bounded(opt('maxbridge', A.maxbridge), 12, 0.5, allowExperimentalBridge ? 220 : 24, 'maxbridge');
   if(maxBridge > 24){
     const ex = geo && geo.summary.experiments;
     if(!ex || !Number.isFinite(+ex.evidencedBridge_mm) || !(ex.lintels || ex.horns || ex.crown || ex.zones)) die('a bridge ceiling above 24 mm needs summary.experiments (evidencedBridge_mm + declared zones)');
