@@ -1,0 +1,122 @@
+{
+ "file": "/home/claude/weftapp/weft/specimens/2026-09-17_KOCKA_TKANJE_A2L_X1_experimental/KOCKA_TKANJE_A2L_X1.gcode.3mf",
+ "layers": 251,
+ "params": {
+  "bead": 0.45,
+  "allow": 0.6,
+  "maxbridge": 60,
+  "res": 0.2,
+  "bedz": 0.5,
+  "maxislands": 1,
+  "maxcantilever": 4.8
+ },
+ "stats": {
+  "floating": 0,
+  "long_bridge": 0,
+  "cantilever": 0,
+  "bridges": 11637,
+  "bad_membrane": 0,
+  "unanchored_membrane": 0,
+  "checked_paths": 260,
+  "checked_points": 126659,
+  "exempt_layers": 3,
+  "first_layer_islands": 1
+ },
+ "byRole": {},
+ "worstGaps": [
+  [
+   57.36,
+   "bridge",
+   17.29,
+   17.34
+  ],
+  [
+   57.84,
+   "bridge",
+   8.8,
+   8.8
+  ],
+  [
+   58.32,
+   "bridge",
+   8.8,
+   8.8
+  ],
+  [
+   44.4,
+   "chord",
+   3.08,
+   3.54
+  ],
+  [
+   45.84,
+   "chord",
+   3.09,
+   3.49
+  ],
+  [
+   44.88,
+   "chord",
+   3.14,
+   3.4
+  ],
+  [
+   43.92,
+   "chord",
+   3.1,
+   3.3
+  ],
+  [
+   45.36,
+   "chord",
+   3.14,
+   3.23
+  ],
+  [
+   27.6,
+   "chord",
+   2.84,
+   3.16
+  ],
+  [
+   28.08,
+   "chord",
+   2.86,
+   3.16
+  ],
+  [
+   28.56,
+   "chord",
+   2.86,
+   3.16
+  ],
+  [
+   29.04,
+   "chord",
+   2.87,
+   3.16
+  ],
+  [
+   29.52,
+   "chord",
+   2.86,
+   3.16
+  ],
+  [
+   30,
+   "chord",
+   2.84,
+   3.16
+  ],
+  [
+   30.48,
+   "chord",
+   2.88,
+   3.16
+  ]
+ ],
+ "membranes": [],
+ "problems": [],
+ "problem_count": 0,
+ "PASS": true
+}

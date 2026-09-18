@@ -1,0 +1,122 @@
+{
+ "file": "/home/claude/weftapp/weft/specimens/2026-09-17_ZIGURAT_VRTLOG_ENDER3V4_X1_experimental/ZIGURAT_VRTLOG_ENDER3V4_X1.gcode",
+ "layers": 523,
+ "params": {
+  "bead": 0.42,
+  "allow": 0.6,
+  "maxbridge": 52,
+  "res": 0.2,
+  "bedz": 0.5,
+  "maxislands": 1,
+  "maxcantilever": 4.8
+ },
+ "stats": {
+  "floating": 0,
+  "long_bridge": 0,
+  "cantilever": 0,
+  "bridges": 71173,
+  "bad_membrane": 0,
+  "unanchored_membrane": 0,
+  "checked_paths": 1071,
+  "checked_points": 670501,
+  "exempt_layers": 3,
+  "first_layer_islands": 1
+ },
+ "byRole": {},
+ "worstGaps": [
+  [
+   102.2,
+   "bridge",
+   24.19,
+   24.25
+  ],
+  [
+   68.2,
+   "bridge",
+   15.28,
+   16.92
+  ],
+  [
+   34.2,
+   "bridge",
+   14.69,
+   16.44
+  ],
+  [
+   102.6,
+   "bridge",
+   11.56,
+   11.6
+  ],
+  [
+   103,
+   "bridge",
+   11.22,
+   11.6
+  ],
+  [
+   68.6,
+   "bridge",
+   5,
+   6.28
+  ],
+  [
+   34.6,
+   "bridge",
+   4.77,
+   6
+  ],
+  [
+   103.2,
+   "bridge",
+   6,
+   6
+  ],
+  [
+   103.4,
+   "bridge",
+   6,
+   6
+  ],
+  [
+   103.6,
+   "bridge",
+   6,
+   6
+  ],
+  [
+   103.8,
+   "bridge",
+   6,
+   6
+  ],
+  [
+   34.8,
+   "bridge",
+   4.2,
+   5.66
+  ],
+  [
+   68.8,
+   "bridge",
+   4.57,
+   5.63
+  ],
+  [
+   69,
+   "bridge",
+   2.83,
+   3.61
+  ],
+  [
+   35,
+   "bridge",
+   2.63,
+   3.4
+  ]
+ ],
+ "membranes": [],
+ "problems": [],
+ "problem_count": 0,
+ "PASS": true
+}

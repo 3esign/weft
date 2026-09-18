@@ -1,0 +1,16 @@
+
+=== thread (strategy suma) ===
+KOCKA_TKANJE_A2L_X1: 322 paths · 8616 welds · 113.8 m · 74×74× mm · overlaps 0
+GCODE /home/claude/weftapp/weft/specimens/2026-09-17_KOCKA_TKANJE_A2L_X1_experimental/KOCKA_TKANJE_A2L_X1.gcode  4704401 bytes, 131811 lines
+EXPERIMENTAL BRIDGE CEILING 60 mm declared (evidence: 16.2 mm)
+GATE  passed — 0 problems / 126659 points / 251 layers, first layer 1 island(s), 4576 ms
+gate at the evidenced 16.2 mm: 6 findings, 0 outside the declared zones { crown: 6 }
+HEAD  rewritten: 250 layers, 4924.87 mm filament, 14.93 g, max Z 60, 1h 44m 46s (kinematic)
+3MF   /home/claude/weftapp/weft/specimens/2026-09-17_KOCKA_TKANJE_A2L_X1_experimental/KOCKA_TKANJE_A2L_X1.gcode.3mf  250 layers, 4.9 m / 14.9 g, 1h 53m 54s, md5 1AFFD0E3F810C75D6B2A82E5A84A30AA, 2.7 MB
+GATE  package re-read from the container: passed (126659 points)
+
+=== done ===
+/home/claude/weftapp/weft/specimens/2026-09-17_KOCKA_TKANJE_A2L_X1_experimental
+  KOCKA_TKANJE_A2L_X1.gcode
+  KOCKA_TKANJE_A2L_X1.gcode.3mf
+  manifest.json

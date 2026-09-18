@@ -1,0 +1,228 @@
+{
+ "name": "ZIGURAT_VRTLOG_ENDER3V4_X1",
+ "model": "ziggurat",
+ "built": "2026-09-18T00:08:41",
+ "machine": {
+  "id": "ender",
+  "label": "Creality Ender-3 V4",
+  "plate": [
+   220,
+   220
+  ],
+  "maxZ": 235,
+  "bead": 0.42,
+  "beadSource": "ASSUMED",
+  "beadEvidence": "NEVER CALIBRATED. Run the C1 thin-wall test on this machine and put the measured width here before trusting anything built for it.",
+  "lh": 0.2,
+  "firstLayerBead": 0.48,
+  "temp": 220,
+  "bed": 60,
+  "start": "exports/ender_start.gcode",
+  "end": "exports/ender_end.gcode",
+  "route": "gcode"
+ },
+ "geometry": "ZIGURAT_VRTLOG_ENDER3V4_X1_geometry.json.gz (gzip of the generator output; regenerate with the command below)",
+ "shipped": [
+  "ZIGURAT_VRTLOG_ENDER3V4_X1.gcode"
+ ],
+ "gate": "ZIGURAT_VRTLOG_ENDER3V4_X1_gate.json",
+ "report": "ZIGURAT_VRTLOG_ENDER3V4_X1_report.json",
+ "builder": "weft.mjs",
+ "core": "core-2026-09-08",
+ "outcome": "NOT PRINTED \u2014 fill this in after the print, with photographs",
+ "sha256": {
+  "PREDICTIONS.md": "7a4246f4bfad2aa985ec15b627904a71006ff04d52754d47dce34c461283a884",
+  "PROTOCOL.md": "dc64b13fb5c4d5ac7bd5d919e7ca10fb81a631f1809f2def61a498accc77ef1d",
+  "README.md": "bd8d34a6bcd93c4a429498b5f96672f44751e0cfadc2b5739aa8b91627060e7e",
+  "ZIGURAT_VRTLOG_ENDER3V4_X1.gcode": "a9e519f5103d1a857c17cf79e76e2eab6e69afaa63da8b8ca2945236ce19490e",
+  "ZIGURAT_VRTLOG_ENDER3V4_X1_gate.json": "b0194c0723cf235b09d82f0544d8f0a32c9c3fc285134f45b328cf833e9cb02e",
+  "ZIGURAT_VRTLOG_ENDER3V4_X1_gate_at_16.2mm.json": "b96f519b69a203813e9f7d6bb2da33ef986bcc936843642282b11b3d0f0927f4",
+  "ZIGURAT_VRTLOG_ENDER3V4_X1_geometry.json.gz": "0cdded6fbd5b8df0a9c704b6365dc882d7ae5df496494fd19c5cf60967db99ae",
+  "ZIGURAT_VRTLOG_ENDER3V4_X1_preview.png": "9b2cb3cf592311e87d1af941639dc6827ebb08566f8d96e09ca1b4bbb6343dac",
+  "ZIGURAT_VRTLOG_ENDER3V4_X1_preview.svg": "d81e6e667e7d8646ba30ddbdde615a02651c4b2926f956a2205f7148d81253e1",
+  "ZIGURAT_VRTLOG_ENDER3V4_X1_report.json": "df7ce65faac882353295c8bfc98b7a9d4a16c2378175cf3be4a8b1d692d48462",
+  "build.log": "38dfc6d850b08c4348923270e4058e949d51903aac9ef85936673f984aca0e81"
+ },
+ "variant": "vrtlog",
+ "generator": "core/weft_ziggurat_geometry.mjs",
+ "gate_at_evidenced_ceiling": "ZIGURAT_VRTLOG_ENDER3V4_X1_gate_at_16.2mm.json",
+ "declaredExperiment": {
+  "declaredBridgeCeiling_mm": 52,
+  "evidencedBridge_mm": 16.2,
+  "crown": {
+   "process": "crown-woven-grid/v1",
+   "physicalStatus": "experimental",
+   "layers": 12,
+   "firstLayerFreeSpan_mm": 48.98
+  },
+  "zones": [
+   {
+    "name": "terrace 1",
+    "z0": 34,
+    "z1": 35.2,
+    "longestChord_mm": 45.2
+   },
+   {
+    "name": "terrace 2",
+    "z0": 68,
+    "z1": 69.2,
+    "longestChord_mm": 46
+   }
+  ],
+  "horns": [
+   {
+    "P_mm": 8,
+    "rate_mm_per_layer": 0.8,
+    "zStart": 83.4,
+    "zEnd": 88.2
+   },
+   {
+    "P_mm": 8,
+    "rate_mm_per_layer": 0.8,
+    "zStart": 83.4,
+    "zEnd": 88.2
+   },
+   {
+    "P_mm": 8,
+    "rate_mm_per_layer": 0.8,
+    "zStart": 83.4,
+    "zEnd": 88.2
+   },
+   {
+    "P_mm": 8,
+    "rate_mm_per_layer": 0.8,
+    "zStart": 83.4,
+    "zEnd": 88.2
+   }
+  ],
+  "protocol": "gate at the declared ceiling must be clean; gate at the evidenced ceiling must attribute every finding to a terrace zone (6 layers), a horn, or the roof \u2014 otherwise the build is refused"
+ },
+ "size_mm": [
+  189.2,
+  189.2,
+  104.4
+ ],
+ "tiers": 3,
+ "tubes": [
+  {
+   "tube": 0,
+   "sideCentreline_mm": 172.6,
+   "corner_mm": 8.6,
+   "zVisibleFrom": 0,
+   "zTop": 34,
+   "grammar": "sine",
+   "perimeter_mm": 675.6,
+   "K": 192,
+   "nodePitch_mm": 3.52,
+   "hiddenK": 96,
+   "turns": 0,
+   "relief": {
+    "kind": "spiral wave",
+    "wavesAround": 4,
+    "rise_mm": 24,
+    "amplitude_mm": 1.4
+   }
+  },
+  {
+   "tube": 1,
+   "sideCentreline_mm": 112.19,
+   "corner_mm": 8,
+   "zVisibleFrom": 34,
+   "zTop": 68,
+   "grammar": "sine",
+   "perimeter_mm": 435,
+   "K": 96,
+   "nodePitch_mm": 4.53,
+   "hiddenK": 48,
+   "turns": 0.125,
+   "relief": {
+    "kind": "spiral wave",
+    "wavesAround": 4,
+    "rise_mm": 24,
+    "amplitude_mm": 1.4
+   }
+  },
+  {
+   "tube": 2,
+   "sideCentreline_mm": 51.78,
+   "corner_mm": 8,
+   "zVisibleFrom": 68,
+   "zTop": 102,
+   "grammar": "sine",
+   "perimeter_mm": 193.4,
+   "K": 48,
+   "nodePitch_mm": 4.03,
+   "hiddenK": 24,
+   "turns": -0.125,
+   "relief": {
+    "kind": "spiral wave",
+    "wavesAround": 4,
+    "rise_mm": 24,
+    "amplitude_mm": 1.4
+   }
+  }
+ ],
+ "terraces": [
+  {
+   "terrace": 1,
+   "between": [
+    0,
+    1
+   ],
+   "z": 34,
+   "gapCentreline_mm": 30.21,
+   "sideChord_mm": 30.3,
+   "cornerDiagonal_mm": 45.2,
+   "layers": 6,
+   "schedule": "radial x2 (spans the gap; corners on the diagonal) -> 4-turn spiral along the strip (rests on the radials every 9 mm) -> fine radials at 3 mm (rest on the loops) -> 8-turn spiral (rests on the fine radials) -> diamonds on the sides, anti-diagonals across the corners (rest on the loops); every layer rests on the one below"
+  },
+  {
+   "terrace": 2,
+   "between": [
+    1,
+    2
+   ],
+   "z": 68,
+   "gapCentreline_mm": 30.21,
+   "sideChord_mm": 30.3,
+   "cornerDiagonal_mm": 46,
+   "layers": 6,
+   "schedule": "radial x2 (spans the gap; corners on the diagonal) -> 4-turn spiral along the strip (rests on the radials every 9 mm) -> fine radials at 3 mm (rest on the loops) -> 8-turn spiral (rests on the fine radials) -> diamonds on the sides, anti-diagonals across the corners (rest on the loops); every layer rests on the one below"
+  }
+ ],
+ "roof": {
+  "process": "crown-woven-grid/v1",
+  "tube": 2,
+  "schedule": "2 -> 4 -> 8 -> 16 (base 2)",
+  "innerSpan_mm": 48.98,
+  "layers": 12,
+  "firstFreeSpan_mm": 48.98
+ },
+ "threadLength_m": 695.2,
+ "weldNodes": 47184,
+ "paths": 1263,
+ "kinematic_h_lower_bound": 6.44,
+ "gateSummary": {
+  "declared_mm": 52,
+  "declaredGate": {
+   "PASS": true,
+   "problems": 0,
+   "points": 670501,
+   "layers": 523,
+   "first_layer_islands": 1
+  },
+  "evidencedGate_16.2": {
+   "findings": 114,
+   "byZone": {
+    "terrace 1": 65,
+    "terrace 2": 39,
+    "horn 8": 1,
+    "crown": 9
+   },
+   "outsideDeclaredZones": 0
+  }
+ },
+ "command": "node core/weft_ziggurat_geometry.mjs --variant vrtlog --machine ender --out ZIGURAT_VRTLOG_ENDER3V4_X1_geometry.json --svg ZIGURAT_VRTLOG_ENDER3V4_X1_preview.svg --allow-assumed-bead ; node weft.mjs build --geo ZIGURAT_VRTLOG_ENDER3V4_X1_geometry.json --machine ender --name ZIGURAT_VRTLOG_ENDER3V4_X1 --out <dir> --nostl --allow-experimental-bridge --i-know-the-bead-is-a-guess",
+ "warning": "Built in the cloud on 2026-09-17/18. Nothing printed. Every \"PASS\" is the geometric rule on the file; the terrace and roof spans beyond 16.2 mm are declared experiments.",
+ "note_previews": "the two preview images carry a C2PA content-credentials manifest that the transfer channel (Cowork bridge) adds to images in transit; they are hashed as they arrived on the PC. The G-code, packages, gate/report JSON and text files crossed unchanged (verified against the cloud hashes on 2026-09-18)."
+}

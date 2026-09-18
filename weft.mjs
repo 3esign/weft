@@ -190,7 +190,7 @@ async function cmdBuild(){
   const maxBridge = bounded(opt('maxbridge', A.maxbridge), 12, 0.5, allowExperimentalBridge ? 60 : 24, 'maxbridge');
   if(maxBridge > 24){
     const ex = geo && geo.summary.experiments;
-    if(!ex || !Number.isFinite(+ex.evidencedBridge_mm) || !(ex.lintels || ex.horns || ex.crown)) die('a bridge ceiling above 24 mm needs summary.experiments (evidencedBridge_mm + declared zones)');
+    if(!ex || !Number.isFinite(+ex.evidencedBridge_mm) || !(ex.lintels || ex.horns || ex.crown || ex.zones)) die('a bridge ceiling above 24 mm needs summary.experiments (evidencedBridge_mm + declared zones)');
     console.log(`EXPERIMENTAL BRIDGE CEILING ${maxBridge} mm declared (evidence: ${ex.evidencedBridge_mm} mm)`);
   }
   const gateOpts = { bead:m.bead, maxbridge:maxBridge, maxcantilever:bounded(opt('maxcantilever', A.maxcantilever), 3, 0.2, 8, 'maxcantilever'),
@@ -220,7 +220,9 @@ async function cmdBuild(){
       const zones = [];
       for(const l of (ex.lintels || [])) zones.push({ name:`lintel ${l.W_mm}`, z0:l.zLintel - 0.01, z1:l.zLintel + 4 * A.lh + 0.01 });
       for(const h of (ex.horns || [])) zones.push({ name:`horn ${h.P_mm}`, z0:h.zStart - 0.01, z1:h.zEnd + 0.01 });
-      if(ex.crown){ const zc = geo.layers.find(l => l.phase === 'crown-iris'); if(zc) zones.push({ name:'crown iris', z0:zc.zBot - 0.01, z1:1e9 }); }
+      for(const zn of (ex.zones || [])) zones.push({ name:zn.name, z0:+zn.z0 - 0.01, z1:+zn.z1 + 0.01 });   // generic declared zones (terraces, ...) — 2026-09-17
+      /* the crown zone: from the first crown layer (crown-iris, crown-grid, ...) to the top — 2026-09-17: any crown-* phase */
+      if(ex.crown){ const zc = geo.layers.find(l => typeof l.phase === 'string' && l.phase.startsWith('crown-')); if(zc) zones.push({ name:'crown', z0:zc.zBot - 0.01, z1:1e9 }); }
       const probs = g2.problems || []; const outside = []; const byZone = {};
       for(const p of probs){ const z = +(p.z ?? NaN); const zone = zones.find(zn => z >= zn.z0 && z <= zn.z1); if(zone) byZone[zone.name] = (byZone[zone.name] || 0) + 1; else outside.push(p); }
       console.log(`gate at the evidenced ${safe} mm: ${probs.length} findings, ${outside.length} outside the declared zones`, byZone);

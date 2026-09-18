@@ -1,0 +1,856 @@
+{
+  "report": {
+    "name": "ZIGURAT_TKANJE_A2L_X1",
+    "machine": "Bambu A2L",
+    "bed_mm": [
+      330,
+      320
+    ],
+    "layers": 2046,
+    "globalZLevels": 665,
+    "expectedZLevels": 665,
+    "logicalCells": null,
+    "experimentalMembraneOverride": false,
+    "maxBodiesPerZ": 5,
+    "size_mm": [
+      289.6,
+      289.6,
+      null
+    ],
+    "plate_mm": [
+      20.4,
+      15.4,
+      309.6,
+      304.6
+    ],
+    "fitsPlate": true,
+    "grammarCounts": {
+      "staple": 584,
+      "diagonal": 82,
+      "sine": 81,
+      "eight": 82
+    },
+    "threadLength_m": 1720.4,
+    "weldNodes": 132365,
+    "rawPaths": 44,
+    "unintendedOverlaps": 0,
+    "seamClosures": 0,
+    "overlapSamples": [],
+    "kinematic_h": 15.93,
+    "routeA_estimate_h": 150.3,
+    "caps": [],
+    "events": [
+      {
+        "z": 39.12,
+        "k": 163,
+        "event": "tier 1 -> terrace 1"
+      },
+      {
+        "z": 40.56,
+        "k": 169,
+        "event": "terrace 1 -> tier 2"
+      },
+      {
+        "z": 78.24,
+        "k": 326,
+        "event": "tier 2 -> terrace 2"
+      },
+      {
+        "z": 79.68,
+        "k": 332,
+        "event": "terrace 2 -> tier 3"
+      },
+      {
+        "z": 117.36,
+        "k": 489,
+        "event": "tier 3 -> terrace 3"
+      },
+      {
+        "z": 118.8,
+        "k": 495,
+        "event": "terrace 3 -> tier 4"
+      },
+      {
+        "z": 156.72,
+        "k": 653,
+        "event": "tier 4 -> crown-grid"
+      }
+    ],
+    "contourCounts": [
+      [
+        0,
+        4
+      ],
+      [
+        40.56,
+        3
+      ],
+      [
+        79.68,
+        2
+      ],
+      [
+        118.8,
+        1
+      ]
+    ],
+    "perLayerSample": [
+      {
+        "k": 0,
+        "z": 0,
+        "contours": 4,
+        "paths": 0,
+        "nodes": 408
+      },
+      {
+        "k": 40,
+        "z": 9.6,
+        "contours": 4,
+        "paths": 0,
+        "nodes": 408
+      },
+      {
+        "k": 80,
+        "z": 19.2,
+        "contours": 4,
+        "paths": 0,
+        "nodes": 408
+      },
+      {
+        "k": 120,
+        "z": 28.8,
+        "contours": 4,
+        "paths": 0,
+        "nodes": 408
+      },
+      {
+        "k": 160,
+        "z": 38.4,
+        "contours": 4,
+        "paths": 0,
+        "nodes": 408
+      },
+      {
+        "k": 200,
+        "z": 48,
+        "contours": 3,
+        "paths": 0,
+        "nodes": 312
+      },
+      {
+        "k": 240,
+        "z": 57.6,
+        "contours": 3,
+        "paths": 0,
+        "nodes": 312
+      },
+      {
+        "k": 280,
+        "z": 67.2,
+        "contours": 3,
+        "paths": 0,
+        "nodes": 312
+      },
+      {
+        "k": 320,
+        "z": 76.8,
+        "contours": 3,
+        "paths": 0,
+        "nodes": 312
+      },
+      {
+        "k": 360,
+        "z": 86.4,
+        "contours": 2,
+        "paths": 0,
+        "nodes": 216
+      },
+      {
+        "k": 400,
+        "z": 96,
+        "contours": 2,
+        "paths": 0,
+        "nodes": 216
+      },
+      {
+        "k": 440,
+        "z": 105.6,
+        "contours": 2,
+        "paths": 0,
+        "nodes": 216
+      },
+      {
+        "k": 480,
+        "z": 115.2,
+        "contours": 2,
+        "paths": 0,
+        "nodes": 216
+      },
+      {
+        "k": 520,
+        "z": 124.8,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 96
+      },
+      {
+        "k": 560,
+        "z": 134.4,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 96
+      },
+      {
+        "k": 600,
+        "z": 144,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 96
+      },
+      {
+        "k": 640,
+        "z": 153.6,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 96
+      }
+    ],
+    "gateAtEvidencedCeiling": {
+      "maxbridge_mm": 16.2,
+      "findings": 263,
+      "byZone": {
+        "terrace 1": 110,
+        "terrace 2": 76,
+        "terrace 3": 45,
+        "crown": 32
+      },
+      "outsideDeclaredZones": 0,
+      "outsideSamples": []
+    },
+    "membranes": []
+  },
+  "geometry": {
+    "name": "ZIGURAT_TKANJE_A2L_X1",
+    "variant": "tkanje",
+    "title": "TKANJE",
+    "concept": "the sampler ziggurat: one grammar per tier, a quilt of pillows that scales with the tier, a twist that accelerates upward (0, 15, 30, 45 degrees per tier — 90 in all), Peano roof 3-9-27",
+    "generator": "core/weft_ziggurat_geometry.mjs",
+    "generatedAt": "2026-09-18",
+    "machine": "a2l",
+    "machineLabel": "Bambu Lab A2L",
+    "machineQualification": {
+      "beadSource": "measured",
+      "beadEvidence": "specimens/2026-08-31_D5_R140_A2L_physical and specimens/2026-09-02_P0_suma_2x2_physical — both printed to completion at this bead",
+      "assumedAcknowledged": false
+    },
+    "size_mm": [
+      289.2,
+      289.2,
+      159.6
+    ],
+    "footprint_mm": 290,
+    "margin_mm": 15,
+    "height_mm": 159.6,
+    "tiers": 4,
+    "totalLayers": 665,
+    "tubes": [
+      {
+        "tube": 0,
+        "sideCentreline_mm": 272.6,
+        "corner_mm": 10,
+        "zVisibleFrom": 0,
+        "zTop": 39.12,
+        "grammar": "staple",
+        "perimeter_mm": 1073.2,
+        "K": 192,
+        "nodePitch_mm": 5.59,
+        "hiddenK": 96,
+        "turns": 0,
+        "relief": {
+          "pillowsPerFace": 11,
+          "rows": 2,
+          "amplitude_mm": 1.4
+        }
+      },
+      {
+        "tube": 1,
+        "sideCentreline_mm": 201.73,
+        "corner_mm": 10,
+        "zVisibleFrom": 39.12,
+        "zTop": 78.24,
+        "grammar": "diagonal",
+        "perimeter_mm": 789.8,
+        "K": 192,
+        "nodePitch_mm": 4.11,
+        "hiddenK": 96,
+        "turns": 0.041666666666666664,
+        "relief": {
+          "pillowsPerFace": 8,
+          "rows": 2,
+          "amplitude_mm": 1.4
+        }
+      },
+      {
+        "tube": 2,
+        "sideCentreline_mm": 130.87,
+        "corner_mm": 8,
+        "zVisibleFrom": 78.24,
+        "zTop": 117.36,
+        "grammar": "sine",
+        "perimeter_mm": 509.7,
+        "K": 192,
+        "nodePitch_mm": 2.65,
+        "hiddenK": 48,
+        "turns": 0.08333333333333333,
+        "relief": {
+          "pillowsPerFace": 5,
+          "rows": 2,
+          "amplitude_mm": 1.4
+        }
+      },
+      {
+        "tube": 3,
+        "sideCentreline_mm": 60,
+        "corner_mm": 8,
+        "zVisibleFrom": 117.36,
+        "zTop": 156.72,
+        "grammar": "eight",
+        "perimeter_mm": 226.3,
+        "K": 96,
+        "nodePitch_mm": 2.36,
+        "hiddenK": 24,
+        "turns": 0.125,
+        "relief": {
+          "pillowsPerFace": 2,
+          "rows": 2,
+          "amplitude_mm": 1.4
+        }
+      }
+    ],
+    "terraces": [
+      {
+        "terrace": 1,
+        "between": [
+          0,
+          1
+        ],
+        "z": 39.12,
+        "gapCentreline_mm": 35.44,
+        "sideChord_mm": 35.5,
+        "cornerDiagonal_mm": 50.9,
+        "layers": 6,
+        "schedule": "radial x2 (spans the gap; corners on the diagonal) -> 4-turn spiral along the strip (rests on the radials every 9 mm) -> fine radials at 3 mm (rest on the loops) -> 8-turn spiral (rests on the fine radials) -> diamonds on the sides, anti-diagonals across the corners (rest on the loops); every layer rests on the one below",
+        "perLayer": [
+          {
+            "k": 163,
+            "z": 39.12,
+            "stage": "radial",
+            "pitch_mm": 9,
+            "pieces": 1,
+            "chords": 108,
+            "longestChord_mm": 50.88,
+            "freeSpanBelieved_mm": 50.88,
+            "pathLength_mm": 5284
+          },
+          {
+            "k": 164,
+            "z": 39.36,
+            "stage": "radial",
+            "pitch_mm": 9,
+            "pieces": 1,
+            "chords": 108,
+            "longestChord_mm": 50.91,
+            "freeSpanBelieved_mm": 0,
+            "pathLength_mm": 5284
+          },
+          {
+            "k": 165,
+            "z": 39.6,
+            "stage": "spiral4",
+            "pitch_mm": 9,
+            "pieces": 1,
+            "chords": 1,
+            "longestChord_mm": 8.86,
+            "freeSpanBelieved_mm": 9,
+            "pathLength_mm": 3725
+          },
+          {
+            "k": 166,
+            "z": 39.84,
+            "stage": "fine",
+            "pitch_mm": 3,
+            "pieces": 1,
+            "chords": 283,
+            "longestChord_mm": 53.42,
+            "freeSpanBelieved_mm": 8.86,
+            "pathLength_mm": 12189
+          },
+          {
+            "k": 167,
+            "z": 40.08,
+            "stage": "spiral8",
+            "pitch_mm": 9,
+            "pieces": 1,
+            "chords": 1,
+            "longestChord_mm": 4.43,
+            "freeSpanBelieved_mm": 3,
+            "pathLength_mm": 7450
+          },
+          {
+            "k": 168,
+            "z": 40.32,
+            "stage": "diamond",
+            "pitch_mm": 9,
+            "pieces": 8,
+            "chords": 84,
+            "longestChord_mm": 56.88,
+            "freeSpanBelieved_mm": 6.26,
+            "pathLength_mm": 5002
+          }
+        ]
+      },
+      {
+        "terrace": 2,
+        "between": [
+          1,
+          2
+        ],
+        "z": 78.24,
+        "gapCentreline_mm": 35.43,
+        "sideChord_mm": 35.5,
+        "cornerDiagonal_mm": 52.7,
+        "layers": 6,
+        "schedule": "radial x2 (spans the gap; corners on the diagonal) -> 4-turn spiral along the strip (rests on the radials every 9 mm) -> fine radials at 3 mm (rest on the loops) -> 8-turn spiral (rests on the fine radials) -> diamonds on the sides, anti-diagonals across the corners (rest on the loops); every layer rests on the one below",
+        "perLayer": [
+          {
+            "k": 326,
+            "z": 78.24,
+            "stage": "radial",
+            "pitch_mm": 9,
+            "pieces": 1,
+            "chords": 76,
+            "longestChord_mm": 52.73,
+            "freeSpanBelieved_mm": 52.73,
+            "pathLength_mm": 3745
+          },
+          {
+            "k": 327,
+            "z": 78.48,
+            "stage": "radial",
+            "pitch_mm": 9,
+            "pieces": 1,
+            "chords": 76,
+            "longestChord_mm": 52.74,
+            "freeSpanBelieved_mm": 0,
+            "pathLength_mm": 3745
+          },
+          {
+            "k": 328,
+            "z": 78.72,
+            "stage": "spiral4",
+            "pitch_mm": 9,
+            "pieces": 1,
+            "chords": 1,
+            "longestChord_mm": 8.86,
+            "freeSpanBelieved_mm": 9,
+            "pathLength_mm": 2598
+          },
+          {
+            "k": 329,
+            "z": 78.96,
+            "stage": "fine",
+            "pitch_mm": 3,
+            "pieces": 1,
+            "chords": 191,
+            "longestChord_mm": 52.85,
+            "freeSpanBelieved_mm": 8.86,
+            "pathLength_mm": 8305
+          },
+          {
+            "k": 330,
+            "z": 79.2,
+            "stage": "spiral8",
+            "pitch_mm": 9,
+            "pieces": 1,
+            "chords": 1,
+            "longestChord_mm": 4.43,
+            "freeSpanBelieved_mm": 3,
+            "pathLength_mm": 5196
+          },
+          {
+            "k": 331,
+            "z": 79.44,
+            "stage": "diamond",
+            "pitch_mm": 9,
+            "pieces": 8,
+            "chords": 55,
+            "longestChord_mm": 62.38,
+            "freeSpanBelieved_mm": 6.26,
+            "pathLength_mm": 3017
+          }
+        ]
+      },
+      {
+        "terrace": 3,
+        "between": [
+          2,
+          3
+        ],
+        "z": 117.36,
+        "gapCentreline_mm": 35.44,
+        "sideChord_mm": 35.5,
+        "cornerDiagonal_mm": 53.4,
+        "layers": 6,
+        "schedule": "radial x2 (spans the gap; corners on the diagonal) -> 4-turn spiral along the strip (rests on the radials every 9 mm) -> fine radials at 3 mm (rest on the loops) -> 8-turn spiral (rests on the fine radials) -> diamonds on the sides, anti-diagonals across the corners (rest on the loops); every layer rests on the one below",
+        "perLayer": [
+          {
+            "k": 489,
+            "z": 117.36,
+            "stage": "radial",
+            "pitch_mm": 9,
+            "pieces": 1,
+            "chords": 45,
+            "longestChord_mm": 53.4,
+            "freeSpanBelieved_mm": 53.4,
+            "pathLength_mm": 2260
+          },
+          {
+            "k": 490,
+            "z": 117.6,
+            "stage": "radial",
+            "pitch_mm": 9,
+            "pieces": 1,
+            "chords": 45,
+            "longestChord_mm": 53.41,
+            "freeSpanBelieved_mm": 0,
+            "pathLength_mm": 2260
+          },
+          {
+            "k": 491,
+            "z": 117.84,
+            "stage": "spiral4",
+            "pitch_mm": 9,
+            "pieces": 1,
+            "chords": 1,
+            "longestChord_mm": 8.86,
+            "freeSpanBelieved_mm": 9,
+            "pathLength_mm": 1471
+          },
+          {
+            "k": 492,
+            "z": 118.08,
+            "stage": "fine",
+            "pitch_mm": 3,
+            "pieces": 1,
+            "chords": 97,
+            "longestChord_mm": 53.62,
+            "freeSpanBelieved_mm": 8.86,
+            "pathLength_mm": 4367
+          },
+          {
+            "k": 493,
+            "z": 118.32,
+            "stage": "spiral8",
+            "pitch_mm": 9,
+            "pieces": 1,
+            "chords": 1,
+            "longestChord_mm": 4.43,
+            "freeSpanBelieved_mm": 3,
+            "pathLength_mm": 2941
+          },
+          {
+            "k": 494,
+            "z": 118.56,
+            "stage": "fine",
+            "pitch_mm": 3,
+            "pieces": 1,
+            "chords": 97,
+            "longestChord_mm": 53.66,
+            "freeSpanBelieved_mm": 8.86,
+            "pathLength_mm": 4368
+          }
+        ]
+      }
+    ],
+    "roof": {
+      "process": "crown-woven-grid/v1",
+      "tube": 3,
+      "schedule": "3 -> 9 -> 27 (base 3)",
+      "innerSpan_mm": 57.2,
+      "layers": 12,
+      "perLayer": [
+        {
+          "k": 653,
+          "z": 156.72,
+          "level": 1,
+          "grid": "3x3",
+          "dir": "X",
+          "lines": 2,
+          "pitch_mm": 19.07,
+          "freeSpan_mm": 57.2,
+          "inQualifiedDomain": false,
+          "pathLength_mm": 146
+        },
+        {
+          "k": 654,
+          "z": 156.96,
+          "level": 1,
+          "grid": "3x3",
+          "dir": "X",
+          "lines": 2,
+          "pitch_mm": 19.07,
+          "freeSpan_mm": 57.2,
+          "inQualifiedDomain": false,
+          "pathLength_mm": 146
+        },
+        {
+          "k": 655,
+          "z": 157.2,
+          "level": 1,
+          "grid": "3x3",
+          "dir": "Y",
+          "lines": 2,
+          "pitch_mm": 19.07,
+          "freeSpan_mm": 19.07,
+          "inQualifiedDomain": false,
+          "pathLength_mm": 146
+        },
+        {
+          "k": 656,
+          "z": 157.44,
+          "level": 1,
+          "grid": "3x3",
+          "dir": "Y",
+          "lines": 2,
+          "pitch_mm": 19.07,
+          "freeSpan_mm": 19.07,
+          "inQualifiedDomain": false,
+          "pathLength_mm": 146
+        },
+        {
+          "k": 657,
+          "z": 157.68,
+          "level": 2,
+          "grid": "9x9",
+          "dir": "X",
+          "lines": 8,
+          "pitch_mm": 6.36,
+          "freeSpan_mm": 19.07,
+          "inQualifiedDomain": false,
+          "pathLength_mm": 552
+        },
+        {
+          "k": 658,
+          "z": 157.92,
+          "level": 2,
+          "grid": "9x9",
+          "dir": "Y",
+          "lines": 8,
+          "pitch_mm": 6.36,
+          "freeSpan_mm": 6.36,
+          "inQualifiedDomain": true,
+          "pathLength_mm": 552
+        },
+        {
+          "k": 659,
+          "z": 158.16,
+          "level": 2,
+          "grid": "9x9",
+          "dir": "X",
+          "lines": 8,
+          "pitch_mm": 6.36,
+          "freeSpan_mm": 6.36,
+          "inQualifiedDomain": true,
+          "pathLength_mm": 552
+        },
+        {
+          "k": 660,
+          "z": 158.4,
+          "level": 2,
+          "grid": "9x9",
+          "dir": "Y",
+          "lines": 8,
+          "pitch_mm": 6.36,
+          "freeSpan_mm": 6.36,
+          "inQualifiedDomain": true,
+          "pathLength_mm": 552
+        },
+        {
+          "k": 661,
+          "z": 158.64,
+          "level": 3,
+          "grid": "27x27",
+          "dir": "X",
+          "lines": 26,
+          "pitch_mm": 2.12,
+          "freeSpan_mm": 6.36,
+          "inQualifiedDomain": true,
+          "pathLength_mm": 1696
+        },
+        {
+          "k": 662,
+          "z": 158.88,
+          "level": 3,
+          "grid": "27x27",
+          "dir": "Y",
+          "lines": 26,
+          "pitch_mm": 2.12,
+          "freeSpan_mm": 2.12,
+          "inQualifiedDomain": true,
+          "pathLength_mm": 1696
+        },
+        {
+          "k": 663,
+          "z": 159.12,
+          "level": 3,
+          "grid": "27x27",
+          "dir": "X",
+          "lines": 26,
+          "pitch_mm": 2.12,
+          "freeSpan_mm": 2.12,
+          "inQualifiedDomain": true,
+          "pathLength_mm": 1696
+        },
+        {
+          "k": 664,
+          "z": 159.36,
+          "level": 3,
+          "grid": "27x27",
+          "dir": "Y",
+          "lines": 26,
+          "pitch_mm": 2.12,
+          "freeSpan_mm": 2.12,
+          "inQualifiedDomain": true,
+          "pathLength_mm": 1696
+        }
+      ],
+      "firstFreeSpan_mm": 57.2
+    },
+    "horns": [],
+    "args": {
+      "lh": 0.24,
+      "bead": 0.45,
+      "firstLayerBead": 0.52,
+      "firstLayerSpeed": 12,
+      "w": 3,
+      "e": 0.7,
+      "r0": 136.3,
+      "K": 192,
+      "foundation": 6,
+      "maxbridge": 60,
+      "maxcantilever": 4.8,
+      "allow": 0.6,
+      "minanchor": 0.5,
+      "maxCapRadius": 20,
+      "speed": 30,
+      "bridgeSpeed": 18,
+      "temp": 220,
+      "bed": 55,
+      "fan": 100
+    },
+    "gatePolicy": {
+      "meaning": "experimental admission ceiling for the terrace and roof skeletons, not a claim that they will not sag",
+      "bridge_mm": 60,
+      "cantilever_mm": 4.8,
+      "membrane_min_anchor": 0.5,
+      "first_layer_max_islands": 1,
+      "secondGate_mm": 16.2
+    },
+    "estimates": {
+      "threadLength_m": 1638,
+      "travelsBetweenPaths": 1040,
+      "worstLayerMove_mm": 0.314,
+      "minConcaveRadius_mm": 14.67,
+      "maxNodeGap_mm": 9.427
+    },
+    "foundation": {
+      "paths": 341,
+      "islandsExpected": 1,
+      "kind": "rings+spokes around every tube, ribs across every gap, the floor grid inside the innermost"
+    },
+    "experiments": {
+      "declaredBridgeCeiling_mm": 60,
+      "evidencedBridge_mm": 16.2,
+      "crown": {
+        "process": "crown-woven-grid/v1",
+        "physicalStatus": "experimental",
+        "layers": 12,
+        "firstLayerFreeSpan_mm": 57.2
+      },
+      "zones": [
+        {
+          "name": "terrace 1",
+          "z0": 39.12,
+          "z1": 40.56,
+          "longestChord_mm": 50.9
+        },
+        {
+          "name": "terrace 2",
+          "z0": 78.24,
+          "z1": 79.68,
+          "longestChord_mm": 52.7
+        },
+        {
+          "name": "terrace 3",
+          "z0": 117.36,
+          "z1": 118.8,
+          "longestChord_mm": 53.4
+        }
+      ],
+      "horns": [],
+      "protocol": "gate at the declared ceiling must be clean; gate at the evidenced ceiling must attribute every finding to a terrace zone (6 layers), a horn, or the roof — otherwise the build is refused"
+    },
+    "events": [
+      {
+        "z": 39.12,
+        "k": 163,
+        "event": "tier 1 -> terrace 1"
+      },
+      {
+        "z": 40.56,
+        "k": 169,
+        "event": "terrace 1 -> tier 2"
+      },
+      {
+        "z": 78.24,
+        "k": 326,
+        "event": "tier 2 -> terrace 2"
+      },
+      {
+        "z": 79.68,
+        "k": 332,
+        "event": "terrace 2 -> tier 3"
+      },
+      {
+        "z": 117.36,
+        "k": 489,
+        "event": "tier 3 -> terrace 3"
+      },
+      {
+        "z": 118.8,
+        "k": 495,
+        "event": "terrace 3 -> tier 4"
+      },
+      {
+        "z": 156.72,
+        "k": 653,
+        "event": "tier 4 -> crown-grid"
+      }
+    ],
+    "violations": [],
+    "warnings": []
+  },
+  "design": null,
+  "preset": null,
+  "builder": "weft.mjs (core/weft_core.js + core/weft_gate.js, no browser, no Python)",
+  "gate": {
+    "bead": 0.45,
+    "maxbridge": 60,
+    "maxcantilever": 4.8,
+    "allow": 0.6,
+    "minanchor": 0.5,
+    "maxCapRadius": 20,
+    "maxislands": 1,
+    "file": "/home/claude/weftapp/weft/specimens/2026-09-17_ZIGURAT_TKANJE_A2L_X1_experimental/ZIGURAT_TKANJE_A2L_X1.gcode"
+  }
+}

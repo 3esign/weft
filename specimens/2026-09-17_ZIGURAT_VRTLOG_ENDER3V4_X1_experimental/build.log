@@ -1,0 +1,21 @@
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!  Creality Ender-3 V4: bead 0.42 mm is ASSUMED, not measured.
+!  NEVER CALIBRATED. Run the C1 thin-wall test on this machine and put the measured width here before trusting anything built for it.
+!  Everything below is derived from that number. Calibrate before you trust it.
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+=== thread (strategy suma) ===
+ZIGURAT_VRTLOG_ENDER3V4_X1: 1263 paths · 47184 welds · 695.2 m · 189.6×189.6× mm · overlaps 0
+GCODE /home/claude/weftapp/weft/specimens/2026-09-17_ZIGURAT_VRTLOG_ENDER3V4_X1_experimental/ZIGURAT_VRTLOG_ENDER3V4_X1.gcode  23722146 bytes, 689031 lines
+EXPERIMENTAL BRIDGE CEILING 52 mm declared (evidence: 16.2 mm)
+GATE  passed — 0 problems / 670501 points / 523 layers, first layer 1 island(s), 28406 ms
+gate at the evidenced 16.2 mm: 114 findings, 0 outside the declared zones { 'terrace 1': 65, 'terrace 2': 39, 'horn 8': 1, crown: 9 }
+HEAD  rewritten: 522 layers, 23349.06 mm filament, 70.76 g, max Z 104.4, 11h 23m 46s (kinematic)
+
+=== done ===
+/home/claude/weftapp/weft/specimens/2026-09-17_ZIGURAT_VRTLOG_ENDER3V4_X1_experimental
+  ZIGURAT_VRTLOG_ENDER3V4_X1.gcode
+  manifest.json
+
+  Remember: this was built on an ASSUMED bead of 0.42 mm.

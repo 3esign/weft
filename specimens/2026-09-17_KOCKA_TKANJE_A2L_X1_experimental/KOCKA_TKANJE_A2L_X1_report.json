@@ -1,0 +1,513 @@
+{
+  "report": {
+    "name": "KOCKA_TKANJE_A2L_X1",
+    "machine": "Bambu A2L",
+    "bed_mm": [
+      330,
+      320
+    ],
+    "layers": 322,
+    "globalZLevels": 250,
+    "expectedZLevels": 250,
+    "logicalCells": null,
+    "experimentalMembraneOverride": false,
+    "maxBodiesPerZ": 1,
+    "size_mm": [
+      74,
+      74,
+      null
+    ],
+    "plate_mm": [
+      128.2,
+      123.2,
+      201.8,
+      196.8
+    ],
+    "fitsPlate": true,
+    "grammarCounts": {
+      "staple": 37,
+      "diagonal": 23,
+      "sine": 24,
+      "eight": 24,
+      "perp": 17
+    },
+    "threadLength_m": 113.8,
+    "weldNodes": 8616,
+    "rawPaths": 12,
+    "unintendedOverlaps": 0,
+    "seamClosures": 0,
+    "overlapSamples": [],
+    "kinematic_h": 1.05,
+    "routeA_estimate_h": 9.9,
+    "caps": [],
+    "events": [
+      {
+        "z": 11.52,
+        "k": 48,
+        "event": "foot -> truss"
+      },
+      {
+        "z": 22.8,
+        "k": 95,
+        "event": "truss -> wave"
+      },
+      {
+        "z": 34.32,
+        "k": 143,
+        "event": "wave -> knot"
+      },
+      {
+        "z": 45.6,
+        "k": 190,
+        "event": "knot -> belly"
+      },
+      {
+        "z": 53.76,
+        "k": 224,
+        "event": "belly -> ledge"
+      },
+      {
+        "z": 57.12,
+        "k": 238,
+        "event": "wall -> crown-grid (crown-woven-grid/v1)"
+      }
+    ],
+    "contourCounts": [
+      [
+        0,
+        1
+      ]
+    ],
+    "perLayerSample": [
+      {
+        "k": 0,
+        "z": 0,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 48
+      },
+      {
+        "k": 40,
+        "z": 9.6,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 48
+      },
+      {
+        "k": 80,
+        "z": 19.2,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 48
+      },
+      {
+        "k": 120,
+        "z": 28.8,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 48
+      },
+      {
+        "k": 160,
+        "z": 38.4,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 48
+      },
+      {
+        "k": 200,
+        "z": 48,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 48
+      },
+      {
+        "k": 240,
+        "z": 57.6,
+        "contours": 1,
+        "paths": 1,
+        "nodes": 48
+      }
+    ],
+    "gateAtEvidencedCeiling": {
+      "maxbridge_mm": 16.2,
+      "findings": 6,
+      "byZone": {
+        "crown": 6
+      },
+      "outsideDeclaredZones": 0,
+      "outsideSamples": []
+    },
+    "membranes": []
+  },
+  "geometry": {
+    "name": "KOCKA_TKANJE_A2L_X1",
+    "variant": "tkanje",
+    "title": "TKANJE",
+    "concept": "the sampler: five grammar bands, a 3x3 quilt on every face, Peano roof 3-9-27",
+    "generator": "core/weft_cube_geometry.mjs",
+    "generatedAt": "2026-09-17",
+    "machine": "a2l",
+    "machineLabel": "Bambu Lab A2L",
+    "machineQualification": {
+      "beadSource": "measured",
+      "beadEvidence": "specimens/2026-08-31_D5_R140_A2L_physical and specimens/2026-09-02_P0_suma_2x2_physical — both printed to completion at this bead",
+      "assumedAcknowledged": false
+    },
+    "size_mm": [
+      73.6,
+      73.6,
+      60
+    ],
+    "outerSide_mm": 60.4,
+    "wallHeight_mm": 57.12,
+    "wallLayers": 238,
+    "roofLayers": 12,
+    "totalLayers": 250,
+    "args": {
+      "lh": 0.24,
+      "bead": 0.45,
+      "firstLayerBead": 0.52,
+      "firstLayerSpeed": 12,
+      "w": 3,
+      "e": 0.7,
+      "r0": 28.5,
+      "K": 48,
+      "foundation": 6,
+      "maxbridge": 60,
+      "maxcantilever": 4.8,
+      "allow": 0.6,
+      "minanchor": 0.5,
+      "maxCapRadius": 20,
+      "speed": 30,
+      "bridgeSpeed": 18,
+      "temp": 220,
+      "bed": 55,
+      "fan": 100
+    },
+    "gatePolicy": {
+      "meaning": "experimental admission ceiling for the roof skeleton, not a claim that it will not sag",
+      "bridge_mm": 60,
+      "cantilever_mm": 4.8,
+      "membrane_min_anchor": 0.5,
+      "first_layer_max_islands": 1,
+      "secondGate_mm": 16.2,
+      "secondGateRule": "every finding at the evidenced ceiling must lie in a declared zone (roof, horns)"
+    },
+    "body": {
+      "sideCentre_mm": 57,
+      "corner_mm": 6,
+      "turns": 0,
+      "twist_deg": 0,
+      "wall": {
+        "foot": 3.4,
+        "body": 3,
+        "top": 3,
+        "roofRing": 2.8
+      },
+      "tab": {
+        "foot": 0.7,
+        "upper": 0.9,
+        "roofRing": 1.2
+      },
+      "grammarBands": [
+        {
+          "from_z": 0,
+          "to_z": 11.4,
+          "web": "staple",
+          "name": "foot"
+        },
+        {
+          "from_z": 11.4,
+          "to_z": 22.8,
+          "web": "diagonal",
+          "name": "truss"
+        },
+        {
+          "from_z": 22.8,
+          "to_z": 34.3,
+          "web": "sine",
+          "name": "wave"
+        },
+        {
+          "from_z": 34.3,
+          "to_z": 45.7,
+          "web": "eight",
+          "name": "knot"
+        },
+        {
+          "from_z": 45.7,
+          "to_z": 53.7,
+          "web": "perp",
+          "name": "belly"
+        },
+        {
+          "from_z": 53.7,
+          "to_z": 57.1,
+          "web": "staple",
+          "name": "ledge"
+        }
+      ],
+      "weldColumns": [
+        {
+          "from_z": 0,
+          "K": 48
+        }
+      ],
+      "nodePitch_mm": 4.54,
+      "maxNodeGap_mm": 4.641,
+      "relief": {
+        "kind": "pillows",
+        "perFace": 3,
+        "rows": 3,
+        "amplitude_mm": 1.2,
+        "note": "smooth (1-cos)/2 x (1-cos)/2 bumps, zero on every edge and on the corners"
+      },
+      "breathingWall": {
+        "amplitudeFraction": 0.15,
+        "wavelength": "one wave per face"
+      },
+      "horns": [],
+      "worstLayerMove_mm": 0.072,
+      "worstLayerMoveAt": 218,
+      "reachWithTab_mm": 1.525,
+      "minConcaveRadius_mm": 9.16
+    },
+    "roof": {
+      "process": "crown-woven-grid/v1",
+      "physicalStatus": "experimental",
+      "schedule": "3 -> 9 -> 27 (base 3)",
+      "innerSpan_mm": 54.2,
+      "layers": 12,
+      "thickness_mm": 2.88,
+      "rule": "each level's chords rest on the previous level's perpendicular chords at the crossings; the free span the gate sees is the previous level's pitch",
+      "perLayer": [
+        {
+          "k": 238,
+          "z": 57.12,
+          "level": 1,
+          "grid": "3x3",
+          "dir": "X",
+          "lines": 2,
+          "pitch_mm": 18.07,
+          "freeSpan_mm": 54.2,
+          "inQualifiedDomain": false,
+          "pathLength_mm": 138.9
+        },
+        {
+          "k": 239,
+          "z": 57.36,
+          "level": 1,
+          "grid": "3x3",
+          "dir": "X",
+          "lines": 2,
+          "pitch_mm": 18.07,
+          "freeSpan_mm": 54.2,
+          "inQualifiedDomain": false,
+          "pathLength_mm": 138.9
+        },
+        {
+          "k": 240,
+          "z": 57.6,
+          "level": 1,
+          "grid": "3x3",
+          "dir": "Y",
+          "lines": 2,
+          "pitch_mm": 18.07,
+          "freeSpan_mm": 18.07,
+          "inQualifiedDomain": false,
+          "pathLength_mm": 138.9
+        },
+        {
+          "k": 241,
+          "z": 57.84,
+          "level": 1,
+          "grid": "3x3",
+          "dir": "Y",
+          "lines": 2,
+          "pitch_mm": 18.07,
+          "freeSpan_mm": 18.07,
+          "inQualifiedDomain": false,
+          "pathLength_mm": 138.9
+        },
+        {
+          "k": 242,
+          "z": 58.08,
+          "level": 2,
+          "grid": "9x9",
+          "dir": "X",
+          "lines": 8,
+          "pitch_mm": 6.02,
+          "freeSpan_mm": 18.07,
+          "inQualifiedDomain": false,
+          "pathLength_mm": 525.4
+        },
+        {
+          "k": 243,
+          "z": 58.32,
+          "level": 2,
+          "grid": "9x9",
+          "dir": "Y",
+          "lines": 8,
+          "pitch_mm": 6.02,
+          "freeSpan_mm": 6.02,
+          "inQualifiedDomain": true,
+          "pathLength_mm": 525.4
+        },
+        {
+          "k": 244,
+          "z": 58.56,
+          "level": 2,
+          "grid": "9x9",
+          "dir": "X",
+          "lines": 8,
+          "pitch_mm": 6.02,
+          "freeSpan_mm": 6.02,
+          "inQualifiedDomain": true,
+          "pathLength_mm": 525.4
+        },
+        {
+          "k": 245,
+          "z": 58.8,
+          "level": 2,
+          "grid": "9x9",
+          "dir": "Y",
+          "lines": 8,
+          "pitch_mm": 6.02,
+          "freeSpan_mm": 6.02,
+          "inQualifiedDomain": true,
+          "pathLength_mm": 525.4
+        },
+        {
+          "k": 246,
+          "z": 59.04,
+          "level": 3,
+          "grid": "27x27",
+          "dir": "X",
+          "lines": 26,
+          "pitch_mm": 2.01,
+          "freeSpan_mm": 6.02,
+          "inQualifiedDomain": true,
+          "pathLength_mm": 1618.7
+        },
+        {
+          "k": 247,
+          "z": 59.28,
+          "level": 3,
+          "grid": "27x27",
+          "dir": "Y",
+          "lines": 26,
+          "pitch_mm": 2.01,
+          "freeSpan_mm": 2.01,
+          "inQualifiedDomain": true,
+          "pathLength_mm": 1618.7
+        },
+        {
+          "k": 248,
+          "z": 59.52,
+          "level": 3,
+          "grid": "27x27",
+          "dir": "X",
+          "lines": 26,
+          "pitch_mm": 2.01,
+          "freeSpan_mm": 2.01,
+          "inQualifiedDomain": true,
+          "pathLength_mm": 1618.7
+        },
+        {
+          "k": 249,
+          "z": 59.76,
+          "level": 3,
+          "grid": "27x27",
+          "dir": "Y",
+          "lines": 26,
+          "pitch_mm": 2.01,
+          "freeSpan_mm": 2.01,
+          "inQualifiedDomain": true,
+          "pathLength_mm": 1618.7
+        }
+      ],
+      "firstFreeSpan_mm": 54.2,
+      "firstLevelRepeatedInSameDirection": true,
+      "oneLinePerLayer": "rim ring (woven) + one serpentine over the void; two travels per roof layer (ring -> serpentine, serpentine -> next ring), both inside the cube",
+      "evidenceBasis": "GORA crown-woven-iris/v1 closed a 31 mm hole with straight chords in three directions (2026-09-06, photographs read 2026-09-08); OBLAK/GORA lintels 30/40/50 mm held; LIMIT16: 16 mm continuous on both machines",
+      "expected": "the first roof layer's chords sag by a few mm at mid-span (the gate cannot see sag); later levels either pull the mesh taut or bridge over the sagged skeleton with air beneath — the measurement is the sag at the centre and at the quarter points, per level, against a rule"
+    },
+    "floor": {
+      "lines": 3,
+      "kind": "the roof's first grid drawn on the bed inside the innermost ring; one island with holes"
+    },
+    "foundation": {
+      "paths": 60,
+      "rings": 8,
+      "spokes": 48,
+      "islandsExpected": 1,
+      "kind": "rings+spokes+floor"
+    },
+    "experiments": {
+      "declaredBridgeCeiling_mm": 60,
+      "evidencedBridge_mm": 16.2,
+      "crown": {
+        "process": "crown-woven-grid/v1",
+        "physicalStatus": "experimental",
+        "schedule": [
+          3,
+          9,
+          27
+        ],
+        "layers": 12,
+        "firstLayerFreeSpan_mm": 54.2,
+        "laterLayersMaxFreeSpan_mm": 54.2
+      },
+      "horns": [],
+      "protocol": "gate at the declared ceiling must be clean; gate at the evidenced ceiling must attribute every finding to the roof or a horn zone, otherwise the build is refused"
+    },
+    "events": [
+      {
+        "z": 11.52,
+        "k": 48,
+        "event": "foot -> truss"
+      },
+      {
+        "z": 22.8,
+        "k": 95,
+        "event": "truss -> wave"
+      },
+      {
+        "z": 34.32,
+        "k": 143,
+        "event": "wave -> knot"
+      },
+      {
+        "z": 45.6,
+        "k": 190,
+        "event": "knot -> belly"
+      },
+      {
+        "z": 53.76,
+        "k": 224,
+        "event": "belly -> ledge"
+      },
+      {
+        "z": 57.12,
+        "k": 238,
+        "event": "wall -> crown-grid (crown-woven-grid/v1)"
+      }
+    ],
+    "violations": [],
+    "warnings": []
+  },
+  "design": null,
+  "preset": null,
+  "builder": "weft.mjs (core/weft_core.js + core/weft_gate.js, no browser, no Python)",
+  "gate": {
+    "bead": 0.45,
+    "maxbridge": 60,
+    "maxcantilever": 4.8,
+    "allow": 0.6,
+    "minanchor": 0.5,
+    "maxCapRadius": 20,
+    "maxislands": 1,
+    "file": "/home/claude/weftapp/weft/specimens/2026-09-17_KOCKA_TKANJE_A2L_X1_experimental/KOCKA_TKANJE_A2L_X1.gcode"
+  }
+}

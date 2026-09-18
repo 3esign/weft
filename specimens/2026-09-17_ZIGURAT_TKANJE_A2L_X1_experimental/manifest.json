@@ -1,0 +1,240 @@
+{
+ "name": "ZIGURAT_TKANJE_A2L_X1",
+ "model": "ziggurat",
+ "built": "2026-09-18T00:22:49",
+ "machine": {
+  "id": "a2l",
+  "label": "Bambu Lab A2L",
+  "plate": [
+   330,
+   320
+  ],
+  "maxZ": 325,
+  "bead": 0.45,
+  "beadSource": "measured",
+  "beadEvidence": "specimens/2026-08-31_D5_R140_A2L_physical and specimens/2026-09-02_P0_suma_2x2_physical \u2014 both printed to completion at this bead",
+  "lh": 0.24,
+  "firstLayerBead": 0.52,
+  "temp": 220,
+  "bed": 55,
+  "start": "exports/a2l_start_block_template_2026-09-02.gcode",
+  "end": "exports/a2l_end_block_harvested_2026-09-02.gcode",
+  "route": "bambu3mf"
+ },
+ "geometry": "ZIGURAT_TKANJE_A2L_X1_geometry.json.gz (gzip of the generator output; regenerate with the command below)",
+ "shipped": [
+  "ZIGURAT_TKANJE_A2L_X1.gcode",
+  "ZIGURAT_TKANJE_A2L_X1.gcode.3mf"
+ ],
+ "gate": "ZIGURAT_TKANJE_A2L_X1_gate.json",
+ "report": "ZIGURAT_TKANJE_A2L_X1_report.json",
+ "builder": "weft.mjs",
+ "core": "core-2026-09-08",
+ "outcome": "NOT PRINTED \u2014 fill this in after the print, with photographs",
+ "sha256": {
+  "PREDICTIONS.md": "9fc9dec2eac641ad1554ae128599fe58ee36ed5335df8b5815bef73419efe777",
+  "PROTOCOL.md": "dc64b13fb5c4d5ac7bd5d919e7ca10fb81a631f1809f2def61a498accc77ef1d",
+  "README.md": "d35df3d8daabd8d63b2747504540f3765da6b5c9bfa3357e9ab3838a644cd33d",
+  "ZIGURAT_TKANJE_A2L_X1.gcode": "6314c0aa6fa94293711c58883934611186ace9feb2cbb3aefba7292cf0c75508",
+  "ZIGURAT_TKANJE_A2L_X1.gcode.3mf": "124170103e905bf583341f1cad198152c87173f3fd41435e9827f34e7d47024a",
+  "ZIGURAT_TKANJE_A2L_X1_gate.json": "ccc5860d91bd98f217f4a5b812ce97de006a75c4b64986cb07ae023e871c62a5",
+  "ZIGURAT_TKANJE_A2L_X1_gate_at_16.2mm.json": "3b12725f8990d5064296a97cabe5dd6927b38359258999cc29ec1bc22a1b6497",
+  "ZIGURAT_TKANJE_A2L_X1_geometry.json.gz": "98ccbc4c6dd2fd919b6f124e50366b8e6b5672031417daf088616f846618afb1",
+  "ZIGURAT_TKANJE_A2L_X1_package_gate.json": "1b652a59eca4016b7404523c91960d38aff6a460bb330d71b584d53f9e3baa63",
+  "ZIGURAT_TKANJE_A2L_X1_preview.png": "4814f5372dd625a41bc2264b841b52c76599c06876f9191287997ea29c82a251",
+  "ZIGURAT_TKANJE_A2L_X1_preview.svg": "9255e925458b78acee7ddbb5c730a38636bc19dcc7220832bbf5e0d1f4c425ec",
+  "ZIGURAT_TKANJE_A2L_X1_report.json": "2d343cf687d5ff8806b04f018de7ec670aff6309e8cfab90f007dddbdbb4fa63",
+  "build.log": "f6b7c21e82673f61a6e379252154a846e789f1b38bd89b504ae2d344cfd39d73"
+ },
+ "variant": "tkanje",
+ "generator": "core/weft_ziggurat_geometry.mjs",
+ "gate_at_evidenced_ceiling": "ZIGURAT_TKANJE_A2L_X1_gate_at_16.2mm.json",
+ "declaredExperiment": {
+  "declaredBridgeCeiling_mm": 60,
+  "evidencedBridge_mm": 16.2,
+  "crown": {
+   "process": "crown-woven-grid/v1",
+   "physicalStatus": "experimental",
+   "layers": 12,
+   "firstLayerFreeSpan_mm": 57.2
+  },
+  "zones": [
+   {
+    "name": "terrace 1",
+    "z0": 39.12,
+    "z1": 40.56,
+    "longestChord_mm": 50.9
+   },
+   {
+    "name": "terrace 2",
+    "z0": 78.24,
+    "z1": 79.68,
+    "longestChord_mm": 52.7
+   },
+   {
+    "name": "terrace 3",
+    "z0": 117.36,
+    "z1": 118.8,
+    "longestChord_mm": 53.4
+   }
+  ],
+  "horns": [],
+  "protocol": "gate at the declared ceiling must be clean; gate at the evidenced ceiling must attribute every finding to a terrace zone (6 layers), a horn, or the roof \u2014 otherwise the build is refused"
+ },
+ "size_mm": [
+  289.2,
+  289.2,
+  159.6
+ ],
+ "tiers": 4,
+ "tubes": [
+  {
+   "tube": 0,
+   "sideCentreline_mm": 272.6,
+   "corner_mm": 10,
+   "zVisibleFrom": 0,
+   "zTop": 39.12,
+   "grammar": "staple",
+   "perimeter_mm": 1073.2,
+   "K": 192,
+   "nodePitch_mm": 5.59,
+   "hiddenK": 96,
+   "turns": 0,
+   "relief": {
+    "pillowsPerFace": 11,
+    "rows": 2,
+    "amplitude_mm": 1.4
+   }
+  },
+  {
+   "tube": 1,
+   "sideCentreline_mm": 201.73,
+   "corner_mm": 10,
+   "zVisibleFrom": 39.12,
+   "zTop": 78.24,
+   "grammar": "diagonal",
+   "perimeter_mm": 789.8,
+   "K": 192,
+   "nodePitch_mm": 4.11,
+   "hiddenK": 96,
+   "turns": 0.041666666666666664,
+   "relief": {
+    "pillowsPerFace": 8,
+    "rows": 2,
+    "amplitude_mm": 1.4
+   }
+  },
+  {
+   "tube": 2,
+   "sideCentreline_mm": 130.87,
+   "corner_mm": 8,
+   "zVisibleFrom": 78.24,
+   "zTop": 117.36,
+   "grammar": "sine",
+   "perimeter_mm": 509.7,
+   "K": 192,
+   "nodePitch_mm": 2.65,
+   "hiddenK": 48,
+   "turns": 0.08333333333333333,
+   "relief": {
+    "pillowsPerFace": 5,
+    "rows": 2,
+    "amplitude_mm": 1.4
+   }
+  },
+  {
+   "tube": 3,
+   "sideCentreline_mm": 60,
+   "corner_mm": 8,
+   "zVisibleFrom": 117.36,
+   "zTop": 156.72,
+   "grammar": "eight",
+   "perimeter_mm": 226.3,
+   "K": 96,
+   "nodePitch_mm": 2.36,
+   "hiddenK": 24,
+   "turns": 0.125,
+   "relief": {
+    "pillowsPerFace": 2,
+    "rows": 2,
+    "amplitude_mm": 1.4
+   }
+  }
+ ],
+ "terraces": [
+  {
+   "terrace": 1,
+   "between": [
+    0,
+    1
+   ],
+   "z": 39.12,
+   "gapCentreline_mm": 35.44,
+   "sideChord_mm": 35.5,
+   "cornerDiagonal_mm": 50.9,
+   "layers": 6,
+   "schedule": "radial x2 (spans the gap; corners on the diagonal) -> 4-turn spiral along the strip (rests on the radials every 9 mm) -> fine radials at 3 mm (rest on the loops) -> 8-turn spiral (rests on the fine radials) -> diamonds on the sides, anti-diagonals across the corners (rest on the loops); every layer rests on the one below"
+  },
+  {
+   "terrace": 2,
+   "between": [
+    1,
+    2
+   ],
+   "z": 78.24,
+   "gapCentreline_mm": 35.43,
+   "sideChord_mm": 35.5,
+   "cornerDiagonal_mm": 52.7,
+   "layers": 6,
+   "schedule": "radial x2 (spans the gap; corners on the diagonal) -> 4-turn spiral along the strip (rests on the radials every 9 mm) -> fine radials at 3 mm (rest on the loops) -> 8-turn spiral (rests on the fine radials) -> diamonds on the sides, anti-diagonals across the corners (rest on the loops); every layer rests on the one below"
+  },
+  {
+   "terrace": 3,
+   "between": [
+    2,
+    3
+   ],
+   "z": 117.36,
+   "gapCentreline_mm": 35.44,
+   "sideChord_mm": 35.5,
+   "cornerDiagonal_mm": 53.4,
+   "layers": 6,
+   "schedule": "radial x2 (spans the gap; corners on the diagonal) -> 4-turn spiral along the strip (rests on the radials every 9 mm) -> fine radials at 3 mm (rest on the loops) -> 8-turn spiral (rests on the fine radials) -> diamonds on the sides, anti-diagonals across the corners (rest on the loops); every layer rests on the one below"
+  }
+ ],
+ "roof": {
+  "process": "crown-woven-grid/v1",
+  "tube": 3,
+  "schedule": "3 -> 9 -> 27 (base 3)",
+  "innerSpan_mm": 57.2,
+  "layers": 12,
+  "firstFreeSpan_mm": 57.2
+ },
+ "threadLength_m": 1720.4,
+ "weldNodes": 132365,
+ "paths": 2046,
+ "kinematic_h_lower_bound": 15.93,
+ "gateSummary": {
+  "declared_mm": 60,
+  "declaredGate": {
+   "PASS": true,
+   "problems": 0,
+   "points": 1817094,
+   "layers": 666,
+   "first_layer_islands": 1
+  },
+  "evidencedGate_16.2": {
+   "findings": 263,
+   "byZone": {
+    "terrace 1": 110,
+    "terrace 2": 76,
+    "terrace 3": 45,
+    "crown": 32
+   },
+   "outsideDeclaredZones": 0
+  }
+ },
+ "command": "node core/weft_ziggurat_geometry.mjs --variant tkanje --machine a2l --out ZIGURAT_TKANJE_A2L_X1_geometry.json --svg ZIGURAT_TKANJE_A2L_X1_preview.svg ; node weft.mjs build --geo ZIGURAT_TKANJE_A2L_X1_geometry.json --machine a2l --name ZIGURAT_TKANJE_A2L_X1 --out <dir> --nostl --allow-experimental-bridge",
+ "warning": "Built in the cloud on 2026-09-17/18. Nothing printed. Every \"PASS\" is the geometric rule on the file; the terrace and roof spans beyond 16.2 mm are declared experiments.",
+ "note_previews": "the two preview images carry a C2PA content-credentials manifest that the transfer channel (Cowork bridge) adds to images in transit; they are hashed as they arrived on the PC. The G-code, packages, gate/report JSON and text files crossed unchanged (verified against the cloud hashes on 2026-09-18)."
+}

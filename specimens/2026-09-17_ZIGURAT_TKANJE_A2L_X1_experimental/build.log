@@ -1,0 +1,16 @@
+
+=== thread (strategy suma) ===
+ZIGURAT_TKANJE_A2L_X1: 2046 paths · 132365 welds · 1720.4 m · 289.6×289.6× mm · overlaps 0
+GCODE /home/claude/weftapp/weft/specimens/2026-09-17_ZIGURAT_TKANJE_A2L_X1_experimental/ZIGURAT_TKANJE_A2L_X1.gcode  65462617 bytes, 1850597 lines
+EXPERIMENTAL BRIDGE CEILING 60 mm declared (evidence: 16.2 mm)
+GATE  passed — 0 problems / 1817094 points / 666 layers, first layer 1 island(s), 300871 ms
+gate at the evidenced 16.2 mm: 263 findings, 0 outside the declared zones { 'terrace 1': 110, 'terrace 2': 76, 'terrace 3': 45, crown: 32 }
+HEAD  rewritten: 665 layers, 73856.87 mm filament, 223.83 g, max Z 159.6, 1d 0h 15m 55s (kinematic)
+3MF   /home/claude/weftapp/weft/specimens/2026-09-17_ZIGURAT_TKANJE_A2L_X1_experimental/ZIGURAT_TKANJE_A2L_X1.gcode.3mf  665 layers, 73.84 m / 223.8 g, 26h 43m 43s, md5 67095FA9C60EC30E553FE6CAFB106D5F, 18.3 MB
+GATE  package re-read from the container: passed (1817094 points)
+
+=== done ===
+/home/claude/weftapp/weft/specimens/2026-09-17_ZIGURAT_TKANJE_A2L_X1_experimental
+  ZIGURAT_TKANJE_A2L_X1.gcode
+  ZIGURAT_TKANJE_A2L_X1.gcode.3mf
+  manifest.json

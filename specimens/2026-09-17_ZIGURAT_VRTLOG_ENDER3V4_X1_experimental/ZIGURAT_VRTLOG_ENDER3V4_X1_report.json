@@ -1,0 +1,785 @@
+{
+  "report": {
+    "name": "ZIGURAT_VRTLOG_ENDER3V4_X1",
+    "machine": "Creality Ender-3 V4",
+    "bed_mm": [
+      220,
+      220
+    ],
+    "layers": 1263,
+    "globalZLevels": 522,
+    "expectedZLevels": 522,
+    "logicalCells": null,
+    "experimentalMembraneOverride": false,
+    "maxBodiesPerZ": 4,
+    "size_mm": [
+      189.6,
+      189.6,
+      null
+    ],
+    "plate_mm": [
+      15.4,
+      15.4,
+      204.6,
+      204.6
+    ],
+    "fitsPlate": true,
+    "grammarCounts": {
+      "sine": 255,
+      "staple": 267
+    },
+    "threadLength_m": 695.2,
+    "weldNodes": 47184,
+    "rawPaths": 31,
+    "unintendedOverlaps": 0,
+    "seamClosures": 0,
+    "overlapSamples": [],
+    "kinematic_h": 6.44,
+    "routeA_estimate_h": 60.7,
+    "caps": [],
+    "events": [
+      {
+        "z": 34,
+        "k": 170,
+        "event": "tier 1 -> terrace 1"
+      },
+      {
+        "z": 35.2,
+        "k": 176,
+        "event": "terrace 1 -> tier 2"
+      },
+      {
+        "z": 68,
+        "k": 340,
+        "event": "tier 2 -> terrace 2"
+      },
+      {
+        "z": 69.2,
+        "k": 346,
+        "event": "terrace 2 -> tier 3"
+      },
+      {
+        "z": 83.4,
+        "k": 417,
+        "event": "tier 3 -> horns"
+      },
+      {
+        "z": 88.2,
+        "k": 441,
+        "event": "horns -> tier 3"
+      },
+      {
+        "z": 102,
+        "k": 510,
+        "event": "tier 3 -> crown-grid"
+      }
+    ],
+    "contourCounts": [
+      [
+        0,
+        3
+      ],
+      [
+        35.2,
+        2
+      ],
+      [
+        69.2,
+        1
+      ]
+    ],
+    "perLayerSample": [
+      {
+        "k": 0,
+        "z": 0,
+        "contours": 3,
+        "paths": 0,
+        "nodes": 264
+      },
+      {
+        "k": 40,
+        "z": 8,
+        "contours": 3,
+        "paths": 0,
+        "nodes": 264
+      },
+      {
+        "k": 80,
+        "z": 16,
+        "contours": 3,
+        "paths": 0,
+        "nodes": 264
+      },
+      {
+        "k": 120,
+        "z": 24,
+        "contours": 3,
+        "paths": 0,
+        "nodes": 264
+      },
+      {
+        "k": 160,
+        "z": 32,
+        "contours": 3,
+        "paths": 0,
+        "nodes": 264
+      },
+      {
+        "k": 200,
+        "z": 40,
+        "contours": 2,
+        "paths": 0,
+        "nodes": 120
+      },
+      {
+        "k": 240,
+        "z": 48,
+        "contours": 2,
+        "paths": 0,
+        "nodes": 120
+      },
+      {
+        "k": 280,
+        "z": 56,
+        "contours": 2,
+        "paths": 0,
+        "nodes": 120
+      },
+      {
+        "k": 320,
+        "z": 64,
+        "contours": 2,
+        "paths": 0,
+        "nodes": 120
+      },
+      {
+        "k": 360,
+        "z": 72,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 48
+      },
+      {
+        "k": 400,
+        "z": 80,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 48
+      },
+      {
+        "k": 440,
+        "z": 88,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 48
+      },
+      {
+        "k": 480,
+        "z": 96,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 48
+      },
+      {
+        "k": 520,
+        "z": 104,
+        "contours": 1,
+        "paths": 1,
+        "nodes": 48
+      }
+    ],
+    "gateAtEvidencedCeiling": {
+      "maxbridge_mm": 16.2,
+      "findings": 114,
+      "byZone": {
+        "terrace 1": 65,
+        "terrace 2": 39,
+        "horn 8": 1,
+        "crown": 9
+      },
+      "outsideDeclaredZones": 0,
+      "outsideSamples": []
+    },
+    "membranes": []
+  },
+  "geometry": {
+    "name": "ZIGURAT_VRTLOG_ENDER_X1",
+    "variant": "vrtlog",
+    "title": "VRTLOG",
+    "concept": "the wrung ziggurat: the base square, the middle tier wrung an eighth of a turn, the top wrung back, helical columns, a wave that climbs, horns on the top corners, Hilbert roof 2-4-8-16",
+    "generator": "core/weft_ziggurat_geometry.mjs",
+    "generatedAt": "2026-09-18",
+    "machine": "ender",
+    "machineLabel": "Creality Ender-3 V4",
+    "machineQualification": {
+      "beadSource": "ASSUMED",
+      "beadEvidence": "NEVER CALIBRATED. Run the C1 thin-wall test on this machine and put the measured width here before trusting anything built for it.",
+      "assumedAcknowledged": true
+    },
+    "size_mm": [
+      189.2,
+      189.2,
+      104.4
+    ],
+    "footprint_mm": 190,
+    "margin_mm": 15,
+    "height_mm": 104.4,
+    "tiers": 3,
+    "totalLayers": 522,
+    "tubes": [
+      {
+        "tube": 0,
+        "sideCentreline_mm": 172.6,
+        "corner_mm": 8.6,
+        "zVisibleFrom": 0,
+        "zTop": 34,
+        "grammar": "sine",
+        "perimeter_mm": 675.6,
+        "K": 192,
+        "nodePitch_mm": 3.52,
+        "hiddenK": 96,
+        "turns": 0,
+        "relief": {
+          "kind": "spiral wave",
+          "wavesAround": 4,
+          "rise_mm": 24,
+          "amplitude_mm": 1.4
+        }
+      },
+      {
+        "tube": 1,
+        "sideCentreline_mm": 112.19,
+        "corner_mm": 8,
+        "zVisibleFrom": 34,
+        "zTop": 68,
+        "grammar": "sine",
+        "perimeter_mm": 435,
+        "K": 96,
+        "nodePitch_mm": 4.53,
+        "hiddenK": 48,
+        "turns": 0.125,
+        "relief": {
+          "kind": "spiral wave",
+          "wavesAround": 4,
+          "rise_mm": 24,
+          "amplitude_mm": 1.4
+        }
+      },
+      {
+        "tube": 2,
+        "sideCentreline_mm": 51.78,
+        "corner_mm": 8,
+        "zVisibleFrom": 68,
+        "zTop": 102,
+        "grammar": "sine",
+        "perimeter_mm": 193.4,
+        "K": 48,
+        "nodePitch_mm": 4.03,
+        "hiddenK": 24,
+        "turns": -0.125,
+        "relief": {
+          "kind": "spiral wave",
+          "wavesAround": 4,
+          "rise_mm": 24,
+          "amplitude_mm": 1.4
+        }
+      }
+    ],
+    "terraces": [
+      {
+        "terrace": 1,
+        "between": [
+          0,
+          1
+        ],
+        "z": 34,
+        "gapCentreline_mm": 30.21,
+        "sideChord_mm": 30.3,
+        "cornerDiagonal_mm": 45.2,
+        "layers": 6,
+        "schedule": "radial x2 (spans the gap; corners on the diagonal) -> 4-turn spiral along the strip (rests on the radials every 9 mm) -> fine radials at 3 mm (rest on the loops) -> 8-turn spiral (rests on the fine radials) -> diamonds on the sides, anti-diagonals across the corners (rest on the loops); every layer rests on the one below",
+        "perLayer": [
+          {
+            "k": 170,
+            "z": 34,
+            "stage": "radial",
+            "pitch_mm": 9,
+            "pieces": 1,
+            "chords": 65,
+            "longestChord_mm": 45.18,
+            "freeSpanBelieved_mm": 45.18,
+            "pathLength_mm": 2848
+          },
+          {
+            "k": 171,
+            "z": 34.2,
+            "stage": "radial",
+            "pitch_mm": 9,
+            "pieces": 1,
+            "chords": 65,
+            "longestChord_mm": 45.23,
+            "freeSpanBelieved_mm": 0,
+            "pathLength_mm": 2849
+          },
+          {
+            "k": 172,
+            "z": 34.4,
+            "stage": "spiral4",
+            "pitch_mm": 9,
+            "pieces": 1,
+            "chords": 1,
+            "longestChord_mm": 7.55,
+            "freeSpanBelieved_mm": 9,
+            "pathLength_mm": 2221
+          },
+          {
+            "k": 173,
+            "z": 34.6,
+            "stage": "fine",
+            "pitch_mm": 3,
+            "pieces": 1,
+            "chords": 163,
+            "longestChord_mm": 46.04,
+            "freeSpanBelieved_mm": 7.55,
+            "pathLength_mm": 6221
+          },
+          {
+            "k": 174,
+            "z": 34.8,
+            "stage": "spiral8",
+            "pitch_mm": 9,
+            "pieces": 1,
+            "chords": 1,
+            "longestChord_mm": 3.78,
+            "freeSpanBelieved_mm": 3,
+            "pathLength_mm": 4441
+          },
+          {
+            "k": 175,
+            "z": 35,
+            "stage": "diamond",
+            "pitch_mm": 9,
+            "pieces": 8,
+            "chords": 44,
+            "longestChord_mm": 49.26,
+            "freeSpanBelieved_mm": 5.34,
+            "pathLength_mm": 2115
+          }
+        ]
+      },
+      {
+        "terrace": 2,
+        "between": [
+          1,
+          2
+        ],
+        "z": 68,
+        "gapCentreline_mm": 30.21,
+        "sideChord_mm": 30.3,
+        "cornerDiagonal_mm": 46,
+        "layers": 6,
+        "schedule": "radial x2 (spans the gap; corners on the diagonal) -> 4-turn spiral along the strip (rests on the radials every 9 mm) -> fine radials at 3 mm (rest on the loops) -> 8-turn spiral (rests on the fine radials) -> diamonds on the sides, anti-diagonals across the corners (rest on the loops); every layer rests on the one below",
+        "perLayer": [
+          {
+            "k": 340,
+            "z": 68,
+            "stage": "radial",
+            "pitch_mm": 9,
+            "pieces": 1,
+            "chords": 39,
+            "longestChord_mm": 46.01,
+            "freeSpanBelieved_mm": 46.01,
+            "pathLength_mm": 1729
+          },
+          {
+            "k": 341,
+            "z": 68.2,
+            "stage": "radial",
+            "pitch_mm": 9,
+            "pieces": 1,
+            "chords": 39,
+            "longestChord_mm": 46.02,
+            "freeSpanBelieved_mm": 0,
+            "pathLength_mm": 1729
+          },
+          {
+            "k": 342,
+            "z": 68.4,
+            "stage": "spiral4",
+            "pitch_mm": 9,
+            "pieces": 1,
+            "chords": 1,
+            "longestChord_mm": 7.55,
+            "freeSpanBelieved_mm": 9,
+            "pathLength_mm": 1255
+          },
+          {
+            "k": 343,
+            "z": 68.6,
+            "stage": "fine",
+            "pitch_mm": 3,
+            "pieces": 1,
+            "chords": 81,
+            "longestChord_mm": 46.24,
+            "freeSpanBelieved_mm": 7.55,
+            "pathLength_mm": 3215
+          },
+          {
+            "k": 344,
+            "z": 68.8,
+            "stage": "spiral8",
+            "pitch_mm": 9,
+            "pieces": 1,
+            "chords": 1,
+            "longestChord_mm": 3.78,
+            "freeSpanBelieved_mm": 3,
+            "pathLength_mm": 2508
+          },
+          {
+            "k": 345,
+            "z": 69,
+            "stage": "fine",
+            "pitch_mm": 3,
+            "pieces": 1,
+            "chords": 81,
+            "longestChord_mm": 46.29,
+            "freeSpanBelieved_mm": 7.55,
+            "pathLength_mm": 3216
+          }
+        ]
+      }
+    ],
+    "roof": {
+      "process": "crown-woven-grid/v1",
+      "tube": 2,
+      "schedule": "2 -> 4 -> 8 -> 16 (base 2)",
+      "innerSpan_mm": 48.98,
+      "layers": 12,
+      "perLayer": [
+        {
+          "k": 510,
+          "z": 102,
+          "level": 1,
+          "grid": "2x2",
+          "dir": "X",
+          "lines": 1,
+          "pitch_mm": 24.49,
+          "freeSpan_mm": 48.98,
+          "inQualifiedDomain": false,
+          "pathLength_mm": 55
+        },
+        {
+          "k": 511,
+          "z": 102.2,
+          "level": 1,
+          "grid": "2x2",
+          "dir": "X",
+          "lines": 1,
+          "pitch_mm": 24.49,
+          "freeSpan_mm": 48.98,
+          "inQualifiedDomain": false,
+          "pathLength_mm": 55
+        },
+        {
+          "k": 512,
+          "z": 102.4,
+          "level": 1,
+          "grid": "2x2",
+          "dir": "Y",
+          "lines": 1,
+          "pitch_mm": 24.49,
+          "freeSpan_mm": 24.49,
+          "inQualifiedDomain": false,
+          "pathLength_mm": 55
+        },
+        {
+          "k": 513,
+          "z": 102.6,
+          "level": 1,
+          "grid": "2x2",
+          "dir": "Y",
+          "lines": 1,
+          "pitch_mm": 24.49,
+          "freeSpan_mm": 24.49,
+          "inQualifiedDomain": false,
+          "pathLength_mm": 55
+        },
+        {
+          "k": 514,
+          "z": 102.8,
+          "level": 2,
+          "grid": "4x4",
+          "dir": "X",
+          "lines": 3,
+          "pitch_mm": 12.25,
+          "freeSpan_mm": 24.49,
+          "inQualifiedDomain": false,
+          "pathLength_mm": 190
+        },
+        {
+          "k": 515,
+          "z": 103,
+          "level": 2,
+          "grid": "4x4",
+          "dir": "Y",
+          "lines": 3,
+          "pitch_mm": 12.25,
+          "freeSpan_mm": 12.25,
+          "inQualifiedDomain": true,
+          "pathLength_mm": 190
+        },
+        {
+          "k": 516,
+          "z": 103.2,
+          "level": 2,
+          "grid": "4x4",
+          "dir": "X",
+          "lines": 3,
+          "pitch_mm": 12.25,
+          "freeSpan_mm": 12.25,
+          "inQualifiedDomain": true,
+          "pathLength_mm": 190
+        },
+        {
+          "k": 517,
+          "z": 103.4,
+          "level": 2,
+          "grid": "4x4",
+          "dir": "Y",
+          "lines": 3,
+          "pitch_mm": 12.25,
+          "freeSpan_mm": 12.25,
+          "inQualifiedDomain": true,
+          "pathLength_mm": 190
+        },
+        {
+          "k": 518,
+          "z": 103.6,
+          "level": 3,
+          "grid": "8x8",
+          "dir": "X",
+          "lines": 7,
+          "pitch_mm": 6.12,
+          "freeSpan_mm": 12.25,
+          "inQualifiedDomain": true,
+          "pathLength_mm": 423
+        },
+        {
+          "k": 519,
+          "z": 103.8,
+          "level": 3,
+          "grid": "8x8",
+          "dir": "Y",
+          "lines": 7,
+          "pitch_mm": 6.12,
+          "freeSpan_mm": 6.12,
+          "inQualifiedDomain": true,
+          "pathLength_mm": 423
+        },
+        {
+          "k": 520,
+          "z": 104,
+          "level": 4,
+          "grid": "16x16",
+          "dir": "X",
+          "lines": 15,
+          "pitch_mm": 3.06,
+          "freeSpan_mm": 6.12,
+          "inQualifiedDomain": true,
+          "pathLength_mm": 868
+        },
+        {
+          "k": 521,
+          "z": 104.2,
+          "level": 4,
+          "grid": "16x16",
+          "dir": "Y",
+          "lines": 15,
+          "pitch_mm": 3.06,
+          "freeSpan_mm": 3.06,
+          "inQualifiedDomain": true,
+          "pathLength_mm": 868
+        }
+      ],
+      "firstFreeSpan_mm": 48.98
+    },
+    "horns": [
+      {
+        "tube": 2,
+        "P_mm": 8,
+        "rate_mm_per_layer": 0.8,
+        "zStart": 83.4,
+        "zEnd": 88.2,
+        "where": "top tube corner"
+      },
+      {
+        "tube": 2,
+        "P_mm": 8,
+        "rate_mm_per_layer": 0.8,
+        "zStart": 83.4,
+        "zEnd": 88.2,
+        "where": "top tube corner"
+      },
+      {
+        "tube": 2,
+        "P_mm": 8,
+        "rate_mm_per_layer": 0.8,
+        "zStart": 83.4,
+        "zEnd": 88.2,
+        "where": "top tube corner"
+      },
+      {
+        "tube": 2,
+        "P_mm": 8,
+        "rate_mm_per_layer": 0.8,
+        "zStart": 83.4,
+        "zEnd": 88.2,
+        "where": "top tube corner"
+      }
+    ],
+    "args": {
+      "lh": 0.2,
+      "bead": 0.42,
+      "firstLayerBead": 0.48,
+      "firstLayerSpeed": 12,
+      "w": 3,
+      "e": 0.7,
+      "r0": 86.3,
+      "K": 192,
+      "foundation": 6,
+      "maxbridge": 52,
+      "maxcantilever": 4.8,
+      "allow": 0.6,
+      "minanchor": 0.5,
+      "maxCapRadius": 20,
+      "speed": 26,
+      "bridgeSpeed": 15,
+      "temp": 220,
+      "bed": 60,
+      "fan": 100
+    },
+    "gatePolicy": {
+      "meaning": "experimental admission ceiling for the terrace and roof skeletons, not a claim that they will not sag",
+      "bridge_mm": 52,
+      "cantilever_mm": 4.8,
+      "membrane_min_anchor": 0.5,
+      "first_layer_max_islands": 1,
+      "secondGate_mm": 16.2
+    },
+    "estimates": {
+      "threadLength_m": 716,
+      "travelsBetweenPaths": 553,
+      "worstLayerMove_mm": 0.393,
+      "minConcaveRadius_mm": 3.89,
+      "maxNodeGap_mm": 9.062
+    },
+    "foundation": {
+      "paths": 188,
+      "islandsExpected": 1,
+      "kind": "rings+spokes around every tube, ribs across every gap, the floor grid inside the innermost"
+    },
+    "experiments": {
+      "declaredBridgeCeiling_mm": 52,
+      "evidencedBridge_mm": 16.2,
+      "crown": {
+        "process": "crown-woven-grid/v1",
+        "physicalStatus": "experimental",
+        "layers": 12,
+        "firstLayerFreeSpan_mm": 48.98
+      },
+      "zones": [
+        {
+          "name": "terrace 1",
+          "z0": 34,
+          "z1": 35.2,
+          "longestChord_mm": 45.2
+        },
+        {
+          "name": "terrace 2",
+          "z0": 68,
+          "z1": 69.2,
+          "longestChord_mm": 46
+        }
+      ],
+      "horns": [
+        {
+          "P_mm": 8,
+          "rate_mm_per_layer": 0.8,
+          "zStart": 83.4,
+          "zEnd": 88.2
+        },
+        {
+          "P_mm": 8,
+          "rate_mm_per_layer": 0.8,
+          "zStart": 83.4,
+          "zEnd": 88.2
+        },
+        {
+          "P_mm": 8,
+          "rate_mm_per_layer": 0.8,
+          "zStart": 83.4,
+          "zEnd": 88.2
+        },
+        {
+          "P_mm": 8,
+          "rate_mm_per_layer": 0.8,
+          "zStart": 83.4,
+          "zEnd": 88.2
+        }
+      ],
+      "protocol": "gate at the declared ceiling must be clean; gate at the evidenced ceiling must attribute every finding to a terrace zone (6 layers), a horn, or the roof — otherwise the build is refused"
+    },
+    "events": [
+      {
+        "z": 34,
+        "k": 170,
+        "event": "tier 1 -> terrace 1"
+      },
+      {
+        "z": 35.2,
+        "k": 176,
+        "event": "terrace 1 -> tier 2"
+      },
+      {
+        "z": 68,
+        "k": 340,
+        "event": "tier 2 -> terrace 2"
+      },
+      {
+        "z": 69.2,
+        "k": 346,
+        "event": "terrace 2 -> tier 3"
+      },
+      {
+        "z": 83.4,
+        "k": 417,
+        "event": "tier 3 -> horns"
+      },
+      {
+        "z": 88.2,
+        "k": 441,
+        "event": "horns -> tier 3"
+      },
+      {
+        "z": 102,
+        "k": 510,
+        "event": "tier 3 -> crown-grid"
+      }
+    ],
+    "violations": [],
+    "warnings": []
+  },
+  "design": null,
+  "preset": null,
+  "builder": "weft.mjs (core/weft_core.js + core/weft_gate.js, no browser, no Python)",
+  "gate": {
+    "bead": 0.42,
+    "maxbridge": 52,
+    "maxcantilever": 4.8,
+    "allow": 0.6,
+    "minanchor": 0.5,
+    "maxCapRadius": 20,
+    "maxislands": 1,
+    "file": "/home/claude/weftapp/weft/specimens/2026-09-17_ZIGURAT_VRTLOG_ENDER3V4_X1_experimental/ZIGURAT_VRTLOG_ENDER3V4_X1.gcode"
+  }
+}

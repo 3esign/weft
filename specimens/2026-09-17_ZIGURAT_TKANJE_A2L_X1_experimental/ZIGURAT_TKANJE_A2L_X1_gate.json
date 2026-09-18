@@ -1,0 +1,122 @@
+{
+ "file": "/home/claude/weftapp/weft/specimens/2026-09-17_ZIGURAT_TKANJE_A2L_X1_experimental/ZIGURAT_TKANJE_A2L_X1.gcode",
+ "layers": 666,
+ "params": {
+  "bead": 0.45,
+  "allow": 0.6,
+  "maxbridge": 60,
+  "res": 0.2,
+  "bedz": 0.5,
+  "maxislands": 1,
+  "maxcantilever": 4.8
+ },
+ "stats": {
+  "floating": 0,
+  "long_bridge": 0,
+  "cantilever": 0,
+  "bridges": 156091,
+  "bad_membrane": 0,
+  "unanchored_membrane": 0,
+  "checked_paths": 1697,
+  "checked_points": 1817094,
+  "exempt_layers": 3,
+  "first_layer_islands": 1
+ },
+ "byRole": {},
+ "worstGaps": [
+  [
+   117.6,
+   "bridge",
+   18.22,
+   20.08
+  ],
+  [
+   78.48,
+   "bridge",
+   16.94,
+   19.45
+  ],
+  [
+   39.36,
+   "bridge",
+   17.2,
+   19.2
+  ],
+  [
+   156.96,
+   "bridge",
+   19,
+   19
+  ],
+  [
+   157.44,
+   "bridge",
+   9.4,
+   9.4
+  ],
+  [
+   157.92,
+   "bridge",
+   9.4,
+   9.4
+  ],
+  [
+   118.08,
+   "bridge",
+   5.44,
+   7.44
+  ],
+  [
+   78.96,
+   "bridge",
+   4.87,
+   7.09
+  ],
+  [
+   39.84,
+   "bridge",
+   4.73,
+   6.72
+  ],
+  [
+   118.32,
+   "bridge",
+   5.19,
+   6.6
+  ],
+  [
+   40.08,
+   "bridge",
+   4.8,
+   6.51
+  ],
+  [
+   79.2,
+   "bridge",
+   4.81,
+   6.4
+  ],
+  [
+   118.56,
+   "bridge",
+   2.97,
+   3.84
+  ],
+  [
+   40.32,
+   "bridge",
+   2.6,
+   3.69
+  ],
+  [
+   79.44,
+   "bridge",
+   2.69,
+   3.49
+  ]
+ ],
+ "membranes": [],
+ "problems": [],
+ "problem_count": 0,
+ "PASS": true
+}

@@ -1,0 +1,208 @@
+{
+ "file": "/home/claude/weftapp/weft/specimens/2026-09-17_KOCKA_TKANJE_A2L_X1_experimental/KOCKA_TKANJE_A2L_X1.gcode",
+ "layers": 251,
+ "params": {
+  "bead": 0.45,
+  "allow": 0.6,
+  "maxbridge": 16.2,
+  "res": 0.2,
+  "bedz": 0.5,
+  "maxislands": 1,
+  "maxcantilever": 4.8
+ },
+ "stats": {
+  "floating": 0,
+  "long_bridge": 6,
+  "cantilever": 0,
+  "bridges": 11631,
+  "bad_membrane": 0,
+  "unanchored_membrane": 0,
+  "checked_paths": 260,
+  "checked_points": 126659,
+  "exempt_layers": 3,
+  "first_layer_islands": 1
+ },
+ "byRole": {
+  "bridge": {
+   "floating": 0,
+   "long_bridge": 6,
+   "cantilever": 0,
+   "worst_mm": 50.91
+  }
+ },
+ "worstGaps": [
+  [
+   57.36,
+   "bridge",
+   17.29,
+   17.34
+  ],
+  [
+   57.84,
+   "bridge",
+   8.8,
+   8.8
+  ],
+  [
+   58.32,
+   "bridge",
+   8.8,
+   8.8
+  ],
+  [
+   44.4,
+   "chord",
+   3.08,
+   3.54
+  ],
+  [
+   45.84,
+   "chord",
+   3.09,
+   3.49
+  ],
+  [
+   44.88,
+   "chord",
+   3.14,
+   3.4
+  ],
+  [
+   43.92,
+   "chord",
+   3.1,
+   3.3
+  ],
+  [
+   45.36,
+   "chord",
+   3.14,
+   3.23
+  ],
+  [
+   27.6,
+   "chord",
+   2.84,
+   3.16
+  ],
+  [
+   28.08,
+   "chord",
+   2.86,
+   3.16
+  ],
+  [
+   28.56,
+   "chord",
+   2.86,
+   3.16
+  ],
+  [
+   29.04,
+   "chord",
+   2.87,
+   3.16
+  ],
+  [
+   29.52,
+   "chord",
+   2.86,
+   3.16
+  ],
+  [
+   30,
+   "chord",
+   2.84,
+   3.16
+  ],
+  [
+   30.48,
+   "chord",
+   2.88,
+   3.16
+  ]
+ ],
+ "membranes": [],
+ "problems": [
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 57.36,
+   "line": 106008,
+   "length_mm": 50.91,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 17.17,
+   "at": [
+    139.79,
+    169.03
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 57.36,
+   "line": 106008,
+   "length_mm": 50.91,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 17.34,
+   "at": [
+    190.21,
+    150.97
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 58.32,
+   "line": 109660,
+   "length_mm": 18.97,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 5.46,
+   "at": [
+    175.23,
+    138.92
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 58.32,
+   "line": 109660,
+   "length_mm": 18.97,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 8.26,
+   "at": [
+    193.7,
+    156.99
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 58.32,
+   "line": 109660,
+   "length_mm": 18.97,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 8.2,
+   "at": [
+    136.3,
+    163.01
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 58.32,
+   "line": 109660,
+   "length_mm": 18.97,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 5.37,
+   "at": [
+    154.77,
+    181.08
+   ]
+  }
+ ],
+ "problem_count": 6,
+ "PASS": false
+}
