@@ -1,0 +1,116 @@
+{
+  "schema": "pi.photo-intake.v1",
+  "specimen": "ZIGURAT2_TKANJE_A2L_X2",
+  "received_date": "2026-09-19",
+  "archived_at": "2026-09-19T09:11:21.033Z",
+  "source_kind": "PNG image attachments supplied by Semir in the current Codex conversation",
+  "user_statement_verbatim": "ovo su nove stampe gotove sa bambu njih isto pogledaj sortiraj",
+  "photo_count": 5,
+  "original_camera_files_verified": false,
+  "photographic_capture_time": null,
+  "print_completion_time": null,
+  "transformations": "none; byte-for-byte copies of supplied PNG attachments",
+  "set_interpretation": "Five views of a visually consistent ziggurat, not five separately identified printed specimens.",
+  "identification": {
+    "status": "contextual and visual attribution to A2L X2",
+    "basis": "Semir identifies these as completed Bambu prints. Tier arrangement, quilted wall regions, lower woven transition and dense square roof agree with the A2L X2 preview and previous paired-print context.",
+    "exact_printed_gcode_verified": false
+  },
+  "images": [
+    {
+      "order": 1,
+      "file": "B01_upper_overview.png",
+      "original_attachment_name": "codex-clipboard-1a4a3d9a-2f95-4f0d-97f9-738744f2d133.png",
+      "source_path": "C:/Users/treed/AppData/Local/Temp/codex-clipboard-1a4a3d9a-2f95-4f0d-97f9-738744f2d133.png",
+      "user_image_number": 1,
+      "title": "Upper overview",
+      "reading": "The roof mesh and several upper tiers are visible, with long curved strands around the transitions and part of the lower woven surface. The base is cropped.",
+      "reading_by": "Svemir / Codex; visual reading 2026-09-19",
+      "bytes": 3313528,
+      "sha256": "809da54849ab440c5029141bb32c8d71dc9f4875f58589f0de5e8c832f2bd8e7",
+      "width": 1126,
+      "height": 2000,
+      "png_chunk_types": [
+        "IHDR",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "order": 2,
+      "file": "B02_roof_detail.png",
+      "original_attachment_name": "codex-clipboard-d60a24d4-f439-4ece-a683-5cc64af33e52.png",
+      "source_path": "C:/Users/treed/AppData/Local/Temp/codex-clipboard-d60a24d4-f439-4ece-a683-5cc64af33e52.png",
+      "user_image_number": 2,
+      "title": "Roof and upper wall",
+      "reading": "A dense crossed mesh spans the visible top opening; the surrounding wall has regular repeated connections. Longer curved strands occur below and beside that region.",
+      "reading_by": "Svemir / Codex; visual reading 2026-09-19",
+      "bytes": 3231393,
+      "sha256": "d649910bee64ab017ed2a849fa20b415daf3161696bdb471ec2729c8850bb430",
+      "width": 1126,
+      "height": 2000,
+      "png_chunk_types": [
+        "IHDR",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "order": 3,
+      "file": "B03_lower_woven_transition.png",
+      "original_attachment_name": "codex-clipboard-5459bc59-f97d-4a37-b22e-5caa4015730b.png",
+      "source_path": "C:/Users/treed/AppData/Local/Temp/codex-clipboard-5459bc59-f97d-4a37-b22e-5caa4015730b.png",
+      "user_image_number": 3,
+      "title": "Lower woven transition",
+      "reading": "A broad woven transition has repeated loops and crossing rows. Its junction with the adjacent wall is visible; perspective alone does not measure its angle or flatness.",
+      "reading_by": "Svemir / Codex; visual reading 2026-09-19",
+      "bytes": 3907317,
+      "sha256": "9f1ef0b6bbdc204914a820c4c46442a3bf114b2f2876d2484299e3f10f1546d9",
+      "width": 1126,
+      "height": 2000,
+      "png_chunk_types": [
+        "IHDR",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "order": 4,
+      "file": "B04_middle_transition.png",
+      "original_attachment_name": "codex-clipboard-a2e1b017-6e8e-4a1a-977b-f85aff6dcb7d.png",
+      "source_path": "C:/Users/treed/AppData/Local/Temp/codex-clipboard-a2e1b017-6e8e-4a1a-977b-f85aff6dcb7d.png",
+      "user_image_number": 4,
+      "title": "Middle transition",
+      "reading": "Long non-straight strands cross a transition above an open diagonal lattice and beside the more regularly woven lower surface. The image does not establish when the strands deformed.",
+      "reading_by": "Svemir / Codex; visual reading 2026-09-19",
+      "bytes": 3544406,
+      "sha256": "65bf201debc6376043eabfa80cee71ff147082c4fe5d0d027673938101dad235",
+      "width": 1126,
+      "height": 2000,
+      "png_chunk_types": [
+        "IHDR",
+        "IDAT",
+        "IEND"
+      ]
+    },
+    {
+      "order": 5,
+      "file": "B05_lower_wall_junction.png",
+      "original_attachment_name": "codex-clipboard-5cbf06ab-2aac-4014-8cfe-5628a9f8a1d7.png",
+      "source_path": "C:/Users/treed/AppData/Local/Temp/codex-clipboard-5cbf06ab-2aac-4014-8cfe-5628a9f8a1d7.png",
+      "user_image_number": 5,
+      "title": "Lower wall and junction",
+      "reading": "Close view of an open diagonal lattice, curved bundles near an edge, and the meeting of wall and lower woven surface. The lowest wall and textured plate are partly visible.",
+      "reading_by": "Svemir / Codex; visual reading 2026-09-19",
+      "bytes": 3884853,
+      "sha256": "730e29456cad971b97ed02e741cfc4ce5c50b591f9a2a5c4822cf18c4ad97f9a",
+      "width": 1126,
+      "height": 2000,
+      "png_chunk_types": [
+        "IHDR",
+        "IDAT",
+        "IEND"
+      ]
+    }
+  ]
+}
