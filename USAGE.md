@@ -176,3 +176,7 @@ See [FIRST_LAYER_CONTRACT.md](docs/FIRST_LAYER_CONTRACT.md) for the failure, sou
 New generator: core/weft_suspended_steps_geometry.mjs (--machine a2l or ender, --out FILE; Ender also --allow-assumed-bead). The specimen PROTOCOL.md files contain complete commands. tools/build_suspended_steps.mjs consumes the geometry, restores the original A2L footer expression, installs an actual-model preview, and checks final G-code/package bytes in independent workers before releasing PENDING files. Ender requires --i-know-the-bead-is-a-guess.
 
 The general weft.mjs builder also supports --thumb PATH and --end-z-from-template for harvested Bambu containers. Experimental-zone checking now requests allProblems and refuses a truncated list. Default gate display remains capped for historical report parity; classification is unchanged. Never interpret an admitted experimental bridge ceiling as physical evidence.
+
+## 2026-09-19 — Bambu Send Print package rule (G-668)
+
+All shared Bambu packing validates final thumbnail dimensions/PNG content. --thumb accepts non-interlaced 8-bit RGB/RGBA PNG and creates square 512 RGBA / 128 small previews; no rectangular report screenshot reaches Studio re-export. Existing safe square templates keep their bytes. The legacy Python command delegates to the same Node packer (Node required). See [BAMBU_THUMBNAIL_CONTRACT.md](docs/BAMBU_THUMBNAIL_CONTRACT.md). RAZMAK replacement: specimens/2026-09-19_RAZMAK_A2L_H4_experimental/SEND_PRINT_FIX/RAZMAK_A2L_H4_SEND_FIXED.gcode.3mf. Actual Send Print confirmation is pending.

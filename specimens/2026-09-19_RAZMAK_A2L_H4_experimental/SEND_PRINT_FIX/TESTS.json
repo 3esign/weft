@@ -1,0 +1,63 @@
+{
+  "date": "2026-09-19T11:57:54.219Z",
+  "PASS": true,
+  "reports": [
+    {
+      "file": "tests/bambu_thumbnails.test.mjs",
+      "start": "2026-09-19T11:57:36.357Z",
+      "exit": 0
+    },
+    {
+      "file": "tests/first_layer.test.mjs",
+      "start": "2026-09-19T11:57:38.335Z",
+      "exit": 0
+    },
+    {
+      "file": "tests/build_parity.test.mjs",
+      "start": "2026-09-19T11:57:38.621Z",
+      "exit": 0
+    }
+  ],
+  "pythonWrapper": {
+    "PASS": true,
+    "exit": 0,
+    "images": [
+      {
+        "name": "Metadata/plate_1.png",
+        "width": 512,
+        "height": 512,
+        "depth": 8,
+        "colorType": 6
+      },
+      {
+        "name": "Metadata/plate_1_small.png",
+        "width": 128,
+        "height": 128,
+        "depth": 8,
+        "colorType": 6
+      },
+      {
+        "name": "Metadata/plate_no_light_1.png",
+        "width": 512,
+        "height": 512,
+        "depth": 8,
+        "colorType": 6
+      },
+      {
+        "name": "Metadata/top_1.png",
+        "width": 512,
+        "height": 512,
+        "depth": 8,
+        "colorType": 6
+      },
+      {
+        "name": "Metadata/pick_1.png",
+        "width": 512,
+        "height": 512,
+        "depth": 8,
+        "colorType": 6
+      }
+    ]
+  },
+  "scope": "Packaging, image format/decoder/index bounds, shared first-layer contract, printed LIMIT16 build/package parity. Geometry unchanged; full npm suite not rerun for this package-only change. Prior full suite remains 49/61 legacy."
+}

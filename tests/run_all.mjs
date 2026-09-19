@@ -11,6 +11,7 @@ const has=(cmd,args)=>{ const r=spawnSync(cmd,args,{encoding:'utf8'}); return !r
 const chromium=has(process.execPath,['-e',"require('playwright')"])&&(process.env.WEFT_CHROMIUM||has(process.execPath,['-e',"const {chromium}=require('playwright');process.exit(chromium.executablePath()?0:1)"]));
 const python=has(process.env.WEFT_PYTHON||'python3',['-c','import numpy, scipy']);
 const plan=[
+  ['bambu_thumbnails.test.mjs',[]],                            // G-668: prevent native Send Print buffer overrun
   ['first_layer.test.mjs',[]],                                 // startup cannot become preview layer 1; real bed extrusion required
   ['build_parity.test.mjs',[]],                                  // Node chain == the printed LIMIT16 (G-code + 3MF)
   ['gate_parity.test.mjs',python?[]:['--no-python']],             // JS gate == Python gate (or the recorded JSON)

@@ -586,3 +586,7 @@ G-667: reproduce the reported purge-only preview layer at Z0.30 before the base 
 ## 2026-09-19 — suspended horizontal pair
 
 core/weft_suspended_steps_geometry.mjs adds RAZMAK A2L H4 and OBRTAJ Ender H7 with one basal frame, fixed-footprint crossed terraces and closed patterned roofs. Bounded builder tools/build_suspended_steps.mjs reuses existing emission and gates, validates all findings and candidate hashes, then publishes files. tools/finalize_suspended_steps.mjs freezes delivery receipts. New crossing/end-Z/STL-stream/full-report regressions are part of npm test. Existing default outputs remain parity-checked; legacy suite remains 49/61. See specimen READMEs and PI journal session-04 for physical limits. No print initiated.
+
+## 2026-09-19 — Send Print package correction
+
+G-668: reported Studio 2.7.1.62 exits after send confirmation. Source-matched index reproduction exposes 2,688 out-of-bounds writes for the 1400 x 1600 report thumbnail; square 512 output eliminates them. Shared packer now normalizes overrides, audits all image slots, and legacy Python delegates to it. New RAZMAK SEND_PRINT_FIX revision changes PNG members only; original delivery receipt is preserved and executable payload is identical. Targeted PNG, first-layer, LIMIT16 parity and Python-entry checks pass; no native UI/send/print was executed. Semir reports Creality OBRTAJ started, completion/hash not verified. See docs/BAMBU_THUMBNAIL_CONTRACT.md.

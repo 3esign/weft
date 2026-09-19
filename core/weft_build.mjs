@@ -24,6 +24,7 @@ import path from 'node:path';
 import zlib from 'node:zlib';
 import { createHash } from 'node:crypto';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import {makeBambuThumbnails,auditBambuThumbnails} from './weft_bambu_thumbnails.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 export const WEFT_ROOT = path.resolve(HERE, '..');
@@ -495,8 +496,10 @@ export function packBambu3mf(gcodeTextIn, templatePath, outPath, o = {}){
     .replace(/(used_g=")[\d.]+(")/, (m, a, b) => a + weightG.toFixed(2) + b)
     .replace(/(layer_ranges=")[^"]*(")/, (m, a, b) => a + `0 ${nLayers - 1}` + b);
   const REPL = { 'Metadata/plate_1.gcode':gbytes, 'Metadata/plate_1.gcode.md5':Buffer.from(md5), 'Metadata/plate_1.json':Buffer.from(plateJson), 'Metadata/slice_info.config':Buffer.from(si) };
-  if(o.thumb){ const th = fs.readFileSync(o.thumb); for(const n of ['Metadata/plate_1.png', 'Metadata/plate_1_small.png', 'Metadata/plate_no_light_1.png', 'Metadata/top_1.png', 'Metadata/pick_1.png']) REPL[n] = th; }
+  if(o.thumb)Object.assign(REPL,makeBambuThumbnails(fs.readFileSync(o.thumb)));
   const entries = tpl.map(e => ({ name:e.name, data:REPL[e.name] || e.data, time:e.time, date:e.date, store:e.name.endsWith('.png') }));
+  const thumbs=auditBambuThumbnails(entries);
+  if(!thumbs.PASS)throw new Error('WEFT Bambu package refused: '+thumbs.issues.join('; '));
   fs.writeFileSync(outPath, zipWrite(entries));
   return { layers:nLayers, maxZ:+maxz.toFixed(2), filament_m:+(eTotal / 1000).toFixed(2), grams:+weightG.toFixed(1), bbox, firstLayer_min:+(firstLayerT / 60).toFixed(1), estimate:hms(tTotal), md5, bytes:fs.statSync(outPath).size };
 }

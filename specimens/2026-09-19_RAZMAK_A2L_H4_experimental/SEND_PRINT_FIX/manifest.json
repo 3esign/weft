@@ -1,0 +1,94 @@
+{
+  "schema": "weft-bambu-send-repair/v1",
+  "date": "2026-09-19T11:56:13.852Z",
+  "status": "DIGITALLY VERIFIED / native Send Print confirmation pending",
+  "input": {
+    "file": "RAZMAK_A2L_H4.gcode.3mf",
+    "sha256": "ea5a0f2e0286008e2b1509305d87ce8baa847d6c4c4f73faf9947802bb8828f0"
+  },
+  "output": {
+    "file": "RAZMAK_A2L_H4_SEND_FIXED.gcode.3mf",
+    "sha256": "0f24dc839a2aaa0b057a66895cfa6e6853199debecb999a444e9bdcd5a9b4e08",
+    "bytes": 21135541
+  },
+  "changedMembers": [
+    "Metadata/plate_1.png",
+    "Metadata/plate_1_small.png",
+    "Metadata/plate_no_light_1.png",
+    "Metadata/top_1.png",
+    "Metadata/pick_1.png"
+  ],
+  "gcode": {
+    "byteIdentical": true,
+    "bytes": 82747836,
+    "sha256": "bfe6701072dad6cc85af8908bf831dc7d7047330d31970395a587f4f6473cf7e",
+    "md5": "2ba7951093f49c7bd0e25e3b495a3dd7"
+  },
+  "firstLayer": {
+    "PASS": true,
+    "version": 1,
+    "firstModelZ": 0.24,
+    "firstPreviewZ": 0.24,
+    "segments": 3522,
+    "length_mm": 11605.675,
+    "filament_mm": 530.23504,
+    "startupSegments": 0,
+    "issues": []
+  },
+  "imageAudit": {
+    "PASS": true,
+    "images": [
+      {
+        "name": "Metadata/plate_1.png",
+        "width": 512,
+        "height": 512,
+        "depth": 8,
+        "colorType": 6
+      },
+      {
+        "name": "Metadata/plate_1_small.png",
+        "width": 128,
+        "height": 128,
+        "depth": 8,
+        "colorType": 6
+      },
+      {
+        "name": "Metadata/plate_no_light_1.png",
+        "width": 512,
+        "height": 512,
+        "depth": 8,
+        "colorType": 6
+      },
+      {
+        "name": "Metadata/top_1.png",
+        "width": 512,
+        "height": 512,
+        "depth": 8,
+        "colorType": 6
+      },
+      {
+        "name": "Metadata/pick_1.png",
+        "width": 512,
+        "height": 512,
+        "depth": 8,
+        "colorType": 6
+      }
+    ],
+    "issues": []
+  },
+  "physicalGate": {
+    "reusedByExactExtractedPayloadIdentity": true,
+    "source": "../RAZMAK_A2L_H4_package_gate.json",
+    "sourceSha256": "6cdff47ac3da0236c5014c822bc5c3124237ff79c75c05ae84542fd56b5d5817",
+    "PASS": true,
+    "problems": 0,
+    "checkedPoints": 2360817,
+    "reason": "Only five PNG members changed. All other extracted members, including every G-code byte, are identical to the independently gated original package."
+  },
+  "caveat": "No native app interaction, upload or print was performed. The safe upstream index reproduction is not a crash dump. Auxiliary slots retain the previous single-filament display-proxy convention, not semantic object-picking or inspection maps.",
+  "code": {
+    "core/weft_bambu_thumbnails.mjs": "d1d251510927c725fa1726c35379560233a056c89fa25d69c3973c14ea61beb0",
+    "core/weft_build.mjs": "6c6f671475acb7f5fca83a0354209db13d35f3f730360a8386672f12ac9dadb0",
+    "tools/repair_bambu_send_package.mjs": "8097a6981aa1523211f841af01e0b7d790f04cc426ffe64789a9dff3dff23097"
+  }
+}

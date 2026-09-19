@@ -4,6 +4,7 @@ import path from 'node:path';
 import readline from 'node:readline';
 import crypto from 'node:crypto';
 import {loadMachines,zipRead} from '../core/weft_build.mjs';
+import {makeBambuThumbnails,auditBambuThumbnails} from '../core/weft_bambu_thumbnails.mjs';
 const input=path.resolve(process.argv[2]),G=JSON.parse(fs.readFileSync(input,'utf8')),S=G.summary,dir=path.dirname(input),m=loadMachines()[S.machine];
 const manifest=JSON.parse(fs.readFileSync(path.join(dir,'manifest.json'),'utf8')),file=path.join(dir,manifest.shipped.find(n=>n.endsWith('.gcode')));
 const min=[Infinity,Infinity,Infinity],max=[-Infinity,-Infinity,-Infinity],phases={},zs=new Set(),issues=[];
@@ -53,8 +54,9 @@ const packageFile=path.join(dir,manifest.shipped.find(n=>n.endsWith('.gcode.3mf'
 if(fs.existsSync(packageFile)){
  const entries=zipRead(fs.readFileSync(packageFile)),gc=entries.find(e=>e.name==='Metadata/plate_1.gcode'),md5=entries.find(e=>e.name==='Metadata/plate_1.gcode.md5');
  const digest=crypto.createHash('md5').update(gc.data).digest('hex');if(md5.data.toString().trim().toLowerCase()!==digest)issues.push({kind:'package-MD5'});
- const thumb=fs.readFileSync(path.join(dir,S.name+'_preview.png'));const previews=entries.filter(e=>/^Metadata\/(plate_1|plate_1_small|plate_no_light_1|top_1|pick_1)\.png$/.test(e.name));
- if(previews.length!==5||previews.some(e=>!e.data.equals(thumb)))issues.push({kind:'stale-package-thumbnail'});
+ const thumbs=makeBambuThumbnails(fs.readFileSync(path.join(dir,S.name+'_preview.png')));const previews=entries.filter(e=>/^Metadata\/(plate_1|plate_1_small|plate_no_light_1|top_1|pick_1)\.png$/.test(e.name));
+ if(previews.length!==5||previews.some(e=>!e.data.equals(thumbs[e.name])))issues.push({kind:'stale-package-thumbnail'});
+ const thumbnailAudit=auditBambuThumbnails(entries);if(!thumbnailAudit.PASS)issues.push({kind:'package-thumbnail-contract',audit:thumbnailAudit});
  const end=JSON.parse(fs.readFileSync(path.join(dir,'end-block.json'),'utf8'));if(!gc.data.toString().includes('G1 Z'+end.newZ+' F900 ; lower z a little'))issues.push({kind:'package-end-Z'});
  const packedFirstLayer=globalThis.WEFT_GATE.firstLayerAudit(gc.data.toString('utf8'));if(!packedFirstLayer.PASS)issues.push({kind:'package-first-layer',audit:packedFirstLayer});
  packaged={md5:digest,thumbnailEntries:previews.length,footerZ:end.newZ,sha256:await hash(packageFile),firstLayer:packedFirstLayer};
