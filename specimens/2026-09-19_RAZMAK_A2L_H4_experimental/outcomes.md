@@ -15,3 +15,7 @@ Semir reports the Bambu package opens, but the application exits on every Send P
 ## 2026-09-19 — package revision prepared
 
 The Send Print diagnostic identified an unsafe native thumbnail index for the original rectangular report image. Replacement: [RAZMAK_A2L_H4_SEND_FIXED.gcode.3mf](SEND_PRINT_FIX/RAZMAK_A2L_H4_SEND_FIXED.gcode.3mf). Only five PNG members changed; executable payload is byte-identical. Package and first-layer checks pass; actual send/print result is pending. See SEND_PRINT_FIX/manifest.json and ../../docs/BAMBU_THUMBNAIL_CONTRACT.md.
+
+## 2026-09-19T12:12:07.435Z — operator confirms send succeeded
+
+Semir confirms successful sending after the package correction ("poslato... bice zanimljivo.. javljam se", followed by "sve ok."). This confirms the operator-observed send workflow succeeded; print completion, physical result and exact executed-file checksum remain unverified. Status: SENT / EXPERIMENTAL; physical outcome pending. The preceding pending-send records remain dated history.
