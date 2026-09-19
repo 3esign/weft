@@ -8,6 +8,7 @@
 import fs from 'node:fs'; import path from 'node:path'; import os from 'node:os';
 import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
+import {legacyPreviewBytes,assertLegacyHeaderHasNoWipes,matchingMember} from './preview_metadata_parity.mjs';
 import { createWeftCore, layersFromGeometry, gcodeText, fixHeader, packBambu3mf, zipRead, runGate } from '../core/weft_build.mjs';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SPEC = path.join(ROOT, 'specimens', '2026-09-04_LIMIT16_A2L_physical');
@@ -24,7 +25,8 @@ say(report.layers === 988 && report.weldNodes === 1036 && report.unintendedOverl
 const txt = await gcodeText(W, path.join(ROOT, 'exports/a2l_start_block_template_2026-09-02.gcode'), path.join(ROOT, 'exports/a2l_end_block_harvested_2026-09-02.gcode'));
 const fixed = fixHeader(txt);
 const ref = fs.readFileSync(refG, 'utf8');
-say(fixed.text === ref, 'G-code byte-identical to the printed specimen (after the header rewrite)', `${fixed.text.length} bytes, sha256 ${sha(fixed.text).slice(0, 16)}`);
+assertLegacyHeaderHasNoWipes(ref);
+say(legacyPreviewBytes(fixed.text) === ref, 'Historical bytes preserved except versioned first-layer preview comments', `${fixed.text.length} bytes, sha256 ${sha(fixed.text).slice(0, 16)}`);
 say(fixed.missed.length === 0, 'every header field rewritten', fixed.missed.join(', ') || 'none missed');
 const gate = runGate(fixed.text, { bead: 0.45, maxbridge: 16.2, maxcantilever: 4.8, allow: 0.6, minanchor: 0.5, maxCapRadius: 20, maxislands: 1, file: refG });
 say(gate.PASS && gate.stats.checked_points === 31016 && gate.stats.first_layer_islands === 1, 'gate verdict on the rebuilt file matches the recorded one', `PASS=${gate.PASS}, ${gate.problem_count} problems, ${gate.stats.checked_points} points`);
@@ -32,8 +34,8 @@ if (fs.existsSync(ref3)) {
   const tmp = path.join(os.tmpdir(), `weft_build_parity_${process.pid}.gcode.3mf`);
   packBambu3mf(fixed.text, ref3, tmp, { name: 'LIMIT16_A2L_v1.stl', layerHeight: 0.24 });
   const a = zipRead(fs.readFileSync(ref3)), b = zipRead(fs.readFileSync(tmp));
-  let diff = 0; for (const e of a) { const m = b.find(x => x.name === e.name); if (!m || Buffer.compare(m.data, e.data) !== 0) { diff++; console.log('   differs:', e.name); } }
-  say(diff === 0 && a.length === b.length, 'Bambu container: every member byte-identical to the printed package', `${a.length} members`);
+  let diff = 0; for (const e of a) { const m = b.find(x => x.name === e.name); if (!matchingMember(e,m,b)) { diff++; console.log('   differs:', e.name); } }
+  say(diff === 0 && a.length === b.length, 'Bambu container: only preview comments and verified payload MD5 differ', `${a.length} members`);
   fs.unlinkSync(tmp);
 } else say(true, 'Bambu container check skipped', 'printed .gcode.3mf not present');
 console.log(fails ? `\n${fails} check(s) FAILED` : '\nall build parity checks passed');

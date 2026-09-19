@@ -1,0 +1,31 @@
+{
+  "at": "2026-09-19T10:56:11.527Z",
+  "oldSha256": "6141c484a70d95a72a5de3286d4cdd1481879049d141b81a9c2242372efa40b7",
+  "newSha256": "10f70cd13c494b4fb48a45636ecd2507ee26c03a4cdbab8ac6c5f3cd6ac50dda",
+  "packageSha256": "ea5a0f2e0286008e2b1509305d87ce8baa847d6c4c4f73faf9947802bb8828f0",
+  "commandsSha256": "2b4902109e23c56af70df799d6bf48f55e8680df9c81b9bd806738ff39824759",
+  "commandsIdentical": true,
+  "oldAudit": {
+    "PASS": true,
+    "version": 1,
+    "firstModelZ": 0.24,
+    "firstPreviewZ": 0.24,
+    "segments": 3522,
+    "length_mm": 11605.675,
+    "filament_mm": 530.23504,
+    "startupSegments": 0,
+    "issues": []
+  },
+  "corrected": {
+    "PASS": true,
+    "version": 1,
+    "firstModelZ": 0.24,
+    "firstPreviewZ": 0.24,
+    "segments": 3522,
+    "length_mm": 11605.675,
+    "filament_mm": 530.23504,
+    "startupSegments": 0,
+    "issues": []
+  },
+  "meaning": "Comment-only change. Startup/purge remains executable and is shown as preparation/wipe, never as an extra model layer. Native slicer UI not operated."
+}

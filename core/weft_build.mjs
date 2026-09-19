@@ -307,8 +307,21 @@ export async function writeStl(W, file){
   for(const p of parts){ fs.writeSync(fd, Buffer.from(p)); total += p.byteLength; }
   fs.closeSync(fd); return total;
 }
-export async function gcodeText(W, headFile, footFile){
-  const head = fs.readFileSync(headFile, 'utf8'), foot = footFile ? fs.readFileSync(footFile, 'utf8') : W.FOOT_DEF;
+export function restoreHarvestedEndZ(foot, templatePath, top, maxZ){
+  const settings = zipRead(fs.readFileSync(templatePath)).find(e => e.name === 'Metadata/project_settings.config');
+  if(!settings) throw new Error('harvested container has no project settings');
+  const source = JSON.parse(settings.data.toString('utf8')).machine_end_gcode;
+  const formula = /^G1 Z\{max_layer_z \+ ([\d.]+)\} F900 ; lower z a little\s*$/m;
+  const match = typeof source === 'string' && source.match(formula);
+  const old = /^G1 Z([\d.]+) F900 ; lower z a little\s*$/gm;
+  const hits = [...foot.matchAll(old)];
+  if(!match || hits.length !== 1) throw new Error('unrecognized harvested end-Z formula or ambiguous compiled line');
+  const z = +(top + +match[1]).toFixed(3);
+  if(!Number.isFinite(z) || z <= top || z > maxZ) throw new Error('restored end Z outside machine clearance');
+  return {text:foot.replace(old,`G1 Z${z} F900 ; lower z a little`), receipt:{source:templatePath,entry:'Metadata/project_settings.config',formula:match[0].trim(),oldZ:+hits[0][1],top,newZ:z,meaning:'Re-evaluated the slicer-owned expression; no invented printer sequence.'}};
+}
+export async function gcodeText(W, headFile, footFile, options={}){
+  const head = fs.readFileSync(headFile, 'utf8'), foot = options.footText ?? (footFile ? fs.readFileSync(footFile, 'utf8') : W.FOOT_DEF);
   return W.buildGcodeText(null, head, foot);
 }
 
@@ -422,6 +435,10 @@ export function gcodeFrom3mf(buf){
 /* pack_bambu_3mf.py, in Node: analyse the G-code, patch the header, close the executable block, inject
    M73 progress per "; layer" marker, replace plate_1.gcode / .md5 / plate_1.json / slice_info.config. */
 export function packBambu3mf(gcodeTextIn, templatePath, outPath, o = {}){
+  if(/^;\s*layer\s+\d+\s+/m.test(gcodeTextIn)){
+    const firstLayer=globalThis.WEFT_GATE.firstLayerAudit(gcodeTextIn);
+    if(!firstLayer.PASS)throw new Error('WEFT package first layer refused: '+JSON.stringify(firstLayer.issues));
+  }
   const name = o.name || 'weft.stl', layerHeight = o.layerHeight ?? 0.24, density = o.density ?? 1.26, accelFudge = o.accelFudge ?? 1.10;
   const FIL_AREA = Math.PI * (1.75 / 2) ** 2;
   const src = gcodeTextIn.split('\n');

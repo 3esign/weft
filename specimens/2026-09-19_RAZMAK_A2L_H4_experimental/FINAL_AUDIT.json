@@ -1,0 +1,137 @@
+{
+  "PASS": true,
+  "name": "RAZMAK_A2L_H4",
+  "scope": "Object moves after the first WEFT layer marker and before the harvested footer. Printer preparation and opaque firmware macros are outside this geometric envelope audit.",
+  "boundingBox_mm": {
+    "min": [
+      15.040000000000001,
+      15.040000000000001,
+      0
+    ],
+    "max": [
+      314.96000000000004,
+      304.96000000000004,
+      309.84
+    ]
+  },
+  "margins_mm": {
+    "left": 15.040000000000001,
+    "right": 15.039999999999964,
+    "front": 15.040000000000001,
+    "back": 15.039999999999964,
+    "above": 15.160000000000025
+  },
+  "layers": 1291,
+  "extrudingMoves": 2363898,
+  "peakObjectTravelZ_mm": 309.84,
+  "objectFilament_m": 77.01,
+  "objectEstimatedMass_g": 233.39,
+  "objectKinematicTime_h": 29.664,
+  "estimateCaveat": "1.75 mm filament, assumed 1.26 g/cm3; no acceleration/heating/macros/wait time or physical weighing. Time is only a kinematic lower bound.",
+  "phases": {
+    "wall-1": {
+      "moves": 591683,
+      "zMin": 0.24,
+      "zMax": 72
+    },
+    "horizontal-terrace-1": {
+      "moves": 575568,
+      "zMin": 72.24,
+      "zMax": 74.88
+    },
+    "wall-2": {
+      "moves": 186567,
+      "zMin": 75.12,
+      "zMax": 152.88
+    },
+    "horizontal-terrace-2": {
+      "moves": 249582,
+      "zMin": 153.12,
+      "zMax": 155.76
+    },
+    "wall-3": {
+      "moves": 236918,
+      "zMin": 156,
+      "zMax": 233.76
+    },
+    "horizontal-terrace-3": {
+      "moves": 166410,
+      "zMin": 234,
+      "zMax": 236.64
+    },
+    "wall-4": {
+      "moves": 198914,
+      "zMin": 236.88,
+      "zMax": 303.84
+    },
+    "crown-grid": {
+      "moves": 150227,
+      "zMin": 304.08,
+      "zMax": 308.16
+    },
+    "crown-art": {
+      "moves": 8029,
+      "zMin": 308.4,
+      "zMax": 309.84
+    }
+  },
+  "sameLayerOverlapReading": {
+    "wallTerraceArt": 0,
+    "denseCrownFill": 240,
+    "meaning": "Only the final two dense roof fill layers have intentionally adjacent overlapping beads; raw engine report calls these unintendedOverlaps. No overlap findings hidden."
+  },
+  "stlBounds": {
+    "min": [
+      -149.97158813476562,
+      -144.97158813476562,
+      0
+    ],
+    "max": [
+      149.97158813476562,
+      144.97158813476562,
+      309.8399963378906
+    ]
+  },
+  "sha256": "10f70cd13c494b4fb48a45636ecd2507ee26c03a4cdbab8ac6c5f3cd6ac50dda",
+  "packaged": {
+    "md5": "2ba7951093f49c7bd0e25e3b495a3dd7",
+    "thumbnailEntries": 5,
+    "footerZ": 310.24,
+    "sha256": "ea5a0f2e0286008e2b1509305d87ce8baa847d6c4c4f73faf9947802bb8828f0",
+    "firstLayer": {
+      "PASS": true,
+      "version": 1,
+      "firstModelZ": 0.24,
+      "firstPreviewZ": 0.24,
+      "segments": 3522,
+      "length_mm": 11605.675,
+      "filament_mm": 530.23504,
+      "startupSegments": 0,
+      "issues": []
+    }
+  },
+  "exhaustive": {
+    "bodySha256": "80183cbbde7f0a6b6e4edcd0366d704c65603c166ac7dfecd9d2b9b62bc76645",
+    "findings": 5943,
+    "byZone": {
+      "terrace-1": 3360,
+      "terrace-2": 1232,
+      "terrace-3": 1342,
+      "closed-roof-and-art": 9
+    },
+    "outside": 0
+  },
+  "issues": [],
+  "lastExplicitNozzleZ_mm": 310.24,
+  "firstLayer": {
+    "PASS": true,
+    "version": 1,
+    "firstModelZ": 0.24,
+    "firstPreviewZ": 0.24,
+    "segments": 3522,
+    "length_mm": 11605.675,
+    "filament_mm": 530.23504,
+    "startupSegments": 0,
+    "issues": []
+  }
+}

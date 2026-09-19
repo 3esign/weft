@@ -1,0 +1,12 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import path from 'node:path';
+import {restoreHarvestedEndZ,WEFT_ROOT,loadMachines} from '../core/weft_build.mjs';
+const m=loadMachines().a2l,foot=fs.readFileSync(path.join(WEFT_ROOT,m.end),'utf8'),tpl=path.join(WEFT_ROOT,m.containerTemplate);
+const r=restoreHarvestedEndZ(foot,tpl,309.84,325);
+assert.equal(r.receipt.newZ,310.24);
+assert.equal(r.text.replace('G1 Z310.24 F900 ; lower z a little','G1 Z140.28 F900 ; lower z a little'),foot);
+assert.throws(()=>restoreHarvestedEndZ(foot,tpl,325,325),/clearance/);
+assert.throws(()=>restoreHarvestedEndZ(foot+'\n'+foot,tpl,200,325),/ambiguous/);
+assert.throws(()=>restoreHarvestedEndZ('G1 Z140 F900',tpl,200,325),/unrecognized/);
+console.log('PASS harvested end Z: slicer formula, unchanged sequence, bounds and ambiguous-source refusals');

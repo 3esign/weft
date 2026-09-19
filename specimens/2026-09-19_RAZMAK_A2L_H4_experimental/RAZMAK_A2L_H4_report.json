@@ -1,0 +1,743 @@
+{
+  "report": {
+    "name": "RAZMAK_A2L_H4",
+    "machine": "Bambu A2L",
+    "bed_mm": [
+      330,
+      320
+    ],
+    "layers": 1415,
+    "globalZLevels": 1291,
+    "expectedZLevels": 1291,
+    "logicalCells": null,
+    "experimentalMembraneOverride": false,
+    "maxBodiesPerZ": 1,
+    "size_mm": [
+      299.9,
+      289.9,
+      309.84
+    ],
+    "plate_mm": [
+      15.3,
+      15.3,
+      314.7,
+      304.7
+    ],
+    "fitsPlate": true,
+    "grammarCounts": {
+      "staple": 147,
+      "diagonal": 159,
+      "sine": 159,
+      "eight": 183
+    },
+    "threadLength_m": 1824.1,
+    "weldNodes": 108735,
+    "rawPaths": 61,
+    "unintendedOverlaps": 240,
+    "seamClosures": 0,
+    "overlapSamples": [
+      {
+        "z": 307.68,
+        "role": "bridge",
+        "ov": 120
+      },
+      {
+        "z": 307.92,
+        "role": "bridge",
+        "ov": 120
+      }
+    ],
+    "kinematic_h": 16.89,
+    "routeA_estimate_h": 159.3,
+    "caps": [],
+    "events": [
+      {
+        "k": 0,
+        "z": 0,
+        "event": "wall 1 begins on basal frame"
+      },
+      {
+        "k": 300,
+        "z": 72,
+        "event": "terrace-1; transverse return; alternate phase every layer"
+      },
+      {
+        "k": 312,
+        "z": 74.88,
+        "event": "wall 2 begins on horizontal terrace"
+      },
+      {
+        "k": 637,
+        "z": 152.88,
+        "event": "terrace-2; transverse return; alternate phase every layer"
+      },
+      {
+        "k": 649,
+        "z": 155.76,
+        "event": "wall 3 begins on horizontal terrace"
+      },
+      {
+        "k": 974,
+        "z": 233.76,
+        "event": "terrace-3; transverse return; alternate phase every layer"
+      },
+      {
+        "k": 986,
+        "z": 236.64,
+        "event": "wall 4 begins on horizontal terrace"
+      }
+    ],
+    "contourCounts": [
+      [
+        0,
+        1
+      ],
+      [
+        72,
+        0
+      ],
+      [
+        74.88,
+        1
+      ],
+      [
+        152.88,
+        0
+      ],
+      [
+        155.76,
+        1
+      ],
+      [
+        233.76,
+        0
+      ],
+      [
+        236.64,
+        1
+      ],
+      [
+        308.16,
+        0
+      ]
+    ],
+    "perLayerSample": [
+      {
+        "k": 0,
+        "z": 0,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 172
+      },
+      {
+        "k": 40,
+        "z": 9.6,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 172
+      },
+      {
+        "k": 80,
+        "z": 19.2,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 172
+      },
+      {
+        "k": 120,
+        "z": 28.8,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 172
+      },
+      {
+        "k": 160,
+        "z": 38.4,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 172
+      },
+      {
+        "k": 200,
+        "z": 48,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 172
+      },
+      {
+        "k": 240,
+        "z": 57.6,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 172
+      },
+      {
+        "k": 280,
+        "z": 67.2,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 172
+      },
+      {
+        "k": 320,
+        "z": 76.8,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 132
+      },
+      {
+        "k": 360,
+        "z": 86.4,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 132
+      },
+      {
+        "k": 400,
+        "z": 96,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 132
+      },
+      {
+        "k": 440,
+        "z": 105.6,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 132
+      },
+      {
+        "k": 480,
+        "z": 115.2,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 132
+      },
+      {
+        "k": 520,
+        "z": 124.8,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 132
+      },
+      {
+        "k": 560,
+        "z": 134.4,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 132
+      },
+      {
+        "k": 600,
+        "z": 144,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 132
+      },
+      {
+        "k": 640,
+        "z": 153.6,
+        "contours": 0,
+        "paths": 1,
+        "nodes": 0
+      },
+      {
+        "k": 680,
+        "z": 163.2,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 136
+      },
+      {
+        "k": 720,
+        "z": 172.8,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 136
+      },
+      {
+        "k": 760,
+        "z": 182.4,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 136
+      },
+      {
+        "k": 800,
+        "z": 192,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 136
+      },
+      {
+        "k": 840,
+        "z": 201.6,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 136
+      },
+      {
+        "k": 880,
+        "z": 211.2,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 136
+      },
+      {
+        "k": 920,
+        "z": 220.8,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 136
+      },
+      {
+        "k": 960,
+        "z": 230.4,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 136
+      },
+      {
+        "k": 1000,
+        "z": 240,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 84
+      },
+      {
+        "k": 1040,
+        "z": 249.6,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 84
+      },
+      {
+        "k": 1080,
+        "z": 259.2,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 84
+      },
+      {
+        "k": 1120,
+        "z": 268.8,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 84
+      },
+      {
+        "k": 1160,
+        "z": 278.4,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 84
+      },
+      {
+        "k": 1200,
+        "z": 288,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 84
+      },
+      {
+        "k": 1240,
+        "z": 297.6,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 84
+      },
+      {
+        "k": 1280,
+        "z": 307.2,
+        "contours": 1,
+        "paths": 1,
+        "nodes": 84
+      }
+    ],
+    "gateAtEvidencedCeiling": {
+      "maxbridge_mm": 16.2,
+      "findings": 5943,
+      "byZone": {
+        "terrace-1": 3360,
+        "terrace-2": 1232,
+        "terrace-3": 1342,
+        "closed-roof-and-art": 9
+      },
+      "outsideDeclaredZones": 0
+    }
+  },
+  "geometry": {
+    "name": "RAZMAK_A2L_H4",
+    "title": "RAZMAK",
+    "generator": "core/weft_suspended_steps_geometry.mjs",
+    "machine": "a2l",
+    "machineLabel": "Bambu Lab A2L",
+    "H": 309.84,
+    "totalLayers": 1291,
+    "levels": 4,
+    "terraces": [
+      {
+        "name": "terrace-1",
+        "k0": 300,
+        "k1": 311,
+        "z0": 72,
+        "z1": 74.88,
+        "layers": 12,
+        "cells": 140,
+        "footprintConstant": true,
+        "longitudinalRails": false,
+        "process": "horizontal-transverse-return/v1",
+        "physicalStatus": "experimental",
+        "supportWall": {
+          "kind": "square",
+          "sx": 250,
+          "sy": 230,
+          "cx": 0,
+          "cy": 0,
+          "angle": 5
+        },
+        "nextWall": {
+          "kind": "hexagon",
+          "sx": 204,
+          "sy": 186,
+          "cx": 20,
+          "cy": -8,
+          "angle": 15
+        }
+      },
+      {
+        "name": "terrace-2",
+        "k0": 637,
+        "k1": 648,
+        "z0": 152.88,
+        "z1": 155.76,
+        "layers": 12,
+        "cells": 128,
+        "footprintConstant": true,
+        "longitudinalRails": false,
+        "process": "horizontal-transverse-return/v1",
+        "physicalStatus": "experimental",
+        "supportWall": {
+          "kind": "hexagon",
+          "sx": 204,
+          "sy": 186,
+          "cx": 12,
+          "cy": 8,
+          "angle": 45
+        },
+        "nextWall": {
+          "kind": "square",
+          "sx": 164,
+          "sy": 132,
+          "cx": -20,
+          "cy": 12,
+          "angle": -12
+        }
+      },
+      {
+        "name": "terrace-3",
+        "k0": 974,
+        "k1": 985,
+        "z0": 233.76,
+        "z1": 236.64,
+        "layers": 12,
+        "cells": 60,
+        "footprintConstant": true,
+        "longitudinalRails": false,
+        "process": "horizontal-transverse-return/v1",
+        "physicalStatus": "experimental",
+        "supportWall": {
+          "kind": "square",
+          "sx": 164,
+          "sy": 132,
+          "cx": -10,
+          "cy": 0,
+          "angle": 24
+        },
+        "nextWall": {
+          "kind": "circle",
+          "sx": 88,
+          "sy": 82,
+          "cx": 12,
+          "cy": -6,
+          "angle": 10
+        }
+      }
+    ],
+    "walls": [
+      {
+        "tier": 1,
+        "k0": 0,
+        "k1": 299,
+        "z0": 0,
+        "z1": 72,
+        "kind": "square",
+        "sx": 250,
+        "sy": 230,
+        "c0": [
+          0,
+          0
+        ],
+        "c1": [
+          0,
+          0
+        ],
+        "angles": [
+          0,
+          5
+        ],
+        "w": 3.4,
+        "pitch": 5.2,
+        "web": "staple",
+        "cycle": [
+          "chord",
+          "web"
+        ]
+      },
+      {
+        "tier": 2,
+        "k0": 312,
+        "k1": 636,
+        "z0": 74.88,
+        "z1": 152.88,
+        "kind": "hexagon",
+        "sx": 204,
+        "sy": 186,
+        "c0": [
+          20,
+          -8
+        ],
+        "c1": [
+          12,
+          8
+        ],
+        "angles": [
+          15,
+          45
+        ],
+        "w": 3,
+        "pitch": 4.5,
+        "web": "diagonal",
+        "cycle": [
+          "chord",
+          "web"
+        ]
+      },
+      {
+        "tier": 3,
+        "k0": 649,
+        "k1": 973,
+        "z0": 155.76,
+        "z1": 233.76,
+        "kind": "square",
+        "sx": 164,
+        "sy": 132,
+        "c0": [
+          -20,
+          12
+        ],
+        "c1": [
+          -10,
+          0
+        ],
+        "angles": [
+          -12,
+          24
+        ],
+        "w": 2.8,
+        "pitch": 4,
+        "web": "sine",
+        "cycle": [
+          "chord",
+          "web"
+        ]
+      },
+      {
+        "tier": 4,
+        "k0": 986,
+        "k1": 1265,
+        "z0": 236.64,
+        "z1": 303.84,
+        "kind": "circle",
+        "sx": 88,
+        "sy": 82,
+        "c0": [
+          12,
+          -6
+        ],
+        "c1": [
+          0,
+          0
+        ],
+        "angles": [
+          10,
+          70
+        ],
+        "w": 2.6,
+        "pitch": 3.2,
+        "web": "eight",
+        "cycle": [
+          "chord",
+          "web",
+          "web"
+        ]
+      }
+    ],
+    "events": [
+      {
+        "k": 0,
+        "z": 0,
+        "event": "wall 1 begins on basal frame"
+      },
+      {
+        "k": 300,
+        "z": 72,
+        "event": "terrace-1; transverse return; alternate phase every layer"
+      },
+      {
+        "k": 312,
+        "z": 74.88,
+        "event": "wall 2 begins on horizontal terrace"
+      },
+      {
+        "k": 637,
+        "z": 152.88,
+        "event": "terrace-2; transverse return; alternate phase every layer"
+      },
+      {
+        "k": 649,
+        "z": 155.76,
+        "event": "wall 3 begins on horizontal terrace"
+      },
+      {
+        "k": 974,
+        "z": 233.76,
+        "event": "terrace-3; transverse return; alternate phase every layer"
+      },
+      {
+        "k": 986,
+        "z": 236.64,
+        "event": "wall 4 begins on horizontal terrace"
+      }
+    ],
+    "boundingContract": {
+      "margin_mm": 15,
+      "allowed_mm": [
+        300,
+        290,
+        310
+      ],
+      "coordinates": "machine-centred XY before emitter translation; Z starts at bed; deposited bead envelope is audited after emission"
+    },
+    "principle": "A single basal perimeter carries all upper walls through fixed-footprint horizontal transverse-weave terraces; no interior bed-founded tubes.",
+    "roof": {
+      "process": "crown-woven-grid-art/v1",
+      "physicalStatus": "experimental",
+      "k0": 1266,
+      "gridLayers": 18,
+      "artLayers": 7,
+      "patternLobes": 4,
+      "pitches": [
+        10,
+        10,
+        10,
+        10,
+        5,
+        5,
+        5,
+        5,
+        2.5,
+        2.5,
+        2.5,
+        2.5,
+        1.2,
+        1.2,
+        1.2,
+        1.2,
+        0.405,
+        0.405
+      ],
+      "closure": "alternating spanning grid followed by two dense crossed layers; raised wave drawn above; not asserted watertight"
+    },
+    "gatePolicy": {
+      "bridge_mm": 180,
+      "cantilever_mm": 4.8,
+      "allow_mm": 0.6,
+      "evidencedBridge_mm": 16.2,
+      "meaning": "admission of declared experiments only; returning loops can classify as bridges while acting mechanically as cantilevers"
+    },
+    "experiments": {
+      "declaredBridgeCeiling_mm": 180,
+      "evidencedBridge_mm": 16.2,
+      "zones": [
+        {
+          "name": "terrace-1",
+          "z0": 72,
+          "z1": 75.36,
+          "longestChord_mm": 180
+        },
+        {
+          "name": "terrace-2",
+          "z0": 152.88,
+          "z1": 156.23999999999998,
+          "longestChord_mm": 180
+        },
+        {
+          "name": "terrace-3",
+          "z0": 233.76,
+          "z1": 237.11999999999998,
+          "longestChord_mm": 180
+        },
+        {
+          "name": "closed-roof-and-art",
+          "z0": 303.84,
+          "z1": 309.84,
+          "longestChord_mm": 90.6
+        }
+      ],
+      "protocol": "declared gate must pass; every finding at 16.2 mm must be in one of these specific horizontal terrace or roof zones; no wall-wide exemption"
+    },
+    "args": {
+      "lh": 0.24,
+      "bead": 0.45,
+      "firstLayerBead": 0.52,
+      "firstLayerSpeed": 12,
+      "w": 3.2,
+      "r0": 50,
+      "K": 96,
+      "altPhase": true,
+      "cycle": [
+        "chord",
+        "web"
+      ],
+      "maxbridge": 180,
+      "maxcantilever": 4.8,
+      "allow": 0.6,
+      "minanchor": 0.5,
+      "maxCapRadius": 20,
+      "speed": 32,
+      "bridgeSpeed": 16,
+      "temp": 220,
+      "bed": 55,
+      "fan": 100
+    }
+  },
+  "builder": "tools/build_suspended_steps.mjs; tools/resume_suspended_steps.mjs completed independent gates on unchanged pending bytes",
+  "gate": {
+    "bead": 0.45,
+    "maxbridge": 180,
+    "maxcantilever": 4.8,
+    "allow": 0.6,
+    "minanchor": 0.5,
+    "maxCapRadius": 20,
+    "maxislands": 1
+  },
+  "header": {
+    "layers": 1291,
+    "filament_mm": 77123.18,
+    "grams": 233.73,
+    "maxZ": 309.84,
+    "seconds": 106869,
+    "time": "1d 5h 41m 9s"
+  }
+}

@@ -19,7 +19,7 @@
    ============================================================ */
 (function(root){
 'use strict';
-const WEFT_CORE_VERSION='core-2026-09-08';
+const WEFT_CORE_VERSION='core-2026-09-19-first-layer';
 function createWeftCore(){
 const hooks={onMachineChange:null,onMeshInfo:null,fullBuild:null};
 let gcodeHead='', gcodeFoot='';
@@ -984,8 +984,27 @@ G1 Z2 F600`;
    from the two textareas). DOM/download handling lives in exportGcode. */
 async function buildGcodeText(onProgress,headText,footText){
   if(headText==null) headText=gcodeHead; if(footText==null) footText=gcodeFoot;
-  const head=String(headText).replace(/\{TEMP\}/g,P.temp).replace(/\{BED\}/g,P.bed);
+  // An empty/raised first path must never be turned into a downloadable print.
+  // Check the bed group itself: a startup purge cannot satisfy this contract.
+  if(!layers.length) throw new Error('WEFT first layer: no model paths');
+  const firstZ=layers[0].zTop, firstH=firstZ-layers[0].zBot;
+  if(!Number.isFinite(firstZ)||firstZ<=0||Math.abs(layers[0].zBot)>1e-6||Math.abs(firstH-P.lh)>1e-6)
+    throw new Error('WEFT first layer must start on the bed at the machine layer height');
+  for(const [i,L] of layers.entries()){
+    if(!Number.isFinite(L.zBot)||!Number.isFinite(L.zTop)||L.zTop<=L.zBot||!Array.isArray(L.pts)||L.pts.length<2||
+       L.pts.some(p=>!Number.isFinite(p.x)||!Number.isFinite(p.y))||
+       !L.pts.some((p,j)=>j&&Math.hypot(p.x-L.pts[j-1].x,p.y-L.pts[j-1].y)>0.001))
+      throw new Error(`WEFT empty or invalid model path ${i}`);
+    if(Math.abs(L.zTop-firstZ)<1e-6&&Math.abs(L.zBot)>1e-6)
+      throw new Error('WEFT first layer contains a raised path');
+  }
+  const rawHead=String(headText).replace(/\{TEMP\}/g,P.temp).replace(/\{BED\}/g,P.bed);
+  // Slicer preview-only preparation scope. WIPE moves are not deposition layers,
+  // even when a purge is above the model's first Z. Keep EVERY machine command.
+  // Insert after config/header comments so the harvested file signature stays first.
+  const head=wrapStartupPreview(rawHead);
   const out=[head,
+    `; WEFT_FIRST_LAYER_V1 Z=${firstZ.toFixed(3)} H=${firstH.toFixed(3)}`,
     `; WEFT first layer: ${P.firstLayerBead} mm bead @ ${P.firstLayerSpeed} mm/s`,
     `; WEFT adhesion: ${P.adhesion}${P.adhesion==='none'?'':` ${P.adhesionWidth} mm`}`,
     '; Slicer Route A: elephant-foot compensation 0; XY contour compensation 0; do not add a second brim when built-in adhesion is on'];
@@ -1069,7 +1088,12 @@ async function buildGcodeText(onProgress,headText,footText){
       await new Promise(r=>setTimeout(r,0)); }
   }
   out.push(String(footText));
-  return out.join('\n');
+  const text=out.join('\n');
+  // Pure Node users of the core get the same refusal as browser/CLI exports.
+  if(!root.WEFT_GATE) await import('./weft_gate.js');
+  const firstLayer=root.WEFT_GATE.firstLayerAudit(text);
+  if(!firstLayer.PASS) throw new Error('WEFT first-layer export refused: '+JSON.stringify(firstLayer.issues));
+  return text;
 }
 gcodeFoot=FOOT_DEF; gcodeHead=HEAD_HINT;
 const api={};
@@ -1148,5 +1172,15 @@ Object.defineProperties(api,{
 api.version=WEFT_CORE_VERSION;
 return api;
 }
-root.WEFT_CORE={createWeftCore,version:WEFT_CORE_VERSION};
+function wrapStartupPreview(head){
+  if(/; WEFT_STARTUP_PREVIEW_BEGIN/.test(head)) throw new Error('startup already wrapped');
+  const lines=String(head).split('\n'), i=lines.findIndex(s=>s.trim()&&!s.trimStart().startsWith(';'));
+  const at=i<0?lines.length:i;
+  lines.splice(at,0,'; WEFT_STARTUP_PREVIEW_BEGIN','; WIPE_START');
+  // A slicer-owned inner wipe end must not expose a later preparation extrusion.
+  for(let j=at+2;j<lines.length;j++)if(/^;\s*WIPE_END\s*$/.test(lines[j]))lines.splice(++j,0,'; WIPE_START');
+  lines.push('; WIPE_END','; WEFT_STARTUP_PREVIEW_END');
+  return lines.join('\n');
+}
+root.WEFT_CORE={createWeftCore,wrapStartupPreview,version:WEFT_CORE_VERSION};
 })(typeof globalThis!=='undefined'?globalThis:this);

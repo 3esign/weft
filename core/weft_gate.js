@@ -22,7 +22,7 @@
    ============================================================ */
 (function(root){
 'use strict';
-const WEFT_GATE_VERSION='gate-2026-09-08';
+const WEFT_GATE_VERSION='gate-2026-09-19-first-layer';
 
 /* Python's round(): half to even. The raster puts a point on a cell by rounding (p-x0)/res, and a
    coordinate that lands exactly on a half cell goes DOWN in Python when the integer part is even.
@@ -31,6 +31,57 @@ function pyround(v){ const f=Math.floor(v), d=v-f; if(d<0.5) return f; if(d>0.5)
 
 const NUM=/([XYZEF])(-?\d*\.?\d+)/g;
 const LAB=/^;\s*layer\s+(\d+)\s+(\S+)/;
+
+// Independent final-byte check, before support-grid bed exemptions. This is also
+// used on the G-code extracted from a container. Purge is not a foundation.
+function firstLayerAudit(text){
+  const issues=[], add=(kind,line,detail)=>issues.push({kind,line,...detail});
+  let x=0,y=0,z=0,e=0,abs=true,absE=true,wipe=false,feature='?',g1=0,customStart=false;
+  let changes=0,model=false,firstPath=null,markedZ=null,height=null,expected=null,configZ=0;
+  let firstPreviewZ=null,firstModelZ=null,segments=0,length=0,filament=0,startupSegments=0,line=0;
+  const contract=text.match(/^; WEFT_FIRST_LAYER_V1 Z=([\d.]+) H=([\d.]+)\s*$/m);
+  if(contract)expected={z:+contract[1],h:+contract[2]};
+  const boundaries=text.matchAll(/^;\s*CHANGE_LAYER\s*$/gm);boundaries.next();const second=boundaries.next();
+  const prefix=second.done?text:text.slice(0,second.value.index);
+  for(const raw of prefix.split('\n')){
+    line++;const s=raw.trim();let m;
+    if((m=s.match(/^;\s*initial_layer_print_height\s*=\s*([\d.]+)/)))configZ=+m[1];
+    if(/^;\s*(?:WIPE_START)\s*$/.test(s))wipe=true;
+    if(/^;\s*(?:WIPE_END)\s*$/.test(s))wipe=false;
+    if((m=s.match(/^;\s*FEATURE:\s*(.+)$/))){feature=m[1];customStart=feature==='Custom'&&g1===0;}
+    if(/^;\s*CHANGE_LAYER\s*$/.test(s)){if(++changes===2)break;}
+    if((m=s.match(/^;\s*Z_HEIGHT:\s*([\d.]+)/)))markedZ=+m[1];
+    if((m=s.match(/^;\s*LAYER_HEIGHT:\s*([\d.]+)/)))height=+m[1];
+    if((m=LAB.exec(s))){model=true;if(firstPath===null){firstPath=+m[1];if(firstPath!==0)add('FIRST_PATH_NOT_ZERO',line,{firstPath});}}
+    const code=s.split(';')[0].trim(),cmd=code.match(/^([A-Z]+\d*(?:\.\d+)?)/)?.[1],d={};
+    for(const p of code.matchAll(/([XYZEF])\s*(-?\d*\.?\d+)/g))d[p[1]]=+p[2];
+    if(cmd==='G90')abs=true;if(cmd==='G91')abs=false;if(cmd==='M82')absE=true;if(cmd==='M83')absE=false;
+    if(cmd==='G92'){x=d.X??x;y=d.Y??y;z=d.Z??z;e=d.E??e;continue;}
+    if(!['G0','G1','G2','G3'].includes(cmd))continue;
+    g1++;
+    const nx=d.X===undefined?x:abs?d.X:x+d.X,ny=d.Y===undefined?y:abs?d.Y:y+d.Y,nz=d.Z===undefined?z:abs?d.Z:z+d.Z;
+    const de=d.E===undefined?0:absE?d.E-e:d.E,dist=Math.hypot(nx-x,ny-y);
+    if(de>1e-8&&dist>1e-6){
+      if(!model)startupSegments++;
+      if(!wipe&&firstPreviewZ===null)firstPreviewZ=customStart?configZ:nz;
+      if(model){
+        if(wipe||feature==='Custom')add('HIDDEN_FIRST_LAYER_EXTRUSION',line,{wipe,feature});
+        if(changes!==1)add('FIRST_LAYER_MARKER_MISSING',line,{});
+        if(firstModelZ===null)firstModelZ=nz;
+        if(Math.abs(nz-z)>.001||Math.abs(nz-firstModelZ)>.001)add('NONPLANAR_FIRST_LAYER',line,{z:nz});
+        segments++;length+=dist;filament+=de;
+      }
+    }
+    x=nx;y=ny;z=nz;if(d.E!==undefined)e=absE?d.E:e+d.E;
+  }
+  if(!segments)add('EMPTY_FIRST_MODEL_LAYER',line,{});
+  const target=expected?.z??markedZ,h=expected?.h??height;
+  if(!(target>0&&h>0)||markedZ===null||height===null||firstModelZ===null||Math.abs(target-h)>.001||Math.abs(markedZ-target)>.001||Math.abs(height-h)>.001||Math.abs(firstModelZ-target)>.001)
+    add('FIRST_LAYER_NOT_ON_BED',line,{target,height:h,markedZ,firstModelZ});
+  if(firstPreviewZ===null||firstModelZ===null||Math.abs(firstPreviewZ-firstModelZ)>.001)
+    add('PHANTOM_FIRST_PREVIEW_LAYER',line,{firstPreviewZ,firstModelZ});
+  return {PASS:issues.length===0,version:1,firstModelZ,firstPreviewZ,segments,length_mm:+length.toFixed(3),filament_mm:+filament.toFixed(5),startupSegments,issues};
+}
 
 function parseGcode(text, opt){
   const zmerge=opt.zmerge, slicerTypes=!!opt.slicerTypes;
@@ -107,6 +158,8 @@ function checkGcode(text, options){
   const o=Object.assign({bead:0.42, allow:0.6, maxbridge:12.0, res:0.2, zmerge:0.02, bedz:0.5, maxislands:0,
     maxReport:25, capRoles:'cap', slicerTypes:false, maxCapRadius:36.0, minanchor:0.5, maxcantilever:3.0,
     file:'(text)'}, options||{});
+  const firstLayer=(/^; WEFT_FIRST_LAYER_V1/m.test(text)||(/^;\s*CHANGE_LAYER\s*$/m.test(text)&&/^;\s*layer\s+\d+\s+/m.test(text)))?firstLayerAudit(text):null;
+  if(firstLayer&&!firstLayer.PASS)return {file:o.file,PASS:false,exit:2,error:'WEFT first-layer contract failed',firstLayer,problems:firstLayer.issues,problem_count:firstLayer.issues.length,stats:{checked_points:0}};
   const layers=parseGcode(text,o);
   const keys=[...layers.keys()].sort((a,b)=>a-b);
   if(!keys.length) return {error:'no extruding moves found', PASS:false, exit:2};
@@ -276,12 +329,12 @@ function checkGcode(text, options){
   if(islandFail) problems.unshift({kind:'DISCONNECTED_FIRST_LAYER',role:'adhesion',z:0.0,islands,limit:o.maxislands});
   const fail=stats.floating+stats.long_bridge+stats.cantilever+stats.bad_membrane+stats.unanchored_membrane+(islandFail?1:0);
   gaps.sort((a,b)=>b[3]-a[3]);
-  return {file:o.file,layers:keys.length,
+  return {file:o.file,layers:keys.length,firstLayer,
     params:{bead:o.bead,allow:o.allow,maxbridge:o.maxbridge,res:o.res,bedz:o.bedz,maxislands:o.maxislands,maxcantilever:o.maxcantilever},
     stats,byRole,worstGaps:gaps.slice(0,15).map(g=>[g[0],g[1],pyround_n(g[2],2),pyround_n(g[3],2)]),
-    membranes,problems:problems.slice(0,400),problem_count:problems.length,PASS:fail===0,
+    membranes,problems:o.allProblems?problems:problems.slice(0,400),problem_count:problems.length,PASS:fail===0,
     _grid:{W,H,res,x0,y0}};
 }
 
-root.WEFT_GATE={checkGcode,parseGcode,edt,pyround,version:WEFT_GATE_VERSION};
+root.WEFT_GATE={checkGcode,firstLayerAudit,parseGcode,edt,pyround,version:WEFT_GATE_VERSION};
 })(typeof globalThis!=='undefined'?globalThis:this);

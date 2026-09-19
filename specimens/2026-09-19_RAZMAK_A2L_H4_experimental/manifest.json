@@ -1,0 +1,41 @@
+{
+  "name": "RAZMAK_A2L_H4",
+  "model": "suspended-horizontal-steps",
+  "built": "2026-09-19T11:08:09.913Z",
+  "machine": {
+    "id": "a2l",
+    "label": "Bambu Lab A2L",
+    "plate": [
+      330,
+      320
+    ],
+    "maxZ": 325,
+    "nozzle": 0.4,
+    "bead": 0.45,
+    "beadSource": "measured",
+    "beadEvidence": "specimens/2026-08-31_D5_R140_A2L_physical and specimens/2026-09-02_P0_suma_2x2_physical — both printed to completion at this bead",
+    "lh": 0.24,
+    "firstLayerBead": 0.52,
+    "temp": 220,
+    "bed": 55,
+    "start": "exports/a2l_start_block_template_2026-09-02.gcode",
+    "end": "exports/a2l_end_block_harvested_2026-09-02.gcode",
+    "route": "bambu3mf",
+    "containerTemplate": "specimens/2026-09-02_P0_suma_4x4_v2_physical/P0_suma_4x4_v2.gcode.3mf"
+  },
+  "geometry": "RAZMAK_A2L_H4_geometry.json",
+  "shipped": [
+    "RAZMAK_A2L_H4.gcode",
+    "RAZMAK_A2L_H4.gcode.3mf"
+  ],
+  "gate": "RAZMAK_A2L_H4_gate.json",
+  "report": "RAZMAK_A2L_H4_report.json",
+  "builder": "tools/build_suspended_steps.mjs + tools/resume_suspended_steps.mjs",
+  "core": "core-2026-09-08",
+  "outcome": "NOT PRINTED / EXPERIMENTAL",
+  "seed": null,
+  "hashes": {
+    "RAZMAK_A2L_H4.gcode": "10f70cd13c494b4fb48a45636ecd2507ee26c03a4cdbab8ac6c5f3cd6ac50dda",
+    "RAZMAK_A2L_H4.gcode.3mf": "ea5a0f2e0286008e2b1509305d87ce8baa847d6c4c4f73faf9947802bb8828f0"
+  }
+}

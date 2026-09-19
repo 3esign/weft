@@ -578,3 +578,11 @@ Found on the way, not fixed (they are findings, not regressions):
   — correct: it carries no process identity; regenerate it with `build limit16` to get one.
 
 Still by hand / still Python: the level-2 generators (`*_geometry.py`), the C1 bead calibration, printing.
+
+## 2026-09-19 — first-layer export invariant
+
+G-667: reproduce the reported purge-only preview layer at Z0.30 before the base at Z0.20; correct shared preparation metadata without changing machine commands. Core exports, first-layer gate and Bambu packer now refuse the tested empty/hidden/raised/misnumbered cases. first_layer.test.mjs and browser_gate.test.mjs cover the contract. The actual Ender base has 2,531 extrusion segments; Bambu has 3,522 at Z0.24. Native slicer GUI was not operated. See docs/FIRST_LAYER_CONTRACT.md and PI's first-layer incident dossier.
+
+## 2026-09-19 — suspended horizontal pair
+
+core/weft_suspended_steps_geometry.mjs adds RAZMAK A2L H4 and OBRTAJ Ender H7 with one basal frame, fixed-footprint crossed terraces and closed patterned roofs. Bounded builder tools/build_suspended_steps.mjs reuses existing emission and gates, validates all findings and candidate hashes, then publishes files. tools/finalize_suspended_steps.mjs freezes delivery receipts. New crossing/end-Z/STL-stream/full-report regressions are part of npm test. Existing default outputs remain parity-checked; legacy suite remains 49/61. See specimen READMEs and PI journal session-04 for physical limits. No print initiated.

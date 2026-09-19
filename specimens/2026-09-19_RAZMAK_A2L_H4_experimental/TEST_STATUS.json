@@ -1,0 +1,8 @@
+{
+  "command": "node tests/run_all.mjs (package.json npm test target)",
+  "started": "2026-09-19T11:02:27.916Z",
+  "finished": "2026-09-19T11:13:32.494Z",
+  "exit": 1,
+  "error": null,
+  "meaning": "Exit 1 is only accepted with the known 49/61 legacy tail; all preceding suites must complete."
+}

@@ -1,0 +1,453 @@
+{
+  "name": "RAZMAK_A2L_H4",
+  "report": {
+    "name": "RAZMAK_A2L_H4",
+    "machine": "Bambu A2L",
+    "bed_mm": [
+      330,
+      320
+    ],
+    "layers": 1415,
+    "globalZLevels": 1291,
+    "expectedZLevels": 1291,
+    "logicalCells": null,
+    "experimentalMembraneOverride": false,
+    "maxBodiesPerZ": 1,
+    "size_mm": [
+      299.9,
+      289.9,
+      309.84
+    ],
+    "plate_mm": [
+      15.3,
+      15.3,
+      314.7,
+      304.7
+    ],
+    "fitsPlate": true,
+    "grammarCounts": {
+      "staple": 147,
+      "diagonal": 159,
+      "sine": 159,
+      "eight": 183
+    },
+    "threadLength_m": 1824.1,
+    "weldNodes": 108735,
+    "rawPaths": 61,
+    "unintendedOverlaps": 240,
+    "seamClosures": 0,
+    "overlapSamples": [
+      {
+        "z": 307.68,
+        "role": "bridge",
+        "ov": 120
+      },
+      {
+        "z": 307.92,
+        "role": "bridge",
+        "ov": 120
+      }
+    ],
+    "kinematic_h": 16.89,
+    "routeA_estimate_h": 159.3,
+    "caps": [],
+    "events": [
+      {
+        "k": 0,
+        "z": 0,
+        "event": "wall 1 begins on basal frame"
+      },
+      {
+        "k": 300,
+        "z": 72,
+        "event": "terrace-1; transverse return; alternate phase every layer"
+      },
+      {
+        "k": 312,
+        "z": 74.88,
+        "event": "wall 2 begins on horizontal terrace"
+      },
+      {
+        "k": 637,
+        "z": 152.88,
+        "event": "terrace-2; transverse return; alternate phase every layer"
+      },
+      {
+        "k": 649,
+        "z": 155.76,
+        "event": "wall 3 begins on horizontal terrace"
+      },
+      {
+        "k": 974,
+        "z": 233.76,
+        "event": "terrace-3; transverse return; alternate phase every layer"
+      },
+      {
+        "k": 986,
+        "z": 236.64,
+        "event": "wall 4 begins on horizontal terrace"
+      }
+    ],
+    "contourCounts": [
+      [
+        0,
+        1
+      ],
+      [
+        72,
+        0
+      ],
+      [
+        74.88,
+        1
+      ],
+      [
+        152.88,
+        0
+      ],
+      [
+        155.76,
+        1
+      ],
+      [
+        233.76,
+        0
+      ],
+      [
+        236.64,
+        1
+      ],
+      [
+        308.16,
+        0
+      ]
+    ],
+    "perLayerSample": [
+      {
+        "k": 0,
+        "z": 0,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 172
+      },
+      {
+        "k": 40,
+        "z": 9.6,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 172
+      },
+      {
+        "k": 80,
+        "z": 19.2,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 172
+      },
+      {
+        "k": 120,
+        "z": 28.8,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 172
+      },
+      {
+        "k": 160,
+        "z": 38.4,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 172
+      },
+      {
+        "k": 200,
+        "z": 48,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 172
+      },
+      {
+        "k": 240,
+        "z": 57.6,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 172
+      },
+      {
+        "k": 280,
+        "z": 67.2,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 172
+      },
+      {
+        "k": 320,
+        "z": 76.8,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 132
+      },
+      {
+        "k": 360,
+        "z": 86.4,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 132
+      },
+      {
+        "k": 400,
+        "z": 96,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 132
+      },
+      {
+        "k": 440,
+        "z": 105.6,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 132
+      },
+      {
+        "k": 480,
+        "z": 115.2,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 132
+      },
+      {
+        "k": 520,
+        "z": 124.8,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 132
+      },
+      {
+        "k": 560,
+        "z": 134.4,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 132
+      },
+      {
+        "k": 600,
+        "z": 144,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 132
+      },
+      {
+        "k": 640,
+        "z": 153.6,
+        "contours": 0,
+        "paths": 1,
+        "nodes": 0
+      },
+      {
+        "k": 680,
+        "z": 163.2,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 136
+      },
+      {
+        "k": 720,
+        "z": 172.8,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 136
+      },
+      {
+        "k": 760,
+        "z": 182.4,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 136
+      },
+      {
+        "k": 800,
+        "z": 192,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 136
+      },
+      {
+        "k": 840,
+        "z": 201.6,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 136
+      },
+      {
+        "k": 880,
+        "z": 211.2,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 136
+      },
+      {
+        "k": 920,
+        "z": 220.8,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 136
+      },
+      {
+        "k": 960,
+        "z": 230.4,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 136
+      },
+      {
+        "k": 1000,
+        "z": 240,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 84
+      },
+      {
+        "k": 1040,
+        "z": 249.6,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 84
+      },
+      {
+        "k": 1080,
+        "z": 259.2,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 84
+      },
+      {
+        "k": 1120,
+        "z": 268.8,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 84
+      },
+      {
+        "k": 1160,
+        "z": 278.4,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 84
+      },
+      {
+        "k": 1200,
+        "z": 288,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 84
+      },
+      {
+        "k": 1240,
+        "z": 297.6,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 84
+      },
+      {
+        "k": 1280,
+        "z": 307.2,
+        "contours": 1,
+        "paths": 1,
+        "nodes": 84
+      }
+    ]
+  },
+  "bounds": {
+    "min": [
+      -149.96,
+      -144.96,
+      0
+    ],
+    "max": [
+      149.96,
+      144.96,
+      309.84
+    ]
+  },
+  "phases": {
+    "wall-1": {
+      "paths": 406,
+      "overlaps": 0,
+      "samples": []
+    },
+    "horizontal-terrace-1": {
+      "paths": 12,
+      "overlaps": 0,
+      "samples": []
+    },
+    "wall-2": {
+      "paths": 325,
+      "overlaps": 0,
+      "samples": []
+    },
+    "horizontal-terrace-2": {
+      "paths": 12,
+      "overlaps": 0,
+      "samples": []
+    },
+    "wall-3": {
+      "paths": 325,
+      "overlaps": 0,
+      "samples": []
+    },
+    "horizontal-terrace-3": {
+      "paths": 12,
+      "overlaps": 0,
+      "samples": []
+    },
+    "wall-4": {
+      "paths": 280,
+      "overlaps": 0,
+      "samples": []
+    },
+    "crown-grid": {
+      "paths": 36,
+      "overlaps": 240,
+      "samples": [
+        {
+          "z": 307.68,
+          "role": "bridge",
+          "ov": 120,
+          "points": [
+            {
+              "x": -6.0215,
+              "y": -44.354,
+              "z": 307.8
+            },
+            {
+              "x": 9.2866,
+              "y": -41.9366,
+              "z": 307.8
+            }
+          ]
+        },
+        {
+          "z": 307.92,
+          "role": "bridge",
+          "ov": 120,
+          "points": [
+            {
+              "x": 42.0557,
+              "y": 6.6694,
+              "z": 308.04
+            },
+            {
+              "x": 38.8235,
+              "y": 1.8019,
+              "z": 308.04
+            }
+          ]
+        }
+      ]
+    },
+    "crown-art": {
+      "paths": 7,
+      "overlaps": 0,
+      "samples": []
+    }
+  }
+}

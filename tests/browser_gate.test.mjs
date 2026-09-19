@@ -32,6 +32,13 @@ const r1 = await page.evaluate(async () => {
   return { PASS: res.PASS, problems: res.problem_count, points: res.stats.checked_points, islands: res.stats.first_layer_islands, label: document.getElementById('s_gate').textContent, out: document.getElementById('gateOut').textContent.split('\n')[0] };
 });
 say(r1.PASS && r1.problems === 0 && r1.islands === 1 && /PASS/.test(r1.label), 'default wall passes the in-page gate', `${r1.points} points, panel says "${r1.label}", ${r1.out}`);
+const firstLayer=await page.evaluate(async()=>{
+  const txt=await buildGcodeText(),ok=WEFT_GATE.firstLayerAudit(txt);
+  const broken=txt.replace('; WIPE_END','; missing preparation end');
+  return {ok,bad:WEFT_GATE.checkGcode(broken),contract:txt.includes('; WEFT_FIRST_LAYER_V1')};
+});
+say(firstLayer.contract&&firstLayer.ok.PASS&&!firstLayer.bad.PASS&&firstLayer.bad.firstLayer.issues.some(x=>x.kind==='HIDDEN_FIRST_LAYER_EXTRUSION'),
+  'browser export validates the real first layer and refuses a preparation scope hiding it',JSON.stringify(firstLayer.ok));
 /* 3. a known-bad design is refused: a wall whose chords span far more than maxBridge between welds is not
       the failure the raster gate sees (chords sit on rails); instead lift the whole object by making the
       first layer a separate island set: a batch plate declared as ONE object (maxislands 1 with 9 specimens). */

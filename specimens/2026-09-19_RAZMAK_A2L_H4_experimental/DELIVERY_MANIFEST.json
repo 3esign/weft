@@ -1,0 +1,186 @@
+{
+  "schema": "weft-horizontal-pair-delivery/v1",
+  "name": "RAZMAK_A2L_H4",
+  "built": "2026-09-19T11:16:10.536Z",
+  "status": "NOT PRINTED / EXPERIMENTAL",
+  "seed": null,
+  "seedReason": "Deterministic analytic geometry; no stochastic jitter.",
+  "machine": {
+    "id": "a2l",
+    "label": "Bambu Lab A2L",
+    "plate": [
+      330,
+      320
+    ],
+    "maxZ": 325,
+    "nozzle": 0.4,
+    "bead": 0.45,
+    "beadSource": "measured",
+    "beadEvidence": "specimens/2026-08-31_D5_R140_A2L_physical and specimens/2026-09-02_P0_suma_2x2_physical — both printed to completion at this bead",
+    "lh": 0.24,
+    "firstLayerBead": 0.52,
+    "temp": 220,
+    "bed": 55,
+    "start": "exports/a2l_start_block_template_2026-09-02.gcode",
+    "end": "exports/a2l_end_block_harvested_2026-09-02.gcode",
+    "route": "bambu3mf",
+    "containerTemplate": "specimens/2026-09-02_P0_suma_4x4_v2_physical/P0_suma_4x4_v2.gcode.3mf"
+  },
+  "nominalEnvelope_mm": [
+    299.92,
+    289.92,
+    309.84
+  ],
+  "bedClearance_mm": {
+    "left": 15.040000000000001,
+    "right": 15.039999999999964,
+    "front": 15.040000000000001,
+    "back": 15.039999999999964,
+    "above": 15.160000000000025
+  },
+  "printFile": "RAZMAK_A2L_H4.gcode.3mf",
+  "gate": {
+    "declared": {
+      "PASS": true,
+      "problems": 0,
+      "maxbridge_mm": 180
+    },
+    "evidenced": {
+      "ceiling_mm": 16.2,
+      "findings": 5943,
+      "byZone": {
+        "terrace-1": 3360,
+        "terrace-2": 1232,
+        "terrace-3": 1342,
+        "closed-roof-and-art": 9
+      },
+      "outside": 0
+    },
+    "package": {
+      "PASS": true,
+      "problems": 0
+    }
+  },
+  "files": {
+    "end-block.json": {
+      "sha256": "0e36fad736175fc6afb0895855315c095febcbfb9c0b9236c0e13bfc75ee0a10",
+      "bytes": 374
+    },
+    "FINAL_AUDIT.json": {
+      "sha256": "9dcc0cade440a93d173284d1b510adc12a8c0cb041c7aa89aa8db7bb9a7cd050",
+      "bytes": 3366
+    },
+    "FIRST_LAYER_REPAIR.json": {
+      "sha256": "a0732a2d6b3ca1ec622ce638dcd3201acdd72c94cd8a0915503806049c92be71",
+      "bytes": 1039
+    },
+    "manifest.json": {
+      "sha256": "062dd2a15f77348b1bfd2bac9b158d6d94ea7ebaaaa4f02a729a63dd539f4412",
+      "bytes": 1368
+    },
+    "PREDICTIONS.md": {
+      "sha256": "cdb69a90c7ad0943869610c6ac7ca672487110f53e96b1619a7e5636ec1a454a",
+      "bytes": 5138
+    },
+    "preview.html": {
+      "sha256": "a937e3993eed4faef187ae35b0df6401579df0cb52a4ff0eeb319bd9215b4563",
+      "bytes": 10673530
+    },
+    "PROBE_WALLS.json": {
+      "sha256": "90a9216ee682c01bd7d0f016a134ed2ca225f554603915943eadb8c39b5c7808",
+      "bytes": 7379
+    },
+    "PROTOCOL.md": {
+      "sha256": "7a3d6ff7aa5eb8c0ca640e60d7834a67191493018b2a07cff33f21b364f9d23b",
+      "bytes": 2163
+    },
+    "RAZMAK_A2L_H4.gcode": {
+      "sha256": "10f70cd13c494b4fb48a45636ecd2507ee26c03a4cdbab8ac6c5f3cd6ac50dda",
+      "bytes": 82729286
+    },
+    "RAZMAK_A2L_H4.gcode.3mf": {
+      "sha256": "ea5a0f2e0286008e2b1509305d87ce8baa847d6c4c4f73faf9947802bb8828f0",
+      "bytes": 22258812
+    },
+    "RAZMAK_A2L_H4_front.png": {
+      "sha256": "b19f47ea490fe7bef98e9b808b19e2c3363c9839ba10b1e14e64b72ee8324e31",
+      "bytes": 38882
+    },
+    "RAZMAK_A2L_H4_gate.json": {
+      "sha256": "66fc006b393c5ebb307fd47362c0de424f153b08b5621ee8f805d6ada065dc25",
+      "bytes": 1665
+    },
+    "RAZMAK_A2L_H4_gate_at_16.2mm.json": {
+      "sha256": "f9b3bf6f53e44e978b1e9000610d4c561546d705d8e7a1546c9751858ed6ea4b",
+      "bytes": 1176740
+    },
+    "RAZMAK_A2L_H4_gate_at_16.2mm_full.json": {
+      "sha256": "56d7e896cc6f6de420c5a5434afcaa81b58974bf32a4a095bebcbb11764dcbd3",
+      "bytes": 1564165
+    },
+    "RAZMAK_A2L_H4_geometry.json": {
+      "sha256": "00ea7a5cb05b35c3998c18513707eb83759a2a3b105c31fabc33e90afd225422",
+      "bytes": 36099208
+    },
+    "RAZMAK_A2L_H4_geometry.json.gz": {
+      "sha256": "8aedc65946c30d9ff560b9beb0a4818231cf638b598cb00f5c6519c1b57e8627",
+      "bytes": 11327087
+    },
+    "RAZMAK_A2L_H4_package_gate.json": {
+      "sha256": "6cdff47ac3da0236c5014c822bc5c3124237ff79c75c05ae84542fd56b5d5817",
+      "bytes": 1669
+    },
+    "RAZMAK_A2L_H4_preview.png": {
+      "sha256": "14594148e861828e724e56f19b8e3fc82823d643edb918989eb1fc1b05649945",
+      "bytes": 350081
+    },
+    "RAZMAK_A2L_H4_reference.stl": {
+      "sha256": "d0f0e2571cf438b28789dda65ed1c34a644a5b88d063229d6f0449f4e0a96cb5",
+      "bytes": 390946684
+    },
+    "RAZMAK_A2L_H4_report.json": {
+      "sha256": "7d717994d190df77ea38e2089fae79cf7e66a2c03e3fd90f6ccf66dc97eb7234",
+      "bytes": 14457
+    },
+    "RAZMAK_A2L_H4_roof.png": {
+      "sha256": "079a948b8fbb8b7ae8772085afb4e3502ef9f44887b4f791f21692ed0b0cfd94",
+      "bytes": 58968
+    },
+    "README.md": {
+      "sha256": "ddd831f397fa2995b1f2c9df5e63ea1d988ca3e70361ad43c4d0a674be6df632",
+      "bytes": 5596
+    },
+    "ROOF_COVERAGE.json": {
+      "sha256": "4caa0ede8c5824b348c26c0892bbe8b137acd61f68a6603f7ca03cc6a37b4732",
+      "bytes": 368
+    },
+    "STL_AUDIT.json": {
+      "sha256": "4f1a53f37f4b7e608d6545429580be81e4013f36c44e9669a1c272df97138abf",
+      "bytes": 458
+    },
+    "TEST_STATUS.json": {
+      "sha256": "12413d8375a26226aff093c25621c131adf78c4aac64ad159ace5b474d362537",
+      "bytes": 295
+    },
+    "THREAD_AUDIT.json": {
+      "sha256": "c6915fddeb46e6dc88cdcbc563c5dd7a25755c594b3ad7a4bde26d3d4ae450f1",
+      "bytes": 7773
+    }
+  },
+  "sourceFilesSha256": {
+    "core/weft_suspended_steps_geometry.mjs": "da72b19871b35f1d112a6c2c3391177e8f1e21414b3d1d8ab76e00c804d44e18",
+    "core/weft_cube_geometry.mjs": "08dd1500298296fea7bb3d8f9e9db932944f7fc7cba506e30f05d7e25567a8a9",
+    "core/weft_build.mjs": "8ea6c3b7817a2965e11243c80349cba7c29d0e0e61947e06d0b64591bcae1723",
+    "core/weft_core.js": "9004d0e73759f66064f40b79c7673258344eb5d50feb7c28536bfffe90e8ecfa",
+    "core/weft_gate.js": "43375020195d7f5850f5713fead4557a1db41eeb4fe9b7150a907d268c4c7e17",
+    "machines.json": "0e4d88f10afef6d1ab66f0f6b4933195f00812270d1d9c13e72ff48bc03b3b72",
+    "tools/build_suspended_steps.mjs": "8d0dfb8bb9dd765d17dfb64d9b5ccbe79e93f5c5739e24044c3a106a9d36c6c5",
+    "tools/gate_file_worker.mjs": "e1adb3fd1754dfbf14523977c5edaa566b1e601c41a6e09b9ac7e13052deff33",
+    "tools/resume_suspended_steps.mjs": "393035c52da2a3a7eb14ff4d46270085c861975eac0f5a4594e424558a81ae22",
+    "tools/repair_suspended_first_layer.mjs": "1c463463fad83efeaa3b4064f372c680604269954cbaf2eb8869627498f0fa7b",
+    "tools/audit_suspended_steps.mjs": "a5a196811bcccea170ce2ff4b3c2ab4a185bc79fa708f6fbb0bc45a6057be81e",
+    "tests/first_layer.test.mjs": "5b481ef9fb2517c1d0885a81d93d32e2a8a3abd3438ba2fabc6720e871243a2e",
+    "tests/browser_gate.test.mjs": "02524c155d69d0c2bf6cf099f499b48e72e1086de4801b583fa9d21954c5218a"
+  },
+  "mutableDecisionSurface": "outcomes.md (intentionally outside this immutable hash receipt)"
+}

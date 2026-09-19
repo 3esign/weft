@@ -1,0 +1,824 @@
+[
+  {
+    "name": "wall-2",
+    "start": 169,
+    "end": 326,
+    "source_z": 33.800000000000004,
+    "meaning": "Actual neighboring layer XY paths rebased near the bed, no foundation; first-layer island check disabled ONLY for this non-print diagnostic. Does not replace the final full-height gates.",
+    "overlaps": 0,
+    "gate": {
+      "file": "(text)",
+      "layers": 159,
+      "params": {
+        "bead": 0.42,
+        "allow": 0.6,
+        "maxbridge": 16.2,
+        "res": 0.2,
+        "bedz": 0.5,
+        "maxislands": 0,
+        "maxcantilever": 4.8
+      },
+      "stats": {
+        "floating": 0,
+        "long_bridge": 0,
+        "cantilever": 0,
+        "bridges": 9448,
+        "bad_membrane": 0,
+        "unanchored_membrane": 0,
+        "checked_paths": 156,
+        "checked_points": 100630,
+        "exempt_layers": 3,
+        "first_layer_islands": 1
+      },
+      "byRole": {},
+      "worstGaps": [
+        [
+          6.2,
+          "chord",
+          2.49,
+          2.63
+        ],
+        [
+          13.4,
+          "chord",
+          2.42,
+          2.63
+        ],
+        [
+          14.6,
+          "chord",
+          2.43,
+          2.61
+        ],
+        [
+          15.2,
+          "chord",
+          2.51,
+          2.61
+        ],
+        [
+          17,
+          "chord",
+          2.45,
+          2.61
+        ],
+        [
+          8.6,
+          "chord",
+          2.42,
+          2.6
+        ],
+        [
+          9.2,
+          "chord",
+          2.49,
+          2.6
+        ],
+        [
+          9.8,
+          "chord",
+          2.47,
+          2.6
+        ],
+        [
+          11,
+          "chord",
+          2.51,
+          2.6
+        ],
+        [
+          11.6,
+          "chord",
+          2.51,
+          2.6
+        ],
+        [
+          12.8,
+          "chord",
+          2.51,
+          2.6
+        ],
+        [
+          14,
+          "chord",
+          2.52,
+          2.6
+        ],
+        [
+          15.8,
+          "chord",
+          2.43,
+          2.6
+        ],
+        [
+          16.4,
+          "chord",
+          2.52,
+          2.6
+        ],
+        [
+          18.8,
+          "chord",
+          2.49,
+          2.6
+        ]
+      ],
+      "membranes": [],
+      "problems": [],
+      "problem_count": 0,
+      "PASS": true,
+      "_grid": {
+        "W": 979,
+        "H": 1045,
+        "res": 0.2,
+        "x0": 12.25,
+        "y0": -1
+      }
+    }
+  },
+  {
+    "name": "wall-3",
+    "start": 336,
+    "end": 488,
+    "source_z": 67.2,
+    "meaning": "Actual neighboring layer XY paths rebased near the bed, no foundation; first-layer island check disabled ONLY for this non-print diagnostic. Does not replace the final full-height gates.",
+    "overlaps": 0,
+    "gate": {
+      "file": "(text)",
+      "layers": 154,
+      "params": {
+        "bead": 0.42,
+        "allow": 0.6,
+        "maxbridge": 16.2,
+        "res": 0.2,
+        "bedz": 0.5,
+        "maxislands": 0,
+        "maxcantilever": 4.8
+      },
+      "stats": {
+        "floating": 0,
+        "long_bridge": 0,
+        "cantilever": 0,
+        "bridges": 12363,
+        "bad_membrane": 0,
+        "unanchored_membrane": 0,
+        "checked_paths": 151,
+        "checked_points": 64450,
+        "exempt_layers": 3,
+        "first_layer_islands": 1
+      },
+      "byRole": {},
+      "worstGaps": [
+        [
+          10.8,
+          "chord",
+          2.41,
+          2.6
+        ],
+        [
+          11.6,
+          "chord",
+          2.41,
+          2.6
+        ],
+        [
+          14,
+          "chord",
+          2.41,
+          2.6
+        ],
+        [
+          16,
+          "chord",
+          2.41,
+          2.6
+        ],
+        [
+          18,
+          "chord",
+          2.41,
+          2.6
+        ],
+        [
+          21.6,
+          "chord",
+          2.41,
+          2.6
+        ],
+        [
+          29.6,
+          "chord",
+          2.42,
+          2.6
+        ],
+        [
+          22,
+          "chord",
+          2.4,
+          2.56
+        ],
+        [
+          14.8,
+          "chord",
+          2.42,
+          2.55
+        ],
+        [
+          18.8,
+          "chord",
+          2.41,
+          2.55
+        ],
+        [
+          19.6,
+          "chord",
+          2.41,
+          2.55
+        ],
+        [
+          21.2,
+          "chord",
+          2.41,
+          2.55
+        ],
+        [
+          23.2,
+          "chord",
+          2.4,
+          2.55
+        ],
+        [
+          6.4,
+          "chord",
+          2.41,
+          2.53
+        ],
+        [
+          6.8,
+          "chord",
+          2.42,
+          2.53
+        ]
+      ],
+      "membranes": [],
+      "problems": [],
+      "problem_count": 0,
+      "PASS": true,
+      "_grid": {
+        "W": 916,
+        "H": 951,
+        "res": 0.2,
+        "x0": 17,
+        "y0": -1
+      }
+    }
+  },
+  {
+    "name": "wall-4",
+    "start": 498,
+    "end": 645,
+    "source_z": 99.60000000000001,
+    "meaning": "Actual neighboring layer XY paths rebased near the bed, no foundation; first-layer island check disabled ONLY for this non-print diagnostic. Does not replace the final full-height gates.",
+    "overlaps": 0,
+    "gate": {
+      "file": "(text)",
+      "layers": 149,
+      "params": {
+        "bead": 0.42,
+        "allow": 0.6,
+        "maxbridge": 16.2,
+        "res": 0.2,
+        "bedz": 0.5,
+        "maxislands": 0,
+        "maxcantilever": 4.8
+      },
+      "stats": {
+        "floating": 0,
+        "long_bridge": 0,
+        "cantilever": 0,
+        "bridges": 11822,
+        "bad_membrane": 0,
+        "unanchored_membrane": 0,
+        "checked_paths": 146,
+        "checked_points": 151115,
+        "exempt_layers": 3,
+        "first_layer_islands": 1
+      },
+      "byRole": {},
+      "worstGaps": [
+        [
+          11.4,
+          "web",
+          2.6,
+          2.86
+        ],
+        [
+          12.2,
+          "chord",
+          2.63,
+          2.83
+        ],
+        [
+          12.6,
+          "web",
+          2.6,
+          2.83
+        ],
+        [
+          19.4,
+          "chord",
+          2.6,
+          2.83
+        ],
+        [
+          10.4,
+          "chord",
+          2.6,
+          2.81
+        ],
+        [
+          12.8,
+          "chord",
+          2.61,
+          2.81
+        ],
+        [
+          18.6,
+          "web",
+          2.62,
+          2.81
+        ],
+        [
+          19.2,
+          "web",
+          2.6,
+          2.81
+        ],
+        [
+          11.6,
+          "chord",
+          2.67,
+          2.8
+        ],
+        [
+          12,
+          "web",
+          2.6,
+          2.8
+        ],
+        [
+          13.2,
+          "web",
+          2.6,
+          2.8
+        ],
+        [
+          13.4,
+          "chord",
+          2.68,
+          2.8
+        ],
+        [
+          13.8,
+          "web",
+          2.61,
+          2.8
+        ],
+        [
+          14.4,
+          "web",
+          2.6,
+          2.8
+        ],
+        [
+          15,
+          "web",
+          2.6,
+          2.8
+        ]
+      ],
+      "membranes": [],
+      "problems": [],
+      "problem_count": 0,
+      "PASS": true,
+      "_grid": {
+        "W": 884,
+        "H": 935,
+        "res": 0.2,
+        "x0": 17,
+        "y0": -1
+      }
+    }
+  },
+  {
+    "name": "wall-5",
+    "start": 655,
+    "end": 792,
+    "source_z": 131,
+    "meaning": "Actual neighboring layer XY paths rebased near the bed, no foundation; first-layer island check disabled ONLY for this non-print diagnostic. Does not replace the final full-height gates.",
+    "overlaps": 0,
+    "gate": {
+      "file": "(text)",
+      "layers": 139,
+      "params": {
+        "bead": 0.42,
+        "allow": 0.6,
+        "maxbridge": 16.2,
+        "res": 0.2,
+        "bedz": 0.5,
+        "maxislands": 0,
+        "maxcantilever": 4.8
+      },
+      "stats": {
+        "floating": 0,
+        "long_bridge": 0,
+        "cantilever": 0,
+        "bridges": 8016,
+        "bad_membrane": 0,
+        "unanchored_membrane": 0,
+        "checked_paths": 136,
+        "checked_points": 104513,
+        "exempt_layers": 3,
+        "first_layer_islands": 1
+      },
+      "byRole": {},
+      "worstGaps": [
+        [
+          5.6,
+          "chord",
+          2.26,
+          2.67
+        ],
+        [
+          10.4,
+          "chord",
+          2.32,
+          2.61
+        ],
+        [
+          22.4,
+          "chord",
+          2.23,
+          2.61
+        ],
+        [
+          25.6,
+          "chord",
+          2.26,
+          2.61
+        ],
+        [
+          9.6,
+          "chord",
+          2.22,
+          2.6
+        ],
+        [
+          13.6,
+          "chord",
+          2.2,
+          2.6
+        ],
+        [
+          14.4,
+          "chord",
+          2.2,
+          2.6
+        ],
+        [
+          16,
+          "chord",
+          2.21,
+          2.6
+        ],
+        [
+          17.6,
+          "chord",
+          2.24,
+          2.6
+        ],
+        [
+          21.6,
+          "chord",
+          2.21,
+          2.6
+        ],
+        [
+          7.2,
+          "chord",
+          2.23,
+          2.56
+        ],
+        [
+          12,
+          "chord",
+          2.34,
+          2.56
+        ],
+        [
+          6.4,
+          "chord",
+          2.23,
+          2.55
+        ],
+        [
+          12.8,
+          "chord",
+          2.23,
+          2.55
+        ],
+        [
+          15.2,
+          "chord",
+          2.2,
+          2.55
+        ]
+      ],
+      "membranes": [],
+      "problems": [],
+      "problem_count": 0,
+      "PASS": true,
+      "_grid": {
+        "W": 876,
+        "H": 900,
+        "res": 0.2,
+        "x0": 17,
+        "y0": -1
+      }
+    }
+  },
+  {
+    "name": "wall-6",
+    "start": 802,
+    "end": 934,
+    "source_z": 160.4,
+    "meaning": "Actual neighboring layer XY paths rebased near the bed, no foundation; first-layer island check disabled ONLY for this non-print diagnostic. Does not replace the final full-height gates.",
+    "overlaps": 0,
+    "gate": {
+      "file": "(text)",
+      "layers": 134,
+      "params": {
+        "bead": 0.42,
+        "allow": 0.6,
+        "maxbridge": 16.2,
+        "res": 0.2,
+        "bedz": 0.5,
+        "maxislands": 0,
+        "maxcantilever": 4.8
+      },
+      "stats": {
+        "floating": 0,
+        "long_bridge": 0,
+        "cantilever": 0,
+        "bridges": 7977,
+        "bad_membrane": 0,
+        "unanchored_membrane": 0,
+        "checked_paths": 131,
+        "checked_points": 39452,
+        "exempt_layers": 3,
+        "first_layer_islands": 1
+      },
+      "byRole": {},
+      "worstGaps": [
+        [
+          23.6,
+          "chord",
+          2.16,
+          2.34
+        ],
+        [
+          16.8,
+          "chord",
+          2.16,
+          2.28
+        ],
+        [
+          19.6,
+          "chord",
+          2.15,
+          2.28
+        ],
+        [
+          2.4,
+          "chord",
+          2.15,
+          2.26
+        ],
+        [
+          6,
+          "chord",
+          2.18,
+          2.26
+        ],
+        [
+          9.2,
+          "chord",
+          2.16,
+          2.26
+        ],
+        [
+          9.6,
+          "chord",
+          2.22,
+          2.26
+        ],
+        [
+          13.6,
+          "chord",
+          2.19,
+          2.26
+        ],
+        [
+          16.4,
+          "chord",
+          2.16,
+          2.26
+        ],
+        [
+          18.8,
+          "chord",
+          2.18,
+          2.26
+        ],
+        [
+          25.2,
+          "chord",
+          2.18,
+          2.26
+        ],
+        [
+          2,
+          "chord",
+          2.2,
+          2.24
+        ],
+        [
+          3.2,
+          "chord",
+          2.15,
+          2.24
+        ],
+        [
+          4.8,
+          "chord",
+          2.15,
+          2.24
+        ],
+        [
+          5.2,
+          "chord",
+          2.17,
+          2.24
+        ]
+      ],
+      "membranes": [],
+      "problems": [],
+      "problem_count": 0,
+      "PASS": true,
+      "_grid": {
+        "W": 763,
+        "H": 852,
+        "res": 0.2,
+        "x0": 17,
+        "y0": -1
+      }
+    }
+  },
+  {
+    "name": "wall-7",
+    "start": 944,
+    "end": 1074,
+    "source_z": 188.8,
+    "meaning": "Actual neighboring layer XY paths rebased near the bed, no foundation; first-layer island check disabled ONLY for this non-print diagnostic. Does not replace the final full-height gates.",
+    "overlaps": 0,
+    "gate": {
+      "file": "(text)",
+      "layers": 132,
+      "params": {
+        "bead": 0.42,
+        "allow": 0.6,
+        "maxbridge": 16.2,
+        "res": 0.2,
+        "bedz": 0.5,
+        "maxislands": 0,
+        "maxcantilever": 4.8
+      },
+      "stats": {
+        "floating": 0,
+        "long_bridge": 0,
+        "cantilever": 0,
+        "bridges": 5426,
+        "bad_membrane": 0,
+        "unanchored_membrane": 0,
+        "checked_paths": 129,
+        "checked_points": 46650,
+        "exempt_layers": 3,
+        "first_layer_islands": 1
+      },
+      "byRole": {},
+      "worstGaps": [
+        [
+          4,
+          "chord",
+          2,
+          2.2
+        ],
+        [
+          4.8,
+          "chord",
+          2,
+          2.2
+        ],
+        [
+          7.2,
+          "chord",
+          2.05,
+          2.2
+        ],
+        [
+          8,
+          "chord",
+          2,
+          2.2
+        ],
+        [
+          9.6,
+          "chord",
+          2.05,
+          2.2
+        ],
+        [
+          16.4,
+          "chord",
+          2,
+          2.16
+        ],
+        [
+          6.8,
+          "chord",
+          2,
+          2.15
+        ],
+        [
+          7.6,
+          "chord",
+          2.01,
+          2.15
+        ],
+        [
+          14,
+          "chord",
+          1.99,
+          2.15
+        ],
+        [
+          14.8,
+          "chord",
+          2.03,
+          2.15
+        ],
+        [
+          19.6,
+          "chord",
+          2,
+          2.15
+        ],
+        [
+          20,
+          "chord",
+          2.01,
+          2.15
+        ],
+        [
+          20.8,
+          "chord",
+          2,
+          2.15
+        ],
+        [
+          24.8,
+          "chord",
+          2.03,
+          2.15
+        ],
+        [
+          2,
+          "chord",
+          2,
+          2.13
+        ]
+      ],
+      "membranes": [],
+      "problems": [],
+      "problem_count": 0,
+      "PASS": true,
+      "_grid": {
+        "W": 740,
+        "H": 809,
+        "res": 0.2,
+        "x0": 17,
+        "y0": -1
+      }
+    }
+  }
+]

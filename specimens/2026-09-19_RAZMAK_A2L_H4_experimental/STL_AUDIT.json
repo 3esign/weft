@@ -1,0 +1,17 @@
+{
+  "triangles": 7818932,
+  "bytes": 390946684,
+  "bounds": {
+    "min": [
+      -149.97158813476562,
+      -144.97158813476562,
+      0
+    ],
+    "max": [
+      149.97158813476562,
+      144.97158813476562,
+      309.8399963378906
+    ]
+  },
+  "method": "Unmodified WEFT ribbon and buildSTLParts, streamed one emitted path at a time. Nominal bead geometry, not a Boolean-unioned solid. STL is a reference; ordered WEFT printing uses the provided G-code."
+}

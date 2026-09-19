@@ -1,0 +1,169 @@
+{
+  "schema": "weft-horizontal-pair-delivery/v1",
+  "name": "OBRTAJ_ENDER_H7",
+  "built": "2026-09-19T11:15:02.732Z",
+  "status": "NOT PRINTED / EXPERIMENTAL",
+  "seed": null,
+  "seedReason": "Deterministic analytic geometry; no stochastic jitter.",
+  "machine": {
+    "id": "ender",
+    "label": "Creality Ender-3 V4",
+    "plate": [
+      220,
+      220
+    ],
+    "maxZ": 235,
+    "nozzle": 0.4,
+    "bead": 0.42,
+    "beadSource": "ASSUMED",
+    "beadEvidence": "NEVER CALIBRATED. Run the C1 thin-wall test on this machine and put the measured width here before trusting anything built for it.",
+    "lh": 0.2,
+    "firstLayerBead": 0.48,
+    "temp": 220,
+    "bed": 60,
+    "start": "exports/ender_start.gcode",
+    "end": "exports/ender_end.gcode",
+    "route": "gcode"
+  },
+  "nominalEnvelope_mm": [
+    189.92,
+    189.92,
+    220
+  ],
+  "bedClearance_mm": {
+    "left": 15.04,
+    "right": 15.039999999999992,
+    "front": 15.04,
+    "back": 15.039999999999992,
+    "above": 15
+  },
+  "printFile": "OBRTAJ_ENDER_H7_FIRST_LAYER_FIXED.gcode",
+  "gate": {
+    "declared": {
+      "PASS": true,
+      "problems": 0,
+      "maxbridge_mm": 180
+    },
+    "evidenced": {
+      "ceiling_mm": 16.2,
+      "findings": 2966,
+      "byZone": {
+        "terrace-1": 1478,
+        "terrace-2": 235,
+        "terrace-3": 545,
+        "terrace-4": 582,
+        "terrace-5": 61,
+        "terrace-6": 60,
+        "closed-roof-and-art": 5
+      },
+      "outside": 0
+    },
+    "package": null
+  },
+  "files": {
+    "FINAL_AUDIT.json": {
+      "sha256": "391aecafc4bec557cc338c253ee7a3b64b7c87ad07dc03dcc5afaa80758e3ec6",
+      "bytes": 3407
+    },
+    "FIRST_LAYER_REPAIR.json": {
+      "sha256": "d472c9fed31a5823d0026af5b6c1c9a1566fec8da3ca168524cfdf375bfae2c2",
+      "bytes": 1270
+    },
+    "manifest.json": {
+      "sha256": "4429fb42fe5aa42566626b91642bb755c2c7601751e6bbab25acb6f1c2633766",
+      "bytes": 1141
+    },
+    "OBRTAJ_ENDER_H7_FIRST_LAYER_FIXED.gcode": {
+      "sha256": "5d2e0d9e6d39d4f4247d82c084d63ab3bb14a0d839a6f9e2007a58406f2a2404",
+      "bytes": 48635663
+    },
+    "OBRTAJ_ENDER_H7_front.png": {
+      "sha256": "9573121adc19997c2a67a11428b07c57120df5f149dd41ddbe319077094a08b0",
+      "bytes": 37898
+    },
+    "OBRTAJ_ENDER_H7_gate.json": {
+      "sha256": "3d2b1477f66584d8e941426ea86323c6247254a159a29a158a1af9744b6e0c0b",
+      "bytes": 1656
+    },
+    "OBRTAJ_ENDER_H7_gate_at_16.2mm.json": {
+      "sha256": "ec2567acc719e526083518e715eb28c562e91664c85f69229b4485f5e9913060",
+      "bytes": 581648
+    },
+    "OBRTAJ_ENDER_H7_gate_at_16.2mm_full.json": {
+      "sha256": "fd632a3ffaf6f3d9c8671975499d1be0d7c4638df702e2b22c93c8062b9d3582",
+      "bytes": 775652
+    },
+    "OBRTAJ_ENDER_H7_geometry.json": {
+      "sha256": "7168edfdd38eec99c74f50a3f080f886e82f5cd86f5813dcba79a688e804b754",
+      "bytes": 25625273
+    },
+    "OBRTAJ_ENDER_H7_geometry.json.gz": {
+      "sha256": "0b659cebacf74c9f99f8f68b9839eff745a7e39ae5647c437408c88b9872bf31",
+      "bytes": 7939548
+    },
+    "OBRTAJ_ENDER_H7_preview.png": {
+      "sha256": "75d9656da70084ca6c725cadf0f141430e5bd4213aab72e09b217c6ee934e692",
+      "bytes": 325184
+    },
+    "OBRTAJ_ENDER_H7_reference.stl": {
+      "sha256": "5c861020838ef410de9d5e36a0e2f26a82e3798e276371314159f9c1f952c47d",
+      "bytes": 225200484
+    },
+    "OBRTAJ_ENDER_H7_report.json": {
+      "sha256": "554cc9831f29b8e35ebe79f71d9153faa918f59e5450a89ca83a442ddd0e4a5d",
+      "bytes": 19293
+    },
+    "OBRTAJ_ENDER_H7_roof.png": {
+      "sha256": "ea934997ec10bec80ba833e3eec376d08c0ec5152853b61367c4097d06d4128b",
+      "bytes": 72187
+    },
+    "PREDICTIONS.md": {
+      "sha256": "ec89c4ef92e8db702ccf2a3cd41f145030f8e32377def03115fe58b54364a9d3",
+      "bytes": 4543
+    },
+    "preview.html": {
+      "sha256": "163bf8f65f422a5ad18bea77e681fb264bf265d4bdf8a7bb6afb0908f32f4bd3",
+      "bytes": 6658922
+    },
+    "PROBE_WALLS.json": {
+      "sha256": "f67956f1698750c7d5e77499d69af9f8058ea960551cefa1af4fc7203481ecad",
+      "bytes": 14526
+    },
+    "PROTOCOL.md": {
+      "sha256": "1aea40b8e6fdc7c2b8e3bb021c66f0f412a14d21a9817bd64424ce11d6c8d81d",
+      "bytes": 2243
+    },
+    "README.md": {
+      "sha256": "8d8d43b135846047b8b2d55b3fd3cf7df876bdf816d4202138de763f71107384",
+      "bytes": 5924
+    },
+    "ROOF_COVERAGE.json": {
+      "sha256": "2e3b1bcc57bc8ecc941696267d181f33197e8fb151c85a6c5f3bc96b6a65eb22",
+      "bytes": 367
+    },
+    "STL_AUDIT.json": {
+      "sha256": "14df3d878ca89079d96bf740f8e0e4ac33b56ebb6a0bcaa155e6741443f9fd50",
+      "bytes": 440
+    },
+    "THREAD_AUDIT.json": {
+      "sha256": "70e147e94c00bdbcf8bd0a5fa7cb2b28c58c7055c4e7c54edd4f5aa6a920fb08",
+      "bytes": 8636
+    }
+  },
+  "sourceFilesSha256": {
+    "core/weft_suspended_steps_geometry.mjs": "da72b19871b35f1d112a6c2c3391177e8f1e21414b3d1d8ab76e00c804d44e18",
+    "core/weft_cube_geometry.mjs": "08dd1500298296fea7bb3d8f9e9db932944f7fc7cba506e30f05d7e25567a8a9",
+    "core/weft_build.mjs": "8ea6c3b7817a2965e11243c80349cba7c29d0e0e61947e06d0b64591bcae1723",
+    "core/weft_core.js": "9004d0e73759f66064f40b79c7673258344eb5d50feb7c28536bfffe90e8ecfa",
+    "core/weft_gate.js": "43375020195d7f5850f5713fead4557a1db41eeb4fe9b7150a907d268c4c7e17",
+    "machines.json": "0e4d88f10afef6d1ab66f0f6b4933195f00812270d1d9c13e72ff48bc03b3b72",
+    "tools/build_suspended_steps.mjs": "8d0dfb8bb9dd765d17dfb64d9b5ccbe79e93f5c5739e24044c3a106a9d36c6c5",
+    "tools/gate_file_worker.mjs": "e1adb3fd1754dfbf14523977c5edaa566b1e601c41a6e09b9ac7e13052deff33",
+    "tools/resume_suspended_steps.mjs": "393035c52da2a3a7eb14ff4d46270085c861975eac0f5a4594e424558a81ae22",
+    "tools/repair_suspended_first_layer.mjs": "1c463463fad83efeaa3b4064f372c680604269954cbaf2eb8869627498f0fa7b",
+    "tools/audit_suspended_steps.mjs": "a5a196811bcccea170ce2ff4b3c2ab4a185bc79fa708f6fbb0bc45a6057be81e",
+    "tests/first_layer.test.mjs": "5b481ef9fb2517c1d0885a81d93d32e2a8a3abd3438ba2fabc6720e871243a2e",
+    "tests/browser_gate.test.mjs": "02524c155d69d0c2bf6cf099f499b48e72e1086de4801b583fa9d21954c5218a"
+  },
+  "mutableDecisionSurface": "outcomes.md (intentionally outside this immutable hash receipt)"
+}

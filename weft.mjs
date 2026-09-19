@@ -30,7 +30,7 @@ import http from 'node:http';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { createWeftCore, layersFromGeometry, layersFromClimber, climberHardRefusals, writeStl, gcodeText, fixHeader,
-         packBambu3mf, runGate, loadMachines, WEFT_ROOT } from './core/weft_build.mjs';
+         packBambu3mf, runGate, loadMachines, WEFT_ROOT, restoreHarvestedEndZ } from './core/weft_build.mjs';
 import { freshReportPath, validateMembraneGeometry, writeJsonAtomic } from './membrane_contract.mjs';
 
 const argv = process.argv.slice(2);
@@ -180,7 +180,15 @@ async function cmdBuild(){
 
   /* 3. G-code (Route B) with the machine's harvested blocks */
   const gc = path.join(outDir, `${name}.gcode`);
-  const txt = await gcodeText(W, path.join(WEFT_ROOT, m.start), path.join(WEFT_ROOT, m.end));
+  let endOptions = {};
+  if(flag('end-z-from-template')){
+    if(m.route !== 'bambu3mf') die('--end-z-from-template requires a harvested Bambu container');
+    const restored = restoreHarvestedEndZ(fs.readFileSync(path.join(WEFT_ROOT,m.end),'utf8'),path.join(WEFT_ROOT,m.containerTemplate),Math.max(...W.layers.map(L=>L.zTop)),m.maxZ);
+    endOptions.footText=restored.text;
+    fs.writeFileSync(path.join(outDir,'end-block.json'),JSON.stringify(restored.receipt,null,2));
+    console.log(`END Z restored from slicer expression: ${restored.receipt.oldZ} -> ${restored.receipt.newZ}`);
+  }
+  const txt = await gcodeText(W, path.join(WEFT_ROOT, m.start), path.join(WEFT_ROOT, m.end), endOptions);
   fs.writeFileSync(gc, txt);
   console.log(`GCODE ${gc}  ${txt.length} bytes, ${txt.split('\n').length} lines`);
 
@@ -216,7 +224,7 @@ async function cmdBuild(){
     /* the second gate at the evidenced ceiling: every finding must fall in a declared zone */
     if(maxBridge > 24){
       const ex = geo.summary.experiments, safe = +ex.evidencedBridge_mm;
-      const g2 = runGate(txt, Object.assign({}, gateOpts, { maxbridge:safe }));
+      const g2 = runGate(txt, Object.assign({}, gateOpts, { maxbridge:safe, allProblems:true }));
       fs.writeFileSync(path.join(outDir, `${name}_gate_at_${safe}mm.json`), JSON.stringify(g2, null, 1));
       const zones = [];
       for(const l of (ex.lintels || [])) zones.push({ name:`lintel ${l.W_mm}`, z0:l.zLintel - 0.01, z1:l.zLintel + 4 * A.lh + 0.01 });
@@ -225,6 +233,7 @@ async function cmdBuild(){
       /* the crown zone: from the first crown layer (crown-iris, crown-grid, ...) to the top — 2026-09-17: any crown-* phase */
       if(ex.crown){ const zc = geo.layers.find(l => typeof l.phase === 'string' && l.phase.startsWith('crown-')); if(zc) zones.push({ name:'crown', z0:zc.zBot - 0.01, z1:1e9 }); }
       const probs = g2.problems || []; const outside = []; const byZone = {};
+      if(probs.length !== g2.problem_count) refuse('evidenced-ceiling findings were truncated; zone validation needs every finding');
       for(const p of probs){ const z = +(p.z ?? NaN); const zone = zones.find(zn => z >= zn.z0 && z <= zn.z1); if(zone) byZone[zone.name] = (byZone[zone.name] || 0) + 1; else outside.push(p); }
       console.log(`gate at the evidenced ${safe} mm: ${probs.length} findings, ${outside.length} outside the declared zones`, byZone);
       extra.gateAtEvidencedCeiling = { maxbridge_mm:safe, findings:probs.length, byZone, outsideDeclaredZones:outside.length, outsideSamples:outside.slice(0, 8) };
@@ -268,7 +277,7 @@ async function cmdBuild(){
     const tpl = path.join(WEFT_ROOT, m.containerTemplate);
     if(!fs.existsSync(tpl)) die(`container template missing: ${m.containerTemplate} — a Bambu .gcode.3mf can only be built from one of Semir's own exports`);
     const three = path.join(outDir, `${name}.gcode.3mf`);
-    const pk = packBambu3mf(fixed.text, tpl, three, { name:`${name}.stl`, layerHeight:m.lh });
+    const pk = packBambu3mf(fixed.text, tpl, three, { name:`${name}.stl`, layerHeight:m.lh, ...(opt('thumb') ? {thumb:path.resolve(opt('thumb'))} : {}) });
     console.log(`3MF   ${three}  ${pk.layers} layers, ${pk.filament_m} m / ${pk.grams} g, ${pk.estimate}, md5 ${pk.md5}, ${(pk.bytes / 1e6).toFixed(1)} MB`);
     /* the package is re-read and re-gated: what ships is what was checked */
     const g3 = runGate(three, Object.assign({}, gateOpts, { file:three }));

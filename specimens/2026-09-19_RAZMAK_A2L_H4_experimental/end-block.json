@@ -1,0 +1,9 @@
+{
+  "source": "D:\\Svemir\\!Projekti\\PI\\weft\\specimens\\2026-09-02_P0_suma_4x4_v2_physical\\P0_suma_4x4_v2.gcode.3mf",
+  "entry": "Metadata/project_settings.config",
+  "formula": "G1 Z{max_layer_z + 0.4} F900 ; lower z a little",
+  "oldZ": 140.28,
+  "top": 309.84,
+  "newZ": 310.24,
+  "meaning": "Re-evaluated the slicer-owned expression; no invented printer sequence."
+}

@@ -1,0 +1,134 @@
+{
+ "file": "C:\\Svemir\\!Projekti\\PI\\weft\\specimens\\2026-09-19_RAZMAK_A2L_H4_experimental\\RAZMAK_A2L_H4.gcode.3mf",
+ "layers": 1292,
+ "firstLayer": {
+  "PASS": true,
+  "version": 1,
+  "firstModelZ": 0.24,
+  "firstPreviewZ": 0.24,
+  "segments": 3522,
+  "length_mm": 11605.675,
+  "filament_mm": 530.23504,
+  "startupSegments": 0,
+  "issues": []
+ },
+ "params": {
+  "bead": 0.45,
+  "allow": 0.6,
+  "maxbridge": 180,
+  "res": 0.2,
+  "bedz": 0.5,
+  "maxislands": 1,
+  "maxcantilever": 4.8
+ },
+ "stats": {
+  "floating": 0,
+  "long_bridge": 0,
+  "cantilever": 0,
+  "bridges": 172279,
+  "bad_membrane": 0,
+  "unanchored_membrane": 0,
+  "checked_paths": 1307,
+  "checked_points": 2360817,
+  "exempt_layers": 3,
+  "first_layer_islands": 1
+ },
+ "byRole": {},
+ "worstGaps": [
+  [
+   72.24,
+   "bridge",
+   62.78,
+   73.83
+  ],
+  [
+   234,
+   "bridge",
+   55.4,
+   60.76
+  ],
+  [
+   153.12,
+   "bridge",
+   37.99,
+   40.22
+  ],
+  [
+   304.08,
+   "bridge",
+   35.97,
+   39.36
+  ],
+  [
+   304.32,
+   "bridge",
+   4.8,
+   4.8
+  ],
+  [
+   304.8,
+   "bridge",
+   4.8,
+   4.8
+  ],
+  [
+   304.56,
+   "bridge",
+   4.6,
+   4.6
+  ],
+  [
+   305.04,
+   "bridge",
+   4.6,
+   4.6
+  ],
+  [
+   234.24,
+   "bridge",
+   2.61,
+   3.39
+  ],
+  [
+   234.72,
+   "bridge",
+   2.61,
+   3.39
+  ],
+  [
+   235.2,
+   "bridge",
+   2.61,
+   3.39
+  ],
+  [
+   235.68,
+   "bridge",
+   2.61,
+   3.39
+  ],
+  [
+   236.16,
+   "bridge",
+   2.61,
+   3.39
+  ],
+  [
+   236.64,
+   "bridge",
+   2.61,
+   3.39
+  ],
+  [
+   234.48,
+   "bridge",
+   2.67,
+   3.06
+  ]
+ ],
+ "membranes": [],
+ "problems": [],
+ "problem_count": 0,
+ "PASS": true,
+ "inputSha256": "ea5a0f2e0286008e2b1509305d87ce8baa847d6c4c4f73faf9947802bb8828f0"
+}

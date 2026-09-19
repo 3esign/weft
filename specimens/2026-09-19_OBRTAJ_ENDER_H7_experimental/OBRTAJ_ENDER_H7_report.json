@@ -1,0 +1,988 @@
+{
+  "report": {
+    "name": "OBRTAJ_ENDER_H7",
+    "machine": "Creality Ender-3 V4",
+    "bed_mm": [
+      220,
+      220
+    ],
+    "layers": 1224,
+    "globalZLevels": 1100,
+    "expectedZLevels": 1100,
+    "logicalCells": null,
+    "experimentalMembraneOverride": false,
+    "maxBodiesPerZ": 1,
+    "size_mm": [
+      189.9,
+      189.9,
+      220
+    ],
+    "plate_mm": [
+      15.3,
+      15.3,
+      204.8,
+      204.8
+    ],
+    "fitsPlate": true,
+    "grammarCounts": {
+      "staple": 141,
+      "sine": 111,
+      "diagonal": 134,
+      "eight": 93
+    },
+    "threadLength_m": 1008.1,
+    "weldNodes": 53289,
+    "rawPaths": 97,
+    "unintendedOverlaps": 239,
+    "seamClosures": 0,
+    "overlapSamples": [
+      {
+        "z": 218.2,
+        "role": "bridge",
+        "ov": 120
+      },
+      {
+        "z": 218.4,
+        "role": "bridge",
+        "ov": 119
+      }
+    ],
+    "kinematic_h": 9.33,
+    "routeA_estimate_h": 88,
+    "caps": [],
+    "events": [
+      {
+        "k": 0,
+        "z": 0,
+        "event": "wall 1 begins on basal frame"
+      },
+      {
+        "k": 160,
+        "z": 32,
+        "event": "terrace-1; transverse return; alternate phase every layer"
+      },
+      {
+        "k": 172,
+        "z": 34.4,
+        "event": "wall 2 begins on horizontal terrace"
+      },
+      {
+        "k": 327,
+        "z": 65.4,
+        "event": "terrace-2; transverse return; alternate phase every layer"
+      },
+      {
+        "k": 339,
+        "z": 67.8,
+        "event": "wall 3 begins on horizontal terrace"
+      },
+      {
+        "k": 489,
+        "z": 97.8,
+        "event": "terrace-3; transverse return; alternate phase every layer"
+      },
+      {
+        "k": 501,
+        "z": 100.2,
+        "event": "wall 4 begins on horizontal terrace"
+      },
+      {
+        "k": 646,
+        "z": 129.2,
+        "event": "terrace-4; transverse return; alternate phase every layer"
+      },
+      {
+        "k": 658,
+        "z": 131.6,
+        "event": "wall 5 begins on horizontal terrace"
+      },
+      {
+        "k": 793,
+        "z": 158.6,
+        "event": "terrace-5; transverse return; alternate phase every layer"
+      },
+      {
+        "k": 805,
+        "z": 161,
+        "event": "wall 6 begins on horizontal terrace"
+      },
+      {
+        "k": 935,
+        "z": 187,
+        "event": "terrace-6; transverse return; alternate phase every layer"
+      },
+      {
+        "k": 947,
+        "z": 189.4,
+        "event": "wall 7 begins on horizontal terrace"
+      }
+    ],
+    "contourCounts": [
+      [
+        0,
+        1
+      ],
+      [
+        32,
+        0
+      ],
+      [
+        34.4,
+        1
+      ],
+      [
+        65.4,
+        0
+      ],
+      [
+        67.8,
+        1
+      ],
+      [
+        97.8,
+        0
+      ],
+      [
+        100.2,
+        1
+      ],
+      [
+        129.2,
+        0
+      ],
+      [
+        131.6,
+        1
+      ],
+      [
+        158.6,
+        0
+      ],
+      [
+        161,
+        1
+      ],
+      [
+        187,
+        0
+      ],
+      [
+        189.4,
+        1
+      ],
+      [
+        218.6,
+        0
+      ]
+    ],
+    "perLayerSample": [
+      {
+        "k": 0,
+        "z": 0,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 100
+      },
+      {
+        "k": 40,
+        "z": 8,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 100
+      },
+      {
+        "k": 80,
+        "z": 16,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 100
+      },
+      {
+        "k": 120,
+        "z": 24,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 100
+      },
+      {
+        "k": 160,
+        "z": 32,
+        "contours": 0,
+        "paths": 1,
+        "nodes": 0
+      },
+      {
+        "k": 200,
+        "z": 40,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 100
+      },
+      {
+        "k": 240,
+        "z": 48,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 100
+      },
+      {
+        "k": 280,
+        "z": 56,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 100
+      },
+      {
+        "k": 320,
+        "z": 64,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 100
+      },
+      {
+        "k": 360,
+        "z": 72,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 84
+      },
+      {
+        "k": 400,
+        "z": 80,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 84
+      },
+      {
+        "k": 440,
+        "z": 88,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 84
+      },
+      {
+        "k": 480,
+        "z": 96,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 84
+      },
+      {
+        "k": 520,
+        "z": 104,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 112
+      },
+      {
+        "k": 560,
+        "z": 112,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 112
+      },
+      {
+        "k": 600,
+        "z": 120,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 112
+      },
+      {
+        "k": 640,
+        "z": 128,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 112
+      },
+      {
+        "k": 680,
+        "z": 136,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 68
+      },
+      {
+        "k": 720,
+        "z": 144,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 68
+      },
+      {
+        "k": 760,
+        "z": 152,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 68
+      },
+      {
+        "k": 800,
+        "z": 160,
+        "contours": 0,
+        "paths": 1,
+        "nodes": 0
+      },
+      {
+        "k": 840,
+        "z": 168,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 64
+      },
+      {
+        "k": 880,
+        "z": 176,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 64
+      },
+      {
+        "k": 920,
+        "z": 184,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 64
+      },
+      {
+        "k": 960,
+        "z": 192,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 60
+      },
+      {
+        "k": 1000,
+        "z": 200,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 60
+      },
+      {
+        "k": 1040,
+        "z": 208,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 60
+      },
+      {
+        "k": 1080,
+        "z": 216,
+        "contours": 1,
+        "paths": 1,
+        "nodes": 60
+      }
+    ],
+    "gateAtEvidencedCeiling": {
+      "maxbridge_mm": 16.2,
+      "findings": 2966,
+      "byZone": {
+        "terrace-1": 1478,
+        "terrace-2": 235,
+        "terrace-3": 545,
+        "terrace-4": 582,
+        "terrace-5": 61,
+        "terrace-6": 60,
+        "closed-roof-and-art": 5
+      },
+      "outsideDeclaredZones": 0
+    }
+  },
+  "geometry": {
+    "name": "OBRTAJ_ENDER_H7",
+    "title": "OBRTAJ",
+    "generator": "core/weft_suspended_steps_geometry.mjs",
+    "machine": "ender",
+    "machineLabel": "Creality Ender-3 V4",
+    "H": 220,
+    "totalLayers": 1100,
+    "levels": 7,
+    "terraces": [
+      {
+        "name": "terrace-1",
+        "k0": 160,
+        "k1": 171,
+        "z0": 32,
+        "z1": 34.4,
+        "layers": 12,
+        "cells": 124,
+        "footprintConstant": true,
+        "longitudinalRails": false,
+        "process": "horizontal-transverse-return/v1",
+        "physicalStatus": "experimental",
+        "supportWall": {
+          "kind": "square",
+          "sx": 141,
+          "sy": 139,
+          "cx": 0,
+          "cy": 0,
+          "angle": 12
+        },
+        "nextWall": {
+          "kind": "hexagon",
+          "sx": 150,
+          "sy": 146,
+          "cx": 8,
+          "cy": 0,
+          "angle": 0
+        }
+      },
+      {
+        "name": "terrace-2",
+        "k0": 327,
+        "k1": 338,
+        "z0": 65.4,
+        "z1": 67.8,
+        "layers": 12,
+        "cells": 104,
+        "footprintConstant": true,
+        "longitudinalRails": false,
+        "process": "horizontal-transverse-return/v1",
+        "physicalStatus": "experimental",
+        "supportWall": {
+          "kind": "hexagon",
+          "sx": 150,
+          "sy": 146,
+          "cx": 4,
+          "cy": 4,
+          "angle": 30
+        },
+        "nextWall": {
+          "kind": "circle",
+          "sx": 132,
+          "sy": 118,
+          "cx": -9,
+          "cy": 7,
+          "angle": 20
+        }
+      },
+      {
+        "name": "terrace-3",
+        "k0": 489,
+        "k1": 500,
+        "z0": 97.8,
+        "z1": 100.2,
+        "layers": 12,
+        "cells": 80,
+        "footprintConstant": true,
+        "longitudinalRails": false,
+        "process": "horizontal-transverse-return/v1",
+        "physicalStatus": "experimental",
+        "supportWall": {
+          "kind": "circle",
+          "sx": 132,
+          "sy": 118,
+          "cx": -5,
+          "cy": 0,
+          "angle": -10
+        },
+        "nextWall": {
+          "kind": "square",
+          "sx": 118,
+          "sy": 96,
+          "cx": 8,
+          "cy": 8,
+          "angle": -15
+        }
+      },
+      {
+        "name": "terrace-4",
+        "k0": 646,
+        "k1": 657,
+        "z0": 129.2,
+        "z1": 131.6,
+        "layers": 12,
+        "cells": 80,
+        "footprintConstant": true,
+        "longitudinalRails": false,
+        "process": "horizontal-transverse-return/v1",
+        "physicalStatus": "experimental",
+        "supportWall": {
+          "kind": "square",
+          "sx": 118,
+          "sy": 96,
+          "cx": 4,
+          "cy": 2,
+          "angle": 20
+        },
+        "nextWall": {
+          "kind": "hexagon",
+          "sx": 104,
+          "sy": 98,
+          "cx": -7,
+          "cy": -4,
+          "angle": 30
+        }
+      },
+      {
+        "name": "terrace-5",
+        "k0": 793,
+        "k1": 804,
+        "z0": 158.6,
+        "z1": 161,
+        "layers": 12,
+        "cells": 72,
+        "footprintConstant": true,
+        "longitudinalRails": false,
+        "process": "horizontal-transverse-return/v1",
+        "physicalStatus": "experimental",
+        "supportWall": {
+          "kind": "hexagon",
+          "sx": 104,
+          "sy": 98,
+          "cx": -4,
+          "cy": 0,
+          "angle": 0
+        },
+        "nextWall": {
+          "kind": "circle",
+          "sx": 82,
+          "sy": 78,
+          "cx": 6,
+          "cy": -2,
+          "angle": 0
+        }
+      },
+      {
+        "name": "terrace-6",
+        "k0": 935,
+        "k1": 946,
+        "z0": 187,
+        "z1": 189.4,
+        "layers": 12,
+        "cells": 56,
+        "footprintConstant": true,
+        "longitudinalRails": false,
+        "process": "horizontal-transverse-return/v1",
+        "physicalStatus": "experimental",
+        "supportWall": {
+          "kind": "circle",
+          "sx": 82,
+          "sy": 78,
+          "cx": 3,
+          "cy": 0,
+          "angle": 60
+        },
+        "nextWall": {
+          "kind": "hexagon",
+          "sx": 64,
+          "sy": 64,
+          "cx": 0,
+          "cy": 0,
+          "angle": 15
+        }
+      }
+    ],
+    "walls": [
+      {
+        "tier": 1,
+        "k0": 0,
+        "k1": 159,
+        "z0": 0,
+        "z1": 32,
+        "kind": "square",
+        "sx": 141,
+        "sy": 139,
+        "c0": [
+          0,
+          0
+        ],
+        "c1": [
+          0,
+          0
+        ],
+        "angles": [
+          0,
+          12
+        ],
+        "w": 3.2,
+        "pitch": 5.2,
+        "web": "staple",
+        "cycle": [
+          "chord",
+          "web"
+        ]
+      },
+      {
+        "tier": 2,
+        "k0": 172,
+        "k1": 326,
+        "z0": 34.4,
+        "z1": 65.4,
+        "kind": "hexagon",
+        "sx": 150,
+        "sy": 146,
+        "c0": [
+          8,
+          0
+        ],
+        "c1": [
+          4,
+          4
+        ],
+        "angles": [
+          0,
+          30
+        ],
+        "w": 2.8,
+        "pitch": 4.5,
+        "web": "sine",
+        "cycle": [
+          "chord",
+          "chord",
+          "web"
+        ]
+      },
+      {
+        "tier": 3,
+        "k0": 339,
+        "k1": 488,
+        "z0": 67.8,
+        "z1": 97.8,
+        "kind": "circle",
+        "sx": 132,
+        "sy": 118,
+        "c0": [
+          -9,
+          7
+        ],
+        "c1": [
+          -5,
+          0
+        ],
+        "angles": [
+          20,
+          -10
+        ],
+        "w": 2.8,
+        "pitch": 4.8,
+        "web": "diagonal",
+        "cycle": [
+          "chord",
+          "web"
+        ]
+      },
+      {
+        "tier": 4,
+        "k0": 501,
+        "k1": 645,
+        "z0": 100.2,
+        "z1": 129.2,
+        "kind": "square",
+        "sx": 118,
+        "sy": 96,
+        "c0": [
+          8,
+          8
+        ],
+        "c1": [
+          4,
+          2
+        ],
+        "angles": [
+          -15,
+          20
+        ],
+        "w": 2.6,
+        "pitch": 3.6,
+        "web": "eight",
+        "cycle": [
+          "chord",
+          "web",
+          "web"
+        ]
+      },
+      {
+        "tier": 5,
+        "k0": 658,
+        "k1": 792,
+        "z0": 131.6,
+        "z1": 158.6,
+        "kind": "hexagon",
+        "sx": 104,
+        "sy": 98,
+        "c0": [
+          -7,
+          -4
+        ],
+        "c1": [
+          -4,
+          0
+        ],
+        "angles": [
+          30,
+          0
+        ],
+        "w": 2.6,
+        "pitch": 4.6,
+        "web": "staple",
+        "cycle": [
+          "chord",
+          "web"
+        ]
+      },
+      {
+        "tier": 6,
+        "k0": 805,
+        "k1": 934,
+        "z0": 161,
+        "z1": 187,
+        "kind": "circle",
+        "sx": 82,
+        "sy": 78,
+        "c0": [
+          6,
+          -2
+        ],
+        "c1": [
+          3,
+          0
+        ],
+        "angles": [
+          0,
+          60
+        ],
+        "w": 2.6,
+        "pitch": 4,
+        "web": "diagonal",
+        "cycle": [
+          "chord",
+          "web"
+        ]
+      },
+      {
+        "tier": 7,
+        "k0": 947,
+        "k1": 1074,
+        "z0": 189.4,
+        "z1": 215,
+        "kind": "hexagon",
+        "sx": 64,
+        "sy": 64,
+        "c0": [
+          0,
+          0
+        ],
+        "c1": [
+          0,
+          0
+        ],
+        "angles": [
+          15,
+          45
+        ],
+        "w": 2.6,
+        "pitch": 3.2,
+        "web": "sine",
+        "cycle": [
+          "chord",
+          "web"
+        ]
+      }
+    ],
+    "events": [
+      {
+        "k": 0,
+        "z": 0,
+        "event": "wall 1 begins on basal frame"
+      },
+      {
+        "k": 160,
+        "z": 32,
+        "event": "terrace-1; transverse return; alternate phase every layer"
+      },
+      {
+        "k": 172,
+        "z": 34.4,
+        "event": "wall 2 begins on horizontal terrace"
+      },
+      {
+        "k": 327,
+        "z": 65.4,
+        "event": "terrace-2; transverse return; alternate phase every layer"
+      },
+      {
+        "k": 339,
+        "z": 67.8,
+        "event": "wall 3 begins on horizontal terrace"
+      },
+      {
+        "k": 489,
+        "z": 97.8,
+        "event": "terrace-3; transverse return; alternate phase every layer"
+      },
+      {
+        "k": 501,
+        "z": 100.2,
+        "event": "wall 4 begins on horizontal terrace"
+      },
+      {
+        "k": 646,
+        "z": 129.2,
+        "event": "terrace-4; transverse return; alternate phase every layer"
+      },
+      {
+        "k": 658,
+        "z": 131.6,
+        "event": "wall 5 begins on horizontal terrace"
+      },
+      {
+        "k": 793,
+        "z": 158.6,
+        "event": "terrace-5; transverse return; alternate phase every layer"
+      },
+      {
+        "k": 805,
+        "z": 161,
+        "event": "wall 6 begins on horizontal terrace"
+      },
+      {
+        "k": 935,
+        "z": 187,
+        "event": "terrace-6; transverse return; alternate phase every layer"
+      },
+      {
+        "k": 947,
+        "z": 189.4,
+        "event": "wall 7 begins on horizontal terrace"
+      }
+    ],
+    "boundingContract": {
+      "margin_mm": 15,
+      "allowed_mm": [
+        190,
+        190,
+        220
+      ],
+      "coordinates": "machine-centred XY before emitter translation; Z starts at bed; deposited bead envelope is audited after emission"
+    },
+    "principle": "A single basal perimeter carries all upper walls through fixed-footprint horizontal transverse-weave terraces; no interior bed-founded tubes.",
+    "roof": {
+      "process": "crown-woven-grid-art/v1",
+      "physicalStatus": "experimental",
+      "k0": 1075,
+      "gridLayers": 18,
+      "artLayers": 7,
+      "patternLobes": 7,
+      "pitches": [
+        10,
+        10,
+        10,
+        10,
+        5,
+        5,
+        5,
+        5,
+        2.5,
+        2.5,
+        2.5,
+        2.5,
+        1.2,
+        1.2,
+        1.2,
+        1.2,
+        0.378,
+        0.378
+      ],
+      "closure": "alternating spanning grid followed by two dense crossed layers; raised wave drawn above; not asserted watertight"
+    },
+    "gatePolicy": {
+      "bridge_mm": 180,
+      "cantilever_mm": 4.8,
+      "allow_mm": 0.6,
+      "evidencedBridge_mm": 16.2,
+      "meaning": "admission of declared experiments only; returning loops can classify as bridges while acting mechanically as cantilevers"
+    },
+    "experiments": {
+      "declaredBridgeCeiling_mm": 180,
+      "evidencedBridge_mm": 16.2,
+      "zones": [
+        {
+          "name": "terrace-1",
+          "z0": 32,
+          "z1": 34.8,
+          "longestChord_mm": 180
+        },
+        {
+          "name": "terrace-2",
+          "z0": 65.4,
+          "z1": 68.2,
+          "longestChord_mm": 180
+        },
+        {
+          "name": "terrace-3",
+          "z0": 97.8,
+          "z1": 100.60000000000001,
+          "longestChord_mm": 180
+        },
+        {
+          "name": "terrace-4",
+          "z0": 129.2,
+          "z1": 132,
+          "longestChord_mm": 180
+        },
+        {
+          "name": "terrace-5",
+          "z0": 158.6,
+          "z1": 161.4,
+          "longestChord_mm": 180
+        },
+        {
+          "name": "terrace-6",
+          "z0": 187,
+          "z1": 189.8,
+          "longestChord_mm": 180
+        },
+        {
+          "name": "closed-roof-and-art",
+          "z0": 215,
+          "z1": 220,
+          "longestChord_mm": 66.6
+        }
+      ],
+      "protocol": "declared gate must pass; every finding at 16.2 mm must be in one of these specific horizontal terrace or roof zones; no wall-wide exemption"
+    },
+    "args": {
+      "lh": 0.2,
+      "bead": 0.42,
+      "firstLayerBead": 0.48,
+      "firstLayerSpeed": 12,
+      "w": 3.2,
+      "r0": 50,
+      "K": 96,
+      "altPhase": true,
+      "cycle": [
+        "chord",
+        "web"
+      ],
+      "maxbridge": 180,
+      "maxcantilever": 4.8,
+      "allow": 0.6,
+      "minanchor": 0.5,
+      "maxCapRadius": 20,
+      "speed": 32,
+      "bridgeSpeed": 16,
+      "temp": 220,
+      "bed": 60,
+      "fan": 100
+    }
+  },
+  "builder": "tools/build_suspended_steps.mjs; tools/resume_suspended_steps.mjs completed independent gates on unchanged pending bytes",
+  "gate": {
+    "bead": 0.42,
+    "maxbridge": 180,
+    "maxcantilever": 4.8,
+    "allow": 0.6,
+    "minanchor": 0.5,
+    "maxCapRadius": 20,
+    "maxislands": 1
+  },
+  "header": {
+    "layers": 1100,
+    "filament_mm": 33388.91,
+    "grams": 101.19,
+    "maxZ": 220,
+    "seconds": 59706,
+    "time": "16h 35m 6s"
+  }
+}

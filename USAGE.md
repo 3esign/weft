@@ -164,3 +164,15 @@ so none is silently `qualified`.
   is reachable through `node weft.mjs build suma …` and its builder strategy is gated like every other.)
 * **Printing, photographing, and filling in `outcome` in the manifest.** No amount of checking is
   evidence. See `../journal/2026-09-02_HANDOFF.md`.
+
+## 2026-09-19 — mandatory first-layer contract (G-667)
+
+Every current shared-core export and Bambu pack now validates actual first-model extrusion. Startup/purge is bracketed with preview-only preparation/wipe markers, so a purge at another Z does not become an empty-looking first model layer. Machine commands are preserved. Empty, hidden, raised or misnumbered initial model layers are refused before export and before the final support gate's bed exemptions. Browser and Node use the same code. Historical files are not silently rewritten.
+
+See [FIRST_LAYER_CONTRACT.md](docs/FIRST_LAYER_CONTRACT.md) for the failure, source references, regression coverage and limits. The corrected Ender pair file is named OBRTAJ_ENDER_H7_FIRST_LAYER_FIXED.gcode; the older file that was loaded in Creality Print is superseded.
+
+## 2026-09-19 — large horizontal-WEFT pair
+
+New generator: core/weft_suspended_steps_geometry.mjs (--machine a2l or ender, --out FILE; Ender also --allow-assumed-bead). The specimen PROTOCOL.md files contain complete commands. tools/build_suspended_steps.mjs consumes the geometry, restores the original A2L footer expression, installs an actual-model preview, and checks final G-code/package bytes in independent workers before releasing PENDING files. Ender requires --i-know-the-bead-is-a-guess.
+
+The general weft.mjs builder also supports --thumb PATH and --end-z-from-template for harvested Bambu containers. Experimental-zone checking now requests allProblems and refuses a truncated list. Default gate display remains capped for historical report parity; classification is unchanged. Never interpret an admitted experimental bridge ceiling as physical evidence.

@@ -1,0 +1,8 @@
+{
+  "PASS": true,
+  "samples": 66484,
+  "uncovered": 0,
+  "examples": [],
+  "sampleSpacing_mm": 0.2,
+  "scope": "Projection of the final two dense fill paths, sampled inside the crown centreline polygon at nominal bead width. The surrounding rim lies outside this interior domain. This is a digital coverage sample, not watertightness or physical closure evidence."
+}

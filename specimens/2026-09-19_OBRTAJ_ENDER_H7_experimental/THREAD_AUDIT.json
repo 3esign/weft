@@ -1,0 +1,502 @@
+{
+  "name": "OBRTAJ_ENDER_H7",
+  "report": {
+    "name": "OBRTAJ_ENDER_H7",
+    "machine": "Creality Ender-3 V4",
+    "bed_mm": [
+      220,
+      220
+    ],
+    "layers": 1224,
+    "globalZLevels": 1100,
+    "expectedZLevels": 1100,
+    "logicalCells": null,
+    "experimentalMembraneOverride": false,
+    "maxBodiesPerZ": 1,
+    "size_mm": [
+      189.9,
+      189.9,
+      220
+    ],
+    "plate_mm": [
+      15.3,
+      15.3,
+      204.8,
+      204.8
+    ],
+    "fitsPlate": true,
+    "grammarCounts": {
+      "staple": 141,
+      "sine": 111,
+      "diagonal": 134,
+      "eight": 93
+    },
+    "threadLength_m": 1008.1,
+    "weldNodes": 53289,
+    "rawPaths": 97,
+    "unintendedOverlaps": 239,
+    "seamClosures": 0,
+    "overlapSamples": [
+      {
+        "z": 218.2,
+        "role": "bridge",
+        "ov": 120
+      },
+      {
+        "z": 218.4,
+        "role": "bridge",
+        "ov": 119
+      }
+    ],
+    "kinematic_h": 9.33,
+    "routeA_estimate_h": 88,
+    "caps": [],
+    "events": [
+      {
+        "k": 0,
+        "z": 0,
+        "event": "wall 1 begins on basal frame"
+      },
+      {
+        "k": 160,
+        "z": 32,
+        "event": "terrace-1; transverse return; alternate phase every layer"
+      },
+      {
+        "k": 172,
+        "z": 34.4,
+        "event": "wall 2 begins on horizontal terrace"
+      },
+      {
+        "k": 327,
+        "z": 65.4,
+        "event": "terrace-2; transverse return; alternate phase every layer"
+      },
+      {
+        "k": 339,
+        "z": 67.8,
+        "event": "wall 3 begins on horizontal terrace"
+      },
+      {
+        "k": 489,
+        "z": 97.8,
+        "event": "terrace-3; transverse return; alternate phase every layer"
+      },
+      {
+        "k": 501,
+        "z": 100.2,
+        "event": "wall 4 begins on horizontal terrace"
+      },
+      {
+        "k": 646,
+        "z": 129.2,
+        "event": "terrace-4; transverse return; alternate phase every layer"
+      },
+      {
+        "k": 658,
+        "z": 131.6,
+        "event": "wall 5 begins on horizontal terrace"
+      },
+      {
+        "k": 793,
+        "z": 158.6,
+        "event": "terrace-5; transverse return; alternate phase every layer"
+      },
+      {
+        "k": 805,
+        "z": 161,
+        "event": "wall 6 begins on horizontal terrace"
+      },
+      {
+        "k": 935,
+        "z": 187,
+        "event": "terrace-6; transverse return; alternate phase every layer"
+      },
+      {
+        "k": 947,
+        "z": 189.4,
+        "event": "wall 7 begins on horizontal terrace"
+      }
+    ],
+    "contourCounts": [
+      [
+        0,
+        1
+      ],
+      [
+        32,
+        0
+      ],
+      [
+        34.4,
+        1
+      ],
+      [
+        65.4,
+        0
+      ],
+      [
+        67.8,
+        1
+      ],
+      [
+        97.8,
+        0
+      ],
+      [
+        100.2,
+        1
+      ],
+      [
+        129.2,
+        0
+      ],
+      [
+        131.6,
+        1
+      ],
+      [
+        158.6,
+        0
+      ],
+      [
+        161,
+        1
+      ],
+      [
+        187,
+        0
+      ],
+      [
+        189.4,
+        1
+      ],
+      [
+        218.6,
+        0
+      ]
+    ],
+    "perLayerSample": [
+      {
+        "k": 0,
+        "z": 0,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 100
+      },
+      {
+        "k": 40,
+        "z": 8,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 100
+      },
+      {
+        "k": 80,
+        "z": 16,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 100
+      },
+      {
+        "k": 120,
+        "z": 24,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 100
+      },
+      {
+        "k": 160,
+        "z": 32,
+        "contours": 0,
+        "paths": 1,
+        "nodes": 0
+      },
+      {
+        "k": 200,
+        "z": 40,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 100
+      },
+      {
+        "k": 240,
+        "z": 48,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 100
+      },
+      {
+        "k": 280,
+        "z": 56,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 100
+      },
+      {
+        "k": 320,
+        "z": 64,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 100
+      },
+      {
+        "k": 360,
+        "z": 72,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 84
+      },
+      {
+        "k": 400,
+        "z": 80,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 84
+      },
+      {
+        "k": 440,
+        "z": 88,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 84
+      },
+      {
+        "k": 480,
+        "z": 96,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 84
+      },
+      {
+        "k": 520,
+        "z": 104,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 112
+      },
+      {
+        "k": 560,
+        "z": 112,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 112
+      },
+      {
+        "k": 600,
+        "z": 120,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 112
+      },
+      {
+        "k": 640,
+        "z": 128,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 112
+      },
+      {
+        "k": 680,
+        "z": 136,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 68
+      },
+      {
+        "k": 720,
+        "z": 144,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 68
+      },
+      {
+        "k": 760,
+        "z": 152,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 68
+      },
+      {
+        "k": 800,
+        "z": 160,
+        "contours": 0,
+        "paths": 1,
+        "nodes": 0
+      },
+      {
+        "k": 840,
+        "z": 168,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 64
+      },
+      {
+        "k": 880,
+        "z": 176,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 64
+      },
+      {
+        "k": 920,
+        "z": 184,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 64
+      },
+      {
+        "k": 960,
+        "z": 192,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 60
+      },
+      {
+        "k": 1000,
+        "z": 200,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 60
+      },
+      {
+        "k": 1040,
+        "z": 208,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 60
+      },
+      {
+        "k": 1080,
+        "z": 216,
+        "contours": 1,
+        "paths": 1,
+        "nodes": 60
+      }
+    ]
+  },
+  "bounds": {
+    "min": [
+      -94.96,
+      -94.96,
+      0
+    ],
+    "max": [
+      94.96,
+      94.96,
+      220
+    ]
+  },
+  "phases": {
+    "wall-1": {
+      "paths": 266,
+      "overlaps": 0,
+      "samples": []
+    },
+    "horizontal-terrace-1": {
+      "paths": 12,
+      "overlaps": 0,
+      "samples": []
+    },
+    "wall-2": {
+      "paths": 155,
+      "overlaps": 0,
+      "samples": []
+    },
+    "horizontal-terrace-2": {
+      "paths": 12,
+      "overlaps": 0,
+      "samples": []
+    },
+    "wall-3": {
+      "paths": 150,
+      "overlaps": 0,
+      "samples": []
+    },
+    "horizontal-terrace-3": {
+      "paths": 12,
+      "overlaps": 0,
+      "samples": []
+    },
+    "wall-4": {
+      "paths": 145,
+      "overlaps": 0,
+      "samples": []
+    },
+    "horizontal-terrace-4": {
+      "paths": 12,
+      "overlaps": 0,
+      "samples": []
+    },
+    "wall-5": {
+      "paths": 135,
+      "overlaps": 0,
+      "samples": []
+    },
+    "horizontal-terrace-5": {
+      "paths": 12,
+      "overlaps": 0,
+      "samples": []
+    },
+    "wall-6": {
+      "paths": 130,
+      "overlaps": 0,
+      "samples": []
+    },
+    "horizontal-terrace-6": {
+      "paths": 12,
+      "overlaps": 0,
+      "samples": []
+    },
+    "wall-7": {
+      "paths": 128,
+      "overlaps": 0,
+      "samples": []
+    },
+    "crown-grid": {
+      "paths": 36,
+      "overlaps": 239,
+      "samples": [
+        {
+          "z": 218.2,
+          "role": "bridge",
+          "ov": 120,
+          "points": [
+            {
+              "x": -7.2204,
+              "y": -31.2585,
+              "z": 218.29999999999998
+            },
+            {
+              "x": 0.5318,
+              "y": -28.2489,
+              "z": 218.29999999999998
+            }
+          ]
+        },
+        {
+          "z": 218.4,
+          "role": "bridge",
+          "ov": 119,
+          "points": [
+            {
+              "x": 31.2585,
+              "y": 6.7646,
+              "z": 218.5
+            },
+            {
+              "x": 28.2489,
+              "y": 7.0907,
+              "z": 218.5
+            }
+          ]
+        }
+      ]
+    },
+    "crown-art": {
+      "paths": 7,
+      "overlaps": 0,
+      "samples": []
+    }
+  }
+}

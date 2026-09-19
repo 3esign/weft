@@ -11,10 +11,15 @@ const has=(cmd,args)=>{ const r=spawnSync(cmd,args,{encoding:'utf8'}); return !r
 const chromium=has(process.execPath,['-e',"require('playwright')"])&&(process.env.WEFT_CHROMIUM||has(process.execPath,['-e',"const {chromium}=require('playwright');process.exit(chromium.executablePath()?0:1)"]));
 const python=has(process.env.WEFT_PYTHON||'python3',['-c','import numpy, scipy']);
 const plan=[
+  ['first_layer.test.mjs',[]],                                 // startup cannot become preview layer 1; real bed extrusion required
   ['build_parity.test.mjs',[]],                                  // Node chain == the printed LIMIT16 (G-code + 3MF)
   ['gate_parity.test.mjs',python?[]:['--no-python']],             // JS gate == Python gate (or the recorded JSON)
   ['aero_towers.test.mjs',[]],
   ['paired_sculptures.test.mjs',[]],
+  ['suspended_steps.test.mjs',[]],                              // horizontal terraces must truly cross between layers
+  ['harvested_end_z.test.mjs',[]],                              // high objects cannot inherit a low object's parked Z
+  ['stream_stl.test.mjs',[]],                                  // streaming changes memory use, not mesh bytes
+  ['gate_full_report.test.mjs',[]],                             // zone checks must see findings after number 400
   ['limit16.test.mjs',[]],
   ['mcp.test.mjs',[]],
   ['machine_wizard.test.mjs',[]],                                 // slicer export -> machine profile candidate
