@@ -45,3 +45,7 @@ The paired A2L / Ender-3 V4 LIMIT16 run from 2026-09-04 is consolidated in
 [LIMIT16_2026-09-04_RESULTS.md](LIMIT16_2026-09-04_RESULTS.md). Its exact
 single-layer inward-spiral membrane process failed on both machines; that
 versioned process identity is now blocked from future builds.
+
+## 2026-09-19 ? X2 ziggurat physical-status update
+
+[Creality X2 outcome and photographs](2026-09-18_ZIGURAT2_VRTLOG_ENDER3V4_X2_experimental/outcomes.md) ? [A2L X2 last reported status](2026-09-18_ZIGURAT2_TKANJE_A2L_X2_experimental/outcomes.md) ? [WEFT/paper continuation](../../paper/03_experiments/2026-09-19_zigurat_horizontal_weft/README.md). Build-time NOT PRINTED labels in the original receipts are historical.

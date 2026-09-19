@@ -1,0 +1,203 @@
+{
+  "schema": "pi.photo-recovery.v1",
+  "specimen": "ZIGURAT2_VRTLOG_ENDER3V4_X2",
+  "recovered_at": "2026-09-19T08:56:17.651Z",
+  "photo_count": 10,
+  "source_kind": "local Claude HTTP preview responses; unmodified WebP renditions",
+  "original_camera_files": false,
+  "photographic_capture_time": null,
+  "shared_at": "2026-09-18T15:45:32.827285Z",
+  "conversation": "cowork:cse_011iJhKeEQHkCw4M3bcHnBFG",
+  "message_seq": 5024,
+  "message_uuid": "1d532d91-bcf3-48b6-afb1-34d4b9fec644",
+  "metadata_source": "C:/Svemir/!Sesije/CLI/99_RAW_NE_DIRAJ/claude/desktop-indexeddb/https_claude.ai_0.indexeddb.blob/4/01/1fc",
+  "metadata_sha256": "1035a77535282623ceee6d413269f3833eea1af8d91bf36e1a0277f1c2322f81",
+  "cache_directory": "C:/Users/treed/AppData/Local/Packages/Claude_pzs8sxrjxfjjc/LocalCache/Roaming/Claude/Cache/Cache_Data",
+  "identification": {
+    "status": "contextual and visual attribution",
+    "basis": "Operator identified the set as the completed Creality print. The same conversation staged the X2 Ender G-code; form, roof and corner features agree with its preview. No printer-history checksum was recovered.",
+    "exact_printed_gcode_verified": false
+  },
+  "images": [
+    {
+      "order": 1,
+      "file": "1000142555.webp",
+      "original_attachment_name": "1000142555.jpg",
+      "attachment_uuid": "3bb1f5ea-dc00-4c9f-9498-914ef8c4823c",
+      "title": "Overview",
+      "reading": "The complete stepped object on the plate; preferred overview.",
+      "reading_by": "Svemir / Codex, visual reading 2026-09-19",
+      "bytes": 141236,
+      "sha256": "05af88dbae5c3641cc987aa0bb90c1460c9fe9254646fc1dae2c96d21df7be63",
+      "width": 820,
+      "height": 1456,
+      "chunks": [
+        "VP8 "
+      ],
+      "cache_file": "f_0016e6",
+      "cache_entry_offset": 604672
+    },
+    {
+      "order": 2,
+      "file": "1000142554.webp",
+      "original_attachment_name": "1000142554.jpg",
+      "attachment_uuid": "13fc879d-90ed-45fe-8594-8bd6d322f464",
+      "title": "Overview — alternate",
+      "reading": "Wider, softer-focus view of the object and plate; retained as context.",
+      "reading_by": "Svemir / Codex, visual reading 2026-09-19",
+      "bytes": 80628,
+      "sha256": "5cc04a2d4cb9b6da8121faebe3c9191e0405401109b634937162a166b76d1d8d",
+      "width": 820,
+      "height": 1456,
+      "chunks": [
+        "VP8 "
+      ],
+      "cache_file": "f_0016e5",
+      "cache_entry_offset": 604928
+    },
+    {
+      "order": 3,
+      "file": "1000142559.webp",
+      "original_attachment_name": "1000142559.jpg",
+      "attachment_uuid": "3b2b7f3c-0dd4-428f-b961-9fc162fabf93",
+      "title": "Roof",
+      "reading": "Close view of the crossed roof mesh and the transition immediately below it.",
+      "reading_by": "Svemir / Codex, visual reading 2026-09-19",
+      "bytes": 190464,
+      "sha256": "cd756f4b12fafb0b66fa9ba2e702a699cc7208b9be8a919039a1c15cbc30f036",
+      "width": 820,
+      "height": 1456,
+      "chunks": [
+        "VP8 "
+      ],
+      "cache_file": "f_0016e7",
+      "cache_entry_offset": 603648
+    },
+    {
+      "order": 4,
+      "file": "1000142558.webp",
+      "original_attachment_name": "1000142558.jpg",
+      "attachment_uuid": "bad9690a-185e-42d4-a3b0-ab209d7c608b",
+      "title": "Upper side",
+      "reading": "Upper wall and inclined transition; oblique strands and their attachment regions.",
+      "reading_by": "Svemir / Codex, visual reading 2026-09-19",
+      "bytes": 212288,
+      "sha256": "f90c99c251ba7b11f2902999abd8fbd29610d58bda02fad7f1a455de63e6d4ce",
+      "width": 820,
+      "height": 1456,
+      "chunks": [
+        "VP8 "
+      ],
+      "cache_file": "f_0016e9",
+      "cache_entry_offset": 603904
+    },
+    {
+      "order": 5,
+      "file": "1000142557.webp",
+      "original_attachment_name": "1000142557.jpg",
+      "attachment_uuid": "9c5711f7-6c27-4124-b131-eca9d29dd3c8",
+      "title": "Base and side",
+      "reading": "Lowest perimeter beside the plate, with strands crossing the side transition.",
+      "reading_by": "Svemir / Codex, visual reading 2026-09-19",
+      "bytes": 238232,
+      "sha256": "0bfff88f373fc3e207003867aeb5e907107f072d22180f1724c6ac2399deabe0",
+      "width": 820,
+      "height": 1456,
+      "chunks": [
+        "VP8 "
+      ],
+      "cache_file": "f_0016ec",
+      "cache_entry_offset": 604160
+    },
+    {
+      "order": 6,
+      "file": "1000142556.webp",
+      "original_attachment_name": "1000142556.jpg",
+      "attachment_uuid": "57d7afaa-5d60-410d-b1f0-21ff87aa454f",
+      "title": "Front transitions",
+      "reading": "Successive walls and corner transitions; visibly bowed and irregular strands.",
+      "reading_by": "Svemir / Codex, visual reading 2026-09-19",
+      "bytes": 211908,
+      "sha256": "f0f6120334eb13f69feb56809297be77c592ed3dcc03df888c8df3808fd32e6d",
+      "width": 820,
+      "height": 1456,
+      "chunks": [
+        "VP8 "
+      ],
+      "cache_file": "f_0016e3",
+      "cache_entry_offset": 604416
+    },
+    {
+      "order": 7,
+      "file": "1000142553.webp",
+      "original_attachment_name": "1000142553.jpg",
+      "attachment_uuid": "b4d2c92e-52d9-4a03-a778-2ecda1841101",
+      "title": "Transition detail",
+      "reading": "Close view of a wall-to-transition region and non-straight strands.",
+      "reading_by": "Svemir / Codex, visual reading 2026-09-19",
+      "bytes": 211638,
+      "sha256": "ae646ddbe179bc7cd7020ae3e81b616b4d5385dffd47702152b4309935ec5e43",
+      "width": 820,
+      "height": 1456,
+      "chunks": [
+        "VP8 "
+      ],
+      "cache_file": "f_0016eb",
+      "cache_entry_offset": 605184
+    },
+    {
+      "order": 8,
+      "file": "1000142564.webp",
+      "original_attachment_name": "1000142564.jpg",
+      "attachment_uuid": "954c58a7-03d2-4aad-b9ed-94ad3b510e11",
+      "title": "Interior overview",
+      "reading": "View through the open base toward the roof; internal loops and crossing strands.",
+      "reading_by": "Svemir / Codex, visual reading 2026-09-19",
+      "bytes": 229606,
+      "sha256": "050cd104a633c251a9ce99c8e1578fd9a7d7614338df22eac4a11256b6c8fbed",
+      "width": 820,
+      "height": 1456,
+      "chunks": [
+        "VP8 "
+      ],
+      "cache_file": "f_0016e8",
+      "cache_entry_offset": 603136
+    },
+    {
+      "order": 9,
+      "file": "1000142563.webp",
+      "original_attachment_name": "1000142563.jpg",
+      "attachment_uuid": "4cf8a6e5-0432-431f-901f-4e0ccbbb9350",
+      "title": "Interior detail",
+      "reading": "Closer interior view, with curved bundles and the roof mesh farther away.",
+      "reading_by": "Svemir / Codex, visual reading 2026-09-19",
+      "bytes": 258590,
+      "sha256": "6e1d747bd42feb40d0809f92293e0c747a38618edeaff72523f521af1d1525c8",
+      "width": 820,
+      "height": 1456,
+      "chunks": [
+        "VP8 "
+      ],
+      "cache_file": "f_0016ea",
+      "cache_entry_offset": 603392
+    },
+    {
+      "order": 10,
+      "file": "1000142565.webp",
+      "original_attachment_name": "1000142565.jpg",
+      "attachment_uuid": "ca63ca64-7bbe-449d-8d00-ad370e16ddec",
+      "title": "Interior detail — alternate",
+      "reading": "Another interior close-up showing looped strands across the central void.",
+      "reading_by": "Svemir / Codex, visual reading 2026-09-19",
+      "bytes": 247450,
+      "sha256": "f8dbe0f10f66277646f45907e5ddd01793d251d1205c52b23a7eae5764ec5bbd",
+      "width": 820,
+      "height": 1456,
+      "chunks": [
+        "VP8 "
+      ],
+      "cache_file": "f_0016ed",
+      "cache_entry_offset": 595712
+    }
+  ]
+}
