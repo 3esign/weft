@@ -195,7 +195,7 @@ async function cmdBuild(){
   }
   const maxCantilever = bounded(opt('maxcantilever', A.maxcantilever), 3, 0.2, allowExperimentalBridge ? 12.0 : 3.0, 'maxcantilever');
   const gateOpts = { bead:m.bead, maxbridge:maxBridge, maxcantilever:maxCantilever,
-    allow:bounded(opt('allow', A.allow), 0.6, 0.1, 1.5, 'allow'), minanchor:bounded(opt('minanchor', A.minanchor), 0.5, 0.5, 1.0, 'minanchor'),
+    allow:bounded(opt('allow', A.allow), 0.6, 0.1, allowExperimentalBridge ? 12.0 : 1.5, 'allow'), minanchor:bounded(opt('minanchor', A.minanchor), 0.5, 0.0, 1.0, 'minanchor'),
     maxCapRadius:bounded(opt('max-cap-radius', A.maxCapRadius), 36, 2, 40, 'maxCapRadius'), maxislands:maxIslands, file:gc };
   const t0 = Date.now();
   const gate = runGate(txt, gateOpts);

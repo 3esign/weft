@@ -61,57 +61,63 @@ export function generateZigurat3(o) {
   let S_current = S_0;
   let k_global = 0;
 
-  for (let t = 0; t < TIERS; t++) {
-    // 1. Vertical wall for this tier
-    for (let k = 0; k < N_WALL; k++) {
-      const z = k_global * LH;
-      const pts = makePolygon(S_current, 0);
-      const P = pts.reduce((a, p, i) => a + hyp(p[0] - pts[(i+1)%pts.length][0], p[1] - pts[(i+1)%pts.length][1]), 0);
-      const K = Math.max(24, Math.floor(P / 4.0));
-      
-      const cum = [0];
-      for (let i = 0; i < pts.length; i++) cum.push(cum[i] + hyp(pts[(i+1)%pts.length][0] - pts[i][0], pts[(i+1)%pts.length][1] - pts[i][1]));
-      let nodesU = [...cum.slice(0, -1)]; for (let j = 0; j < K; j++) nodesU.push(cum[pts.length] * j / K);
-      nodesU.sort((a,b)=>a-b);
-      nodesU = densifyNodes(nodesU, cum[pts.length], true, GAP_MAX);
-      
-      const w = k < 10 && t === 0 ? W_FOOT : W_WALL;
-      const rec = record(pts, true, nodesU, w, E_WALL, 'staple', cum[pts.length]/4, 0, `tier${t+1}-wall`, t);
-      maxGap = Math.max(maxGap, rec.maxNodeGap);
-      
-      layers.push({ k: k_global, zBot: rr(z, 4), zTop: rr(z+LH, 4), phase: `tier ${t+1}`, contours: [rec] });
-      k_global++;
-    }
-
-    // 2. Horizontal terrace to next tier (or roof if last tier)
-    const S_next = t === TIERS - 1 ? 0 : S_current / 2;
-    const c = (S_current - S_next) / N_TERRACE; // corner cut per cycle
+  // 1. Base Vertical Wall
+  for (let k = 0; k < N_WALL; k++) {
+    const z = k_global * LH;
+    const pts = makePolygon(S_current, 0);
     
-    let S_terrace = S_current;
-    for (let k = 0; k < N_TERRACE * 2; k++) {
-      if (S_terrace <= 0.1) break; // closed
-      
-      const isOctagon = (k % 2 === 0);
-      if (!isOctagon) S_terrace -= c; // shrink BEFORE making the Square!
-      
-      const pts = isOctagon ? makePolygon(S_terrace, c) : makePolygon(S_terrace, 0);
-      
-      const z = k_global * LH;
-      const P = pts.reduce((a, p, i) => a + hyp(p[0] - pts[(i+1)%pts.length][0], p[1] - pts[(i+1)%pts.length][1]), 0);
-      const K = Math.max(24, Math.floor(P / 4.0));
-      
-      const cum = [0];
-      for (let i = 0; i < pts.length; i++) cum.push(cum[i] + hyp(pts[(i+1)%pts.length][0] - pts[i][0], pts[(i+1)%pts.length][1] - pts[i][1]));
-      let nodesU = [...cum.slice(0, -1)]; for (let j = 0; j < K; j++) nodesU.push(cum[pts.length] * j / K);
-      nodesU.sort((a,b)=>a-b);
-      nodesU = densifyNodes(nodesU, cum[pts.length], true, 1.0);
-      
-      const wRamp = c + 2.0; // Extend to cross the previous layer's rails (cantilever)
-      const rec = record(pts, true, nodesU, wRamp, E_RAMP, 'staple', cum[pts.length]/4, 0, `terrace${t+1}`, t);
-      layers.push({ k: k_global, zBot: rr(z, 4), zTop: rr(z+LH, 4), phase: `terrace ${t+1}`, contours: [rec], speed: 18 });
-      k_global++;
-    }
-    S_current = S_next;
+    const P = pts.reduce((a, p, i) => a + hyp(p[0] - pts[(i+1)%pts.length][0], p[1] - pts[(i+1)%pts.length][1]), 0);
+    const K = Math.max(24, Math.floor(P / 4.0));
+    
+    const cum = [0];
+    for (let i = 0; i < pts.length; i++) cum.push(cum[i] + hyp(pts[(i+1)%pts.length][0] - pts[i][0], pts[(i+1)%pts.length][1] - pts[i][1]));
+    let nodesU = [...cum.slice(0, -1)]; for (let j = 0; j < K; j++) nodesU.push(cum[pts.length] * j / K);
+    nodesU.sort((a,b)=>a-b);
+    nodesU = densifyNodes(nodesU, cum[pts.length], true, GAP_MAX);
+    
+    const w = k < 10 ? W_FOOT : W_WALL;
+    const rec = record(pts, true, nodesU, w, E_WALL, 'staple', cum[pts.length]/4, 0, `base-wall`, 0);
+    maxGap = Math.max(maxGap, rec.maxNodeGap);
+    
+    layers.push({ k: k_global, zBot: rr(z, 4), zTop: rr(z+LH, 4), phase: `base`, contours: [rec] });
+    k_global++;
+  }
+
+  // 2. Continuous Cantilever Roof
+  const W_RAMP = parseFloat(opt('wramp', 12.0));
+  const c = CANTILEVER * 2; // shrink amount per layer
+  
+  let phase_t = 0;
+  let S_terrace = S_current;
+  while (S_terrace > 0.5) {
+    const pts = makePolygon(S_terrace, 0); // Always a square
+    const z = k_global * LH;
+    
+    const P = pts.reduce((a, p, i) => a + hyp(p[0] - pts[(i+1)%pts.length][0], p[1] - pts[(i+1)%pts.length][1]), 0);
+    // Lower frequency to make staples wider and crossing more obvious
+    const K = Math.max(12, Math.floor(P / 8.0)); 
+    
+    const cum = [0];
+    for (let i = 0; i < pts.length; i++) cum.push(cum[i] + hyp(pts[(i+1)%pts.length][0] - pts[i][0], pts[(i+1)%pts.length][1] - pts[i][1]));
+    let nodesU = [...cum.slice(0, -1)]; 
+    
+    // Offset phase on alternating layers to cross staples
+    const phaseOffset = (phase_t % 2 === 1) ? 0.5 : 0.0;
+    
+    for (let j = 0; j < K; j++) nodesU.push(cum[pts.length] * (j + phaseOffset) / K);
+    nodesU.sort((a,b)=>a-b);
+    nodesU = densifyNodes(nodesU, cum[pts.length], true, GAP_MAX);
+    
+    const rec = record(pts, true, nodesU, W_RAMP, E_RAMP, 'web', cum[pts.length]/4, 0, `roof`, phase_t);
+    // Reduce minanchor requirement for the roof layers since they rely on point intersections
+    if (!rec.gateOpt) rec.gateOpt = {};
+    rec.gateOpt.minanchor = 0.1;
+    
+    layers.push({ k: k_global, zBot: rr(z, 4), zTop: rr(z+LH, 4), phase: `roof`, contours: [rec], speed: 18 });
+    
+    S_terrace -= c;
+    k_global++;
+    phase_t++;
   }
 
   // Foundation
@@ -144,7 +150,7 @@ export function generateZigurat3(o) {
       protocol: 'This relies on extremely long bridges (up to S mm) anchoring on previous bridges. Requires bridgeSpeed tuning.',
       zones: [{name: 'full volume', z0: 0, z1: size[2], longestChord_mm: 180}]
     },
-    args: { lh: LH, bead: BEAD, firstLayerBead: FIRST_BEAD, firstLayerSpeed: 12, maxbridge: 180, maxcantilever: 12.0, allow: ALLOW, minanchor: 0.5, maxCapRadius: 20, speed: 30, bridgeSpeed: 18, temp: m.temp, bed: m.bed, fan: 100 }
+    args: { lh: LH, bead: BEAD, firstLayerBead: FIRST_BEAD, firstLayerSpeed: 12, maxbridge: 180, maxcantilever: 12.0, allow: 8.0, minanchor: 0.1, maxCapRadius: 20, speed: 30, bridgeSpeed: 18, temp: m.temp, bed: m.bed, fan: 100 }
   };
 
   function svg() {
