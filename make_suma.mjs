@@ -54,8 +54,8 @@ await page.waitForFunction(()=>!document.getElementById('loading'),null,{timeout
 const report=await page.evaluate(async ([G,web,e,machine,name,allowExperimental])=>{
   const A=G.summary.args;
   setMachine(machine);
-  Object.assign(P,{mode:'wall',lh:A.lh,bead:A.bead,w:A.w,overshoot:e,webType:web,cycle:['chord','web'],amp:0,ampF:1,
-    altPhase:false,autoLOD:true,minGap:1.4,gradeLean:false,dwell:0.6,jitter:0,flowBoost:1.25,maxBridge:12,checkOv:true,
+  Object.assign(P,{mode:'wall',lh:A.lh,bead:A.bead,w:A.w,overshoot:e,webType:web,cycle:A.cycle||['chord','web'],amp:0,ampF:1,
+    altPhase:A.altPhase??true,autoLOD:true,minGap:1.4,gradeLean:false,dwell:0.6,jitter:0,flowBoost:1.25,maxBridge:12,checkOv:true,
     speed:A.speed??30,bridgeSpeed:A.bridgeSpeed??18,temp:A.temp??215,bed:A.bed??55,fan:A.fan??100,
     firstLayerBead:A.firstLayerBead??0.52,firstLayerSpeed:A.firstLayerSpeed??12,
     adhesion:'foundation',adhesionWidth:A.foundation});
@@ -141,7 +141,7 @@ const report=await page.evaluate(async ([G,web,e,machine,name,allowExperimental]
         membraneProcess:cp.process,membraneStatus:cp.physicalStatus,membraneEvidence:cp.evidence||null};
       L.len=plen(pts); out.push(L);
     }
-    if(layRole==='web') webCount++;
+    if(layRole==='web' || lay.contours.some(c=>c.role==='web')) webCount++;
     perLayer.push({k,z:lay.zBot,contours:lay.contours.length,paths:(lay.paths||[]).length,a:lay.a,b:lay.b,rho:lay.rho,nodes:lay.contours.reduce((s,c)=>s+c.nodes.length,0)});
   }
   /* Sixteen specimens are not sixteen sequential prints. They share one global Z clock: first all

@@ -83,39 +83,44 @@ export function generateZigurat3(o) {
     k_global++;
   }
 
-  // 2. Continuous Cantilever Roof
-  const W_RAMP = parseFloat(opt('wramp', 12.0));
-  const c = CANTILEVER * 2; // shrink amount per layer
+  // 2. Continuous Cantilever Roof with Osmice (Figure-8)
+  const CANT = parseFloat(opt('cantilever', 1.5));
+  const KONTRA = parseFloat(opt('kontra', 6.0)); // counterweight overhang past base centerline (mm)
+  const W_MAX = parseFloat(opt('wmax', 16.0)); // maximum width of the transverse weave
+  const PITCH = parseFloat(opt('pitch', 4.0)); // pitch between loops along perimeter (mm)
+  
+  const R_base = S_0 / 2;
+  let R_out = R_base + KONTRA; // Starts well outside the outer rail (90 + 6 = 96 mm)
+  let R_in = R_base - KONTRA;  // Starts inside the wall (90 - 6 = 84 mm)
   
   let phase_t = 0;
-  let S_terrace = S_current;
-  while (S_terrace > 0.5) {
-    const pts = makePolygon(S_terrace, 0); // Always a square
+  while (R_in > 1.0) {
+    const S_t = R_out + R_in;
+    const W_t = R_out - R_in;
+    const pts = makePolygon(S_t, 0); // Square contour centered between Rin and Rout
     const z = k_global * LH;
     
-    const P = pts.reduce((a, p, i) => a + hyp(p[0] - pts[(i+1)%pts.length][0], p[1] - pts[(i+1)%pts.length][1]), 0);
-    // Lower frequency to make staples wider and crossing more obvious
-    const K = Math.max(12, Math.floor(P / 8.0)); 
+    const P_perim = 4 * S_t;
+    const K = Math.max(16, Math.round(P_perim / PITCH));
     
     const cum = [0];
     for (let i = 0; i < pts.length; i++) cum.push(cum[i] + hyp(pts[(i+1)%pts.length][0] - pts[i][0], pts[(i+1)%pts.length][1] - pts[i][1]));
     let nodesU = [...cum.slice(0, -1)]; 
-    
-    // Offset phase on alternating layers to cross staples
-    const phaseOffset = (phase_t % 2 === 1) ? 0.5 : 0.0;
-    
-    for (let j = 0; j < K; j++) nodesU.push(cum[pts.length] * (j + phaseOffset) / K);
+    for (let j = 0; j < K; j++) nodesU.push(cum[pts.length] * j / K);
     nodesU.sort((a,b)=>a-b);
     nodesU = densifyNodes(nodesU, cum[pts.length], true, GAP_MAX);
     
-    const rec = record(pts, true, nodesU, W_RAMP, E_RAMP, 'web', cum[pts.length]/4, 0, `roof`, phase_t);
-    // Reduce minanchor requirement for the roof layers since they rely on point intersections
-    if (!rec.gateOpt) rec.gateOpt = {};
-    rec.gateOpt.minanchor = 0.1;
+    // Use 'eight' (osmice) for pure transverse loops without any longitudinal rails
+    const rec = record(pts, true, nodesU, W_t, E_RAMP, 'eight', cum[pts.length]/4, 0, `roof`, phase_t);
+    rec.role = 'web'; // Force web role so make_suma NEVER generates a chord rail!
     
     layers.push({ k: k_global, zBot: rr(z, 4), zTop: rr(z+LH, 4), phase: `roof`, contours: [rec], speed: 18 });
     
-    S_terrace -= c;
+    // Step inward
+    R_in -= CANT;
+    if (R_out - R_in > W_MAX) {
+      R_out = R_in + W_MAX;
+    }
     k_global++;
     phase_t++;
   }
@@ -150,7 +155,7 @@ export function generateZigurat3(o) {
       protocol: 'This relies on extremely long bridges (up to S mm) anchoring on previous bridges. Requires bridgeSpeed tuning.',
       zones: [{name: 'full volume', z0: 0, z1: size[2], longestChord_mm: 180}]
     },
-    args: { lh: LH, bead: BEAD, firstLayerBead: FIRST_BEAD, firstLayerSpeed: 12, maxbridge: 180, maxcantilever: 12.0, allow: 8.0, minanchor: 0.1, maxCapRadius: 20, speed: 30, bridgeSpeed: 18, temp: m.temp, bed: m.bed, fan: 100 }
+    args: { lh: LH, bead: BEAD, firstLayerBead: FIRST_BEAD, firstLayerSpeed: 12, maxbridge: 180, maxcantilever: 12.0, allow: 8.0, minanchor: 0.1, altPhase: true, maxCapRadius: 20, speed: 30, bridgeSpeed: 18, temp: m.temp, bed: m.bed, fan: 100 }
   };
 
   function svg() {
