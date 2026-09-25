@@ -30,8 +30,10 @@ const HERE = path.dirname(fileURLToPath(import.meta.url));
 export const WEFT_ROOT = path.resolve(HERE, '..');
 await import(pathToFileURL(path.join(HERE, 'weft_core.js')).href);
 await import(pathToFileURL(path.join(HERE, 'weft_gate.js')).href);
+await import(pathToFileURL(path.join(HERE, 'weft_gate_layers.js')).href);   // S2–S8, 2026-09-25 (what KRAK taught the gate)
 export const { createWeftCore } = globalThis.WEFT_CORE;
 export const { checkGcode } = globalThis.WEFT_GATE;
+export const GATE_LAYERS = globalThis.WEFT_GATE_LAYERS;
 
 export function loadMachines(){ return JSON.parse(fs.readFileSync(path.join(WEFT_ROOT, 'machines.json'), 'utf8')); }
 
@@ -515,4 +517,17 @@ export function runGate(source, opts){
   const res = checkGcode(text, Object.assign({}, opts, { file:file || '(text)' }));
   delete res._grid;
   return res;
+}
+
+/* The layered gate S2–S8 over the same final bytes (core/weft_gate_layers.js). `zones` are the
+   experiment's declared bands ({name,z0,z1,declares?}); a finding inside a zone that declares its
+   layer is DECLARED, not refusing — but only if nothing undeclared stands above that zone
+   (aboveRisk_mm): KRAK put its riskiest band at the bottom and everything above it was lost. */
+export function runGateLayers(source, opts){
+  let text = source, file = opts && opts.file;
+  if(typeof source === 'string' && /\.(gcode|3mf)$/i.test(source) && fs.existsSync(source)){
+    file = source;
+    text = source.toLowerCase().endsWith('.3mf') ? gcodeFrom3mf(fs.readFileSync(source)).text : fs.readFileSync(source, 'utf8');
+  }
+  return GATE_LAYERS.analyse(text, Object.assign({}, opts, { file:file || '(text)' }));
 }

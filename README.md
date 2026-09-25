@@ -106,7 +106,7 @@ node weft.mjs presets                                    # the studio presets
 node weft.mjs build limit16   --machine a2l --out out/limit16
 node weft.mjs build climber   --machine a2l --H 240 --legs 3 --out out/p2b --allow-experimental-membrane
 node weft.mjs build sculpture --machine ender --variant gora --out out/gora --allow-experimental-bridge --i-know-the-bead-is-a-guess
-node weft.mjs check FILE.gcode --machine a2l             # the Gate on any G-code
+node weft.mjs check FILE.gcode --machine a2l             # the Gate on any G-code: S1 support, then the layered gate S2–S8 + ORDER
 node weft.mjs serve                                      # the browser studio at http://127.0.0.1:8765
 ```
 
@@ -145,7 +145,8 @@ listed by name and hash in its specimen's `photos/manifest.json`, and the files 
 index.html                 the browser studio (buildless; loads core/weft_core.js and core/weft_gate.js)
 weft.mjs                   the command line: build · check · machines · presets · serve
 core/weft_core.js          level-3 emitter (the engine the studio and the CLI share)
-core/weft_gate.js          the Gate (port of check_gcode.py, held to it by tests)
+core/weft_gate.js          the Gate, layer S1 (port of check_gcode.py, held to it by tests)
+core/weft_gate_layers.js   the layered gate S2–S8 + ORDER (2026-09-25): what KRAK taught the gate — see docs/GATE_LAYERS_2026-09-25.md
 core/weft_build.mjs        build chain: thread → G-code → gate → header → 3MF package → manifest
 core/weft_*_geometry.mjs   level-2 generators in JavaScript (suma, limit16, plate, sculpture, climber, vase, paired, aero)
 core/weft_geom*.js         the numeric kernel that makes them byte-identical to numpy/scipy/skimage
@@ -157,6 +158,26 @@ schemas/                   design parameters, membrane qualification receipts
 tests/                     parity, gate, studio and wizard tests
 docs/                      state of the repository and the application plan
 ```
+
+## What the gate learned on 25 September 2026
+
+KRAK — five ways to hold a shelf in the air, one object, both machines — passed the Gate with zero problems and
+was destroyed on both printers. The Gate had answered its one question correctly (*is there material under this
+point*); the object died of the questions it does not ask. So the Gate now has **layers**, each with one question,
+each able to refuse on its own, none able to overrule another, the verdict a vector: how far a loose tip reaches to
+solid material when a hairpin laid on a hairpin is still loose (**S3**, refuses above the 17.6 mm that printed flat on
+OBRTAJ; KRAK's terrace was at 22.6–24.5); whether extrusion passes over a tip that nothing tied (**S4**, KRAK: 809
+passes 6–12 mm above the tips of the terrace below; the object that held: none); and whether the declared risk band
+is the last thing printed (**ORDER**, so that an experiment can die from the top and keep its evidence). Two
+hypotheses did not survive the same instrument and are reported instead of refused: the *quantity* of hanging thread
+(the object that held carries five times more of it per layer than the one that failed) and the *longest* tip.
+Every limit was set by running the instrument over the printed record; every assumption is named beside its number
+in `docs/GATE_LAYERS_2026-09-25.md`. The specimens `2026-09-24_KRAK_*` carry the photographs and the reading;
+`2026-09-25_PRAG_*` and `2026-09-25_KUKA_*` are the two objects that ask the next question, one variable each, the
+terrace last.
+
+**This is the last public version of WEFT.** Development continues privately from here; the record above, the
+gate, the generators and the specimens stay as they are in this repository.
 
 ## Where this is going
 

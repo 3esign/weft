@@ -1,0 +1,5331 @@
+{
+ "file": "/tmp/d2/out_e/DOMET2_ENDER3V4_X1.gcode",
+ "layers": 282,
+ "params": {
+  "bead": 0.42,
+  "allow": 0.6,
+  "maxbridge": 16.2,
+  "res": 0.2,
+  "bedz": 0.5,
+  "maxislands": 1,
+  "maxcantilever": 8
+ },
+ "stats": {
+  "floating": 0,
+  "long_bridge": 953,
+  "cantilever": 0,
+  "bridges": 42637,
+  "bad_membrane": 0,
+  "unanchored_membrane": 0,
+  "checked_paths": 1054,
+  "checked_points": 573740,
+  "exempt_layers": 3,
+  "first_layer_islands": 1
+ },
+ "byRole": {
+  "bridge": {
+   "floating": 0,
+   "long_bridge": 953,
+   "cantilever": 0,
+   "worst_mm": 52.84
+  }
+ },
+ "worstGaps": [
+  [
+   27.8,
+   "bridge",
+   26.46,
+   26.6
+  ],
+  [
+   53.6,
+   "bridge",
+   22.2,
+   22.57
+  ],
+  [
+   13,
+   "bridge",
+   20.52,
+   20.6
+  ],
+  [
+   13,
+   "bridge",
+   20.52,
+   20.6
+  ],
+  [
+   13,
+   "bridge",
+   20.52,
+   20.6
+  ],
+  [
+   13,
+   "bridge",
+   20.52,
+   20.6
+  ],
+  [
+   13,
+   "bridge",
+   20.52,
+   20.6
+  ],
+  [
+   13,
+   "bridge",
+   20.52,
+   20.6
+  ],
+  [
+   13,
+   "bridge",
+   20.52,
+   20.6
+  ],
+  [
+   13,
+   "bridge",
+   20.52,
+   20.6
+  ],
+  [
+   20.4,
+   "bridge",
+   20.52,
+   20.6
+  ],
+  [
+   20.4,
+   "bridge",
+   20.49,
+   20.6
+  ],
+  [
+   20.4,
+   "bridge",
+   20.52,
+   20.6
+  ],
+  [
+   20.4,
+   "bridge",
+   20.5,
+   20.6
+  ],
+  [
+   20.4,
+   "bridge",
+   20.52,
+   20.6
+  ]
+ ],
+ "membranes": [],
+ "problems": [
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 6,
+   "line": 25493,
+   "length_mm": 18.44,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.61,
+   "at": [
+    72.68,
+    145.41
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 6,
+   "line": 25493,
+   "length_mm": 17.54,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.6,
+   "at": [
+    61.78,
+    128.03
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 6,
+   "line": 25619,
+   "length_mm": 17.54,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.6,
+   "at": [
+    58.55,
+    108.2
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 6,
+   "line": 25619,
+   "length_mm": 18.44,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.49,
+   "at": [
+    63,
+    89.08
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 6,
+   "line": 25745,
+   "length_mm": 18.44,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.49,
+   "at": [
+    74.59,
+    72.68
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 6,
+   "line": 25745,
+   "length_mm": 17.54,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.6,
+   "at": [
+    91.97,
+    61.78
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 6,
+   "line": 25871,
+   "length_mm": 17.54,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.6,
+   "at": [
+    111.8,
+    58.55
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 6,
+   "line": 25871,
+   "length_mm": 18.44,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.49,
+   "at": [
+    130.93,
+    63
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 6,
+   "line": 25997,
+   "length_mm": 18.44,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.49,
+   "at": [
+    147.32,
+    74.59
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 6,
+   "line": 25997,
+   "length_mm": 17.54,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.6,
+   "at": [
+    158.22,
+    91.97
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 6.2,
+   "line": 27594,
+   "length_mm": 16.43,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.11,
+   "at": [
+    67.34,
+    78.29
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 6.2,
+   "line": 27866,
+   "length_mm": 16.43,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.11,
+   "at": [
+    141.71,
+    67.34
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 6.6,
+   "line": 32328,
+   "length_mm": 16.58,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.22,
+   "at": [
+    65.27,
+    76.34
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 6.6,
+   "line": 32636,
+   "length_mm": 16.58,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.22,
+   "at": [
+    143.66,
+    65.27
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 6.8,
+   "line": 34941,
+   "length_mm": 20.5,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.61,
+   "at": [
+    68.18,
+    149.93
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 6.8,
+   "line": 34941,
+   "length_mm": 19.61,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.49,
+   "at": [
+    55.9,
+    130.48
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 6.8,
+   "line": 35107,
+   "length_mm": 19.61,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.49,
+   "at": [
+    52.16,
+    107.77
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 6.8,
+   "line": 35107,
+   "length_mm": 20.06,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.56,
+   "at": [
+    57.26,
+    86.23
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 6.8,
+   "line": 35273,
+   "length_mm": 20.06,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.56,
+   "at": [
+    70.37,
+    67.86
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 6.8,
+   "line": 35273,
+   "length_mm": 19.61,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.49,
+   "at": [
+    89.52,
+    55.9
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 6.8,
+   "line": 35439,
+   "length_mm": 19.61,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.49,
+   "at": [
+    112.23,
+    52.16
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 6.8,
+   "line": 35439,
+   "length_mm": 20.06,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.56,
+   "at": [
+    133.77,
+    57.26
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 6.8,
+   "line": 35605,
+   "length_mm": 20.06,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.56,
+   "at": [
+    152.15,
+    70.37
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 6.8,
+   "line": 35605,
+   "length_mm": 19.61,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.49,
+   "at": [
+    164.1,
+    89.52
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7,
+   "line": 37323,
+   "length_mm": 17.63,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.23,
+   "at": [
+    58.59,
+    140.11
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7,
+   "line": 37323,
+   "length_mm": 18.07,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.2,
+   "at": [
+    51.08,
+    118.58
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7,
+   "line": 37521,
+   "length_mm": 17.63,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.23,
+   "at": [
+    52.28,
+    95.38
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7,
+   "line": 37521,
+   "length_mm": 18.07,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.11,
+   "at": [
+    62.27,
+    74.4
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7,
+   "line": 37720,
+   "length_mm": 17.63,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.23,
+   "at": [
+    79.89,
+    58.59
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7,
+   "line": 37720,
+   "length_mm": 18.07,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.2,
+   "at": [
+    101.42,
+    51.08
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7,
+   "line": 37920,
+   "length_mm": 17.63,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.23,
+   "at": [
+    124.62,
+    52.28
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7,
+   "line": 37920,
+   "length_mm": 18.07,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.11,
+   "at": [
+    145.6,
+    62.27
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7,
+   "line": 38119,
+   "length_mm": 17.63,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.23,
+   "at": [
+    161.41,
+    79.89
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.4,
+   "line": 42781,
+   "length_mm": 18.22,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.05,
+   "at": [
+    56.26,
+    141.63
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.4,
+   "line": 42781,
+   "length_mm": 18.22,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.2,
+   "at": [
+    48.25,
+    118.66
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.4,
+   "line": 42781,
+   "length_mm": 16.28,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 8.4,
+   "at": [
+    49.91,
+    98.05
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.4,
+   "line": 42977,
+   "length_mm": 16.28,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 8.4,
+   "at": [
+    65.44,
+    101.14
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.4,
+   "line": 42977,
+   "length_mm": 18.22,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.05,
+   "at": [
+    49.63,
+    94.37
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.4,
+   "line": 42977,
+   "length_mm": 18.22,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.11,
+   "at": [
+    60.21,
+    72.46
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.4,
+   "line": 43173,
+   "length_mm": 18.22,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.05,
+   "at": [
+    78.37,
+    56.26
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.4,
+   "line": 43173,
+   "length_mm": 18.22,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.2,
+   "at": [
+    101.34,
+    48.25
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.4,
+   "line": 43173,
+   "length_mm": 16.28,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 8.4,
+   "at": [
+    121.95,
+    49.91
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.4,
+   "line": 43369,
+   "length_mm": 16.28,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 8.4,
+   "at": [
+    118.86,
+    65.44
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.4,
+   "line": 43369,
+   "length_mm": 18.22,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.05,
+   "at": [
+    125.63,
+    49.63
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.4,
+   "line": 43369,
+   "length_mm": 18.22,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.11,
+   "at": [
+    147.54,
+    60.21
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.4,
+   "line": 43565,
+   "length_mm": 18.22,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.05,
+   "at": [
+    163.74,
+    78.37
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.4,
+   "line": 43565,
+   "length_mm": 16.28,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 8.2,
+   "at": [
+    170.09,
+    121.95
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.6,
+   "line": 45232,
+   "length_mm": 17.41,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.81,
+   "at": [
+    155.84,
+    110
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.6,
+   "line": 45232,
+   "length_mm": 17.41,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.82,
+   "at": [
+    154.41,
+    154.41
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.6,
+   "line": 45454,
+   "length_mm": 17.41,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.82,
+   "at": [
+    142.42,
+    142.42
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.6,
+   "line": 45454,
+   "length_mm": 17.41,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 5.6,
+   "at": [
+    110,
+    172.81
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.6,
+   "line": 45664,
+   "length_mm": 17.41,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 5.6,
+   "at": [
+    110,
+    155.84
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.6,
+   "line": 45664,
+   "length_mm": 17.86,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 7.25,
+   "at": [
+    65.59,
+    154.41
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.6,
+   "line": 45874,
+   "length_mm": 17.86,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 7.25,
+   "at": [
+    77.9,
+    142.1
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.6,
+   "line": 45874,
+   "length_mm": 22.12,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.67,
+   "at": [
+    63.36,
+    154.14
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.6,
+   "line": 45874,
+   "length_mm": 21.68,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.49,
+   "at": [
+    49.83,
+    132.53
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.6,
+   "line": 45874,
+   "length_mm": 17.41,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 9.2,
+   "at": [
+    47.19,
+    110
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.6,
+   "line": 46080,
+   "length_mm": 17.41,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 9.2,
+   "at": [
+    64.16,
+    110
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.6,
+   "line": 46080,
+   "length_mm": 21.68,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.49,
+   "at": [
+    45.79,
+    107.79
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.6,
+   "line": 46080,
+   "length_mm": 21.68,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.5,
+   "at": [
+    51.53,
+    83.38
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.6,
+   "line": 46080,
+   "length_mm": 17.86,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 9.1,
+   "at": [
+    65.59,
+    65.59
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.6,
+   "line": 46286,
+   "length_mm": 17.86,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 9.1,
+   "at": [
+    77.9,
+    77.9
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.6,
+   "line": 46286,
+   "length_mm": 21.68,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.5,
+   "at": [
+    66.16,
+    63.03
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.6,
+   "line": 46286,
+   "length_mm": 21.68,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.49,
+   "at": [
+    87.47,
+    49.83
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.6,
+   "line": 46286,
+   "length_mm": 17.41,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 9.2,
+   "at": [
+    110,
+    47.19
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.6,
+   "line": 46492,
+   "length_mm": 17.41,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 9.2,
+   "at": [
+    110,
+    64.16
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.6,
+   "line": 46492,
+   "length_mm": 21.68,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.49,
+   "at": [
+    112.21,
+    45.79
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.6,
+   "line": 46492,
+   "length_mm": 21.68,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.5,
+   "at": [
+    136.62,
+    51.53
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.6,
+   "line": 46492,
+   "length_mm": 17.86,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 9.19,
+   "at": [
+    154.41,
+    65.59
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.6,
+   "line": 46698,
+   "length_mm": 17.86,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 9.19,
+   "at": [
+    142.1,
+    77.9
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.6,
+   "line": 46698,
+   "length_mm": 21.68,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.5,
+   "at": [
+    156.97,
+    66.16
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.6,
+   "line": 46698,
+   "length_mm": 21.68,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.49,
+   "at": [
+    170.17,
+    87.47
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.6,
+   "line": 46698,
+   "length_mm": 17.41,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.81,
+   "at": [
+    172.81,
+    110
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.8,
+   "line": 47802,
+   "length_mm": 19.03,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 4,
+   "at": [
+    155.74,
+    113
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.8,
+   "line": 47802,
+   "length_mm": 18.15,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.96,
+   "at": [
+    152.18,
+    158.1
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.8,
+   "line": 48033,
+   "length_mm": 18.59,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 5.8,
+   "at": [
+    139.36,
+    145.77
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.8,
+   "line": 48033,
+   "length_mm": 18.15,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 5.8,
+   "at": [
+    103.73,
+    173.67
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.8,
+   "line": 48252,
+   "length_mm": 18.59,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 7.6,
+   "at": [
+    103.96,
+    155.88
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.8,
+   "line": 48252,
+   "length_mm": 18.59,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 7.5,
+   "at": [
+    59.24,
+    148.95
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.8,
+   "line": 48471,
+   "length_mm": 19.03,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 10.04,
+   "at": [
+    71.89,
+    135.46
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.8,
+   "line": 48471,
+   "length_mm": 18.84,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.1,
+   "at": [
+    53.06,
+    143.3
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.8,
+   "line": 48471,
+   "length_mm": 18.84,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.2,
+   "at": [
+    44.65,
+    118.98
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.8,
+   "line": 48471,
+   "length_mm": 19.03,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 10.04,
+   "at": [
+    46.82,
+    97.43
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.8,
+   "line": 48689,
+   "length_mm": 19.03,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 10.04,
+   "at": [
+    65.05,
+    101.06
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.8,
+   "line": 48689,
+   "length_mm": 18.84,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.1,
+   "at": [
+    46.19,
+    93.29
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.8,
+   "line": 48689,
+   "length_mm": 18.84,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.11,
+   "at": [
+    57.44,
+    70.14
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.8,
+   "line": 48689,
+   "length_mm": 19.03,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 10.04,
+   "at": [
+    74.21,
+    56.44
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.8,
+   "line": 48907,
+   "length_mm": 19.03,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 10.04,
+   "at": [
+    84.54,
+    71.89
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.8,
+   "line": 48907,
+   "length_mm": 18.84,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.1,
+   "at": [
+    76.7,
+    53.06
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.8,
+   "line": 48907,
+   "length_mm": 18.84,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.2,
+   "at": [
+    101.02,
+    44.65
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.8,
+   "line": 48907,
+   "length_mm": 19.03,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 10.04,
+   "at": [
+    122.57,
+    46.82
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.8,
+   "line": 49125,
+   "length_mm": 19.03,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 10.04,
+   "at": [
+    118.94,
+    65.05
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.8,
+   "line": 49125,
+   "length_mm": 18.84,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.1,
+   "at": [
+    126.71,
+    46.19
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.8,
+   "line": 49125,
+   "length_mm": 18.84,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.11,
+   "at": [
+    149.86,
+    57.44
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.8,
+   "line": 49125,
+   "length_mm": 19.03,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 10.04,
+   "at": [
+    163.56,
+    74.21
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.8,
+   "line": 49343,
+   "length_mm": 19.03,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 10.04,
+   "at": [
+    148.11,
+    84.54
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.8,
+   "line": 49343,
+   "length_mm": 18.84,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 3.1,
+   "at": [
+    166.94,
+    76.7
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 7.8,
+   "line": 49343,
+   "length_mm": 19.03,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 9.77,
+   "at": [
+    173.18,
+    122.57
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 59381,
+   "length_mm": 40.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.6,
+   "at": [
+    155.19,
+    110.05
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 59381,
+   "length_mm": 40.93,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.54,
+   "at": [
+    155.02,
+    113.99
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 59381,
+   "length_mm": 40.48,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.52,
+   "at": [
+    154.93,
+    118.02
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 59381,
+   "length_mm": 40.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.5,
+   "at": [
+    153.64,
+    121.74
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 59381,
+   "length_mm": 40.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.54,
+   "at": [
+    152.45,
+    125.5
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 59381,
+   "length_mm": 40.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.57,
+   "at": [
+    150.94,
+    129.14
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 59381,
+   "length_mm": 40.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.58,
+   "at": [
+    149.11,
+    132.64
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 59381,
+   "length_mm": 40.93,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.52,
+   "at": [
+    146.99,
+    135.96
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 59381,
+   "length_mm": 40.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.55,
+   "at": [
+    144.59,
+    139.09
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 60222,
+   "length_mm": 40.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.55,
+   "at": [
+    141.92,
+    141.99
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 60222,
+   "length_mm": 40.93,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.52,
+   "at": [
+    139.01,
+    144.65
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 60222,
+   "length_mm": 40.93,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.58,
+   "at": [
+    135.88,
+    147.05
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 60222,
+   "length_mm": 40.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.57,
+   "at": [
+    132.55,
+    149.16
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 60222,
+   "length_mm": 40.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.54,
+   "at": [
+    129.06,
+    150.98
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 60222,
+   "length_mm": 40.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.5,
+   "at": [
+    125.41,
+    152.49
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 60222,
+   "length_mm": 40.48,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.52,
+   "at": [
+    121.65,
+    153.67
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 60222,
+   "length_mm": 40.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.54,
+   "at": [
+    117.8,
+    154.52
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 60222,
+   "length_mm": 40.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.6,
+   "at": [
+    113.89,
+    155.03
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 61063,
+   "length_mm": 40.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.6,
+   "at": [
+    109.95,
+    155.19
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 61063,
+   "length_mm": 40.93,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.54,
+   "at": [
+    106.01,
+    155.02
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 61063,
+   "length_mm": 40.48,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.52,
+   "at": [
+    101.98,
+    154.93
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 61063,
+   "length_mm": 40.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.5,
+   "at": [
+    98.26,
+    153.64
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 61063,
+   "length_mm": 40.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.54,
+   "at": [
+    94.5,
+    152.45
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 61063,
+   "length_mm": 40.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.57,
+   "at": [
+    90.86,
+    150.94
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 61063,
+   "length_mm": 40.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.58,
+   "at": [
+    87.36,
+    149.11
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 61063,
+   "length_mm": 40.93,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.52,
+   "at": [
+    84.04,
+    146.99
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 61063,
+   "length_mm": 40.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.55,
+   "at": [
+    80.91,
+    144.59
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 61904,
+   "length_mm": 40.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.55,
+   "at": [
+    78.01,
+    141.92
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 61904,
+   "length_mm": 40.93,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.52,
+   "at": [
+    75.35,
+    139.01
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 61904,
+   "length_mm": 40.93,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.58,
+   "at": [
+    72.95,
+    135.88
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 61904,
+   "length_mm": 40.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.57,
+   "at": [
+    70.84,
+    132.55
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 61904,
+   "length_mm": 40.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.54,
+   "at": [
+    69.02,
+    129.06
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 61904,
+   "length_mm": 40.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.5,
+   "at": [
+    67.52,
+    125.41
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 61904,
+   "length_mm": 40.48,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.52,
+   "at": [
+    66.33,
+    121.65
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 61904,
+   "length_mm": 40.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.54,
+   "at": [
+    65.48,
+    117.8
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 61904,
+   "length_mm": 40.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.6,
+   "at": [
+    64.97,
+    113.89
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 62745,
+   "length_mm": 40.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.6,
+   "at": [
+    64.81,
+    109.95
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 62745,
+   "length_mm": 40.93,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.54,
+   "at": [
+    64.98,
+    106.01
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 62745,
+   "length_mm": 40.48,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.52,
+   "at": [
+    65.07,
+    101.98
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 62745,
+   "length_mm": 40.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.5,
+   "at": [
+    66.36,
+    98.26
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 62745,
+   "length_mm": 40.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.54,
+   "at": [
+    67.55,
+    94.5
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 62745,
+   "length_mm": 40.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.57,
+   "at": [
+    69.06,
+    90.86
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 62745,
+   "length_mm": 40.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.58,
+   "at": [
+    70.89,
+    87.36
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 62745,
+   "length_mm": 40.93,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.52,
+   "at": [
+    73.01,
+    84.04
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 62745,
+   "length_mm": 40.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.55,
+   "at": [
+    75.41,
+    80.91
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 63586,
+   "length_mm": 40.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.55,
+   "at": [
+    78.08,
+    78.01
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 63586,
+   "length_mm": 40.93,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.52,
+   "at": [
+    80.99,
+    75.35
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 63586,
+   "length_mm": 40.93,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.58,
+   "at": [
+    84.12,
+    72.95
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 63586,
+   "length_mm": 40.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.57,
+   "at": [
+    87.45,
+    70.84
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 63586,
+   "length_mm": 40.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.54,
+   "at": [
+    90.94,
+    69.02
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 63586,
+   "length_mm": 40.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.5,
+   "at": [
+    94.59,
+    67.52
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 63586,
+   "length_mm": 40.48,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.52,
+   "at": [
+    98.35,
+    66.33
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 63586,
+   "length_mm": 40.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.54,
+   "at": [
+    102.2,
+    65.48
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 63586,
+   "length_mm": 40.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.6,
+   "at": [
+    106.11,
+    64.97
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 64427,
+   "length_mm": 40.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.6,
+   "at": [
+    110.05,
+    64.81
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 64427,
+   "length_mm": 40.93,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.54,
+   "at": [
+    113.99,
+    64.98
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 64427,
+   "length_mm": 40.48,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.52,
+   "at": [
+    118.02,
+    65.07
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 64427,
+   "length_mm": 40.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.5,
+   "at": [
+    121.74,
+    66.36
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 64427,
+   "length_mm": 40.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.54,
+   "at": [
+    125.5,
+    67.55
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 64427,
+   "length_mm": 40.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.57,
+   "at": [
+    129.14,
+    69.06
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 64427,
+   "length_mm": 40.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.58,
+   "at": [
+    132.64,
+    70.89
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 64427,
+   "length_mm": 40.93,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.52,
+   "at": [
+    135.96,
+    73.01
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 64427,
+   "length_mm": 40.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.55,
+   "at": [
+    139.09,
+    75.41
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 65268,
+   "length_mm": 40.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.55,
+   "at": [
+    141.99,
+    78.08
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 65268,
+   "length_mm": 40.93,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.52,
+   "at": [
+    144.65,
+    80.99
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 65268,
+   "length_mm": 40.93,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.58,
+   "at": [
+    147.05,
+    84.12
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 65268,
+   "length_mm": 40.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.57,
+   "at": [
+    149.16,
+    87.45
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 65268,
+   "length_mm": 40.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.54,
+   "at": [
+    150.98,
+    90.94
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 65268,
+   "length_mm": 40.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.5,
+   "at": [
+    152.49,
+    94.59
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 65268,
+   "length_mm": 40.48,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.52,
+   "at": [
+    153.67,
+    98.35
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 65268,
+   "length_mm": 40.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.54,
+   "at": [
+    154.52,
+    102.2
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 13,
+   "line": 65268,
+   "length_mm": 40.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.6,
+   "at": [
+    155.03,
+    106.11
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 147440,
+   "length_mm": 40.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.6,
+   "at": [
+    155.19,
+    110.05
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 147440,
+   "length_mm": 40.93,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.54,
+   "at": [
+    155.02,
+    113.99
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 147440,
+   "length_mm": 40.48,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.52,
+   "at": [
+    154.93,
+    118.02
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 147440,
+   "length_mm": 40.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.5,
+   "at": [
+    153.64,
+    121.74
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 147440,
+   "length_mm": 40.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.54,
+   "at": [
+    152.45,
+    125.5
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 147440,
+   "length_mm": 40.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.57,
+   "at": [
+    150.94,
+    129.14
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 147440,
+   "length_mm": 40.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.58,
+   "at": [
+    149.11,
+    132.64
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 147440,
+   "length_mm": 40.93,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.52,
+   "at": [
+    146.99,
+    135.96
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 147440,
+   "length_mm": 40.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.55,
+   "at": [
+    144.59,
+    139.09
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 148281,
+   "length_mm": 40.93,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.52,
+   "at": [
+    141.92,
+    141.99
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 148281,
+   "length_mm": 40.93,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.49,
+   "at": [
+    139.01,
+    144.65
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 148281,
+   "length_mm": 40.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.53,
+   "at": [
+    135.88,
+    147.05
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 148281,
+   "length_mm": 40.93,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.48,
+   "at": [
+    132.55,
+    149.16
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 148281,
+   "length_mm": 40.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.51,
+   "at": [
+    129.05,
+    150.98
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 148281,
+   "length_mm": 40.93,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.56,
+   "at": [
+    125.41,
+    152.49
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 148281,
+   "length_mm": 40.48,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.55,
+   "at": [
+    121.65,
+    153.67
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 148281,
+   "length_mm": 40.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.52,
+   "at": [
+    117.8,
+    154.52
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 148281,
+   "length_mm": 40.93,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.6,
+   "at": [
+    113.89,
+    155.03
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 149122,
+   "length_mm": 40.93,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.42,
+   "at": [
+    109.94,
+    155.19
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 149122,
+   "length_mm": 40.93,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.54,
+   "at": [
+    106,
+    155.02
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 149122,
+   "length_mm": 40.93,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.52,
+   "at": [
+    102.1,
+    154.5
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 149122,
+   "length_mm": 40.93,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.56,
+   "at": [
+    98.25,
+    153.64
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 149122,
+   "length_mm": 40.93,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.58,
+   "at": [
+    94.49,
+    152.45
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 149122,
+   "length_mm": 40.93,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.48,
+   "at": [
+    90.85,
+    150.94
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 149122,
+   "length_mm": 40.93,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.58,
+   "at": [
+    87.35,
+    149.11
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 149122,
+   "length_mm": 40.93,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.49,
+   "at": [
+    84.03,
+    146.99
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 149122,
+   "length_mm": 40.93,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.53,
+   "at": [
+    80.91,
+    144.58
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 149963,
+   "length_mm": 40.93,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.53,
+   "at": [
+    78,
+    141.91
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 149963,
+   "length_mm": 40.93,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.49,
+   "at": [
+    75.34,
+    139
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 149963,
+   "length_mm": 40.93,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.53,
+   "at": [
+    72.95,
+    135.87
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 149963,
+   "length_mm": 40.93,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.57,
+   "at": [
+    70.83,
+    132.54
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 149963,
+   "length_mm": 40.93,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.58,
+   "at": [
+    69.02,
+    129.04
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 149963,
+   "length_mm": 40.93,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.56,
+   "at": [
+    67.51,
+    125.4
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 149963,
+   "length_mm": 40.93,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.52,
+   "at": [
+    66.33,
+    121.64
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 149963,
+   "length_mm": 40.93,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.54,
+   "at": [
+    65.48,
+    117.79
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 149963,
+   "length_mm": 40.93,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.6,
+   "at": [
+    64.97,
+    113.88
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 150804,
+   "length_mm": 40.94,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.44,
+   "at": [
+    64.81,
+    109.94
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 150804,
+   "length_mm": 40.94,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.54,
+   "at": [
+    64.98,
+    106
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 150804,
+   "length_mm": 40.94,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.59,
+   "at": [
+    65.5,
+    102.09
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 150804,
+   "length_mm": 40.94,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.56,
+   "at": [
+    66.36,
+    98.24
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 150804,
+   "length_mm": 40.94,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.54,
+   "at": [
+    67.56,
+    94.48
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 150804,
+   "length_mm": 40.94,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.48,
+   "at": [
+    69.07,
+    90.84
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 150804,
+   "length_mm": 40.94,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.58,
+   "at": [
+    70.89,
+    87.35
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 150804,
+   "length_mm": 40.94,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.59,
+   "at": [
+    73.02,
+    84.02
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 150804,
+   "length_mm": 40.94,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.51,
+   "at": [
+    75.42,
+    80.9
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 151645,
+   "length_mm": 40.95,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.49,
+   "at": [
+    78.09,
+    77.99
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 151645,
+   "length_mm": 40.95,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.49,
+   "at": [
+    81,
+    75.33
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 151645,
+   "length_mm": 40.95,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.53,
+   "at": [
+    84.14,
+    72.94
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 151645,
+   "length_mm": 40.95,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.57,
+   "at": [
+    87.46,
+    70.83
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 151645,
+   "length_mm": 40.95,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.49,
+   "at": [
+    90.96,
+    69.01
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 151645,
+   "length_mm": 40.95,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.5,
+   "at": [
+    94.61,
+    67.51
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 151645,
+   "length_mm": 40.95,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.55,
+   "at": [
+    98.37,
+    66.33
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 151645,
+   "length_mm": 40.95,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.54,
+   "at": [
+    102.22,
+    65.48
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 151645,
+   "length_mm": 40.95,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.6,
+   "at": [
+    106.13,
+    64.97
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 152486,
+   "length_mm": 40.97,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.46,
+   "at": [
+    110.08,
+    64.81
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 152486,
+   "length_mm": 40.97,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.54,
+   "at": [
+    114.01,
+    64.99
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 152486,
+   "length_mm": 40.97,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.57,
+   "at": [
+    117.92,
+    65.51
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 152486,
+   "length_mm": 40.97,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.56,
+   "at": [
+    121.77,
+    66.37
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 152486,
+   "length_mm": 40.97,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.51,
+   "at": [
+    125.53,
+    67.56
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 152486,
+   "length_mm": 40.97,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.48,
+   "at": [
+    129.17,
+    69.07
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 152486,
+   "length_mm": 40.97,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.47,
+   "at": [
+    132.66,
+    70.9
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 152486,
+   "length_mm": 40.97,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.49,
+   "at": [
+    135.98,
+    73.02
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 152486,
+   "length_mm": 40.97,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.51,
+   "at": [
+    139.11,
+    75.43
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 153327,
+   "length_mm": 40.99,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.49,
+   "at": [
+    142.01,
+    78.1
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 153327,
+   "length_mm": 40.99,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.53,
+   "at": [
+    144.67,
+    81.01
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 153327,
+   "length_mm": 40.99,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.48,
+   "at": [
+    147.07,
+    84.14
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 153327,
+   "length_mm": 40.99,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.48,
+   "at": [
+    149.18,
+    87.47
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 153327,
+   "length_mm": 40.99,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.51,
+   "at": [
+    150.99,
+    90.97
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 153327,
+   "length_mm": 40.99,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.58,
+   "at": [
+    152.49,
+    94.62
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 153327,
+   "length_mm": 40.99,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.52,
+   "at": [
+    153.67,
+    98.38
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 153327,
+   "length_mm": 40.99,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.52,
+   "at": [
+    154.52,
+    102.23
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 20.4,
+   "line": 153327,
+   "length_mm": 40.99,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.6,
+   "at": [
+    155.03,
+    106.14
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 241276,
+   "length_mm": 28.77,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 12.03,
+   "at": [
+    152.44,
+    112.78
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 241276,
+   "length_mm": 26.55,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 12,
+   "at": [
+    149.4,
+    116.07
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 241276,
+   "length_mm": 23.43,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.85,
+   "at": [
+    148.72,
+    119.48
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 241276,
+   "length_mm": 28.77,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.94,
+   "at": [
+    150.27,
+    123.67
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 241276,
+   "length_mm": 26.1,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.93,
+   "at": [
+    146.48,
+    126.06
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 241276,
+   "length_mm": 23.43,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.72,
+   "at": [
+    144.94,
+    129.18
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 241276,
+   "length_mm": 29.22,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.96,
+   "at": [
+    145.36,
+    133.63
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 241276,
+   "length_mm": 26.1,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.94,
+   "at": [
+    141.08,
+    134.96
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 241276,
+   "length_mm": 23.43,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.74,
+   "at": [
+    138.79,
+    137.57
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 242027,
+   "length_mm": 28.77,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.94,
+   "at": [
+    138.04,
+    141.98
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 242027,
+   "length_mm": 26.55,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.96,
+   "at": [
+    133.56,
+    142.15
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 242027,
+   "length_mm": 23.43,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.72,
+   "at": [
+    130.67,
+    144.08
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 242027,
+   "length_mm": 28.77,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.93,
+   "at": [
+    128.81,
+    148.14
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 242027,
+   "length_mm": 26.55,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.94,
+   "at": [
+    124.44,
+    147.15
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 242027,
+   "length_mm": 23.43,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.85,
+   "at": [
+    121.15,
+    148.27
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 242027,
+   "length_mm": 28.77,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 12,
+   "at": [
+    118.21,
+    151.28
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 242027,
+   "length_mm": 26.1,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 12.03,
+   "at": [
+    114.33,
+    149.62
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 242027,
+   "length_mm": 23.43,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.81,
+   "at": [
+    110.86,
+    149.85
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 242868,
+   "length_mm": 28.77,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 12.03,
+   "at": [
+    107.22,
+    152.44
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 242868,
+   "length_mm": 26.55,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 12,
+   "at": [
+    103.93,
+    149.4
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 242868,
+   "length_mm": 23.43,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.85,
+   "at": [
+    100.52,
+    148.72
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 242868,
+   "length_mm": 28.77,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.94,
+   "at": [
+    96.33,
+    150.27
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 242868,
+   "length_mm": 26.1,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.93,
+   "at": [
+    93.94,
+    146.48
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 242868,
+   "length_mm": 23.43,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.72,
+   "at": [
+    90.82,
+    144.94
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 242868,
+   "length_mm": 29.22,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.96,
+   "at": [
+    86.37,
+    145.36
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 242868,
+   "length_mm": 26.1,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.94,
+   "at": [
+    85.04,
+    141.08
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 242868,
+   "length_mm": 23.43,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.74,
+   "at": [
+    82.43,
+    138.79
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 243826,
+   "length_mm": 18.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 9.48,
+   "at": [
+    78,
+    141.89
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 243826,
+   "length_mm": 28.77,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.94,
+   "at": [
+    78.02,
+    138.04
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 243826,
+   "length_mm": 18.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 9.5,
+   "at": [
+    75.34,
+    138.98
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 243826,
+   "length_mm": 26.55,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.96,
+   "at": [
+    77.85,
+    133.56
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 243826,
+   "length_mm": 18.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 9.49,
+   "at": [
+    72.94,
+    135.84
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 243826,
+   "length_mm": 23.43,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.72,
+   "at": [
+    75.92,
+    130.67
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 243826,
+   "length_mm": 18.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 9.48,
+   "at": [
+    70.83,
+    132.52
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 243826,
+   "length_mm": 28.77,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.93,
+   "at": [
+    71.86,
+    128.81
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 243826,
+   "length_mm": 18.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 9.55,
+   "at": [
+    69.02,
+    129.02
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 243826,
+   "length_mm": 26.55,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.94,
+   "at": [
+    72.85,
+    124.44
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 243826,
+   "length_mm": 18.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 9.55,
+   "at": [
+    67.52,
+    125.37
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 243826,
+   "length_mm": 23.43,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.81,
+   "at": [
+    71.73,
+    121.15
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 243826,
+   "length_mm": 18.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 9.56,
+   "at": [
+    66.34,
+    121.61
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 243826,
+   "length_mm": 28.77,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 12,
+   "at": [
+    68.72,
+    118.21
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 243826,
+   "length_mm": 18.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 9.57,
+   "at": [
+    65.5,
+    117.76
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 243826,
+   "length_mm": 26.1,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 12.03,
+   "at": [
+    70.38,
+    114.33
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 243826,
+   "length_mm": 18.92,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 9.6,
+   "at": [
+    64.99,
+    113.86
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 243826,
+   "length_mm": 23.43,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.81,
+   "at": [
+    70.15,
+    110.86
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 244910,
+   "length_mm": 24.44,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 12.6,
+   "at": [
+    64.81,
+    109.93
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 244910,
+   "length_mm": 28.77,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 12.03,
+   "at": [
+    67.56,
+    107.22
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 244910,
+   "length_mm": 24.88,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 12.53,
+   "at": [
+    64.98,
+    105.99
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 244910,
+   "length_mm": 26.55,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 12,
+   "at": [
+    70.6,
+    103.93
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 244910,
+   "length_mm": 24.88,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 12.52,
+   "at": [
+    65.5,
+    102.08
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 244910,
+   "length_mm": 23.43,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.85,
+   "at": [
+    71.28,
+    100.52
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 244910,
+   "length_mm": 24.88,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 12.53,
+   "at": [
+    66.36,
+    98.24
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 244910,
+   "length_mm": 28.77,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.94,
+   "at": [
+    69.73,
+    96.33
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 244910,
+   "length_mm": 24.88,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 12.59,
+   "at": [
+    67.56,
+    94.48
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 244910,
+   "length_mm": 26.1,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.93,
+   "at": [
+    73.52,
+    93.94
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 244910,
+   "length_mm": 24.88,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 12.43,
+   "at": [
+    69.07,
+    90.84
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 244910,
+   "length_mm": 23.43,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.72,
+   "at": [
+    75.06,
+    90.82
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 244910,
+   "length_mm": 24.88,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 12.54,
+   "at": [
+    70.9,
+    87.34
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 244910,
+   "length_mm": 29.22,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.96,
+   "at": [
+    74.64,
+    86.37
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 244910,
+   "length_mm": 24.88,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 12.5,
+   "at": [
+    73.02,
+    84.02
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 244910,
+   "length_mm": 26.1,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.94,
+   "at": [
+    78.92,
+    85.04
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 244910,
+   "length_mm": 24.88,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 12.46,
+   "at": [
+    75.42,
+    80.9
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 244910,
+   "length_mm": 23.43,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.74,
+   "at": [
+    81.21,
+    82.43
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 246102,
+   "length_mm": 32.86,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 16.44,
+   "at": [
+    78.08,
+    78
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 246102,
+   "length_mm": 28.77,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.94,
+   "at": [
+    81.96,
+    78.02
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 246102,
+   "length_mm": 32.86,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 16.52,
+   "at": [
+    80.99,
+    75.34
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 246102,
+   "length_mm": 26.55,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.96,
+   "at": [
+    86.44,
+    77.85
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 246102,
+   "length_mm": 32.86,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 16.59,
+   "at": [
+    84.12,
+    72.95
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 246102,
+   "length_mm": 23.43,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.72,
+   "at": [
+    89.33,
+    75.92
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 246102,
+   "length_mm": 32.86,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 16.55,
+   "at": [
+    87.45,
+    70.83
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 246102,
+   "length_mm": 28.77,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.93,
+   "at": [
+    91.19,
+    71.86
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 246102,
+   "length_mm": 32.86,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 16.47,
+   "at": [
+    90.95,
+    69.02
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 246102,
+   "length_mm": 26.55,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.94,
+   "at": [
+    95.56,
+    72.85
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 246102,
+   "length_mm": 32.86,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 16.51,
+   "at": [
+    94.6,
+    67.51
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 246102,
+   "length_mm": 23.43,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.81,
+   "at": [
+    98.85,
+    71.73
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 246102,
+   "length_mm": 32.86,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 16.54,
+   "at": [
+    98.36,
+    66.33
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 246102,
+   "length_mm": 28.77,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 12,
+   "at": [
+    101.79,
+    68.72
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 246102,
+   "length_mm": 32.86,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 16.57,
+   "at": [
+    102.21,
+    65.48
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 246102,
+   "length_mm": 26.1,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 12.03,
+   "at": [
+    105.67,
+    70.38
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 246102,
+   "length_mm": 32.86,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 16.6,
+   "at": [
+    106.12,
+    64.97
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 246102,
+   "length_mm": 23.43,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.81,
+   "at": [
+    109.14,
+    70.15
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 247456,
+   "length_mm": 40.41,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.6,
+   "at": [
+    110.05,
+    64.81
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 247456,
+   "length_mm": 28.77,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 12.03,
+   "at": [
+    112.78,
+    67.56
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 247456,
+   "length_mm": 40.85,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.54,
+   "at": [
+    113.99,
+    64.98
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 247456,
+   "length_mm": 26.55,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 12,
+   "at": [
+    116.07,
+    70.6
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 247456,
+   "length_mm": 40.4,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.52,
+   "at": [
+    118.02,
+    65.07
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 247456,
+   "length_mm": 23.43,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.85,
+   "at": [
+    119.48,
+    71.28
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 247456,
+   "length_mm": 40.85,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.5,
+   "at": [
+    121.74,
+    66.36
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 247456,
+   "length_mm": 28.77,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.94,
+   "at": [
+    123.67,
+    69.73
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 247456,
+   "length_mm": 40.85,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.54,
+   "at": [
+    125.5,
+    67.55
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 247456,
+   "length_mm": 26.1,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.93,
+   "at": [
+    126.06,
+    73.52
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 247456,
+   "length_mm": 40.85,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.57,
+   "at": [
+    129.14,
+    69.06
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 247456,
+   "length_mm": 23.43,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.72,
+   "at": [
+    129.18,
+    75.06
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 247456,
+   "length_mm": 40.85,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.58,
+   "at": [
+    132.64,
+    70.89
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 247456,
+   "length_mm": 29.22,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.96,
+   "at": [
+    133.63,
+    74.64
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 247456,
+   "length_mm": 40.85,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.52,
+   "at": [
+    135.96,
+    73.01
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 247456,
+   "length_mm": 26.1,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.94,
+   "at": [
+    134.96,
+    78.92
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 247456,
+   "length_mm": 40.85,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 20.55,
+   "at": [
+    139.09,
+    75.41
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 247456,
+   "length_mm": 23.43,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.74,
+   "at": [
+    137.57,
+    81.21
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 248972,
+   "length_mm": 52.84,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 26.49,
+   "at": [
+    141.99,
+    78.07
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 248972,
+   "length_mm": 28.77,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.94,
+   "at": [
+    141.98,
+    81.96
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 248972,
+   "length_mm": 52.84,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 26.52,
+   "at": [
+    144.65,
+    80.98
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 248972,
+   "length_mm": 26.55,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.96,
+   "at": [
+    142.15,
+    86.44
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 248972,
+   "length_mm": 52.84,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 26.57,
+   "at": [
+    147.05,
+    84.11
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 248972,
+   "length_mm": 23.43,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.72,
+   "at": [
+    144.08,
+    89.33
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 248972,
+   "length_mm": 52.84,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 26.48,
+   "at": [
+    149.16,
+    87.44
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 248972,
+   "length_mm": 28.77,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.93,
+   "at": [
+    148.14,
+    91.19
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 248972,
+   "length_mm": 52.84,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 26.52,
+   "at": [
+    150.98,
+    90.94
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 248972,
+   "length_mm": 26.55,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.94,
+   "at": [
+    147.15,
+    95.56
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 248972,
+   "length_mm": 52.84,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 26.5,
+   "at": [
+    152.49,
+    94.58
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 248972,
+   "length_mm": 23.43,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.81,
+   "at": [
+    148.27,
+    98.85
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 248972,
+   "length_mm": 52.84,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 26.58,
+   "at": [
+    153.67,
+    98.34
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 248972,
+   "length_mm": 28.77,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 12,
+   "at": [
+    151.28,
+    101.79
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 248972,
+   "length_mm": 52.84,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 26.55,
+   "at": [
+    154.52,
+    102.19
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 248972,
+   "length_mm": 26.1,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 12.03,
+   "at": [
+    149.62,
+    105.67
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 248972,
+   "length_mm": 52.84,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 26.6,
+   "at": [
+    155.03,
+    106.1
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 27.8,
+   "line": 248972,
+   "length_mm": 24.32,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.82,
+   "at": [
+    150.3,
+    109.13
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 28,
+   "line": 253541,
+   "length_mm": 22.95,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 2.2,
+   "at": [
+    177.44,
+    109.1
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 28.2,
+   "line": 255075,
+   "length_mm": 22.99,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.4,
+   "at": [
+    149.09,
+    113.14
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 28.2,
+   "line": 255075,
+   "length_mm": 29.22,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.4,
+   "at": [
+    151.74,
+    117.05
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 28.2,
+   "line": 255075,
+   "length_mm": 22.54,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.26,
+   "at": [
+    147.95,
+    119.88
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 28.2,
+   "line": 255075,
+   "length_mm": 23.44,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.39,
+   "at": [
+    146.95,
+    123.15
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 28.2,
+   "line": 255075,
+   "length_mm": 29.66,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.45,
+   "at": [
+    148.49,
+    127.61
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 28.2,
+   "line": 255075,
+   "length_mm": 22.54,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.26,
+   "at": [
+    144.1,
+    129.37
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 28.2,
+   "line": 255075,
+   "length_mm": 22.99,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.46,
+   "at": [
+    142.28,
+    132.27
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 28.2,
+   "line": 255075,
+   "length_mm": 29.22,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.46,
+   "at": [
+    142.62,
+    136.97
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 28.2,
+   "line": 255075,
+   "length_mm": 22.99,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.32,
+   "at": [
+    138.24,
+    137.84
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 28.2,
+   "line": 255820,
+   "length_mm": 23.44,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.39,
+   "at": [
+    135.42,
+    139.86
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 28.2,
+   "line": 255820,
+   "length_mm": 29.22,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.46,
+   "at": [
+    134.53,
+    144.5
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 28.2,
+   "line": 255820,
+   "length_mm": 22.55,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.27,
+   "at": [
+    129.85,
+    143.82
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 28.2,
+   "line": 255820,
+   "length_mm": 23.88,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.35,
+   "at": [
+    127.02,
+    145.82
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 28.2,
+   "line": 255820,
+   "length_mm": 29.22,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.42,
+   "at": [
+    124.76,
+    149.67
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 28.2,
+   "line": 255820,
+   "length_mm": 22.99,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.22,
+   "at": [
+    120.54,
+    148.24
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 28.2,
+   "line": 255820,
+   "length_mm": 22.99,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.4,
+   "at": [
+    117.08,
+    148.57
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 28.2,
+   "line": 255820,
+   "length_mm": 29.21,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.46,
+   "at": [
+    113.99,
+    152.14
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 28.2,
+   "line": 255820,
+   "length_mm": 22.55,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.23,
+   "at": [
+    110.28,
+    149.22
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 28.2,
+   "line": 256663,
+   "length_mm": 22.99,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.4,
+   "at": [
+    106.86,
+    149.09
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 28.2,
+   "line": 256663,
+   "length_mm": 29.22,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.4,
+   "at": [
+    102.95,
+    151.74
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 28.2,
+   "line": 256663,
+   "length_mm": 22.54,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.26,
+   "at": [
+    100.12,
+    147.95
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 28.2,
+   "line": 256663,
+   "length_mm": 23.44,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.39,
+   "at": [
+    96.85,
+    146.95
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 28.2,
+   "line": 256663,
+   "length_mm": 29.66,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.45,
+   "at": [
+    92.39,
+    148.49
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 28.2,
+   "line": 256663,
+   "length_mm": 22.54,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.26,
+   "at": [
+    90.63,
+    144.1
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 28.2,
+   "line": 256663,
+   "length_mm": 22.99,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.46,
+   "at": [
+    87.73,
+    142.28
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 28.2,
+   "line": 256663,
+   "length_mm": 29.22,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.46,
+   "at": [
+    83.03,
+    142.62
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 28.2,
+   "line": 256663,
+   "length_mm": 22.99,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.32,
+   "at": [
+    82.16,
+    138.24
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 28.2,
+   "line": 257623,
+   "length_mm": 22.99,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.39,
+   "at": [
+    80.14,
+    135.42
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 28.2,
+   "line": 257623,
+   "length_mm": 29.22,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.46,
+   "at": [
+    75.5,
+    134.53
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 28.2,
+   "line": 257623,
+   "length_mm": 22.55,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.27,
+   "at": [
+    76.18,
+    129.85
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 28.2,
+   "line": 257623,
+   "length_mm": 23.88,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.35,
+   "at": [
+    74.18,
+    127.02
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 28.2,
+   "line": 257623,
+   "length_mm": 29.22,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.42,
+   "at": [
+    70.33,
+    124.76
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 28.2,
+   "line": 257623,
+   "length_mm": 22.99,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.22,
+   "at": [
+    71.76,
+    120.54
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 28.2,
+   "line": 257623,
+   "length_mm": 22.99,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.4,
+   "at": [
+    71.43,
+    117.08
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 28.2,
+   "line": 257623,
+   "length_mm": 29.21,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.46,
+   "at": [
+    67.86,
+    113.99
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 28.2,
+   "line": 257623,
+   "length_mm": 22.55,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.23,
+   "at": [
+    70.78,
+    110.28
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 28.2,
+   "line": 258708,
+   "length_mm": 22.99,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.4,
+   "at": [
+    70.91,
+    106.86
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 28.2,
+   "line": 258708,
+   "length_mm": 29.22,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.4,
+   "at": [
+    68.26,
+    102.95
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 28.2,
+   "line": 258708,
+   "length_mm": 22.54,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.26,
+   "at": [
+    72.05,
+    100.12
+   ]
+  },
+  {
+   "kind": "LONG_BRIDGE",
+   "role": "bridge",
+   "z": 28.2,
+   "line": 258708,
+   "length_mm": 22.99,
+   "limit_mm": 16.2,
+   "worst_gap_mm": 11.39,
+   "at": [
+    73.05,
+    96.85
+   ]
+  }
+ ],
+ "problem_count": 953,
+ "PASS": false,
+ "problemsTruncated": true
+}

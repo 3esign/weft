@@ -1,0 +1,1199 @@
+{
+ "version": "gate-layers-2026-09-25-krak",
+ "file": "KUKA_A2L_X1.gcode",
+ "params": {
+  "bead": 0.45,
+  "allow": 0.6,
+  "res": 0.2,
+  "step": 0.5,
+  "zones": [
+   {
+    "name": "terrace",
+    "z0": 17.98,
+    "z1": 20.66,
+    "declares": [
+     "S2",
+     "S3",
+     "S4",
+     "S7"
+    ]
+   }
+  ]
+ },
+ "layersChecked": 86,
+ "exempt": 3,
+ "thread_m": 122.18,
+ "maxZ": 21.12,
+ "ms": 12185,
+ "vector": "S2 INFO \u00b7 S3 DECLARED \u00b7 S4 DECLARED \u00b7 S5 INFO \u00b7 S7 INFO \u00b7 S8 WARN \u00b7 ORDER PASS",
+ "refuse": false,
+ "refusedBy": [],
+ "layers": {
+  "S2": {
+   "question": "how much thread hangs",
+   "verdict": "INFO",
+   "refusing": 0,
+   "declared": 0,
+   "overHold": 0,
+   "worst": {
+    "k": 77,
+    "z": 18.48,
+    "runs10": 60,
+    "free_mm": 885,
+    "longest_mm": 20
+   },
+   "free_m": 19.76,
+   "thread_m": 122.18,
+   "free_pct": 16.2,
+   "limit": {
+    "hold": 203,
+    "fail": 33,
+    "unit": "free runs > 10 mm in one layer",
+    "evidence": "OBRTAJ terrace-1 layer 0: 203 runs, 6.9 m free thread in ONE layer, 36 % of the whole object free \u2014 held flat. KRAK K1 layer 0: 33 runs, 1.25 m \u2014 destroyed. The quantity of hanging thread does NOT decide; S2 reports, S3 refuses"
+   }
+  },
+  "S3": {
+   "question": "how far a free tip reaches, and whether it is ever tied",
+   "verdict": "DECLARED",
+   "neverTiedNote": "245 tips are never tied by anything laid later (OBRTAJ: 0; KRAK: 279)",
+   "refusing": 0,
+   "declared": 4,
+   "layersWithLongTips": 10,
+   "tips": 643,
+   "neverTied": 245,
+   "worst": {
+    "k": 84,
+    "z": 20.16,
+    "tips": 60,
+    "min": 4.5,
+    "median": 20.6,
+    "p90": 23.8,
+    "max": 24.3,
+    "notes": [
+     "min 4.5 > 3.4 held: no short tip among the long ones (reported)"
+    ],
+    "color": "UNKNOWN"
+   },
+   "limits": {
+    "median": {
+     "hold": 17.6,
+     "fail": 22.6,
+     "unit": "mm, median free reach (to solid material) of the loose tips of one layer",
+     "evidence": "OBRTAJ: 66 terrace layers, medians 6\u201317.6, held flat; KRAK K1: twelve layers at 22.6\u201324.5, destroyed on both machines; RAZMAK terrace-1: 30.7, nested and stopped. One statistic separates the printed record"
+    },
+    "max": {
+     "hold": 37.6,
+     "fail": 73.8,
+     "unit": "mm, longest free reach in one layer (reported, not refused: KRAK failed at 24.6, far below the OBRTAJ maximum \u2014 the longest tip alone does not decide)",
+     "evidence": "OBRTAJ terrace-1 max 37.6 held; RAZMAK terrace-1 max 73.8 nested"
+    },
+    "min": {
+     "hold": 3.4,
+     "fail": 12.4,
+     "unit": "mm, shortest tip of a layer that has long tips (reported, not refused: the median alone separates the printed record, and a bracket built on one comparison must not refuse)",
+     "evidence": "OBRTAJ every terrace min 2.0\u20133.4 held (short tips among long ones); RAZMAK terrace-1 min 12.4 nested; KRAK K1 min 21.7 destroyed"
+    },
+    "longTip_mm": 8
+   }
+  },
+  "S4": {
+   "question": "does extrusion pass over a tip that is still loose",
+   "verdict": "DECLARED",
+   "refusing": 0,
+   "declared": 56,
+   "overflights": 56,
+   "closest": {
+    "tipZ": 18.48,
+    "overZ": 20.16,
+    "clearance": 1.68,
+    "r": 1.71
+   },
+   "head": {
+    "tipRadius": 0.6,
+    "coneSlope": 0.7,
+    "coneHeight": 2
+   },
+   "limit": {
+    "hold": null,
+    "fail": 5.28,
+    "unit": "mm of Z between a still-loose tip and extrusion passing over it",
+    "evidence": "KRAK: K2 castle legs pass 5.3\u20138.6 mm above K1 tips that nothing ever tied, K3 over K2 likewise \u2014 destroyed. OBRTAJ: zero such passes (its steps go inward, nothing flies over a fringe) \u2014 held. Refused at any clearance \u2264 12 mm: the margin above the evidenced failure is ASSUMED"
+   },
+   "refuseBelow_mm": 12
+  },
+  "S5": {
+   "question": "what holds the object against what is built above it",
+   "verdict": "INFO",
+   "contact_mm2": 2184.6,
+   "firstLayer_mm": 4221.4,
+   "height_mm": 21.1,
+   "footprintRadius_mm": 63.9,
+   "outreach_mm": 161.5,
+   "lever_mm": 97.6,
+   "ratio": 1.072,
+   "failAtOrBelow": null,
+   "limit": {
+    "hold": 0.343,
+    "fail": null,
+    "unit": "mm\u00b2 of first-layer contact per (mm height \u00d7 mm lever)",
+    "evidence": "OBRTAJ 0.343 held on the Ender plate; KRAK A2L 0.352 held on the A2L plate while the object broke above it; KRAK Ender left the plate at its value \u2014 a plate number is per machine and per plate state; reported, refused only when given --s5fail"
+   }
+  },
+  "S7": {
+   "question": "is a layer that carries the object laid on points",
+   "verdict": "INFO",
+   "refusing": 0,
+   "declared": 0,
+   "weakest": [
+    {
+     "k": 43,
+     "z": 10.32,
+     "carried": 0.441,
+     "onSolid": 1,
+     "pileMax": 0,
+     "solidComponents": 1,
+     "largestSolidExtent_mm": 159.7,
+     "above": 45
+    },
+    {
+     "k": 45,
+     "z": 10.8,
+     "carried": 0.441,
+     "onSolid": 1,
+     "pileMax": 0,
+     "solidComponents": 1,
+     "largestSolidExtent_mm": 159.7,
+     "above": 43
+    },
+    {
+     "k": 47,
+     "z": 11.28,
+     "carried": 0.441,
+     "onSolid": 1,
+     "pileMax": 0,
+     "solidComponents": 1,
+     "largestSolidExtent_mm": 159.7,
+     "above": 41
+    },
+    {
+     "k": 49,
+     "z": 11.76,
+     "carried": 0.441,
+     "onSolid": 1,
+     "pileMax": 0,
+     "solidComponents": 1,
+     "largestSolidExtent_mm": 159.7,
+     "above": 39
+    },
+    {
+     "k": 51,
+     "z": 12.24,
+     "carried": 0.441,
+     "onSolid": 1,
+     "pileMax": 0,
+     "solidComponents": 1,
+     "largestSolidExtent_mm": 159.7,
+     "above": 37
+    }
+   ],
+   "failAtOrBelow": null,
+   "limit": {
+    "hold": 0.118,
+    "fail": null,
+    "unit": "fraction of a layer laid on material, layers with \u2265 20 layers above",
+    "evidence": "OBRTAJ terrace-1 layer 0: 11.8 % carried with 939 layers above \u2014 held. The fraction alone cannot refuse; reported so the joint the drag will find is known"
+   }
+  },
+  "S8": {
+   "question": "does every layer cross the one below",
+   "verdict": "WARN",
+   "refusing": 0,
+   "selfStackedLayers": 0,
+   "periodTwoLayers": 73,
+   "crossings": 709526,
+   "crossingsBelow10deg": 680315,
+   "medianOfLayerMedians_deg": 66.6,
+   "worst": {
+    "k": 2,
+    "z": 0.72,
+    "selfStack": 0.96
+   },
+   "limit": {
+    "hold": 0.983,
+    "fail": null,
+    "unit": "fraction of a layer within a quarter bead of the layer below",
+    "evidence": "OBRTAJ foundation and crown layers at 0.976\u20130.983 printed; the weave rule (Semir, 2026-09-18: every layer must cross the one below) is a GENERATOR rule \u2014 here it is reported per layer, not refused"
+   },
+   "note": "A-B-A-B (layer k = layer k+2) is reported, not refused: OBRTAJ printed flat with 114 such layers"
+  },
+  "ORDER": {
+   "verdict": "PASS",
+   "aboveRisk_mm": 1,
+   "zonesWithFindings": [
+    "terrace"
+   ]
+  }
+ },
+ "findings": [
+  {
+   "layer": "S3",
+   "k": 83,
+   "z": 19.92,
+   "why": "free reach of 60 tips: median 18.8 > 17.6 held",
+   "declared": "terrace",
+   "tips": 60,
+   "min": 5,
+   "median": 18.8,
+   "p90": 21.8,
+   "max": 22.5,
+   "notes": [
+    "min 5 > 3.4 held: no short tip among the long ones (reported)"
+   ],
+   "color": "UNKNOWN"
+  },
+  {
+   "layer": "S3",
+   "k": 84,
+   "z": 20.16,
+   "why": "free reach of 60 tips: median 20.6 > 17.6 held",
+   "declared": "terrace",
+   "tips": 60,
+   "min": 4.5,
+   "median": 20.6,
+   "p90": 23.8,
+   "max": 24.3,
+   "notes": [
+    "min 4.5 > 3.4 held: no short tip among the long ones (reported)"
+   ],
+   "color": "UNKNOWN"
+  },
+  {
+   "layer": "S3",
+   "k": 85,
+   "z": 20.4,
+   "why": "free reach of 53 tips: median 20.5 > 17.6 held",
+   "declared": "terrace",
+   "tips": 53,
+   "min": 2,
+   "median": 20.5,
+   "p90": 23.6,
+   "max": 24.3,
+   "notes": [],
+   "color": "UNKNOWN"
+  },
+  {
+   "layer": "S3",
+   "k": 86,
+   "z": 20.64,
+   "why": "free reach of 50 tips: median 20.6 > 17.6 held",
+   "declared": "terrace",
+   "tips": 50,
+   "min": 13.7,
+   "median": 20.6,
+   "p90": 23.5,
+   "max": 24.3,
+   "notes": [
+    "min 13.7 > 3.4 held: no short tip among the long ones (reported)"
+   ],
+   "color": "UNKNOWN"
+  },
+  {
+   "layer": "S4",
+   "k": 85,
+   "z": 20.4,
+   "why": "extrusion passes 1.98 mm from a loose hairpin tip laid 2.16 mm below (tip z 18.24, reach 3.05; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace",
+   "tip": {
+    "x": 217.4,
+    "y": 189.74,
+    "z": 18.24,
+    "reach": 3.05,
+    "tied": false
+   },
+   "clearance": 2.16,
+   "r": 1.98
+  },
+  {
+   "layer": "S4",
+   "k": 86,
+   "z": 20.64,
+   "why": "extrusion passes 1.98 mm from a loose hairpin tip laid 2.4 mm below (tip z 18.24, reach 3.05; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace",
+   "tip": {
+    "x": 217.4,
+    "y": 189.74,
+    "z": 18.24,
+    "reach": 3.05,
+    "tied": false
+   },
+   "clearance": 2.4,
+   "r": 1.98
+  },
+  {
+   "layer": "S4",
+   "k": 84,
+   "z": 20.16,
+   "why": "extrusion passes 1.85 mm from a loose hairpin tip laid 1.92 mm below (tip z 18.24, reach 3.05; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace",
+   "tip": {
+    "x": 142.06,
+    "y": 215.71,
+    "z": 18.24,
+    "reach": 3.05,
+    "tied": false
+   },
+   "clearance": 1.92,
+   "r": 1.85
+  },
+  {
+   "layer": "S4",
+   "k": 85,
+   "z": 20.4,
+   "why": "extrusion passes 1.85 mm from a loose hairpin tip laid 2.16 mm below (tip z 18.24, reach 3.05; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace",
+   "tip": {
+    "x": 142.06,
+    "y": 215.71,
+    "z": 18.24,
+    "reach": 3.05,
+    "tied": false
+   },
+   "clearance": 2.16,
+   "r": 1.85
+  },
+  {
+   "layer": "S4",
+   "k": 86,
+   "z": 20.64,
+   "why": "extrusion passes 1.85 mm from a loose hairpin tip laid 2.4 mm below (tip z 18.24, reach 3.05; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace",
+   "tip": {
+    "x": 142.06,
+    "y": 215.71,
+    "z": 18.24,
+    "reach": 3.05,
+    "tied": false
+   },
+   "clearance": 2.4,
+   "r": 1.85
+  },
+  {
+   "layer": "S4",
+   "k": 85,
+   "z": 20.4,
+   "why": "extrusion passes 1.97 mm from a loose hairpin tip laid 2.16 mm below (tip z 18.24, reach 3.12; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace",
+   "tip": {
+    "x": 136.55,
+    "y": 213.11,
+    "z": 18.24,
+    "reach": 3.12,
+    "tied": false
+   },
+   "clearance": 2.16,
+   "r": 1.97
+  },
+  {
+   "layer": "S4",
+   "k": 86,
+   "z": 20.64,
+   "why": "extrusion passes 1.97 mm from a loose hairpin tip laid 2.4 mm below (tip z 18.24, reach 3.12; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace",
+   "tip": {
+    "x": 136.55,
+    "y": 213.11,
+    "z": 18.24,
+    "reach": 3.12,
+    "tied": false
+   },
+   "clearance": 2.4,
+   "r": 1.97
+  },
+  {
+   "layer": "S4",
+   "k": 84,
+   "z": 20.16,
+   "why": "extrusion passes 1.81 mm from a loose hairpin tip laid 1.92 mm below (tip z 18.24, reach 3.11; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace",
+   "tip": {
+    "x": 125.51,
+    "y": 205.51,
+    "z": 18.24,
+    "reach": 3.11,
+    "tied": false
+   },
+   "clearance": 1.92,
+   "r": 1.81
+  },
+  {
+   "layer": "S4",
+   "k": 85,
+   "z": 20.4,
+   "why": "extrusion passes 1.81 mm from a loose hairpin tip laid 2.16 mm below (tip z 18.24, reach 3.11; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace",
+   "tip": {
+    "x": 125.51,
+    "y": 205.51,
+    "z": 18.24,
+    "reach": 3.11,
+    "tied": false
+   },
+   "clearance": 2.16,
+   "r": 1.81
+  },
+  {
+   "layer": "S4",
+   "k": 86,
+   "z": 20.64,
+   "why": "extrusion passes 1.81 mm from a loose hairpin tip laid 2.4 mm below (tip z 18.24, reach 3.11; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace",
+   "tip": {
+    "x": 125.51,
+    "y": 205.51,
+    "z": 18.24,
+    "reach": 3.11,
+    "tied": false
+   },
+   "clearance": 2.4,
+   "r": 1.81
+  },
+  {
+   "layer": "S4",
+   "k": 85,
+   "z": 20.4,
+   "why": "extrusion passes 1.96 mm from a loose hairpin tip laid 2.16 mm below (tip z 18.24, reach 3.05; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace",
+   "tip": {
+    "x": 193.44,
+    "y": 106.88,
+    "z": 18.24,
+    "reach": 3.05,
+    "tied": false
+   },
+   "clearance": 2.16,
+   "r": 1.96
+  },
+  {
+   "layer": "S4",
+   "k": 86,
+   "z": 20.64,
+   "why": "extrusion passes 1.96 mm from a loose hairpin tip laid 2.4 mm below (tip z 18.24, reach 3.05; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace",
+   "tip": {
+    "x": 193.44,
+    "y": 106.88,
+    "z": 18.24,
+    "reach": 3.05,
+    "tied": false
+   },
+   "clearance": 2.4,
+   "r": 1.96
+  },
+  {
+   "layer": "S4",
+   "k": 85,
+   "z": 20.4,
+   "why": "extrusion passes 1.91 mm from a loose hairpin tip laid 1.92 mm below (tip z 18.48, reach 4.84; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace",
+   "tip": {
+    "x": 226.79,
+    "y": 170.94,
+    "z": 18.48,
+    "reach": 4.84,
+    "tied": false
+   },
+   "clearance": 1.92,
+   "r": 1.91
+  },
+  {
+   "layer": "S4",
+   "k": 86,
+   "z": 20.64,
+   "why": "extrusion passes 1.91 mm from a loose hairpin tip laid 2.16 mm below (tip z 18.48, reach 4.84; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace",
+   "tip": {
+    "x": 226.79,
+    "y": 170.94,
+    "z": 18.48,
+    "reach": 4.84,
+    "tied": false
+   },
+   "clearance": 2.16,
+   "r": 1.91
+  },
+  {
+   "layer": "S4",
+   "k": 84,
+   "z": 20.16,
+   "why": "extrusion passes 1.71 mm from a loose hairpin tip laid 1.68 mm below (tip z 18.48, reach 4.94; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace",
+   "tip": {
+    "x": 224.84,
+    "y": 178.89,
+    "z": 18.48,
+    "reach": 4.94,
+    "tied": false
+   },
+   "clearance": 1.68,
+   "r": 1.71
+  },
+  {
+   "layer": "S4",
+   "k": 85,
+   "z": 20.4,
+   "why": "extrusion passes 1.71 mm from a loose hairpin tip laid 1.92 mm below (tip z 18.48, reach 4.94; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace",
+   "tip": {
+    "x": 224.84,
+    "y": 178.89,
+    "z": 18.48,
+    "reach": 4.94,
+    "tied": false
+   },
+   "clearance": 1.92,
+   "r": 1.71
+  },
+  {
+   "layer": "S4",
+   "k": 86,
+   "z": 20.64,
+   "why": "extrusion passes 1.71 mm from a loose hairpin tip laid 2.16 mm below (tip z 18.48, reach 4.94; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace",
+   "tip": {
+    "x": 224.84,
+    "y": 178.89,
+    "z": 18.48,
+    "reach": 4.94,
+    "tied": false
+   },
+   "clearance": 2.16,
+   "r": 1.71
+  },
+  {
+   "layer": "S4",
+   "k": 86,
+   "z": 20.64,
+   "why": "extrusion passes 2 mm from a loose hairpin tip laid 2.16 mm below (tip z 18.48, reach 5; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace",
+   "tip": {
+    "x": 219.24,
+    "y": 191.55,
+    "z": 18.48,
+    "reach": 5,
+    "tied": false
+   },
+   "clearance": 2.16,
+   "r": 2
+  },
+  {
+   "layer": "S4",
+   "k": 84,
+   "z": 20.16,
+   "why": "extrusion passes 1.62 mm from a loose hairpin tip laid 1.68 mm below (tip z 18.48, reach 5.01; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace",
+   "tip": {
+    "x": 135.75,
+    "y": 215.52,
+    "z": 18.48,
+    "reach": 5.01,
+    "tied": false
+   },
+   "clearance": 1.68,
+   "r": 1.62
+  },
+  {
+   "layer": "S4",
+   "k": 85,
+   "z": 20.4,
+   "why": "extrusion passes 1.62 mm from a loose hairpin tip laid 1.92 mm below (tip z 18.48, reach 5.01; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace",
+   "tip": {
+    "x": 135.75,
+    "y": 215.52,
+    "z": 18.48,
+    "reach": 5.01,
+    "tied": false
+   },
+   "clearance": 1.92,
+   "r": 1.62
+  },
+  {
+   "layer": "S4",
+   "k": 86,
+   "z": 20.64,
+   "why": "extrusion passes 1.62 mm from a loose hairpin tip laid 2.16 mm below (tip z 18.48, reach 5.01; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace",
+   "tip": {
+    "x": 135.75,
+    "y": 215.52,
+    "z": 18.48,
+    "reach": 5.01,
+    "tied": false
+   },
+   "clearance": 2.16,
+   "r": 1.62
+  },
+  {
+   "layer": "S4",
+   "k": 84,
+   "z": 20.16,
+   "why": "extrusion passes 1.68 mm from a loose hairpin tip laid 1.68 mm below (tip z 18.48, reach 4.83; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace",
+   "tip": {
+    "x": 118.94,
+    "y": 202.61,
+    "z": 18.48,
+    "reach": 4.83,
+    "tied": false
+   },
+   "clearance": 1.68,
+   "r": 1.68
+  },
+  {
+   "layer": "S4",
+   "k": 85,
+   "z": 20.4,
+   "why": "extrusion passes 1.68 mm from a loose hairpin tip laid 1.92 mm below (tip z 18.48, reach 4.83; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace",
+   "tip": {
+    "x": 118.94,
+    "y": 202.61,
+    "z": 18.48,
+    "reach": 4.83,
+    "tied": false
+   },
+   "clearance": 1.92,
+   "r": 1.68
+  },
+  {
+   "layer": "S4",
+   "k": 86,
+   "z": 20.64,
+   "why": "extrusion passes 1.68 mm from a loose hairpin tip laid 2.16 mm below (tip z 18.48, reach 4.83; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace",
+   "tip": {
+    "x": 118.94,
+    "y": 202.61,
+    "z": 18.48,
+    "reach": 4.83,
+    "tied": false
+   },
+   "clearance": 2.16,
+   "r": 1.68
+  },
+  {
+   "layer": "S4",
+   "k": 85,
+   "z": 20.4,
+   "why": "extrusion passes 1.92 mm from a loose hairpin tip laid 1.92 mm below (tip z 18.48, reach 5; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace",
+   "tip": {
+    "x": 102.37,
+    "y": 156.07,
+    "z": 18.48,
+    "reach": 5,
+    "tied": false
+   },
+   "clearance": 1.92,
+   "r": 1.92
+  },
+  {
+   "layer": "S4",
+   "k": 86,
+   "z": 20.64,
+   "why": "extrusion passes 1.92 mm from a loose hairpin tip laid 2.16 mm below (tip z 18.48, reach 5; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace",
+   "tip": {
+    "x": 102.37,
+    "y": 156.07,
+    "z": 18.48,
+    "reach": 5,
+    "tied": false
+   },
+   "clearance": 2.16,
+   "r": 1.92
+  },
+  {
+   "layer": "S4",
+   "k": 84,
+   "z": 20.16,
+   "why": "extrusion passes 1.74 mm from a loose hairpin tip laid 1.68 mm below (tip z 18.48, reach 5.01; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace",
+   "tip": {
+    "x": 107.16,
+    "y": 135.66,
+    "z": 18.48,
+    "reach": 5.01,
+    "tied": false
+   },
+   "clearance": 1.68,
+   "r": 1.74
+  },
+  {
+   "layer": "S4",
+   "k": 85,
+   "z": 20.4,
+   "why": "extrusion passes 1.74 mm from a loose hairpin tip laid 1.92 mm below (tip z 18.48, reach 5.01; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace",
+   "tip": {
+    "x": 107.16,
+    "y": 135.66,
+    "z": 18.48,
+    "reach": 5.01,
+    "tied": false
+   },
+   "clearance": 1.92,
+   "r": 1.74
+  },
+  {
+   "layer": "S4",
+   "k": 86,
+   "z": 20.64,
+   "why": "extrusion passes 1.74 mm from a loose hairpin tip laid 2.16 mm below (tip z 18.48, reach 5.01; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace",
+   "tip": {
+    "x": 107.16,
+    "y": 135.66,
+    "z": 18.48,
+    "reach": 5.01,
+    "tied": false
+   },
+   "clearance": 2.16,
+   "r": 1.74
+  },
+  {
+   "layer": "S4",
+   "k": 85,
+   "z": 20.4,
+   "why": "extrusion passes 1.85 mm from a loose hairpin tip laid 1.92 mm below (tip z 18.48, reach 4.88; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace",
+   "tip": {
+    "x": 201.34,
+    "y": 108.84,
+    "z": 18.48,
+    "reach": 4.88,
+    "tied": false
+   },
+   "clearance": 1.92,
+   "r": 1.85
+  },
+  {
+   "layer": "S4",
+   "k": 86,
+   "z": 20.64,
+   "why": "extrusion passes 1.85 mm from a loose hairpin tip laid 2.16 mm below (tip z 18.48, reach 4.88; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace",
+   "tip": {
+    "x": 201.34,
+    "y": 108.84,
+    "z": 18.48,
+    "reach": 4.88,
+    "tied": false
+   },
+   "clearance": 2.16,
+   "r": 1.85
+  },
+  {
+   "layer": "S4",
+   "k": 85,
+   "z": 20.4,
+   "why": "extrusion passes 1.91 mm from a loose hairpin tip laid 1.92 mm below (tip z 18.48, reach 4.88; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace",
+   "tip": {
+    "x": 201.29,
+    "y": 108.81,
+    "z": 18.48,
+    "reach": 4.88,
+    "tied": false
+   },
+   "clearance": 1.92,
+   "r": 1.91
+  },
+  {
+   "layer": "S4",
+   "k": 86,
+   "z": 20.64,
+   "why": "extrusion passes 1.91 mm from a loose hairpin tip laid 2.16 mm below (tip z 18.48, reach 4.88; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace",
+   "tip": {
+    "x": 201.29,
+    "y": 108.81,
+    "z": 18.48,
+    "reach": 4.88,
+    "tied": false
+   },
+   "clearance": 2.16,
+   "r": 1.91
+  },
+  {
+   "layer": "S4",
+   "k": 85,
+   "z": 20.4,
+   "why": "extrusion passes 1.81 mm from a loose hairpin tip laid 1.92 mm below (tip z 18.48, reach 4.94; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace",
+   "tip": {
+    "x": 206.9,
+    "y": 113.29,
+    "z": 18.48,
+    "reach": 4.94,
+    "tied": false
+   },
+   "clearance": 1.92,
+   "r": 1.81
+  },
+  {
+   "layer": "S4",
+   "k": 86,
+   "z": 20.64,
+   "why": "extrusion passes 1.81 mm from a loose hairpin tip laid 2.16 mm below (tip z 18.48, reach 4.94; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace",
+   "tip": {
+    "x": 206.9,
+    "y": 113.29,
+    "z": 18.48,
+    "reach": 4.94,
+    "tied": false
+   },
+   "clearance": 2.16,
+   "r": 1.81
+  },
+  {
+   "layer": "S4",
+   "k": 85,
+   "z": 20.4,
+   "why": "extrusion passes 1.87 mm from a loose hairpin tip laid 1.92 mm below (tip z 18.48, reach 4.94; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace",
+   "tip": {
+    "x": 206.85,
+    "y": 113.25,
+    "z": 18.48,
+    "reach": 4.94,
+    "tied": false
+   },
+   "clearance": 1.92,
+   "r": 1.87
+  },
+  {
+   "layer": "S4",
+   "k": 86,
+   "z": 20.64,
+   "why": "extrusion passes 1.87 mm from a loose hairpin tip laid 2.16 mm below (tip z 18.48, reach 4.94; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace",
+   "tip": {
+    "x": 206.85,
+    "y": 113.25,
+    "z": 18.48,
+    "reach": 4.94,
+    "tied": false
+   },
+   "clearance": 2.16,
+   "r": 1.87
+  },
+  {
+   "layer": "S4",
+   "k": 86,
+   "z": 20.64,
+   "why": "extrusion passes 1.95 mm from a loose hairpin tip laid 2.16 mm below (tip z 18.48, reach 4.94; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace",
+   "tip": {
+    "x": 211.25,
+    "y": 117.59,
+    "z": 18.48,
+    "reach": 4.94,
+    "tied": false
+   },
+   "clearance": 2.16,
+   "r": 1.95
+  },
+  {
+   "layer": "S4",
+   "k": 85,
+   "z": 20.4,
+   "why": "extrusion passes 1.86 mm from a loose hairpin tip laid 1.92 mm below (tip z 18.48, reach 5; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace",
+   "tip": {
+    "x": 227.44,
+    "y": 153.79,
+    "z": 18.48,
+    "reach": 5,
+    "tied": false
+   },
+   "clearance": 1.92,
+   "r": 1.86
+  },
+  {
+   "layer": "S4",
+   "k": 86,
+   "z": 20.64,
+   "why": "extrusion passes 1.86 mm from a loose hairpin tip laid 2.16 mm below (tip z 18.48, reach 5; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace",
+   "tip": {
+    "x": 227.44,
+    "y": 153.79,
+    "z": 18.48,
+    "reach": 5,
+    "tied": false
+   },
+   "clearance": 2.16,
+   "r": 1.86
+  },
+  {
+   "layer": "S4",
+   "k": 85,
+   "z": 20.4,
+   "why": "extrusion passes 1.72 mm from a loose hairpin tip laid 1.68 mm below (tip z 18.72, reach 6.99; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace",
+   "tip": {
+    "x": 229.3,
+    "y": 171.11,
+    "z": 18.72,
+    "reach": 6.99,
+    "tied": false
+   },
+   "clearance": 1.68,
+   "r": 1.72
+  },
+  {
+   "layer": "S4",
+   "k": 86,
+   "z": 20.64,
+   "why": "extrusion passes 1.72 mm from a loose hairpin tip laid 1.92 mm below (tip z 18.72, reach 6.99; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace",
+   "tip": {
+    "x": 229.3,
+    "y": 171.11,
+    "z": 18.72,
+    "reach": 6.99,
+    "tied": false
+   },
+   "clearance": 1.92,
+   "r": 1.72
+  },
+  {
+   "layer": "S4",
+   "k": 85,
+   "z": 20.4,
+   "why": "extrusion passes 1.7 mm from a loose hairpin tip laid 1.68 mm below (tip z 18.72, reach 7.38; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace",
+   "tip": {
+    "x": 134.57,
+    "y": 217.72,
+    "z": 18.72,
+    "reach": 7.38,
+    "tied": false
+   },
+   "clearance": 1.68,
+   "r": 1.7
+  },
+  {
+   "layer": "S4",
+   "k": 86,
+   "z": 20.64,
+   "why": "extrusion passes 1.7 mm from a loose hairpin tip laid 1.92 mm below (tip z 18.72, reach 7.38; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace",
+   "tip": {
+    "x": 134.57,
+    "y": 217.72,
+    "z": 18.72,
+    "reach": 7.38,
+    "tied": false
+   },
+   "clearance": 1.92,
+   "r": 1.7
+  },
+  {
+   "layer": "S4",
+   "k": 86,
+   "z": 20.64,
+   "why": "extrusion passes 1.88 mm from a loose hairpin tip laid 1.92 mm below (tip z 18.72, reach 6.98; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace",
+   "tip": {
+    "x": 121.42,
+    "y": 208.57,
+    "z": 18.72,
+    "reach": 6.98,
+    "tied": false
+   },
+   "clearance": 1.92,
+   "r": 1.88
+  },
+  {
+   "layer": "S4",
+   "k": 86,
+   "z": 20.64,
+   "why": "extrusion passes 1.92 mm from a loose hairpin tip laid 1.92 mm below (tip z 18.72, reach 7.4; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace",
+   "tip": {
+    "x": 109.95,
+    "y": 195.04,
+    "z": 18.72,
+    "reach": 7.4,
+    "tied": false
+   },
+   "clearance": 1.92,
+   "r": 1.92
+  },
+  {
+   "layer": "S4",
+   "k": 85,
+   "z": 20.4,
+   "why": "extrusion passes 1.66 mm from a loose hairpin tip laid 1.68 mm below (tip z 18.72, reach 7.4; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace",
+   "tip": {
+    "x": 103.08,
+    "y": 180.56,
+    "z": 18.72,
+    "reach": 7.4,
+    "tied": false
+   },
+   "clearance": 1.68,
+   "r": 1.66
+  },
+  {
+   "layer": "S4",
+   "k": 86,
+   "z": 20.64,
+   "why": "extrusion passes 1.66 mm from a loose hairpin tip laid 1.92 mm below (tip z 18.72, reach 7.4; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace",
+   "tip": {
+    "x": 103.08,
+    "y": 180.56,
+    "z": 18.72,
+    "reach": 7.4,
+    "tied": false
+   },
+   "clearance": 1.92,
+   "r": 1.66
+  },
+  {
+   "layer": "S4",
+   "k": 85,
+   "z": 20.4,
+   "why": "extrusion passes 1.73 mm from a loose hairpin tip laid 1.68 mm below (tip z 18.72, reach 7.25; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace",
+   "tip": {
+    "x": 101.17,
+    "y": 173.54,
+    "z": 18.72,
+    "reach": 7.25,
+    "tied": false
+   },
+   "clearance": 1.68,
+   "r": 1.73
+  },
+  {
+   "layer": "S4",
+   "k": 86,
+   "z": 20.64,
+   "why": "extrusion passes 1.73 mm from a loose hairpin tip laid 1.92 mm below (tip z 18.72, reach 7.25; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace",
+   "tip": {
+    "x": 101.17,
+    "y": 173.54,
+    "z": 18.72,
+    "reach": 7.25,
+    "tied": false
+   },
+   "clearance": 1.92,
+   "r": 1.73
+  },
+  {
+   "layer": "S4",
+   "k": 86,
+   "z": 20.64,
+   "why": "extrusion passes 1.91 mm from a loose hairpin tip laid 1.92 mm below (tip z 18.72, reach 7.32; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace",
+   "tip": {
+    "x": 188.92,
+    "y": 99.29,
+    "z": 18.72,
+    "reach": 7.32,
+    "tied": false
+   },
+   "clearance": 1.92,
+   "r": 1.91
+  },
+  {
+   "layer": "S4",
+   "k": 85,
+   "z": 20.4,
+   "why": "extrusion passes 1.65 mm from a loose hairpin tip laid 1.68 mm below (tip z 18.72, reach 7.21; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace",
+   "tip": {
+    "x": 188.68,
+    "y": 99.2,
+    "z": 18.72,
+    "reach": 7.21,
+    "tied": false
+   },
+   "clearance": 1.68,
+   "r": 1.65
+  },
+  {
+   "layer": "S4",
+   "k": 86,
+   "z": 20.64,
+   "why": "extrusion passes 1.65 mm from a loose hairpin tip laid 1.92 mm below (tip z 18.72, reach 7.21; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace",
+   "tip": {
+    "x": 188.68,
+    "y": 99.2,
+    "z": 18.72,
+    "reach": 7.21,
+    "tied": false
+   },
+   "clearance": 1.92,
+   "r": 1.65
+  },
+  {
+   "layer": "S4",
+   "k": 86,
+   "z": 20.64,
+   "why": "extrusion passes 1.83 mm from a loose hairpin tip laid 1.92 mm below (tip z 18.72, reach 7.21; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace",
+   "tip": {
+    "x": 224.15,
+    "y": 132.45,
+    "z": 18.72,
+    "reach": 7.21,
+    "tied": false
+   },
+   "clearance": 1.92,
+   "r": 1.83
+  },
+  {
+   "layer": "S4",
+   "k": 86,
+   "z": 20.64,
+   "why": "extrusion passes 1.89 mm from a loose hairpin tip laid 1.92 mm below (tip z 18.72, reach 7.44; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace",
+   "tip": {
+    "x": 226.85,
+    "y": 139.21,
+    "z": 18.72,
+    "reach": 7.44,
+    "tied": false
+   },
+   "clearance": 1.92,
+   "r": 1.89
+  },
+  {
+   "layer": "S4",
+   "k": 86,
+   "z": 20.64,
+   "why": "extrusion passes 1.69 mm from a loose hairpin tip laid 1.68 mm below (tip z 18.96, reach 9.85; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace",
+   "tip": {
+    "x": 102.48,
+    "y": 133.9,
+    "z": 18.96,
+    "reach": 9.85,
+    "tied": false
+   },
+   "clearance": 1.68,
+   "r": 1.69
+  }
+ ],
+ "finding_count": 60,
+ "undeclared_count": 0
+}

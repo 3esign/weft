@@ -1,0 +1,122 @@
+{
+ "file": "/tmp/d2/out_a/DOMET2_A2L_X1.gcode",
+ "layers": 254,
+ "params": {
+  "bead": 0.45,
+  "allow": 0.6,
+  "maxbridge": 60,
+  "res": 0.2,
+  "bedz": 0.5,
+  "maxislands": 1,
+  "maxcantilever": 8
+ },
+ "stats": {
+  "floating": 0,
+  "long_bridge": 0,
+  "cantilever": 0,
+  "bridges": 40058,
+  "bad_membrane": 0,
+  "unanchored_membrane": 0,
+  "checked_paths": 1026,
+  "checked_points": 562509,
+  "exempt_layers": 3,
+  "first_layer_islands": 1
+ },
+ "byRole": {},
+ "worstGaps": [
+  [
+   29.52,
+   "bridge",
+   26.45,
+   26.58
+  ],
+  [
+   57.6,
+   "bridge",
+   22.2,
+   22.52
+  ],
+  [
+   13.68,
+   "bridge",
+   20.52,
+   20.6
+  ],
+  [
+   13.68,
+   "bridge",
+   20.51,
+   20.6
+  ],
+  [
+   13.68,
+   "bridge",
+   20.52,
+   20.6
+  ],
+  [
+   13.68,
+   "bridge",
+   20.52,
+   20.6
+  ],
+  [
+   13.68,
+   "bridge",
+   20.51,
+   20.6
+  ],
+  [
+   13.68,
+   "bridge",
+   20.52,
+   20.6
+  ],
+  [
+   21.6,
+   "bridge",
+   20.49,
+   20.6
+  ],
+  [
+   21.6,
+   "bridge",
+   20.53,
+   20.6
+  ],
+  [
+   21.6,
+   "bridge",
+   20.52,
+   20.6
+  ],
+  [
+   21.6,
+   "bridge",
+   20.54,
+   20.6
+  ],
+  [
+   29.52,
+   "bridge",
+   20.48,
+   20.6
+  ],
+  [
+   37.44,
+   "bridge",
+   20.52,
+   20.6
+  ],
+  [
+   37.44,
+   "bridge",
+   20.51,
+   20.6
+  ]
+ ],
+ "membranes": [],
+ "problems": [],
+ "problem_count": 0,
+ "PASS": true
+}

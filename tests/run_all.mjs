@@ -15,6 +15,7 @@ const plan=[
   ['first_layer.test.mjs',[]],                                 // startup cannot become preview layer 1; real bed extrusion required
   ['build_parity.test.mjs',[]],                                  // Node chain == the printed LIMIT16 (G-code + 3MF)
   ['gate_parity.test.mjs',python?[]:['--no-python']],             // JS gate == Python gate (or the recorded JSON)
+  ['gate_layers.test.mjs',[]],                                    // the layered gate S2–S8 + ORDER (2026-09-25): refuses KRAK, passes LIMIT16
   ['aero_towers.test.mjs',[]],
   ['paired_sculptures.test.mjs',[]],
   ['suspended_steps.test.mjs',[]],                              // horizontal terraces must truly cross between layers

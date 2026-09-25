@@ -1,0 +1,756 @@
+{
+  "report": {
+    "name": "DOMET_A2L_X1",
+    "machine": "Bambu A2L",
+    "bed_mm": [
+      330,
+      320
+    ],
+    "layers": 349,
+    "globalZLevels": 241,
+    "expectedZLevels": 241,
+    "logicalCells": null,
+    "experimentalMembraneOverride": false,
+    "maxBodiesPerZ": 2,
+    "size_mm": [
+      148.3,
+      145.3,
+      null
+    ],
+    "plate_mm": [
+      94.1,
+      86.1,
+      241.9,
+      230.9
+    ],
+    "fitsPlate": true,
+    "grammarCounts": {
+      "staple": 57,
+      "diagonal": 21,
+      "sine": 21,
+      "eight": 21
+    },
+    "threadLength_m": 280.8,
+    "weldNodes": 17013,
+    "rawPaths": 52,
+    "unintendedOverlaps": 4745,
+    "seamClosures": 0,
+    "overlapSamples": [
+      {
+        "z": 9.84,
+        "role": "bridge",
+        "ov": 1
+      },
+      {
+        "z": 10.08,
+        "role": "bridge",
+        "ov": 85
+      },
+      {
+        "z": 10.32,
+        "role": "bridge",
+        "ov": 119
+      },
+      {
+        "z": 10.56,
+        "role": "bridge",
+        "ov": 82
+      },
+      {
+        "z": 10.8,
+        "role": "bridge",
+        "ov": 120
+      },
+      {
+        "z": 11.04,
+        "role": "bridge",
+        "ov": 84
+      },
+      {
+        "z": 11.28,
+        "role": "bridge",
+        "ov": 119
+      },
+      {
+        "z": 11.52,
+        "role": "bridge",
+        "ov": 83
+      },
+      {
+        "z": 11.76,
+        "role": "bridge",
+        "ov": 120
+      },
+      {
+        "z": 12,
+        "role": "bridge",
+        "ov": 81
+      },
+      {
+        "z": 12.24,
+        "role": "bridge",
+        "ov": 118
+      },
+      {
+        "z": 12.48,
+        "role": "bridge",
+        "ov": 82
+      }
+    ],
+    "kinematic_h": 2.6,
+    "routeA_estimate_h": 24.5,
+    "caps": [],
+    "events": [
+      {
+        "z": 10.08,
+        "k": 42,
+        "event": "wall-1 -> terrace-A"
+      },
+      {
+        "z": 12.96,
+        "k": 54,
+        "event": "terrace-A -> wall-2"
+      },
+      {
+        "z": 23.04,
+        "k": 96,
+        "event": "wall-2 -> terrace-B"
+      },
+      {
+        "z": 25.92,
+        "k": 108,
+        "event": "terrace-B -> wall-3"
+      },
+      {
+        "z": 36,
+        "k": 150,
+        "event": "wall-3 -> terrace-C"
+      },
+      {
+        "z": 38.88,
+        "k": 162,
+        "event": "terrace-C -> wall-4"
+      },
+      {
+        "z": 48.96,
+        "k": 204,
+        "event": "wall-4 -> terrace-D"
+      },
+      {
+        "z": 51.84,
+        "k": 216,
+        "event": "terrace-D -> wall-5"
+      }
+    ],
+    "contourCounts": [
+      [
+        0,
+        1
+      ]
+    ],
+    "perLayerSample": [
+      {
+        "k": 0,
+        "z": 0,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 96
+      },
+      {
+        "k": 40,
+        "z": 9.6,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 96
+      },
+      {
+        "k": 80,
+        "z": 19.2,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 96
+      },
+      {
+        "k": 120,
+        "z": 28.8,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 96
+      },
+      {
+        "k": 160,
+        "z": 38.4,
+        "contours": 1,
+        "paths": 1,
+        "nodes": 96
+      },
+      {
+        "k": 200,
+        "z": 48,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 96
+      },
+      {
+        "k": 240,
+        "z": 57.6,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 96
+      }
+    ],
+    "gateAtEvidencedCeiling": {
+      "maxbridge_mm": 16.2,
+      "findings": 598,
+      "byZone": {
+        "terrace A": 141,
+        "terrace B": 75,
+        "terrace C": 138,
+        "terrace D": 244
+      },
+      "outsideDeclaredZones": 0,
+      "outsideSamples": []
+    },
+    "membranes": []
+  },
+  "geometry": {
+    "name": "DOMET_A2L_X1",
+    "generator": "core/weft_domet_geometry.mjs",
+    "process": "terrace-return-ladder/v1",
+    "generatedAt": "2026-09-24",
+    "machine": "a2l",
+    "machineLabel": "Bambu Lab A2L",
+    "machineQualification": {
+      "beadSource": "measured",
+      "beadEvidence": "specimens/2026-08-31_D5_R140_A2L_physical and specimens/2026-09-02_P0_suma_2x2_physical — both printed to completion at this bead",
+      "assumedAcknowledged": false
+    },
+    "purpose": "An instrument. It measures the free reach at which a returning hairpin stops producing a horizontal surface, and whether circumferential rails under the teeth raise that limit. It is not a sculpture and is not meant to be beautiful beyond being legible.",
+    "principle": "terrace-return-ladder/v1: a terrace layer is either R (radial returning teeth, both ends on the base ring, free tip) or C (circumferential rails that cross every tooth at ~90 deg and give the next R layer a landing every rib pitch). R and C alternate. Only a terrace's FIRST layer is a full-length cantilever; after it, a tooth is a beam on supports.",
+    "size_mm": [
+      147.9,
+      144.9,
+      57.84
+    ],
+    "height_mm": 57.84,
+    "wallRadius_mm": 48,
+    "totalLayers": 241,
+    "layerHeight_mm": 0.24,
+    "bead_mm": 0.45,
+    "wallBetweenTerraces_mm": 10.08,
+    "layersPerTerrace": 12,
+    "toothPitch_mm": 4,
+    "tipGap_mm": 1.2,
+    "ladder": {
+      "reach_mm": [
+        5,
+        8,
+        11,
+        14,
+        17,
+        20,
+        23,
+        26
+      ],
+      "ribPitch_mm": [
+        3,
+        4,
+        5,
+        6,
+        8,
+        10,
+        14,
+        0
+      ],
+      "sectors": 8,
+      "note": "sectors ascend, so the break reads as the angle at which the comb stops being a comb"
+    },
+    "terraces": [
+      {
+        "id": "A",
+        "title": "reach ladder, outward, ribbed",
+        "dir": "outward",
+        "zFrom": 10.08,
+        "zTo": 12.96,
+        "layers": 12,
+        "kFrom": 42,
+        "sectors": [
+          {
+            "sector": 0,
+            "deg": "0-45",
+            "reach_mm": 5,
+            "ribPitch_mm": 5,
+            "firstLayerCantilever_mm": 5,
+            "laterLayerFreeRun_mm": 5.83
+          },
+          {
+            "sector": 1,
+            "deg": "45-90",
+            "reach_mm": 8,
+            "ribPitch_mm": 5,
+            "firstLayerCantilever_mm": 8,
+            "laterLayerFreeRun_mm": 5.83
+          },
+          {
+            "sector": 2,
+            "deg": "90-135",
+            "reach_mm": 11,
+            "ribPitch_mm": 5,
+            "firstLayerCantilever_mm": 11,
+            "laterLayerFreeRun_mm": 5.83
+          },
+          {
+            "sector": 3,
+            "deg": "135-180",
+            "reach_mm": 14,
+            "ribPitch_mm": 5,
+            "firstLayerCantilever_mm": 14,
+            "laterLayerFreeRun_mm": 5.83
+          },
+          {
+            "sector": 4,
+            "deg": "180-225",
+            "reach_mm": 17,
+            "ribPitch_mm": 5,
+            "firstLayerCantilever_mm": 17,
+            "laterLayerFreeRun_mm": 5.83
+          },
+          {
+            "sector": 5,
+            "deg": "225-270",
+            "reach_mm": 20,
+            "ribPitch_mm": 5,
+            "firstLayerCantilever_mm": 20,
+            "laterLayerFreeRun_mm": 5.83
+          },
+          {
+            "sector": 6,
+            "deg": "270-315",
+            "reach_mm": 23,
+            "ribPitch_mm": 5,
+            "firstLayerCantilever_mm": 23,
+            "laterLayerFreeRun_mm": 5.83
+          },
+          {
+            "sector": 7,
+            "deg": "315-360",
+            "reach_mm": 26,
+            "ribPitch_mm": 5,
+            "firstLayerCantilever_mm": 26,
+            "laterLayerFreeRun_mm": 5.83
+          }
+        ],
+        "distinctPaths": 12,
+        "cells": 80,
+        "cellsPerSector": [
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10
+        ]
+      },
+      {
+        "id": "B",
+        "title": "reach ladder, outward, plain",
+        "dir": "outward",
+        "zFrom": 23.04,
+        "zTo": 25.92,
+        "layers": 12,
+        "kFrom": 96,
+        "sectors": [
+          {
+            "sector": 0,
+            "deg": "0-45",
+            "reach_mm": 5,
+            "ribPitch_mm": "none",
+            "firstLayerCantilever_mm": 5,
+            "laterLayerFreeRun_mm": 5
+          },
+          {
+            "sector": 1,
+            "deg": "45-90",
+            "reach_mm": 8,
+            "ribPitch_mm": "none",
+            "firstLayerCantilever_mm": 8,
+            "laterLayerFreeRun_mm": 8
+          },
+          {
+            "sector": 2,
+            "deg": "90-135",
+            "reach_mm": 11,
+            "ribPitch_mm": "none",
+            "firstLayerCantilever_mm": 11,
+            "laterLayerFreeRun_mm": 11
+          },
+          {
+            "sector": 3,
+            "deg": "135-180",
+            "reach_mm": 14,
+            "ribPitch_mm": "none",
+            "firstLayerCantilever_mm": 14,
+            "laterLayerFreeRun_mm": 14
+          },
+          {
+            "sector": 4,
+            "deg": "180-225",
+            "reach_mm": 17,
+            "ribPitch_mm": "none",
+            "firstLayerCantilever_mm": 17,
+            "laterLayerFreeRun_mm": 17
+          },
+          {
+            "sector": 5,
+            "deg": "225-270",
+            "reach_mm": 20,
+            "ribPitch_mm": "none",
+            "firstLayerCantilever_mm": 20,
+            "laterLayerFreeRun_mm": 20
+          },
+          {
+            "sector": 6,
+            "deg": "270-315",
+            "reach_mm": 23,
+            "ribPitch_mm": "none",
+            "firstLayerCantilever_mm": 23,
+            "laterLayerFreeRun_mm": 23
+          },
+          {
+            "sector": 7,
+            "deg": "315-360",
+            "reach_mm": 26,
+            "ribPitch_mm": "none",
+            "firstLayerCantilever_mm": 26,
+            "laterLayerFreeRun_mm": 26
+          }
+        ],
+        "distinctPaths": 2,
+        "cells": 80,
+        "cellsPerSector": [
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10
+        ]
+      },
+      {
+        "id": "C",
+        "title": "reach ladder, inward, ribbed",
+        "dir": "inward",
+        "zFrom": 36,
+        "zTo": 38.88,
+        "layers": 12,
+        "kFrom": 150,
+        "sectors": [
+          {
+            "sector": 0,
+            "deg": "0-45",
+            "reach_mm": 5,
+            "ribPitch_mm": 5,
+            "firstLayerCantilever_mm": 5,
+            "laterLayerFreeRun_mm": 5.83
+          },
+          {
+            "sector": 1,
+            "deg": "45-90",
+            "reach_mm": 8,
+            "ribPitch_mm": 5,
+            "firstLayerCantilever_mm": 8,
+            "laterLayerFreeRun_mm": 5.83
+          },
+          {
+            "sector": 2,
+            "deg": "90-135",
+            "reach_mm": 11,
+            "ribPitch_mm": 5,
+            "firstLayerCantilever_mm": 11,
+            "laterLayerFreeRun_mm": 5.83
+          },
+          {
+            "sector": 3,
+            "deg": "135-180",
+            "reach_mm": 14,
+            "ribPitch_mm": 5,
+            "firstLayerCantilever_mm": 14,
+            "laterLayerFreeRun_mm": 5.83
+          },
+          {
+            "sector": 4,
+            "deg": "180-225",
+            "reach_mm": 17,
+            "ribPitch_mm": 5,
+            "firstLayerCantilever_mm": 17,
+            "laterLayerFreeRun_mm": 5.83
+          },
+          {
+            "sector": 5,
+            "deg": "225-270",
+            "reach_mm": 20,
+            "ribPitch_mm": 5,
+            "firstLayerCantilever_mm": 20,
+            "laterLayerFreeRun_mm": 5.83
+          },
+          {
+            "sector": 6,
+            "deg": "270-315",
+            "reach_mm": 23,
+            "ribPitch_mm": 5,
+            "firstLayerCantilever_mm": 23,
+            "laterLayerFreeRun_mm": 5.83
+          },
+          {
+            "sector": 7,
+            "deg": "315-360",
+            "reach_mm": 26,
+            "ribPitch_mm": 5,
+            "firstLayerCantilever_mm": 26,
+            "laterLayerFreeRun_mm": 5.83
+          }
+        ],
+        "distinctPaths": 12,
+        "cells": 63,
+        "cellsPerSector": [
+          9,
+          9,
+          9,
+          8,
+          9,
+          9,
+          5,
+          5
+        ]
+      },
+      {
+        "id": "D",
+        "title": "rib-pitch ladder, outward",
+        "dir": "outward",
+        "zFrom": 48.96,
+        "zTo": 51.84,
+        "layers": 12,
+        "kFrom": 204,
+        "sectors": [
+          {
+            "sector": 0,
+            "deg": "0-45",
+            "reach_mm": 20,
+            "ribPitch_mm": 3,
+            "firstLayerCantilever_mm": 20,
+            "laterLayerFreeRun_mm": 3.5
+          },
+          {
+            "sector": 1,
+            "deg": "45-90",
+            "reach_mm": 20,
+            "ribPitch_mm": 4,
+            "firstLayerCantilever_mm": 20,
+            "laterLayerFreeRun_mm": 4.67
+          },
+          {
+            "sector": 2,
+            "deg": "90-135",
+            "reach_mm": 20,
+            "ribPitch_mm": 5,
+            "firstLayerCantilever_mm": 20,
+            "laterLayerFreeRun_mm": 5.83
+          },
+          {
+            "sector": 3,
+            "deg": "135-180",
+            "reach_mm": 20,
+            "ribPitch_mm": 6,
+            "firstLayerCantilever_mm": 20,
+            "laterLayerFreeRun_mm": 7
+          },
+          {
+            "sector": 4,
+            "deg": "180-225",
+            "reach_mm": 20,
+            "ribPitch_mm": 8,
+            "firstLayerCantilever_mm": 20,
+            "laterLayerFreeRun_mm": 9.33
+          },
+          {
+            "sector": 5,
+            "deg": "225-270",
+            "reach_mm": 20,
+            "ribPitch_mm": 10,
+            "firstLayerCantilever_mm": 20,
+            "laterLayerFreeRun_mm": 11.67
+          },
+          {
+            "sector": 6,
+            "deg": "270-315",
+            "reach_mm": 20,
+            "ribPitch_mm": 14,
+            "firstLayerCantilever_mm": 20,
+            "laterLayerFreeRun_mm": 16.33
+          },
+          {
+            "sector": 7,
+            "deg": "315-360",
+            "reach_mm": 20,
+            "ribPitch_mm": "none",
+            "firstLayerCantilever_mm": 20,
+            "laterLayerFreeRun_mm": 20
+          }
+        ],
+        "distinctPaths": 12,
+        "cells": 80,
+        "cellsPerSector": [
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10
+        ]
+      }
+    ],
+    "fixesAppliedFrom": [
+      "the 2026-09-19 terraces contain two distinct paths repeated six times each (layer k == layer k+2, 0.000 mm); here the six R layers carry six different phases and the six C layers six different rail offsets, so no layer of a terrace coincides with another",
+      "the 2026-09-19 crossings have a median angle of 16-54 deg with 44% below 10 deg on the largest terrace; a rail crosses a tooth at ~90 deg",
+      "Semir 2026-09-18: 'in the next layer make rails for next layer' — the C layers are those rails"
+    ],
+    "estimates": {
+      "threadLength_m": 267,
+      "ringThread_m": 72.7,
+      "typedPathThread_m": 126.3,
+      "maxTypedSegment_mm": 0.451,
+      "note": "thread = 1.94 x ring length (calibrated on four printed objects) + typed path length as emitted"
+    },
+    "args": {
+      "lh": 0.24,
+      "bead": 0.45,
+      "firstLayerBead": 0.52,
+      "firstLayerSpeed": 12,
+      "w": 3,
+      "e": 0.7,
+      "r0": 48,
+      "K": 192,
+      "foundation": 6,
+      "maxbridge": 60,
+      "maxcantilever": 8,
+      "allow": 0.6,
+      "minanchor": 0.5,
+      "maxCapRadius": 20,
+      "speed": 38,
+      "bridgeSpeed": 14,
+      "temp": 220,
+      "bed": 55,
+      "fan": 100
+    },
+    "gatePolicy": {
+      "meaning": "every finding must fall inside a declared terrace; a finding in a wall is a design error",
+      "bridge_mm": 60,
+      "cantilever_mm": 8,
+      "membrane_min_anchor": 0.5,
+      "first_layer_max_islands": 1,
+      "secondGate_mm": 16.2
+    },
+    "experiments": {
+      "declaredBridgeCeiling_mm": 60,
+      "gateCantilever_mm": 8,
+      "experimentalFreeTip_mm": 26,
+      "evidencedBridge_mm": 16.2,
+      "zones": [
+        {
+          "name": "terrace A",
+          "z0": 10.07,
+          "z1": 12.97,
+          "longestChord_mm": 26
+        },
+        {
+          "name": "terrace B",
+          "z0": 23.03,
+          "z1": 25.93,
+          "longestChord_mm": 26
+        },
+        {
+          "name": "terrace C",
+          "z0": 35.99,
+          "z1": 38.89,
+          "longestChord_mm": 26
+        },
+        {
+          "name": "terrace D",
+          "z0": 48.95,
+          "z1": 51.85,
+          "longestChord_mm": 20
+        }
+      ],
+      "protocol": "gate at the declared ceiling must be clean; at the evidenced 16.2 mm ceiling every finding must fall inside a declared terrace zone, and the count per terrace is itself a result"
+    },
+    "foundation": {
+      "paths": 56,
+      "islandsExpected": 1,
+      "kind": "rings + spokes under the single cylinder"
+    },
+    "reading": "Photograph each terrace from a fixed side with a scale, before the wall above it starts and after. Record the sector angle at which the comb first fails, for each terrace, and the underside after removal.",
+    "events": [
+      {
+        "z": 10.08,
+        "k": 42,
+        "event": "wall-1 -> terrace-A"
+      },
+      {
+        "z": 12.96,
+        "k": 54,
+        "event": "terrace-A -> wall-2"
+      },
+      {
+        "z": 23.04,
+        "k": 96,
+        "event": "wall-2 -> terrace-B"
+      },
+      {
+        "z": 25.92,
+        "k": 108,
+        "event": "terrace-B -> wall-3"
+      },
+      {
+        "z": 36,
+        "k": 150,
+        "event": "wall-3 -> terrace-C"
+      },
+      {
+        "z": 38.88,
+        "k": 162,
+        "event": "terrace-C -> wall-4"
+      },
+      {
+        "z": 48.96,
+        "k": 204,
+        "event": "wall-4 -> terrace-D"
+      },
+      {
+        "z": 51.84,
+        "k": 216,
+        "event": "terrace-D -> wall-5"
+      }
+    ],
+    "violations": [],
+    "warnings": []
+  },
+  "design": null,
+  "preset": null,
+  "builder": "weft.mjs (core/weft_core.js + core/weft_gate.js, no browser, no Python)",
+  "gate": {
+    "bead": 0.45,
+    "maxbridge": 60,
+    "maxcantilever": 8,
+    "allow": 0.6,
+    "minanchor": 0.5,
+    "maxCapRadius": 20,
+    "maxislands": 1,
+    "file": "/tmp/domet/out_a2l/DOMET_A2L_X1.gcode"
+  }
+}

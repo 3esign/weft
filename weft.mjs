@@ -8,7 +8,8 @@
     node weft.mjs build --geo LIMIT16_geometry.json --machine a2l --out DIR      (a level-2 geometry file)
     node weft.mjs build climber --machine a2l --H 240 --legs 3 --out DIR         (a level-2 model; needs Python for
                                                                                   the geometry generator ONLY)
-    node weft.mjs check FILE.gcode|FILE.gcode.3mf --machine a2l [--maxbridge 16] [--json out.json]
+    node weft.mjs check FILE.gcode|FILE.gcode.3mf --machine a2l [--maxbridge 16] [--json out.json] [--zones z.json]
+                                                                                 (S1 support gate, then the layered gate S2–S8 + ORDER; either refuses)
     node weft.mjs serve [--port 8765]                                            (index.html with presets, offline)
 
    The chain is the one USAGE.md describes and every step still refuses:
@@ -30,7 +31,7 @@ import http from 'node:http';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { createWeftCore, layersFromGeometry, layersFromClimber, climberHardRefusals, writeStl, gcodeText, fixHeader,
-         packBambu3mf, runGate, loadMachines, WEFT_ROOT, restoreHarvestedEndZ } from './core/weft_build.mjs';
+         packBambu3mf, runGate, runGateLayers, loadMachines, WEFT_ROOT, restoreHarvestedEndZ } from './core/weft_build.mjs';
 import { freshReportPath, validateMembraneGeometry, writeJsonAtomic } from './membrane_contract.mjs';
 
 const argv = process.argv.slice(2);
@@ -267,6 +268,36 @@ async function cmdBuild(){
     extra.membranes = rows;
   }
 
+  /* 4b. THE LAYERED GATE S2–S8 (core/weft_gate_layers.js, 2026-09-25). S1 asks whether material has
+     something under it; KRAK passed S1 with zero problems and both copies were destroyed. Each layer
+     below measures one more quantity over the same final bytes and judges it against the printed
+     record; the verdict is a vector and any layer may refuse. An experiment declares its risk bands
+     (summary.experiments.zones, optionally with `declares:[...]`); findings inside them are DECLARED,
+     and the ORDER rule then insists the declared band is the last thing printed. */
+  {
+    const ex = geo && geo.summary && geo.summary.experiments;
+    const zones = [];
+    for(const zn of ((ex && ex.zones) || [])) zones.push({ name:zn.name, z0:+zn.z0, z1:+zn.z1, declares:zn.declares });
+    if(ex && ex.crown){ const zc = geo.layers.find(l => typeof l.phase === 'string' && l.phase.startsWith('crown-')); if(zc) zones.push({ name:'crown', z0:zc.zBot, z1:1e9 }); }
+    const lo = { bead:m.bead, allow:gateOpts.allow, firstLayerBead:m.firstLayerBead, evidencedBridge:(ex && +ex.evidencedBridge_mm) || 16.2, zones, file:gc,
+      aboveRisk_mm:+opt('above-risk', 1.0), crossingsEvery:+opt('crossings-every', 1) };
+    if(opt('s7carried') != null) lo.S7carried = +opt('s7carried');
+    if(opt('s5fail') != null) lo.S5fail = +opt('s5fail');
+    const t1 = Date.now();
+    const L = runGateLayers(txt, lo);
+    fs.writeFileSync(path.join(outDir, `${name}_gate_layers.json`), JSON.stringify(L, null, 1));
+    console.log(`GATE  layers: ${L.vector}  (${L.finding_count} findings, ${Date.now() - t1} ms)`);
+    for(const id of ['S2', 'S3', 'S4']){ const g = L.layers[id]; if(g.declared) console.log(`      ${id}: ${g.declared} declared inside experiment zones, ${g.refusing} refusing`); }
+    if(L.refuse){
+      gate.problems = L.findings.filter(f => !f.declared).slice(0, 400); gate.problem_count = L.findings.filter(f => !f.declared).length;
+      refuse(`the layered gate refuses (${L.refusedBy.join(', ')}): ${L.vector}`);
+    }
+    extra.gateLayers = { version:L.version, vector:L.vector, refusedBy:L.refusedBy, findings:L.finding_count,
+      S2:{ worst:L.layers.S2.worst, free_m:L.layers.S2.free_m, declared:L.layers.S2.declared }, S3:{ worst:L.layers.S3.worst, neverTied:L.layers.S3.neverTied, declared:L.layers.S3.declared },
+      S4:{ overflights:L.layers.S4.overflights, closest:L.layers.S4.closest, declared:L.layers.S4.declared }, S5:{ ratio:L.layers.S5.ratio, contact_mm2:L.layers.S5.contact_mm2, lever_mm:L.layers.S5.lever_mm },
+      S7:{ weakest:L.layers.S7.weakest.slice(0, 3) }, S8:{ periodTwoLayers:L.layers.S8.periodTwoLayers, medianCrossing_deg:L.layers.S8.medianOfLayerMedians_deg }, ORDER:L.layers.ORDER };
+  }
+
   /* 5. tell the truth in the first ten lines */
   const fixed = fixHeader(txt); fs.writeFileSync(gc, fixed.text);
   console.log(`HEAD  rewritten: ${fixed.stats.layers} layers, ${fixed.stats.filament_mm} mm filament, ${fixed.stats.grams} g, max Z ${fixed.stats.maxZ}, ${fixed.stats.time} (kinematic)`);
@@ -293,7 +324,7 @@ async function cmdBuild(){
     builder:'weft.mjs (core/weft_core.js + core/weft_gate.js, no browser, no Python)', gate:gateOpts });
   const man = { name, model:model || (presetEntry ? `preset:${presetEntry.file}` : (design ? 'design' : 'geometry')), built:new Date().toISOString().slice(0, 19),
     machine:Object.assign({ id:machineId }, Object.fromEntries(['label', 'plate', 'maxZ', 'bead', 'beadSource', 'beadEvidence', 'lh', 'firstLayerBead', 'temp', 'bed', 'start', 'end', 'route'].map(k => [k, m[k]]))),
-    geometry:geoFile ? path.basename(geoFile) : null, shipped, gate:`${name}_gate.json`, report:path.basename(reportPath),
+    geometry:geoFile ? path.basename(geoFile) : null, shipped, gate:`${name}_gate.json`, gateLayers:`${name}_gate_layers.json`, report:path.basename(reportPath),
     builder:'weft.mjs', core:W.version, outcome:'NOT PRINTED — fill this in after the print, with photographs' };
   fs.writeFileSync(path.join(outDir, 'manifest.json'), JSON.stringify(man, null, 1));
   console.log(`\n=== done ===\n${outDir}\n  ${shipped.join('\n  ')}\n  manifest.json`);
@@ -318,8 +349,21 @@ function cmdCheck(){
   const maxReport = +opt('max-report', 25);
   for(const p of res.problems.slice(0, maxReport)) console.log('  ', JSON.stringify(p));
   if(res.problem_count > maxReport) console.log(`   ... and ${res.problem_count - maxReport} more`);
-  console.log(res.PASS ? '\n  gate passed' : '\n  gate REFUSED');
-  process.exit(res.PASS ? 0 : 1);
+  console.log(res.PASS ? '\n  S1 support gate passed' : '\n  S1 support gate REFUSED');
+  /* the layered gate S2–S8 over the same bytes (2026-09-25) */
+  const lo = { bead:m.bead, allow:o.allow != null ? o.allow : 0.6, firstLayerBead:m.firstLayerBead, file, aboveRisk_mm:+opt('above-risk', 1.0), crossingsEvery:+opt('crossings-every', 1) };
+  if(opt('zones')) lo.zones = JSON.parse(fs.readFileSync(path.resolve(opt('zones')), 'utf8'));
+  if(opt('s7carried') != null) lo.S7carried = +opt('s7carried');
+  if(opt('s5fail') != null) lo.S5fail = +opt('s5fail');
+  const t1 = Date.now();
+  const L = runGateLayers(path.resolve(file), lo);
+  if(opt('json-layers')) fs.writeFileSync(path.resolve(opt('json-layers')), JSON.stringify(L, null, 1));
+  console.log(`\n  layers: ${L.vector}   (${L.finding_count} findings, ${Date.now() - t1} ms)`);
+  for(const id of ['S2', 'S3', 'S4', 'S5', 'S7', 'S8']){ const g = L.layers[id]; const w = g.worst || g.closest || g.weakest && g.weakest[0] || null; console.log(`    ${id} ${g.verdict.padEnd(8)} ${g.question}${w ? ' — worst ' + JSON.stringify(w) : ''}`); }
+  if(L.layers.ORDER.verdict === 'FAIL') console.log(`    ORDER FAIL — ${L.layers.ORDER.why}`);
+  for(const f of L.findings.filter(f => !f.declared).slice(0, maxReport)) console.log('  ', JSON.stringify(f));
+  console.log(L.refuse ? `\n  layered gate REFUSED (${L.refusedBy.join(', ')})` : '\n  layered gate passed');
+  process.exit((res.PASS && !L.refuse) ? 0 : 1);
 }
 
 /* ---------------------------------------------------------------------------------------------- */

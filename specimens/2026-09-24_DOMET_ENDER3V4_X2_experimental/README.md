@@ -1,0 +1,165 @@
+# DOMET_ENDER3V4_X2 — corrected reissue
+
+**Print `DOMET_ENDER3V4_X2.gcode` from this folder.**
+
+Supersedes `2026-09-24_DOMET_ENDER3V4_X1_experimental`, which must not be printed.
+
+---
+
+## Why there is an X2
+
+X1 was exported by a toolchain copy that was **older than the one committed in
+this repository**. The working copy used for the X1 export was restored from a
+17/18 September snapshot and was missing the first-layer contract added on
+19 September (`docs/FIRST_LAYER_CONTRACT.md`). Every X1 file was therefore
+emitted without the first-layer guard.
+
+### What was wrong in X1 (this machine)
+
+The Ender start block purges at **Z 0.300** before the model starts at
+**Z 0.200**. Creality Print reads the first extruding move in the file as
+"layer 1", so its preview built layer 1 out of the purge line and showed an
+almost empty plate. The model's real first layer was present in the X1 file
+the whole time — it just was not what the preview was drawing.
+
+Running the repository's own first-layer audit over both files:
+
+| file | audit | model first Z | preview first Z | first-layer segments |
+|---|---|---|---|---|
+| `DOMET_ENDER3V4_X1.gcode` | **FAIL** — `PHANTOM_FIRST_PREVIEW_LAYER` | 0.200 | 0.300 | 1371 |
+| `DOMET_ENDER3V4_X2.gcode` | **PASS** | 0.200 | 0.200 | 1371 |
+
+The segment count is identical in both files. Nothing was added to the model;
+the purge was moved inside an explicit wipe region so the slicer stops counting
+it as a layer.
+
+
+### What changed in the emitted file
+
+Two things, both in the header, nothing in the model body:
+
+1. The startup purge is now wrapped in `; WIPE_START` … `; WIPE_END`, so a
+   slicer preview does not treat it as the model's first layer.
+2. The header declares `; WEFT_FIRST_LAYER_V1 Z=0.200 H=0.200`,
+   naming the model's real first layer height so the declaration can be checked
+   against the file rather than trusted.
+
+The geometry is byte-for-byte the same design as X1. The terrace ladders, the
+wall grammar, the seat rings and the reach schedule are unchanged, which is what
+makes X1 and X2 comparable and what lets the X1 predictions stand.
+
+### Gate results for this build
+
+| check | result |
+|---|---|
+| support gate, declared ceiling | **PASS** — 0 problems over 476,304 points / 279 layers |
+| first-layer audit | **PASS** — 1 island, model Z = preview Z = 0.200 |
+| second gate at the evidenced 16.2 mm | 601 findings, **0 outside the declared zones** |
+| Bambu package re-gate | n/a — plain G-code machine |
+
+The second gate is not a failure. It is the deliberate re-run at the reach that
+the 19 September specimens actually evidenced, and its job is to prove that every
+finding falls inside a terrace that this design declared in advance. 0 outside
+the declared zones is the result that matters.
+
+### Build figures
+
+| | |
+|---|---|
+| machine | Creality Ender-3 V4 |
+| Z levels | 278 |
+| max Z | 55.6 mm |
+| thread path | 303.3 m |
+| filament | 10,195.96 mm ≈ **30.9 g** |
+| weld nodes | 19,513 |
+| estimated time | 5 h 25 m 48 s (kinematic estimate, not the printer's own) |
+
+Thread path and filament are two different measurements of the same run and must
+not be compared to each other as if they were the same quantity. The thread path
+is the distance the nozzle travels while extruding; the filament figure is the
+length of 1.75 mm stock consumed. One draws into the other, so the thread path is
+always the larger number.
+
+---
+
+## Design notes (unchanged from X1)
+
+# DOMET · Creality Ender-3 V4
+
+An **instrument**, not a sculpture. It measures how far a returning hairpin can reach into open air before it
+stops making a horizontal surface, and whether circumferential ribs under the teeth raise that limit.
+**Generated and digitally checked; NOT PRINTED.** [Predictions and how to read it](PREDICTIONS.md) ·
+[Rebuild protocol](PROTOCOL.md) · [Outcome](outcomes.md).
+
+![Nominal emitted paths](DOMET_ENDER3V4_X1_preview.svg)
+
+## Why it exists
+
+On 2026-09-23 two objects built by another mind on 2026-09-19 were printed. `OBRTAJ_ENDER_H7` came out with its
+six horizontal terraces **flat** — the first level floating surface in this project. `RAZMAK_A2L_H4` came out
+flat on its straight runs and **tangled** where the return was longest, and the print was stopped for machine
+safety. Measuring both geometry files gave the free reach of each terrace's first layer: the Ender terrace that
+held has a median of 18.1 mm and a minimum of 6.6 mm; the A2L terrace that failed has a median of 28.6 mm and a
+minimum of 20.1 mm. The limit is therefore bracketed between roughly 25 and 29 mm — but layer height and speed
+moved at the same time, so nothing was isolated. This object isolates it.
+
+## What it is
+
+One cylinder of 48 mm radius. Four terraces on it. The walls between them are identical, so a
+terrace can only differ from another terrace by the thing being tested.
+
+| terrace | what it tests | z, mm | cells | distinct paths in 12 layers | reach per sector, mm | rib pitch per sector, mm |
+|---|---|---|---|---|---|---|
+| A | reach ladder, outward, ribbed | 10–12.4 | 80 | 12 | 5 / 8 / 11 / 14 / 17 / 20 / 23 / 26 | 5 / 5 / 5 / 5 / 5 / 5 / 5 / 5 |
+| B | reach ladder, outward, plain | 22.4–24.8 | 80 | 2 | 5 / 8 / 11 / 14 / 17 / 20 / 23 / 26 | none / none / none / none / none / none / none / none |
+| C | reach ladder, inward, ribbed | 34.8–37.2 | 63 | 12 | 5 / 8 / 11 / 14 / 17 / 20 / 23 / 26 | 5 / 5 / 5 / 5 / 5 / 5 / 5 / 5 |
+| D | rib-pitch ladder, outward | 47.2–49.6 | 80 | 12 | 20 / 20 / 20 / 20 / 20 / 20 / 20 / 20 | 3 / 4 / 5 / 6 / 8 / 10 / 14 / none |
+
+Sectors are 45° and **ascend**, so the break reads as the angle at which the comb stops being a comb.
+A → B isolates the ribs. A → C isolates the direction (inward has no wall mass outboard of the tip).
+D isolates how far apart ribs may be, and its eighth sector has none at all.
+
+## The method
+
+A terrace layer is either **R** — a triangle wave of returning teeth whose base sits on a continuous ring — or
+**C** — circumferential rails that cross every tooth at very nearly 90°. R and C alternate. A rail gives the
+next wave a landing every rib pitch, so only the **first** layer of a terrace is a full-length cantilever;
+after that a tooth is a beam on supports. The ribs are Semir's own instruction of 2026-09-18, *"in the next
+layer make rails for next layer"*.
+
+Two defects measured in the 2026-09-19 terraces are fixed here. Those terraces contain only **two** distinct
+paths — layer *k* equals layer *k+2* point for point, so each path is laid six times onto itself, the same
+fault found at layers 164/165 of `ZIGURAT_TKANJE_A2L_X1`. Here each of the six R layers carries a different
+phase and each of the six C layers a different rail offset, so no layer of a terrace coincides with another
+(terrace B keeps the two-path scheme on purpose — it is the control). And those crossings had a median angle
+of 16–54° with 44 % below 10° on the largest terrace; a rail crosses a tooth at ~90°.
+
+## Dimensions and process
+
+Nominal envelope **147.9 × 144.9 × 55.6 mm** on a Creality Ender-3 V4 plate, 278 layers at 0.2 mm.
+Nozzle 0.4 mm; bead 0.42 mm, ASSUMED — this machine has never been bead-calibrated. Wall 10 mm between terraces, 12 layers per terrace,
+tooth pitch 4 mm, tip gap 1.2 mm. Only the cylinder touches the bed; every terrace is in mid-air.
+
+Emitted: **NaN m of thread**, undefined welds, undefined paths.
+Header, recomputed from the file's own moves: 386 layers, NaN m of 1.75 mm filament,
+**undefined g**, max Z undefined, **undefined** kinematic (no acceleration, heating or waits; not the machine's own prediction).
+Thread length and filament feed are different quantities — the ratio here is about 30:1.
+
+## Gates
+
+Declared ceiling: bridge 60 mm (the chain's experimental maximum), cantilever 8 mm.
+**Final G-code gate: PASS — 0 problems / 476367 points / 279 layers, first layer 1 island.**
+The 60 mm ceiling is why the ladder stops at 26 mm and not higher: the gate measures a returning hairpin by its
+**path length between anchors**, so a 26 mm reach is scored as a 52 mm bridge. That is itself a finding — a
+hairpin's two legs are half a millimetre apart and behave as one folded cantilever, not as a bridge.
+
+At the evidenced 16.2 mm ceiling: **601 findings, 0 outside the declared terraces** —
+terrace A 142, terrace B 75, terrace C 139, terrace D 245. These are admitted experiments beyond prior evidence, not proven printable spans.
+
+Same-layer contacts: **4460**, all on typed terrace paths, where the triangle wave meets its own base
+ring at every cell. They are deliberate root welds, they are located in the report, and no gate exemption hides them.
+
+Honest verdict: dimensions, emitted planar layers, support gates and file identity were checked. Sag, bond
+quality, the value of the ribs and physical completion are exactly what this object is meant to measure and are
+unmeasured until it is printed.
+

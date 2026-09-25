@@ -23,7 +23,8 @@ runs the original for comparison. See `docs/STATE_2026-09-16.md` and `docs/APP_P
     node weft.mjs build --design my_params.json  --machine a2l --out specimens/<folder>
     node weft.mjs build --geo  <name>_geometry.json --machine a2l --out specimens/<folder>
     node weft.mjs build climber --machine a2l --H 240 --legs 3 --out specimens/<folder>
-    node weft.mjs check FILE.gcode|FILE.gcode.3mf --machine a2l [--maxbridge 16.2 --maxcantilever 4.8]
+    node weft.mjs check FILE.gcode|FILE.gcode.3mf --machine a2l [--maxbridge 16.2 --maxcantilever 4.8] [--zones z.json]
+                                                   # S1 support gate, then the layered gate S2–S8 + ORDER (2026-09-25)
     node weft.mjs serve            # index.html at http://127.0.0.1:8765 with the presets table
 
 No browser, no Playwright, no Python, no model. The thread is made by `core/weft_core.js` (the engine
@@ -75,6 +76,7 @@ says so. Today: **A2L measured; A1 and the Ender assumed.**
 | 1 · geometry | `<model>_geometry.py`: topology, weld columns, caps, foundation, and the wall each layer can carry | exits non-zero on its own violations; writes `<out>.rejected` instead |
 | 2 · builder | `core/weft_build.mjs` (or the browser twins `make_<model>.mjs`): the thread, STL, G-code, thinning the layers that need it | refuses on a failed weave; **deletes** any output the gate rejects |
 | 3 · gate | `core/weft_gate.js` (= `check_gcode.py`) on the FINAL G-code — nothing exempt | any FLOATING, LONG_BRIDGE, CANTILEVER, UNANCHORED_MEMBRANE, BAD_MEMBRANE, a first layer in pieces, or a generator whose declared anchoring disagrees with the measured one by more than 0.10 |
+| 3b · layered gate | `core/weft_gate_layers.js` on the same bytes (2026-09-25, after KRAK): S2 quantity, S3 free tips, S4 overflight, S5 plate, S7 joint, S8 stacking, ORDER — one question each, verdict as a vector, limits set by the printed record (`docs/GATE_LAYERS_2026-09-25.md`) | **S3** a layer whose loose tips reach a median over 17.6 mm to solid material; **S4** extrusion passing over a tip nothing tied, ≤ 12 mm above it; **ORDER** undeclared layers standing on a declared risk band. Findings inside `summary.experiments.zones` are declared, not refusing — and then ORDER insists the band is the last thing printed |
 | 3a · header | `fix_header.py` rewrites the HEADER_BLOCK from the file's own moves | — (the harvested start blocks carry the statistics of the print they came from) |
 | 4 · package | `.gcode.3mf` for Bambu, plain `.gcode` for Klipper | a missing container template |
 | 5 · manifest | what was built, from which numbers, on whose authority, and `outcome: NOT PRINTED` | — |

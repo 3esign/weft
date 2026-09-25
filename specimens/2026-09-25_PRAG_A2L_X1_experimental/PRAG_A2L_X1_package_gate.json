@@ -1,0 +1,133 @@
+{
+ "file": "D:\\Svemir\\!Projekti\\PI\\weft\\specimens\\2026-09-25_PRAG_A2L_X1_experimental\\PRAG_A2L_X1.gcode.3mf",
+ "layers": 89,
+ "firstLayer": {
+  "PASS": true,
+  "version": 1,
+  "firstModelZ": 0.24,
+  "firstPreviewZ": 0.24,
+  "segments": 1544,
+  "length_mm": 4221.448,
+  "filament_mm": 192.47405,
+  "startupSegments": 0,
+  "issues": []
+ },
+ "params": {
+  "bead": 0.45,
+  "allow": 0.6,
+  "maxbridge": 24,
+  "res": 0.2,
+  "bedz": 0.5,
+  "maxislands": 1,
+  "maxcantilever": 3
+ },
+ "stats": {
+  "floating": 0,
+  "long_bridge": 0,
+  "cantilever": 0,
+  "bridges": 7113,
+  "bad_membrane": 0,
+  "unanchored_membrane": 0,
+  "checked_paths": 98,
+  "checked_points": 151962,
+  "exempt_layers": 3,
+  "first_layer_islands": 1
+ },
+ "byRole": {},
+ "worstGaps": [
+  [
+   18.24,
+   "bridge",
+   3.05,
+   3.2
+  ],
+  [
+   18,
+   "bridge",
+   2.8,
+   2.84
+  ],
+  [
+   18.48,
+   "bridge",
+   2.53,
+   2.61
+  ],
+  [
+   18.72,
+   "bridge",
+   2.53,
+   2.61
+  ],
+  [
+   19.2,
+   "bridge",
+   2.53,
+   2.61
+  ],
+  [
+   19.92,
+   "bridge",
+   2.53,
+   2.61
+  ],
+  [
+   18.96,
+   "bridge",
+   2.53,
+   2.6
+  ],
+  [
+   19.44,
+   "bridge",
+   2.51,
+   2.6
+  ],
+  [
+   19.68,
+   "bridge",
+   2.51,
+   2.6
+  ],
+  [
+   10.32,
+   "chord",
+   2.25,
+   2.28
+  ],
+  [
+   10.8,
+   "chord",
+   2.25,
+   2.28
+  ],
+  [
+   11.28,
+   "chord",
+   2.25,
+   2.28
+  ],
+  [
+   11.76,
+   "chord",
+   2.25,
+   2.28
+  ],
+  [
+   12.24,
+   "chord",
+   2.25,
+   2.28
+  ],
+  [
+   12.72,
+   "chord",
+   2.25,
+   2.28
+  ]
+ ],
+ "membranes": [],
+ "problems": [],
+ "problem_count": 0,
+ "PASS": true
+}

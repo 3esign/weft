@@ -1,0 +1,133 @@
+{
+ "file": "/tmp/v2/DOMET2_ENDER3V4_X2/DOMET2_ENDER3V4_X2.gcode",
+ "layers": 282,
+ "firstLayer": {
+  "PASS": true,
+  "version": 1,
+  "firstModelZ": 0.2,
+  "firstPreviewZ": 0.2,
+  "segments": 1231,
+  "length_mm": 3404.627,
+  "filament_mm": 121.07574,
+  "startupSegments": 2,
+  "issues": []
+ },
+ "params": {
+  "bead": 0.42,
+  "allow": 0.6,
+  "maxbridge": 60,
+  "res": 0.2,
+  "bedz": 0.5,
+  "maxislands": 1,
+  "maxcantilever": 8
+ },
+ "stats": {
+  "floating": 0,
+  "long_bridge": 0,
+  "cantilever": 0,
+  "bridges": 43638,
+  "bad_membrane": 0,
+  "unanchored_membrane": 0,
+  "checked_paths": 1054,
+  "checked_points": 573704,
+  "exempt_layers": 3,
+  "first_layer_islands": 1
+ },
+ "byRole": {},
+ "worstGaps": [
+  [
+   27.8,
+   "bridge",
+   26.46,
+   26.6
+  ],
+  [
+   53.6,
+   "bridge",
+   22.2,
+   22.57
+  ],
+  [
+   13,
+   "bridge",
+   20.52,
+   20.6
+  ],
+  [
+   13,
+   "bridge",
+   20.52,
+   20.6
+  ],
+  [
+   13,
+   "bridge",
+   20.52,
+   20.6
+  ],
+  [
+   13,
+   "bridge",
+   20.52,
+   20.6
+  ],
+  [
+   13,
+   "bridge",
+   20.52,
+   20.6
+  ],
+  [
+   13,
+   "bridge",
+   20.52,
+   20.6
+  ],
+  [
+   13,
+   "bridge",
+   20.52,
+   20.6
+  ],
+  [
+   13,
+   "bridge",
+   20.52,
+   20.6
+  ],
+  [
+   20.4,
+   "bridge",
+   20.52,
+   20.6
+  ],
+  [
+   20.4,
+   "bridge",
+   20.49,
+   20.6
+  ],
+  [
+   20.4,
+   "bridge",
+   20.52,
+   20.6
+  ],
+  [
+   20.4,
+   "bridge",
+   20.5,
+   20.6
+  ],
+  [
+   20.4,
+   "bridge",
+   20.52,
+   20.6
+  ]
+ ],
+ "membranes": [],
+ "problems": [],
+ "problem_count": 0,
+ "PASS": true
+}

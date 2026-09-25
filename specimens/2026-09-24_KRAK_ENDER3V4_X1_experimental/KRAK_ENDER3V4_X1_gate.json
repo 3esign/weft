@@ -1,0 +1,133 @@
+{
+ "file": "/tmp/krak/v3_KRAK_ENDER3V4_X1/KRAK_ENDER3V4_X1.gcode",
+ "layers": 157,
+ "firstLayer": {
+  "PASS": true,
+  "version": 1,
+  "firstModelZ": 0.2,
+  "firstPreviewZ": 0.2,
+  "segments": 1114,
+  "length_mm": 2776.341,
+  "filament_mm": 98.86821,
+  "startupSegments": 2,
+  "issues": []
+ },
+ "params": {
+  "bead": 0.42,
+  "allow": 0.6,
+  "maxbridge": 60,
+  "res": 0.2,
+  "bedz": 0.5,
+  "maxislands": 1,
+  "maxcantilever": 8
+ },
+ "stats": {
+  "floating": 0,
+  "long_bridge": 0,
+  "cantilever": 0,
+  "bridges": 9292,
+  "bad_membrane": 0,
+  "unanchored_membrane": 0,
+  "checked_paths": 223,
+  "checked_points": 504846,
+  "exempt_layers": 3,
+  "first_layer_islands": 1
+ },
+ "byRole": {},
+ "worstGaps": [
+  [
+   5.2,
+   "bridge",
+   24.5,
+   24.61
+  ],
+  [
+   12.6,
+   "bridge",
+   9.48,
+   9.6
+  ],
+  [
+   12.8,
+   "bridge",
+   8.93,
+   9.04
+  ],
+  [
+   13.2,
+   "bridge",
+   8.88,
+   9.04
+  ],
+  [
+   13,
+   "bridge",
+   8.93,
+   9.02
+  ],
+  [
+   6.4,
+   "bridge",
+   6.03,
+   6.91
+  ],
+  [
+   13.4,
+   "bridge",
+   5.81,
+   6.08
+  ],
+  [
+   13.6,
+   "bridge",
+   5.88,
+   6.08
+  ],
+  [
+   13.8,
+   "bridge",
+   4.4,
+   4.6
+  ],
+  [
+   14,
+   "bridge",
+   4.4,
+   4.6
+  ],
+  [
+   6,
+   "bridge",
+   3.67,
+   4.22
+  ],
+  [
+   6.8,
+   "bridge",
+   3.82,
+   4.22
+  ],
+  [
+   5.4,
+   "bridge",
+   3.67,
+   4.18
+  ],
+  [
+   5.8,
+   "bridge",
+   3.61,
+   4.12
+  ],
+  [
+   6.2,
+   "bridge",
+   3.67,
+   4.12
+  ]
+ ],
+ "membranes": [],
+ "problems": [],
+ "problem_count": 0,
+ "PASS": true
+}

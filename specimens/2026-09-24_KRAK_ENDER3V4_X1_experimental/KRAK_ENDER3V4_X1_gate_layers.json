@@ -1,0 +1,3467 @@
+{
+ "version": "gate-layers-2026-09-25-krak",
+ "file": "KRAK_ENDER3V4_X1.gcode",
+ "params": {
+  "bead": 0.42,
+  "allow": 0.6,
+  "res": 0.2,
+  "step": 0.5,
+  "zones": [
+   {
+    "name": "terrace K1",
+    "z0": 4.98,
+    "z1": 7.42,
+    "declares": [
+     "S2",
+     "S3",
+     "S4",
+     "S7"
+    ]
+   },
+   {
+    "name": "terrace K2",
+    "z0": 12.38,
+    "z1": 18.02,
+    "declares": [
+     "S2",
+     "S3",
+     "S4",
+     "S7"
+    ]
+   },
+   {
+    "name": "terrace K3",
+    "z0": 22.98,
+    "z1": 28.22,
+    "declares": [
+     "S2",
+     "S3",
+     "S4",
+     "S7"
+    ]
+   }
+  ]
+ },
+ "layersChecked": 154,
+ "exempt": 3,
+ "thread_m": 284.52,
+ "maxZ": 31.2,
+ "ms": 21642,
+ "vector": "S2 INFO \u00b7 S3 DECLARED \u00b7 S4 DECLARED \u00b7 S5 INFO \u00b7 S7 INFO \u00b7 S8 WARN \u00b7 ORDER FAIL",
+ "refuse": true,
+ "refusedBy": [
+  "ORDER"
+ ],
+ "layers": {
+  "S2": {
+   "question": "how much thread hangs",
+   "verdict": "INFO",
+   "refusing": 0,
+   "declared": 0,
+   "overHold": 0,
+   "worst": {
+    "k": 66,
+    "z": 13.2,
+    "runs10": 36,
+    "free_mm": 1483,
+    "longest_mm": 76
+   },
+   "free_m": 81.41,
+   "thread_m": 284.52,
+   "free_pct": 28.6,
+   "limit": {
+    "hold": 203,
+    "fail": 33,
+    "unit": "free runs > 10 mm in one layer",
+    "evidence": "OBRTAJ terrace-1 layer 0: 203 runs, 6.9 m free thread in ONE layer, 36 % of the whole object free \u2014 held flat. KRAK K1 layer 0: 33 runs, 1.25 m \u2014 destroyed. The quantity of hanging thread does NOT decide; S2 reports, S3 refuses"
+   }
+  },
+  "S3": {
+   "question": "how far a free tip reaches, and whether it is ever tied",
+   "verdict": "DECLARED",
+   "neverTiedNote": "90 tips are never tied by anything laid later (OBRTAJ: 0; KRAK: 279)",
+   "refusing": 0,
+   "declared": 43,
+   "layersWithLongTips": 63,
+   "tips": 1928,
+   "neverTied": 90,
+   "worst": {
+    "k": 71,
+    "z": 14.2,
+    "tips": 36,
+    "min": 11.9,
+    "median": 38.3,
+    "p90": 39.1,
+    "max": 39.4,
+    "notes": [
+     "max 39.4 > 37.6 held (reported)",
+     "min 11.9 > 3.4 held: no short tip among the long ones (reported)"
+    ],
+    "color": "RED"
+   },
+   "limits": {
+    "median": {
+     "hold": 17.6,
+     "fail": 22.6,
+     "unit": "mm, median free reach (to solid material) of the loose tips of one layer",
+     "evidence": "OBRTAJ: 66 terrace layers, medians 6\u201317.6, held flat; KRAK K1: twelve layers at 22.6\u201324.5, destroyed on both machines; RAZMAK terrace-1: 30.7, nested and stopped. One statistic separates the printed record"
+    },
+    "max": {
+     "hold": 37.6,
+     "fail": 73.8,
+     "unit": "mm, longest free reach in one layer (reported, not refused: KRAK failed at 24.6, far below the OBRTAJ maximum \u2014 the longest tip alone does not decide)",
+     "evidence": "OBRTAJ terrace-1 max 37.6 held; RAZMAK terrace-1 max 73.8 nested"
+    },
+    "min": {
+     "hold": 3.4,
+     "fail": 12.4,
+     "unit": "mm, shortest tip of a layer that has long tips (reported, not refused: the median alone separates the printed record, and a bracket built on one comparison must not refuse)",
+     "evidence": "OBRTAJ every terrace min 2.0\u20133.4 held (short tips among long ones); RAZMAK terrace-1 min 12.4 nested; KRAK K1 min 21.7 destroyed"
+    },
+    "longTip_mm": 8
+   }
+  },
+  "S4": {
+   "question": "does extrusion pass over a tip that is still loose",
+   "verdict": "DECLARED",
+   "refusing": 0,
+   "declared": 835,
+   "overflights": 835,
+   "closest": {
+    "tipZ": 6.2,
+    "overZ": 7.2,
+    "clearance": 1,
+    "r": 0.64
+   },
+   "head": {
+    "tipRadius": 0.6,
+    "coneSlope": 0.7,
+    "coneHeight": 2
+   },
+   "limit": {
+    "hold": null,
+    "fail": 5.28,
+    "unit": "mm of Z between a still-loose tip and extrusion passing over it",
+    "evidence": "KRAK: K2 castle legs pass 5.3\u20138.6 mm above K1 tips that nothing ever tied, K3 over K2 likewise \u2014 destroyed. OBRTAJ: zero such passes (its steps go inward, nothing flies over a fringe) \u2014 held. Refused at any clearance \u2264 12 mm: the margin above the evidenced failure is ASSUMED"
+   },
+   "refuseBelow_mm": 12
+  },
+  "S5": {
+   "question": "what holds the object against what is built above it",
+   "verdict": "INFO",
+   "contact_mm2": 1341,
+   "firstLayer_mm": 2776.3,
+   "height_mm": 31.2,
+   "footprintRadius_mm": 40.8,
+   "outreach_mm": 140.8,
+   "lever_mm": 100,
+   "ratio": 0.433,
+   "failAtOrBelow": null,
+   "limit": {
+    "hold": 0.343,
+    "fail": null,
+    "unit": "mm\u00b2 of first-layer contact per (mm height \u00d7 mm lever)",
+    "evidence": "OBRTAJ 0.343 held on the Ender plate; KRAK A2L 0.352 held on the A2L plate while the object broke above it; KRAK Ender left the plate at its value \u2014 a plate number is per machine and per plate state; reported, refused only when given --s5fail"
+   }
+  },
+  "S7": {
+   "question": "is a layer that carries the object laid on points",
+   "verdict": "INFO",
+   "refusing": 0,
+   "declared": 0,
+   "weakest": [
+    {
+     "k": 115,
+     "z": 23,
+     "carried": 0.349,
+     "onSolid": 1,
+     "pileMax": 0,
+     "solidComponents": 2,
+     "largestSolidExtent_mm": 94.5,
+     "above": 41
+    },
+    {
+     "k": 39,
+     "z": 7.8,
+     "carried": 0.39,
+     "onSolid": 1,
+     "pileMax": 0,
+     "solidComponents": 1,
+     "largestSolidExtent_mm": 94.5,
+     "above": 117
+    },
+    {
+     "k": 41,
+     "z": 8.2,
+     "carried": 0.397,
+     "onSolid": 1,
+     "pileMax": 0,
+     "solidComponents": 1,
+     "largestSolidExtent_mm": 94.5,
+     "above": 115
+    },
+    {
+     "k": 43,
+     "z": 8.6,
+     "carried": 0.397,
+     "onSolid": 1,
+     "pileMax": 0,
+     "solidComponents": 1,
+     "largestSolidExtent_mm": 94.5,
+     "above": 113
+    },
+    {
+     "k": 45,
+     "z": 9,
+     "carried": 0.397,
+     "onSolid": 1,
+     "pileMax": 0,
+     "solidComponents": 1,
+     "largestSolidExtent_mm": 94.5,
+     "above": 111
+    }
+   ],
+   "failAtOrBelow": null,
+   "limit": {
+    "hold": 0.118,
+    "fail": null,
+    "unit": "fraction of a layer laid on material, layers with \u2265 20 layers above",
+    "evidence": "OBRTAJ terrace-1 layer 0: 11.8 % carried with 939 layers above \u2014 held. The fraction alone cannot refuse; reported so the joint the drag will find is known"
+   }
+  },
+  "S8": {
+   "question": "does every layer cross the one below",
+   "verdict": "WARN",
+   "refusing": 0,
+   "selfStackedLayers": 0,
+   "periodTwoLayers": 94,
+   "crossings": 1752131,
+   "crossingsBelow10deg": 1713205,
+   "medianOfLayerMedians_deg": 12.3,
+   "worst": {
+    "k": 3,
+    "z": 0.6,
+    "selfStack": 0.952
+   },
+   "limit": {
+    "hold": 0.983,
+    "fail": null,
+    "unit": "fraction of a layer within a quarter bead of the layer below",
+    "evidence": "OBRTAJ foundation and crown layers at 0.976\u20130.983 printed; the weave rule (Semir, 2026-09-18: every layer must cross the one below) is a GENERATOR rule \u2014 here it is reported per layer, not refused"
+   },
+   "note": "A-B-A-B (layer k = layer k+2) is reported, not refused: OBRTAJ printed flat with 114 such layers"
+  },
+  "ORDER": {
+   "verdict": "FAIL",
+   "aboveRisk_mm": 1,
+   "zone": "terrace K1",
+   "undeclaredLayersAbove": 58,
+   "fromZ": 8.6,
+   "toZ": 31.2,
+   "why": "58 undeclared layers (z 8.6\u201331.2) stand on the declared risk band \"terrace K1\"; the object could not die from the top (KRAK, 2026-09-24)"
+  }
+ },
+ "findings": [
+  {
+   "layer": "ORDER",
+   "k": 43,
+   "z": 8.6,
+   "why": "58 undeclared layers (z 8.6\u201331.2) stand on the declared risk band \"terrace K1\"; the object could not die from the top (KRAK, 2026-09-24)",
+   "declared": null
+  },
+  {
+   "layer": "S3",
+   "k": 26,
+   "z": 5.2,
+   "why": "free reach of 30 tips: median 24.5 > 17.6 held",
+   "declared": "terrace K1",
+   "tips": 30,
+   "min": 24.4,
+   "median": 24.5,
+   "p90": 24.6,
+   "max": 24.6,
+   "notes": [
+    "min 24.4 > 3.4 held: no short tip among the long ones (reported)"
+   ],
+   "color": "RED"
+  },
+  {
+   "layer": "S3",
+   "k": 27,
+   "z": 5.4,
+   "why": "free reach of 32 tips: median 24 > 17.6 held",
+   "declared": "terrace K1",
+   "tips": 32,
+   "min": 23.6,
+   "median": 24,
+   "p90": 24,
+   "max": 24.2,
+   "notes": [
+    "min 23.6 > 3.4 held: no short tip among the long ones (reported)"
+   ],
+   "color": "RED"
+  },
+  {
+   "layer": "S3",
+   "k": 28,
+   "z": 5.6,
+   "why": "free reach of 32 tips: median 23.1 > 17.6 held",
+   "declared": "terrace K1",
+   "tips": 32,
+   "min": 22.6,
+   "median": 23.1,
+   "p90": 23.3,
+   "max": 23.5,
+   "notes": [
+    "min 22.6 > 3.4 held: no short tip among the long ones (reported)"
+   ],
+   "color": "RED"
+  },
+  {
+   "layer": "S3",
+   "k": 29,
+   "z": 5.8,
+   "why": "free reach of 32 tips: median 22.8 > 17.6 held",
+   "declared": "terrace K1",
+   "tips": 32,
+   "min": 22.4,
+   "median": 22.8,
+   "p90": 23,
+   "max": 23.1,
+   "notes": [
+    "min 22.4 > 3.4 held: no short tip among the long ones (reported)"
+   ],
+   "color": "RED"
+  },
+  {
+   "layer": "S3",
+   "k": 30,
+   "z": 6,
+   "why": "free reach of 32 tips: median 23.5 > 17.6 held",
+   "declared": "terrace K1",
+   "tips": 32,
+   "min": 22.7,
+   "median": 23.5,
+   "p90": 23.7,
+   "max": 23.8,
+   "notes": [
+    "min 22.7 > 3.4 held: no short tip among the long ones (reported)"
+   ],
+   "color": "RED"
+  },
+  {
+   "layer": "S3",
+   "k": 31,
+   "z": 6.2,
+   "why": "free reach of 32 tips: median 23.5 > 17.6 held",
+   "declared": "terrace K1",
+   "tips": 32,
+   "min": 22.9,
+   "median": 23.5,
+   "p90": 23.7,
+   "max": 23.8,
+   "notes": [
+    "min 22.9 > 3.4 held: no short tip among the long ones (reported)"
+   ],
+   "color": "RED"
+  },
+  {
+   "layer": "S3",
+   "k": 32,
+   "z": 6.4,
+   "why": "free reach of 32 tips: median 22.8 > 17.6 held",
+   "declared": "terrace K1",
+   "tips": 32,
+   "min": 22.5,
+   "median": 22.8,
+   "p90": 23,
+   "max": 23.5,
+   "notes": [
+    "min 22.5 > 3.4 held: no short tip among the long ones (reported)"
+   ],
+   "color": "RED"
+  },
+  {
+   "layer": "S3",
+   "k": 33,
+   "z": 6.6,
+   "why": "free reach of 32 tips: median 22.8 > 17.6 held",
+   "declared": "terrace K1",
+   "tips": 32,
+   "min": 22.5,
+   "median": 22.8,
+   "p90": 23,
+   "max": 23,
+   "notes": [
+    "min 22.5 > 3.4 held: no short tip among the long ones (reported)"
+   ],
+   "color": "RED"
+  },
+  {
+   "layer": "S3",
+   "k": 34,
+   "z": 6.8,
+   "why": "free reach of 32 tips: median 23.5 > 17.6 held",
+   "declared": "terrace K1",
+   "tips": 32,
+   "min": 22.6,
+   "median": 23.5,
+   "p90": 23.7,
+   "max": 23.9,
+   "notes": [
+    "min 22.6 > 3.4 held: no short tip among the long ones (reported)"
+   ],
+   "color": "RED"
+  },
+  {
+   "layer": "S3",
+   "k": 35,
+   "z": 7,
+   "why": "free reach of 32 tips: median 23.5 > 17.6 held",
+   "declared": "terrace K1",
+   "tips": 32,
+   "min": 22.6,
+   "median": 23.5,
+   "p90": 23.7,
+   "max": 24,
+   "notes": [
+    "min 22.6 > 3.4 held: no short tip among the long ones (reported)"
+   ],
+   "color": "RED"
+  },
+  {
+   "layer": "S3",
+   "k": 36,
+   "z": 7.2,
+   "why": "free reach of 32 tips: median 22.7 > 17.6 held",
+   "declared": "terrace K1",
+   "tips": 32,
+   "min": 21.9,
+   "median": 22.7,
+   "p90": 23,
+   "max": 23.1,
+   "notes": [
+    "min 21.9 > 3.4 held: no short tip among the long ones (reported)"
+   ],
+   "color": "RED"
+  },
+  {
+   "layer": "S3",
+   "k": 37,
+   "z": 7.4,
+   "why": "free reach of 30 tips: median 22.7 > 17.6 held",
+   "declared": "terrace K1",
+   "tips": 30,
+   "min": 22.3,
+   "median": 22.7,
+   "p90": 22.9,
+   "max": 23.3,
+   "notes": [
+    "min 22.3 > 3.4 held: no short tip among the long ones (reported)"
+   ],
+   "color": "RED"
+  },
+  {
+   "layer": "S3",
+   "k": 67,
+   "z": 13.4,
+   "why": "free reach of 36 tips: median 21.7 > 17.6 held",
+   "declared": "terrace K2",
+   "tips": 36,
+   "min": 6.4,
+   "median": 21.7,
+   "p90": 39.2,
+   "max": 39.5,
+   "notes": [
+    "max 39.5 > 37.6 held (reported)",
+    "min 6.4 > 3.4 held: no short tip among the long ones (reported)"
+   ],
+   "color": "UNKNOWN"
+  },
+  {
+   "layer": "S3",
+   "k": 68,
+   "z": 13.6,
+   "why": "free reach of 36 tips: median 26 > 17.6 held",
+   "declared": "terrace K2",
+   "tips": 36,
+   "min": 7.7,
+   "median": 26,
+   "p90": 39.1,
+   "max": 39.5,
+   "notes": [
+    "max 39.5 > 37.6 held (reported)",
+    "min 7.7 > 3.4 held: no short tip among the long ones (reported)"
+   ],
+   "color": "RED"
+  },
+  {
+   "layer": "S3",
+   "k": 69,
+   "z": 13.8,
+   "why": "free reach of 36 tips: median 30.3 > 17.6 held",
+   "declared": "terrace K2",
+   "tips": 36,
+   "min": 9,
+   "median": 30.3,
+   "p90": 39.3,
+   "max": 39.6,
+   "notes": [
+    "max 39.6 > 37.6 held (reported)",
+    "min 9 > 3.4 held: no short tip among the long ones (reported)"
+   ],
+   "color": "RED"
+  },
+  {
+   "layer": "S3",
+   "k": 70,
+   "z": 14,
+   "why": "free reach of 36 tips: median 35 > 17.6 held",
+   "declared": "terrace K2",
+   "tips": 36,
+   "min": 10.4,
+   "median": 35,
+   "p90": 39,
+   "max": 39.6,
+   "notes": [
+    "max 39.6 > 37.6 held (reported)",
+    "min 10.4 > 3.4 held: no short tip among the long ones (reported)"
+   ],
+   "color": "RED"
+  },
+  {
+   "layer": "S3",
+   "k": 71,
+   "z": 14.2,
+   "why": "free reach of 36 tips: median 38.3 > 17.6 held",
+   "declared": "terrace K2",
+   "tips": 36,
+   "min": 11.9,
+   "median": 38.3,
+   "p90": 39.1,
+   "max": 39.4,
+   "notes": [
+    "max 39.4 > 37.6 held (reported)",
+    "min 11.9 > 3.4 held: no short tip among the long ones (reported)"
+   ],
+   "color": "RED"
+  },
+  {
+   "layer": "S3",
+   "k": 72,
+   "z": 14.4,
+   "why": "free reach of 36 tips: median 38.2 > 17.6 held",
+   "declared": "terrace K2",
+   "tips": 36,
+   "min": 13.4,
+   "median": 38.2,
+   "p90": 38.9,
+   "max": 39.1,
+   "notes": [
+    "max 39.1 > 37.6 held (reported)",
+    "min 13.4 > 3.4 held: no short tip among the long ones (reported)"
+   ],
+   "color": "RED"
+  },
+  {
+   "layer": "S3",
+   "k": 73,
+   "z": 14.6,
+   "why": "free reach of 36 tips: median 38 > 17.6 held",
+   "declared": "terrace K2",
+   "tips": 36,
+   "min": 14.6,
+   "median": 38,
+   "p90": 38.9,
+   "max": 39.2,
+   "notes": [
+    "max 39.2 > 37.6 held (reported)",
+    "min 14.6 > 3.4 held: no short tip among the long ones (reported)"
+   ],
+   "color": "RED"
+  },
+  {
+   "layer": "S3",
+   "k": 74,
+   "z": 14.8,
+   "why": "free reach of 36 tips: median 37.9 > 17.6 held",
+   "declared": "terrace K2",
+   "tips": 36,
+   "min": 15.7,
+   "median": 37.9,
+   "p90": 38.9,
+   "max": 39.1,
+   "notes": [
+    "max 39.1 > 37.6 held (reported)",
+    "min 15.7 > 3.4 held: no short tip among the long ones (reported)"
+   ],
+   "color": "RED"
+  },
+  {
+   "layer": "S3",
+   "k": 75,
+   "z": 15,
+   "why": "free reach of 36 tips: median 34.1 > 17.6 held",
+   "declared": "terrace K2",
+   "tips": 36,
+   "min": 12.8,
+   "median": 34.1,
+   "p90": 35.8,
+   "max": 36.5,
+   "notes": [
+    "min 12.8 > 3.4 held: no short tip among the long ones (reported)"
+   ],
+   "color": "RED"
+  },
+  {
+   "layer": "S3",
+   "k": 76,
+   "z": 15.2,
+   "why": "free reach of 36 tips: median 28.2 > 17.6 held",
+   "declared": "terrace K2",
+   "tips": 36,
+   "min": 8.3,
+   "median": 28.2,
+   "p90": 34,
+   "max": 34.2,
+   "notes": [
+    "min 8.3 > 3.4 held: no short tip among the long ones (reported)"
+   ],
+   "color": "RED"
+  },
+  {
+   "layer": "S3",
+   "k": 77,
+   "z": 15.4,
+   "why": "free reach of 36 tips: median 22.4 > 17.6 held",
+   "declared": "terrace K2",
+   "tips": 36,
+   "min": 8,
+   "median": 22.4,
+   "p90": 30.5,
+   "max": 31.4,
+   "notes": [
+    "min 8 > 3.4 held: no short tip among the long ones (reported)"
+   ],
+   "color": "UNKNOWN"
+  },
+  {
+   "layer": "S3",
+   "k": 78,
+   "z": 15.6,
+   "why": "free reach of 28 tips: median 20.2 > 17.6 held",
+   "declared": "terrace K2",
+   "tips": 28,
+   "min": 8.3,
+   "median": 20.2,
+   "p90": 28.4,
+   "max": 28.6,
+   "notes": [
+    "min 8.3 > 3.4 held: no short tip among the long ones (reported)"
+   ],
+   "color": "UNKNOWN"
+  },
+  {
+   "layer": "S3",
+   "k": 81,
+   "z": 16.2,
+   "why": "free reach of 22 tips: median 17.7 > 17.6 held",
+   "declared": "terrace K2",
+   "tips": 22,
+   "min": 8.4,
+   "median": 17.7,
+   "p90": 19.2,
+   "max": 19.5,
+   "notes": [
+    "min 8.4 > 3.4 held: no short tip among the long ones (reported)"
+   ],
+   "color": "UNKNOWN"
+  },
+  {
+   "layer": "S3",
+   "k": 86,
+   "z": 17.2,
+   "why": "free reach of 8 tips: median 18.1 > 17.6 held",
+   "declared": "terrace K2",
+   "tips": 8,
+   "min": 10,
+   "median": 18.1,
+   "p90": 19.3,
+   "max": 19.5,
+   "notes": [
+    "min 10 > 3.4 held: no short tip among the long ones (reported)"
+   ],
+   "color": "UNKNOWN"
+  },
+  {
+   "layer": "S3",
+   "k": 87,
+   "z": 17.4,
+   "why": "free reach of 8 tips: median 18.4 > 17.6 held",
+   "declared": "terrace K2",
+   "tips": 8,
+   "min": 10.2,
+   "median": 18.4,
+   "p90": 19.2,
+   "max": 19.4,
+   "notes": [
+    "min 10.2 > 3.4 held: no short tip among the long ones (reported)"
+   ],
+   "color": "UNKNOWN"
+  },
+  {
+   "layer": "S3",
+   "k": 88,
+   "z": 17.6,
+   "why": "free reach of 8 tips: median 18.3 > 17.6 held",
+   "declared": "terrace K2",
+   "tips": 8,
+   "min": 10.4,
+   "median": 18.3,
+   "p90": 19.1,
+   "max": 19.3,
+   "notes": [
+    "min 10.4 > 3.4 held: no short tip among the long ones (reported)"
+   ],
+   "color": "UNKNOWN"
+  },
+  {
+   "layer": "S3",
+   "k": 89,
+   "z": 17.8,
+   "why": "free reach of 8 tips: median 17.9 > 17.6 held",
+   "declared": "terrace K2",
+   "tips": 8,
+   "min": 10.6,
+   "median": 17.9,
+   "p90": 18.7,
+   "max": 18.7,
+   "notes": [
+    "min 10.6 > 3.4 held: no short tip among the long ones (reported)"
+   ],
+   "color": "UNKNOWN"
+  },
+  {
+   "layer": "S3",
+   "k": 123,
+   "z": 24.6,
+   "why": "free reach of 36 tips: median 18.9 > 17.6 held",
+   "declared": "terrace K3",
+   "tips": 36,
+   "min": 18.2,
+   "median": 18.9,
+   "p90": 19.2,
+   "max": 19.4,
+   "notes": [
+    "min 18.2 > 3.4 held: no short tip among the long ones (reported)"
+   ],
+   "color": "UNKNOWN"
+  },
+  {
+   "layer": "S3",
+   "k": 124,
+   "z": 24.8,
+   "why": "free reach of 36 tips: median 21.1 > 17.6 held",
+   "declared": "terrace K3",
+   "tips": 36,
+   "min": 18.2,
+   "median": 21.1,
+   "p90": 21.5,
+   "max": 21.9,
+   "notes": [
+    "min 18.2 > 3.4 held: no short tip among the long ones (reported)"
+   ],
+   "color": "UNKNOWN"
+  },
+  {
+   "layer": "S3",
+   "k": 125,
+   "z": 25,
+   "why": "free reach of 36 tips: median 23.4 > 17.6 held",
+   "declared": "terrace K3",
+   "tips": 36,
+   "min": 18.2,
+   "median": 23.4,
+   "p90": 23.9,
+   "max": 24.3,
+   "notes": [
+    "min 18.2 > 3.4 held: no short tip among the long ones (reported)"
+   ],
+   "color": "RED"
+  },
+  {
+   "layer": "S3",
+   "k": 126,
+   "z": 25.2,
+   "why": "free reach of 36 tips: median 25.7 > 17.6 held",
+   "declared": "terrace K3",
+   "tips": 36,
+   "min": 18.1,
+   "median": 25.7,
+   "p90": 26.2,
+   "max": 26.6,
+   "notes": [
+    "min 18.1 > 3.4 held: no short tip among the long ones (reported)"
+   ],
+   "color": "RED"
+  },
+  {
+   "layer": "S3",
+   "k": 127,
+   "z": 25.4,
+   "why": "free reach of 36 tips: median 27.9 > 17.6 held",
+   "declared": "terrace K3",
+   "tips": 36,
+   "min": 18.3,
+   "median": 27.9,
+   "p90": 28.5,
+   "max": 29.2,
+   "notes": [
+    "min 18.3 > 3.4 held: no short tip among the long ones (reported)"
+   ],
+   "color": "RED"
+  },
+  {
+   "layer": "S3",
+   "k": 128,
+   "z": 25.6,
+   "why": "free reach of 36 tips: median 29.4 > 17.6 held",
+   "declared": "terrace K3",
+   "tips": 36,
+   "min": 16.6,
+   "median": 29.4,
+   "p90": 30.3,
+   "max": 30.6,
+   "notes": [
+    "min 16.6 > 3.4 held: no short tip among the long ones (reported)"
+   ],
+   "color": "RED"
+  },
+  {
+   "layer": "S3",
+   "k": 129,
+   "z": 25.8,
+   "why": "free reach of 36 tips: median 28.6 > 17.6 held",
+   "declared": "terrace K3",
+   "tips": 36,
+   "min": 14.4,
+   "median": 28.6,
+   "p90": 30.2,
+   "max": 31,
+   "notes": [
+    "min 14.4 > 3.4 held: no short tip among the long ones (reported)"
+   ],
+   "color": "RED"
+  },
+  {
+   "layer": "S3",
+   "k": 130,
+   "z": 26,
+   "why": "free reach of 36 tips: median 26.8 > 17.6 held",
+   "declared": "terrace K3",
+   "tips": 36,
+   "min": 11.7,
+   "median": 26.8,
+   "p90": 30.1,
+   "max": 30.4,
+   "notes": [
+    "min 11.7 > 3.4 held: no short tip among the long ones (reported)"
+   ],
+   "color": "RED"
+  },
+  {
+   "layer": "S3",
+   "k": 131,
+   "z": 26.2,
+   "why": "free reach of 36 tips: median 24 > 17.6 held",
+   "declared": "terrace K3",
+   "tips": 36,
+   "min": 9.3,
+   "median": 24,
+   "p90": 30.4,
+   "max": 31.3,
+   "notes": [
+    "min 9.3 > 3.4 held: no short tip among the long ones (reported)"
+   ],
+   "color": "RED"
+  },
+  {
+   "layer": "S3",
+   "k": 132,
+   "z": 26.4,
+   "why": "free reach of 36 tips: median 21.5 > 17.6 held",
+   "declared": "terrace K3",
+   "tips": 36,
+   "min": 6.8,
+   "median": 21.5,
+   "p90": 29.9,
+   "max": 30.6,
+   "notes": [
+    "min 6.8 > 3.4 held: no short tip among the long ones (reported)"
+   ],
+   "color": "UNKNOWN"
+  },
+  {
+   "layer": "S3",
+   "k": 133,
+   "z": 26.6,
+   "why": "free reach of 33 tips: median 19.2 > 17.6 held",
+   "declared": "terrace K3",
+   "tips": 33,
+   "min": 4.6,
+   "median": 19.2,
+   "p90": 30.3,
+   "max": 30.6,
+   "notes": [
+    "min 4.6 > 3.4 held: no short tip among the long ones (reported)"
+   ],
+   "color": "UNKNOWN"
+  },
+  {
+   "layer": "S3",
+   "k": 134,
+   "z": 26.8,
+   "why": "free reach of 28 tips: median 20.1 > 17.6 held",
+   "declared": "terrace K3",
+   "tips": 28,
+   "min": 9.3,
+   "median": 20.1,
+   "p90": 30.4,
+   "max": 30.8,
+   "notes": [
+    "min 9.3 > 3.4 held: no short tip among the long ones (reported)"
+   ],
+   "color": "UNKNOWN"
+  },
+  {
+   "layer": "S3",
+   "k": 135,
+   "z": 27,
+   "why": "free reach of 28 tips: median 18.1 > 17.6 held",
+   "declared": "terrace K3",
+   "tips": 28,
+   "min": 6.9,
+   "median": 18.1,
+   "p90": 28.5,
+   "max": 28.5,
+   "notes": [
+    "min 6.9 > 3.4 held: no short tip among the long ones (reported)"
+   ],
+   "color": "UNKNOWN"
+  },
+  {
+   "layer": "S3",
+   "k": 136,
+   "z": 27.2,
+   "why": "free reach of 25 tips: median 18.6 > 17.6 held",
+   "declared": "terrace K3",
+   "tips": 25,
+   "min": 5.5,
+   "median": 18.6,
+   "p90": 26,
+   "max": 26.3,
+   "notes": [
+    "min 5.5 > 3.4 held: no short tip among the long ones (reported)"
+   ],
+   "color": "UNKNOWN"
+  },
+  {
+   "layer": "S4",
+   "k": 36,
+   "z": 7.2,
+   "why": "extrusion passes 0.64 mm from a loose hairpin tip laid 1 mm below (tip z 6.2, reach 22.95; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K1",
+   "tip": {
+    "x": 128.93,
+    "y": 54.17,
+    "z": 6.2,
+    "reach": 22.95,
+    "tied": false
+   },
+   "clearance": 1,
+   "r": 0.64
+  },
+  {
+   "layer": "S4",
+   "k": 37,
+   "z": 7.4,
+   "why": "extrusion passes 0.4 mm from a loose hairpin tip laid 1.2 mm below (tip z 6.2, reach 22.95; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K1",
+   "tip": {
+    "x": 128.93,
+    "y": 54.17,
+    "z": 6.2,
+    "reach": 22.95,
+    "tied": false
+   },
+   "clearance": 1.2,
+   "r": 0.4
+  },
+  {
+   "layer": "S4",
+   "k": 37,
+   "z": 7.4,
+   "why": "extrusion passes 0.45 mm from a loose hairpin tip laid 1.2 mm below (tip z 6.2, reach 23.27; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K1",
+   "tip": {
+    "x": 90.34,
+    "y": 165.57,
+    "z": 6.2,
+    "reach": 23.27,
+    "tied": false
+   },
+   "clearance": 1.2,
+   "r": 0.45
+  },
+  {
+   "layer": "S4",
+   "k": 77,
+   "z": 15.4,
+   "why": "extrusion passes 1.31 mm from a loose hairpin tip laid 8.2 mm below (tip z 7.2, reach 22.8; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 167.18,
+    "y": 122.59,
+    "z": 7.2,
+    "reach": 22.8,
+    "tied": false
+   },
+   "clearance": 8.2,
+   "r": 1.31
+  },
+  {
+   "layer": "S4",
+   "k": 78,
+   "z": 15.6,
+   "why": "extrusion passes 0.17 mm from a loose hairpin tip laid 8.4 mm below (tip z 7.2, reach 22.8; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 167.18,
+    "y": 122.59,
+    "z": 7.2,
+    "reach": 22.8,
+    "tied": false
+   },
+   "clearance": 8.4,
+   "r": 0.17
+  },
+  {
+   "layer": "S4",
+   "k": 79,
+   "z": 15.8,
+   "why": "extrusion passes 0.19 mm from a loose hairpin tip laid 8.6 mm below (tip z 7.2, reach 22.8; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 167.18,
+    "y": 122.59,
+    "z": 7.2,
+    "reach": 22.8,
+    "tied": false
+   },
+   "clearance": 8.6,
+   "r": 0.19
+  },
+  {
+   "layer": "S4",
+   "k": 80,
+   "z": 16,
+   "why": "extrusion passes 0.22 mm from a loose hairpin tip laid 8.8 mm below (tip z 7.2, reach 22.8; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 167.18,
+    "y": 122.59,
+    "z": 7.2,
+    "reach": 22.8,
+    "tied": false
+   },
+   "clearance": 8.8,
+   "r": 0.22
+  },
+  {
+   "layer": "S4",
+   "k": 81,
+   "z": 16.2,
+   "why": "extrusion passes 0.16 mm from a loose hairpin tip laid 9 mm below (tip z 7.2, reach 22.8; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 167.18,
+    "y": 122.59,
+    "z": 7.2,
+    "reach": 22.8,
+    "tied": false
+   },
+   "clearance": 9,
+   "r": 0.16
+  },
+  {
+   "layer": "S4",
+   "k": 82,
+   "z": 16.4,
+   "why": "extrusion passes 0.27 mm from a loose hairpin tip laid 9.2 mm below (tip z 7.2, reach 22.8; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 167.18,
+    "y": 122.59,
+    "z": 7.2,
+    "reach": 22.8,
+    "tied": false
+   },
+   "clearance": 9.2,
+   "r": 0.27
+  },
+  {
+   "layer": "S4",
+   "k": 83,
+   "z": 16.6,
+   "why": "extrusion passes 0.15 mm from a loose hairpin tip laid 9.4 mm below (tip z 7.2, reach 22.8; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 167.18,
+    "y": 122.59,
+    "z": 7.2,
+    "reach": 22.8,
+    "tied": false
+   },
+   "clearance": 9.4,
+   "r": 0.15
+  },
+  {
+   "layer": "S4",
+   "k": 84,
+   "z": 16.8,
+   "why": "extrusion passes 0.25 mm from a loose hairpin tip laid 9.6 mm below (tip z 7.2, reach 22.8; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 167.18,
+    "y": 122.59,
+    "z": 7.2,
+    "reach": 22.8,
+    "tied": false
+   },
+   "clearance": 9.6,
+   "r": 0.25
+  },
+  {
+   "layer": "S4",
+   "k": 85,
+   "z": 17,
+   "why": "extrusion passes 0.17 mm from a loose hairpin tip laid 9.8 mm below (tip z 7.2, reach 22.8; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 167.18,
+    "y": 122.59,
+    "z": 7.2,
+    "reach": 22.8,
+    "tied": false
+   },
+   "clearance": 9.8,
+   "r": 0.17
+  },
+  {
+   "layer": "S4",
+   "k": 86,
+   "z": 17.2,
+   "why": "extrusion passes 0.19 mm from a loose hairpin tip laid 10 mm below (tip z 7.2, reach 22.8; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 167.18,
+    "y": 122.59,
+    "z": 7.2,
+    "reach": 22.8,
+    "tied": false
+   },
+   "clearance": 10,
+   "r": 0.19
+  },
+  {
+   "layer": "S4",
+   "k": 87,
+   "z": 17.4,
+   "why": "extrusion passes 0.22 mm from a loose hairpin tip laid 10.2 mm below (tip z 7.2, reach 22.8; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 167.18,
+    "y": 122.59,
+    "z": 7.2,
+    "reach": 22.8,
+    "tied": false
+   },
+   "clearance": 10.2,
+   "r": 0.22
+  },
+  {
+   "layer": "S4",
+   "k": 88,
+   "z": 17.6,
+   "why": "extrusion passes 0.16 mm from a loose hairpin tip laid 10.4 mm below (tip z 7.2, reach 22.8; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 167.18,
+    "y": 122.59,
+    "z": 7.2,
+    "reach": 22.8,
+    "tied": false
+   },
+   "clearance": 10.4,
+   "r": 0.16
+  },
+  {
+   "layer": "S4",
+   "k": 89,
+   "z": 17.8,
+   "why": "extrusion passes 0.25 mm from a loose hairpin tip laid 10.6 mm below (tip z 7.2, reach 22.8; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 167.18,
+    "y": 122.59,
+    "z": 7.2,
+    "reach": 22.8,
+    "tied": false
+   },
+   "clearance": 10.6,
+   "r": 0.25
+  },
+  {
+   "layer": "S4",
+   "k": 90,
+   "z": 18,
+   "why": "extrusion passes 0.25 mm from a loose hairpin tip laid 10.8 mm below (tip z 7.2, reach 22.8; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 167.18,
+    "y": 122.59,
+    "z": 7.2,
+    "reach": 22.8,
+    "tied": false
+   },
+   "clearance": 10.8,
+   "r": 0.25
+  },
+  {
+   "layer": "S4",
+   "k": 77,
+   "z": 15.4,
+   "why": "extrusion passes 1.31 mm from a loose hairpin tip laid 8.2 mm below (tip z 7.2, reach 22.64; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 164.98,
+    "y": 130.12,
+    "z": 7.2,
+    "reach": 22.64,
+    "tied": false
+   },
+   "clearance": 8.2,
+   "r": 1.31
+  },
+  {
+   "layer": "S4",
+   "k": 78,
+   "z": 15.6,
+   "why": "extrusion passes 0.2 mm from a loose hairpin tip laid 8.4 mm below (tip z 7.2, reach 22.64; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 164.98,
+    "y": 130.12,
+    "z": 7.2,
+    "reach": 22.64,
+    "tied": false
+   },
+   "clearance": 8.4,
+   "r": 0.2
+  },
+  {
+   "layer": "S4",
+   "k": 79,
+   "z": 15.8,
+   "why": "extrusion passes 0.38 mm from a loose hairpin tip laid 8.6 mm below (tip z 7.2, reach 22.64; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 164.98,
+    "y": 130.12,
+    "z": 7.2,
+    "reach": 22.64,
+    "tied": false
+   },
+   "clearance": 8.6,
+   "r": 0.38
+  },
+  {
+   "layer": "S4",
+   "k": 80,
+   "z": 16,
+   "why": "extrusion passes 0.43 mm from a loose hairpin tip laid 8.8 mm below (tip z 7.2, reach 22.64; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 164.98,
+    "y": 130.12,
+    "z": 7.2,
+    "reach": 22.64,
+    "tied": false
+   },
+   "clearance": 8.8,
+   "r": 0.43
+  },
+  {
+   "layer": "S4",
+   "k": 81,
+   "z": 16.2,
+   "why": "extrusion passes 0.37 mm from a loose hairpin tip laid 9 mm below (tip z 7.2, reach 22.64; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 164.98,
+    "y": 130.12,
+    "z": 7.2,
+    "reach": 22.64,
+    "tied": false
+   },
+   "clearance": 9,
+   "r": 0.37
+  },
+  {
+   "layer": "S4",
+   "k": 82,
+   "z": 16.4,
+   "why": "extrusion passes 0.39 mm from a loose hairpin tip laid 9.2 mm below (tip z 7.2, reach 22.64; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 164.98,
+    "y": 130.12,
+    "z": 7.2,
+    "reach": 22.64,
+    "tied": false
+   },
+   "clearance": 9.2,
+   "r": 0.39
+  },
+  {
+   "layer": "S4",
+   "k": 83,
+   "z": 16.6,
+   "why": "extrusion passes 0.42 mm from a loose hairpin tip laid 9.4 mm below (tip z 7.2, reach 22.64; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 164.98,
+    "y": 130.12,
+    "z": 7.2,
+    "reach": 22.64,
+    "tied": false
+   },
+   "clearance": 9.4,
+   "r": 0.42
+  },
+  {
+   "layer": "S4",
+   "k": 84,
+   "z": 16.8,
+   "why": "extrusion passes 0.37 mm from a loose hairpin tip laid 9.6 mm below (tip z 7.2, reach 22.64; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 164.98,
+    "y": 130.12,
+    "z": 7.2,
+    "reach": 22.64,
+    "tied": false
+   },
+   "clearance": 9.6,
+   "r": 0.37
+  },
+  {
+   "layer": "S4",
+   "k": 85,
+   "z": 17,
+   "why": "extrusion passes 0.4 mm from a loose hairpin tip laid 9.8 mm below (tip z 7.2, reach 22.64; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 164.98,
+    "y": 130.12,
+    "z": 7.2,
+    "reach": 22.64,
+    "tied": false
+   },
+   "clearance": 9.8,
+   "r": 0.4
+  },
+  {
+   "layer": "S4",
+   "k": 86,
+   "z": 17.2,
+   "why": "extrusion passes 0.4 mm from a loose hairpin tip laid 10 mm below (tip z 7.2, reach 22.64; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 164.98,
+    "y": 130.12,
+    "z": 7.2,
+    "reach": 22.64,
+    "tied": false
+   },
+   "clearance": 10,
+   "r": 0.4
+  },
+  {
+   "layer": "S4",
+   "k": 87,
+   "z": 17.4,
+   "why": "extrusion passes 0.37 mm from a loose hairpin tip laid 10.2 mm below (tip z 7.2, reach 22.64; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 164.98,
+    "y": 130.12,
+    "z": 7.2,
+    "reach": 22.64,
+    "tied": false
+   },
+   "clearance": 10.2,
+   "r": 0.37
+  },
+  {
+   "layer": "S4",
+   "k": 88,
+   "z": 17.6,
+   "why": "extrusion passes 0.42 mm from a loose hairpin tip laid 10.4 mm below (tip z 7.2, reach 22.64; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 164.98,
+    "y": 130.12,
+    "z": 7.2,
+    "reach": 22.64,
+    "tied": false
+   },
+   "clearance": 10.4,
+   "r": 0.42
+  },
+  {
+   "layer": "S4",
+   "k": 89,
+   "z": 17.8,
+   "why": "extrusion passes 0.37 mm from a loose hairpin tip laid 10.6 mm below (tip z 7.2, reach 22.64; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 164.98,
+    "y": 130.12,
+    "z": 7.2,
+    "reach": 22.64,
+    "tied": false
+   },
+   "clearance": 10.6,
+   "r": 0.37
+  },
+  {
+   "layer": "S4",
+   "k": 90,
+   "z": 18,
+   "why": "extrusion passes 0.37 mm from a loose hairpin tip laid 10.8 mm below (tip z 7.2, reach 22.64; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 164.98,
+    "y": 130.12,
+    "z": 7.2,
+    "reach": 22.64,
+    "tied": false
+   },
+   "clearance": 10.8,
+   "r": 0.37
+  },
+  {
+   "layer": "S4",
+   "k": 77,
+   "z": 15.4,
+   "why": "extrusion passes 1.32 mm from a loose hairpin tip laid 8.2 mm below (tip z 7.2, reach 22.55; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 161.33,
+    "y": 138.16,
+    "z": 7.2,
+    "reach": 22.55,
+    "tied": false
+   },
+   "clearance": 8.2,
+   "r": 1.32
+  },
+  {
+   "layer": "S4",
+   "k": 78,
+   "z": 15.6,
+   "why": "extrusion passes 0.27 mm from a loose hairpin tip laid 8.4 mm below (tip z 7.2, reach 22.55; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 161.33,
+    "y": 138.16,
+    "z": 7.2,
+    "reach": 22.55,
+    "tied": false
+   },
+   "clearance": 8.4,
+   "r": 0.27
+  },
+  {
+   "layer": "S4",
+   "k": 79,
+   "z": 15.8,
+   "why": "extrusion passes 0.23 mm from a loose hairpin tip laid 8.6 mm below (tip z 7.2, reach 22.55; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 161.33,
+    "y": 138.16,
+    "z": 7.2,
+    "reach": 22.55,
+    "tied": false
+   },
+   "clearance": 8.6,
+   "r": 0.23
+  },
+  {
+   "layer": "S4",
+   "k": 80,
+   "z": 16,
+   "why": "extrusion passes 0.17 mm from a loose hairpin tip laid 8.8 mm below (tip z 7.2, reach 22.55; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 161.33,
+    "y": 138.16,
+    "z": 7.2,
+    "reach": 22.55,
+    "tied": false
+   },
+   "clearance": 8.8,
+   "r": 0.17
+  },
+  {
+   "layer": "S4",
+   "k": 81,
+   "z": 16.2,
+   "why": "extrusion passes 0.13 mm from a loose hairpin tip laid 9 mm below (tip z 7.2, reach 22.55; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 161.33,
+    "y": 138.16,
+    "z": 7.2,
+    "reach": 22.55,
+    "tied": false
+   },
+   "clearance": 9,
+   "r": 0.13
+  },
+  {
+   "layer": "S4",
+   "k": 82,
+   "z": 16.4,
+   "why": "extrusion passes 0.12 mm from a loose hairpin tip laid 9.2 mm below (tip z 7.2, reach 22.55; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 161.33,
+    "y": 138.16,
+    "z": 7.2,
+    "reach": 22.55,
+    "tied": false
+   },
+   "clearance": 9.2,
+   "r": 0.12
+  },
+  {
+   "layer": "S4",
+   "k": 83,
+   "z": 16.6,
+   "why": "extrusion passes 0.15 mm from a loose hairpin tip laid 9.4 mm below (tip z 7.2, reach 22.55; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 161.33,
+    "y": 138.16,
+    "z": 7.2,
+    "reach": 22.55,
+    "tied": false
+   },
+   "clearance": 9.4,
+   "r": 0.15
+  },
+  {
+   "layer": "S4",
+   "k": 84,
+   "z": 16.8,
+   "why": "extrusion passes 0.2 mm from a loose hairpin tip laid 9.6 mm below (tip z 7.2, reach 22.55; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 161.33,
+    "y": 138.16,
+    "z": 7.2,
+    "reach": 22.55,
+    "tied": false
+   },
+   "clearance": 9.6,
+   "r": 0.2
+  },
+  {
+   "layer": "S4",
+   "k": 85,
+   "z": 17,
+   "why": "extrusion passes 0.27 mm from a loose hairpin tip laid 9.8 mm below (tip z 7.2, reach 22.55; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 161.33,
+    "y": 138.16,
+    "z": 7.2,
+    "reach": 22.55,
+    "tied": false
+   },
+   "clearance": 9.8,
+   "r": 0.27
+  },
+  {
+   "layer": "S4",
+   "k": 86,
+   "z": 17.2,
+   "why": "extrusion passes 0.22 mm from a loose hairpin tip laid 10 mm below (tip z 7.2, reach 22.55; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 161.33,
+    "y": 138.16,
+    "z": 7.2,
+    "reach": 22.55,
+    "tied": false
+   },
+   "clearance": 10,
+   "r": 0.22
+  },
+  {
+   "layer": "S4",
+   "k": 87,
+   "z": 17.4,
+   "why": "extrusion passes 0.17 mm from a loose hairpin tip laid 10.2 mm below (tip z 7.2, reach 22.55; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 161.33,
+    "y": 138.16,
+    "z": 7.2,
+    "reach": 22.55,
+    "tied": false
+   },
+   "clearance": 10.2,
+   "r": 0.17
+  },
+  {
+   "layer": "S4",
+   "k": 88,
+   "z": 17.6,
+   "why": "extrusion passes 0.13 mm from a loose hairpin tip laid 10.4 mm below (tip z 7.2, reach 22.55; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 161.33,
+    "y": 138.16,
+    "z": 7.2,
+    "reach": 22.55,
+    "tied": false
+   },
+   "clearance": 10.4,
+   "r": 0.13
+  },
+  {
+   "layer": "S4",
+   "k": 89,
+   "z": 17.8,
+   "why": "extrusion passes 0.2 mm from a loose hairpin tip laid 10.6 mm below (tip z 7.2, reach 22.55; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 161.33,
+    "y": 138.16,
+    "z": 7.2,
+    "reach": 22.55,
+    "tied": false
+   },
+   "clearance": 10.6,
+   "r": 0.2
+  },
+  {
+   "layer": "S4",
+   "k": 90,
+   "z": 18,
+   "why": "extrusion passes 0.2 mm from a loose hairpin tip laid 10.8 mm below (tip z 7.2, reach 22.55; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 161.33,
+    "y": 138.16,
+    "z": 7.2,
+    "reach": 22.55,
+    "tied": false
+   },
+   "clearance": 10.8,
+   "r": 0.2
+  },
+  {
+   "layer": "S4",
+   "k": 70,
+   "z": 14,
+   "why": "extrusion passes 0.21 mm from a loose hairpin tip laid 6.8 mm below (tip z 7.2, reach 22.49; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 151.63,
+    "y": 151.17,
+    "z": 7.2,
+    "reach": 22.49,
+    "tied": false
+   },
+   "clearance": 6.8,
+   "r": 0.21
+  },
+  {
+   "layer": "S4",
+   "k": 71,
+   "z": 14.2,
+   "why": "extrusion passes 0.35 mm from a loose hairpin tip laid 7 mm below (tip z 7.2, reach 22.49; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 151.63,
+    "y": 151.17,
+    "z": 7.2,
+    "reach": 22.49,
+    "tied": false
+   },
+   "clearance": 7,
+   "r": 0.35
+  },
+  {
+   "layer": "S4",
+   "k": 72,
+   "z": 14.4,
+   "why": "extrusion passes 0.41 mm from a loose hairpin tip laid 7.2 mm below (tip z 7.2, reach 22.49; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 151.63,
+    "y": 151.17,
+    "z": 7.2,
+    "reach": 22.49,
+    "tied": false
+   },
+   "clearance": 7.2,
+   "r": 0.41
+  },
+  {
+   "layer": "S4",
+   "k": 73,
+   "z": 14.6,
+   "why": "extrusion passes 0.34 mm from a loose hairpin tip laid 7.4 mm below (tip z 7.2, reach 22.49; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 151.63,
+    "y": 151.17,
+    "z": 7.2,
+    "reach": 22.49,
+    "tied": false
+   },
+   "clearance": 7.4,
+   "r": 0.34
+  },
+  {
+   "layer": "S4",
+   "k": 74,
+   "z": 14.8,
+   "why": "extrusion passes 0.33 mm from a loose hairpin tip laid 7.6 mm below (tip z 7.2, reach 22.49; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 151.63,
+    "y": 151.17,
+    "z": 7.2,
+    "reach": 22.49,
+    "tied": false
+   },
+   "clearance": 7.6,
+   "r": 0.33
+  },
+  {
+   "layer": "S4",
+   "k": 75,
+   "z": 15,
+   "why": "extrusion passes 0.38 mm from a loose hairpin tip laid 7.8 mm below (tip z 7.2, reach 22.49; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 151.63,
+    "y": 151.17,
+    "z": 7.2,
+    "reach": 22.49,
+    "tied": false
+   },
+   "clearance": 7.8,
+   "r": 0.38
+  },
+  {
+   "layer": "S4",
+   "k": 76,
+   "z": 15.2,
+   "why": "extrusion passes 0.38 mm from a loose hairpin tip laid 8 mm below (tip z 7.2, reach 22.49; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 151.63,
+    "y": 151.17,
+    "z": 7.2,
+    "reach": 22.49,
+    "tied": false
+   },
+   "clearance": 8,
+   "r": 0.38
+  },
+  {
+   "layer": "S4",
+   "k": 77,
+   "z": 15.4,
+   "why": "extrusion passes 0.35 mm from a loose hairpin tip laid 8.2 mm below (tip z 7.2, reach 22.49; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 151.63,
+    "y": 151.17,
+    "z": 7.2,
+    "reach": 22.49,
+    "tied": false
+   },
+   "clearance": 8.2,
+   "r": 0.35
+  },
+  {
+   "layer": "S4",
+   "k": 78,
+   "z": 15.6,
+   "why": "extrusion passes 0.33 mm from a loose hairpin tip laid 8.4 mm below (tip z 7.2, reach 22.49; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 151.63,
+    "y": 151.17,
+    "z": 7.2,
+    "reach": 22.49,
+    "tied": false
+   },
+   "clearance": 8.4,
+   "r": 0.33
+  },
+  {
+   "layer": "S4",
+   "k": 79,
+   "z": 15.8,
+   "why": "extrusion passes 0.33 mm from a loose hairpin tip laid 8.6 mm below (tip z 7.2, reach 22.49; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 151.63,
+    "y": 151.17,
+    "z": 7.2,
+    "reach": 22.49,
+    "tied": false
+   },
+   "clearance": 8.6,
+   "r": 0.33
+  },
+  {
+   "layer": "S4",
+   "k": 80,
+   "z": 16,
+   "why": "extrusion passes 0.34 mm from a loose hairpin tip laid 8.8 mm below (tip z 7.2, reach 22.49; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 151.63,
+    "y": 151.17,
+    "z": 7.2,
+    "reach": 22.49,
+    "tied": false
+   },
+   "clearance": 8.8,
+   "r": 0.34
+  },
+  {
+   "layer": "S4",
+   "k": 81,
+   "z": 16.2,
+   "why": "extrusion passes 0.37 mm from a loose hairpin tip laid 9 mm below (tip z 7.2, reach 22.49; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 151.63,
+    "y": 151.17,
+    "z": 7.2,
+    "reach": 22.49,
+    "tied": false
+   },
+   "clearance": 9,
+   "r": 0.37
+  },
+  {
+   "layer": "S4",
+   "k": 82,
+   "z": 16.4,
+   "why": "extrusion passes 0.41 mm from a loose hairpin tip laid 9.2 mm below (tip z 7.2, reach 22.49; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 151.63,
+    "y": 151.17,
+    "z": 7.2,
+    "reach": 22.49,
+    "tied": false
+   },
+   "clearance": 9.2,
+   "r": 0.41
+  },
+  {
+   "layer": "S4",
+   "k": 83,
+   "z": 16.6,
+   "why": "extrusion passes 0.38 mm from a loose hairpin tip laid 9.4 mm below (tip z 7.2, reach 22.49; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 151.63,
+    "y": 151.17,
+    "z": 7.2,
+    "reach": 22.49,
+    "tied": false
+   },
+   "clearance": 9.4,
+   "r": 0.38
+  },
+  {
+   "layer": "S4",
+   "k": 84,
+   "z": 16.8,
+   "why": "extrusion passes 0.35 mm from a loose hairpin tip laid 9.6 mm below (tip z 7.2, reach 22.49; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 151.63,
+    "y": 151.17,
+    "z": 7.2,
+    "reach": 22.49,
+    "tied": false
+   },
+   "clearance": 9.6,
+   "r": 0.35
+  },
+  {
+   "layer": "S4",
+   "k": 85,
+   "z": 17,
+   "why": "extrusion passes 0.33 mm from a loose hairpin tip laid 9.8 mm below (tip z 7.2, reach 22.49; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 151.63,
+    "y": 151.17,
+    "z": 7.2,
+    "reach": 22.49,
+    "tied": false
+   },
+   "clearance": 9.8,
+   "r": 0.33
+  },
+  {
+   "layer": "S4",
+   "k": 86,
+   "z": 17.2,
+   "why": "extrusion passes 0.33 mm from a loose hairpin tip laid 10 mm below (tip z 7.2, reach 22.49; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 151.63,
+    "y": 151.17,
+    "z": 7.2,
+    "reach": 22.49,
+    "tied": false
+   },
+   "clearance": 10,
+   "r": 0.33
+  },
+  {
+   "layer": "S4",
+   "k": 87,
+   "z": 17.4,
+   "why": "extrusion passes 0.34 mm from a loose hairpin tip laid 10.2 mm below (tip z 7.2, reach 22.49; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 151.63,
+    "y": 151.17,
+    "z": 7.2,
+    "reach": 22.49,
+    "tied": false
+   },
+   "clearance": 10.2,
+   "r": 0.34
+  },
+  {
+   "layer": "S4",
+   "k": 88,
+   "z": 17.6,
+   "why": "extrusion passes 0.37 mm from a loose hairpin tip laid 10.4 mm below (tip z 7.2, reach 22.49; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 151.63,
+    "y": 151.17,
+    "z": 7.2,
+    "reach": 22.49,
+    "tied": false
+   },
+   "clearance": 10.4,
+   "r": 0.37
+  },
+  {
+   "layer": "S4",
+   "k": 89,
+   "z": 17.8,
+   "why": "extrusion passes 0.35 mm from a loose hairpin tip laid 10.6 mm below (tip z 7.2, reach 22.49; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 151.63,
+    "y": 151.17,
+    "z": 7.2,
+    "reach": 22.49,
+    "tied": false
+   },
+   "clearance": 10.6,
+   "r": 0.35
+  },
+  {
+   "layer": "S4",
+   "k": 90,
+   "z": 18,
+   "why": "extrusion passes 0.35 mm from a loose hairpin tip laid 10.8 mm below (tip z 7.2, reach 22.49; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 151.63,
+    "y": 151.17,
+    "z": 7.2,
+    "reach": 22.49,
+    "tied": false
+   },
+   "clearance": 10.8,
+   "r": 0.35
+  },
+  {
+   "layer": "S4",
+   "k": 77,
+   "z": 15.4,
+   "why": "extrusion passes 1.33 mm from a loose hairpin tip laid 8.2 mm below (tip z 7.2, reach 22.61; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 52.84,
+    "y": 97.35,
+    "z": 7.2,
+    "reach": 22.61,
+    "tied": false
+   },
+   "clearance": 8.2,
+   "r": 1.33
+  },
+  {
+   "layer": "S4",
+   "k": 78,
+   "z": 15.6,
+   "why": "extrusion passes 0.22 mm from a loose hairpin tip laid 8.4 mm below (tip z 7.2, reach 22.61; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 52.84,
+    "y": 97.35,
+    "z": 7.2,
+    "reach": 22.61,
+    "tied": false
+   },
+   "clearance": 8.4,
+   "r": 0.22
+  },
+  {
+   "layer": "S4",
+   "k": 79,
+   "z": 15.8,
+   "why": "extrusion passes 0.22 mm from a loose hairpin tip laid 8.6 mm below (tip z 7.2, reach 22.61; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 52.84,
+    "y": 97.35,
+    "z": 7.2,
+    "reach": 22.61,
+    "tied": false
+   },
+   "clearance": 8.6,
+   "r": 0.22
+  },
+  {
+   "layer": "S4",
+   "k": 80,
+   "z": 16,
+   "why": "extrusion passes 0.3 mm from a loose hairpin tip laid 8.8 mm below (tip z 7.2, reach 22.61; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 52.84,
+    "y": 97.35,
+    "z": 7.2,
+    "reach": 22.61,
+    "tied": false
+   },
+   "clearance": 8.8,
+   "r": 0.3
+  },
+  {
+   "layer": "S4",
+   "k": 81,
+   "z": 16.2,
+   "why": "extrusion passes 0.25 mm from a loose hairpin tip laid 9 mm below (tip z 7.2, reach 22.61; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 52.84,
+    "y": 97.35,
+    "z": 7.2,
+    "reach": 22.61,
+    "tied": false
+   },
+   "clearance": 9,
+   "r": 0.25
+  },
+  {
+   "layer": "S4",
+   "k": 82,
+   "z": 16.4,
+   "why": "extrusion passes 0.21 mm from a loose hairpin tip laid 9.2 mm below (tip z 7.2, reach 22.61; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 52.84,
+    "y": 97.35,
+    "z": 7.2,
+    "reach": 22.61,
+    "tied": false
+   },
+   "clearance": 9.2,
+   "r": 0.21
+  },
+  {
+   "layer": "S4",
+   "k": 83,
+   "z": 16.6,
+   "why": "extrusion passes 0.25 mm from a loose hairpin tip laid 9.4 mm below (tip z 7.2, reach 22.61; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 52.84,
+    "y": 97.35,
+    "z": 7.2,
+    "reach": 22.61,
+    "tied": false
+   },
+   "clearance": 9.4,
+   "r": 0.25
+  },
+  {
+   "layer": "S4",
+   "k": 84,
+   "z": 16.8,
+   "why": "extrusion passes 0.3 mm from a loose hairpin tip laid 9.6 mm below (tip z 7.2, reach 22.61; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 52.84,
+    "y": 97.35,
+    "z": 7.2,
+    "reach": 22.61,
+    "tied": false
+   },
+   "clearance": 9.6,
+   "r": 0.3
+  },
+  {
+   "layer": "S4",
+   "k": 85,
+   "z": 17,
+   "why": "extrusion passes 0.22 mm from a loose hairpin tip laid 9.8 mm below (tip z 7.2, reach 22.61; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 52.84,
+    "y": 97.35,
+    "z": 7.2,
+    "reach": 22.61,
+    "tied": false
+   },
+   "clearance": 9.8,
+   "r": 0.22
+  },
+  {
+   "layer": "S4",
+   "k": 86,
+   "z": 17.2,
+   "why": "extrusion passes 0.22 mm from a loose hairpin tip laid 10 mm below (tip z 7.2, reach 22.61; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 52.84,
+    "y": 97.35,
+    "z": 7.2,
+    "reach": 22.61,
+    "tied": false
+   },
+   "clearance": 10,
+   "r": 0.22
+  },
+  {
+   "layer": "S4",
+   "k": 87,
+   "z": 17.4,
+   "why": "extrusion passes 0.3 mm from a loose hairpin tip laid 10.2 mm below (tip z 7.2, reach 22.61; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 52.84,
+    "y": 97.35,
+    "z": 7.2,
+    "reach": 22.61,
+    "tied": false
+   },
+   "clearance": 10.2,
+   "r": 0.3
+  },
+  {
+   "layer": "S4",
+   "k": 88,
+   "z": 17.6,
+   "why": "extrusion passes 0.25 mm from a loose hairpin tip laid 10.4 mm below (tip z 7.2, reach 22.61; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 52.84,
+    "y": 97.35,
+    "z": 7.2,
+    "reach": 22.61,
+    "tied": false
+   },
+   "clearance": 10.4,
+   "r": 0.25
+  },
+  {
+   "layer": "S4",
+   "k": 89,
+   "z": 17.8,
+   "why": "extrusion passes 0.3 mm from a loose hairpin tip laid 10.6 mm below (tip z 7.2, reach 22.61; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 52.84,
+    "y": 97.35,
+    "z": 7.2,
+    "reach": 22.61,
+    "tied": false
+   },
+   "clearance": 10.6,
+   "r": 0.3
+  },
+  {
+   "layer": "S4",
+   "k": 90,
+   "z": 18,
+   "why": "extrusion passes 0.3 mm from a loose hairpin tip laid 10.8 mm below (tip z 7.2, reach 22.61; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 52.84,
+    "y": 97.35,
+    "z": 7.2,
+    "reach": 22.61,
+    "tied": false
+   },
+   "clearance": 10.8,
+   "r": 0.3
+  },
+  {
+   "layer": "S4",
+   "k": 77,
+   "z": 15.4,
+   "why": "extrusion passes 1.31 mm from a loose hairpin tip laid 8.2 mm below (tip z 7.2, reach 22.59; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 55.04,
+    "y": 89.83,
+    "z": 7.2,
+    "reach": 22.59,
+    "tied": false
+   },
+   "clearance": 8.2,
+   "r": 1.31
+  },
+  {
+   "layer": "S4",
+   "k": 78,
+   "z": 15.6,
+   "why": "extrusion passes 0.22 mm from a loose hairpin tip laid 8.4 mm below (tip z 7.2, reach 22.59; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 55.04,
+    "y": 89.83,
+    "z": 7.2,
+    "reach": 22.59,
+    "tied": false
+   },
+   "clearance": 8.4,
+   "r": 0.22
+  },
+  {
+   "layer": "S4",
+   "k": 79,
+   "z": 15.8,
+   "why": "extrusion passes 0.34 mm from a loose hairpin tip laid 8.6 mm below (tip z 7.2, reach 22.59; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 55.04,
+    "y": 89.83,
+    "z": 7.2,
+    "reach": 22.59,
+    "tied": false
+   },
+   "clearance": 8.6,
+   "r": 0.34
+  },
+  {
+   "layer": "S4",
+   "k": 80,
+   "z": 16,
+   "why": "extrusion passes 0.32 mm from a loose hairpin tip laid 8.8 mm below (tip z 7.2, reach 22.59; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 55.04,
+    "y": 89.83,
+    "z": 7.2,
+    "reach": 22.59,
+    "tied": false
+   },
+   "clearance": 8.8,
+   "r": 0.32
+  },
+  {
+   "layer": "S4",
+   "k": 81,
+   "z": 16.2,
+   "why": "extrusion passes 0.34 mm from a loose hairpin tip laid 9 mm below (tip z 7.2, reach 22.59; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 55.04,
+    "y": 89.83,
+    "z": 7.2,
+    "reach": 22.59,
+    "tied": false
+   },
+   "clearance": 9,
+   "r": 0.34
+  },
+  {
+   "layer": "S4",
+   "k": 82,
+   "z": 16.4,
+   "why": "extrusion passes 0.32 mm from a loose hairpin tip laid 9.2 mm below (tip z 7.2, reach 22.59; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 55.04,
+    "y": 89.83,
+    "z": 7.2,
+    "reach": 22.59,
+    "tied": false
+   },
+   "clearance": 9.2,
+   "r": 0.32
+  },
+  {
+   "layer": "S4",
+   "k": 83,
+   "z": 16.6,
+   "why": "extrusion passes 0.34 mm from a loose hairpin tip laid 9.4 mm below (tip z 7.2, reach 22.59; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 55.04,
+    "y": 89.83,
+    "z": 7.2,
+    "reach": 22.59,
+    "tied": false
+   },
+   "clearance": 9.4,
+   "r": 0.34
+  },
+  {
+   "layer": "S4",
+   "k": 84,
+   "z": 16.8,
+   "why": "extrusion passes 0.32 mm from a loose hairpin tip laid 9.6 mm below (tip z 7.2, reach 22.59; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 55.04,
+    "y": 89.83,
+    "z": 7.2,
+    "reach": 22.59,
+    "tied": false
+   },
+   "clearance": 9.6,
+   "r": 0.32
+  },
+  {
+   "layer": "S4",
+   "k": 85,
+   "z": 17,
+   "why": "extrusion passes 0.34 mm from a loose hairpin tip laid 9.8 mm below (tip z 7.2, reach 22.59; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 55.04,
+    "y": 89.83,
+    "z": 7.2,
+    "reach": 22.59,
+    "tied": false
+   },
+   "clearance": 9.8,
+   "r": 0.34
+  },
+  {
+   "layer": "S4",
+   "k": 86,
+   "z": 17.2,
+   "why": "extrusion passes 0.32 mm from a loose hairpin tip laid 10 mm below (tip z 7.2, reach 22.59; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 55.04,
+    "y": 89.83,
+    "z": 7.2,
+    "reach": 22.59,
+    "tied": false
+   },
+   "clearance": 10,
+   "r": 0.32
+  },
+  {
+   "layer": "S4",
+   "k": 87,
+   "z": 17.4,
+   "why": "extrusion passes 0.34 mm from a loose hairpin tip laid 10.2 mm below (tip z 7.2, reach 22.59; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 55.04,
+    "y": 89.83,
+    "z": 7.2,
+    "reach": 22.59,
+    "tied": false
+   },
+   "clearance": 10.2,
+   "r": 0.34
+  },
+  {
+   "layer": "S4",
+   "k": 88,
+   "z": 17.6,
+   "why": "extrusion passes 0.32 mm from a loose hairpin tip laid 10.4 mm below (tip z 7.2, reach 22.59; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 55.04,
+    "y": 89.83,
+    "z": 7.2,
+    "reach": 22.59,
+    "tied": false
+   },
+   "clearance": 10.4,
+   "r": 0.32
+  },
+  {
+   "layer": "S4",
+   "k": 89,
+   "z": 17.8,
+   "why": "extrusion passes 0.32 mm from a loose hairpin tip laid 10.6 mm below (tip z 7.2, reach 22.59; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 55.04,
+    "y": 89.83,
+    "z": 7.2,
+    "reach": 22.59,
+    "tied": false
+   },
+   "clearance": 10.6,
+   "r": 0.32
+  },
+  {
+   "layer": "S4",
+   "k": 90,
+   "z": 18,
+   "why": "extrusion passes 0.32 mm from a loose hairpin tip laid 10.8 mm below (tip z 7.2, reach 22.59; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 55.04,
+    "y": 89.83,
+    "z": 7.2,
+    "reach": 22.59,
+    "tied": false
+   },
+   "clearance": 10.8,
+   "r": 0.32
+  },
+  {
+   "layer": "S4",
+   "k": 77,
+   "z": 15.4,
+   "why": "extrusion passes 1.3 mm from a loose hairpin tip laid 8.2 mm below (tip z 7.2, reach 22.64; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 58.46,
+    "y": 82.22,
+    "z": 7.2,
+    "reach": 22.64,
+    "tied": false
+   },
+   "clearance": 8.2,
+   "r": 1.3
+  },
+  {
+   "layer": "S4",
+   "k": 78,
+   "z": 15.6,
+   "why": "extrusion passes 0.32 mm from a loose hairpin tip laid 8.4 mm below (tip z 7.2, reach 22.64; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 58.46,
+    "y": 82.22,
+    "z": 7.2,
+    "reach": 22.64,
+    "tied": false
+   },
+   "clearance": 8.4,
+   "r": 0.32
+  },
+  {
+   "layer": "S4",
+   "k": 79,
+   "z": 15.8,
+   "why": "extrusion passes 0.35 mm from a loose hairpin tip laid 8.6 mm below (tip z 7.2, reach 22.64; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 58.46,
+    "y": 82.22,
+    "z": 7.2,
+    "reach": 22.64,
+    "tied": false
+   },
+   "clearance": 8.6,
+   "r": 0.35
+  },
+  {
+   "layer": "S4",
+   "k": 80,
+   "z": 16,
+   "why": "extrusion passes 0.32 mm from a loose hairpin tip laid 8.8 mm below (tip z 7.2, reach 22.64; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 58.46,
+    "y": 82.22,
+    "z": 7.2,
+    "reach": 22.64,
+    "tied": false
+   },
+   "clearance": 8.8,
+   "r": 0.32
+  },
+  {
+   "layer": "S4",
+   "k": 81,
+   "z": 16.2,
+   "why": "extrusion passes 0.35 mm from a loose hairpin tip laid 9 mm below (tip z 7.2, reach 22.64; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 58.46,
+    "y": 82.22,
+    "z": 7.2,
+    "reach": 22.64,
+    "tied": false
+   },
+   "clearance": 9,
+   "r": 0.35
+  },
+  {
+   "layer": "S4",
+   "k": 82,
+   "z": 16.4,
+   "why": "extrusion passes 0.38 mm from a loose hairpin tip laid 9.2 mm below (tip z 7.2, reach 22.64; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 58.46,
+    "y": 82.22,
+    "z": 7.2,
+    "reach": 22.64,
+    "tied": false
+   },
+   "clearance": 9.2,
+   "r": 0.38
+  },
+  {
+   "layer": "S4",
+   "k": 83,
+   "z": 16.6,
+   "why": "extrusion passes 0.32 mm from a loose hairpin tip laid 9.4 mm below (tip z 7.2, reach 22.64; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 58.46,
+    "y": 82.22,
+    "z": 7.2,
+    "reach": 22.64,
+    "tied": false
+   },
+   "clearance": 9.4,
+   "r": 0.32
+  },
+  {
+   "layer": "S4",
+   "k": 84,
+   "z": 16.8,
+   "why": "extrusion passes 0.33 mm from a loose hairpin tip laid 9.6 mm below (tip z 7.2, reach 22.64; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 58.46,
+    "y": 82.22,
+    "z": 7.2,
+    "reach": 22.64,
+    "tied": false
+   },
+   "clearance": 9.6,
+   "r": 0.33
+  },
+  {
+   "layer": "S4",
+   "k": 85,
+   "z": 17,
+   "why": "extrusion passes 0.39 mm from a loose hairpin tip laid 9.8 mm below (tip z 7.2, reach 22.64; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 58.46,
+    "y": 82.22,
+    "z": 7.2,
+    "reach": 22.64,
+    "tied": false
+   },
+   "clearance": 9.8,
+   "r": 0.39
+  },
+  {
+   "layer": "S4",
+   "k": 86,
+   "z": 17.2,
+   "why": "extrusion passes 0.35 mm from a loose hairpin tip laid 10 mm below (tip z 7.2, reach 22.64; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 58.46,
+    "y": 82.22,
+    "z": 7.2,
+    "reach": 22.64,
+    "tied": false
+   },
+   "clearance": 10,
+   "r": 0.35
+  },
+  {
+   "layer": "S4",
+   "k": 87,
+   "z": 17.4,
+   "why": "extrusion passes 0.32 mm from a loose hairpin tip laid 10.2 mm below (tip z 7.2, reach 22.64; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 58.46,
+    "y": 82.22,
+    "z": 7.2,
+    "reach": 22.64,
+    "tied": false
+   },
+   "clearance": 10.2,
+   "r": 0.32
+  },
+  {
+   "layer": "S4",
+   "k": 88,
+   "z": 17.6,
+   "why": "extrusion passes 0.35 mm from a loose hairpin tip laid 10.4 mm below (tip z 7.2, reach 22.64; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 58.46,
+    "y": 82.22,
+    "z": 7.2,
+    "reach": 22.64,
+    "tied": false
+   },
+   "clearance": 10.4,
+   "r": 0.35
+  },
+  {
+   "layer": "S4",
+   "k": 89,
+   "z": 17.8,
+   "why": "extrusion passes 0.33 mm from a loose hairpin tip laid 10.6 mm below (tip z 7.2, reach 22.64; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 58.46,
+    "y": 82.22,
+    "z": 7.2,
+    "reach": 22.64,
+    "tied": false
+   },
+   "clearance": 10.6,
+   "r": 0.33
+  },
+  {
+   "layer": "S4",
+   "k": 90,
+   "z": 18,
+   "why": "extrusion passes 0.33 mm from a loose hairpin tip laid 10.8 mm below (tip z 7.2, reach 22.64; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 58.46,
+    "y": 82.22,
+    "z": 7.2,
+    "reach": 22.64,
+    "tied": false
+   },
+   "clearance": 10.8,
+   "r": 0.33
+  },
+  {
+   "layer": "S4",
+   "k": 70,
+   "z": 14,
+   "why": "extrusion passes 0.3 mm from a loose hairpin tip laid 6.8 mm below (tip z 7.2, reach 22.63; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 68.35,
+    "y": 68.85,
+    "z": 7.2,
+    "reach": 22.63,
+    "tied": false
+   },
+   "clearance": 6.8,
+   "r": 0.3
+  },
+  {
+   "layer": "S4",
+   "k": 71,
+   "z": 14.2,
+   "why": "extrusion passes 0.4 mm from a loose hairpin tip laid 7 mm below (tip z 7.2, reach 22.63; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 68.35,
+    "y": 68.85,
+    "z": 7.2,
+    "reach": 22.63,
+    "tied": false
+   },
+   "clearance": 7,
+   "r": 0.4
+  },
+  {
+   "layer": "S4",
+   "k": 72,
+   "z": 14.4,
+   "why": "extrusion passes 0.36 mm from a loose hairpin tip laid 7.2 mm below (tip z 7.2, reach 22.63; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 68.35,
+    "y": 68.85,
+    "z": 7.2,
+    "reach": 22.63,
+    "tied": false
+   },
+   "clearance": 7.2,
+   "r": 0.36
+  },
+  {
+   "layer": "S4",
+   "k": 73,
+   "z": 14.6,
+   "why": "extrusion passes 0.37 mm from a loose hairpin tip laid 7.4 mm below (tip z 7.2, reach 22.63; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 68.35,
+    "y": 68.85,
+    "z": 7.2,
+    "reach": 22.63,
+    "tied": false
+   },
+   "clearance": 7.4,
+   "r": 0.37
+  },
+  {
+   "layer": "S4",
+   "k": 74,
+   "z": 14.8,
+   "why": "extrusion passes 0.39 mm from a loose hairpin tip laid 7.6 mm below (tip z 7.2, reach 22.63; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 68.35,
+    "y": 68.85,
+    "z": 7.2,
+    "reach": 22.63,
+    "tied": false
+   },
+   "clearance": 7.6,
+   "r": 0.39
+  },
+  {
+   "layer": "S4",
+   "k": 75,
+   "z": 15,
+   "why": "extrusion passes 0.35 mm from a loose hairpin tip laid 7.8 mm below (tip z 7.2, reach 22.63; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 68.35,
+    "y": 68.85,
+    "z": 7.2,
+    "reach": 22.63,
+    "tied": false
+   },
+   "clearance": 7.8,
+   "r": 0.35
+  },
+  {
+   "layer": "S4",
+   "k": 76,
+   "z": 15.2,
+   "why": "extrusion passes 0.4 mm from a loose hairpin tip laid 8 mm below (tip z 7.2, reach 22.63; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 68.35,
+    "y": 68.85,
+    "z": 7.2,
+    "reach": 22.63,
+    "tied": false
+   },
+   "clearance": 8,
+   "r": 0.4
+  },
+  {
+   "layer": "S4",
+   "k": 77,
+   "z": 15.4,
+   "why": "extrusion passes 0.35 mm from a loose hairpin tip laid 8.2 mm below (tip z 7.2, reach 22.63; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 68.35,
+    "y": 68.85,
+    "z": 7.2,
+    "reach": 22.63,
+    "tied": false
+   },
+   "clearance": 8.2,
+   "r": 0.35
+  },
+  {
+   "layer": "S4",
+   "k": 78,
+   "z": 15.6,
+   "why": "extrusion passes 0.36 mm from a loose hairpin tip laid 8.4 mm below (tip z 7.2, reach 22.63; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 68.35,
+    "y": 68.85,
+    "z": 7.2,
+    "reach": 22.63,
+    "tied": false
+   },
+   "clearance": 8.4,
+   "r": 0.36
+  },
+  {
+   "layer": "S4",
+   "k": 79,
+   "z": 15.8,
+   "why": "extrusion passes 0.43 mm from a loose hairpin tip laid 8.6 mm below (tip z 7.2, reach 22.63; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 68.35,
+    "y": 68.85,
+    "z": 7.2,
+    "reach": 22.63,
+    "tied": false
+   },
+   "clearance": 8.6,
+   "r": 0.43
+  },
+  {
+   "layer": "S4",
+   "k": 80,
+   "z": 16,
+   "why": "extrusion passes 0.37 mm from a loose hairpin tip laid 8.8 mm below (tip z 7.2, reach 22.63; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 68.35,
+    "y": 68.85,
+    "z": 7.2,
+    "reach": 22.63,
+    "tied": false
+   },
+   "clearance": 8.8,
+   "r": 0.37
+  },
+  {
+   "layer": "S4",
+   "k": 81,
+   "z": 16.2,
+   "why": "extrusion passes 0.35 mm from a loose hairpin tip laid 9 mm below (tip z 7.2, reach 22.63; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 68.35,
+    "y": 68.85,
+    "z": 7.2,
+    "reach": 22.63,
+    "tied": false
+   },
+   "clearance": 9,
+   "r": 0.35
+  },
+  {
+   "layer": "S4",
+   "k": 82,
+   "z": 16.4,
+   "why": "extrusion passes 0.39 mm from a loose hairpin tip laid 9.2 mm below (tip z 7.2, reach 22.63; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 68.35,
+    "y": 68.85,
+    "z": 7.2,
+    "reach": 22.63,
+    "tied": false
+   },
+   "clearance": 9.2,
+   "r": 0.39
+  },
+  {
+   "layer": "S4",
+   "k": 83,
+   "z": 16.6,
+   "why": "extrusion passes 0.39 mm from a loose hairpin tip laid 9.4 mm below (tip z 7.2, reach 22.63; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 68.35,
+    "y": 68.85,
+    "z": 7.2,
+    "reach": 22.63,
+    "tied": false
+   },
+   "clearance": 9.4,
+   "r": 0.39
+  },
+  {
+   "layer": "S4",
+   "k": 84,
+   "z": 16.8,
+   "why": "extrusion passes 0.35 mm from a loose hairpin tip laid 9.6 mm below (tip z 7.2, reach 22.63; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 68.35,
+    "y": 68.85,
+    "z": 7.2,
+    "reach": 22.63,
+    "tied": false
+   },
+   "clearance": 9.6,
+   "r": 0.35
+  },
+  {
+   "layer": "S4",
+   "k": 85,
+   "z": 17,
+   "why": "extrusion passes 0.36 mm from a loose hairpin tip laid 9.8 mm below (tip z 7.2, reach 22.63; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 68.35,
+    "y": 68.85,
+    "z": 7.2,
+    "reach": 22.63,
+    "tied": false
+   },
+   "clearance": 9.8,
+   "r": 0.36
+  },
+  {
+   "layer": "S4",
+   "k": 86,
+   "z": 17.2,
+   "why": "extrusion passes 0.43 mm from a loose hairpin tip laid 10 mm below (tip z 7.2, reach 22.63; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 68.35,
+    "y": 68.85,
+    "z": 7.2,
+    "reach": 22.63,
+    "tied": false
+   },
+   "clearance": 10,
+   "r": 0.43
+  },
+  {
+   "layer": "S4",
+   "k": 87,
+   "z": 17.4,
+   "why": "extrusion passes 0.37 mm from a loose hairpin tip laid 10.2 mm below (tip z 7.2, reach 22.63; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 68.35,
+    "y": 68.85,
+    "z": 7.2,
+    "reach": 22.63,
+    "tied": false
+   },
+   "clearance": 10.2,
+   "r": 0.37
+  },
+  {
+   "layer": "S4",
+   "k": 88,
+   "z": 17.6,
+   "why": "extrusion passes 0.35 mm from a loose hairpin tip laid 10.4 mm below (tip z 7.2, reach 22.63; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 68.35,
+    "y": 68.85,
+    "z": 7.2,
+    "reach": 22.63,
+    "tied": false
+   },
+   "clearance": 10.4,
+   "r": 0.35
+  },
+  {
+   "layer": "S4",
+   "k": 89,
+   "z": 17.8,
+   "why": "extrusion passes 0.35 mm from a loose hairpin tip laid 10.6 mm below (tip z 7.2, reach 22.63; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 68.35,
+    "y": 68.85,
+    "z": 7.2,
+    "reach": 22.63,
+    "tied": false
+   },
+   "clearance": 10.6,
+   "r": 0.35
+  },
+  {
+   "layer": "S4",
+   "k": 90,
+   "z": 18,
+   "why": "extrusion passes 0.35 mm from a loose hairpin tip laid 10.8 mm below (tip z 7.2, reach 22.63; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 68.35,
+    "y": 68.85,
+    "z": 7.2,
+    "reach": 22.63,
+    "tied": false
+   },
+   "clearance": 10.8,
+   "r": 0.35
+  },
+  {
+   "layer": "S4",
+   "k": 77,
+   "z": 15.4,
+   "why": "extrusion passes 1.3 mm from a loose hairpin tip laid 8 mm below (tip z 7.4, reach 22.84; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 168.51,
+    "y": 112.25,
+    "z": 7.4,
+    "reach": 22.84,
+    "tied": false
+   },
+   "clearance": 8,
+   "r": 1.3
+  },
+  {
+   "layer": "S4",
+   "k": 78,
+   "z": 15.6,
+   "why": "extrusion passes 0.22 mm from a loose hairpin tip laid 8.2 mm below (tip z 7.4, reach 22.84; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 168.51,
+    "y": 112.25,
+    "z": 7.4,
+    "reach": 22.84,
+    "tied": false
+   },
+   "clearance": 8.2,
+   "r": 0.22
+  },
+  {
+   "layer": "S4",
+   "k": 79,
+   "z": 15.8,
+   "why": "extrusion passes 1.71 mm from a loose hairpin tip laid 8.4 mm below (tip z 7.4, reach 22.84; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 168.51,
+    "y": 112.25,
+    "z": 7.4,
+    "reach": 22.84,
+    "tied": false
+   },
+   "clearance": 8.4,
+   "r": 1.71
+  },
+  {
+   "layer": "S4",
+   "k": 80,
+   "z": 16,
+   "why": "extrusion passes 1.93 mm from a loose hairpin tip laid 8.6 mm below (tip z 7.4, reach 22.84; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 168.51,
+    "y": 112.25,
+    "z": 7.4,
+    "reach": 22.84,
+    "tied": false
+   },
+   "clearance": 8.6,
+   "r": 1.93
+  },
+  {
+   "layer": "S4",
+   "k": 81,
+   "z": 16.2,
+   "why": "extrusion passes 1.93 mm from a loose hairpin tip laid 8.8 mm below (tip z 7.4, reach 22.84; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 168.51,
+    "y": 112.25,
+    "z": 7.4,
+    "reach": 22.84,
+    "tied": false
+   },
+   "clearance": 8.8,
+   "r": 1.93
+  },
+  {
+   "layer": "S4",
+   "k": 82,
+   "z": 16.4,
+   "why": "extrusion passes 1.94 mm from a loose hairpin tip laid 9 mm below (tip z 7.4, reach 22.84; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 168.51,
+    "y": 112.25,
+    "z": 7.4,
+    "reach": 22.84,
+    "tied": false
+   },
+   "clearance": 9,
+   "r": 1.94
+  },
+  {
+   "layer": "S4",
+   "k": 83,
+   "z": 16.6,
+   "why": "extrusion passes 1.94 mm from a loose hairpin tip laid 9.2 mm below (tip z 7.4, reach 22.84; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 168.51,
+    "y": 112.25,
+    "z": 7.4,
+    "reach": 22.84,
+    "tied": false
+   },
+   "clearance": 9.2,
+   "r": 1.94
+  },
+  {
+   "layer": "S4",
+   "k": 84,
+   "z": 16.8,
+   "why": "extrusion passes 1.93 mm from a loose hairpin tip laid 9.4 mm below (tip z 7.4, reach 22.84; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 168.51,
+    "y": 112.25,
+    "z": 7.4,
+    "reach": 22.84,
+    "tied": false
+   },
+   "clearance": 9.4,
+   "r": 1.93
+  },
+  {
+   "layer": "S4",
+   "k": 85,
+   "z": 17,
+   "why": "extrusion passes 1.93 mm from a loose hairpin tip laid 9.6 mm below (tip z 7.4, reach 22.84; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 168.51,
+    "y": 112.25,
+    "z": 7.4,
+    "reach": 22.84,
+    "tied": false
+   },
+   "clearance": 9.6,
+   "r": 1.93
+  },
+  {
+   "layer": "S4",
+   "k": 86,
+   "z": 17.2,
+   "why": "extrusion passes 1.93 mm from a loose hairpin tip laid 9.8 mm below (tip z 7.4, reach 22.84; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 168.51,
+    "y": 112.25,
+    "z": 7.4,
+    "reach": 22.84,
+    "tied": false
+   },
+   "clearance": 9.8,
+   "r": 1.93
+  },
+  {
+   "layer": "S4",
+   "k": 87,
+   "z": 17.4,
+   "why": "extrusion passes 1.94 mm from a loose hairpin tip laid 10 mm below (tip z 7.4, reach 22.84; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 168.51,
+    "y": 112.25,
+    "z": 7.4,
+    "reach": 22.84,
+    "tied": false
+   },
+   "clearance": 10,
+   "r": 1.94
+  },
+  {
+   "layer": "S4",
+   "k": 88,
+   "z": 17.6,
+   "why": "extrusion passes 1.93 mm from a loose hairpin tip laid 10.2 mm below (tip z 7.4, reach 22.84; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 168.51,
+    "y": 112.25,
+    "z": 7.4,
+    "reach": 22.84,
+    "tied": false
+   },
+   "clearance": 10.2,
+   "r": 1.93
+  },
+  {
+   "layer": "S4",
+   "k": 89,
+   "z": 17.8,
+   "why": "extrusion passes 1.93 mm from a loose hairpin tip laid 10.4 mm below (tip z 7.4, reach 22.84; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 168.51,
+    "y": 112.25,
+    "z": 7.4,
+    "reach": 22.84,
+    "tied": false
+   },
+   "clearance": 10.4,
+   "r": 1.93
+  },
+  {
+   "layer": "S4",
+   "k": 90,
+   "z": 18,
+   "why": "extrusion passes 1.93 mm from a loose hairpin tip laid 10.6 mm below (tip z 7.4, reach 22.84; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 168.51,
+    "y": 112.25,
+    "z": 7.4,
+    "reach": 22.84,
+    "tied": false
+   },
+   "clearance": 10.6,
+   "r": 1.93
+  },
+  {
+   "layer": "S4",
+   "k": 65,
+   "z": 13,
+   "why": "extrusion passes 1.42 mm from a loose hairpin tip laid 5.6 mm below (tip z 7.4, reach 22.57; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 168.14,
+    "y": 103.06,
+    "z": 7.4,
+    "reach": 22.57,
+    "tied": false
+   },
+   "clearance": 5.6,
+   "r": 1.42
+  },
+  {
+   "layer": "S4",
+   "k": 66,
+   "z": 13.2,
+   "why": "extrusion passes 1.4 mm from a loose hairpin tip laid 5.8 mm below (tip z 7.4, reach 22.57; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 168.14,
+    "y": 103.06,
+    "z": 7.4,
+    "reach": 22.57,
+    "tied": false
+   },
+   "clearance": 5.8,
+   "r": 1.4
+  },
+  {
+   "layer": "S4",
+   "k": 67,
+   "z": 13.4,
+   "why": "extrusion passes 1.42 mm from a loose hairpin tip laid 6 mm below (tip z 7.4, reach 22.57; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 168.14,
+    "y": 103.06,
+    "z": 7.4,
+    "reach": 22.57,
+    "tied": false
+   },
+   "clearance": 6,
+   "r": 1.42
+  },
+  {
+   "layer": "S4",
+   "k": 68,
+   "z": 13.6,
+   "why": "extrusion passes 1.4 mm from a loose hairpin tip laid 6.2 mm below (tip z 7.4, reach 22.57; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 168.14,
+    "y": 103.06,
+    "z": 7.4,
+    "reach": 22.57,
+    "tied": false
+   },
+   "clearance": 6.2,
+   "r": 1.4
+  },
+  {
+   "layer": "S4",
+   "k": 69,
+   "z": 13.8,
+   "why": "extrusion passes 1.4 mm from a loose hairpin tip laid 6.4 mm below (tip z 7.4, reach 22.57; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 168.14,
+    "y": 103.06,
+    "z": 7.4,
+    "reach": 22.57,
+    "tied": false
+   },
+   "clearance": 6.4,
+   "r": 1.4
+  },
+  {
+   "layer": "S4",
+   "k": 70,
+   "z": 14,
+   "why": "extrusion passes 1.41 mm from a loose hairpin tip laid 6.6 mm below (tip z 7.4, reach 22.57; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 168.14,
+    "y": 103.06,
+    "z": 7.4,
+    "reach": 22.57,
+    "tied": false
+   },
+   "clearance": 6.6,
+   "r": 1.41
+  },
+  {
+   "layer": "S4",
+   "k": 71,
+   "z": 14.2,
+   "why": "extrusion passes 1.41 mm from a loose hairpin tip laid 6.8 mm below (tip z 7.4, reach 22.57; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 168.14,
+    "y": 103.06,
+    "z": 7.4,
+    "reach": 22.57,
+    "tied": false
+   },
+   "clearance": 6.8,
+   "r": 1.41
+  },
+  {
+   "layer": "S4",
+   "k": 72,
+   "z": 14.4,
+   "why": "extrusion passes 1.42 mm from a loose hairpin tip laid 7 mm below (tip z 7.4, reach 22.57; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 168.14,
+    "y": 103.06,
+    "z": 7.4,
+    "reach": 22.57,
+    "tied": false
+   },
+   "clearance": 7,
+   "r": 1.42
+  },
+  {
+   "layer": "S4",
+   "k": 73,
+   "z": 14.6,
+   "why": "extrusion passes 1.4 mm from a loose hairpin tip laid 7.2 mm below (tip z 7.4, reach 22.57; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 168.14,
+    "y": 103.06,
+    "z": 7.4,
+    "reach": 22.57,
+    "tied": false
+   },
+   "clearance": 7.2,
+   "r": 1.4
+  },
+  {
+   "layer": "S4",
+   "k": 74,
+   "z": 14.8,
+   "why": "extrusion passes 1.4 mm from a loose hairpin tip laid 7.4 mm below (tip z 7.4, reach 22.57; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 168.14,
+    "y": 103.06,
+    "z": 7.4,
+    "reach": 22.57,
+    "tied": false
+   },
+   "clearance": 7.4,
+   "r": 1.4
+  },
+  {
+   "layer": "S4",
+   "k": 75,
+   "z": 15,
+   "why": "extrusion passes 1.41 mm from a loose hairpin tip laid 7.6 mm below (tip z 7.4, reach 22.57; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 168.14,
+    "y": 103.06,
+    "z": 7.4,
+    "reach": 22.57,
+    "tied": false
+   },
+   "clearance": 7.6,
+   "r": 1.41
+  },
+  {
+   "layer": "S4",
+   "k": 76,
+   "z": 15.2,
+   "why": "extrusion passes 1.4 mm from a loose hairpin tip laid 7.8 mm below (tip z 7.4, reach 22.57; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 168.14,
+    "y": 103.06,
+    "z": 7.4,
+    "reach": 22.57,
+    "tied": false
+   },
+   "clearance": 7.8,
+   "r": 1.4
+  },
+  {
+   "layer": "S4",
+   "k": 77,
+   "z": 15.4,
+   "why": "extrusion passes 1.41 mm from a loose hairpin tip laid 8 mm below (tip z 7.4, reach 22.57; evidence: 5.04 mm destroyed KRAK; \u2264 12 refused, assumed margin)",
+   "declared": "terrace K2",
+   "tip": {
+    "x": 168.14,
+    "y": 103.06,
+    "z": 7.4,
+    "reach": 22.57,
+    "tied": false
+   },
+   "clearance": 8,
+   "r": 1.41
+  }
+ ],
+ "finding_count": 879,
+ "undeclared_count": 1
+}

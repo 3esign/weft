@@ -1,0 +1,636 @@
+{
+  "report": {
+    "name": "KRAK_A2L_X1",
+    "machine": "Bambu A2L",
+    "bed_mm": [
+      330,
+      320
+    ],
+    "layers": 267,
+    "globalZLevels": 142,
+    "expectedZLevels": 142,
+    "logicalCells": null,
+    "experimentalMembraneOverride": false,
+    "maxBodiesPerZ": 2,
+    "size_mm": [
+      165.5,
+      149.9,
+      null
+    ],
+    "plate_mm": [
+      82.5,
+      85.3,
+      247.5,
+      234.8
+    ],
+    "fitsPlate": true,
+    "grammarCounts": {
+      "staple": 43,
+      "diagonal": 11,
+      "sine": 10,
+      "eight": 7
+    },
+    "threadLength_m": 279.3,
+    "weldNodes": 5472,
+    "rawPaths": 69,
+    "unintendedOverlaps": 7800,
+    "seamClosures": 0,
+    "overlapSamples": [
+      {
+        "z": 4.8,
+        "role": "bridge",
+        "ov": 1
+      },
+      {
+        "z": 5.04,
+        "role": "bridge",
+        "ov": 120
+      },
+      {
+        "z": 5.28,
+        "role": "bridge",
+        "ov": 119
+      },
+      {
+        "z": 5.52,
+        "role": "bridge",
+        "ov": 117
+      },
+      {
+        "z": 5.76,
+        "role": "bridge",
+        "ov": 120
+      },
+      {
+        "z": 6,
+        "role": "bridge",
+        "ov": 118
+      },
+      {
+        "z": 6.24,
+        "role": "bridge",
+        "ov": 118
+      },
+      {
+        "z": 6.48,
+        "role": "bridge",
+        "ov": 119
+      },
+      {
+        "z": 6.72,
+        "role": "bridge",
+        "ov": 119
+      },
+      {
+        "z": 6.96,
+        "role": "bridge",
+        "ov": 120
+      },
+      {
+        "z": 7.2,
+        "role": "bridge",
+        "ov": 116
+      },
+      {
+        "z": 7.44,
+        "role": "bridge",
+        "ov": 119
+      }
+    ],
+    "kinematic_h": 2.59,
+    "routeA_estimate_h": 24.4,
+    "caps": [],
+    "events": [
+      {
+        "z": 5.04,
+        "k": 21,
+        "event": "wall-1 -> terrace-K1"
+      },
+      {
+        "z": 7.92,
+        "k": 33,
+        "event": "terrace-K1 -> wall-2"
+      },
+      {
+        "z": 12.96,
+        "k": 54,
+        "event": "wall-2 -> terrace-K2"
+      },
+      {
+        "z": 19.68,
+        "k": 82,
+        "event": "terrace-K2 -> wall-3"
+      },
+      {
+        "z": 24.72,
+        "k": 103,
+        "event": "wall-3 -> terrace-K3"
+      },
+      {
+        "z": 30.96,
+        "k": 129,
+        "event": "terrace-K3 -> wall-4"
+      }
+    ],
+    "contourCounts": [
+      [
+        0,
+        1
+      ]
+    ],
+    "perLayerSample": [
+      {
+        "k": 0,
+        "z": 0,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 48
+      },
+      {
+        "k": 40,
+        "z": 9.6,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 48
+      },
+      {
+        "k": 80,
+        "z": 19.2,
+        "contours": 1,
+        "paths": 1,
+        "nodes": 48
+      },
+      {
+        "k": 120,
+        "z": 28.8,
+        "contours": 1,
+        "paths": 1,
+        "nodes": 48
+      }
+    ],
+    "gateAtEvidencedCeiling": {
+      "maxbridge_mm": 16.2,
+      "findings": 352,
+      "byZone": {
+        "terrace K1": 320,
+        "terrace K2": 32
+      },
+      "outsideDeclaredZones": 0,
+      "outsideSamples": []
+    },
+    "membranes": []
+  },
+  "geometry": {
+    "name": "KRAK_A2L_X1",
+    "generator": "core/weft_krak_geometry.mjs",
+    "process": "reach-method-comparison/v1",
+    "generatedAt": "2026-09-24",
+    "machine": "a2l",
+    "machineLabel": "Bambu Lab A2L",
+    "machineQualification": {
+      "beadSource": "measured",
+      "beadEvidence": "specimens/2026-08-31_D5_R140_A2L_physical and specimens/2026-09-02_P0_suma_2x2_physical — both printed to completion at this bead",
+      "assumedAcknowledged": false
+    },
+    "purpose": "A comparison of five ways to carry a horizontal shelf in open air, all on one object, each method printed twice on opposite sides so that an effect belonging to the machine can be told apart from an effect belonging to the geometry.",
+    "principle": "reach-method-comparison/v1: ten 36 degree sectors, sector s carries method s mod 5, so sectors s and s+5 are the same method 180 degrees apart. plain = the 2026-09-19 two-path wave (the control, and the current champion). tiprail = the same wave with a circumferential thread at the tip radius every other layer, turning a row of cantilevers into a ring beam. truss = a zigzag outbound leg. splay = a tooth spanning two cells. corbel = no cantilever at all, the reach grows by 2.5 mm per layer.",
+    "size_mm": [
+      165.1,
+      149.5,
+      34.08
+    ],
+    "height_mm": 34.08,
+    "wallRadius_mm": 32,
+    "totalLayers": 142,
+    "layerHeight_mm": 0.24,
+    "bead_mm": 0.45,
+    "wallBetweenTerraces_mm": 5.04,
+    "toothPitch_mm": 5,
+    "tipGap_mm": 1.2,
+    "corbelAdvance_mm": 2.5,
+    "sectors": 10,
+    "methods": [
+      "plain",
+      "tiprail",
+      "truss",
+      "splay",
+      "castle"
+    ],
+    "corbelLadder_mm": [
+      20,
+      27,
+      34,
+      41,
+      48
+    ],
+    "advanceLadder_mm": [
+      1.5,
+      3,
+      4.5,
+      6,
+      9
+    ],
+    "terraces": [
+      {
+        "id": "K1",
+        "title": "tooth shape, five shapes at 24 mm, heroic entry",
+        "entry": "heroic",
+        "zFrom": 5.04,
+        "zTo": 7.92,
+        "layers": 12,
+        "kFrom": 21,
+        "advance_mm": null,
+        "sectors": [
+          {
+            "sector": 0,
+            "deg": "0-36",
+            "method": "plain",
+            "reach_mm": 24,
+            "pairedWithSector": 5,
+            "firstLayerCantilever_mm": 24
+          },
+          {
+            "sector": 1,
+            "deg": "36-72",
+            "method": "tiprail",
+            "reach_mm": 24,
+            "pairedWithSector": 6,
+            "firstLayerCantilever_mm": 24
+          },
+          {
+            "sector": 2,
+            "deg": "72-108",
+            "method": "truss",
+            "reach_mm": 24,
+            "pairedWithSector": 7,
+            "firstLayerCantilever_mm": 24
+          },
+          {
+            "sector": 3,
+            "deg": "108-144",
+            "method": "splay",
+            "reach_mm": 24,
+            "pairedWithSector": 8,
+            "firstLayerCantilever_mm": 24
+          },
+          {
+            "sector": 4,
+            "deg": "144-180",
+            "method": "castle",
+            "reach_mm": 24,
+            "pairedWithSector": 9,
+            "firstLayerCantilever_mm": 24
+          },
+          {
+            "sector": 5,
+            "deg": "180-216",
+            "method": "plain",
+            "reach_mm": 24,
+            "pairedWithSector": 0,
+            "firstLayerCantilever_mm": 24
+          },
+          {
+            "sector": 6,
+            "deg": "216-252",
+            "method": "tiprail",
+            "reach_mm": 24,
+            "pairedWithSector": 1,
+            "firstLayerCantilever_mm": 24
+          },
+          {
+            "sector": 7,
+            "deg": "252-288",
+            "method": "truss",
+            "reach_mm": 24,
+            "pairedWithSector": 2,
+            "firstLayerCantilever_mm": 24
+          },
+          {
+            "sector": 8,
+            "deg": "288-324",
+            "method": "splay",
+            "reach_mm": 24,
+            "pairedWithSector": 3,
+            "firstLayerCantilever_mm": 24
+          },
+          {
+            "sector": 9,
+            "deg": "324-360",
+            "method": "castle",
+            "reach_mm": 24,
+            "pairedWithSector": 4,
+            "firstLayerCantilever_mm": 24
+          }
+        ],
+        "cellsFirstLayer": 30
+      },
+      {
+        "id": "K2",
+        "title": "corbel step, five advances to 40 mm",
+        "entry": "ramp",
+        "zFrom": 12.96,
+        "zTo": 19.68,
+        "layers": 28,
+        "kFrom": 54,
+        "advance_mm": 2.5,
+        "sectors": [
+          {
+            "sector": 0,
+            "deg": "0-36",
+            "method": "castle",
+            "reach_mm": 40,
+            "pairedWithSector": 5,
+            "firstLayerCantilever_mm": 1.5
+          },
+          {
+            "sector": 1,
+            "deg": "36-72",
+            "method": "castle",
+            "reach_mm": 40,
+            "pairedWithSector": 6,
+            "firstLayerCantilever_mm": 3
+          },
+          {
+            "sector": 2,
+            "deg": "72-108",
+            "method": "castle",
+            "reach_mm": 40,
+            "pairedWithSector": 7,
+            "firstLayerCantilever_mm": 4.5
+          },
+          {
+            "sector": 3,
+            "deg": "108-144",
+            "method": "castle",
+            "reach_mm": 40,
+            "pairedWithSector": 8,
+            "firstLayerCantilever_mm": 6
+          },
+          {
+            "sector": 4,
+            "deg": "144-180",
+            "method": "castle",
+            "reach_mm": 40,
+            "pairedWithSector": 9,
+            "firstLayerCantilever_mm": 9
+          },
+          {
+            "sector": 5,
+            "deg": "180-216",
+            "method": "castle",
+            "reach_mm": 40,
+            "pairedWithSector": 0,
+            "firstLayerCantilever_mm": 1.5
+          },
+          {
+            "sector": 6,
+            "deg": "216-252",
+            "method": "castle",
+            "reach_mm": 40,
+            "pairedWithSector": 1,
+            "firstLayerCantilever_mm": 3
+          },
+          {
+            "sector": 7,
+            "deg": "252-288",
+            "method": "castle",
+            "reach_mm": 40,
+            "pairedWithSector": 2,
+            "firstLayerCantilever_mm": 4.5
+          },
+          {
+            "sector": 8,
+            "deg": "288-324",
+            "method": "castle",
+            "reach_mm": 40,
+            "pairedWithSector": 3,
+            "firstLayerCantilever_mm": 6
+          },
+          {
+            "sector": 9,
+            "deg": "324-360",
+            "method": "castle",
+            "reach_mm": 40,
+            "pairedWithSector": 4,
+            "firstLayerCantilever_mm": 9
+          }
+        ],
+        "cellsFirstLayer": 36
+      },
+      {
+        "id": "K3",
+        "title": "corbel reach ladder, 20 to 48 mm",
+        "entry": "ramp",
+        "zFrom": 24.72,
+        "zTo": 30.96,
+        "layers": 26,
+        "kFrom": 103,
+        "advance_mm": 2.5,
+        "sectors": [
+          {
+            "sector": 0,
+            "deg": "0-36",
+            "method": "castle",
+            "reach_mm": 20,
+            "pairedWithSector": 5,
+            "firstLayerCantilever_mm": 2.5
+          },
+          {
+            "sector": 1,
+            "deg": "36-72",
+            "method": "castle",
+            "reach_mm": 27,
+            "pairedWithSector": 6,
+            "firstLayerCantilever_mm": 2.5
+          },
+          {
+            "sector": 2,
+            "deg": "72-108",
+            "method": "castle",
+            "reach_mm": 34,
+            "pairedWithSector": 7,
+            "firstLayerCantilever_mm": 2.5
+          },
+          {
+            "sector": 3,
+            "deg": "108-144",
+            "method": "castle",
+            "reach_mm": 41,
+            "pairedWithSector": 8,
+            "firstLayerCantilever_mm": 2.5
+          },
+          {
+            "sector": 4,
+            "deg": "144-180",
+            "method": "castle",
+            "reach_mm": 48,
+            "pairedWithSector": 9,
+            "firstLayerCantilever_mm": 2.5
+          },
+          {
+            "sector": 5,
+            "deg": "180-216",
+            "method": "castle",
+            "reach_mm": 20,
+            "pairedWithSector": 0,
+            "firstLayerCantilever_mm": 2.5
+          },
+          {
+            "sector": 6,
+            "deg": "216-252",
+            "method": "castle",
+            "reach_mm": 27,
+            "pairedWithSector": 1,
+            "firstLayerCantilever_mm": 2.5
+          },
+          {
+            "sector": 7,
+            "deg": "252-288",
+            "method": "castle",
+            "reach_mm": 34,
+            "pairedWithSector": 2,
+            "firstLayerCantilever_mm": 2.5
+          },
+          {
+            "sector": 8,
+            "deg": "288-324",
+            "method": "castle",
+            "reach_mm": 41,
+            "pairedWithSector": 3,
+            "firstLayerCantilever_mm": 2.5
+          },
+          {
+            "sector": 9,
+            "deg": "324-360",
+            "method": "castle",
+            "reach_mm": 48,
+            "pairedWithSector": 4,
+            "firstLayerCantilever_mm": 2.5
+          }
+        ],
+        "cellsFirstLayer": 36
+      }
+    ],
+    "correctsFrom": [
+      "DOMET 2026-09-24, printed: every terrace skirt droops and the tips read as hanging loops, while the 2026-09-19 ziggurat, whose terraces repeat every second layer, came out as a stiff palisade. The repetition the 2026-09-23 finding called a defect is treated here as the control.",
+      "DOMET's reach ladder runs around the azimuth and so does the part-cooling airflow, so the two cannot be separated. Here every method is printed twice, 180 degrees apart.",
+      "the seat ring laid by the last wall layer is kept: no terrace of DOMET failed at its root, only at its tip."
+    ],
+    "estimates": {
+      "threadLength_m": 276,
+      "ringThread_m": 28.6,
+      "typedPathThread_m": 220.3,
+      "maxTypedSegment_mm": 0.501,
+      "note": "thread = 1.94 x ring length (calibrated on four printed objects) + typed path length as emitted"
+    },
+    "args": {
+      "lh": 0.24,
+      "bead": 0.45,
+      "firstLayerBead": 0.52,
+      "firstLayerSpeed": 12,
+      "w": 3,
+      "e": 0.7,
+      "r0": 32,
+      "K": 192,
+      "foundation": 6,
+      "maxbridge": 60,
+      "maxcantilever": 8,
+      "allow": 0.6,
+      "minanchor": 0.5,
+      "maxCapRadius": 20,
+      "speed": 38,
+      "bridgeSpeed": 14,
+      "temp": 220,
+      "bed": 55,
+      "fan": 100
+    },
+    "gatePolicy": {
+      "meaning": "every finding must fall inside a declared terrace; a finding in a wall is a design error",
+      "bridge_mm": 60,
+      "cantilever_mm": 8,
+      "membrane_min_anchor": 0.5,
+      "first_layer_max_islands": 1,
+      "secondGate_mm": 16.2
+    },
+    "experiments": {
+      "declaredBridgeCeiling_mm": 60,
+      "gateCantilever_mm": 8,
+      "experimentalFreeTip_mm": 24,
+      "evidencedBridge_mm": 16.2,
+      "zones": [
+        {
+          "name": "terrace K1",
+          "z0": 5.03,
+          "z1": 7.93,
+          "longestChord_mm": 24
+        },
+        {
+          "name": "terrace K2",
+          "z0": 12.95,
+          "z1": 19.69,
+          "longestChord_mm": 9
+        },
+        {
+          "name": "terrace K3",
+          "z0": 24.71,
+          "z1": 30.97,
+          "longestChord_mm": 2.5
+        }
+      ],
+      "protocol": "gate at the declared ceiling must be clean; at the evidenced 16.2 mm ceiling every finding must fall inside a declared terrace zone, and the count per terrace is itself a result"
+    },
+    "foundation": {
+      "paths": 56,
+      "islandsExpected": 1,
+      "kind": "rings + spokes under the single cylinder"
+    },
+    "reading": "For each terrace, photograph from a fixed side with a scale and compare each method against its own copy 180 degrees away. A difference between the two copies of one method belongs to the machine; a difference between methods belongs to the geometry. On K3 the shortest fringe is the 20 mm rung and they ascend.",
+    "events": [
+      {
+        "z": 5.04,
+        "k": 21,
+        "event": "wall-1 -> terrace-K1"
+      },
+      {
+        "z": 7.92,
+        "k": 33,
+        "event": "terrace-K1 -> wall-2"
+      },
+      {
+        "z": 12.96,
+        "k": 54,
+        "event": "wall-2 -> terrace-K2"
+      },
+      {
+        "z": 19.68,
+        "k": 82,
+        "event": "terrace-K2 -> wall-3"
+      },
+      {
+        "z": 24.72,
+        "k": 103,
+        "event": "wall-3 -> terrace-K3"
+      },
+      {
+        "z": 30.96,
+        "k": 129,
+        "event": "terrace-K3 -> wall-4"
+      }
+    ],
+    "violations": [],
+    "warnings": []
+  },
+  "design": null,
+  "preset": null,
+  "builder": "weft.mjs (core/weft_core.js + core/weft_gate.js, no browser, no Python)",
+  "gate": {
+    "bead": 0.45,
+    "maxbridge": 60,
+    "maxcantilever": 8,
+    "allow": 0.6,
+    "minanchor": 0.5,
+    "maxCapRadius": 20,
+    "maxislands": 1,
+    "file": "/tmp/krak/v3_KRAK_A2L_X1/KRAK_A2L_X1.gcode"
+  }
+}

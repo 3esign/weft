@@ -1,0 +1,1286 @@
+{
+  "report": {
+    "name": "DOMET2_ENDER3V4_X1",
+    "machine": "Creality Ender-3 V4",
+    "bed_mm": [
+      220,
+      220
+    ],
+    "layers": 1112,
+    "globalZLevels": 281,
+    "expectedZLevels": 281,
+    "logicalCells": null,
+    "experimentalMembraneOverride": false,
+    "maxBodiesPerZ": 2,
+    "size_mm": [
+      138.7,
+      135.1,
+      null
+    ],
+    "plate_mm": [
+      42.7,
+      42.7,
+      180.9,
+      177.3
+    ],
+    "fitsPlate": true,
+    "grammarCounts": {
+      "staple": 77,
+      "diagonal": 26,
+      "sine": 24,
+      "eight": 13
+    },
+    "threadLength_m": 337,
+    "weldNodes": 13453,
+    "rawPaths": 775,
+    "unintendedOverlaps": 11847,
+    "seamClosures": 0,
+    "overlapSamples": [
+      {
+        "z": 4.8,
+        "role": "bridge",
+        "ov": 1
+      },
+      {
+        "z": 5,
+        "role": "bridge",
+        "ov": 1
+      },
+      {
+        "z": 5.2,
+        "role": "bridge",
+        "ov": 1
+      },
+      {
+        "z": 5.4,
+        "role": "bridge",
+        "ov": 1
+      },
+      {
+        "z": 5.6,
+        "role": "bridge",
+        "ov": 1
+      },
+      {
+        "z": 5.8,
+        "role": "bridge",
+        "ov": 1
+      },
+      {
+        "z": 6,
+        "role": "bridge",
+        "ov": 1
+      },
+      {
+        "z": 6.2,
+        "role": "bridge",
+        "ov": 1
+      },
+      {
+        "z": 6.4,
+        "role": "bridge",
+        "ov": 1
+      },
+      {
+        "z": 6.6,
+        "role": "bridge",
+        "ov": 1
+      },
+      {
+        "z": 6.8,
+        "role": "bridge",
+        "ov": 1
+      },
+      {
+        "z": 7,
+        "role": "bridge",
+        "ov": 1
+      }
+    ],
+    "kinematic_h": 3.12,
+    "routeA_estimate_h": 29.4,
+    "caps": [],
+    "events": [
+      {
+        "z": 5,
+        "k": 25,
+        "event": "wall-1 -> terrace-T1"
+      },
+      {
+        "z": 7.8,
+        "k": 39,
+        "event": "terrace-T1 -> wall-2"
+      },
+      {
+        "z": 12.8,
+        "k": 64,
+        "event": "wall-2 -> terrace-T2"
+      },
+      {
+        "z": 15.2,
+        "k": 76,
+        "event": "terrace-T2 -> wall-3"
+      },
+      {
+        "z": 20.2,
+        "k": 101,
+        "event": "wall-3 -> terrace-T3"
+      },
+      {
+        "z": 22.6,
+        "k": 113,
+        "event": "terrace-T3 -> wall-4"
+      },
+      {
+        "z": 27.6,
+        "k": 138,
+        "event": "wall-4 -> terrace-T4"
+      },
+      {
+        "z": 30,
+        "k": 150,
+        "event": "terrace-T4 -> wall-5"
+      },
+      {
+        "z": 35,
+        "k": 175,
+        "event": "wall-5 -> terrace-T5"
+      },
+      {
+        "z": 38.6,
+        "k": 193,
+        "event": "terrace-T5 -> wall-6"
+      },
+      {
+        "z": 43.6,
+        "k": 218,
+        "event": "wall-6 -> terrace-T6"
+      },
+      {
+        "z": 46,
+        "k": 230,
+        "event": "terrace-T6 -> wall-7"
+      },
+      {
+        "z": 51,
+        "k": 255,
+        "event": "wall-7 -> terrace-T7"
+      },
+      {
+        "z": 53.4,
+        "k": 267,
+        "event": "terrace-T7 -> crown-grid"
+      },
+      {
+        "z": 55,
+        "k": 275,
+        "event": "crown-grid -> crown-rose"
+      }
+    ],
+    "contourCounts": [
+      [
+        0,
+        1
+      ]
+    ],
+    "perLayerSample": [
+      {
+        "k": 0,
+        "z": 0,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 48
+      },
+      {
+        "k": 40,
+        "z": 8,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 96
+      },
+      {
+        "k": 80,
+        "z": 16,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 96
+      },
+      {
+        "k": 120,
+        "z": 24,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 96
+      },
+      {
+        "k": 160,
+        "z": 32,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 48
+      },
+      {
+        "k": 200,
+        "z": 40,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 96
+      },
+      {
+        "k": 240,
+        "z": 48,
+        "contours": 1,
+        "paths": 0,
+        "nodes": 96
+      },
+      {
+        "k": 280,
+        "z": 56,
+        "contours": 1,
+        "paths": 2,
+        "nodes": 48
+      }
+    ],
+    "gateAtEvidencedCeiling": {
+      "maxbridge_mm": 16.2,
+      "findings": 953,
+      "byZone": {
+        "terrace T1": 98,
+        "terrace T2": 72,
+        "terrace T3": 72,
+        "terrace T4": 480,
+        "terrace T5": 80,
+        "terrace T6": 78,
+        "terrace T7": 64,
+        "crown": 9
+      },
+      "outsideDeclaredZones": 0,
+      "outsideSamples": []
+    },
+    "membranes": []
+  },
+  "geometry": {
+    "name": "DOMET2_ENDER_X1",
+    "generator": "core/weft_domet2_geometry.mjs",
+    "process": "terrace-question-tower/v1",
+    "generatedAt": "2026-09-24",
+    "machine": "ender",
+    "machineLabel": "Creality Ender-3 V4",
+    "machineQualification": {
+      "beadSource": "ASSUMED",
+      "beadEvidence": "NEVER CALIBRATED. Run the C1 thin-wall test on this machine and put the measured width here before trusting anything built for it.",
+      "assumedAcknowledged": true
+    },
+    "purpose": "A test sculpture that is also seven instruments: one tower, one wall geometry, seven terraces, each a ladder for one question that three minds left open between 17 and 24 September 2026.",
+    "size_mm": [
+      138.3,
+      134.7,
+      56.2
+    ],
+    "height_mm": 56.2,
+    "wallRadius_mm": 42,
+    "totalLayers": 281,
+    "layerHeight_mm": 0.2,
+    "bead_mm": 0.42,
+    "wallBetweenTerraces_mm": 5,
+    "crownHole_mm": 40,
+    "terraces": [
+      {
+        "id": "T1",
+        "kind": "march",
+        "title": "chord march, outward — Gemini's corner bridging, no free tip anywhere",
+        "unit": "chord span mm",
+        "ladder": [
+          6,
+          9,
+          12,
+          15,
+          18,
+          21,
+          25,
+          30
+        ],
+        "zFrom": 5,
+        "zTo": 7.8,
+        "layers": 14,
+        "dir": "outward",
+        "sectors": [
+          {
+            "sector": 0,
+            "deg": "0-45",
+            "value": 6,
+            "unit": "chord span mm",
+            "chords": 6,
+            "chord_mm": 5.85,
+            "freeTip_mm": 0
+          },
+          {
+            "sector": 1,
+            "deg": "45-90",
+            "value": 9,
+            "unit": "chord span mm",
+            "chords": 4,
+            "chord_mm": 8.77,
+            "freeTip_mm": 0
+          },
+          {
+            "sector": 2,
+            "deg": "90-135",
+            "value": 12,
+            "unit": "chord span mm",
+            "chords": 3,
+            "chord_mm": 11.68,
+            "freeTip_mm": 0
+          },
+          {
+            "sector": 3,
+            "deg": "135-180",
+            "value": 15,
+            "unit": "chord span mm",
+            "chords": 2,
+            "chord_mm": 17.46,
+            "freeTip_mm": 0
+          },
+          {
+            "sector": 4,
+            "deg": "180-225",
+            "value": 18,
+            "unit": "chord span mm",
+            "chords": 2,
+            "chord_mm": 17.46,
+            "freeTip_mm": 0
+          },
+          {
+            "sector": 5,
+            "deg": "225-270",
+            "value": 21,
+            "unit": "chord span mm",
+            "chords": 2,
+            "chord_mm": 17.46,
+            "freeTip_mm": 0
+          },
+          {
+            "sector": 6,
+            "deg": "270-315",
+            "value": 25,
+            "unit": "chord span mm",
+            "chords": 2,
+            "chord_mm": 17.46,
+            "freeTip_mm": 0
+          },
+          {
+            "sector": 7,
+            "deg": "315-360",
+            "value": 30,
+            "unit": "chord span mm",
+            "chords": 2,
+            "chord_mm": 17.46,
+            "freeTip_mm": 0
+          }
+        ]
+      },
+      {
+        "id": "T2",
+        "kind": "speed",
+        "title": "speed ladder — reach and everything else fixed, only the feedrate changes",
+        "unit": "mm/s",
+        "ladder": [
+          6,
+          8,
+          10,
+          12,
+          15,
+          20,
+          26,
+          34
+        ],
+        "zFrom": 12.8,
+        "zTo": 15.2,
+        "layers": 12,
+        "dir": "outward",
+        "sectors": [
+          {
+            "sector": 0,
+            "deg": "0-45",
+            "value": 6,
+            "unit": "mm/s",
+            "cells": 9,
+            "reach_mm": 20,
+            "speed_mm_s": 6,
+            "ribPitch_mm": 5,
+            "weaveLayers": 12,
+            "freeTip_mm": 20
+          },
+          {
+            "sector": 1,
+            "deg": "45-90",
+            "value": 8,
+            "unit": "mm/s",
+            "cells": 9,
+            "reach_mm": 20,
+            "speed_mm_s": 8,
+            "ribPitch_mm": 5,
+            "weaveLayers": 12,
+            "freeTip_mm": 20
+          },
+          {
+            "sector": 2,
+            "deg": "90-135",
+            "value": 10,
+            "unit": "mm/s",
+            "cells": 9,
+            "reach_mm": 20,
+            "speed_mm_s": 10,
+            "ribPitch_mm": 5,
+            "weaveLayers": 12,
+            "freeTip_mm": 20
+          },
+          {
+            "sector": 3,
+            "deg": "135-180",
+            "value": 12,
+            "unit": "mm/s",
+            "cells": 9,
+            "reach_mm": 20,
+            "speed_mm_s": 12,
+            "ribPitch_mm": 5,
+            "weaveLayers": 12,
+            "freeTip_mm": 20
+          },
+          {
+            "sector": 4,
+            "deg": "180-225",
+            "value": 15,
+            "unit": "mm/s",
+            "cells": 9,
+            "reach_mm": 20,
+            "speed_mm_s": 15,
+            "ribPitch_mm": 5,
+            "weaveLayers": 12,
+            "freeTip_mm": 20
+          },
+          {
+            "sector": 5,
+            "deg": "225-270",
+            "value": 20,
+            "unit": "mm/s",
+            "cells": 9,
+            "reach_mm": 20,
+            "speed_mm_s": 20,
+            "ribPitch_mm": 5,
+            "weaveLayers": 12,
+            "freeTip_mm": 20
+          },
+          {
+            "sector": 6,
+            "deg": "270-315",
+            "value": 26,
+            "unit": "mm/s",
+            "cells": 9,
+            "reach_mm": 20,
+            "speed_mm_s": 26,
+            "ribPitch_mm": 5,
+            "weaveLayers": 12,
+            "freeTip_mm": 20
+          },
+          {
+            "sector": 7,
+            "deg": "315-360",
+            "value": 34,
+            "unit": "mm/s",
+            "cells": 9,
+            "reach_mm": 20,
+            "speed_mm_s": 34,
+            "ribPitch_mm": 5,
+            "weaveLayers": 12,
+            "freeTip_mm": 20
+          }
+        ]
+      },
+      {
+        "id": "T3",
+        "kind": "angle",
+        "title": "crossing-angle ladder — sector 0 deliberately stacks identical layers",
+        "unit": "deg between consecutive layers",
+        "ladder": [
+          0,
+          10,
+          20,
+          30,
+          45,
+          60,
+          75,
+          90
+        ],
+        "zFrom": 20.2,
+        "zTo": 22.6,
+        "layers": 12,
+        "dir": "outward",
+        "sectors": [
+          {
+            "sector": 0,
+            "deg": "0-45",
+            "value": 0,
+            "unit": "deg between consecutive layers",
+            "cells": 9,
+            "reach_mm": 20,
+            "speed_mm_s": 14,
+            "ribPitch_mm": 5,
+            "weaveLayers": 12,
+            "freeTip_mm": 20
+          },
+          {
+            "sector": 1,
+            "deg": "45-90",
+            "value": 10,
+            "unit": "deg between consecutive layers",
+            "cells": 9,
+            "reach_mm": 20,
+            "speed_mm_s": 14,
+            "ribPitch_mm": 5,
+            "weaveLayers": 12,
+            "freeTip_mm": 20
+          },
+          {
+            "sector": 2,
+            "deg": "90-135",
+            "value": 20,
+            "unit": "deg between consecutive layers",
+            "cells": 9,
+            "reach_mm": 20,
+            "speed_mm_s": 14,
+            "ribPitch_mm": 5,
+            "weaveLayers": 12,
+            "freeTip_mm": 20
+          },
+          {
+            "sector": 3,
+            "deg": "135-180",
+            "value": 30,
+            "unit": "deg between consecutive layers",
+            "cells": 9,
+            "reach_mm": 20,
+            "speed_mm_s": 14,
+            "ribPitch_mm": 5,
+            "weaveLayers": 12,
+            "freeTip_mm": 20
+          },
+          {
+            "sector": 4,
+            "deg": "180-225",
+            "value": 45,
+            "unit": "deg between consecutive layers",
+            "cells": 9,
+            "reach_mm": 20,
+            "speed_mm_s": 14,
+            "ribPitch_mm": 5,
+            "weaveLayers": 12,
+            "freeTip_mm": 20
+          },
+          {
+            "sector": 5,
+            "deg": "225-270",
+            "value": 60,
+            "unit": "deg between consecutive layers",
+            "cells": 9,
+            "reach_mm": 20,
+            "speed_mm_s": 14,
+            "ribPitch_mm": 5,
+            "weaveLayers": 12,
+            "freeTip_mm": 20
+          },
+          {
+            "sector": 6,
+            "deg": "270-315",
+            "value": 75,
+            "unit": "deg between consecutive layers",
+            "cells": 9,
+            "reach_mm": 20,
+            "speed_mm_s": 14,
+            "ribPitch_mm": 5,
+            "weaveLayers": 12,
+            "freeTip_mm": 20
+          },
+          {
+            "sector": 7,
+            "deg": "315-360",
+            "value": 90,
+            "unit": "deg between consecutive layers",
+            "cells": 9,
+            "reach_mm": 20,
+            "speed_mm_s": 14,
+            "ribPitch_mm": 5,
+            "weaveLayers": 12,
+            "freeTip_mm": 20
+          }
+        ]
+      },
+      {
+        "id": "T4",
+        "kind": "counter",
+        "title": "counterweight ladder — inward 16 mm everywhere, outward arm 0..26 mm",
+        "unit": "outward arm mm",
+        "ladder": [
+          0,
+          3,
+          6,
+          9,
+          12,
+          16,
+          20,
+          26
+        ],
+        "zFrom": 27.6,
+        "zTo": 30,
+        "layers": 12,
+        "dir": "outward",
+        "sectors": [
+          {
+            "sector": 0,
+            "deg": "0-45",
+            "value": 0,
+            "unit": "outward arm mm",
+            "cells": 9,
+            "reach_mm": 0,
+            "inwardArm_mm": 16,
+            "speed_mm_s": 14,
+            "ribPitch_mm": 5,
+            "weaveLayers": 12,
+            "freeTip_mm": 0
+          },
+          {
+            "sector": 1,
+            "deg": "45-90",
+            "value": 3,
+            "unit": "outward arm mm",
+            "cells": 9,
+            "reach_mm": 3,
+            "inwardArm_mm": 16,
+            "speed_mm_s": 14,
+            "ribPitch_mm": 5,
+            "weaveLayers": 12,
+            "freeTip_mm": 3
+          },
+          {
+            "sector": 2,
+            "deg": "90-135",
+            "value": 6,
+            "unit": "outward arm mm",
+            "cells": 9,
+            "reach_mm": 6,
+            "inwardArm_mm": 16,
+            "speed_mm_s": 14,
+            "ribPitch_mm": 5,
+            "weaveLayers": 12,
+            "freeTip_mm": 6
+          },
+          {
+            "sector": 3,
+            "deg": "135-180",
+            "value": 9,
+            "unit": "outward arm mm",
+            "cells": 9,
+            "reach_mm": 9,
+            "inwardArm_mm": 16,
+            "speed_mm_s": 14,
+            "ribPitch_mm": 5,
+            "weaveLayers": 12,
+            "freeTip_mm": 9
+          },
+          {
+            "sector": 4,
+            "deg": "180-225",
+            "value": 12,
+            "unit": "outward arm mm",
+            "cells": 9,
+            "reach_mm": 12,
+            "inwardArm_mm": 16,
+            "speed_mm_s": 14,
+            "ribPitch_mm": 5,
+            "weaveLayers": 12,
+            "freeTip_mm": 12
+          },
+          {
+            "sector": 5,
+            "deg": "225-270",
+            "value": 16,
+            "unit": "outward arm mm",
+            "cells": 9,
+            "reach_mm": 16,
+            "inwardArm_mm": 16,
+            "speed_mm_s": 14,
+            "ribPitch_mm": 5,
+            "weaveLayers": 12,
+            "freeTip_mm": 16
+          },
+          {
+            "sector": 6,
+            "deg": "270-315",
+            "value": 20,
+            "unit": "outward arm mm",
+            "cells": 9,
+            "reach_mm": 20,
+            "inwardArm_mm": 16,
+            "speed_mm_s": 14,
+            "ribPitch_mm": 5,
+            "weaveLayers": 12,
+            "freeTip_mm": 20
+          },
+          {
+            "sector": 7,
+            "deg": "315-360",
+            "value": 26,
+            "unit": "outward arm mm",
+            "cells": 9,
+            "reach_mm": 26,
+            "inwardArm_mm": 16,
+            "speed_mm_s": 14,
+            "ribPitch_mm": 5,
+            "weaveLayers": 12,
+            "freeTip_mm": 26
+          }
+        ]
+      },
+      {
+        "id": "T5",
+        "kind": "thick",
+        "title": "thickness ladder — how many woven layers a terrace actually needs",
+        "unit": "layers",
+        "ladder": [
+          2,
+          3,
+          4,
+          6,
+          8,
+          10,
+          14,
+          18
+        ],
+        "zFrom": 35,
+        "zTo": 38.6,
+        "layers": 18,
+        "dir": "outward",
+        "sectors": [
+          {
+            "sector": 0,
+            "deg": "0-45",
+            "value": 2,
+            "unit": "layers",
+            "cells": 9,
+            "reach_mm": 20,
+            "speed_mm_s": 14,
+            "ribPitch_mm": 5,
+            "weaveLayers": 2,
+            "freeTip_mm": 20
+          },
+          {
+            "sector": 1,
+            "deg": "45-90",
+            "value": 3,
+            "unit": "layers",
+            "cells": 9,
+            "reach_mm": 20,
+            "speed_mm_s": 14,
+            "ribPitch_mm": 5,
+            "weaveLayers": 3,
+            "freeTip_mm": 20
+          },
+          {
+            "sector": 2,
+            "deg": "90-135",
+            "value": 4,
+            "unit": "layers",
+            "cells": 9,
+            "reach_mm": 20,
+            "speed_mm_s": 14,
+            "ribPitch_mm": 5,
+            "weaveLayers": 4,
+            "freeTip_mm": 20
+          },
+          {
+            "sector": 3,
+            "deg": "135-180",
+            "value": 6,
+            "unit": "layers",
+            "cells": 9,
+            "reach_mm": 20,
+            "speed_mm_s": 14,
+            "ribPitch_mm": 5,
+            "weaveLayers": 6,
+            "freeTip_mm": 20
+          },
+          {
+            "sector": 4,
+            "deg": "180-225",
+            "value": 8,
+            "unit": "layers",
+            "cells": 9,
+            "reach_mm": 20,
+            "speed_mm_s": 14,
+            "ribPitch_mm": 5,
+            "weaveLayers": 8,
+            "freeTip_mm": 20
+          },
+          {
+            "sector": 5,
+            "deg": "225-270",
+            "value": 10,
+            "unit": "layers",
+            "cells": 9,
+            "reach_mm": 20,
+            "speed_mm_s": 14,
+            "ribPitch_mm": 5,
+            "weaveLayers": 10,
+            "freeTip_mm": 20
+          },
+          {
+            "sector": 6,
+            "deg": "270-315",
+            "value": 14,
+            "unit": "layers",
+            "cells": 9,
+            "reach_mm": 20,
+            "speed_mm_s": 14,
+            "ribPitch_mm": 5,
+            "weaveLayers": 14,
+            "freeTip_mm": 20
+          },
+          {
+            "sector": 7,
+            "deg": "315-360",
+            "value": 18,
+            "unit": "layers",
+            "cells": 9,
+            "reach_mm": 20,
+            "speed_mm_s": 14,
+            "ribPitch_mm": 5,
+            "weaveLayers": 18,
+            "freeTip_mm": 20
+          }
+        ]
+      },
+      {
+        "id": "T6",
+        "kind": "pitch",
+        "title": "pitch ladder — how dense the comb must be",
+        "unit": "tooth pitch mm",
+        "ladder": [
+          2,
+          2.5,
+          3,
+          4,
+          5,
+          6,
+          8,
+          10
+        ],
+        "zFrom": 43.6,
+        "zTo": 46,
+        "layers": 12,
+        "dir": "outward",
+        "sectors": [
+          {
+            "sector": 0,
+            "deg": "0-45",
+            "value": 2,
+            "unit": "tooth pitch mm",
+            "cells": 18,
+            "reach_mm": 20,
+            "speed_mm_s": 14,
+            "ribPitch_mm": 5,
+            "weaveLayers": 12,
+            "freeTip_mm": 20
+          },
+          {
+            "sector": 1,
+            "deg": "45-90",
+            "value": 2.5,
+            "unit": "tooth pitch mm",
+            "cells": 14,
+            "reach_mm": 20,
+            "speed_mm_s": 14,
+            "ribPitch_mm": 5,
+            "weaveLayers": 12,
+            "freeTip_mm": 20
+          },
+          {
+            "sector": 2,
+            "deg": "90-135",
+            "value": 3,
+            "unit": "tooth pitch mm",
+            "cells": 12,
+            "reach_mm": 20,
+            "speed_mm_s": 14,
+            "ribPitch_mm": 5,
+            "weaveLayers": 12,
+            "freeTip_mm": 20
+          },
+          {
+            "sector": 3,
+            "deg": "135-180",
+            "value": 4,
+            "unit": "tooth pitch mm",
+            "cells": 9,
+            "reach_mm": 20,
+            "speed_mm_s": 14,
+            "ribPitch_mm": 5,
+            "weaveLayers": 12,
+            "freeTip_mm": 20
+          },
+          {
+            "sector": 4,
+            "deg": "180-225",
+            "value": 5,
+            "unit": "tooth pitch mm",
+            "cells": 7,
+            "reach_mm": 20,
+            "speed_mm_s": 14,
+            "ribPitch_mm": 5,
+            "weaveLayers": 12,
+            "freeTip_mm": 20
+          },
+          {
+            "sector": 5,
+            "deg": "225-270",
+            "value": 6,
+            "unit": "tooth pitch mm",
+            "cells": 6,
+            "reach_mm": 20,
+            "speed_mm_s": 14,
+            "ribPitch_mm": 5,
+            "weaveLayers": 12,
+            "freeTip_mm": 20
+          },
+          {
+            "sector": 6,
+            "deg": "270-315",
+            "value": 8,
+            "unit": "tooth pitch mm",
+            "cells": 4,
+            "reach_mm": 20,
+            "speed_mm_s": 14,
+            "ribPitch_mm": 5,
+            "weaveLayers": 12,
+            "freeTip_mm": 20
+          },
+          {
+            "sector": 7,
+            "deg": "315-360",
+            "value": 10,
+            "unit": "tooth pitch mm",
+            "cells": 4,
+            "reach_mm": 20,
+            "speed_mm_s": 14,
+            "ribPitch_mm": 5,
+            "weaveLayers": 12,
+            "freeTip_mm": 20
+          }
+        ]
+      },
+      {
+        "id": "T7",
+        "kind": "close",
+        "title": "closing terrace — hairpins inward, ribbed, leaving the crown its hole",
+        "unit": null,
+        "ladder": null,
+        "zFrom": 51,
+        "zTo": 53.4,
+        "layers": 12,
+        "dir": "inward",
+        "sectors": [
+          {
+            "sector": 0,
+            "deg": "0-45",
+            "value": null,
+            "unit": null,
+            "cells": 8,
+            "reach_mm": 17.8,
+            "speed_mm_s": 14,
+            "ribPitch_mm": 5,
+            "weaveLayers": 12,
+            "freeTip_mm": 17.8
+          },
+          {
+            "sector": 1,
+            "deg": "45-90",
+            "value": null,
+            "unit": null,
+            "cells": 8,
+            "reach_mm": 17.8,
+            "speed_mm_s": 14,
+            "ribPitch_mm": 5,
+            "weaveLayers": 12,
+            "freeTip_mm": 17.8
+          },
+          {
+            "sector": 2,
+            "deg": "90-135",
+            "value": null,
+            "unit": null,
+            "cells": 8,
+            "reach_mm": 17.8,
+            "speed_mm_s": 14,
+            "ribPitch_mm": 5,
+            "weaveLayers": 12,
+            "freeTip_mm": 17.8
+          },
+          {
+            "sector": 3,
+            "deg": "135-180",
+            "value": null,
+            "unit": null,
+            "cells": 8,
+            "reach_mm": 17.8,
+            "speed_mm_s": 14,
+            "ribPitch_mm": 5,
+            "weaveLayers": 12,
+            "freeTip_mm": 17.8
+          },
+          {
+            "sector": 4,
+            "deg": "180-225",
+            "value": null,
+            "unit": null,
+            "cells": 8,
+            "reach_mm": 17.8,
+            "speed_mm_s": 14,
+            "ribPitch_mm": 5,
+            "weaveLayers": 12,
+            "freeTip_mm": 17.8
+          },
+          {
+            "sector": 5,
+            "deg": "225-270",
+            "value": null,
+            "unit": null,
+            "cells": 8,
+            "reach_mm": 17.8,
+            "speed_mm_s": 14,
+            "ribPitch_mm": 5,
+            "weaveLayers": 12,
+            "freeTip_mm": 17.8
+          },
+          {
+            "sector": 6,
+            "deg": "270-315",
+            "value": null,
+            "unit": null,
+            "cells": 8,
+            "reach_mm": 17.8,
+            "speed_mm_s": 14,
+            "ribPitch_mm": 5,
+            "weaveLayers": 12,
+            "freeTip_mm": 17.8
+          },
+          {
+            "sector": 7,
+            "deg": "315-360",
+            "value": null,
+            "unit": null,
+            "cells": 8,
+            "reach_mm": 17.8,
+            "speed_mm_s": 14,
+            "ribPitch_mm": 5,
+            "weaveLayers": 12,
+            "freeTip_mm": 17.8
+          }
+        ]
+      }
+    ],
+    "crown": {
+      "grid": "2-2-4-4-8-8-16-16",
+      "hole_mm": 40,
+      "firstFreeSpan_mm": 22.5,
+      "rose": "7 lobes, one continuous line"
+    },
+    "estimates": {
+      "threadLength_m": 334,
+      "ringThread_m": 74.2,
+      "typedPathThread_m": 189.9,
+      "maxTypedSegment_mm": 0.451
+    },
+    "args": {
+      "lh": 0.2,
+      "bead": 0.42,
+      "firstLayerBead": 0.48,
+      "firstLayerSpeed": 12,
+      "w": 3,
+      "e": 0.7,
+      "r0": 42,
+      "K": 192,
+      "foundation": 6,
+      "maxbridge": 60,
+      "maxcantilever": 8,
+      "allow": 0.6,
+      "minanchor": 0.5,
+      "maxCapRadius": 20,
+      "speed": 34,
+      "bridgeSpeed": 14,
+      "temp": 220,
+      "bed": 60,
+      "fan": 100
+    },
+    "gatePolicy": {
+      "meaning": "every finding must fall inside a declared terrace or the crown; a finding in a wall is a design error",
+      "bridge_mm": 60,
+      "cantilever_mm": 8,
+      "membrane_min_anchor": 0.5,
+      "first_layer_max_islands": 1,
+      "secondGate_mm": 16.2,
+      "note": "allow stays at 0.6 mm. The 19 Sept zigurat3 exports passed only with allow raised to 8 mm, which is not a support test at all; that is recorded, not repeated."
+    },
+    "experiments": {
+      "declaredBridgeCeiling_mm": 60,
+      "gateCantilever_mm": 8,
+      "evidencedBridge_mm": 16.2,
+      "zones": [
+        {
+          "name": "terrace T1",
+          "z0": 4.99,
+          "z1": 7.81,
+          "longestChord_mm": 44
+        },
+        {
+          "name": "terrace T2",
+          "z0": 12.79,
+          "z1": 15.21,
+          "longestChord_mm": 40
+        },
+        {
+          "name": "terrace T3",
+          "z0": 20.19,
+          "z1": 22.61,
+          "longestChord_mm": 40
+        },
+        {
+          "name": "terrace T4",
+          "z0": 27.59,
+          "z1": 30.01,
+          "longestChord_mm": 44
+        },
+        {
+          "name": "terrace T5",
+          "z0": 34.99,
+          "z1": 38.61,
+          "longestChord_mm": 40
+        },
+        {
+          "name": "terrace T6",
+          "z0": 43.59,
+          "z1": 46.01,
+          "longestChord_mm": 40
+        },
+        {
+          "name": "terrace T7",
+          "z0": 50.99,
+          "z1": 53.41,
+          "longestChord_mm": 35.6
+        },
+        {
+          "name": "crown",
+          "z0": 53.39,
+          "z1": 57.2,
+          "longestChord_mm": 40
+        }
+      ],
+      "protocol": "gate at the declared ceiling must be clean; at the evidenced 16.2 mm ceiling every finding must fall inside a declared terrace or the crown, and the count per terrace is itself a result"
+    },
+    "foundation": {
+      "paths": 56,
+      "islandsExpected": 1,
+      "kind": "rings + spokes under the single cylinder"
+    },
+    "events": [
+      {
+        "z": 5,
+        "k": 25,
+        "event": "wall-1 -> terrace-T1"
+      },
+      {
+        "z": 7.8,
+        "k": 39,
+        "event": "terrace-T1 -> wall-2"
+      },
+      {
+        "z": 12.8,
+        "k": 64,
+        "event": "wall-2 -> terrace-T2"
+      },
+      {
+        "z": 15.2,
+        "k": 76,
+        "event": "terrace-T2 -> wall-3"
+      },
+      {
+        "z": 20.2,
+        "k": 101,
+        "event": "wall-3 -> terrace-T3"
+      },
+      {
+        "z": 22.6,
+        "k": 113,
+        "event": "terrace-T3 -> wall-4"
+      },
+      {
+        "z": 27.6,
+        "k": 138,
+        "event": "wall-4 -> terrace-T4"
+      },
+      {
+        "z": 30,
+        "k": 150,
+        "event": "terrace-T4 -> wall-5"
+      },
+      {
+        "z": 35,
+        "k": 175,
+        "event": "wall-5 -> terrace-T5"
+      },
+      {
+        "z": 38.6,
+        "k": 193,
+        "event": "terrace-T5 -> wall-6"
+      },
+      {
+        "z": 43.6,
+        "k": 218,
+        "event": "wall-6 -> terrace-T6"
+      },
+      {
+        "z": 46,
+        "k": 230,
+        "event": "terrace-T6 -> wall-7"
+      },
+      {
+        "z": 51,
+        "k": 255,
+        "event": "wall-7 -> terrace-T7"
+      },
+      {
+        "z": 53.4,
+        "k": 267,
+        "event": "terrace-T7 -> crown-grid"
+      },
+      {
+        "z": 55,
+        "k": 275,
+        "event": "crown-grid -> crown-rose"
+      }
+    ],
+    "violations": [],
+    "warnings": []
+  },
+  "design": null,
+  "preset": null,
+  "builder": "weft.mjs (core/weft_core.js + core/weft_gate.js, no browser, no Python)",
+  "gate": {
+    "bead": 0.42,
+    "maxbridge": 60,
+    "maxcantilever": 8,
+    "allow": 0.6,
+    "minanchor": 0.5,
+    "maxCapRadius": 20,
+    "maxislands": 1,
+    "file": "/tmp/d2/out_e/DOMET2_ENDER3V4_X1.gcode"
+  }
+}

@@ -7,6 +7,7 @@
 <script src="vendor/three.min.js"></script>
 <script src="core/weft_core.js"></script>
 <script src="core/weft_gate.js"></script>
+<script src="core/weft_gate_layers.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -336,8 +337,8 @@ if(typeof THREE==='undefined'){
    page globals (P, layers, chordLayer, apexUs, ...) so builders and the test harness that reach into
    the page keep working unchanged, including runtime overrides like `apexUs=function(...)`.
    ============================================================ */
-if(typeof WEFT_CORE==='undefined'||typeof WEFT_GATE==='undefined'){
-  document.getElementById('loading').textContent='core/weft_core.js or core/weft_gate.js missing — app cannot start';
+if(typeof WEFT_CORE==='undefined'||typeof WEFT_GATE==='undefined'||typeof WEFT_GATE_LAYERS==='undefined'){
+  document.getElementById('loading').textContent='core/weft_core.js, core/weft_gate.js or core/weft_gate_layers.js missing — app cannot start';
   throw new Error('WEFT core not loaded');
 }
 const W=WEFT_CORE.createWeftCore();
@@ -531,7 +532,20 @@ function showGate(res,ms){
   for(const m of res.membranes||[]) lines.push(`membrane z ${m.z} at [${m.at}] anchored ${m.anchoredFrac} turn gap ${m.turnGap_mm}`);
   for(const p of res.problems.slice(0,12)) lines.push(`  ${p.kind} ${p.role} z ${p.z}${p.length_mm!=null?' '+p.length_mm+' mm':''}${p.why?' — '+p.why:''}${p.islands!=null?' islands '+p.islands:''}`);
   if(res.problem_count>12) lines.push(`  … and ${res.problem_count-12} more`);
+  if(res.layersVector){ lines.push(`layers S2–S8 (what KRAK taught the gate, 2026-09-25): ${res.layersVector}`); for(const f of (res.layersFindings||[]).slice(0,8)) lines.push(`  ${f.layer} z ${f.z} — ${f.why}`); }
   out.textContent=lines.join('\n');
+}
+/* S1 (support) and then the layered gate S2–S8 over the same text; the download needs both. */
+function gateAll(txt){
+  const res=WEFT_GATE.checkGcode(txt,gateOptionsForThisDesign());
+  if(res.error) return res;
+  if(typeof WEFT_GATE_LAYERS!=='undefined'){
+    const o=gateOptionsForThisDesign();
+    const L=WEFT_GATE_LAYERS.analyse(txt,{bead:o.bead,allow:o.allow,file:o.file});
+    res.layersVector=L.vector; res.layersFindings=L.findings.filter(f=>!f.declared); res.layersRefuse=L.refuse;
+    if(L.refuse){ res.PASS=false; res.problem_count+=res.layersFindings.length; }
+  }
+  return res;
 }
 async function runGateOnly(){
   if(exporting||!layers.length) return; exporting=true;
@@ -540,7 +554,7 @@ async function runGateOnly(){
     btn.textContent='building G-code…';
     const txt=await buildGcodeText(p=>{ btn.textContent='building '+p+'%'; });
     btn.textContent='gating…'; await new Promise(r=>setTimeout(r,20));
-    const t0=performance.now(); const res=WEFT_GATE.checkGcode(txt,gateOptionsForThisDesign()); showGate(res,Math.round(performance.now()-t0));
+    const t0=performance.now(); const res=gateAll(txt); showGate(res,Math.round(performance.now()-t0));
   } finally { btn.textContent=label; exporting=false; }
 }
 async function exportGcode(){
@@ -549,7 +563,7 @@ async function exportGcode(){
   try{
     const txt=await buildGcodeText(p=>{ btn.textContent='Exporting '+p+'%'; });
     btn.textContent='gating…'; await new Promise(r=>setTimeout(r,20));
-    const t0=performance.now(); const res=WEFT_GATE.checkGcode(txt,gateOptionsForThisDesign()); showGate(res,Math.round(performance.now()-t0));
+    const t0=performance.now(); const res=gateAll(txt); showGate(res,Math.round(performance.now()-t0));
     if(res.PASS) dl(new Blob([txt],{type:'text/plain'}),'weft.gcode');
     else if(document.getElementById('gateKeep').checked) dl(new Blob([txt],{type:'text/plain'}),'weft.REJECTED.gcode');
   } finally { btn.textContent=label; exporting=false; }
