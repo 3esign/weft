@@ -1,5 +1,7 @@
 # WEFT — a compiler for woven single-thread walls, with a Gate that refuses
 
+**Live studio: [3esign.github.io/weft](https://3esign.github.io/weft/)** — the full toolpath studio (design, gate, G-code export) runs in the browser, no install.
+
 <p align="center">
   <img src="docs/img/hero.jpg" width="820" alt="Left: OBLAK, a 274 x 264.5 x 190.8 mm woven sphere on the Bambu Lab A2L. Right: a horn of GORA, a twisted tower printed on a Creality Ender-3 V4 in clear PLA.">
   <br><sub>OBLAK on the Bambu Lab A2L (left) and a horn of GORA, printed on a Creality Ender-3 V4 (right). Both were gated at a declared 60 mm experimental bridge ceiling and printed to full height.</sub>
