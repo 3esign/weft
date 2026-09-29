@@ -32,7 +32,7 @@ happened.
 |---|---|---|---|
 | **S1** support (`weft_gate.js`) | is there material under this point | distance to material below; bridges, cantilevers, membranes, islands | refuses (unchanged) |
 | **S2** quantity | how much thread hangs | free runs > 10 mm per layer, free metres, longest run | **reports** — falsified as a discriminator, see below |
-| **S3** free tips | how far a loose tip reaches, and is it ever tied | median reach of a layer's loose tips to SOLID material; tips never tied | **refuses** above 17.6 mm |
+| **S3** free tips | how far a loose tip reaches, and is it ever tied | median reach of a layer's loose tips to SOLID material; tips never tied | **refuses** above 20.7 mm (17.6 until 2026-09-30; raised by the printed PRAG record, see addendum) |
 | **S4** overflight | does extrusion pass over a tip nothing tied | passes within the nozzle cone over untied tips ≥ 2 layers below | **refuses** at ≤ 12 mm clearance |
 | **S5** plate | what holds the object against what is built above it | first-layer contact / (height × lever) | reports; refuses only against a given printed failure |
 | **S7** joint | is a carrying layer laid on points | fraction of a layer on material, layers with ≥ 20 above | reports |
@@ -134,3 +134,19 @@ How high a given hairpin rises, and when. Whether a corbel of 2.5 mm steps at 22
 shelf or a hook (PRAG asks at five tip gaps; KUKA at five end conditions, the terrace last on both).
 The fan, the bed temperature, the speed — S6 in the earlier plan — which is why every rung on those
 objects is printed twice, 180° apart.
+
+---
+
+## Addendum 2026-09-30 — what PRAG, KUKA and VEZ printed into the record
+
+Machine evidence and photographs consolidated on 2026-09-30 (Creality Print logs, BambuStudio.conf,
+WhatsApp transport photographs with SHA-256, the VEZ session recovery — see the specimen folders).
+
+| specimen | printed | what it settles |
+|---|---|---|
+| PRAG_A2L_X1 (black, 2 bodies) + PRAG_ENDER_X1 (pink) | 2026-09-25 evening, both machines | **The 17.6–20.7 band is now printed record.** Median reach 20.7 mm with the terrace printed LAST held on both machines: no empty sector, teeth flat in profile. **S3 hold raised 17.6 → 20.7**; the unevidenced band is now 20.7–22.6. The ORDER rule is part of the evidence: this band held with terrace-last, nothing says it holds without it. |
+| KUKA_ENDER_X1 (pink) | 2026-09-26 12:32 send, photographed 20:57 | The end-condition ladder (zatvoren / kuka / rebro / dupli / koren at a fixed 6 mm span) ran its full circle: closed-U, grid/rib and curled-hook sectors are all legible on the object. Localized tangle on one arc; no empty sector, no collapse. Per-sector scoring not yet done. |
+| VEZ_ENDER_X2 (salmon) | 2026-09-27 08:30 send, photographed 12:44 | A different mechanism, not a free-tip result: `pre-tied-closed-corbel/v1` ties every old frontier before advancing and completed reaches of **24/30/36 mm** — past KRAK's 22.6 failure — with 0 never-tied tips by design. Free-tip S3 stays at 20.7; VEZ says the way past it is pre-tying, which S3/S4 see as tied tips. V1 of the process was refused by review for replaying full-reach teeth in-layer (G-3055); V2 fixed it and a regression test held it (5/5 in session). The executed G-code file itself was lost with the session folder — recovery record in the specimen. |
+
+KUKA_A2L_X1 remains NOT PRINTED (no Bambu evidence; the 2026-09-26 00:48 false PRINTED entry was
+corrected the same day — both black bodies are PRAG geometry).
