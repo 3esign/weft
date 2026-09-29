@@ -57,8 +57,8 @@ const LIMITS = {
      KRAK (2026-09-24, both machines, stopped by Semir when the nozzle dragged) are the failures. */
   S2: { runs10PerLayer: { hold:203, fail:33, unit:'free runs > 10 mm in one layer',
           evidence:'OBRTAJ terrace-1 layer 0: 203 runs, 6.9 m free thread in ONE layer, 36 % of the whole object free — held flat. KRAK K1 layer 0: 33 runs, 1.25 m — destroyed. The quantity of hanging thread does NOT decide; S2 reports, S3 refuses' } },
-  S3: { median:  { hold:17.6, fail:22.6, unit:'mm, median free reach (to solid material) of the loose tips of one layer',
-          evidence:'OBRTAJ: 66 terrace layers, medians 6–17.6, held flat; KRAK K1: twelve layers at 22.6–24.5, destroyed on both machines; RAZMAK terrace-1: 30.7, nested and stopped. One statistic separates the printed record' },
+  S3: { median:  { hold:20.7, fail:22.6, unit:'mm, median free reach (to solid material) of the loose tips of one layer',
+          evidence:'OBRTAJ: 66 terrace layers, medians 6–17.6, held flat; PRAG (2026-09-25, BOTH machines, terrace printed LAST): median 20.7, held — the band 17.6–20.7 is now printed record, and the ORDER rule is part of the evidence; KRAK K1: twelve layers at 22.6–24.5, destroyed on both machines; RAZMAK terrace-1: 30.7, nested and stopped. Beyond free tips: VEZ_ENDER_X2 (2026-09-27, pre-tied-closed-corbel/v1) completed reaches 24/30/36 by tying every old frontier — tips that a later pass ties are S4 business, not S3; the free-tip ceiling stays 20.7' },
         max:     { hold:37.6, fail:73.8, unit:'mm, longest free reach in one layer (reported, not refused: KRAK failed at 24.6, far below the OBRTAJ maximum — the longest tip alone does not decide)',
           evidence:'OBRTAJ terrace-1 max 37.6 held; RAZMAK terrace-1 max 73.8 nested' },
         min:     { hold:3.4,  fail:12.4, unit:'mm, shortest tip of a layer that has long tips (reported, not refused: the median alone separates the printed record, and a bracket built on one comparison must not refuse)',
