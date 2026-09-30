@@ -590,3 +590,21 @@ core/weft_suspended_steps_geometry.mjs adds RAZMAK A2L H4 and OBRTAJ Ender H7 wi
 ## 2026-09-19 — Send Print package correction
 
 G-668: reported Studio 2.7.1.62 exits after send confirmation. Source-matched index reproduction exposes 2,688 out-of-bounds writes for the 1400 x 1600 report thumbnail; square 512 output eliminates them. Shared packer now normalizes overrides, audits all image slots, and legacy Python delegates to it. New RAZMAK SEND_PRINT_FIX revision changes PNG members only; original delivery receipt is preserved and executable payload is identical. Targeted PNG, first-layer, LIMIT16 parity and Python-entry checks pass; no native UI/send/print was executed. Semir reports Creality OBRTAJ started, completion/hash not verified. See docs/BAMBU_THUMBNAIL_CONTRACT.md.
+
+## 2026-09-30 — solid bodies: infill as the first-class object (solid-infill/v1)
+
+core/weft_solid_geometry.mjs turns WEFT around: the body is FULL and every layer is a cross-section owned
+by a fill program — pattern, density and direction are free per layer (and per scan line). Patterns: lines,
+sine, spiral (growth rings), hilbert; each layer stays a perimeter + ONE continuous thread (boundary hops).
+Three bodies pass geometry → thread → G-code → gate → 3MF on the A2L (measured bead): PUN_KOCKA (45x45x24,
+band sampler + density crescendo 3→5.5 mm, 12.6 g, 0 problems / 256k points), PUN_SUNDJER (37x37x20, density
+as a field: spacing varies inside each layer, direction steps by the golden angle, 5.5 g), PUN_DRVO
+(27x27x30, growth rings in the trunk, rotating lines in the swelling canopy, 2.6 g). Specimens (not
+committed): specimens/2026-09-30_solid_infill/. Three lessons paid for and encoded: the gate samples path
+VERTICES and the core LODs collinear points, so sparse fill must go out as typed bridge paths at 0.5 mm
+(measured LONG_BRIDGE 12.6 mm over a perfectly crossed 2.1 mm grid); a spiral over a GROWING section drops
+its new innermost turn over the previous layer's empty core (measured CANTILEVER 15.3 mm — growth gets
+lines, rings only where the section holds or shrinks); a generator run through the C:\ junction silently
+skips its own main() (realpath both sides of the entry check). The generator refuses its own schedule when
+the estimated free span (spacing_below / sin(delta-angle)) exceeds 0.9 x maxbridge, before the gate ever
+sees it. No print initiated.
