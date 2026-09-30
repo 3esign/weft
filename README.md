@@ -150,7 +150,7 @@ core/weft_core.js          level-3 emitter (the engine the studio and the CLI sh
 core/weft_gate.js          the Gate, layer S1 (port of check_gcode.py, held to it by tests)
 core/weft_gate_layers.js   the layered gate S2–S8 + ORDER (2026-09-25): what KRAK taught the gate — see docs/GATE_LAYERS_2026-09-25.md
 core/weft_build.mjs        build chain: thread → G-code → gate → header → 3MF package → manifest
-core/weft_*_geometry.mjs   level-2 generators in JavaScript (suma, limit16, plate, sculpture, climber, vase, paired, aero)
+core/weft_*_geometry.mjs   level-2 generators in JavaScript (suma, limit16, plate, sculpture, climber, vase, paired, aero, solid)
 core/weft_geom*.js         the numeric kernel that makes them byte-identical to numpy/scipy/skimage
 core/weft_machine_wizard.mjs   slicer export → machine profile candidate
 *_geometry.py, check_gcode.py  the Python originals, kept as reference implementations
@@ -178,8 +178,24 @@ in `docs/GATE_LAYERS_2026-09-25.md`. The specimens `2026-09-24_KRAK_*` carry the
 `2026-09-25_PRAG_*` and `2026-09-25_KUKA_*` are the two objects that ask the next question, one variable each, the
 terrace last.
 
-**This is the last public version of WEFT.** Development continues privately from here; the record above, the
-gate, the generators and the specimens stay as they are in this repository.
+That version was announced as the last public one; the record since has stayed public after all — the browser
+studio went live on GitHub Pages and the work below was added in the open.
+
+## Full bodies as fill programs (solid-infill/v1, 30 September 2026)
+
+`core/weft_solid_geometry.mjs` turns the method inside out: the body is solid and the fill *is* the object.
+Pattern, density and angle are free per layer — even per scan line within a layer — while every layer keeps the
+WEFT contract: a perimeter and one continuous thread. Three bodies passed the whole chain (geometry → thread →
+G-code → gate → 3MF) on the measured A2L bead and sit in `specimens/2026-09-30_solid_infill/`: **PUN_KOCKA**
+(45×45×24 mm, a pattern sampler — bands of lines, sine, Hilbert and spiral with a density crescendo),
+**PUN_SUNDJER** (density as a *field*: spacing varies inside each layer, the angle steps by the golden angle
+137.5° so no two layers repeat) and **PUN_DRVO** (growth rings in the trunk and dome, rotating lines in a growing
+crown). The generator carries its own gate before the Gate: it computes the free span `spacing_below / sin(Δangle)`
+for every layer and refuses its own schedule above 0.9× the machine's bridge limit. The gate paid for two lessons,
+recorded in the specimen: sparse fill must be gated as typed bridges at 0.5 mm because the gate measures path
+vertices while the core chords straight lines at ~2 mm, and a spiral must never ride a growing cross-section —
+the new innermost ring hangs over the empty core of the layer below. None of the three is printed yet; the
+manifest lists every artefact by SHA-256, the largest files stay out of the repository per the policy above.
 
 ## Where this is going
 

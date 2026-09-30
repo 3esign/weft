@@ -1,0 +1,199 @@
+{
+ "specimen": "2026-09-30_solid_infill",
+ "process": "solid-infill/v1",
+ "generator": "core/weft_solid_geometry.mjs",
+ "built": "2026-09-30T19:12:28",
+ "machine": {
+  "id": "a2l",
+  "label": "Bambu Lab A2L",
+  "plate": [
+   330,
+   320
+  ],
+  "maxZ": 325,
+  "bead": 0.45,
+  "beadSource": "measured",
+  "beadEvidence": "specimens/2026-08-31_D5_R140_A2L_physical and specimens/2026-09-02_P0_suma_2x2_physical — both printed to completion at this bead",
+  "lh": 0.24,
+  "firstLayerBead": 0.52,
+  "temp": 220,
+  "bed": 55,
+  "start": "exports/a2l_start_block_template_2026-09-02.gcode",
+  "end": "exports/a2l_end_block_harvested_2026-09-02.gcode",
+  "route": "bambu3mf"
+ },
+ "builder": "weft.mjs",
+ "core": "core-2026-09-19-first-layer",
+ "note": "Three solid bodies (full cross-section, per-layer fill programs: pattern, density and angle free per layer). Files marked inRepository:false are excluded for size per the repository policy; they are listed here by SHA-256 and available from the authors.",
+ "provenance": "Each build overwrote manifest.json, so only PUN_DRVO's survived; this consolidated manifest was rebuilt on 2026-09-30 from the files on disk (hashes computed then) and the surviving machine block, which is identical for all three bodies (same builder invocation).",
+ "bodies": [
+  {
+   "name": "PUN_KOCKA",
+   "files": {
+    "PUN_KOCKA.gcode": {
+     "bytes": 9391068,
+     "sha256": "a545371419307c08e8785ef55aa0dca1545ec22a5a449bee88e95f37e1903af0",
+     "inRepository": false
+    },
+    "PUN_KOCKA.gcode.3mf": {
+     "bytes": 3102093,
+     "sha256": "ee7a1a88ee5c7c7f531ed7c00f8a76957ae6915e10d6f9575dedd0b498cee326",
+     "inRepository": true
+    },
+    "PUN_KOCKA.stl": {
+     "bytes": 16366284,
+     "sha256": "a097406b947badb5230d1996f1c53567382a386c9dc5d9f8b77d96bd04ee193d",
+     "inRepository": false
+    },
+    "PUN_KOCKA.svg": {
+     "bytes": 155788,
+     "sha256": "9c10490d828b7778ab445fd86bff0925b6eb7021638f66af0aa2c2eab7e2e5ac",
+     "inRepository": true
+    },
+    "PUN_KOCKA_gate.json": {
+     "bytes": 1505,
+     "sha256": "672fe7894e8781f122d9af74a3ec273bac891140540fa3ffcc56f53f1fe59d56",
+     "inRepository": true
+    },
+    "PUN_KOCKA_gate_layers.json": {
+     "bytes": 6621,
+     "sha256": "dc57a4f7ef3a7050f3ede01d8171d046fbb2257123db76d4e1a164f8ce986c73",
+     "inRepository": true
+    },
+    "PUN_KOCKA_geometry.json": {
+     "bytes": 4697379,
+     "sha256": "b6e6597fd7d14cc7534b0f36f3edc9c799d84eae2fd7e55ec59f82e7b9611ae4",
+     "inRepository": true
+    },
+    "PUN_KOCKA_package_gate.json": {
+     "bytes": 1509,
+     "sha256": "75610de14477f3b539ef46c9150959bf0881a14573387d994a41ee4a80d27d01",
+     "inRepository": true
+    },
+    "PUN_KOCKA_report.json": {
+     "bytes": 38847,
+     "sha256": "543e957b977d68a2e42622d8ab0df705e27cfd7d87217363aff6714860680614",
+     "inRepository": true
+    }
+   },
+   "gate": "PUN_KOCKA_gate.json",
+   "gateLayers": "PUN_KOCKA_gate_layers.json",
+   "packageGate": "PUN_KOCKA_package_gate.json",
+   "report": "PUN_KOCKA_report.json",
+   "printReady": "PUN_KOCKA.gcode.3mf",
+   "outcome": "NOT PRINTED — fill this in after the print, with photographs"
+  },
+  {
+   "name": "PUN_SUNDJER",
+   "files": {
+    "PUN_SUNDJER.gcode": {
+     "bytes": 3928421,
+     "sha256": "0928ecd04fc2d4c62a1fe63ae2a519385abc0447d374fb9f364017882add4df3",
+     "inRepository": false
+    },
+    "PUN_SUNDJER.gcode.3mf": {
+     "bytes": 2471916,
+     "sha256": "bda98d912d740b1f5626eefa85d2e9fe886f6853c8619b4977191d220c57c43b",
+     "inRepository": true
+    },
+    "PUN_SUNDJER.stl": {
+     "bytes": 5255084,
+     "sha256": "a1c89d3d3b8730525a7a0a91aade91b27bdccb9061b966b7b5ef506c9785a871",
+     "inRepository": false
+    },
+    "PUN_SUNDJER.svg": {
+     "bytes": 93259,
+     "sha256": "cad2de02aae0a7827b0aa0b7d58521dcce7bbf0ec19aead35a330da6cfc9dbe4",
+     "inRepository": true
+    },
+    "PUN_SUNDJER_gate.json": {
+     "bytes": 1528,
+     "sha256": "83136d7c819fd2461393962e6bb866c6af94ab55babba7ce010621fd719002ec",
+     "inRepository": true
+    },
+    "PUN_SUNDJER_gate_layers.json": {
+     "bytes": 6600,
+     "sha256": "07d42e01a6706e6ff1612c541d853c71d2a6333268c8cd6b6fed99ab1159013c",
+     "inRepository": true
+    },
+    "PUN_SUNDJER_geometry.json": {
+     "bytes": 2189162,
+     "sha256": "5ec16ec2c327e6d357da4b8d08647eb6309e4839fe84f8f3cdfce7e8a0d69f0b",
+     "inRepository": true
+    },
+    "PUN_SUNDJER_package_gate.json": {
+     "bytes": 1532,
+     "sha256": "2b41b1c2de7dce753a132f601f161b193883c2a185e6a6c9b95e85f4cf47e2d8",
+     "inRepository": true
+    },
+    "PUN_SUNDJER_report.json": {
+     "bytes": 27393,
+     "sha256": "55d6f57960b98296292eec6c1097f2cf0e07c5d8ea76361c016b58e9ca20caaa",
+     "inRepository": true
+    }
+   },
+   "gate": "PUN_SUNDJER_gate.json",
+   "gateLayers": "PUN_SUNDJER_gate_layers.json",
+   "packageGate": "PUN_SUNDJER_package_gate.json",
+   "report": "PUN_SUNDJER_report.json",
+   "printReady": "PUN_SUNDJER.gcode.3mf",
+   "outcome": "NOT PRINTED — fill this in after the print, with photographs"
+  },
+  {
+   "name": "PUN_DRVO",
+   "files": {
+    "PUN_DRVO.gcode": {
+     "bytes": 2088515,
+     "sha256": "6ecb3cfc44d130fd7943c3a2bfdab7c5da7d7dfccd23836f8d6d124e85916236",
+     "inRepository": false
+    },
+    "PUN_DRVO.gcode.3mf": {
+     "bytes": 2016845,
+     "sha256": "4b9c7ee9d80c6e983a97a3a9f2e139a30b1f59031ca77a4875bcf9435ed7b0f8",
+     "inRepository": true
+    },
+    "PUN_DRVO.stl": {
+     "bytes": 3039884,
+     "sha256": "751b385d88b9bd71c59ec06ac8d7acd3910bd31655ca16c6605de77ff184c938",
+     "inRepository": false
+    },
+    "PUN_DRVO.svg": {
+     "bytes": 58883,
+     "sha256": "8a954065ec74bbca091caf1b9efbd6b29229d41aa3c84fcf296e44dbce902c26",
+     "inRepository": true
+    },
+    "PUN_DRVO_gate.json": {
+     "bytes": 1526,
+     "sha256": "b57ca8cf776823813f0789fa9a1747725f45a9cce4eb2371f270ac8f5f0ed4fc",
+     "inRepository": true
+    },
+    "PUN_DRVO_gate_layers.json": {
+     "bytes": 6598,
+     "sha256": "61ecb0021e7477baa1f3b83ed8dafd349102f19607feec1cc428c07ec84e128d",
+     "inRepository": true
+    },
+    "PUN_DRVO_geometry.json": {
+     "bytes": 1344044,
+     "sha256": "e6185464616e1ecd52586afaf21574035619f3f7516a34f05d9ac98bd0d7eac7",
+     "inRepository": true
+    },
+    "PUN_DRVO_package_gate.json": {
+     "bytes": 1530,
+     "sha256": "8abbd224ec4aea5a949b0cabd4de0f9d39e9e9a8e8ea64b91d5106b8990e42b4",
+     "inRepository": true
+    },
+    "PUN_DRVO_report.json": {
+     "bytes": 46963,
+     "sha256": "51bc09be414c07420180e8bd8f3c3a44861ab51c0bbe1cfcc79f30b7f273e074",
+     "inRepository": true
+    }
+   },
+   "gate": "PUN_DRVO_gate.json",
+   "gateLayers": "PUN_DRVO_gate_layers.json",
+   "packageGate": "PUN_DRVO_package_gate.json",
+   "report": "PUN_DRVO_report.json",
+   "printReady": "PUN_DRVO.gcode.3mf",
+   "outcome": "NOT PRINTED — fill this in after the print, with photographs"
+  }
+ ]
+}
