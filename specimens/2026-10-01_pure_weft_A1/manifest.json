@@ -82,7 +82,8 @@
   "closed_loop_method": "every extruding path between FEATURE markers, brim excluded; start==end within 0.6 mm counts as closed (diagnostics/paths_check.mjs)",
   "display_mesh": "lofted from the layer silhouettes of this very build; bbox per body measured inside 3D/Objects/object_1.model",
   "printer_identity": "Bambu Lab A1, bed 65 C, end Z = max_layer_z + 0.4 evaluated per body",
-  "bead": "ASSUMED 0.45 mm — never calibrated on the A1. Run the C1 thin-wall test before trusting dimensions."
+  "bead": "ASSUMED 0.45 mm — never calibrated on the A1. Run the C1 thin-wall test before trusting dimensions.",
+  "plate_bbox": "plate_1.json declares the BODY bbox only (105.74-150.26 / 109.72-146.23 / 114.26-141.39, centred on 128). Measuring the whole G-code had swallowed the off-bed A1 purge and made Studio demand a re-slice; tests/plate_bbox.test.mjs holds it."
  },
  "builder": "weft.mjs",
  "core": "core-2026-09-19-first-layer",

@@ -38,6 +38,19 @@ simply continues to the centre.
 - `printer_model = Bambu Lab A1`, bed 65 C, end `Z = max_layer_z + 0.4` evaluated per body
   (24.4 / 20.32 / 30.4 mm).
 
+## Fix of 2026-10-01 evening: Studio was asking to re-slice an already sliced file
+
+The containers declared `plate_1.json` → `bbox_all = [-48.2, 105.74, 150.26, 254.0]`. That bbox was
+measured over **every** extrusion in the G-code, so it swallowed the harvested A1 start block, which
+purges and primes off the bed (X-48.2 … X267, Y254). Bambu Studio believed the declaration, decided
+the object lay partly outside the 256 × 256 plate, greyed out **Print plate** and lit **Slice plate** —
+on a file whose toolpaths were correct the whole time.
+
+The bbox is now measured from the first `; layer` marker onward, i.e. the body only:
+`105.74 … 150.26` (kocka), `109.72 … 146.23` (sunđer), `114.26 … 141.39` (drvo), all centred on 128.
+The G-code payload is unchanged — the MD5 of each `Metadata/plate_1.gcode` is byte for byte the one
+shipped this afternoon (`514B736D…`, `C6A20AE2…`, `FA294560…`). Guard: `tests/plate_bbox.test.mjs`.
+
 ## Known, open
 
 **Bead is ASSUMED 0.45 mm** — carried over from the A2L, never calibrated on this A1. Dimensions are
