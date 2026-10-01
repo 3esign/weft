@@ -608,3 +608,36 @@ lines, rings only where the section holds or shrinks); a generator run through t
 skips its own main() (realpath both sides of the entry check). The generator refuses its own schedule when
 the estimated free span (spacing_below / sin(delta-angle)) exceeds 0.9 x maxbridge, before the gate ever
 sees it. No print initiated.
+
+## 2026-10-01 — pure weft: no wall, no slicer infill (pure-weft/v1)
+
+Semir, looking at the shipped solid-infill bodies: "objekat vise nema zid i infill nego je sve weft i ja
+to treba da otvorim kao gcode kao da je vec slajsovano". `solid-infill/v1` still emitted a CLOSED perimeter
+loop per layer — a wall by another name, and it split the object back into shell plus filling. Replaced:
+a layer is now one open RIM spiral (enters at the boundary, works inward through a pitch schedule, e.g.
+[0.45, 0.8, 1.4], so the first pass sits where a slicer's wall would and each later pass opens toward the
+interior — the seam step IS the weave) handing over to one open CORE pattern on the section inset to where
+the INNERMOST rim pass BEGINS. Both free per layer: density is a field in r AND in z, and one layer carries
+two patterns by construction. Where a section cannot hold a core, the rim schedule runs to the centre. The
+full-section ring survives only as an unprinted `silhouette`, as the source for the display mesh.
+
+Three support failures the rim introduced, all measured, all fixed: (1) core inset must be cum[n-1], not
+cum[n] — a spiral's depth is a function of angle, so at the seam the innermost pass still lies at cum[n-1]
+and insetting by cum[n] opened an empty wedge up to a pitch wide (sundjer, CANTILEVER 5.1 mm at z 17.52,
+gap 2.33); (2) a spiral core starts at half a bead, not 0.6 x spacing, or its first turn floats a pitch
+inside the rim and drifts off on a shrinking section (drvo, CANTILEVER 6.1 mm at z 2.4, gap 1.41); (3)
+hilbert order = ceil(log2(side/pitch)), never round — rounding down let 45 deg bond lines ride 4 mm
+diagonal corridors unsupported.
+
+"No wall" is a claim, so it is measured twice. `tools/check_pure_weft.mjs` splits extrusion runs on TRAVEL,
+not on `; FEATURE` markers — the markers merge rim and core into one run and would have hidden a closed rim;
+0 closed body runs in all three shipped G-codes. `tests/pure_weft.test.mjs` (in npm test) holds the rule at
+the generator: every path open, rim first, silhouette never printed, single-pitch rim only where the layer
+is also dense.
+
+Shipped for the A1, specimens/2026-10-01_pure_weft_A1/ (committed): PUN_KOCKA 42x42x24, 100 layers, 120.0 m
+thread, 15.5 g; PUN_SUNDJER 36.8x36.7x19.9, 83 layers, 48.5 m, 6.7 g; PUN_DRVO 27x27x30, 125 layers, 24.2 m,
+3.8 g. Gate S1 and layered S2-S8/ORDER: 0 problems on each G-code and again inside each container.
+printer_model = Bambu Lab A1, bed 65 C, end Z = max_layer_z + 0.4 per body (24.4 / 20.32 / 30.4).
+Bead on the A1 is still ASSUMED 0.45 mm (carried from the A2L, never calibrated): run C1 thin-wall on the A1
+before trusting the millimetres. No print initiated.
