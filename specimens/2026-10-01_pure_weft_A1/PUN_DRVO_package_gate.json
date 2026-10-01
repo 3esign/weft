@@ -1,0 +1,133 @@
+{
+ "file": "C:\\Svemir\\!Projekti\\PI\\weft\\diagnostics\\pw\\drvo\\PUN_DRVO.gcode.3mf",
+ "layers": 127,
+ "firstLayer": {
+  "PASS": true,
+  "version": 1,
+  "firstModelZ": 0.24,
+  "firstPreviewZ": 0.24,
+  "segments": 493,
+  "length_mm": 953.886,
+  "filament_mm": 44.59108,
+  "startupSegments": 12,
+  "issues": []
+ },
+ "params": {
+  "bead": 0.45,
+  "allow": 0.6,
+  "maxbridge": 12,
+  "res": 0.2,
+  "bedz": 0.5,
+  "maxislands": 1,
+  "maxcantilever": 3
+ },
+ "stats": {
+  "floating": 0,
+  "long_bridge": 0,
+  "cantilever": 0,
+  "bridges": 1456,
+  "bad_membrane": 0,
+  "unanchored_membrane": 0,
+  "checked_paths": 246,
+  "checked_points": 54832,
+  "exempt_layers": 4,
+  "first_layer_islands": 1
+ },
+ "byRole": {},
+ "worstGaps": [
+  [
+   3.6,
+   "bridge",
+   4.24,
+   4.53
+  ],
+  [
+   8.64,
+   "bridge",
+   4.1,
+   4.31
+  ],
+  [
+   10.8,
+   "bridge",
+   4.1,
+   4.31
+  ],
+  [
+   15.12,
+   "bridge",
+   4.12,
+   4.31
+  ],
+  [
+   4.32,
+   "bridge",
+   4.13,
+   4.29
+  ],
+  [
+   6.48,
+   "bridge",
+   4.13,
+   4.29
+  ],
+  [
+   12.96,
+   "bridge",
+   4.1,
+   4.25
+  ],
+  [
+   15.84,
+   "bridge",
+   4.13,
+   4.25
+  ],
+  [
+   5.76,
+   "bridge",
+   3.97,
+   4.24
+  ],
+  [
+   7.92,
+   "bridge",
+   3.93,
+   4.24
+  ],
+  [
+   10.08,
+   "bridge",
+   3.96,
+   4.24
+  ],
+  [
+   14.4,
+   "bridge",
+   3.96,
+   4.24
+  ],
+  [
+   12.24,
+   "bridge",
+   3.93,
+   4.22
+  ],
+  [
+   24.48,
+   "bridge",
+   3.41,
+   3.85
+  ],
+  [
+   9.36,
+   "bridge",
+   3.58,
+   3.74
+  ]
+ ],
+ "membranes": [],
+ "problems": [],
+ "problem_count": 0,
+ "PASS": true
+}

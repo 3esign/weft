@@ -1,0 +1,90 @@
+{
+ "specimen": "2026-10-01_pure_weft_A1",
+ "process": "pure-weft/v1",
+ "what": "Three full bodies with NO wall and NO slicer infill: every layer is one rim spiral (programmed pitch schedule from the boundary inward) handing over to a core pattern on the inset section. Zero closed loops in the body — measured. Open as G-code; it is already sliced.",
+ "machine": {
+  "id": "a1",
+  "label": "Bambu Lab A1",
+  "plate": [
+   256,
+   256
+  ],
+  "maxZ": 256,
+  "bead": 0.45,
+  "beadSource": "ASSUMED",
+  "beadEvidence": "carried over from the A2L; never calibrated on this machine — run the C1 thin-wall test on the A1 and measure before trusting",
+  "lh": 0.24,
+  "firstLayerBead": 0.52,
+  "temp": 220,
+  "bed": 65,
+  "start": "exports/a1_start_block_harvested_2026-10-01.gcode",
+  "end": "exports/a1_end_block_harvested_2026-10-01.gcode",
+  "route": "bambu3mf"
+ },
+ "bodies": [
+  {
+   "name": "PUN_KOCKA",
+   "title": null,
+   "layers": 102,
+   "weight_g": 15.52,
+   "time": "1h 31m 32s",
+   "endZ_mm": 24.4,
+   "gate_PASS": true,
+   "gate_problems": 0,
+   "package_gate_PASS": true,
+   "package_gate_problems": 0,
+   "shipped": [
+    "PUN_KOCKA.gcode",
+    "PUN_KOCKA.gcode.3mf",
+    "PUN_KOCKA.stl"
+   ],
+   "geometry": "PUN_KOCKA_geometry.json"
+  },
+  {
+   "name": "PUN_SUNDJER",
+   "title": null,
+   "layers": 85,
+   "weight_g": 6.74,
+   "time": "37m 52s",
+   "endZ_mm": 20.32,
+   "gate_PASS": true,
+   "gate_problems": 0,
+   "package_gate_PASS": true,
+   "package_gate_problems": 0,
+   "shipped": [
+    "PUN_SUNDJER.gcode",
+    "PUN_SUNDJER.gcode.3mf",
+    "PUN_SUNDJER.stl"
+   ],
+   "geometry": "PUN_SUNDJER_geometry.json"
+  },
+  {
+   "name": "PUN_DRVO",
+   "title": null,
+   "layers": 127,
+   "weight_g": 3.82,
+   "time": "18m 56s",
+   "endZ_mm": 30.4,
+   "gate_PASS": true,
+   "gate_problems": 0,
+   "package_gate_PASS": true,
+   "package_gate_problems": 0,
+   "shipped": [
+    "PUN_DRVO.gcode",
+    "PUN_DRVO.gcode.3mf",
+    "PUN_DRVO.stl"
+   ],
+   "geometry": "PUN_DRVO_geometry.json"
+  }
+ ],
+ "verified": {
+  "closed_body_loops": 0,
+  "closed_loop_method": "every extruding path between FEATURE markers, brim excluded; start==end within 0.6 mm counts as closed (diagnostics/paths_check.mjs)",
+  "display_mesh": "lofted from the layer silhouettes of this very build; bbox per body measured inside 3D/Objects/object_1.model",
+  "printer_identity": "Bambu Lab A1, bed 65 C, end Z = max_layer_z + 0.4 evaluated per body",
+  "bead": "ASSUMED 0.45 mm — never calibrated on the A1. Run the C1 thin-wall test before trusting dimensions."
+ },
+ "builder": "weft.mjs",
+ "core": "core-2026-09-19-first-layer",
+ "outcome": "NOT PRINTED — fill this in after the print, with photographs"
+}

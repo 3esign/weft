@@ -19,6 +19,8 @@ import { encodeRgbaPng } from './weft_bambu_thumbnails.mjs';
 function fail(message){ throw new Error('WEFT Bambu mesh: ' + message); }
 
 function perimeterOf(layer){
+  /* pure-weft layers print no closed loop at all; they carry the section ring as `silhouette` */
+  if(layer.silhouette && layer.silhouette.length >= 8) return layer.silhouette;
   for(const p of layer.paths || []){
     const pts = p.pts; if(!pts || pts.length < 8) continue;
     const a = pts[0], b = pts[pts.length - 1];

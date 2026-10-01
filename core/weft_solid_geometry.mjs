@@ -1,4 +1,4 @@
-/* WEFT — PUN: solid bodies as programmed infill (2026-09-30).
+/* WEFT — PUN: solid bodies as programmed infill (2026-09-30; pure weft 2026-10-01).
 
    Until now every WEFT object was a hollow woven wall; the material WAS the wall. This generator turns
    the question around: the body is FULL, and the infill is the first-class object. Every layer is a
@@ -6,10 +6,18 @@
    so the object becomes a stack of material decisions instead of a skin around air. This is what a
    slicer calls "infill", except here there is no slicer default: the layer program is the design.
 
+   pure-weft/v1 (2026-10-01, Semir): the first cut still emitted a CLOSED perimeter loop per layer —
+   a wall in all but name, and on screen the bodies read as wall + infill. Gone. A layer now has NO
+   closed loop at all: the thread enters at the boundary and spirals inward through a programmed pitch
+   schedule (tight where a slicer would put a wall, opening toward the interior — the RIM), then hands
+   over to an interior pattern on the inset section (the CORE), whose chord ends land on the rim's
+   innermost turn — welded to it, not to a shell. The rim pitch schedule and the core program are both
+   free per layer, so density is a field in r AND z, and one layer carries two patterns by construction.
+
    Level-2 generator in JavaScript. Emits the geometry file `weft.mjs build --geo` consumes: summary /
-   foundation / layers, with each layer carrying raw typed paths (a closed perimeter + ONE continuous
-   fill path), the same records the cube roof uses. No caps, no membranes: everything is either on the
-   bed or on the previous layer's material.
+   foundation / layers, with each layer carrying raw typed paths (rim spiral + core fill, no closed
+   loop) plus an unprinted `silhouette` ring for the display mesh. No caps, no membranes: everything
+   is either on the bed or on the previous layer's material.
 
    Patterns (each one continuous line per layer, ends welded to the shell where they land):
      lines    — boustrophedon chords at an angle, connected by hops along the boundary (the roof's
@@ -48,7 +56,7 @@ const lerp = (a, b, t) => a + (b - a) * t;
 const rr = (v, n = 3) => { const f = 10 ** n; const x = Math.round(v * f) / f; return Object.is(x, -0) ? 0 : x; };
 const hyp = Math.hypot;
 
-export const PROCESS = 'solid-infill/v1';
+export const PROCESS = 'pure-weft/v1';
 export const NPHI = 240;                      // section sampling (polygon vertices per layer)
 /* The gate samples the distance transform at PATH VERTICES, and the core LOD-merges collinear points,
    so a straight chord keeps vertices only every ~2 mm — which can all land mid-between the lines below
@@ -181,9 +189,33 @@ function spiralFill(S, spacing, d0){
   return { pts: resample(out, CHORD_STEP), nTurns, maxSpacing: spacing };
 }
 
+/* ---------------- rim: the boundary as a woven band, not a wall ----------------
+   One open spiral from the section boundary inward through a per-turn pitch schedule
+   (e.g. [0.45, 0.8, 1.4]): the first turn lies where a slicer's wall would, each later
+   turn opens toward the core. No turn is a closed loop — the seam step IS the weave. */
+function rimSpiral(S, pitches){
+  const cum = [0]; for(const p of pitches) cum.push(cum[cum.length - 1] + p);
+  const out = [];
+  for(let j = 0; j < pitches.length; j++)
+    for(let i = 0; i < NPHI; i++){
+      const d = cum[j] + pitches[j] * i / NPHI;
+      out.push([S.pts[i][0] + S.nrmIn[i][0] * d, S.pts[i][1] + S.nrmIn[i][1] * d]);
+    }
+  const dEnd = cum[pitches.length];                                  // land the final point at full depth
+  out.push([S.pts[0][0] + S.nrmIn[0][0] * dEnd, S.pts[0][1] + S.nrmIn[0][1] * dEnd]);
+  /* inset for the core is where the INNERMOST pass BEGINS, not where it ends. A spiral's depth is a
+     function of angle: at the seam the last pass still lies at cum[n-1], and it only reaches cum[n]
+     after a full revolution. Insetting the core by cum[n] therefore opened an empty wedge up to one
+     pitch wide around the seam — measured on sundjer as CANTILEVER 5.1 mm at z 17.52, gap 2.33 mm.
+     With inset = cum[n-1] the core boundary is never further than p(n-1)*p(n)/(p(n-1)+p(n)) from rim
+     material at any angle, and the innermost pass simply spirals on INSIDE the core — still one weave. */
+  const inset = pitches.length > 1 ? cum[pitches.length - 1] : 0.5 * pitches[0];
+  return { pts: resample(out, CHORD_STEP), depth: dEnd, inset, maxPitch: Math.max(...pitches) };
+}
+
 /* ---------------- hilbert over the inscribed square (kocka) ---------------- */
 function hilbertFill(side, targetPitch, flip){
-  const order = clamp(Math.round(Math.log2(side / targetPitch)), 2, 6);
+  const order = clamp(Math.ceil(Math.log2(side / targetPitch)), 2, 6);   // ceil: the pitch may never EXCEED the target (round once dropped an order and 45deg bond lines rode 4 mm diagonal corridors unsupported)
   const n = 1 << order, pitch = side / n;
   const pts = [];
   for(let d = 0; d < n * n; d++){                                   // d2xy, standard
@@ -208,36 +240,36 @@ export const VARIANTS = {
   kocka: {
     title: 'KOCKA PUNA', concept: 'the sampler: a solid cube whose bands answer "what does each fill pattern do?"',
     H: 24.0, size: 42.0,
-    sectionAt(){ const R = this.size / 2, p = 8;                      // superellipse: a rounded square
-      return makeSection(th => R * (Math.abs(Math.cos(th)) ** p + Math.abs(Math.sin(th)) ** p) ** (-1 / p)); },
+    sectionAt(z, zf, inset = 0){ const R = this.size / 2, p = 8;      // superellipse: a rounded square
+      return makeSection(th => R * (Math.abs(Math.cos(th)) ** p + Math.abs(Math.sin(th)) ** p) ** (-1 / p) - inset); },
     planAt(k, z, zf, base, cap){
-      if(base) return { kind: 'lines', spacing: k === 0 ? 0.50 : 0.85, angle: 90 * (k % 2), tag: 'base' };
-      if(cap)  return { kind: 'lines', spacing: 0.85, angle: 90 * (k % 2), tag: 'cap' };
-      if(zf < 0.28) return { kind: 'lines', spacing: lerp(1.8, 3.0, zf / 0.28), angle: 90 * (k % 2), tag: 'lines' };
-      if(zf < 0.46) return { kind: 'sine', spacing: 3.2, angle: 90 * (k % 2), sine: { amp: 1.0, lambda: 8 }, tag: 'sine' };
+      if(base) return { kind: 'lines', spacing: k === 0 ? 0.50 : 0.85, angle: 90 * (k % 2), rim: [0.50], tag: 'base' };
+      if(cap)  return { kind: 'lines', spacing: 0.85, angle: 90 * (k % 2), rim: [0.50], tag: 'cap' };
+      if(zf < 0.28) return { kind: 'lines', spacing: lerp(1.8, 3.0, zf / 0.28), angle: 90 * (k % 2), rim: [0.45, 0.75, 1.3], tag: 'lines' };
+      if(zf < 0.46) return { kind: 'sine', spacing: 3.2, angle: 90 * (k % 2), sine: { amp: 1.0, lambda: 8 }, rim: [0.45, 0.8, 1.4], tag: 'sine' };
       if(zf < 0.66) return (k % 2 === 0)                              // hilbert needs a crossing layer under it
-        ? { kind: 'hilbert', spacing: 3.0, angle: 0, tag: 'hilbert' }
-        : { kind: 'lines', spacing: 2.4, angle: 45 + 90 * (Math.floor(k / 2) % 2), tag: 'hilbert-bond' };
+        ? { kind: 'hilbert', spacing: 3.0, angle: 0, rim: [0.45, 0.9, 1.3], tag: 'hilbert' }      // deep rim: it, not a shell,
+        : { kind: 'lines', spacing: 2.4, angle: 45 + 90 * (Math.floor(k / 2) % 2), rim: [0.45, 0.9, 1.3], tag: 'hilbert-bond' }; // owns the superellipse corners outside the inscribed square
       if(zf < 0.84) return (k % 4 === 3)
-        ? { kind: 'lines', spacing: 2.8, angle: 45 * (k % 8), tag: 'spiral-bond' }
-        : { kind: 'spiral', spacing: 3.0, angle: 0, tag: 'spiral' };
-      return { kind: 'lines', spacing: lerp(3.0, 5.5, (zf - 0.84) / 0.16), angle: 90 * (k % 2), tag: 'crescendo' };
+        ? { kind: 'lines', spacing: 2.8, angle: 45 * (k % 8), rim: [0.45, 0.8], tag: 'spiral-bond' }
+        : { kind: 'spiral', spacing: 3.0, angle: 0, rim: [0.45, 0.8], tag: 'spiral' };
+      return { kind: 'lines', spacing: lerp(3.0, 5.5, (zf - 0.84) / 0.16), angle: 90 * (k % 2), rim: [0.45, 0.9, 1.6], tag: 'crescendo' };
     },
     speed: 32,
   },
   sundjer: {
     title: 'SUNDJER PUN', concept: 'density as a field: a twisting tri-lobe blob, spacing varies inside every layer, direction steps by the golden angle',
     H: 20.0, R0: 15.0,
-    sectionAt(z, zf){
+    sectionAt(z, zf, inset = 0){
       const bulge = 1 + 0.16 * Math.sin(Math.PI * zf);                // widest at mid-height
       const tw = TAU * 0.6 * zf;                                      // the lobes twist as the body rises
-      return makeSection(th => this.R0 * bulge * (1 + 0.07 * Math.sin(3 * (th + tw))));
+      return makeSection(th => this.R0 * bulge * (1 + 0.07 * Math.sin(3 * (th + tw))) - inset);
     },
     planAt(k, z, zf, base, cap){
-      if(base) return { kind: 'lines', spacing: k === 0 ? 0.50 : 0.85, angle: rr(GOLDEN * k % 180, 2), tag: 'base' };
-      if(cap)  return { kind: 'lines', spacing: 0.85, angle: rr(GOLDEN * k % 180, 2), tag: 'cap' };
+      if(base) return { kind: 'lines', spacing: k === 0 ? 0.50 : 0.85, angle: rr(GOLDEN * k % 180, 2), rim: [0.50], tag: 'base' };
+      if(cap)  return { kind: 'lines', spacing: 0.85, angle: rr(GOLDEN * k % 180, 2), rim: [0.50], tag: 'cap' };
       const sBase = lerp(2.4, 3.6, smooth(zf));                       // sparser as it rises
-      return { kind: 'lines', spacing: sBase, angle: rr(GOLDEN * k % 180, 2),
+      return { kind: 'lines', spacing: sBase, angle: rr(GOLDEN * k % 180, 2), rim: [0.50, 1.0],
         field: (li) => sBase * (1 + 0.35 * Math.sin(2.3 * li + 1.7 * k)), tag: 'field' };
     },
     speed: 32,
@@ -251,22 +283,22 @@ export const VARIANTS = {
       if(zf < 0.80) return lerp(7.5, 13.5, smooth((zf - 0.52) / 0.28)); // canopy swell (flare, bounded below)
       return lerp(13.5, 3.2, smooth((zf - 0.80) / 0.20));             // closing dome
     },
-    sectionAt(z, zf){
+    sectionAt(z, zf, inset = 0){
       const sway = 0.8 * Math.sin(1.5 * Math.PI * zf);                // the trunk leans, gently
-      return makeSection(() => this.profile(zf), sway, 0);
+      return makeSection(() => Math.max(0.8, this.profile(zf) - inset), sway, 0);
     },
     planAt(k, z, zf, base, cap){
-      if(base) return { kind: 'lines', spacing: k === 0 ? 0.50 : 0.85, angle: 90 * (k % 2), tag: 'base' };
-      if(cap)  return { kind: 'lines', spacing: 0.85, angle: 90 * (k % 2), tag: 'cap' };
+      if(base) return { kind: 'lines', spacing: k === 0 ? 0.50 : 0.85, angle: 90 * (k % 2), rim: [0.50], tag: 'base' };
+      if(cap)  return { kind: 'lines', spacing: 0.85, angle: 90 * (k % 2), rim: [0.50], tag: 'cap' };
       /* growth rings only where the section does not GROW: on a growing section the spiral's turn
          count jumps and the new innermost turn hangs over the previous layer's empty core (measured
          2026-09-30: CANTILEVER 15.3 mm at z 19.92). The swelling canopy is filled with rotating
-         lines instead — lines do not care that the shell moved outward. */
+         lines instead — lines do not care that the boundary moved outward. */
       if(zf >= 0.52 && zf < 0.80)
-        return { kind: 'lines', spacing: 3.0, angle: rr(60 * k % 180, 1), tag: 'canopy' };
+        return { kind: 'lines', spacing: 3.0, angle: rr(60 * k % 180, 1), rim: [0.45, 0.8], tag: 'canopy' };
       return (k % 3 === 2)
-        ? { kind: 'lines', spacing: 3.0, angle: 60 * (Math.floor(k / 3) % 3), tag: 'bond' }
-        : { kind: 'spiral', spacing: 2.8, angle: 0, tag: 'rings' };
+        ? { kind: 'lines', spacing: 3.0, angle: 60 * (Math.floor(k / 3) % 3), rim: [0.45, 0.85], tag: 'bond' }   // two passes, never one: a single-pitch rim reads as a wall
+        : { kind: 'spiral', spacing: 2.8, angle: 0, rim: [0.45, 0.70], tag: 'rings' };    // bark into rings, one thread family
     },
     speed: 32,
   },
@@ -296,33 +328,56 @@ export function generateSolid(o){
     const p = V.planAt(k, z, zf, base, cap);
     const spacingAt = p.field ? ((li) => p.field(li)) : (() => p.spacing);
 
-    /* fill */
-    let fill, nLines = 0, detail = '';
-    if(p.kind === 'lines' || p.kind === 'sine'){
-      const sine = p.kind === 'sine' ? { amp: p.sine.amp, lambda: p.sine.lambda, phase: (k % 2) * Math.PI } : null;
-      fill = scanFill(S, p.angle, spacingAt, sine);
-      nLines = fill.nLines; detail = `${fill.nLines} chords @ ${p.angle}deg`;
-      if(fill.nonConvex) violations.push(`layer ${k} z=${rr(z, 2)}: section is not convex for scanning (${fill.nonConvex} scan lines with >2 crossings)`);
-    } else if(p.kind === 'spiral'){
-      fill = spiralFill(S, p.spacing, BEAD * 0.95);
-      detail = `${fill.nTurns} turns`;
-    } else if(p.kind === 'hilbert'){
-      const side = (V.size - 2.4) / Math.SQRT2 * Math.SQRT2 - 2.0;    // inscribed square of the superellipse, with margin
-      fill = hilbertFill(side, p.spacing, Math.floor(k / 2) % 2 === 1);
-      detail = `order ${fill.order}, pitch ${rr(fill.pitch, 2)}`;
-    } else throw new Error(`unknown fill kind ${p.kind}`);
+    /* rim: the boundary band is woven, never a closed loop. If the section is too small to hold
+       a core inside the rim, the rim's pitch schedule simply continues to the centre (rim-only). */
+    let minR = 1e9;
+    for(let i = 0; i < NPHI; i++) minR = Math.min(minR, hyp(S.pts[i][0] - S.cx, S.pts[i][1] - S.cy));
+    const pitches = (p.rim ?? [0.45]).slice();
+    let rimOnly = false;
+    if(minR - (pitches.reduce((a, b) => a + b, 0)) < 1.8){
+      rimOnly = true;
+      while(pitches.reduce((a, b) => a + b, 0) < minR - 0.4) pitches.push(Math.min(p.spacing, 1.6));
+    }
+    const rim = rimSpiral(S, pitches);
+
+    /* core: the interior pattern on the inset section; chord ends land on the rim's innermost turn */
+    let fill = null, coreS = null, nLines = 0, detail = '';
+    if(rimOnly){
+      detail = `rim-only, ${pitches.length} turns to the centre`;
+    } else {
+      coreS = V.sectionAt(z + 0.5 * LH, zf, rim.inset);
+      if(p.kind === 'lines' || p.kind === 'sine'){
+        const sine = p.kind === 'sine' ? { amp: p.sine.amp, lambda: p.sine.lambda, phase: (k % 2) * Math.PI } : null;
+        fill = scanFill(coreS, p.angle, spacingAt, sine);
+        nLines = fill.nLines; detail = `${fill.nLines} chords @ ${p.angle}deg`;
+        if(fill.nonConvex) violations.push(`layer ${k} z=${rr(z, 2)}: section is not convex for scanning (${fill.nonConvex} scan lines with >2 crossings)`);
+      } else if(p.kind === 'spiral'){
+        /* d0 = half a bead, NOT 0.6*spacing: the spiral's first turn must WELD to the rim's innermost
+           turn, so its radius tracks the boundary exactly as the rim's does. With d0 = 0.6*spacing the
+           first turn floated a full pitch inside the rim and, on a shrinking section (drvo's flared
+           foot), drifted off the turn below — measured CANTILEVER 6.1 mm at z 2.4, gap 1.41 mm. */
+        fill = spiralFill(coreS, p.spacing, 0.5 * BEAD);
+        detail = `${fill.nTurns} turns`;
+      } else if(p.kind === 'hilbert'){
+        const side = V.size - 2 * rim.inset - 2.8;                    // inscribed square of the inset superellipse
+        fill = hilbertFill(side, p.spacing, Math.floor(k / 2) % 2 === 1);
+        detail = `order ${fill.order}, pitch ${rr(fill.pitch, 2)}`;
+      } else throw new Error(`unknown fill kind ${p.kind}`);
+    }
 
     /* free-span estimate against the layer below: sparse over sparse is supported only at crossings */
+    const effKind = rimOnly ? 'spiral' : p.kind;
+    const effMaxSpacing = rimOnly ? rim.maxPitch : Math.max(fill.maxSpacing, rim.maxPitch);
     let freeSpan = 0;
     if(k > 0){
       const q = prevPlan;
       const sBelow = q.maxSpacing;
       if(sBelow <= 1.0) freeSpan = 0;                                 // the layer below is effectively solid
-      else if(p.kind === 'spiral' && q.kind === 'spiral') freeSpan = 0;   // rings stack on rings
-      else if(p.kind === 'spiral' || q.kind === 'spiral') freeSpan = sBelow * 1.5;  // a line crosses rings every ring
+      else if(effKind === 'spiral' && q.kind === 'spiral') freeSpan = 0;   // rings stack on rings
+      else if(effKind === 'spiral' || q.kind === 'spiral') freeSpan = sBelow * 1.5;  // a line crosses rings every ring
       else {
         let d = Math.abs(((p.angle - q.angle) % 180 + 180) % 180); if(d > 90) d = 180 - d;
-        if(p.kind === 'hilbert' || q.kind === 'hilbert'){ d = Math.min(d || 45, 45); }
+        if(effKind === 'hilbert' || q.kind === 'hilbert'){ d = Math.min(d || 45, 45); }
         freeSpan = d < 5 ? Infinity : sBelow / Math.sin(d * Math.PI / 180);
       }
       if(!(freeSpan <= 0.9 * MAXBRIDGE))
@@ -341,23 +396,32 @@ export function generateSolid(o){
       if(worst > ALLOW * 0.9) violations.push(`layer ${k} z=${rr(z, 2)}: the shell grows ${rr(worst, 2)} mm outward past the layer below (allow ${ALLOW})`);
     }
 
-    const perimeter = S.pts.map(([x, y]) => [rr(x, 3), rr(y, 3)]); perimeter.push(perimeter[0]);
-    /* sparse fill = typed bridge (vertices preserved, 0.5 mm sampling); dense fill may be LOD'd freely */
-    const sparse = fill.maxSpacing > 1.2;
-    const fillPts = (sparse ? resample(fill.pts, CHORD_STEP * 0.9) : fill.pts).map(([x, y]) => [rr(x, 3), rr(y, 3)]);
+    /* the full-section ring survives only as the display silhouette — it is never printed */
+    const silhouette = S.pts.map(([x, y]) => [rr(x, 3), rr(y, 3)]); silhouette.push(silhouette[0]);
     const bead = k === 0 ? FIRST_BEAD : BEAD;
+    /* the rim is dense by construction near the boundary; a sparse OUTER pitch still stacks on the
+       rim below (aligned), so the rim stays a plain wall-role path and may be LOD'd */
+    const rimPts = rim.pts.map(([x, y]) => [rr(x, 3), rr(y, 3)]);
     const paths = [
-      { pts: perimeter, role: 'wall', closed: true, bead, label: `shell-${p.tag}`, tile: 'body' },
-      { pts: fillPts, role: sparse ? 'bridge' : 'wall', closed: false, bead, speed: V.speed, label: `${p.kind}-${p.tag}`, tile: 'body',
-        intent: `${PROCESS}: ${p.kind} ${detail}, spacing ${rr(p.spacing, 2)} mm, layer ${k + 1}/${N}` },
+      { pts: rimPts, role: 'wall', closed: false, bead, speed: V.speed, label: `rim-${p.tag}`, tile: 'body',
+        intent: `${PROCESS}: rim ${pitches.map(v => rr(v, 2)).join('/')} mm${rimOnly ? ' to the centre' : ''}, layer ${k + 1}/${N}` },
     ];
-    layers.push({ k, zBot: rr(z, 4), zTop: rr(z + LH, 4), w: 2.0, tab: 0, web: 'staple', phase: p.tag, contours: [], paths });
-    const fillLen = fillPts.slice(1).reduce((a, q, i) => a + hyp(q[0] - fillPts[i][0], q[1] - fillPts[i][1]), 0);
-    plan.push({ k, z: rr(z, 3), kind: p.kind, tag: p.tag, spacing_mm: rr(p.spacing, 2), maxSpacing_mm: rr(fill.maxSpacing, 2),
+    let fillLen = 0;
+    if(fill){
+      /* sparse fill = typed bridge (vertices preserved, 0.5 mm sampling); dense fill may be LOD'd freely */
+      const sparse = fill.maxSpacing > 1.2;
+      const fillPts = (sparse ? resample(fill.pts, CHORD_STEP * 0.9) : fill.pts).map(([x, y]) => [rr(x, 3), rr(y, 3)]);
+      paths.push({ pts: fillPts, role: sparse ? 'bridge' : 'wall', closed: false, bead, speed: V.speed, label: `${p.kind}-${p.tag}`, tile: 'body',
+        intent: `${PROCESS}: ${p.kind} ${detail}, spacing ${rr(p.spacing, 2)} mm, layer ${k + 1}/${N}` });
+      fillLen = fillPts.slice(1).reduce((a, q, i) => a + hyp(q[0] - fillPts[i][0], q[1] - fillPts[i][1]), 0);
+    }
+    layers.push({ k, zBot: rr(z, 4), zTop: rr(z + LH, 4), w: 2.0, tab: 0, web: 'staple', phase: p.tag, contours: [], paths, silhouette });
+    plan.push({ k, z: rr(z, 3), kind: rimOnly ? 'rim-only' : p.kind, tag: p.tag, spacing_mm: rr(p.spacing, 2), maxSpacing_mm: rr(effMaxSpacing, 2),
+      rim_mm: pitches.map(v => rr(v, 2)), rimDepth_mm: rr(rim.depth, 2),
       angle_deg: rr(p.angle, 1), freeSpanEst_mm: Number.isFinite(freeSpan) ? rr(freeSpan, 2) : 'INF',
       fill_mm: rr(fillLen, 0), nLines });
     if(prevPlan && prevPlan.tag !== p.tag) events.push({ z: rr(z, 2), k, event: `${prevPlan.tag} -> ${p.tag}` });
-    prevPlan = { ...p, maxSpacing: fill.maxSpacing }; prevSection = S;
+    prevPlan = { ...p, kind: effKind, maxSpacing: effMaxSpacing }; prevSection = S;
   }
 
   /* foundation: three touching brim rings around the base, welded to the solid first layer (one island) */

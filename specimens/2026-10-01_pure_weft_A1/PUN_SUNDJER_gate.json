@@ -1,0 +1,133 @@
+{
+ "file": "C:\\Svemir\\!Projekti\\PI\\weft\\diagnostics\\pw\\sundjer\\PUN_SUNDJER.gcode",
+ "layers": 85,
+ "firstLayer": {
+  "PASS": true,
+  "version": 1,
+  "firstModelZ": 0.24,
+  "firstPreviewZ": 0.24,
+  "segments": 870,
+  "length_mm": 1787.806,
+  "filament_mm": 83.5742,
+  "startupSegments": 12,
+  "issues": []
+ },
+ "params": {
+  "bead": 0.45,
+  "allow": 0.6,
+  "maxbridge": 12,
+  "res": 0.2,
+  "bedz": 0.5,
+  "maxislands": 1,
+  "maxcantilever": 3
+ },
+ "stats": {
+  "floating": 0,
+  "long_bridge": 0,
+  "cantilever": 0,
+  "bridges": 3706,
+  "bad_membrane": 0,
+  "unanchored_membrane": 0,
+  "checked_paths": 162,
+  "checked_points": 105048,
+  "exempt_layers": 4,
+  "first_layer_islands": 1
+ },
+ "byRole": {},
+ "worstGaps": [
+  [
+   17.76,
+   "bridge",
+   2.2,
+   2.4
+  ],
+  [
+   18.48,
+   "bridge",
+   2.13,
+   2.33
+  ],
+  [
+   17.28,
+   "bridge",
+   2.18,
+   2.28
+  ],
+  [
+   18,
+   "bridge",
+   2.13,
+   2.28
+  ],
+  [
+   18.72,
+   "wall",
+   2.04,
+   2.28
+  ],
+  [
+   16.56,
+   "bridge",
+   2.13,
+   2.26
+  ],
+  [
+   17.04,
+   "bridge",
+   2.06,
+   2.26
+  ],
+  [
+   17.52,
+   "bridge",
+   2.13,
+   2.26
+  ],
+  [
+   14.88,
+   "bridge",
+   2.06,
+   2.24
+  ],
+  [
+   15.12,
+   "bridge",
+   2.04,
+   2.24
+  ],
+  [
+   15.36,
+   "bridge",
+   2.15,
+   2.24
+  ],
+  [
+   15.6,
+   "bridge",
+   2.06,
+   2.24
+  ],
+  [
+   15.84,
+   "bridge",
+   2.06,
+   2.24
+  ],
+  [
+   16.08,
+   "bridge",
+   2.03,
+   2.24
+  ],
+  [
+   16.32,
+   "bridge",
+   2.13,
+   2.24
+  ]
+ ],
+ "membranes": [],
+ "problems": [],
+ "problem_count": 0,
+ "PASS": true
+}
