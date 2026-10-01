@@ -1,5 +1,5 @@
 {
- "file": "C:\\Svemir\\!Projekti\\PI\\weft\\specimens\\2026-10-01_solid_infill_A1\\PUN_KOCKA.gcode.3mf",
+ "file": "D:\\Svemir\\!Projekti\\PI\\weft\\specimens\\2026-10-01_solid_infill_A1\\PUN_KOCKA.gcode.3mf",
  "layers": 102,
  "firstLayer": {
   "PASS": true,
@@ -18,7 +18,7 @@
   "maxbridge": 12,
   "res": 0.2,
   "bedz": 0.5,
-  "maxislands": 1,
+  "maxislands": 0,
   "maxcantilever": 3
  },
  "stats": {

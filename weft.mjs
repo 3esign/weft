@@ -308,7 +308,7 @@ async function cmdBuild(){
     const tpl = path.join(WEFT_ROOT, m.containerTemplate);
     if(!fs.existsSync(tpl)) die(`container template missing: ${m.containerTemplate} — a Bambu .gcode.3mf can only be built from one of Semir's own exports`);
     const three = path.join(outDir, `${name}.gcode.3mf`);
-    const pk = packBambu3mf(fixed.text, tpl, three, { name:`${name}.stl`, layerHeight:m.lh, ...(opt('thumb') ? {thumb:path.resolve(opt('thumb'))} : {}) });
+    const pk = packBambu3mf(fixed.text, tpl, three, { name:`${name}.stl`, layerHeight:m.lh, plate:m.plate, ...(geo ? {geometry:geo} : {}), ...(opt('thumb') ? {thumb:path.resolve(opt('thumb'))} : {}) });
     console.log(`3MF   ${three}  ${pk.layers} layers, ${pk.filament_m} m / ${pk.grams} g, ${pk.estimate}, md5 ${pk.md5}, ${(pk.bytes / 1e6).toFixed(1)} MB`);
     /* the package is re-read and re-gated: what ships is what was checked */
     const g3 = runGate(three, Object.assign({}, gateOpts, { file:three }));

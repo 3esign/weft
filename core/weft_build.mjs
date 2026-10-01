@@ -25,6 +25,7 @@ import zlib from 'node:zlib';
 import { createHash } from 'node:crypto';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import {makeBambuThumbnails,auditBambuThumbnails} from './weft_bambu_thumbnails.mjs';
+import {loftFromGeometry,objectModelXml,topViewPng} from './weft_bambu_mesh.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 export const WEFT_ROOT = path.resolve(HERE, '..');
@@ -498,6 +499,31 @@ export function packBambu3mf(gcodeTextIn, templatePath, outPath, o = {}){
     .replace(/(used_g=")[\d.]+(")/, (m, a, b) => a + weightG.toFixed(2) + b)
     .replace(/(layer_ranges=")[^"]*(")/, (m, a, b) => a + `0 ${nLayers - 1}` + b);
   const REPL = { 'Metadata/plate_1.gcode':gbytes, 'Metadata/plate_1.gcode.md5':Buffer.from(md5), 'Metadata/plate_1.json':Buffer.from(plateJson), 'Metadata/slice_info.config':Buffer.from(si) };
+  if(o.geometry){
+    /* the container must show the body it carries, not the template's leftover mesh (2026-10-01:
+       three different bodies shipped, Studio showed the harvested T1b wall three times) */
+    const loft = loftFromGeometry(o.geometry);
+    /* the body sits at the plate centre (weft centres every build); the raw extrusion bbox
+       also contains the harvested start block's purge lines, so it cannot give the centre */
+    const hz = Math.round(loft.H / 2 * 1e6) / 1e6;
+    const [ctx, cty] = o.plate ? [o.plate[0] / 2, o.plate[1] / 2] : [128, 128];
+    const tplObj = tpl.find(e => e.name === '3D/Objects/object_1.model');
+    const um = tplObj && /p:UUID="([0-9a-f-]+)"/.exec(tplObj.data.toString('utf8', 0, 600));
+    REPL['3D/Objects/object_1.model'] = Buffer.from(objectModelXml(loft, um ? { uuid:um[1] } : {}));
+    const dm = tpl.find(e => e.name === '3D/3dmodel.model');
+    if(dm) REPL['3D/3dmodel.model'] = Buffer.from(dm.data.toString('utf8')
+      .replace(/(<item [^>]*transform="1 0 0 0 1 0 0 0 1 )[\d. -]+(")/, (m, a, b) => `${a}${ctx} ${cty} ${hz}${b}`));
+    const ms = tpl.find(e => e.name === 'Metadata/model_settings.config');
+    if(ms) REPL['Metadata/model_settings.config'] = Buffer.from(ms.data.toString('utf8')
+      .replace(/(<metadata key="name" value=")[^"]*(")/g, (m, a, b) => a + name + b)
+      .replace(/(<metadata key="source_file" value=")[^"]*(")/, (m, a, b) => a + name + b)
+      .replace(/face_count="\d+"/g, `face_count="${loft.faceCount}"`)
+      .replace(/(<metadata key="source_offset_x" value=")[^"]*(")/, (m, a, b) => a + '0' + b)
+      .replace(/(<metadata key="source_offset_y" value=")[^"]*(")/, (m, a, b) => a + '0' + b)
+      .replace(/(<metadata key="source_offset_z" value=")[^"]*(")/, (m, a, b) => a + hz + b)
+      .replace(/(<assemble_item [^>]*transform="1 0 0 0 1 0 0 0 1 0 0 )[\d.-]+(")/, (m, a, b) => a + hz + b));
+    if(!o.thumb) Object.assign(REPL, makeBambuThumbnails(topViewPng(o.geometry)));
+  }
   if(o.thumb)Object.assign(REPL,makeBambuThumbnails(fs.readFileSync(o.thumb)));
   const entries = tpl.map(e => ({ name:e.name, data:REPL[e.name] || e.data, time:e.time, date:e.date, store:e.name.endsWith('.png') }));
   const thumbs=auditBambuThumbnails(entries);
