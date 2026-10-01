@@ -2,7 +2,7 @@ node_modules/
 .vercel
 .DS_Store
 Thumbs.db
-exports/
+exports/*
 *.stl
 *.gcode
 !specimens/**
@@ -12,3 +12,10 @@ bridge/log/
 
 # the pilot benchmark data is experiment evidence — keep it
 !bridge/log/*.json
+
+# harvested machine blocks and container templates must travel - a clean clone has to build (2026-10-01)
+!exports/*_block_*.gcode
+!exports/*block*.gcode
+!exports/*container*.gcode.3mf
+!exports/ender_start.gcode
+!exports/ender_end.gcode

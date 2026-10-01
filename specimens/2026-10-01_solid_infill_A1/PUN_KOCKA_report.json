@@ -1,0 +1,1838 @@
+{
+  "report": {
+    "name": "PUN_KOCKA",
+    "machine": "Bambu A1",
+    "bed_mm": [
+      256,
+      256
+    ],
+    "layers": 203,
+    "globalZLevels": 100,
+    "expectedZLevels": 100,
+    "logicalCells": null,
+    "experimentalMembraneOverride": false,
+    "maxBodiesPerZ": 1,
+    "size_mm": [
+      45,
+      45,
+      24
+    ],
+    "plate_mm": [
+      105.7,
+      105.7,
+      150.3,
+      150.3
+    ],
+    "fitsPlate": true,
+    "grammarCounts": {},
+    "threadLength_m": 102.5,
+    "weldNodes": 0,
+    "rawPaths": 200,
+    "unintendedOverlaps": 1378,
+    "seamClosures": 0,
+    "overlapSamples": [
+      {
+        "z": 15.84,
+        "role": "bridge",
+        "ov": 106
+      },
+      {
+        "z": 16.32,
+        "role": "bridge",
+        "ov": 106
+      },
+      {
+        "z": 16.56,
+        "role": "bridge",
+        "ov": 106
+      },
+      {
+        "z": 16.8,
+        "role": "bridge",
+        "ov": 106
+      },
+      {
+        "z": 17.28,
+        "role": "bridge",
+        "ov": 106
+      },
+      {
+        "z": 17.52,
+        "role": "bridge",
+        "ov": 106
+      },
+      {
+        "z": 17.76,
+        "role": "bridge",
+        "ov": 106
+      },
+      {
+        "z": 18.24,
+        "role": "bridge",
+        "ov": 106
+      },
+      {
+        "z": 18.48,
+        "role": "bridge",
+        "ov": 106
+      },
+      {
+        "z": 18.72,
+        "role": "bridge",
+        "ov": 106
+      },
+      {
+        "z": 19.2,
+        "role": "bridge",
+        "ov": 106
+      },
+      {
+        "z": 19.44,
+        "role": "bridge",
+        "ov": 106
+      }
+    ],
+    "kinematic_h": 0.95,
+    "routeA_estimate_h": 9,
+    "caps": [],
+    "events": [
+      {
+        "z": 1.2,
+        "k": 5,
+        "event": "base -> lines"
+      },
+      {
+        "z": 6.72,
+        "k": 28,
+        "event": "lines -> sine"
+      },
+      {
+        "z": 11.04,
+        "k": 46,
+        "event": "sine -> hilbert"
+      },
+      {
+        "z": 11.28,
+        "k": 47,
+        "event": "hilbert -> hilbert-bond"
+      },
+      {
+        "z": 11.52,
+        "k": 48,
+        "event": "hilbert-bond -> hilbert"
+      },
+      {
+        "z": 11.76,
+        "k": 49,
+        "event": "hilbert -> hilbert-bond"
+      },
+      {
+        "z": 12,
+        "k": 50,
+        "event": "hilbert-bond -> hilbert"
+      },
+      {
+        "z": 12.24,
+        "k": 51,
+        "event": "hilbert -> hilbert-bond"
+      },
+      {
+        "z": 12.48,
+        "k": 52,
+        "event": "hilbert-bond -> hilbert"
+      },
+      {
+        "z": 12.72,
+        "k": 53,
+        "event": "hilbert -> hilbert-bond"
+      },
+      {
+        "z": 12.96,
+        "k": 54,
+        "event": "hilbert-bond -> hilbert"
+      },
+      {
+        "z": 13.2,
+        "k": 55,
+        "event": "hilbert -> hilbert-bond"
+      },
+      {
+        "z": 13.44,
+        "k": 56,
+        "event": "hilbert-bond -> hilbert"
+      },
+      {
+        "z": 13.68,
+        "k": 57,
+        "event": "hilbert -> hilbert-bond"
+      },
+      {
+        "z": 13.92,
+        "k": 58,
+        "event": "hilbert-bond -> hilbert"
+      },
+      {
+        "z": 14.16,
+        "k": 59,
+        "event": "hilbert -> hilbert-bond"
+      },
+      {
+        "z": 14.4,
+        "k": 60,
+        "event": "hilbert-bond -> hilbert"
+      },
+      {
+        "z": 14.64,
+        "k": 61,
+        "event": "hilbert -> hilbert-bond"
+      },
+      {
+        "z": 14.88,
+        "k": 62,
+        "event": "hilbert-bond -> hilbert"
+      },
+      {
+        "z": 15.12,
+        "k": 63,
+        "event": "hilbert -> hilbert-bond"
+      },
+      {
+        "z": 15.36,
+        "k": 64,
+        "event": "hilbert-bond -> hilbert"
+      },
+      {
+        "z": 15.6,
+        "k": 65,
+        "event": "hilbert -> hilbert-bond"
+      },
+      {
+        "z": 15.84,
+        "k": 66,
+        "event": "hilbert-bond -> spiral"
+      },
+      {
+        "z": 16.08,
+        "k": 67,
+        "event": "spiral -> spiral-bond"
+      },
+      {
+        "z": 16.32,
+        "k": 68,
+        "event": "spiral-bond -> spiral"
+      },
+      {
+        "z": 17.04,
+        "k": 71,
+        "event": "spiral -> spiral-bond"
+      },
+      {
+        "z": 17.28,
+        "k": 72,
+        "event": "spiral-bond -> spiral"
+      },
+      {
+        "z": 18,
+        "k": 75,
+        "event": "spiral -> spiral-bond"
+      },
+      {
+        "z": 18.24,
+        "k": 76,
+        "event": "spiral-bond -> spiral"
+      },
+      {
+        "z": 18.96,
+        "k": 79,
+        "event": "spiral -> spiral-bond"
+      },
+      {
+        "z": 19.2,
+        "k": 80,
+        "event": "spiral-bond -> spiral"
+      },
+      {
+        "z": 19.92,
+        "k": 83,
+        "event": "spiral -> spiral-bond"
+      },
+      {
+        "z": 20.16,
+        "k": 84,
+        "event": "spiral-bond -> crescendo"
+      },
+      {
+        "z": 22.56,
+        "k": 94,
+        "event": "crescendo -> cap"
+      }
+    ],
+    "contourCounts": [
+      [
+        0,
+        0
+      ]
+    ],
+    "perLayerSample": [
+      {
+        "k": 0,
+        "z": 0,
+        "contours": 0,
+        "paths": 2,
+        "nodes": 0
+      },
+      {
+        "k": 40,
+        "z": 9.6,
+        "contours": 0,
+        "paths": 2,
+        "nodes": 0
+      },
+      {
+        "k": 80,
+        "z": 19.2,
+        "contours": 0,
+        "paths": 2,
+        "nodes": 0
+      }
+    ],
+    "membranes": [],
+    "gateLayers": {
+      "version": "gate-layers-2026-09-25-krak",
+      "vector": "S2 INFO · S3 PASS · S4 PASS · S5 INFO · S7 INFO · S8 WARN · ORDER N/A",
+      "refusedBy": [],
+      "findings": 0,
+      "S2": {
+        "worst": {
+          "k": 4,
+          "z": 0.72,
+          "runs10": 0,
+          "free_mm": 0,
+          "longest_mm": 0
+        },
+        "free_m": 0.09,
+        "declared": 0
+      },
+      "S3": {
+        "worst": null,
+        "neverTied": 0,
+        "declared": 0
+      },
+      "S4": {
+        "overflights": 0,
+        "closest": null,
+        "declared": 0
+      },
+      "S5": {
+        "ratio": 0.874,
+        "contact_mm2": 2120.6,
+        "lever_mm": 102.1
+      },
+      "S7": {
+        "weakest": [
+          {
+            "k": 74,
+            "z": 17.52,
+            "carried": 0.649,
+            "onSolid": 0.981,
+            "pileMax": 1,
+            "solidComponents": 2,
+            "largestSolidExtent_mm": 55.4,
+            "above": 27
+          },
+          {
+            "k": 48,
+            "z": 11.28,
+            "carried": 0.696,
+            "onSolid": 0.987,
+            "pileMax": 1,
+            "solidComponents": 3,
+            "largestSolidExtent_mm": 38.9,
+            "above": 53
+          },
+          {
+            "k": 70,
+            "z": 16.56,
+            "carried": 0.699,
+            "onSolid": 0.999,
+            "pileMax": 1,
+            "solidComponents": 2,
+            "largestSolidExtent_mm": 55.4,
+            "above": 31
+          }
+        ]
+      },
+      "S8": {
+        "periodTwoLayers": 30,
+        "medianCrossing_deg": 23.6
+      },
+      "ORDER": {
+        "verdict": "N/A",
+        "aboveRisk_mm": 1,
+        "zonesWithFindings": []
+      }
+    }
+  },
+  "geometry": {
+    "name": "PUN_KOCKA_A2L_X1",
+    "variant": "kocka",
+    "title": "KOCKA PUNA",
+    "concept": "the sampler: a solid cube whose bands answer \"what does each fill pattern do?\"",
+    "generator": "core/weft_solid_geometry.mjs",
+    "process": "solid-infill/v1",
+    "generatedAt": "2026-09-30",
+    "machine": "a2l",
+    "machineLabel": "Bambu Lab A2L",
+    "machineQualification": {
+      "beadSource": "measured",
+      "beadEvidence": "specimens/2026-08-31_D5_R140_A2L_physical and specimens/2026-09-02_P0_suma_2x2_physical — both printed to completion at this bead",
+      "assumedAcknowledged": false
+    },
+    "size_mm": [
+      42.5,
+      42.5,
+      24
+    ],
+    "H": 24,
+    "totalLayers": 100,
+    "args": {
+      "lh": 0.24,
+      "bead": 0.45,
+      "firstLayerBead": 0.52,
+      "firstLayerSpeed": 12,
+      "w": 2,
+      "e": 0,
+      "r0": 21.23,
+      "K": 8,
+      "foundation": 3,
+      "maxbridge": 12,
+      "maxcantilever": 3,
+      "allow": 0.6,
+      "minanchor": 0.5,
+      "maxCapRadius": 20,
+      "speed": 32,
+      "bridgeSpeed": 18,
+      "temp": 220,
+      "bed": 55,
+      "fan": 100
+    },
+    "gatePolicy": {
+      "meaning": "a solid body: every span between fill crossings must be a legal bridge; nothing is declared experimental",
+      "bridge_mm": 12,
+      "cantilever_mm": 3,
+      "first_layer_max_islands": 1
+    },
+    "solid": {
+      "basePolicy": "5 solid layers (first at 0.50 mm spacing, then 0.85)",
+      "capPolicy": "6 solid layers at 0.85 mm",
+      "worstFreeSpanEst_mm": 4.55,
+      "fillLength_m": 86.3,
+      "patterns": [
+        "lines",
+        "sine",
+        "hilbert",
+        "spiral"
+      ],
+      "tags": [
+        "base",
+        "lines",
+        "sine",
+        "hilbert",
+        "hilbert-bond",
+        "spiral",
+        "spiral-bond",
+        "crescendo",
+        "cap"
+      ]
+    },
+    "layerProgram": [
+      {
+        "k": 0,
+        "z": 0,
+        "kind": "lines",
+        "tag": "base",
+        "spacing_mm": 0.5,
+        "maxSpacing_mm": 0.5,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 3434,
+        "nLines": 82
+      },
+      {
+        "k": 1,
+        "z": 0.24,
+        "kind": "lines",
+        "tag": "base",
+        "spacing_mm": 0.85,
+        "maxSpacing_mm": 0.85,
+        "angle_deg": 90,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 2064,
+        "nLines": 49
+      },
+      {
+        "k": 2,
+        "z": 0.48,
+        "kind": "lines",
+        "tag": "base",
+        "spacing_mm": 0.85,
+        "maxSpacing_mm": 0.85,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 2064,
+        "nLines": 49
+      },
+      {
+        "k": 3,
+        "z": 0.72,
+        "kind": "lines",
+        "tag": "base",
+        "spacing_mm": 0.85,
+        "maxSpacing_mm": 0.85,
+        "angle_deg": 90,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 2064,
+        "nLines": 49
+      },
+      {
+        "k": 4,
+        "z": 0.96,
+        "kind": "lines",
+        "tag": "base",
+        "spacing_mm": 0.85,
+        "maxSpacing_mm": 0.85,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 2064,
+        "nLines": 49
+      },
+      {
+        "k": 5,
+        "z": 1.2,
+        "kind": "lines",
+        "tag": "lines",
+        "spacing_mm": 2.02,
+        "maxSpacing_mm": 2.02,
+        "angle_deg": 90,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 868,
+        "nLines": 20
+      },
+      {
+        "k": 6,
+        "z": 1.44,
+        "kind": "lines",
+        "tag": "lines",
+        "spacing_mm": 2.06,
+        "maxSpacing_mm": 2.06,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 2.02,
+        "fill_mm": 868,
+        "nLines": 20
+      },
+      {
+        "k": 7,
+        "z": 1.68,
+        "kind": "lines",
+        "tag": "lines",
+        "spacing_mm": 2.1,
+        "maxSpacing_mm": 2.1,
+        "angle_deg": 90,
+        "freeSpanEst_mm": 2.06,
+        "fill_mm": 866,
+        "nLines": 20
+      },
+      {
+        "k": 8,
+        "z": 1.92,
+        "kind": "lines",
+        "tag": "lines",
+        "spacing_mm": 2.15,
+        "maxSpacing_mm": 2.15,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 2.1,
+        "fill_mm": 827,
+        "nLines": 19
+      },
+      {
+        "k": 9,
+        "z": 2.16,
+        "kind": "lines",
+        "tag": "lines",
+        "spacing_mm": 2.19,
+        "maxSpacing_mm": 2.19,
+        "angle_deg": 90,
+        "freeSpanEst_mm": 2.15,
+        "fill_mm": 826,
+        "nLines": 19
+      },
+      {
+        "k": 10,
+        "z": 2.4,
+        "kind": "lines",
+        "tag": "lines",
+        "spacing_mm": 2.23,
+        "maxSpacing_mm": 2.23,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 2.19,
+        "fill_mm": 785,
+        "nLines": 18
+      },
+      {
+        "k": 11,
+        "z": 2.64,
+        "kind": "lines",
+        "tag": "lines",
+        "spacing_mm": 2.28,
+        "maxSpacing_mm": 2.28,
+        "angle_deg": 90,
+        "freeSpanEst_mm": 2.23,
+        "fill_mm": 785,
+        "nLines": 18
+      },
+      {
+        "k": 12,
+        "z": 2.88,
+        "kind": "lines",
+        "tag": "lines",
+        "spacing_mm": 2.32,
+        "maxSpacing_mm": 2.32,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 2.28,
+        "fill_mm": 784,
+        "nLines": 18
+      },
+      {
+        "k": 13,
+        "z": 3.12,
+        "kind": "lines",
+        "tag": "lines",
+        "spacing_mm": 2.36,
+        "maxSpacing_mm": 2.36,
+        "angle_deg": 90,
+        "freeSpanEst_mm": 2.32,
+        "fill_mm": 744,
+        "nLines": 17
+      },
+      {
+        "k": 14,
+        "z": 3.36,
+        "kind": "lines",
+        "tag": "lines",
+        "spacing_mm": 2.41,
+        "maxSpacing_mm": 2.41,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 2.36,
+        "fill_mm": 743,
+        "nLines": 17
+      },
+      {
+        "k": 15,
+        "z": 3.6,
+        "kind": "lines",
+        "tag": "lines",
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "angle_deg": 90,
+        "freeSpanEst_mm": 2.41,
+        "fill_mm": 743,
+        "nLines": 17
+      },
+      {
+        "k": 16,
+        "z": 3.84,
+        "kind": "lines",
+        "tag": "lines",
+        "spacing_mm": 2.49,
+        "maxSpacing_mm": 2.49,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 2.45,
+        "fill_mm": 741,
+        "nLines": 17
+      },
+      {
+        "k": 17,
+        "z": 4.08,
+        "kind": "lines",
+        "tag": "lines",
+        "spacing_mm": 2.54,
+        "maxSpacing_mm": 2.54,
+        "angle_deg": 90,
+        "freeSpanEst_mm": 2.49,
+        "fill_mm": 702,
+        "nLines": 16
+      },
+      {
+        "k": 18,
+        "z": 4.32,
+        "kind": "lines",
+        "tag": "lines",
+        "spacing_mm": 2.58,
+        "maxSpacing_mm": 2.58,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 2.54,
+        "fill_mm": 702,
+        "nLines": 16
+      },
+      {
+        "k": 19,
+        "z": 4.56,
+        "kind": "lines",
+        "tag": "lines",
+        "spacing_mm": 2.62,
+        "maxSpacing_mm": 2.62,
+        "angle_deg": 90,
+        "freeSpanEst_mm": 2.58,
+        "fill_mm": 701,
+        "nLines": 16
+      },
+      {
+        "k": 20,
+        "z": 4.8,
+        "kind": "lines",
+        "tag": "lines",
+        "spacing_mm": 2.67,
+        "maxSpacing_mm": 2.67,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 2.62,
+        "fill_mm": 661,
+        "nLines": 15
+      },
+      {
+        "k": 21,
+        "z": 5.04,
+        "kind": "lines",
+        "tag": "lines",
+        "spacing_mm": 2.71,
+        "maxSpacing_mm": 2.71,
+        "angle_deg": 90,
+        "freeSpanEst_mm": 2.67,
+        "fill_mm": 661,
+        "nLines": 15
+      },
+      {
+        "k": 22,
+        "z": 5.28,
+        "kind": "lines",
+        "tag": "lines",
+        "spacing_mm": 2.75,
+        "maxSpacing_mm": 2.75,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 2.71,
+        "fill_mm": 660,
+        "nLines": 15
+      },
+      {
+        "k": 23,
+        "z": 5.52,
+        "kind": "lines",
+        "tag": "lines",
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "angle_deg": 90,
+        "freeSpanEst_mm": 2.75,
+        "fill_mm": 659,
+        "nLines": 15
+      },
+      {
+        "k": 24,
+        "z": 5.76,
+        "kind": "lines",
+        "tag": "lines",
+        "spacing_mm": 2.84,
+        "maxSpacing_mm": 2.84,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 2.8,
+        "fill_mm": 657,
+        "nLines": 15
+      },
+      {
+        "k": 25,
+        "z": 6,
+        "kind": "lines",
+        "tag": "lines",
+        "spacing_mm": 2.88,
+        "maxSpacing_mm": 2.88,
+        "angle_deg": 90,
+        "freeSpanEst_mm": 2.84,
+        "fill_mm": 619,
+        "nLines": 14
+      },
+      {
+        "k": 26,
+        "z": 6.24,
+        "kind": "lines",
+        "tag": "lines",
+        "spacing_mm": 2.93,
+        "maxSpacing_mm": 2.93,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 2.88,
+        "fill_mm": 619,
+        "nLines": 14
+      },
+      {
+        "k": 27,
+        "z": 6.48,
+        "kind": "lines",
+        "tag": "lines",
+        "spacing_mm": 2.97,
+        "maxSpacing_mm": 2.97,
+        "angle_deg": 90,
+        "freeSpanEst_mm": 2.93,
+        "fill_mm": 618,
+        "nLines": 14
+      },
+      {
+        "k": 28,
+        "z": 6.72,
+        "kind": "sine",
+        "tag": "sine",
+        "spacing_mm": 3.2,
+        "maxSpacing_mm": 3.2,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 2.97,
+        "fill_mm": 644,
+        "nLines": 13
+      },
+      {
+        "k": 29,
+        "z": 6.96,
+        "kind": "sine",
+        "tag": "sine",
+        "spacing_mm": 3.2,
+        "maxSpacing_mm": 3.2,
+        "angle_deg": 90,
+        "freeSpanEst_mm": 3.2,
+        "fill_mm": 644,
+        "nLines": 13
+      },
+      {
+        "k": 30,
+        "z": 7.2,
+        "kind": "sine",
+        "tag": "sine",
+        "spacing_mm": 3.2,
+        "maxSpacing_mm": 3.2,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 3.2,
+        "fill_mm": 644,
+        "nLines": 13
+      },
+      {
+        "k": 31,
+        "z": 7.44,
+        "kind": "sine",
+        "tag": "sine",
+        "spacing_mm": 3.2,
+        "maxSpacing_mm": 3.2,
+        "angle_deg": 90,
+        "freeSpanEst_mm": 3.2,
+        "fill_mm": 644,
+        "nLines": 13
+      },
+      {
+        "k": 32,
+        "z": 7.68,
+        "kind": "sine",
+        "tag": "sine",
+        "spacing_mm": 3.2,
+        "maxSpacing_mm": 3.2,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 3.2,
+        "fill_mm": 644,
+        "nLines": 13
+      },
+      {
+        "k": 33,
+        "z": 7.92,
+        "kind": "sine",
+        "tag": "sine",
+        "spacing_mm": 3.2,
+        "maxSpacing_mm": 3.2,
+        "angle_deg": 90,
+        "freeSpanEst_mm": 3.2,
+        "fill_mm": 644,
+        "nLines": 13
+      },
+      {
+        "k": 34,
+        "z": 8.16,
+        "kind": "sine",
+        "tag": "sine",
+        "spacing_mm": 3.2,
+        "maxSpacing_mm": 3.2,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 3.2,
+        "fill_mm": 644,
+        "nLines": 13
+      },
+      {
+        "k": 35,
+        "z": 8.4,
+        "kind": "sine",
+        "tag": "sine",
+        "spacing_mm": 3.2,
+        "maxSpacing_mm": 3.2,
+        "angle_deg": 90,
+        "freeSpanEst_mm": 3.2,
+        "fill_mm": 644,
+        "nLines": 13
+      },
+      {
+        "k": 36,
+        "z": 8.64,
+        "kind": "sine",
+        "tag": "sine",
+        "spacing_mm": 3.2,
+        "maxSpacing_mm": 3.2,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 3.2,
+        "fill_mm": 644,
+        "nLines": 13
+      },
+      {
+        "k": 37,
+        "z": 8.88,
+        "kind": "sine",
+        "tag": "sine",
+        "spacing_mm": 3.2,
+        "maxSpacing_mm": 3.2,
+        "angle_deg": 90,
+        "freeSpanEst_mm": 3.2,
+        "fill_mm": 644,
+        "nLines": 13
+      },
+      {
+        "k": 38,
+        "z": 9.12,
+        "kind": "sine",
+        "tag": "sine",
+        "spacing_mm": 3.2,
+        "maxSpacing_mm": 3.2,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 3.2,
+        "fill_mm": 644,
+        "nLines": 13
+      },
+      {
+        "k": 39,
+        "z": 9.36,
+        "kind": "sine",
+        "tag": "sine",
+        "spacing_mm": 3.2,
+        "maxSpacing_mm": 3.2,
+        "angle_deg": 90,
+        "freeSpanEst_mm": 3.2,
+        "fill_mm": 644,
+        "nLines": 13
+      },
+      {
+        "k": 40,
+        "z": 9.6,
+        "kind": "sine",
+        "tag": "sine",
+        "spacing_mm": 3.2,
+        "maxSpacing_mm": 3.2,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 3.2,
+        "fill_mm": 644,
+        "nLines": 13
+      },
+      {
+        "k": 41,
+        "z": 9.84,
+        "kind": "sine",
+        "tag": "sine",
+        "spacing_mm": 3.2,
+        "maxSpacing_mm": 3.2,
+        "angle_deg": 90,
+        "freeSpanEst_mm": 3.2,
+        "fill_mm": 644,
+        "nLines": 13
+      },
+      {
+        "k": 42,
+        "z": 10.08,
+        "kind": "sine",
+        "tag": "sine",
+        "spacing_mm": 3.2,
+        "maxSpacing_mm": 3.2,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 3.2,
+        "fill_mm": 644,
+        "nLines": 13
+      },
+      {
+        "k": 43,
+        "z": 10.32,
+        "kind": "sine",
+        "tag": "sine",
+        "spacing_mm": 3.2,
+        "maxSpacing_mm": 3.2,
+        "angle_deg": 90,
+        "freeSpanEst_mm": 3.2,
+        "fill_mm": 644,
+        "nLines": 13
+      },
+      {
+        "k": 44,
+        "z": 10.56,
+        "kind": "sine",
+        "tag": "sine",
+        "spacing_mm": 3.2,
+        "maxSpacing_mm": 3.2,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 3.2,
+        "fill_mm": 644,
+        "nLines": 13
+      },
+      {
+        "k": 45,
+        "z": 10.8,
+        "kind": "sine",
+        "tag": "sine",
+        "spacing_mm": 3.2,
+        "maxSpacing_mm": 3.2,
+        "angle_deg": 90,
+        "freeSpanEst_mm": 3.2,
+        "fill_mm": 644,
+        "nLines": 13
+      },
+      {
+        "k": 46,
+        "z": 11.04,
+        "kind": "hilbert",
+        "tag": "hilbert",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 2.35,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 4.53,
+        "fill_mm": 599,
+        "nLines": 0
+      },
+      {
+        "k": 47,
+        "z": 11.28,
+        "kind": "lines",
+        "tag": "hilbert-bond",
+        "spacing_mm": 2.4,
+        "maxSpacing_mm": 2.4,
+        "angle_deg": 135,
+        "freeSpanEst_mm": 3.32,
+        "fill_mm": 786,
+        "nLines": 22
+      },
+      {
+        "k": 48,
+        "z": 11.52,
+        "kind": "hilbert",
+        "tag": "hilbert",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 2.35,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 3.39,
+        "fill_mm": 599,
+        "nLines": 0
+      },
+      {
+        "k": 49,
+        "z": 11.76,
+        "kind": "lines",
+        "tag": "hilbert-bond",
+        "spacing_mm": 2.4,
+        "maxSpacing_mm": 2.4,
+        "angle_deg": 45,
+        "freeSpanEst_mm": 3.32,
+        "fill_mm": 786,
+        "nLines": 22
+      },
+      {
+        "k": 50,
+        "z": 12,
+        "kind": "hilbert",
+        "tag": "hilbert",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 2.35,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 3.39,
+        "fill_mm": 599,
+        "nLines": 0
+      },
+      {
+        "k": 51,
+        "z": 12.24,
+        "kind": "lines",
+        "tag": "hilbert-bond",
+        "spacing_mm": 2.4,
+        "maxSpacing_mm": 2.4,
+        "angle_deg": 135,
+        "freeSpanEst_mm": 3.32,
+        "fill_mm": 786,
+        "nLines": 22
+      },
+      {
+        "k": 52,
+        "z": 12.48,
+        "kind": "hilbert",
+        "tag": "hilbert",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 2.35,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 3.39,
+        "fill_mm": 599,
+        "nLines": 0
+      },
+      {
+        "k": 53,
+        "z": 12.72,
+        "kind": "lines",
+        "tag": "hilbert-bond",
+        "spacing_mm": 2.4,
+        "maxSpacing_mm": 2.4,
+        "angle_deg": 45,
+        "freeSpanEst_mm": 3.32,
+        "fill_mm": 786,
+        "nLines": 22
+      },
+      {
+        "k": 54,
+        "z": 12.96,
+        "kind": "hilbert",
+        "tag": "hilbert",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 2.35,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 3.39,
+        "fill_mm": 599,
+        "nLines": 0
+      },
+      {
+        "k": 55,
+        "z": 13.2,
+        "kind": "lines",
+        "tag": "hilbert-bond",
+        "spacing_mm": 2.4,
+        "maxSpacing_mm": 2.4,
+        "angle_deg": 135,
+        "freeSpanEst_mm": 3.32,
+        "fill_mm": 786,
+        "nLines": 22
+      },
+      {
+        "k": 56,
+        "z": 13.44,
+        "kind": "hilbert",
+        "tag": "hilbert",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 2.35,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 3.39,
+        "fill_mm": 599,
+        "nLines": 0
+      },
+      {
+        "k": 57,
+        "z": 13.68,
+        "kind": "lines",
+        "tag": "hilbert-bond",
+        "spacing_mm": 2.4,
+        "maxSpacing_mm": 2.4,
+        "angle_deg": 45,
+        "freeSpanEst_mm": 3.32,
+        "fill_mm": 786,
+        "nLines": 22
+      },
+      {
+        "k": 58,
+        "z": 13.92,
+        "kind": "hilbert",
+        "tag": "hilbert",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 2.35,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 3.39,
+        "fill_mm": 599,
+        "nLines": 0
+      },
+      {
+        "k": 59,
+        "z": 14.16,
+        "kind": "lines",
+        "tag": "hilbert-bond",
+        "spacing_mm": 2.4,
+        "maxSpacing_mm": 2.4,
+        "angle_deg": 135,
+        "freeSpanEst_mm": 3.32,
+        "fill_mm": 786,
+        "nLines": 22
+      },
+      {
+        "k": 60,
+        "z": 14.4,
+        "kind": "hilbert",
+        "tag": "hilbert",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 2.35,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 3.39,
+        "fill_mm": 599,
+        "nLines": 0
+      },
+      {
+        "k": 61,
+        "z": 14.64,
+        "kind": "lines",
+        "tag": "hilbert-bond",
+        "spacing_mm": 2.4,
+        "maxSpacing_mm": 2.4,
+        "angle_deg": 45,
+        "freeSpanEst_mm": 3.32,
+        "fill_mm": 786,
+        "nLines": 22
+      },
+      {
+        "k": 62,
+        "z": 14.88,
+        "kind": "hilbert",
+        "tag": "hilbert",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 2.35,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 3.39,
+        "fill_mm": 599,
+        "nLines": 0
+      },
+      {
+        "k": 63,
+        "z": 15.12,
+        "kind": "lines",
+        "tag": "hilbert-bond",
+        "spacing_mm": 2.4,
+        "maxSpacing_mm": 2.4,
+        "angle_deg": 135,
+        "freeSpanEst_mm": 3.32,
+        "fill_mm": 786,
+        "nLines": 22
+      },
+      {
+        "k": 64,
+        "z": 15.36,
+        "kind": "hilbert",
+        "tag": "hilbert",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 2.35,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 3.39,
+        "fill_mm": 599,
+        "nLines": 0
+      },
+      {
+        "k": 65,
+        "z": 15.6,
+        "kind": "lines",
+        "tag": "hilbert-bond",
+        "spacing_mm": 2.4,
+        "maxSpacing_mm": 2.4,
+        "angle_deg": 45,
+        "freeSpanEst_mm": 3.32,
+        "fill_mm": 786,
+        "nLines": 22
+      },
+      {
+        "k": 66,
+        "z": 15.84,
+        "kind": "spiral",
+        "tag": "spiral",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 3.6,
+        "fill_mm": 899,
+        "nLines": 0
+      },
+      {
+        "k": 67,
+        "z": 16.08,
+        "kind": "lines",
+        "tag": "spiral-bond",
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "angle_deg": 135,
+        "freeSpanEst_mm": 4.5,
+        "fill_mm": 684,
+        "nLines": 19
+      },
+      {
+        "k": 68,
+        "z": 16.32,
+        "kind": "spiral",
+        "tag": "spiral",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 4.2,
+        "fill_mm": 899,
+        "nLines": 0
+      },
+      {
+        "k": 69,
+        "z": 16.56,
+        "kind": "spiral",
+        "tag": "spiral",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 899,
+        "nLines": 0
+      },
+      {
+        "k": 70,
+        "z": 16.8,
+        "kind": "spiral",
+        "tag": "spiral",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 899,
+        "nLines": 0
+      },
+      {
+        "k": 71,
+        "z": 17.04,
+        "kind": "lines",
+        "tag": "spiral-bond",
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "angle_deg": 315,
+        "freeSpanEst_mm": 4.5,
+        "fill_mm": 684,
+        "nLines": 19
+      },
+      {
+        "k": 72,
+        "z": 17.28,
+        "kind": "spiral",
+        "tag": "spiral",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 4.2,
+        "fill_mm": 899,
+        "nLines": 0
+      },
+      {
+        "k": 73,
+        "z": 17.52,
+        "kind": "spiral",
+        "tag": "spiral",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 899,
+        "nLines": 0
+      },
+      {
+        "k": 74,
+        "z": 17.76,
+        "kind": "spiral",
+        "tag": "spiral",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 899,
+        "nLines": 0
+      },
+      {
+        "k": 75,
+        "z": 18,
+        "kind": "lines",
+        "tag": "spiral-bond",
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "angle_deg": 135,
+        "freeSpanEst_mm": 4.5,
+        "fill_mm": 684,
+        "nLines": 19
+      },
+      {
+        "k": 76,
+        "z": 18.24,
+        "kind": "spiral",
+        "tag": "spiral",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 4.2,
+        "fill_mm": 899,
+        "nLines": 0
+      },
+      {
+        "k": 77,
+        "z": 18.48,
+        "kind": "spiral",
+        "tag": "spiral",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 899,
+        "nLines": 0
+      },
+      {
+        "k": 78,
+        "z": 18.72,
+        "kind": "spiral",
+        "tag": "spiral",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 899,
+        "nLines": 0
+      },
+      {
+        "k": 79,
+        "z": 18.96,
+        "kind": "lines",
+        "tag": "spiral-bond",
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "angle_deg": 315,
+        "freeSpanEst_mm": 4.5,
+        "fill_mm": 684,
+        "nLines": 19
+      },
+      {
+        "k": 80,
+        "z": 19.2,
+        "kind": "spiral",
+        "tag": "spiral",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 4.2,
+        "fill_mm": 899,
+        "nLines": 0
+      },
+      {
+        "k": 81,
+        "z": 19.44,
+        "kind": "spiral",
+        "tag": "spiral",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 899,
+        "nLines": 0
+      },
+      {
+        "k": 82,
+        "z": 19.68,
+        "kind": "spiral",
+        "tag": "spiral",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 899,
+        "nLines": 0
+      },
+      {
+        "k": 83,
+        "z": 19.92,
+        "kind": "lines",
+        "tag": "spiral-bond",
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "angle_deg": 135,
+        "freeSpanEst_mm": 4.5,
+        "fill_mm": 684,
+        "nLines": 19
+      },
+      {
+        "k": 84,
+        "z": 20.16,
+        "kind": "lines",
+        "tag": "crescendo",
+        "spacing_mm": 3.13,
+        "maxSpacing_mm": 3.13,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 3.96,
+        "fill_mm": 577,
+        "nLines": 13
+      },
+      {
+        "k": 85,
+        "z": 20.4,
+        "kind": "lines",
+        "tag": "crescendo",
+        "spacing_mm": 3.29,
+        "maxSpacing_mm": 3.29,
+        "angle_deg": 90,
+        "freeSpanEst_mm": 3.13,
+        "fill_mm": 574,
+        "nLines": 13
+      },
+      {
+        "k": 86,
+        "z": 20.64,
+        "kind": "lines",
+        "tag": "crescendo",
+        "spacing_mm": 3.45,
+        "maxSpacing_mm": 3.45,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 3.29,
+        "fill_mm": 535,
+        "nLines": 12
+      },
+      {
+        "k": 87,
+        "z": 20.88,
+        "kind": "lines",
+        "tag": "crescendo",
+        "spacing_mm": 3.61,
+        "maxSpacing_mm": 3.61,
+        "angle_deg": 90,
+        "freeSpanEst_mm": 3.45,
+        "fill_mm": 494,
+        "nLines": 11
+      },
+      {
+        "k": 88,
+        "z": 21.12,
+        "kind": "lines",
+        "tag": "crescendo",
+        "spacing_mm": 3.76,
+        "maxSpacing_mm": 3.76,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 3.61,
+        "fill_mm": 494,
+        "nLines": 11
+      },
+      {
+        "k": 89,
+        "z": 21.36,
+        "kind": "lines",
+        "tag": "crescendo",
+        "spacing_mm": 3.92,
+        "maxSpacing_mm": 3.92,
+        "angle_deg": 90,
+        "freeSpanEst_mm": 3.76,
+        "fill_mm": 452,
+        "nLines": 10
+      },
+      {
+        "k": 90,
+        "z": 21.6,
+        "kind": "lines",
+        "tag": "crescendo",
+        "spacing_mm": 4.08,
+        "maxSpacing_mm": 4.08,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 3.92,
+        "fill_mm": 452,
+        "nLines": 10
+      },
+      {
+        "k": 91,
+        "z": 21.84,
+        "kind": "lines",
+        "tag": "crescendo",
+        "spacing_mm": 4.24,
+        "maxSpacing_mm": 4.24,
+        "angle_deg": 90,
+        "freeSpanEst_mm": 4.08,
+        "fill_mm": 451,
+        "nLines": 10
+      },
+      {
+        "k": 92,
+        "z": 22.08,
+        "kind": "lines",
+        "tag": "crescendo",
+        "spacing_mm": 4.4,
+        "maxSpacing_mm": 4.4,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 4.24,
+        "fill_mm": 410,
+        "nLines": 9
+      },
+      {
+        "k": 93,
+        "z": 22.32,
+        "kind": "lines",
+        "tag": "crescendo",
+        "spacing_mm": 4.55,
+        "maxSpacing_mm": 4.55,
+        "angle_deg": 90,
+        "freeSpanEst_mm": 4.4,
+        "fill_mm": 410,
+        "nLines": 9
+      },
+      {
+        "k": 94,
+        "z": 22.56,
+        "kind": "lines",
+        "tag": "cap",
+        "spacing_mm": 0.85,
+        "maxSpacing_mm": 0.85,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 4.55,
+        "fill_mm": 2064,
+        "nLines": 49
+      },
+      {
+        "k": 95,
+        "z": 22.8,
+        "kind": "lines",
+        "tag": "cap",
+        "spacing_mm": 0.85,
+        "maxSpacing_mm": 0.85,
+        "angle_deg": 90,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 2064,
+        "nLines": 49
+      },
+      {
+        "k": 96,
+        "z": 23.04,
+        "kind": "lines",
+        "tag": "cap",
+        "spacing_mm": 0.85,
+        "maxSpacing_mm": 0.85,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 2064,
+        "nLines": 49
+      },
+      {
+        "k": 97,
+        "z": 23.28,
+        "kind": "lines",
+        "tag": "cap",
+        "spacing_mm": 0.85,
+        "maxSpacing_mm": 0.85,
+        "angle_deg": 90,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 2064,
+        "nLines": 49
+      },
+      {
+        "k": 98,
+        "z": 23.52,
+        "kind": "lines",
+        "tag": "cap",
+        "spacing_mm": 0.85,
+        "maxSpacing_mm": 0.85,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 2064,
+        "nLines": 49
+      },
+      {
+        "k": 99,
+        "z": 23.76,
+        "kind": "lines",
+        "tag": "cap",
+        "spacing_mm": 0.85,
+        "maxSpacing_mm": 0.85,
+        "angle_deg": 90,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 2064,
+        "nLines": 49
+      }
+    ],
+    "events": [
+      {
+        "z": 1.2,
+        "k": 5,
+        "event": "base -> lines"
+      },
+      {
+        "z": 6.72,
+        "k": 28,
+        "event": "lines -> sine"
+      },
+      {
+        "z": 11.04,
+        "k": 46,
+        "event": "sine -> hilbert"
+      },
+      {
+        "z": 11.28,
+        "k": 47,
+        "event": "hilbert -> hilbert-bond"
+      },
+      {
+        "z": 11.52,
+        "k": 48,
+        "event": "hilbert-bond -> hilbert"
+      },
+      {
+        "z": 11.76,
+        "k": 49,
+        "event": "hilbert -> hilbert-bond"
+      },
+      {
+        "z": 12,
+        "k": 50,
+        "event": "hilbert-bond -> hilbert"
+      },
+      {
+        "z": 12.24,
+        "k": 51,
+        "event": "hilbert -> hilbert-bond"
+      },
+      {
+        "z": 12.48,
+        "k": 52,
+        "event": "hilbert-bond -> hilbert"
+      },
+      {
+        "z": 12.72,
+        "k": 53,
+        "event": "hilbert -> hilbert-bond"
+      },
+      {
+        "z": 12.96,
+        "k": 54,
+        "event": "hilbert-bond -> hilbert"
+      },
+      {
+        "z": 13.2,
+        "k": 55,
+        "event": "hilbert -> hilbert-bond"
+      },
+      {
+        "z": 13.44,
+        "k": 56,
+        "event": "hilbert-bond -> hilbert"
+      },
+      {
+        "z": 13.68,
+        "k": 57,
+        "event": "hilbert -> hilbert-bond"
+      },
+      {
+        "z": 13.92,
+        "k": 58,
+        "event": "hilbert-bond -> hilbert"
+      },
+      {
+        "z": 14.16,
+        "k": 59,
+        "event": "hilbert -> hilbert-bond"
+      },
+      {
+        "z": 14.4,
+        "k": 60,
+        "event": "hilbert-bond -> hilbert"
+      },
+      {
+        "z": 14.64,
+        "k": 61,
+        "event": "hilbert -> hilbert-bond"
+      },
+      {
+        "z": 14.88,
+        "k": 62,
+        "event": "hilbert-bond -> hilbert"
+      },
+      {
+        "z": 15.12,
+        "k": 63,
+        "event": "hilbert -> hilbert-bond"
+      },
+      {
+        "z": 15.36,
+        "k": 64,
+        "event": "hilbert-bond -> hilbert"
+      },
+      {
+        "z": 15.6,
+        "k": 65,
+        "event": "hilbert -> hilbert-bond"
+      },
+      {
+        "z": 15.84,
+        "k": 66,
+        "event": "hilbert-bond -> spiral"
+      },
+      {
+        "z": 16.08,
+        "k": 67,
+        "event": "spiral -> spiral-bond"
+      },
+      {
+        "z": 16.32,
+        "k": 68,
+        "event": "spiral-bond -> spiral"
+      },
+      {
+        "z": 17.04,
+        "k": 71,
+        "event": "spiral -> spiral-bond"
+      },
+      {
+        "z": 17.28,
+        "k": 72,
+        "event": "spiral-bond -> spiral"
+      },
+      {
+        "z": 18,
+        "k": 75,
+        "event": "spiral -> spiral-bond"
+      },
+      {
+        "z": 18.24,
+        "k": 76,
+        "event": "spiral-bond -> spiral"
+      },
+      {
+        "z": 18.96,
+        "k": 79,
+        "event": "spiral -> spiral-bond"
+      },
+      {
+        "z": 19.2,
+        "k": 80,
+        "event": "spiral-bond -> spiral"
+      },
+      {
+        "z": 19.92,
+        "k": 83,
+        "event": "spiral -> spiral-bond"
+      },
+      {
+        "z": 20.16,
+        "k": 84,
+        "event": "spiral-bond -> crescendo"
+      },
+      {
+        "z": 22.56,
+        "k": 94,
+        "event": "crescendo -> cap"
+      }
+    ],
+    "violations": [],
+    "warnings": []
+  },
+  "design": null,
+  "preset": null,
+  "builder": "weft.mjs (core/weft_core.js + core/weft_gate.js, no browser, no Python)",
+  "gate": {
+    "bead": 0.45,
+    "maxbridge": 12,
+    "maxcantilever": 3,
+    "allow": 0.6,
+    "minanchor": 0.5,
+    "maxCapRadius": 20,
+    "maxislands": 1,
+    "file": "C:\\Svemir\\!Projekti\\PI\\weft\\specimens\\2026-10-01_solid_infill_A1\\PUN_KOCKA.gcode"
+  }
+}

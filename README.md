@@ -197,6 +197,16 @@ vertices while the core chords straight lines at ~2 mm, and a spiral must never 
 the new innermost ring hangs over the empty core of the layer below. None of the three is printed yet; the
 manifest lists every artefact by SHA-256, the largest files stay out of the repository per the policy above.
 
+**Rebuilt for the Bambu Lab A1 (1 October 2026):** the same three bodies, layer-identical geometry, sit in
+`specimens/2026-10-01_solid_infill_A1/` as print-ready `.gcode.3mf`. The A1 machine entry was harvested from a
+real A1 slice of Semir's own project (`exports/a1_container_T1b_2026-10-01.gcode.3mf` — printer model `Bambu Lab A1`,
+bed 65 °C literal in the evaluated start block), not copied from another machine. The harvested A1 end block
+carries a body-height-dependent `G1 Z… ; lower z a little`, so these builds use `--end-z-from-template`, which
+re-evaluates the slicer expression `max_layer_z + 0.4` per body (24.4 / 20.32 / 30.4 mm — verified inside each
+container). The A1 bead is still ASSUMED 0.45 mm (carried from the A2L, never calibrated on the A1): run the C1
+thin-wall test and measure before trusting dimensions. Harvested start/end blocks and container templates now
+travel with the repository (`exports/` exceptions in `.gitignore`) — a clean clone builds for every machine.
+
 ## Where this is going
 
 `docs/APP_PLAN_v1_2026-09-16.md` is the plan for WEFT Studio: a desktop application anyone can run, with a modeller

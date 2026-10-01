@@ -24,15 +24,16 @@
     "nozzle": 0.4,
     "bead": 0.45,
     "beadSource": "ASSUMED",
-    "beadEvidence": "carried over from the A2L; never calibrated on this machine",
+    "beadEvidence": "carried over from the A2L; never calibrated on this machine — run the C1 thin-wall test on the A1 and measure before trusting",
     "lh": 0.24,
     "firstLayerBead": 0.52,
     "temp": 220,
-    "bed": 55,
-    "start": "exports/a2l_start_block_template_2026-09-02.gcode",
-    "end": "exports/a2l_end_block_harvested_2026-09-02.gcode",
+    "bed": 65,
+    "start": "exports/a1_start_block_harvested_2026-10-01.gcode",
+    "end": "exports/a1_end_block_harvested_2026-10-01.gcode",
     "route": "bambu3mf",
-    "containerTemplate": "specimens/2026-09-02_P0_suma_4x4_v2_physical/P0_suma_4x4_v2.gcode.3mf"
+    "containerTemplate": "exports/a1_container_T1b_2026-10-01.gcode.3mf",
+    "blockEvidence": "harvested 2026-10-01 from exports/a1_container_T1b_2026-10-01.gcode.3mf — Semir's own A1 project (T1b_tower40_diagonal.3mf, 3esign Downloads snapshot in fabrication-evidence) sliced on this PC by Bambu Studio with its stock 'Bambu Lab A1 0.4 nozzle' profile; previous entry pointed at A2L blocks and an A2L container"
   },
   "ender": {
     "label": "Creality Ender-3 V4",

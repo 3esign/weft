@@ -1,0 +1,2294 @@
+{
+  "report": {
+    "name": "PUN_DRVO",
+    "machine": "Bambu A1",
+    "bed_mm": [
+      256,
+      256
+    ],
+    "layers": 253,
+    "globalZLevels": 125,
+    "expectedZLevels": 125,
+    "logicalCells": null,
+    "experimentalMembraneOverride": false,
+    "maxBodiesPerZ": 1,
+    "size_mm": [
+      27.5,
+      27.4,
+      30
+    ],
+    "plate_mm": [
+      114,
+      114.5,
+      141,
+      141.5
+    ],
+    "fitsPlate": true,
+    "grammarCounts": {},
+    "threadLength_m": 20.1,
+    "weldNodes": 0,
+    "rawPaths": 250,
+    "unintendedOverlaps": 30,
+    "seamClosures": 0,
+    "overlapSamples": [
+      {
+        "z": 28.32,
+        "role": "bridge",
+        "ov": 30
+      }
+    ],
+    "kinematic_h": 0.19,
+    "routeA_estimate_h": 1.8,
+    "caps": [],
+    "events": [
+      {
+        "z": 1.2,
+        "k": 5,
+        "event": "base -> bond"
+      },
+      {
+        "z": 1.44,
+        "k": 6,
+        "event": "bond -> rings"
+      },
+      {
+        "z": 1.92,
+        "k": 8,
+        "event": "rings -> bond"
+      },
+      {
+        "z": 2.16,
+        "k": 9,
+        "event": "bond -> rings"
+      },
+      {
+        "z": 2.64,
+        "k": 11,
+        "event": "rings -> bond"
+      },
+      {
+        "z": 2.88,
+        "k": 12,
+        "event": "bond -> rings"
+      },
+      {
+        "z": 3.36,
+        "k": 14,
+        "event": "rings -> bond"
+      },
+      {
+        "z": 3.6,
+        "k": 15,
+        "event": "bond -> rings"
+      },
+      {
+        "z": 4.08,
+        "k": 17,
+        "event": "rings -> bond"
+      },
+      {
+        "z": 4.32,
+        "k": 18,
+        "event": "bond -> rings"
+      },
+      {
+        "z": 4.8,
+        "k": 20,
+        "event": "rings -> bond"
+      },
+      {
+        "z": 5.04,
+        "k": 21,
+        "event": "bond -> rings"
+      },
+      {
+        "z": 5.52,
+        "k": 23,
+        "event": "rings -> bond"
+      },
+      {
+        "z": 5.76,
+        "k": 24,
+        "event": "bond -> rings"
+      },
+      {
+        "z": 6.24,
+        "k": 26,
+        "event": "rings -> bond"
+      },
+      {
+        "z": 6.48,
+        "k": 27,
+        "event": "bond -> rings"
+      },
+      {
+        "z": 6.96,
+        "k": 29,
+        "event": "rings -> bond"
+      },
+      {
+        "z": 7.2,
+        "k": 30,
+        "event": "bond -> rings"
+      },
+      {
+        "z": 7.68,
+        "k": 32,
+        "event": "rings -> bond"
+      },
+      {
+        "z": 7.92,
+        "k": 33,
+        "event": "bond -> rings"
+      },
+      {
+        "z": 8.4,
+        "k": 35,
+        "event": "rings -> bond"
+      },
+      {
+        "z": 8.64,
+        "k": 36,
+        "event": "bond -> rings"
+      },
+      {
+        "z": 9.12,
+        "k": 38,
+        "event": "rings -> bond"
+      },
+      {
+        "z": 9.36,
+        "k": 39,
+        "event": "bond -> rings"
+      },
+      {
+        "z": 9.84,
+        "k": 41,
+        "event": "rings -> bond"
+      },
+      {
+        "z": 10.08,
+        "k": 42,
+        "event": "bond -> rings"
+      },
+      {
+        "z": 10.56,
+        "k": 44,
+        "event": "rings -> bond"
+      },
+      {
+        "z": 10.8,
+        "k": 45,
+        "event": "bond -> rings"
+      },
+      {
+        "z": 11.28,
+        "k": 47,
+        "event": "rings -> bond"
+      },
+      {
+        "z": 11.52,
+        "k": 48,
+        "event": "bond -> rings"
+      },
+      {
+        "z": 12,
+        "k": 50,
+        "event": "rings -> bond"
+      },
+      {
+        "z": 12.24,
+        "k": 51,
+        "event": "bond -> rings"
+      },
+      {
+        "z": 12.72,
+        "k": 53,
+        "event": "rings -> bond"
+      },
+      {
+        "z": 12.96,
+        "k": 54,
+        "event": "bond -> rings"
+      },
+      {
+        "z": 13.44,
+        "k": 56,
+        "event": "rings -> bond"
+      },
+      {
+        "z": 13.68,
+        "k": 57,
+        "event": "bond -> rings"
+      },
+      {
+        "z": 14.16,
+        "k": 59,
+        "event": "rings -> bond"
+      },
+      {
+        "z": 14.4,
+        "k": 60,
+        "event": "bond -> rings"
+      },
+      {
+        "z": 14.88,
+        "k": 62,
+        "event": "rings -> bond"
+      },
+      {
+        "z": 15.12,
+        "k": 63,
+        "event": "bond -> rings"
+      },
+      {
+        "z": 15.6,
+        "k": 65,
+        "event": "rings -> canopy"
+      },
+      {
+        "z": 24,
+        "k": 100,
+        "event": "canopy -> rings"
+      },
+      {
+        "z": 24.24,
+        "k": 101,
+        "event": "rings -> bond"
+      },
+      {
+        "z": 24.48,
+        "k": 102,
+        "event": "bond -> rings"
+      },
+      {
+        "z": 24.96,
+        "k": 104,
+        "event": "rings -> bond"
+      },
+      {
+        "z": 25.2,
+        "k": 105,
+        "event": "bond -> rings"
+      },
+      {
+        "z": 25.68,
+        "k": 107,
+        "event": "rings -> bond"
+      },
+      {
+        "z": 25.92,
+        "k": 108,
+        "event": "bond -> rings"
+      },
+      {
+        "z": 26.4,
+        "k": 110,
+        "event": "rings -> bond"
+      },
+      {
+        "z": 26.64,
+        "k": 111,
+        "event": "bond -> rings"
+      },
+      {
+        "z": 27.12,
+        "k": 113,
+        "event": "rings -> bond"
+      },
+      {
+        "z": 27.36,
+        "k": 114,
+        "event": "bond -> rings"
+      },
+      {
+        "z": 27.84,
+        "k": 116,
+        "event": "rings -> bond"
+      },
+      {
+        "z": 28.08,
+        "k": 117,
+        "event": "bond -> rings"
+      },
+      {
+        "z": 28.56,
+        "k": 119,
+        "event": "rings -> cap"
+      }
+    ],
+    "contourCounts": [
+      [
+        0,
+        0
+      ]
+    ],
+    "perLayerSample": [
+      {
+        "k": 0,
+        "z": 0,
+        "contours": 0,
+        "paths": 2,
+        "nodes": 0
+      },
+      {
+        "k": 40,
+        "z": 9.6,
+        "contours": 0,
+        "paths": 2,
+        "nodes": 0
+      },
+      {
+        "k": 80,
+        "z": 19.2,
+        "contours": 0,
+        "paths": 2,
+        "nodes": 0
+      },
+      {
+        "k": 120,
+        "z": 28.8,
+        "contours": 0,
+        "paths": 2,
+        "nodes": 0
+      }
+    ],
+    "membranes": [],
+    "gateLayers": {
+      "version": "gate-layers-2026-09-25-krak",
+      "vector": "S2 INFO · S3 PASS · S4 PASS · S5 INFO · S7 INFO · S8 WARN · ORDER N/A",
+      "refusedBy": [],
+      "findings": 0,
+      "S2": {
+        "worst": {
+          "k": 4,
+          "z": 0.72,
+          "runs10": 0,
+          "free_mm": 0,
+          "longest_mm": 0
+        },
+        "free_m": 0.02,
+        "declared": 0
+      },
+      "S3": {
+        "worst": null,
+        "neverTied": 0,
+        "declared": 0
+      },
+      "S4": {
+        "overflights": 0,
+        "closest": null,
+        "declared": 0
+      },
+      "S5": {
+        "ratio": 0.145,
+        "contact_mm2": 514.1,
+        "lever_mm": 118.8
+      },
+      "S7": {
+        "weakest": [
+          {
+            "k": 14,
+            "z": 3.12,
+            "carried": 0.726,
+            "onSolid": 1,
+            "pileMax": 0,
+            "solidComponents": 2,
+            "largestSolidExtent_mm": 18.6,
+            "above": 112
+          },
+          {
+            "k": 11,
+            "z": 2.4,
+            "carried": 0.747,
+            "onSolid": 1,
+            "pileMax": 0,
+            "solidComponents": 2,
+            "largestSolidExtent_mm": 20.7,
+            "above": 115
+          },
+          {
+            "k": 104,
+            "z": 24.72,
+            "carried": 0.748,
+            "onSolid": 1,
+            "pileMax": 0,
+            "solidComponents": 2,
+            "largestSolidExtent_mm": 33.1,
+            "above": 22
+          }
+        ]
+      },
+      "S8": {
+        "periodTwoLayers": 12,
+        "medianCrossing_deg": 54.5
+      },
+      "ORDER": {
+        "verdict": "N/A",
+        "aboveRisk_mm": 1,
+        "zonesWithFindings": []
+      }
+    }
+  },
+  "geometry": {
+    "name": "PUN_DRVO_A2L_X1",
+    "variant": "drvo",
+    "title": "DRVO PUNO",
+    "concept": "a solid tree: growth rings (spiral) with a shear-bonding lines layer every third layer; the canopy flare is bounded per layer",
+    "generator": "core/weft_solid_geometry.mjs",
+    "process": "solid-infill/v1",
+    "generatedAt": "2026-09-30",
+    "machine": "a2l",
+    "machineLabel": "Bambu Lab A2L",
+    "machineQualification": {
+      "beadSource": "measured",
+      "beadEvidence": "specimens/2026-08-31_D5_R140_A2L_physical and specimens/2026-09-02_P0_suma_2x2_physical — both printed to completion at this bead",
+      "assumedAcknowledged": false
+    },
+    "size_mm": [
+      27.5,
+      27.4,
+      30
+    ],
+    "H": 30,
+    "totalLayers": 125,
+    "args": {
+      "lh": 0.24,
+      "bead": 0.45,
+      "firstLayerBead": 0.52,
+      "firstLayerSpeed": 12,
+      "w": 2,
+      "e": 0,
+      "r0": 13.73,
+      "K": 8,
+      "foundation": 3,
+      "maxbridge": 12,
+      "maxcantilever": 3,
+      "allow": 0.6,
+      "minanchor": 0.5,
+      "maxCapRadius": 20,
+      "speed": 32,
+      "bridgeSpeed": 18,
+      "temp": 220,
+      "bed": 55,
+      "fan": 100
+    },
+    "gatePolicy": {
+      "meaning": "a solid body: every span between fill crossings must be a legal bridge; nothing is declared experimental",
+      "bridge_mm": 12,
+      "cantilever_mm": 3,
+      "first_layer_max_islands": 1
+    },
+    "solid": {
+      "basePolicy": "5 solid layers (first at 0.50 mm spacing, then 0.85)",
+      "capPolicy": "6 solid layers at 0.85 mm",
+      "worstFreeSpanEst_mm": 4.5,
+      "fillLength_m": 13.1,
+      "patterns": [
+        "lines",
+        "spiral"
+      ],
+      "tags": [
+        "base",
+        "bond",
+        "rings",
+        "canopy",
+        "cap"
+      ]
+    },
+    "layerProgram": [
+      {
+        "k": 0,
+        "z": 0,
+        "kind": "lines",
+        "tag": "base",
+        "spacing_mm": 0.5,
+        "maxSpacing_mm": 0.5,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 709,
+        "nLines": 40
+      },
+      {
+        "k": 1,
+        "z": 0.24,
+        "kind": "lines",
+        "tag": "base",
+        "spacing_mm": 0.85,
+        "maxSpacing_mm": 0.85,
+        "angle_deg": 90,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 429,
+        "nLines": 24
+      },
+      {
+        "k": 2,
+        "z": 0.48,
+        "kind": "lines",
+        "tag": "base",
+        "spacing_mm": 0.85,
+        "maxSpacing_mm": 0.85,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 423,
+        "nLines": 24
+      },
+      {
+        "k": 3,
+        "z": 0.72,
+        "kind": "lines",
+        "tag": "base",
+        "spacing_mm": 0.85,
+        "maxSpacing_mm": 0.85,
+        "angle_deg": 90,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 406,
+        "nLines": 23
+      },
+      {
+        "k": 4,
+        "z": 0.96,
+        "kind": "lines",
+        "tag": "base",
+        "spacing_mm": 0.85,
+        "maxSpacing_mm": 0.85,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 395,
+        "nLines": 23
+      },
+      {
+        "k": 5,
+        "z": 1.2,
+        "kind": "lines",
+        "tag": "bond",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 60,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 116,
+        "nLines": 6
+      },
+      {
+        "k": 6,
+        "z": 1.44,
+        "kind": "spiral",
+        "tag": "rings",
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 4.5,
+        "fill_mm": 85,
+        "nLines": 0
+      },
+      {
+        "k": 7,
+        "z": 1.68,
+        "kind": "spiral",
+        "tag": "rings",
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 82,
+        "nLines": 0
+      },
+      {
+        "k": 8,
+        "z": 1.92,
+        "kind": "lines",
+        "tag": "bond",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 120,
+        "freeSpanEst_mm": 4.2,
+        "fill_mm": 104,
+        "nLines": 6
+      },
+      {
+        "k": 9,
+        "z": 2.16,
+        "kind": "spiral",
+        "tag": "rings",
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 4.5,
+        "fill_mm": 74,
+        "nLines": 0
+      },
+      {
+        "k": 10,
+        "z": 2.4,
+        "kind": "spiral",
+        "tag": "rings",
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 70,
+        "nLines": 0
+      },
+      {
+        "k": 11,
+        "z": 2.64,
+        "kind": "lines",
+        "tag": "bond",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 4.2,
+        "fill_mm": 83,
+        "nLines": 5
+      },
+      {
+        "k": 12,
+        "z": 2.88,
+        "kind": "spiral",
+        "tag": "rings",
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 4.5,
+        "fill_mm": 63,
+        "nLines": 0
+      },
+      {
+        "k": 13,
+        "z": 3.12,
+        "kind": "spiral",
+        "tag": "rings",
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 60,
+        "nLines": 0
+      },
+      {
+        "k": 14,
+        "z": 3.36,
+        "kind": "lines",
+        "tag": "bond",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 60,
+        "freeSpanEst_mm": 4.2,
+        "fill_mm": 76,
+        "nLines": 5
+      },
+      {
+        "k": 15,
+        "z": 3.6,
+        "kind": "spiral",
+        "tag": "rings",
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 4.5,
+        "fill_mm": 43,
+        "nLines": 0
+      },
+      {
+        "k": 16,
+        "z": 3.84,
+        "kind": "spiral",
+        "tag": "rings",
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 42,
+        "nLines": 0
+      },
+      {
+        "k": 17,
+        "z": 4.08,
+        "kind": "lines",
+        "tag": "bond",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 120,
+        "freeSpanEst_mm": 4.2,
+        "fill_mm": 74,
+        "nLines": 5
+      },
+      {
+        "k": 18,
+        "z": 4.32,
+        "kind": "spiral",
+        "tag": "rings",
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 4.5,
+        "fill_mm": 42,
+        "nLines": 0
+      },
+      {
+        "k": 19,
+        "z": 4.56,
+        "kind": "spiral",
+        "tag": "rings",
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 42,
+        "nLines": 0
+      },
+      {
+        "k": 20,
+        "z": 4.8,
+        "kind": "lines",
+        "tag": "bond",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 4.2,
+        "fill_mm": 74,
+        "nLines": 5
+      },
+      {
+        "k": 21,
+        "z": 5.04,
+        "kind": "spiral",
+        "tag": "rings",
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 4.5,
+        "fill_mm": 42,
+        "nLines": 0
+      },
+      {
+        "k": 22,
+        "z": 5.28,
+        "kind": "spiral",
+        "tag": "rings",
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 42,
+        "nLines": 0
+      },
+      {
+        "k": 23,
+        "z": 5.52,
+        "kind": "lines",
+        "tag": "bond",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 60,
+        "freeSpanEst_mm": 4.2,
+        "fill_mm": 74,
+        "nLines": 5
+      },
+      {
+        "k": 24,
+        "z": 5.76,
+        "kind": "spiral",
+        "tag": "rings",
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 4.5,
+        "fill_mm": 42,
+        "nLines": 0
+      },
+      {
+        "k": 25,
+        "z": 6,
+        "kind": "spiral",
+        "tag": "rings",
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 42,
+        "nLines": 0
+      },
+      {
+        "k": 26,
+        "z": 6.24,
+        "kind": "lines",
+        "tag": "bond",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 120,
+        "freeSpanEst_mm": 4.2,
+        "fill_mm": 74,
+        "nLines": 5
+      },
+      {
+        "k": 27,
+        "z": 6.48,
+        "kind": "spiral",
+        "tag": "rings",
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 4.5,
+        "fill_mm": 42,
+        "nLines": 0
+      },
+      {
+        "k": 28,
+        "z": 6.72,
+        "kind": "spiral",
+        "tag": "rings",
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 42,
+        "nLines": 0
+      },
+      {
+        "k": 29,
+        "z": 6.96,
+        "kind": "lines",
+        "tag": "bond",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 4.2,
+        "fill_mm": 74,
+        "nLines": 5
+      },
+      {
+        "k": 30,
+        "z": 7.2,
+        "kind": "spiral",
+        "tag": "rings",
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 4.5,
+        "fill_mm": 42,
+        "nLines": 0
+      },
+      {
+        "k": 31,
+        "z": 7.44,
+        "kind": "spiral",
+        "tag": "rings",
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 42,
+        "nLines": 0
+      },
+      {
+        "k": 32,
+        "z": 7.68,
+        "kind": "lines",
+        "tag": "bond",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 60,
+        "freeSpanEst_mm": 4.2,
+        "fill_mm": 74,
+        "nLines": 5
+      },
+      {
+        "k": 33,
+        "z": 7.92,
+        "kind": "spiral",
+        "tag": "rings",
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 4.5,
+        "fill_mm": 42,
+        "nLines": 0
+      },
+      {
+        "k": 34,
+        "z": 8.16,
+        "kind": "spiral",
+        "tag": "rings",
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 42,
+        "nLines": 0
+      },
+      {
+        "k": 35,
+        "z": 8.4,
+        "kind": "lines",
+        "tag": "bond",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 120,
+        "freeSpanEst_mm": 4.2,
+        "fill_mm": 74,
+        "nLines": 5
+      },
+      {
+        "k": 36,
+        "z": 8.64,
+        "kind": "spiral",
+        "tag": "rings",
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 4.5,
+        "fill_mm": 42,
+        "nLines": 0
+      },
+      {
+        "k": 37,
+        "z": 8.88,
+        "kind": "spiral",
+        "tag": "rings",
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 42,
+        "nLines": 0
+      },
+      {
+        "k": 38,
+        "z": 9.12,
+        "kind": "lines",
+        "tag": "bond",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 4.2,
+        "fill_mm": 74,
+        "nLines": 5
+      },
+      {
+        "k": 39,
+        "z": 9.36,
+        "kind": "spiral",
+        "tag": "rings",
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 4.5,
+        "fill_mm": 42,
+        "nLines": 0
+      },
+      {
+        "k": 40,
+        "z": 9.6,
+        "kind": "spiral",
+        "tag": "rings",
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 42,
+        "nLines": 0
+      },
+      {
+        "k": 41,
+        "z": 9.84,
+        "kind": "lines",
+        "tag": "bond",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 60,
+        "freeSpanEst_mm": 4.2,
+        "fill_mm": 74,
+        "nLines": 5
+      },
+      {
+        "k": 42,
+        "z": 10.08,
+        "kind": "spiral",
+        "tag": "rings",
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 4.5,
+        "fill_mm": 42,
+        "nLines": 0
+      },
+      {
+        "k": 43,
+        "z": 10.32,
+        "kind": "spiral",
+        "tag": "rings",
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 42,
+        "nLines": 0
+      },
+      {
+        "k": 44,
+        "z": 10.56,
+        "kind": "lines",
+        "tag": "bond",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 120,
+        "freeSpanEst_mm": 4.2,
+        "fill_mm": 74,
+        "nLines": 5
+      },
+      {
+        "k": 45,
+        "z": 10.8,
+        "kind": "spiral",
+        "tag": "rings",
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 4.5,
+        "fill_mm": 42,
+        "nLines": 0
+      },
+      {
+        "k": 46,
+        "z": 11.04,
+        "kind": "spiral",
+        "tag": "rings",
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 42,
+        "nLines": 0
+      },
+      {
+        "k": 47,
+        "z": 11.28,
+        "kind": "lines",
+        "tag": "bond",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 4.2,
+        "fill_mm": 74,
+        "nLines": 5
+      },
+      {
+        "k": 48,
+        "z": 11.52,
+        "kind": "spiral",
+        "tag": "rings",
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 4.5,
+        "fill_mm": 42,
+        "nLines": 0
+      },
+      {
+        "k": 49,
+        "z": 11.76,
+        "kind": "spiral",
+        "tag": "rings",
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 42,
+        "nLines": 0
+      },
+      {
+        "k": 50,
+        "z": 12,
+        "kind": "lines",
+        "tag": "bond",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 60,
+        "freeSpanEst_mm": 4.2,
+        "fill_mm": 74,
+        "nLines": 5
+      },
+      {
+        "k": 51,
+        "z": 12.24,
+        "kind": "spiral",
+        "tag": "rings",
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 4.5,
+        "fill_mm": 42,
+        "nLines": 0
+      },
+      {
+        "k": 52,
+        "z": 12.48,
+        "kind": "spiral",
+        "tag": "rings",
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 42,
+        "nLines": 0
+      },
+      {
+        "k": 53,
+        "z": 12.72,
+        "kind": "lines",
+        "tag": "bond",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 120,
+        "freeSpanEst_mm": 4.2,
+        "fill_mm": 74,
+        "nLines": 5
+      },
+      {
+        "k": 54,
+        "z": 12.96,
+        "kind": "spiral",
+        "tag": "rings",
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 4.5,
+        "fill_mm": 42,
+        "nLines": 0
+      },
+      {
+        "k": 55,
+        "z": 13.2,
+        "kind": "spiral",
+        "tag": "rings",
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 42,
+        "nLines": 0
+      },
+      {
+        "k": 56,
+        "z": 13.44,
+        "kind": "lines",
+        "tag": "bond",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 4.2,
+        "fill_mm": 74,
+        "nLines": 5
+      },
+      {
+        "k": 57,
+        "z": 13.68,
+        "kind": "spiral",
+        "tag": "rings",
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 4.5,
+        "fill_mm": 42,
+        "nLines": 0
+      },
+      {
+        "k": 58,
+        "z": 13.92,
+        "kind": "spiral",
+        "tag": "rings",
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 42,
+        "nLines": 0
+      },
+      {
+        "k": 59,
+        "z": 14.16,
+        "kind": "lines",
+        "tag": "bond",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 60,
+        "freeSpanEst_mm": 4.2,
+        "fill_mm": 74,
+        "nLines": 5
+      },
+      {
+        "k": 60,
+        "z": 14.4,
+        "kind": "spiral",
+        "tag": "rings",
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 4.5,
+        "fill_mm": 42,
+        "nLines": 0
+      },
+      {
+        "k": 61,
+        "z": 14.64,
+        "kind": "spiral",
+        "tag": "rings",
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 42,
+        "nLines": 0
+      },
+      {
+        "k": 62,
+        "z": 14.88,
+        "kind": "lines",
+        "tag": "bond",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 120,
+        "freeSpanEst_mm": 4.2,
+        "fill_mm": 74,
+        "nLines": 5
+      },
+      {
+        "k": 63,
+        "z": 15.12,
+        "kind": "spiral",
+        "tag": "rings",
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 4.5,
+        "fill_mm": 42,
+        "nLines": 0
+      },
+      {
+        "k": 64,
+        "z": 15.36,
+        "kind": "spiral",
+        "tag": "rings",
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 42,
+        "nLines": 0
+      },
+      {
+        "k": 65,
+        "z": 15.6,
+        "kind": "lines",
+        "tag": "canopy",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 120,
+        "freeSpanEst_mm": 4.2,
+        "fill_mm": 74,
+        "nLines": 5
+      },
+      {
+        "k": 66,
+        "z": 15.84,
+        "kind": "lines",
+        "tag": "canopy",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 3.46,
+        "fill_mm": 75,
+        "nLines": 5
+      },
+      {
+        "k": 67,
+        "z": 16.08,
+        "kind": "lines",
+        "tag": "canopy",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 60,
+        "freeSpanEst_mm": 3.46,
+        "fill_mm": 75,
+        "nLines": 5
+      },
+      {
+        "k": 68,
+        "z": 16.32,
+        "kind": "lines",
+        "tag": "canopy",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 120,
+        "freeSpanEst_mm": 3.46,
+        "fill_mm": 76,
+        "nLines": 5
+      },
+      {
+        "k": 69,
+        "z": 16.56,
+        "kind": "lines",
+        "tag": "canopy",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 3.46,
+        "fill_mm": 78,
+        "nLines": 5
+      },
+      {
+        "k": 70,
+        "z": 16.8,
+        "kind": "lines",
+        "tag": "canopy",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 60,
+        "freeSpanEst_mm": 3.46,
+        "fill_mm": 79,
+        "nLines": 5
+      },
+      {
+        "k": 71,
+        "z": 17.04,
+        "kind": "lines",
+        "tag": "canopy",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 120,
+        "freeSpanEst_mm": 3.46,
+        "fill_mm": 81,
+        "nLines": 5
+      },
+      {
+        "k": 72,
+        "z": 17.28,
+        "kind": "lines",
+        "tag": "canopy",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 3.46,
+        "fill_mm": 83,
+        "nLines": 5
+      },
+      {
+        "k": 73,
+        "z": 17.52,
+        "kind": "lines",
+        "tag": "canopy",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 60,
+        "freeSpanEst_mm": 3.46,
+        "fill_mm": 85,
+        "nLines": 5
+      },
+      {
+        "k": 74,
+        "z": 17.76,
+        "kind": "lines",
+        "tag": "canopy",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 120,
+        "freeSpanEst_mm": 3.46,
+        "fill_mm": 87,
+        "nLines": 5
+      },
+      {
+        "k": 75,
+        "z": 18,
+        "kind": "lines",
+        "tag": "canopy",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 3.46,
+        "fill_mm": 101,
+        "nLines": 6
+      },
+      {
+        "k": 76,
+        "z": 18.24,
+        "kind": "lines",
+        "tag": "canopy",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 60,
+        "freeSpanEst_mm": 3.46,
+        "fill_mm": 105,
+        "nLines": 6
+      },
+      {
+        "k": 77,
+        "z": 18.48,
+        "kind": "lines",
+        "tag": "canopy",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 120,
+        "freeSpanEst_mm": 3.46,
+        "fill_mm": 108,
+        "nLines": 6
+      },
+      {
+        "k": 78,
+        "z": 18.72,
+        "kind": "lines",
+        "tag": "canopy",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 3.46,
+        "fill_mm": 112,
+        "nLines": 6
+      },
+      {
+        "k": 79,
+        "z": 18.96,
+        "kind": "lines",
+        "tag": "canopy",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 60,
+        "freeSpanEst_mm": 3.46,
+        "fill_mm": 115,
+        "nLines": 6
+      },
+      {
+        "k": 80,
+        "z": 19.2,
+        "kind": "lines",
+        "tag": "canopy",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 120,
+        "freeSpanEst_mm": 3.46,
+        "fill_mm": 119,
+        "nLines": 6
+      },
+      {
+        "k": 81,
+        "z": 19.44,
+        "kind": "lines",
+        "tag": "canopy",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 3.46,
+        "fill_mm": 135,
+        "nLines": 7
+      },
+      {
+        "k": 82,
+        "z": 19.68,
+        "kind": "lines",
+        "tag": "canopy",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 60,
+        "freeSpanEst_mm": 3.46,
+        "fill_mm": 140,
+        "nLines": 7
+      },
+      {
+        "k": 83,
+        "z": 19.92,
+        "kind": "lines",
+        "tag": "canopy",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 120,
+        "freeSpanEst_mm": 3.46,
+        "fill_mm": 144,
+        "nLines": 7
+      },
+      {
+        "k": 84,
+        "z": 20.16,
+        "kind": "lines",
+        "tag": "canopy",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 3.46,
+        "fill_mm": 148,
+        "nLines": 7
+      },
+      {
+        "k": 85,
+        "z": 20.4,
+        "kind": "lines",
+        "tag": "canopy",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 60,
+        "freeSpanEst_mm": 3.46,
+        "fill_mm": 153,
+        "nLines": 7
+      },
+      {
+        "k": 86,
+        "z": 20.64,
+        "kind": "lines",
+        "tag": "canopy",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 120,
+        "freeSpanEst_mm": 3.46,
+        "fill_mm": 156,
+        "nLines": 7
+      },
+      {
+        "k": 87,
+        "z": 20.88,
+        "kind": "lines",
+        "tag": "canopy",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 3.46,
+        "fill_mm": 174,
+        "nLines": 8
+      },
+      {
+        "k": 88,
+        "z": 21.12,
+        "kind": "lines",
+        "tag": "canopy",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 60,
+        "freeSpanEst_mm": 3.46,
+        "fill_mm": 179,
+        "nLines": 8
+      },
+      {
+        "k": 89,
+        "z": 21.36,
+        "kind": "lines",
+        "tag": "canopy",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 120,
+        "freeSpanEst_mm": 3.46,
+        "fill_mm": 183,
+        "nLines": 8
+      },
+      {
+        "k": 90,
+        "z": 21.6,
+        "kind": "lines",
+        "tag": "canopy",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 3.46,
+        "fill_mm": 188,
+        "nLines": 8
+      },
+      {
+        "k": 91,
+        "z": 21.84,
+        "kind": "lines",
+        "tag": "canopy",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 60,
+        "freeSpanEst_mm": 3.46,
+        "fill_mm": 191,
+        "nLines": 8
+      },
+      {
+        "k": 92,
+        "z": 22.08,
+        "kind": "lines",
+        "tag": "canopy",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 120,
+        "freeSpanEst_mm": 3.46,
+        "fill_mm": 194,
+        "nLines": 8
+      },
+      {
+        "k": 93,
+        "z": 22.32,
+        "kind": "lines",
+        "tag": "canopy",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 3.46,
+        "fill_mm": 197,
+        "nLines": 8
+      },
+      {
+        "k": 94,
+        "z": 22.56,
+        "kind": "lines",
+        "tag": "canopy",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 60,
+        "freeSpanEst_mm": 3.46,
+        "fill_mm": 200,
+        "nLines": 8
+      },
+      {
+        "k": 95,
+        "z": 22.8,
+        "kind": "lines",
+        "tag": "canopy",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 120,
+        "freeSpanEst_mm": 3.46,
+        "fill_mm": 216,
+        "nLines": 9
+      },
+      {
+        "k": 96,
+        "z": 23.04,
+        "kind": "lines",
+        "tag": "canopy",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 3.46,
+        "fill_mm": 219,
+        "nLines": 9
+      },
+      {
+        "k": 97,
+        "z": 23.28,
+        "kind": "lines",
+        "tag": "canopy",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 60,
+        "freeSpanEst_mm": 3.46,
+        "fill_mm": 221,
+        "nLines": 9
+      },
+      {
+        "k": 98,
+        "z": 23.52,
+        "kind": "lines",
+        "tag": "canopy",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 120,
+        "freeSpanEst_mm": 3.46,
+        "fill_mm": 222,
+        "nLines": 9
+      },
+      {
+        "k": 99,
+        "z": 23.76,
+        "kind": "lines",
+        "tag": "canopy",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 3.46,
+        "fill_mm": 222,
+        "nLines": 9
+      },
+      {
+        "k": 100,
+        "z": 24,
+        "kind": "spiral",
+        "tag": "rings",
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 4.5,
+        "fill_mm": 190,
+        "nLines": 0
+      },
+      {
+        "k": 101,
+        "z": 24.24,
+        "kind": "lines",
+        "tag": "bond",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 4.2,
+        "fill_mm": 219,
+        "nLines": 9
+      },
+      {
+        "k": 102,
+        "z": 24.48,
+        "kind": "spiral",
+        "tag": "rings",
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 4.5,
+        "fill_mm": 167,
+        "nLines": 0
+      },
+      {
+        "k": 103,
+        "z": 24.72,
+        "kind": "spiral",
+        "tag": "rings",
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 162,
+        "nLines": 0
+      },
+      {
+        "k": 104,
+        "z": 24.96,
+        "kind": "lines",
+        "tag": "bond",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 60,
+        "freeSpanEst_mm": 4.2,
+        "fill_mm": 188,
+        "nLines": 8
+      },
+      {
+        "k": 105,
+        "z": 25.2,
+        "kind": "spiral",
+        "tag": "rings",
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 4.5,
+        "fill_mm": 146,
+        "nLines": 0
+      },
+      {
+        "k": 106,
+        "z": 25.44,
+        "kind": "spiral",
+        "tag": "rings",
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 136,
+        "nLines": 0
+      },
+      {
+        "k": 107,
+        "z": 25.68,
+        "kind": "lines",
+        "tag": "bond",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 120,
+        "freeSpanEst_mm": 4.2,
+        "fill_mm": 149,
+        "nLines": 7
+      },
+      {
+        "k": 108,
+        "z": 25.92,
+        "kind": "spiral",
+        "tag": "rings",
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 4.5,
+        "fill_mm": 114,
+        "nLines": 0
+      },
+      {
+        "k": 109,
+        "z": 26.16,
+        "kind": "spiral",
+        "tag": "rings",
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 91,
+        "nLines": 0
+      },
+      {
+        "k": 110,
+        "z": 26.4,
+        "kind": "lines",
+        "tag": "bond",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 4.2,
+        "fill_mm": 109,
+        "nLines": 6
+      },
+      {
+        "k": 111,
+        "z": 26.64,
+        "kind": "spiral",
+        "tag": "rings",
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 4.5,
+        "fill_mm": 74,
+        "nLines": 0
+      },
+      {
+        "k": 112,
+        "z": 26.88,
+        "kind": "spiral",
+        "tag": "rings",
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 65,
+        "nLines": 0
+      },
+      {
+        "k": 113,
+        "z": 27.12,
+        "kind": "lines",
+        "tag": "bond",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 60,
+        "freeSpanEst_mm": 4.2,
+        "fill_mm": 74,
+        "nLines": 5
+      },
+      {
+        "k": 114,
+        "z": 27.36,
+        "kind": "spiral",
+        "tag": "rings",
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 4.5,
+        "fill_mm": 38,
+        "nLines": 0
+      },
+      {
+        "k": 115,
+        "z": 27.6,
+        "kind": "spiral",
+        "tag": "rings",
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 33,
+        "nLines": 0
+      },
+      {
+        "k": 116,
+        "z": 27.84,
+        "kind": "lines",
+        "tag": "bond",
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "angle_deg": 120,
+        "freeSpanEst_mm": 4.2,
+        "fill_mm": 46,
+        "nLines": 4
+      },
+      {
+        "k": 117,
+        "z": 28.08,
+        "kind": "spiral",
+        "tag": "rings",
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 4.5,
+        "fill_mm": 24,
+        "nLines": 0
+      },
+      {
+        "k": 118,
+        "z": 28.32,
+        "kind": "spiral",
+        "tag": "rings",
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 21,
+        "nLines": 0
+      },
+      {
+        "k": 119,
+        "z": 28.56,
+        "kind": "lines",
+        "tag": "cap",
+        "spacing_mm": 0.85,
+        "maxSpacing_mm": 0.85,
+        "angle_deg": 90,
+        "freeSpanEst_mm": 4.2,
+        "fill_mm": 73,
+        "nLines": 9
+      },
+      {
+        "k": 120,
+        "z": 28.8,
+        "kind": "lines",
+        "tag": "cap",
+        "spacing_mm": 0.85,
+        "maxSpacing_mm": 0.85,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 60,
+        "nLines": 8
+      },
+      {
+        "k": 121,
+        "z": 29.04,
+        "kind": "lines",
+        "tag": "cap",
+        "spacing_mm": 0.85,
+        "maxSpacing_mm": 0.85,
+        "angle_deg": 90,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 55,
+        "nLines": 8
+      },
+      {
+        "k": 122,
+        "z": 29.28,
+        "kind": "lines",
+        "tag": "cap",
+        "spacing_mm": 0.85,
+        "maxSpacing_mm": 0.85,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 46,
+        "nLines": 7
+      },
+      {
+        "k": 123,
+        "z": 29.52,
+        "kind": "lines",
+        "tag": "cap",
+        "spacing_mm": 0.85,
+        "maxSpacing_mm": 0.85,
+        "angle_deg": 90,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 44,
+        "nLines": 7
+      },
+      {
+        "k": 124,
+        "z": 29.76,
+        "kind": "lines",
+        "tag": "cap",
+        "spacing_mm": 0.85,
+        "maxSpacing_mm": 0.85,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 43,
+        "nLines": 7
+      }
+    ],
+    "events": [
+      {
+        "z": 1.2,
+        "k": 5,
+        "event": "base -> bond"
+      },
+      {
+        "z": 1.44,
+        "k": 6,
+        "event": "bond -> rings"
+      },
+      {
+        "z": 1.92,
+        "k": 8,
+        "event": "rings -> bond"
+      },
+      {
+        "z": 2.16,
+        "k": 9,
+        "event": "bond -> rings"
+      },
+      {
+        "z": 2.64,
+        "k": 11,
+        "event": "rings -> bond"
+      },
+      {
+        "z": 2.88,
+        "k": 12,
+        "event": "bond -> rings"
+      },
+      {
+        "z": 3.36,
+        "k": 14,
+        "event": "rings -> bond"
+      },
+      {
+        "z": 3.6,
+        "k": 15,
+        "event": "bond -> rings"
+      },
+      {
+        "z": 4.08,
+        "k": 17,
+        "event": "rings -> bond"
+      },
+      {
+        "z": 4.32,
+        "k": 18,
+        "event": "bond -> rings"
+      },
+      {
+        "z": 4.8,
+        "k": 20,
+        "event": "rings -> bond"
+      },
+      {
+        "z": 5.04,
+        "k": 21,
+        "event": "bond -> rings"
+      },
+      {
+        "z": 5.52,
+        "k": 23,
+        "event": "rings -> bond"
+      },
+      {
+        "z": 5.76,
+        "k": 24,
+        "event": "bond -> rings"
+      },
+      {
+        "z": 6.24,
+        "k": 26,
+        "event": "rings -> bond"
+      },
+      {
+        "z": 6.48,
+        "k": 27,
+        "event": "bond -> rings"
+      },
+      {
+        "z": 6.96,
+        "k": 29,
+        "event": "rings -> bond"
+      },
+      {
+        "z": 7.2,
+        "k": 30,
+        "event": "bond -> rings"
+      },
+      {
+        "z": 7.68,
+        "k": 32,
+        "event": "rings -> bond"
+      },
+      {
+        "z": 7.92,
+        "k": 33,
+        "event": "bond -> rings"
+      },
+      {
+        "z": 8.4,
+        "k": 35,
+        "event": "rings -> bond"
+      },
+      {
+        "z": 8.64,
+        "k": 36,
+        "event": "bond -> rings"
+      },
+      {
+        "z": 9.12,
+        "k": 38,
+        "event": "rings -> bond"
+      },
+      {
+        "z": 9.36,
+        "k": 39,
+        "event": "bond -> rings"
+      },
+      {
+        "z": 9.84,
+        "k": 41,
+        "event": "rings -> bond"
+      },
+      {
+        "z": 10.08,
+        "k": 42,
+        "event": "bond -> rings"
+      },
+      {
+        "z": 10.56,
+        "k": 44,
+        "event": "rings -> bond"
+      },
+      {
+        "z": 10.8,
+        "k": 45,
+        "event": "bond -> rings"
+      },
+      {
+        "z": 11.28,
+        "k": 47,
+        "event": "rings -> bond"
+      },
+      {
+        "z": 11.52,
+        "k": 48,
+        "event": "bond -> rings"
+      },
+      {
+        "z": 12,
+        "k": 50,
+        "event": "rings -> bond"
+      },
+      {
+        "z": 12.24,
+        "k": 51,
+        "event": "bond -> rings"
+      },
+      {
+        "z": 12.72,
+        "k": 53,
+        "event": "rings -> bond"
+      },
+      {
+        "z": 12.96,
+        "k": 54,
+        "event": "bond -> rings"
+      },
+      {
+        "z": 13.44,
+        "k": 56,
+        "event": "rings -> bond"
+      },
+      {
+        "z": 13.68,
+        "k": 57,
+        "event": "bond -> rings"
+      },
+      {
+        "z": 14.16,
+        "k": 59,
+        "event": "rings -> bond"
+      },
+      {
+        "z": 14.4,
+        "k": 60,
+        "event": "bond -> rings"
+      },
+      {
+        "z": 14.88,
+        "k": 62,
+        "event": "rings -> bond"
+      },
+      {
+        "z": 15.12,
+        "k": 63,
+        "event": "bond -> rings"
+      },
+      {
+        "z": 15.6,
+        "k": 65,
+        "event": "rings -> canopy"
+      },
+      {
+        "z": 24,
+        "k": 100,
+        "event": "canopy -> rings"
+      },
+      {
+        "z": 24.24,
+        "k": 101,
+        "event": "rings -> bond"
+      },
+      {
+        "z": 24.48,
+        "k": 102,
+        "event": "bond -> rings"
+      },
+      {
+        "z": 24.96,
+        "k": 104,
+        "event": "rings -> bond"
+      },
+      {
+        "z": 25.2,
+        "k": 105,
+        "event": "bond -> rings"
+      },
+      {
+        "z": 25.68,
+        "k": 107,
+        "event": "rings -> bond"
+      },
+      {
+        "z": 25.92,
+        "k": 108,
+        "event": "bond -> rings"
+      },
+      {
+        "z": 26.4,
+        "k": 110,
+        "event": "rings -> bond"
+      },
+      {
+        "z": 26.64,
+        "k": 111,
+        "event": "bond -> rings"
+      },
+      {
+        "z": 27.12,
+        "k": 113,
+        "event": "rings -> bond"
+      },
+      {
+        "z": 27.36,
+        "k": 114,
+        "event": "bond -> rings"
+      },
+      {
+        "z": 27.84,
+        "k": 116,
+        "event": "rings -> bond"
+      },
+      {
+        "z": 28.08,
+        "k": 117,
+        "event": "bond -> rings"
+      },
+      {
+        "z": 28.56,
+        "k": 119,
+        "event": "rings -> cap"
+      }
+    ],
+    "violations": [],
+    "warnings": []
+  },
+  "design": null,
+  "preset": null,
+  "builder": "weft.mjs (core/weft_core.js + core/weft_gate.js, no browser, no Python)",
+  "gate": {
+    "bead": 0.45,
+    "maxbridge": 12,
+    "maxcantilever": 3,
+    "allow": 0.6,
+    "minanchor": 0.5,
+    "maxCapRadius": 20,
+    "maxislands": 1,
+    "file": "C:\\Svemir\\!Projekti\\PI\\weft\\specimens\\2026-10-01_solid_infill_A1\\PUN_DRVO.gcode"
+  }
+}

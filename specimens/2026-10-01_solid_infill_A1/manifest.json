@@ -1,0 +1,202 @@
+{
+ "specimen": "2026-10-01_solid_infill_A1",
+ "process": "solid-infill/v1",
+ "generator": "core/weft_solid_geometry.mjs",
+ "built": "2026-10-01T07:54:34",
+ "machine": {
+  "id": "a1",
+  "label": "Bambu Lab A1",
+  "plate": [
+   256,
+   256
+  ],
+  "maxZ": 256,
+  "bead": 0.45,
+  "beadSource": "ASSUMED",
+  "beadEvidence": "carried over from the A2L; never calibrated on this machine — run the C1 thin-wall test on the A1 and measure before trusting",
+  "lh": 0.24,
+  "firstLayerBead": 0.52,
+  "temp": 220,
+  "bed": 65,
+  "start": "exports/a1_start_block_harvested_2026-10-01.gcode",
+  "end": "exports/a1_end_block_harvested_2026-10-01.gcode",
+  "route": "bambu3mf"
+ },
+ "builder": "weft.mjs",
+ "note": "The same three solid bodies as 2026-09-30_solid_infill, rebuilt for the Bambu Lab A1. Built from the 2026-09-30 geometry files; the <name>_A1_geometry.json files in this folder were regenerated with bed 65 and verified layer-identical to the 2026-09-30 geometries (only summary.args.bed differs, and args.bed is inert — temperatures come from the harvested A1 blocks, M140/M190 S65 literal in the start block). Built with --end-z-from-template so the end-block Z is recomputed per body from the slicer expression max_layer_z + 0.4 (KOCKA 24.4, SUNDJER 20.32, DRVO 30.4 — verified inside each container). end-block.json holds the receipt of the last build only (PUN_KOCKA, after a verified-deterministic duplicate rebuild on 2026-10-01; previously PUN_DRVO). Files marked inRepository:false are excluded for size per repository policy; listed by SHA-256.",
+ "geometrySource": "specimens/2026-09-30_solid_infill/<name>_geometry.json",
+ "bodies": [
+  {
+   "name": "PUN_KOCKA",
+   "built": "2026-10-01T07:52:28",
+   "core": "core-2026-09-19-first-layer",
+   "shipped": [
+    "PUN_KOCKA.gcode",
+    "PUN_KOCKA.gcode.3mf"
+   ],
+   "files": {
+    "PUN_KOCKA.gcode": {
+     "bytes": 9399442,
+     "sha256": "463ffe9cec30487b011691c8f88d7dbede8c3091a4a79fab39abc08dec2a6b87",
+     "inRepository": false
+    },
+    "PUN_KOCKA.gcode.3mf": {
+     "bytes": 2170013,
+     "sha256": "fff5c0c8f9490c97fb0579a54ac42ca1c93fa847f934c6eadd537a79ca84e040",
+     "inRepository": true
+    },
+    "PUN_KOCKA.stl": {
+     "bytes": 16366284,
+     "sha256": "a097406b947badb5230d1996f1c53567382a386c9dc5d9f8b77d96bd04ee193d",
+     "inRepository": false
+    },
+    "PUN_KOCKA_A1.svg": {
+     "bytes": 155782,
+     "sha256": "7da2eee0811a6815c950391d36323f5506505b88463e6489d939bd93804ec65a",
+     "inRepository": true
+    },
+    "PUN_KOCKA_A1_geometry.json": {
+     "bytes": 4697367,
+     "sha256": "2a51f44fdc707f8f29d18a0cb72294fd5ae69b667c7366d2a8595aad8f7afbe9",
+     "inRepository": false
+    },
+    "PUN_KOCKA_gate.json": {
+     "bytes": 1516,
+     "sha256": "96a7290ba7f45f4478ef91c5d1698d121818cdaa05fe7e511895bea905ee100a",
+     "inRepository": true
+    },
+    "PUN_KOCKA_gate_layers.json": {
+     "bytes": 6625,
+     "sha256": "4bca242cdff66d68a4c906732277cc949da1590bca2385c9f2da6f44fc78a7e6",
+     "inRepository": true,
+     "note": "regenerated 2026-10-01 by a duplicate rebuild in a continuation session; verified identical verdict, only the ms timing field differs; all other PUN_KOCKA artifacts matched the original SHA-256 byte for byte (deterministic build)"
+    },
+    "PUN_KOCKA_package_gate.json": {
+     "bytes": 1520,
+     "sha256": "55ea41060764d457b30b84bce8224c76a9fd102001797adb69d3c7ce2378aae1",
+     "inRepository": true
+    },
+    "PUN_KOCKA_report.json": {
+     "bytes": 38849,
+     "sha256": "1095205aececab25aabc726c022383b255fccd29daf114a47e57a76d62630418",
+     "inRepository": true
+    }
+   },
+   "outcome": "NOT PRINTED — fill this in after the print, with photographs"
+  },
+  {
+   "name": "PUN_SUNDJER",
+   "built": "2026-10-01T07:52:59",
+   "core": "core-2026-09-19-first-layer",
+   "shipped": [
+    "PUN_SUNDJER.gcode",
+    "PUN_SUNDJER.gcode.3mf"
+   ],
+   "files": {
+    "PUN_SUNDJER.gcode": {
+     "bytes": 3936794,
+     "sha256": "f6ef1029efba55177aca6682e27676f8f72a346179c54a0ff174c0f67e894956",
+     "inRepository": false
+    },
+    "PUN_SUNDJER.gcode.3mf": {
+     "bytes": 1559427,
+     "sha256": "8afc5ad91c561c8c83fe63705375b3239c65abeb10ad7a94cde6a9708460738f",
+     "inRepository": true
+    },
+    "PUN_SUNDJER.stl": {
+     "bytes": 5255084,
+     "sha256": "a1c89d3d3b8730525a7a0a91aade91b27bdccb9061b966b7b5ef506c9785a871",
+     "inRepository": false
+    },
+    "PUN_SUNDJER_A1.svg": {
+     "bytes": 93253,
+     "sha256": "78b305ae7d345439c4ef926f1711e2e58e7711fc58bd3d0dc04ec2b35cf9d8e5",
+     "inRepository": true
+    },
+    "PUN_SUNDJER_A1_geometry.json": {
+     "bytes": 2189150,
+     "sha256": "c9c5cbe48685963becafe63068e9cd95b696b77f14cd83f8485bbbc9ee75a98e",
+     "inRepository": false
+    },
+    "PUN_SUNDJER_gate.json": {
+     "bytes": 1537,
+     "sha256": "4feeaae533b74e3b38eeefcb379e429597a30ad2478fe585b9907ecafb255539",
+     "inRepository": true
+    },
+    "PUN_SUNDJER_gate_layers.json": {
+     "bytes": 6605,
+     "sha256": "f96956f0f07ad3cb93558a15e0e76e00c463645bcbebc4c77da724f0d051447e",
+     "inRepository": true
+    },
+    "PUN_SUNDJER_package_gate.json": {
+     "bytes": 1541,
+     "sha256": "145f584119a72fa57c8bd37999420066604f3a69ea19e653420fd0e3adcb94aa",
+     "inRepository": true
+    },
+    "PUN_SUNDJER_report.json": {
+     "bytes": 27395,
+     "sha256": "96dc487e49b48d2aa9213b8c62575755bf86e71cd7385a1e414e5f52794f542f",
+     "inRepository": true
+    }
+   },
+   "outcome": "NOT PRINTED — fill this in after the print, with photographs"
+  },
+  {
+   "name": "PUN_DRVO",
+   "built": "2026-10-01T07:53:23",
+   "core": "core-2026-09-19-first-layer",
+   "shipped": [
+    "PUN_DRVO.gcode",
+    "PUN_DRVO.gcode.3mf"
+   ],
+   "files": {
+    "PUN_DRVO.gcode": {
+     "bytes": 2096888,
+     "sha256": "c3bfda88be7860a47208bea57975e15864f4c505d603dca260fc95dd7dd6e327",
+     "inRepository": false
+    },
+    "PUN_DRVO.gcode.3mf": {
+     "bytes": 1103971,
+     "sha256": "d7f7fa3c6363aea781ec3e618c80c94801cbea42db0f6691531a12a3131c6e1d",
+     "inRepository": true
+    },
+    "PUN_DRVO.stl": {
+     "bytes": 3039884,
+     "sha256": "751b385d88b9bd71c59ec06ac8d7acd3910bd31655ca16c6605de77ff184c938",
+     "inRepository": false
+    },
+    "PUN_DRVO_A1.svg": {
+     "bytes": 58877,
+     "sha256": "d428c1e330208d4a55ebd187bc3da12d85dcd8080299afa7e42ec113264e12c2",
+     "inRepository": true
+    },
+    "PUN_DRVO_A1_geometry.json": {
+     "bytes": 1344032,
+     "sha256": "3cfb80a8898f8c15e2d57248332ff519d8ae77ac358d9ce59b2071141156c593",
+     "inRepository": false
+    },
+    "PUN_DRVO_gate.json": {
+     "bytes": 1529,
+     "sha256": "4d3e9e04120796c282205673b16a9b5c2adc5516a5e58ddd9b0de06d9c30cb51",
+     "inRepository": true
+    },
+    "PUN_DRVO_gate_layers.json": {
+     "bytes": 6603,
+     "sha256": "049139d120cb0810be7a8cb39428503c1a039bd42cb1f581e600b14b0dd012b1",
+     "inRepository": true
+    },
+    "PUN_DRVO_package_gate.json": {
+     "bytes": 1533,
+     "sha256": "255d5a162779f4ed17ec35e061102976054d4bae8b7beca2925e503d2b7d4fe0",
+     "inRepository": true
+    },
+    "PUN_DRVO_report.json": {
+     "bytes": 46965,
+     "sha256": "73dceb56bbe5b909927b27a01b48650dee848351e7de856d33d745c0c695b99a",
+     "inRepository": true
+    }
+   },
+   "outcome": "NOT PRINTED — fill this in after the print, with photographs"
+  }
+ ]
+}
