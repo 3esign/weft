@@ -641,3 +641,54 @@ thread, 15.5 g; PUN_SUNDJER 36.8x36.7x19.9, 83 layers, 48.5 m, 6.7 g; PUN_DRVO 2
 printer_model = Bambu Lab A1, bed 65 C, end Z = max_layer_z + 0.4 per body (24.4 / 20.32 / 30.4).
 Bead on the A1 is still ASSUMED 0.45 mm (carried from the A2L, never calibrated): run C1 thin-wall on the A1
 before trusting the millimetres. No print initiated.
+
+## 2026-10-02 — a VOLUME woven as one line per island (pure-weft/v2)
+
+Semir, after the three v1 bodies printed-ready: a chair "a bit larger like 2/3 of height", "mixed patterns
+inside but also outside so it is porose on all sides", "wall is printed as a different pattern than infill
+but its still one layer one line", and it "starts from four separate circular bases and merge into one shape
+and then later continue extruded in the back part". Every clause of that breaks `pure-weft/v1`, which could
+only describe a single radial star r(theta) around one centre: one island per layer, and a rim that is an
+offset band — solid from outside, porous only inward.
+
+`core/weft_field_geometry.mjs` (pure-weft/v2). The body is a FIELD `f(x,y,z) < 0`. Every layer is the level
+set `f(.,.,z) = 0`, extracted by marching squares on a 0.6 mm cell (topology only — every vertex is then
+Newton-projected onto the true level set) and split into however many islands that height happens to have.
+Four feet that merge into one seat is a `smin` of four capsules; nothing below the field cares how it is
+written, so a lattice, a boolean of primitives or a scan would print the same way.
+
+The rim is now TWO INTERLACING WAVES, not a band. Pass A rides the boundary at depth `m + A(1+sin(N*2pi*t+phi))`,
+pass B at `m + gap + A(1-sin(...))` — antiphase. Where A is out, B is in: they close on each other once per
+lobe and open to `gap + 2A` (~2.5-3.0 mm) between, and those openings are real holes THROUGH the shell. That
+is what "porous on all sides" has to mean, and it is the only honest reading of it: a porous interior behind a
+closed skin is still a closed skin. `phi` advances 0.28 rad per layer so no two layers stack their openings,
+and a new island ramps its amplitude in over ten layers (the feet themselves print flat, amp 0, for adhesion).
+
+The core is laid on the boundary pass B ACTUALLY TRACES — the wavy curve, not a constant offset — so a chord
+ends on rim material instead of in one of the holes. And rim and core are no longer two paths: the rim hands
+over along pass B and the layer leaves the nozzle as ONE continuous line per island. "Wall" pattern and
+"infill" pattern, one thread. Travel exists only between islands, where it must.
+
+Support is measured, not estimated: every point of layer k is looked up against a spatial hash of every point
+of layer k-1, and the generator reports the worst unsupported RUN and refuses before the gate sees the G-code.
+
+`tools/check_pure_weft.mjs` had to grow up with it. "A run that ends within 0.44 mm of its start is a wall"
+was true while rim and core were separate paths; now a run ends wherever the fill finished, and four of the
+chair's 1198 runs come home within half a bead by pure chance. A wall is a run that comes home AND did nothing
+but go round, so closure is judged against the run's own convex hull (length > 1.8 x hull perimeter = it has
+been inside the section) and both numbers are printed rather than hidden in a threshold. Control: a genuine
+Bambu slice of T1b still reports 28 walls; the three v1 bodies still report 0; the chair reports 0.
+
+Shipped for the A1, specimens/2026-10-02_stolica_A1/: STOLICA 82.3 x 89.2 x 169.9 mm (two thirds of the A1's
+256 mm Z), 708 layers, 756.7 m thread, 75.6 g, 2h36m. Four first-layer islands -> one body; tags base,
+stopalo, noga, noga-veza, sediste, sediste-lezaj, naslon-mreza, naslon-talas, naslon-veza, naslon-vrh, with a
+different core pattern per stage (lines / sine / spiral / rim-only) and a different weave amplitude. Gate S1 +
+layered S2-S8/ORDER: 0 problems on the G-code and again inside the container (0 floating, 0 long bridge, 0
+cantilever over 1.83 M checked points; worst free span 7.02 mm against a 12 mm allowance). Opens pre-sliced in
+Bambu Studio 2.07.01.62 — Preview active, Print plate green, 24.96 m / 75.64 g, 708 layers. Studio also warns
+"floating cantilever" against STOLICA.stl: that is its heuristic on the DISPLAY MESH, not on the toolpath that
+prints. `tests/field_weft.test.mjs` is in npm test.
+
+The STL (179 MB), geometry dump (35 MB) and raw G-code (66 MB) are not committed — they rebuild from the
+generator in one command, recorded with SHA-256 in the specimen README. Bead on the A1 is still ASSUMED
+0.45 mm. No print initiated.
