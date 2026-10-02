@@ -19,3 +19,10 @@ bridge/log/
 !exports/*container*.gcode.3mf
 !exports/ender_start.gcode
 !exports/ender_end.gcode
+
+# STOLICA is a 170 mm body: its STL (179 MB), geometry dump (35 MB) and raw G-code (66 MB) are
+# reproducible from core/weft_field_geometry.mjs. The sliced container and the evidence travel;
+# the bulk does not. Rebuild command and SHA-256 are in the specimen README (2026-10-02).
+specimens/2026-10-02_stolica_A1/STOLICA.stl
+specimens/2026-10-02_stolica_A1/STOLICA_geometry.json
+specimens/2026-10-02_stolica_A1/STOLICA.gcode

@@ -1,0 +1,2 @@
+note: layer 158 z=37.92: section grows 0.75 mm outward (field estimate; measured run 3.6 mm)
+note: layer 281 z=67.44: section grows 0.6 mm outward (field estimate; measured run 2 mm)

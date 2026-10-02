@@ -1,0 +1,35 @@
+{
+ "name": "STOLICA",
+ "machine": "Bambu Lab A1",
+ "size_mm": [
+  82.3,
+  89.2,
+  169.92
+ ],
+ "layers": 708,
+ "firstLayerIslands": 4,
+ "maxIslands": 4,
+ "patterns": [
+  "lines",
+  "spiral",
+  "rim-only"
+ ],
+ "tags": [
+  "base",
+  "stopalo",
+  "noga",
+  "noga-veza",
+  "sediste",
+  "sediste-lezaj",
+  "naslon-mreza",
+  "naslon-talas",
+  "naslon-veza",
+  "naslon-vrh"
+ ],
+ "thread_m": 757.1,
+ "worstFreeSpan_mm": 7.02,
+ "worstValleyRun_mm": 10.46,
+ "worstGrowth_mm": 0.75,
+ "meshFaces": 29088,
+ "events": 284
+}

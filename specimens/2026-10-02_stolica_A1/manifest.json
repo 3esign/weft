@@ -1,0 +1,35 @@
+{
+ "name": "STOLICA",
+ "model": "geometry",
+ "built": "2026-10-02T00:18:37",
+ "machine": {
+  "id": "a1",
+  "label": "Bambu Lab A1",
+  "plate": [
+   256,
+   256
+  ],
+  "maxZ": 256,
+  "bead": 0.45,
+  "beadSource": "ASSUMED",
+  "beadEvidence": "carried over from the A2L; never calibrated on this machine — run the C1 thin-wall test on the A1 and measure before trusting",
+  "lh": 0.24,
+  "firstLayerBead": 0.52,
+  "temp": 220,
+  "bed": 65,
+  "start": "exports/a1_start_block_harvested_2026-10-01.gcode",
+  "end": "exports/a1_end_block_harvested_2026-10-01.gcode",
+  "route": "bambu3mf"
+ },
+ "geometry": "STOLICA_geometry.json",
+ "shipped": [
+  "STOLICA.gcode",
+  "STOLICA.gcode.3mf"
+ ],
+ "gate": "STOLICA_gate.json",
+ "gateLayers": "STOLICA_gate_layers.json",
+ "report": "STOLICA_report.json",
+ "builder": "weft.mjs",
+ "core": "core-2026-09-19-first-layer",
+ "outcome": "NOT PRINTED — fill this in after the print, with photographs"
+}
