@@ -58,3 +58,19 @@ only as good as that number. Run the C1 thin-wall test on the A1, measure, and w
 `machines.json` before trusting the millimetres.
 
 Not printed yet. Fill in the outcome here, with photographs.
+
+## Re-verified 2026-10-02 (the SOKOL pass)
+
+`tools/check_pure_weft.mjs` was reading a `.gcode.3mf` as plain text — a ZIP, so no `G01` lines, so
+0 runs, so a green "no closed body path in any file" on a file it had never opened. It unzips
+containers now and refuses any file it read no extrusion from. Run properly against the three
+shipped containers:
+
+```
+PUN_KOCKA.gcode.3mf    200 body runs · 120.0 m · WALLS 0
+PUN_SUNDJER.gcode.3mf  166 body runs ·  48.5 m · WALLS 0
+PUN_DRVO.gcode.3mf     250 body runs ·  24.2 m · WALLS 0
+```
+
+The thread lengths match this README exactly, so the original claim was true — it was the check that
+was not doing anything. Nothing about these bodies changes.

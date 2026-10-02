@@ -55,3 +55,31 @@ worth exactly what that number is worth. Run the C1 thin-wall test on the A1 and
 trusting the dimensions.
 
 Outcome: **NOT PRINTED.** Fill this in after the print, with photographs.
+
+## Rebuild note, added 2026-10-02 (the SOKOL pass)
+
+Four defects in `core/weft_field_geometry.mjs` were found while building `2026-10-02_sokol_A1` and fixed
+there. All four were latent in this chair, so **the rebuild command above no longer reproduces the two
+SHA-256 above** — it produces a better body. The shipped container is unchanged and still gates clean; what
+changed is the generator.
+
+| fixed | what it was doing to this chair |
+|---|---|
+| the rim's seam is now placed at the maximum opening, and opened by construction if the section is locally too thin | layers 182, 187 and 188 (at half scale) had a rim that came home on itself within 0.14 mm and once within 0 — a closed loop, in a process whose whole premise is that there are none |
+| the weave's amplitude is clamped to the room the section has, continuously, instead of flipping to a plain concentric rim | the flip jumped the innermost pass a whole pitch sideways between adjacent layers |
+| an island keeps its identity when it has not changed (mutual nearest neighbour, centroid **and** perimeter) | every island in the layer lost its weave ramp whenever any island in that layer merged or split |
+| a collapsing ring shallows its weave instead of falling back to a plain rim | a plain concentric rim on a dumbbell leaves a void at the waist |
+| `tools/check_pure_weft.mjs` now unzips a container, and refuses a file it read no extrusion from | run against `STOLICA.gcode.3mf` it printed **"no closed body path"** after reading **0 runs** — a green verdict on an unread file. Re-run properly, the container reports 1198 body runs, 756.7 m, **0 walls**: the claim was true, the check was not |
+
+`tests/field_weft.test.mjs` passes on the new generator and is what caught the closed rim. Rebuild and
+re-gate before printing from a fresh build; the committed `STOLICA.gcode.3mf` is the verified artefact.
+
+## Header note, added 2026-10-02 (the SOKOL pass)
+
+`STOLICA.gcode` — the plain file for an SD card, not committed — carries the **template's** header:
+167 layers, 7.20 g, max Z 40.04, for a 708-layer 170 mm chair. `fixHeader` split the file on `'\n'`
+while the harvested A1 start block is CRLF, so every substitution missed in silence. The committed
+`STOLICA.gcode.3mf` was never affected; the packer rewrites those fields itself. Fixed in
+`core/weft_build.mjs`, guarded in `weft.mjs` (the header is read back off the disk and compared with
+the moves), held by `tests/header_truth.test.mjs`. Rebuild to get a plain `.gcode` that tells the
+truth about itself; see `specimens/2026-10-02_sokol_A1/README.md`.

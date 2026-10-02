@@ -301,6 +301,25 @@ async function cmdBuild(){
   /* 5. tell the truth in the first ten lines */
   const fixed = fixHeader(txt); fs.writeFileSync(gc, fixed.text);
   console.log(`HEAD  rewritten: ${fixed.stats.layers} layers, ${fixed.stats.filament_mm} mm filament, ${fixed.stats.grams} g, max Z ${fixed.stats.maxZ}, ${fixed.stats.time} (kinematic)`);
+  /* and the line above is a CLAIM about a file, so it is read back off the disk. fixHeader missed
+     all six fields on every CRLF build while printing these exact numbers; the plain .gcode that
+     goes on an SD card then told the printer it was a 167-layer, 7.20 g, 40.04 mm print. A log line
+     is not evidence that a file changed. (2026-10-02) */
+  {
+    const head = fs.readFileSync(gc, 'utf8').slice(0, 4000).split(/\r?\n/);
+    const want = [['total layer number', String(fixed.stats.layers)],
+                  ['total filament length [mm]', fixed.stats.filament_mm.toFixed(2)],
+                  ['total filament weight [g]', fixed.stats.grams.toFixed(2)],
+                  ['max_z_height', fixed.stats.maxZ.toFixed(2)]];
+    const bad = [];
+    for(const [key, val] of want){
+      const ln = head.find(l => l.startsWith(`; ${key}`));
+      if(ln === undefined) continue;                       // this machine's header has no such field
+      const got = ln.slice(ln.indexOf(':') + 1).trim();
+      if(got !== val) bad.push(`${key}: file says ${JSON.stringify(got)}, the moves say ${JSON.stringify(val)}`);
+    }
+    if(bad.length) refuse(`the shipped G-code header does not match the G-code:\n      ${bad.join('\n      ')}`);
+  }
 
   /* 6. package for the machine that has to read it */
   const shipped = [path.basename(gc)];

@@ -334,6 +334,15 @@ export async function gcodeText(W, headFile, footFile, options={}){
    fields, same wording; returns {text, stats, missed}. */
 export function fixHeader(text, o = {}){
   const density = o.density ?? 1.26, diameter = o.diameter ?? 1.75;
+  /* CRLF. The harvested A1 start block is a Windows export, so the first dozen lines of every A1
+     build end in '\r\n' while the 2.7 million lines this generator writes end in '\n'. Splitting on
+     '\n' leaves that '\r' on the header lines, and the patterns below end in `$` without the m flag
+     — `.` never matches '\r' — so all six substitutions missed, silently, while the stats they
+     return were correct and got printed. Three bodies shipped a plain .gcode carrying the TEMPLATE's
+     header (167 layers, 7.20 g, max Z 40.04) under a log line that said otherwise.
+     The fix is in the PATTERNS, not in the split: normalising the line endings here would rewrite
+     2.7 million lines the caller never asked about (first attempt did, and grew the file 2.76 MB).
+     Each line keeps the ending it arrived with. (2026-10-02) */
   const src = text.split('\n');
   let X = 0, Y = 0, Z = 0, F = 3000.0, absE = true, Eprev = null, efil = 0, seconds = 0, maxz = 0, layerMarks = 0;
   const zs = new Set();
@@ -359,18 +368,20 @@ export function fixHeader(text, o = {}){
   const nlayers = layerMarks ? layerMarks : zs.size;
   const hms = (t) => { t = Math.round(t); const d = Math.floor(t / 86400); t -= d * 86400; const h = Math.floor(t / 3600); t -= h * 3600; const m = Math.floor(t / 60); const sec = t - m * 60;
     return (d ? `${d}d ` : '') + ((h || d) ? `${h}h ` : '') + `${m}m ${sec}s`; };
+  /* every `$` below is `\r?$`: see the note at the top of this function */
   const sub = [
-    [/^; model printing time:.*$/, `; model printing time: ${hms(seconds)}; total estimated time: ${hms(seconds)}   ; WEFT kinematic estimate, no acceleration model - a LOWER bound`],
-    [/^; total layer number:.*$/, `; total layer number: ${nlayers}`],
-    [/^; total filament length \[mm\][^:]*:.*$/, `; total filament length [mm] : ${efil.toFixed(2)}`],
-    [/^; total filament volume \[cm\^3\][^:]*:.*$/, `; total filament volume [cm^3] : ${vol.toFixed(2)}`],
-    [/^; total filament weight \[g\][^:]*:.*$/, `; total filament weight [g] : ${grams.toFixed(2)}`],
-    [/^; max_z_height:.*$/, `; max_z_height: ${maxz.toFixed(2)}`],
+    [/^; model printing time:.*\r?$/, `; model printing time: ${hms(seconds)}; total estimated time: ${hms(seconds)}   ; WEFT kinematic estimate, no acceleration model - a LOWER bound`],
+    [/^; total layer number:.*\r?$/, `; total layer number: ${nlayers}`],
+    [/^; total filament length \[mm\][^:]*:.*\r?$/, `; total filament length [mm] : ${efil.toFixed(2)}`],
+    [/^; total filament volume \[cm\^3\][^:]*:.*\r?$/, `; total filament volume [cm^3] : ${vol.toFixed(2)}`],
+    [/^; total filament weight \[g\][^:]*:.*\r?$/, `; total filament weight [g] : ${grams.toFixed(2)}`],
+    [/^; max_z_height:.*\r?$/, `; max_z_height: ${maxz.toFixed(2)}`],
   ];
   const hit = sub.map(() => 0); const out = []; let inHeader = false;
   for(let ln of src){
     if(ln.startsWith('; HEADER_BLOCK_START')) inHeader = true;
-    if(inHeader){ for(let i = 0; i < sub.length; i++){ if(sub[i][0].test(ln)){ ln = sub[i][1]; hit[i]++; break; } } }
+    if(inHeader){ const cr = ln.endsWith('\r');
+      for(let i = 0; i < sub.length; i++){ if(sub[i][0].test(ln)){ ln = sub[i][1] + (cr ? '\r' : ''); hit[i]++; break; } } }
     if(ln.startsWith('; HEADER_BLOCK_END')) inHeader = false;
     out.push(ln);
   }

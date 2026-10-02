@@ -1,0 +1,9 @@
+{
+  "source": "D:\\Svemir\\!Projekti\\weft\\exports\\a1_container_T1b_2026-10-01.gcode.3mf",
+  "entry": "Metadata/project_settings.config",
+  "formula": "G1 Z{max_layer_z + 0.4} F900 ; lower z a little",
+  "oldZ": 40.44,
+  "top": 187.92,
+  "newZ": 188.32,
+  "meaning": "Re-evaluated the slicer-owned expression; no invented printer sequence."
+}

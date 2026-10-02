@@ -58,6 +58,26 @@ export function sdRoundBox(x, y, z, c, h, rad){
   const ox = Math.max(qx, 0), oy = Math.max(qy, 0), oz = Math.max(qz, 0);
   return hyp(ox, oy, oz) + Math.min(Math.max(qx, qy, qz), 0) - rad;
 }
+/* A capsule, radius lerped along the axis. The exact SDF of a TAPERED capsule needs the cone
+   correction; this one understates the distance near the thin end by at most (ra-rb)/|b-a|, and the
+   thread is Newton-projected onto the real level set anyway — what matters here is that it is smooth,
+   monotone and cheap, because the field is evaluated about 25 million times per body. */
+export function sdCapsule3(x, y, z, a, b, ra, rb){
+  const bx = b[0] - a[0], by = b[1] - a[1], bz = b[2] - a[2];
+  const px = x - a[0], py = y - a[1], pz = z - a[2];
+  const bb = bx * bx + by * by + bz * bz;
+  const t = clamp((px * bx + py * by + pz * bz) / bb, 0, 1);
+  return hyp(px - bx * t, py - by * t, pz - bz * t) - lerp(ra, rb == null ? ra : rb, t);
+}
+/** piecewise-smooth loft: keyframes [[z, v1, v2, ...], ...] -> the vector at z, C1 at every knot */
+export function profileAt(z, kf){
+  if(z <= kf[0][0]) return kf[0].slice(1);
+  for(let i = 1; i < kf.length; i++) if(z <= kf[i][0]){
+    const t = smooth((z - kf[i - 1][0]) / (kf[i][0] - kf[i - 1][0]));
+    return kf[i].slice(1).map((v, j) => lerp(kf[i - 1][j + 1], v, t));
+  }
+  return kf[kf.length - 1].slice(1);
+}
 export function smin(a, b, k){                        // polynomial smooth minimum — the merge
   if(k <= 0) return Math.min(a, b);
   const h = clamp(0.5 + 0.5 * (b - a) / k, 0, 1);
@@ -154,7 +174,7 @@ export function signedArea(pts){
   let a = 0; for(let i = 0; i < pts.length; i++){ const p = pts[i], q = pts[(i + 1) % pts.length]; a += p[0] * q[1] - q[0] * p[1]; }
   return a / 2;
 }
-function resampleClosed(pts, step){
+export function resampleClosed(pts, step){
   const cum = [0];
   for(let i = 1; i <= pts.length; i++){ const a = pts[i - 1], b = pts[i % pts.length]; cum.push(cum[i - 1] + hyp(b[0] - a[0], b[1] - a[1])); }
   const total = cum[pts.length];
@@ -180,7 +200,7 @@ function resampleOpen(pts, step){
   return out;
 }
 /** a closed polygon with arc-length tables and inward normals */
-function makeLoop(pts){
+export function makeLoop(pts){
   const n = pts.length, cum = [0];
   for(let i = 0; i < n; i++){ const a = pts[i], b = pts[(i + 1) % n]; cum.push(cum[i] + hyp(b[0] - a[0], b[1] - a[1])); }
   const ccw = signedArea(pts) > 0, nrmIn = [];
@@ -234,14 +254,87 @@ function pointInPoly(pts, p){
   }
   return inside;
 }
-/** true when the section has a neck narrower than 2*depth, i.e. an inward offset would fold on itself */
+/** The narrowest pinch in a loop between two points far apart ALONG it: [i, j], or null. */
+/* `far` MUST be the same reach ringCollapses uses, or the two disagree about what a pinch is and a
+   section falls between them: ringCollapses looks 4*depth along the loop, this looked 4*need = twice
+   as far, so a pinch whose two sides were 9 to 19 mm apart along the boundary was refused by one and
+   invisible to the other. That is where the falcon's shoulder sat — collapsed ring, no cut, plain
+   concentric rim on a shape that cannot take one, 18.5 mm of void (measured 2026-10-02, z 120.48). */
+export function findPinch(L, need){
+  const cell = need, Hm = new Map();
+  for(let i = 0; i < L.n; i++){
+    const k = `${Math.floor(L.pts[i][0] / cell)},${Math.floor(L.pts[i][1] / cell)}`;
+    let a = Hm.get(k); if(!a){ a = []; Hm.set(k, a); } a.push(i);
+  }
+  const far = Math.max(2 * (need - 0.4), 3.0);
+  let best = null, bd = Infinity;
+  for(let i = 0; i < L.n; i++){
+    const ci = Math.floor(L.pts[i][0] / cell), cj = Math.floor(L.pts[i][1] / cell);
+    for(let a = ci - 1; a <= ci + 1; a++) for(let b = cj - 1; b <= cj + 1; b++){
+      const bucket = Hm.get(`${a},${b}`); if(!bucket) continue;
+      for(const j of bucket){
+        let arc = Math.abs(L.cum[i] - L.cum[j]); arc = Math.min(arc, L.total - arc);
+        if(arc < far) continue;
+        const d = hyp(L.pts[i][0] - L.pts[j][0], L.pts[i][1] - L.pts[j][1]);
+        if(d < need && d < bd){ bd = d; best = [i, j]; }
+      }
+    }
+  }
+  return best;
+}
+/** A SECTION PINCHED THINNER THAN ITS OWN WEAVE IS NOT ONE SECTION.
+    When a wing peels off a tail blade, or any two surfaces part face to face, the union passes
+    through a stage where the two bodies are joined by a strip a few tenths of a millimetre thick and
+    a centimetre long. There is no way to print that: a 0.45 mm bead cannot lay a 0.3 mm connection,
+    and asking the layer to treat it as one region is what produced a chord through nine millimetres
+    of air at z 119.04 and twenty millimetres of unsupported thread at z 53.52 (measured 2026-10-02).
+    So the loop is CUT at the pinch and the halves become two islands — which is what the machine was
+    going to do anyway. Nothing is lost structurally: the layer below still has them joined and the
+    layer above joins them again; what goes away is a connection the nozzle could not make. */
+export /* minArea is the honest difference between the two things a thin place can be. A NECK between two
+   lobes gives two halves that are both real sections. A SLOT — two nearly parallel faces a few
+   tenths apart, which is what two flat surfaces meeting produce — gives one real half and one sliver
+   that is the slot's own walls. Cutting there would hand the layer a sliver island it has no business
+   printing, so a half under 25 mm2 means this was a slot and not a neck, and nothing is cut: the slot
+   is simply too narrow for the thread and the rim walks past it. */
+function cutPinches(loops, need, minArea){
+  const out = [];
+  const stack = loops.slice();
+  let guard = 0;
+  while(stack.length && guard++ < 64){
+    const L = stack.shift();
+    const pin = findPinch(L, need);
+    if(!pin){ out.push(L); continue; }
+    let [i, j] = pin; if(i > j){ const t = i; i = j; j = t; }
+    const A = L.pts.slice(i, j + 1), B = L.pts.slice(j).concat(L.pts.slice(0, i + 1));
+    /* Signed area, not absolute. A NOTCH — the eye socket seen from the side — is also two
+       boundary points a tenth of a millimetre apart with the whole head between them along the loop,
+       and cutting there hands back one CLOCKWISE half: the outline of the void, not of any material.
+       Keeping it made the head's own socket print as an island and put thread 26 mm outside the body
+       at z 176.4 (measured 2026-10-02). A cut is only a cut when BOTH halves are material. */
+    const keep = [A, B].filter(r => r.length > 8 && signedArea(r) > minArea);
+    if(keep.length !== 2){ out.push(L); continue; }       // a cut that loses a half is not a cut
+    for(const r of keep) stack.push(makeLoop(resampleClosed(r, CHORD_STEP * 1.6)));
+  }
+  return out.concat(stack);
+}
+/** true when the section has a NECK narrower than 2*depth — a waist, where an inward offset would
+    fold on itself. The qualifier earns its italics: two boundary points can also be a tenth of a
+    millimetre apart because there is a CRACK between them, and a crack is not a waist. Where a wing
+    meets a trunk the union carries a 4 mm long, 1 mm wide notch at each end of the contact, and with
+    the old reach (4*depth = 4.1 mm) that notch counted as a collapsed ring: the whole section fell
+    back to a plain concentric rim, which is the one thing a shape like that cannot take, and left an
+    18.5 mm void inside one layer (measured 2026-10-02, z 120.48). A waist divides the section, so
+    BOTH arcs between the two points are a real part of the boundary — at least an eighth of it. What
+    is left over is a crack, and the thread simply walks in and out of it. Genuine necks between two
+    lobes are cut into two islands by cutPinches before this is ever asked. */
 function ringCollapses(L, depth){
   const need = 2 * depth + 0.4, cell = need, H = new Map();
   for(let i = 0; i < L.n; i++){
     const k = `${Math.floor(L.pts[i][0] / cell)},${Math.floor(L.pts[i][1] / cell)}`;
     let a = H.get(k); if(!a){ a = []; H.set(k, a); } a.push(i);
   }
-  const far = Math.max(4 * depth, 3.0);
+  const far = Math.max(4 * depth, 3.0, 0.125 * L.total);
   for(let i = 0; i < L.n; i++){
     const ci = Math.floor(L.pts[i][0] / cell), cj = Math.floor(L.pts[i][1] / cell);
     for(let a = ci - 1; a <= ci + 1; a++) for(let b = cj - 1; b <= cj + 1; b++){
@@ -261,15 +354,64 @@ function ringCollapses(L, depth){
    N is an integer so the wave closes on itself at the seam; phi advances per layer so the openings
    between the two passes spiral instead of stacking. Pass B — the deeper, wavy one — is handed back
    as the CORE BOUNDARY, so a core chord always ends on rim material and never in one of the holes. */
+/* TWO ANCHORS, and that difference is the whole difference between a texture and a feather.
+   ARC: the wave counts lobes along the perimeter, so it follows the shape, and the phase drift makes
+        the openings spiral — skin, down, stone.
+   SPATIAL: the wave is a standing wave in the plate's own coordinates, sin(2pi*(p.n)/lambda). The
+        section may grow, lean, gain a lobe or move its seam; the groove still sits at the same x (or
+        y) on the next layer, so four hundred layers stack into one unbroken quill line. A perimeter
+        anchor cannot do this: t=0 is wherever marching squares entered the contour, and a section
+        that changes width redistributes every lobe under it. */
 function rimWeave(F, z, loop, spec){
-  const { m, amp, lobes, phase, gap } = spec;
+  const { m, amp, lobes, phase, gap, spatial, minOpen = 0 } = spec;
   const M = Math.max(64, Math.round(loop.total / CHORD_STEP));
-  const dA = t => -(m + amp * (1 + Math.sin(TAU * lobes * t + phase)));
-  const dB = t => -(m + gap + amp * (1 - Math.sin(TAU * lobes * t + phase)));
+  const ca = spatial ? Math.cos((spatial.alpha || 0) * Math.PI / 180) : 0;
+  const sa = spatial ? Math.sin((spatial.alpha || 0) * Math.PI / 180) : 0;
+  const pointAt = (sv) => walkAt(loop, loop.total * (sv - Math.floor(sv)));
+  /* A ONE-DIRECTION standing wave has a trap in it: along any straight face that runs PERPENDICULAR
+     to the wave, the phase is constant, so that whole face sits at one depth — and if the wave
+     happens to be at its deep end there, the face is two millimetres inside the boundary and the
+     next layer, whose own face is a hair's breadth away in the other direction, finds nothing under
+     it for the length of the face. Thirty-three millimetres of it, measured on the falcon's wing at
+     z 53.52. So the wave carries a smaller crossing component: no straight face is at one depth any
+     more, the grooves still hold their position layer after layer, and the texture gains a crossing
+     modulation which is what a feather's barbs do to its quill anyway. */
+  const ca2 = spatial ? Math.cos(((spatial.alpha || 0) + 90) * Math.PI / 180) : 0;
+  const sa2 = spatial ? Math.sin(((spatial.alpha || 0) + 90) * Math.PI / 180) : 0;
+  const k2 = spatial && spatial.k2 ? spatial.k2 : 0;
+  const wv = (sv) => { const pt = pointAt(sv);
+    if(!spatial) return Math.sin(TAU * lobes * (sv - Math.floor(sv)) + phase);
+    const a = Math.sin(TAU * (pt[0] * ca + pt[1] * sa) / spatial.lambda + (spatial.phase || 0));
+    if(!k2) return a;
+    const b = Math.sin(TAU * (pt[0] * ca2 + pt[1] * sa2) / (spatial.lambda2 || spatial.lambda) + (spatial.phase || 0) * 0.5);
+    return (a + k2 * b) / (1 + k2);
+  };
+  /* THE SEAM GOES WHERE THE RIM IS WIDEST OPEN.
+     Pass A rides at m + A*(1+w) and pass B at m + gap + A*(1-w). Those two depths are EQUAL where
+     w = gap/(2A) — and the phase drifts a little every layer, so sooner or later that value lands on
+     the seam, the thread's two ends arrive at the same point, and the layer carries a closed loop.
+     Found by the chair's own test at half scale, layer 186: a rim that came home within 0.04 mm.
+     Fixed by choosing the seam instead of inheriting it: the walk starts at the MINIMUM of w, where
+     the two passes stand gap + 2A apart. The thread now enters and leaves at the widest opening in
+     the layer, which is where a single line should enter and leave anyway. The wave itself is still
+     read at the true arc position, so the lobes and the drift are untouched. */
+  let s0 = 0, wMin = Infinity;
+  for(let i = 0; i < M; i++){ const w = wv(i / M); if(w < wMin){ wMin = w; s0 = i / M; } }
   const A = [], B = [], ring = [];
-  for(let i = 0; i <= M; i++){ const t = i / M; A.push(toDepth(F, z, walkAt(loop, loop.total * t), dA(t))); }
-  for(let i = 0; i <= M; i++){ const t = 1 - i / M; B.push(toDepth(F, z, walkAt(loop, loop.total * t), dB(t))); }
-  for(let i = 0; i < M; i++){ const t = i / M; ring.push(toDepth(F, z, walkAt(loop, loop.total * t), dB(t))); }
+  for(let i = 0; i <= M; i++){ const sv = s0 + i / M;
+    A.push(toDepth(F, z, pointAt(sv), -(m + amp * (1 + wv(sv))))); }
+  for(let i = M; i >= 0; i--){ const sv = s0 + i / M;
+    B.push(toDepth(F, z, pointAt(sv), -(m + gap + amp * (1 - wv(sv))))); }
+  for(let i = 0; i < M; i++){ const sv = s0 + i / M;
+    ring.push(toDepth(F, z, pointAt(sv), -(m + gap + amp * (1 - wv(sv))))); }
+  /* AND THE SEAM IS OPENED BY CONSTRUCTION, not by hope. Placing it at the minimum of w makes the
+     two passes stand gap + 2A apart THERE — unless the section is locally thinner than the weave, in
+     which case toDepth lands both passes on the same medial axis and the thread's two ends are the
+     same point. minRadius cannot see that: it measures from the centroid, and a slab with a thin horn
+     has a comfortable centroid and no room at all where the horn is. Measured in the chair at half
+     scale, layers 182-188: three rims home to within 0.14 mm and one to within 0. So pass B gives
+     back its last millimetre or two until the thread demonstrably does not close. */
+  while(B.length > 12 && hyp(B[B.length - 1][0] - A[0][0], B[B.length - 1][1] - A[0][1]) < minOpen) B.pop();
   return { pts: A.concat(B), coreRing: ring, maxDepth: m + gap + 2 * amp, opening: gap + 2 * amp };
 }
 /** a plain inward spiral — where the section is too small to hold a weave plus a core */
@@ -528,6 +670,210 @@ export const VARIANTS = {
     },
     speed: 50,
   },
+  /* ==================================================================================================
+     SOKOL — a peregrine, perched. The first body in this project whose SKIN carries the drawing.
+
+     The figure is held up by three things, which is how every bronze falcon has ever stood: two
+     tarsi and the TAIL, raked forward from the back of the rock until it meets the body. Nothing in
+     this sculpture needs support material, and nothing in it is a wall.
+
+     What the shape had to learn:
+       * an ellipsoid cannot be a belly. Its bottom is a POINT, and a point thirty millimetres above
+         the rock is a floating island the generator refuses — correctly. So the trunk is a LOFT whose
+         first section is small enough to sit inside the two tarsi after they have merged, and every
+         section after it grows at a rate the one below can carry (worst 0.43 mm per layer against a
+         0.72 mm reach).
+       * the wings LEAVE the body and come back. S = smooth(sin(pi*t)) is zero with zero slope at
+         both ends, so the blade buds out of the tail blade, bows out into the air, and sinks into the
+         mantle. The two bows are windows you can see daylight through — and that, not a texture, is
+         what makes the thing porous on the OUTSIDE.
+       * the eyes are not modelled, they are BORED: two capsules subtracted from the sides, stopped
+         short of each other so a 13 mm brow survives to carry the weave across. The thread turns into
+         each socket and back out, so the eye is drawn by the same line that draws the head.
+
+     What the SKIN had to learn, which is the real work here:
+       * ARC anchoring (lobes counted along the perimeter, phase drifting per layer) is a texture that
+         follows the shape. It is right for stone, down and scales. It is WRONG for a feather, because
+         t=0 is wherever marching squares entered the contour and a section that changes width
+         redistributes every lobe under it.
+       * so the tail and the wings use a SPATIAL anchor: the wave is a standing wave in the plate's own
+         coordinates. The groove sits at the same y (tail) or the same x (wing) on every layer, and
+         four hundred layers stack into one unbroken quill line.
+       * a peregrine's underside is BARRED. On a body with no surface the only honest way to draw a bar
+         is to modulate how open the skin is with height: deep wave and sparse core for one band,
+         shallow wave and dense core for the next. Nine bars up the breast, and the core pattern
+         changes every band so no bar repeats its neighbour.
+       * and one height now holds parts that are not the same thing to weave — a tail blade and two
+         scaled tarsi, a trunk and two feathered wings. planFor answers per ISLAND.                   */
+  sokol: {
+    title: 'SOKOL',
+    concept: 'a perched peregrine: a rock, two scaled tarsi and a tail blade rising as three islands, fused into a barred breast, two windows opened where the wings stand off the flanks, closed into a hooded head with two sockets bored through the weave',
+    H: 188.0,
+    geom(H){
+      const s = H / 188;
+      const K = (kf) => kf.map(r => r.map(v => v * s));
+      return { s, H,
+        rockTop: 8.82 * s, rockCx: -13 * s, rockEcc: 1.26, rockB: 30 * s, rockLobe: 2.3 * s, rockRaft: 2.4 * s,
+        legZ0: 5 * s, legZmerge: 44 * s, legZ1: 52 * s, legX0: 17 * s, legDX: 9 * s, legY: 15 * s, legConv: 0.63,
+        legR0: 7.8 * s, legR1: 5.6 * s, legR2: 7.2 * s, legKnee: 26 * s,
+        tailZ0: 6 * s, tailZ1: 98 * s, tailX0: -45 * s, tailX1: -18 * s,
+        tailW0: 18 * s, tailW1: 11 * s, tailT0: 6.8 * s, tailT1: 6.1 * s, tailRad: 3.0 * s,
+        /* [z, centre x, half depth, half width, corner] — the breast at z 90 is the deepest section */
+        trunk: K([[ 40,   8.92,  2.6, 11.0,  2.0],
+                  [ 50,   4.00, 12.0, 14.0,  5.0],
+                  [ 62,  -2.00, 22.0, 17.0,  7.0],
+                  [ 76,  -7.00, 29.0, 19.2,  9.0],
+                  [ 90, -10.00, 32.0, 20.0, 10.0],
+                  [106, -13.00, 30.0, 19.5, 10.0],
+                  [122, -14.00, 26.0, 18.0,  9.0],
+                  [136, -10.00, 19.0, 15.0,  8.0],
+                  [148,  -3.00, 12.5, 12.0,  6.0],
+                  [152,   2.00, 11.5, 11.5,  5.5],
+                  [160,   7.00,  9.0,  9.5,  4.5]]),
+        trunkZ0: 40 * s, trunkZ1: 160 * s,
+        wingZ0: 8.4 * s, wingZ1: 138 * s,
+        /* [z, centre x, centre |y|, half chord, half thickness] — on the stone, out, and into the mantle */
+        /* [z, centre x, centre |y|, half chord, half thickness, sweep deg]. The SWEEP is structural,
+           not decoration: a wing whose inner face is PARALLEL to the trunk's flank meets it along
+           twenty-five millimetres at once, and the union then carries a sub-millimetre slot that long
+           — no offset fits in it, the ring collapses and the rim has nowhere to go. Swept, the same
+           junction is a wedge: it closes at one end and stands four millimetres open at the other.
+           It is also what a mantling wing does. */
+        wing: K([[  8.4, -26, 23.0,  6.0, 4.6, 0],
+                 [ 30,   -27, 26.0,  8.0, 5.4, 0],
+                 [ 55,   -28, 30.0, 12.0, 6.4, 0],
+                 [ 80,   -27, 33.0, 17.0, 7.0, 2],
+                 [100,   -25, 34.5, 18.0, 6.8, 6],
+                 [118,   -22, 29.5, 16.0, 6.2, 11],
+                 [130,   -19, 17.0, 13.0, 5.4, 16],
+                 [138,   -18, 12.0, 11.0, 4.8, 18]]),
+        wingRad: 3.0 * s,
+        headC: [8 * s, 0, 167 * s], headR: [17 * s, 15 * s, 17 * s],
+        crownC: [3 * s, 0, 177 * s], crownR: 12 * s,
+        chinA: [8 * s, 0, 157 * s], chinB: [29 * s, 0, 163.5 * s], chinR0: 8 * s, chinR1: 2.4 * s,
+        beakA: [16 * s, 0, 170 * s], beakB: [33 * s, 0, 166.5 * s], beakR0: 5.6 * s, beakR1: 1.9 * s,
+        hookC: [33 * s, 0, 165.2 * s], hookR: 2.2 * s,
+        eyeA: [13 * s, 6.5 * s, 173 * s], eyeB: [13 * s, 22 * s, 173 * s], eyeR: 3.6 * s,
+        neckZ: 134 * s, headZ: 152 * s, capZ: 172 * s, barZ: 11 * s,
+        kRock: 7 * s, kLeg: 7 * s, kTrunk: 9 * s, kWing: 1.5 * s, kHead: 7 * s, kBeak: 3 * s };
+    },
+    field(x, y, z, H){
+      const G = this.geom(H);
+      const ay = Math.abs(y);                      // the bird is symmetric, so the field says it once
+      /* the rock: an off-centre three-lobed ellipse, cut flat */
+      const rth = Math.atan2(y, (x - G.rockCx) / G.rockEcc);
+      const rock = Math.max(hyp((x - G.rockCx) / G.rockEcc, y)
+        - (G.rockB + G.rockLobe * Math.sin(3 * rth + 0.7)), z - G.rockTop);
+      /* two tarsi, planted apart, leaning in — and closing SLOWEST exactly where they close */
+      const u = clamp((z - G.legZ0) / (G.legZmerge - G.legZ0), 0, 1);
+      const lx = G.legX0 - G.legDX * u, ly = G.legY * (1 - G.legConv * smooth(u));
+      const lr = z < G.legKnee ? lerp(G.legR0, G.legR1, smooth((z - G.legZ0) / (G.legKnee - G.legZ0)))
+                               : lerp(G.legR1, G.legR2, smooth((z - G.legKnee) / (G.legZ1 - G.legKnee)));
+      const legs = Math.max(hyp(x - lx, ay - ly) - lr, z - G.legZ1);
+      /* the tail: a blade raked forward out of the back of the rock — the third leg of the figure */
+      const tu = clamp((z - G.tailZ0) / (G.tailZ1 - G.tailZ0), 0, 1);
+      const tail = Math.max(sdRoundRect2(x - lerp(G.tailX0, G.tailX1, tu), y,
+        lerp(G.tailT0, G.tailT1, tu), lerp(G.tailW0, G.tailW1, tu), G.tailRad), z - G.tailZ1);
+      /* the trunk: a loft, never an ellipsoid */
+      const tp = profileAt(z, G.trunk);
+      const trunk = Math.max(sdRoundRect2(x - tp[0], y, tp[1], tp[2], tp[3]),
+        Math.max(z - G.trunkZ1, G.trunkZ0 - z));
+      /* the wings: two blades standing on the stone, bowing out and closing into the mantle */
+      const wp = profileAt(z, G.wing);
+      const wa = wp[4] / G.s * Math.PI / 180, wc = Math.cos(wa), wsn = Math.sin(wa);
+      const wdx = x - wp[0], wdy = ay - wp[1];
+      const wing = Math.max(sdRoundRect2(wdx * wc - wdy * wsn, wdx * wsn + wdy * wc, wp[2], wp[3], G.wingRad),
+        Math.max(z - G.wingZ1, G.wingZ0 - z));
+      /* head, occiput, chin, beak, hook */
+      const head = (hyp((x - G.headC[0]) / G.headR[0], y / G.headR[1], (z - G.headC[2]) / G.headR[2]) - 1)
+        * Math.min(G.headR[0], G.headR[1], G.headR[2]);
+      const crown = hyp(x - G.crownC[0], y, z - G.crownC[2]) - G.crownR;
+      const chin = sdCapsule3(x, y, z, G.chinA, G.chinB, G.chinR0, G.chinR1);
+      const beak = sdCapsule3(x, y, z, G.beakA, G.beakB, G.beakR0, G.beakR1);
+      const hook = hyp(x - G.hookC[0], y, z - G.hookC[2]) - G.hookR;
+      /* every k is a fillet radius, and kWing is SMALL on purpose: a large one closes the 7 mm
+         window with blend material that is not actually there */
+      let f = smin(rock, smin(legs, tail, G.kLeg), G.kRock);
+      f = smin(f, trunk, G.kTrunk);
+      f = smin(f, wing, G.kWing);
+      f = smin(f, smin(head, crown, G.kHead), G.kHead);
+      f = smin(f, smin(chin, smin(beak, hook, G.kBeak), G.kBeak), G.kBeak);
+      /* the one subtraction: two sockets bored in from the sides, stopped short of each other */
+      return Math.max(f, -sdCapsule3(x, ay, z, G.eyeA, G.eyeB, G.eyeR, G.eyeR));
+    },
+    bbox(H){ const s = H / 188; return [-58 * s, -46 * s, 40 * s, 46 * s]; },
+    planAt(k, z, zf, ctx){
+      const G = this.geom(ctx.H), s = G.s;
+      if(k < ctx.N_BASE) return { kind: 'lines', spacing: k === 0 ? 0.50 : 0.85, angle: 90 * (k % 2), tag: 'temelj',
+        weave: { m: 0.22, amp: 0, gap: 0.55 }, plain: [0.50, 0.85] };
+      /* the rock: open on one flank, closed on the other, grain restless from layer to layer */
+      if(z < G.rockTop - G.rockRaft) return { kind: 'lines', spacing: 2.4 * s, angle: 30 * (k % 6), tag: 'kamen',
+        weave: { m: 0.22, amp: 0.55 * s, gap: 0.80 * s, lobeLen: 7.5 * s, dphi: 0.74 },
+        field: (ii) => (1.2 + 2.6 * clamp(ii / 30, 0, 1)) * s, plain: [0.45, 0.85, 1.5] };
+      /* the last 2 mm of the rock are close-woven: three new islands start on it, and a rim that
+         starts on 2.4 mm sparse fill starts on the air between the lines */
+      if(z < G.rockTop) return { kind: 'lines', spacing: 0.95, angle: 90 * (k % 2), tag: 'kamen-lezaj',
+        weave: { m: 0.22, amp: 0.30 * s, gap: 0.55, lobeLen: 7.5 * s, dphi: 0.74 }, plain: [0.45, 0.80] };
+      /* THE BARRING — see the note above the variant */
+      if(z < G.neckZ){
+        const covert = (z > 46.5 * s && z < 53.5 * s) || (z > 117.5 * s && z < 130.5 * s);
+        const bar = 0.5 + 0.5 * Math.sin(TAU * z / G.barZ);
+        if(covert) return { kind: 'lines', spacing: 1.1 * s, angle: 45 * (k % 4), tag: 'grud-pokrivka',
+          weave: { m: 0.22, amp: (0.42 + 0.3 * bar) * s, gap: 0.80 * s, lobeLen: 6.5 * s, dphi: 0.17 },
+          plain: [0.45, 0.85] };
+        const weave = { m: 0.22, amp: (0.50 + 0.70 * bar) * s, gap: 0.85 * s, lobeLen: 6.5 * s, dphi: 0.17 };
+        const band = Math.floor(z / G.barZ) % 3;
+        if(band === 1) return { kind: 'sine', spacing: (2.0 + 1.5 * bar) * s, angle: 90 * (k % 2),
+          sine: { amp: 1.0 * s, lambda: 7 * s }, tag: 'grud-talas', weave, plain: [0.45, 0.9, 1.5] };
+        if(band === 2) return { kind: 'lines', spacing: (1.9 + 1.6 * bar) * s, angle: 45 * (k % 4),
+          tag: 'grud-resetka', weave, field: (ii) => (1.5 + 1.9 * clamp(ii / 26, 0, 1)) * s, plain: [0.45, 0.9, 1.5] };
+        if((z > 46.5 * s && z < 53.5 * s) || (z > 117.5 * s && z < 130.5 * s))
+          return { kind: 'lines', spacing: 1.1 * s, angle: 45 * (k % 4), tag: 'grud-pokrivka', weave, plain: [0.45, 0.85] };
+        return { kind: 'lines', spacing: (2.1 + 1.4 * bar) * s, angle: 90 * (k % 2), tag: 'grud', weave,
+          plain: [0.45, 0.9, 1.5] };
+      }
+      /* the throat: a Hilbert block, the one pattern here that fills an area without a direction */
+      if(z < G.headZ) return { kind: 'hilbert', spacing: 2.3 * s, angle: 0, tag: 'vrat',
+        weave: { m: 0.22, amp: 0.85 * s, gap: 0.80 * s, lobeLen: 5.0 * s, dphi: 0.42 }, plain: [0.45, 0.85, 1.4] };
+      /* the hood: fine, nearly closed, turning 30 degrees a layer so the head reads as one mass */
+      if(z < G.capZ) return { kind: 'lines', spacing: 1.7 * s, angle: 30 * (k % 6), tag: 'glava',
+        weave: { m: 0.22, amp: 0.60 * s, gap: 0.70 * s, lobeLen: 5.5 * s, dphi: 0.11 }, plain: [0.45, 0.80, 1.3] };
+      return { kind: 'spiral', spacing: 2.0 * s, angle: 0, tag: 'kapa',
+        weave: { m: 0.22, amp: 0.50 * s, gap: 0.70 * s, lobeLen: 6.0 * s, dphi: 0.30 }, plain: [0.45, 0.80, 1.3] };
+    },
+    planFor(L, li, k, z, ctx, p0){
+      const G = this.geom(ctx.H), s = G.s;
+      if(k < ctx.N_BASE || z < G.rockTop) return null;
+      /* THE COVERT BANDS. When an island splits off, a whole new boundary appears in what was the
+         inside of the layer below — and the layer below put its thread on a 2 mm pitch, so twenty
+         millimetres of new rim can land in the gaps between fill lines. The chair solved the same
+         thing by hand with a close-woven course under the backrest. Here the two bands are where the
+         wings leave the tail and where they rejoin the mantle, and a bird has a dense line of coverts
+         at exactly those two places, so the structure and the plumage want the same thing. */
+      const covert = (z > 46.5 * s && z < 53.5 * s) || (z > 117.5 * s && z < 130.5 * s);
+      /* THE PRIMARIES, asked FIRST. A wing below z 72 also stands behind x = -24, so while the tail
+         test came first the wings were woven as tail: a wave in y, on a blade whose faces run in x.
+         That is the perpendicular-face trap above, and it cost 33 mm of unsupported thread at the
+         moment the wings split off. A wing is a wing before it is anything else. */
+      if(Math.abs(L.cy) > 17 * s) return { kind: 'lines', spacing: (covert ? 1.05 : 2.3) * s, angle: 90,
+        tag: covert ? 'krilo-pokrivka' : 'krilo', field: null,
+        weave: { m: 0.22, amp: (covert ? 0.35 : 1.00) * s, gap: 0.75 * s, lobeLen: 8 * s,
+          spatial: { lambda: 6.5 * s, alpha: 0, lambda2: 11 * s, k2: 0.55 } },
+        plain: [0.45, 0.85, 1.5] };
+      /* THE RECTRICES: a standing wave in y, so one groove holds the same y for 400 layers */
+      if(z < 72 * s && L.cx < -24 * s) return { kind: 'lines', spacing: (covert ? 1.05 : 2.1) * s, angle: 0,
+        tag: covert ? 'rep-pokrivka' : 'rep', field: null,
+        weave: { m: 0.22, amp: (covert ? 0.35 : 0.92) * s, gap: 0.72 * s, lobeLen: 7 * s,
+          spatial: { lambda: 5.2 * s, alpha: 90, lambda2: 9 * s, k2: 0.55 } },
+        plain: [0.45, 0.85, 1.5] };
+      /* THE SCALES: a falcon's tarsus is reticulated, so the arc wave drifts fast and the rings climb */
+      if(z < 56 * s && L.cx > 2 * s && Math.abs(L.cy) > 6 * s) return { kind: 'spiral', spacing: 2.2 * s,
+        angle: 0, tag: 'noga', field: null,
+        weave: { m: 0.22, amp: 0.72 * s, gap: 0.70 * s, lobeLen: 5.5 * s, dphi: 0.52 }, plain: [0.45, 0.85, 1.4] };
+      return null;
+    },
+    speed: 50,
+  },
 };
 
 /* ====================================================================================================
@@ -545,24 +891,27 @@ export function generateField(o){
   const violations = [], warnings = [], events = [];
   const F = (x, y, z) => V.field(x, y, z, H);
   const bbox = V.bbox(H);
+  const KMAX = o.kmax ? Math.min(N, +o.kmax) : N;      // diagnostics only: stop early, keep the chain
   const ctx = { H, N, N_BASE };
 
   const layers = [], plan = [];
   let prevGrid = null, prevPlan = null, prevLoops = null, prevTracks = null;
   let nextTrack = 1;
   let worstSpan = 0, worstSpanAt = null, worstRun = 0, worstGrowth = 0, worstGrowthAt = null;
-  let pulledTotal = 0, emittedTotal = 0, worstPull = 0;
+  let pulledTotal = 0, emittedTotal = 0, worstPull = 0, ampClamped = 0, ampClampedLayers = 0;
 
-  for(let k = 0; k < N; k++){
+  for(let k = 0; k < KMAX; k++){
     const z = k * LH, zf = N > 1 ? k / (N - 1) : 0, zs = z + 0.5 * LH;
-    const p = V.planAt(k, z, zf, ctx);
+    const p0 = V.planAt(k, z, zf, ctx);
     const raw = contoursAt(F, zs, bbox, CELL).filter(r => Math.abs(signedArea(r)) > 1.2);
     const outer = raw.filter(r => signedArea(r) > 0);
     const holeRaw = raw.filter(r => signedArea(r) < 0);
     if(!outer.length){ violations.push(`layer ${k} z=${rr(z, 2)}: the field has no material`); break; }
 
     /* island identity: a track that persists keeps its weave phase; a new or merged island ramps in */
-    const loops = outer.map(r => makeLoop(resampleClosed(r, CHORD_STEP * 1.6)));
+    const PINCH = 2 * (p0.weave.m + (p0.weave.gap || 0)) + 0.4;
+    const loops = cutPinches(outer.map(r => makeLoop(resampleClosed(r, CHORD_STEP * 1.6))), PINCH, 25);
+    if(loops.length !== outer.length) events.push({ z: rr(z, 2), k, event: `${outer.length} section(s) cut into ${loops.length} island(s) at a pinch under ${rr(PINCH, 2)} mm` });
     /* holes belong to the island that contains them. Four legs leaning together close into a RING
        with a hollow middle before they close into a column — without this the scan fill pairs the
        crossings as if the middle were solid and lays every chord straight across the hole. */
@@ -575,32 +924,70 @@ export function generateField(o){
     }
     const nHoles = holeRaw.length;
     if(nHoles) events.push({ z: rr(z, 2), k, event: `${nHoles} interior hole(s) in the section` });
-    const tracks = loops.map(L => {
-      if(!prevTracks) return { id: nextTrack++, age: 0 };
-      let best = null, bd = Infinity;
-      for(let i = 0; i < prevLoops.length; i++){
-        const d = hyp(prevLoops[i].cx - L.cx, prevLoops[i].cy - L.cy);
-        if(d < bd){ bd = d; best = prevTracks[i]; }
+    /* ONE TO ONE. The old rule threw every track away whenever the island COUNT changed, so the
+       moment a wing peeled off the tail blade the trunk — which had not moved a hair — lost its age,
+       its ramp went back to zero and its whole rim jumped two millimetres inward in one layer. The
+       match is now a mutual nearest neighbour: an island with a unique partner within 6 mm keeps its
+       identity and its age; only the islands that really are new start over. */
+    const tracks = loops.map(() => null);
+    if(prevTracks){
+      const pairs = [];
+      for(let i = 0; i < loops.length; i++) for(let j = 0; j < prevLoops.length; j++)
+        pairs.push([hyp(prevLoops[j].cx - loops[i].cx, prevLoops[j].cy - loops[i].cy), i, j]);
+      pairs.sort((a, b) => a[0] - b[0]);
+      const tookI = new Set(), tookJ = new Set();
+      for(const [d, i, j] of pairs){
+        /* Centroid alone is not identity. Above the chair's seat the section changes from a 200 mm
+           perimeter slab to an 80 mm one without its centre moving, and inheriting the age there gave
+           a full-amplitude weave to a shape that could not hold one — 6 mm of thread outside the body
+           at layer 186. So the perimeter has to agree too. */
+        if(!(d < 6) || tookI.has(i) || tookJ.has(j)) continue;
+        if(!(loops[i].total < 1.8 * prevLoops[j].total && prevLoops[j].total < 1.8 * loops[i].total)) continue;
+        tookI.add(i); tookJ.add(j);
+        tracks[i] = { id: prevTracks[j].id, age: prevTracks[j].age + 1 };
       }
-      const merged = prevLoops.length !== loops.length;
-      return (best && bd < 6 && !merged) ? { id: best.id, age: best.age + 1 } : { id: nextTrack++, age: 0 };
-    });
+    }
+    for(let i = 0; i < loops.length; i++) if(!tracks[i]) tracks[i] = { id: nextTrack++, age: 0 };
 
+    const clampedBefore = ampClamped;
     /* --- what the boundary does is fixed by the shape: rim, holes, core boundary. Build it once. --- */
     const pre = loops.map((L, li) => {
       const tr = tracks[li];
+      /* ONE HEIGHT, MANY PARTS. In this body a single z holds a tail blade and two tarsi, or a trunk
+         and two wings, and a blade is not a leg: it wants another wave, another anchor, another fill.
+         So the variant may answer per ISLAND, by looking at the island itself. */
+      const p = V.planFor ? { ...p0, ...(V.planFor(L, li, k, z, ctx, p0) || {}) } : p0;
       const ramp = smooth(tr.age / 10);                               // a new island starts with no wave, then weaves
       const minR = minRadius(L);
       const w = p.weave;
-      const lobes = w.lobeLen ? Math.max(4, Math.round(L.total / w.lobeLen)) : 0;
-      const amp = (w.amp || 0) * ramp;
+      const lobes = w.lobes ?? (w.lobeLen ? Math.max(4, Math.round(L.total / w.lobeLen)) : 0);
+      /* THE AMPLITUDE IS NOT A FREE PARAMETER. Two passes need m + gap + 2A of depth, and the
+         section must keep 2 mm under that or it cannot carry a core at all. Until now a section that
+         thinned past the limit FLIPPED to a plain concentric rim — and the flip is the failure: the
+         falcon's tail blade thins from 11.7 to 9.2 mm over twelve millimetres of height, crossed the
+         threshold at z 48.36, and the innermost pass jumped a whole pitch sideways from one layer to
+         the next. 18 mm of thread with nothing under it (measured 2026-10-02; the same signature the
+         closing-pass comment below records at z 166.32). So the amplitude is CLAMPED to the room the
+         section actually has. It decays to zero and the weave becomes two concentric passes, which
+         is still a weave; the plain rim is now reserved for sections too thin to hold even that. */
+      const ampWant = (w.amp || 0) * ramp;
+      const ampRoom = 0.5 * (minR - 2.0 - w.m - (w.gap || 0));
+      let amp = Math.max(0, Math.min(ampWant, ampRoom));
+      /* And a NECK narrower than twice the weave folds the inward offset onto itself. That used to
+         flip the island to a plain concentric rim — but a plain rim is the one thing a dumbbell
+         cannot take: its offsets stop short at the waist and leave a void the next layer crosses on
+         air. So the weave is shallowed until the offset fits, and the scan fill, which is the only
+         pattern that can say "not here", is KEPT. Measured on the falcon's wing peeling off the tail
+         blade over z 54-58, where the smooth union holds the two together by a neck under 2 mm. */
+      while(amp > 0 && ringCollapses(L, w.m + (w.gap || 0) + 2 * amp)) amp = Math.max(0, amp - 0.15);
+      if(amp < ampWant - 1e-6) ampClamped++;
       const weaveDepth = w.m + (w.gap || 0) + 2 * amp;
       const myHoles = holesOf[li];
       /* Too small to carry a weave AND a core: the plain pitch schedule simply runs to the centre.
          Collapsed too: where a section has a neck thinner than twice the weave, the inward offset
          self-intersects, the crossing pairing of the scan fill reads the figure-eight as solid and
          lays chords through air (measured 2026-10-02 at the leg merge, z 48-51). */
-      const rimOnly = minR - weaveDepth < 2.0 || (!myHoles.length && ringCollapses(L, weaveDepth));
+      const rimOnly = ampRoom < 0 || (!myHoles.length && ringCollapses(L, weaveDepth));
       const inMaterial = (x, y) => sdist(F, x, y, zs) <= 0.08;
       let rimPts, coreLoop = null, baseDepth = 0, rimSpacing = 0;
       if(rimOnly){
@@ -619,7 +1006,10 @@ export function generateField(o){
         const R = rimSpiralPlain(F, zs, L, pitches);
         rimPts = R.pts; rimSpacing = Math.max(...pitches);
       } else {
-        const R = rimWeave(F, zs, L, { m: w.m, amp, gap: w.gap, lobes, phase: DPHI * k + li * 1.7 });
+        const R = rimWeave(F, zs, L, { m: w.m, amp, gap: w.gap, lobes, minOpen: 0.9 * BEAD,
+          phase: (w.dphi ?? DPHI) * k + (w.phase0 ?? li * 1.7),
+          spatial: w.spatial ? { lambda: w.spatial.lambda, alpha: w.spatial.alpha,
+            phase: (w.spatial.dphi ?? 0) * k + (w.spatial.phase0 ?? 0) } : null });
         rimPts = R.pts; baseDepth = R.maxDepth; coreLoop = makeLoop(R.coreRing); rimSpacing = R.opening;
       }
       /* every hole gets its own woven rim too — a hole in a weft body is a boundary like any other */
@@ -627,7 +1017,10 @@ export function generateField(o){
       const line = rimPts.slice(), extra = [];
       if(coreLoop) for(const Hl of myHoles){
         if(Hl.total < 10) continue;                                    // too small to carry a thread
-        const HR = rimWeave(F, zs, Hl, { m: w.m, amp, gap: w.gap, lobes: Math.max(4, Math.round(Hl.total / (w.lobeLen || 6))), phase: DPHI * k + 0.9 });
+        const HR = rimWeave(F, zs, Hl, { m: w.m, amp, gap: w.gap, lobes: Math.max(4, Math.round(Hl.total / (w.lobeLen || 6))), minOpen: 0.9 * BEAD,
+          phase: (w.dphi ?? DPHI) * k + 0.9,
+          spatial: w.spatial ? { lambda: w.spatial.lambda, alpha: w.spatial.alpha,
+            phase: (w.spatial.dphi ?? 0) * k + (w.spatial.phase0 ?? 0) } : null });
         const bridge = resampleOpen([line[line.length - 1], HR.pts[0]], CHORD_STEP);
         if(bridge.every(q => inMaterial(q[0], q[1]))) line.push(...bridge.slice(1), ...HR.pts);
         else extra.push(HR.pts);
@@ -649,11 +1042,11 @@ export function generateField(o){
         if(myHoles.length || clover || !roundish) kind = 'lines';
       }
       const rimOpen = hyp(rimPts.at(-1)[0] - rimPts[0][0], rimPts.at(-1)[1] - rimPts[0][1]);
-      return { L, tr, li, myHoles, rimOnly, rimPts, rimOpen, coreLoop, coreLoops, line, extra, baseDepth, lobes, amp, inMaterial, kind, rimSpacing };
+      return { L, tr, li, p, myHoles, rimOnly, rimPts, rimOpen, coreLoop, coreLoops, line, extra, baseDepth, lobes, amp, inMaterial, kind, rimSpacing };
     });
 
     /* --- the core is the free choice, so it is the one that gets measured --- */
-    const attempt = (angle, forceLines) => {
+    const attempt = (dAngle, forceLines) => {
       const paths = [], silhouettes = [], supportPts = [];
       let fillLen = 0, maxSpacing = 0, rimOnlyCount = 0, pulled = 0, pulledWorst = 0, emitted = 0, blocky = false; const kinds = [];
       for(const q of pre){
@@ -661,19 +1054,20 @@ export function generateField(o){
         if(q.rimOnly){ rimOnlyCount++; blocky = true; }                 // concentric to the centre can leave a void too
         let core = null;
         if(q.coreLoop){
-          const spacingAt = p.field ? ((ii) => p.field(ii, k)) : (() => p.spacing);
+          const angle = (q.p.angle || 0) + dAngle;
+          const spacingAt = q.p.field ? ((ii) => q.p.field(ii, k)) : (() => q.p.spacing);
           const start = { loop: 0, u: nearestU(q.coreLoop, q.line[q.line.length - 1]) };
           const kind = forceLines ? 'lines' : q.kind;
           if(kind !== 'lines' && kind !== 'sine') blocky = true;
           if(kind === 'lines' || kind === 'sine'){
-            const sine = kind === 'sine' ? { amp: p.sine.amp, lambda: p.sine.lambda, phase: (k % 2) * Math.PI } : null;
+            const sine = kind === 'sine' ? { amp: q.p.sine.amp, lambda: q.p.sine.lambda, phase: (k % 2) * Math.PI } : null;
             core = scanFillRegion(q.coreLoops, angle, spacingAt, sine, start, q.inMaterial);
           } else if(kind === 'spiral'){
-            core = spiralFillLoop(F, zs, q.coreLoop, q.baseDepth, p.spacing, 0.5 * BEAD);
+            core = spiralFillLoop(F, zs, q.coreLoop, q.baseDepth, q.p.spacing, 0.5 * BEAD);
             if(core) core.paths = [hop(q.coreLoop, start.u, nearestU(q.coreLoop, core.pts[0])).concat(core.pts)];
           } else if(kind === 'hilbert'){
             const side = 2 * minRadius(q.coreLoop) - 1.2;
-            core = side > 3 * p.spacing ? hilbertFill(q.coreLoop.cx, q.coreLoop.cy, side, p.spacing, Math.floor(k / 2) % 2 === 1) : null;
+            core = side > 3 * q.p.spacing ? hilbertFill(q.coreLoop.cx, q.coreLoop.cy, side, q.p.spacing, Math.floor(k / 2) % 2 === 1) : null;
             if(core) core.paths = [hop(q.coreLoop, start.u, nearestU(q.coreLoop, core.pts[0])).concat(core.pts)];
           } else throw new Error(`unknown fill kind ${kind}`);
           if(core){ maxSpacing = Math.max(maxSpacing, core.maxSpacing); kinds.push(kind); }
@@ -698,8 +1092,8 @@ export function generateField(o){
              builder refuses it (the gate samples path VERTICES). */
           const pts = resampleOpen(inside, CHORD_STEP).map(([x, y]) => [rr(x, 3), rr(y, 3)]);
           paths.push({ pts, role: sparse ? 'bridge' : 'wall', closed: false, rimWoven: !q.rimOnly, rimOpen_mm: rr(q.rimOpen, 3), rimOpening_mm: rr(q.rimSpacing, 3), bead: k === 0 ? FIRST_BEAD : BEAD,
-            speed: V.speed, label: `${p.tag}-i${q.tr.id}${bi ? `-${bi}` : ''}`, tile: `island-${q.tr.id}`,
-            intent: `${PROCESS}: ${q.rimOnly ? 'plain rim to the centre' : `weave ${q.lobes} lobes amp ${rr(q.amp, 2)}`} + ${core ? `${forceLines ? 'lines' : q.kind} @ ${rr(angle, 1)}deg` : 'none'}, island ${q.li + 1}/${loops.length}${q.myHoles.length ? `, ${q.myHoles.length} hole(s)` : ''}, layer ${k + 1}/${N}` });
+            speed: V.speed, label: `${q.p.tag}-i${q.tr.id}${bi ? `-${bi}` : ''}`, tile: `island-${q.tr.id}`,
+            intent: `${PROCESS}: ${q.p.tag}, ${q.rimOnly ? 'plain rim to the centre' : `weave ${q.p.weave.spatial ? `standing wave ${q.p.weave.spatial.lambda} mm at ${q.p.weave.spatial.alpha || 0} deg` : `${q.lobes} lobes`} amp ${rr(q.amp, 2)}`} + ${core ? `${forceLines ? 'lines' : q.kind} @ ${rr((q.p.angle || 0) + dAngle, 1)}deg` : 'none'}, island ${q.li + 1}/${loops.length}${q.myHoles.length ? `, ${q.myHoles.length} hole(s)` : ''}, layer ${k + 1}/${N}` });
           fillLen += pts.slice(1).reduce((a, r2, ii) => a + hyp(r2[0] - pts[ii][0], r2[1] - pts[ii][1]), 0);
           supportPts.push(pts);
         });
@@ -731,36 +1125,42 @@ export function generateField(o){
        measure it against the material actually laid down, and keep the direction that survives. */
     const RUNLIMIT = 0.9 * MAXBRIDGE;
     const candidates = [];
-    for(const forceLines of [false, true]) for(const d of [0, 90, 45, 135, 22.5, 112.5, 67.5, 157.5]) candidates.push([p.angle + d, forceLines]);
+    for(const forceLines of [false, true]) for(const d of [0, 90, 45, 135, 22.5, 112.5, 67.5, 157.5]) candidates.push([d, forceLines]);
     let best = null, tried = 0;
     for(const [a, forceLines] of candidates){
       const At = attempt(a, forceLines); tried++;
       const sup = prevGrid ? supportOf(At.supportPts, prevGrid, REACH, 0.5 * MAXBRIDGE + 1)
                            : { span: 0, run: 0, unsupported: 0, total: 0 };
       const score = Math.max(sup.run, 2 * sup.span, 2 * At.selfVoid);
-      if(!best || score < best.score) best = { At, sup, angle: a, forceLines, score };
+      if(!best || score < best.score) best = { At, sup, angle: p0.angle + a, forceLines, score };
       if(score <= RUNLIMIT || !prevGrid) break;
     }
+    if(ampClamped > clampedBefore) ampClampedLayers++;
     const { paths, silhouettes, supportPts, fillLen, maxSpacing, rimOnlyCount, kinds, pulled, pulledWorst, emitted, selfVoid } = best.At;
     const free = best.sup, usedAngle = best.angle;
-    if(tried > 1) events.push({ z: rr(z, 2), k, event: `fill angle ${rr(p.angle, 1)} -> ${rr(usedAngle, 1)} after ${tried} measured tries` });
+    if(tried > 1) events.push({ z: rr(z, 2), k, event: `fill angle ${rr(p0.angle, 1)} -> ${rr(usedAngle, 1)} after ${tried} measured tries` });
 
     /* A hair outside a concave boundary is rounding; half a bead outside is a broken layer. Both are
        measured, because on a 3 mm leg six points out of 371 is ordinary polygon resolution while on a
        seat the same ratio would be a chord laid through air. */
+    /* A woven rim whose two ends arrive within a third of a bead of each other is a closed loop, and
+       a closed loop is the one thing this process does not build. The seam placement above makes it
+       impossible; this measures it anyway, on every island of every layer. */
+    for(const q of pre) if(!q.rimOnly && q.rimOpen < 0.35 * BEAD)
+      violations.push(`layer ${k} z=${rr(z, 2)} (${q.p.tag}): the rim came home within ${rr(q.rimOpen, 3)} mm — that is a closed loop`);
     if(pulledWorst > 0.6 || pulled > 0.03 * emitted)
-      violations.push(`layer ${k} z=${rr(z, 2)} (${p.tag}): ${pulled}/${emitted} points outside the body, worst ${rr(pulledWorst, 2)} mm — that is a broken layer, not rounding`);
-    if(2 * selfVoid > RUNLIMIT) violations.push(`layer ${k} z=${rr(z, 2)} (${p.tag}): the layer leaves a ${rr(2 * selfVoid, 1)} mm void inside itself (ceiling ${rr(RUNLIMIT, 1)} mm)`);
+      violations.push(`layer ${k} z=${rr(z, 2)} (${p0.tag}): ${pulled}/${emitted} points outside the body, worst ${rr(pulledWorst, 2)} mm — that is a broken layer, not rounding`);
+    if(2 * selfVoid > RUNLIMIT) violations.push(`layer ${k} z=${rr(z, 2)} (${p0.tag}): the layer leaves a ${rr(2 * selfVoid, 1)} mm void inside itself (ceiling ${rr(RUNLIMIT, 1)} mm)`);
     pulledTotal += pulled; emittedTotal += emitted; if(pulledWorst > worstPull) worstPull = pulledWorst;
 
     let growth = 0;
     if(prevGrid){
       if(!(free.run <= RUNLIMIT))
-        violations.push(`layer ${k} z=${rr(z, 2)} (${p.tag}): ${rr(free.run, 1)} mm of thread runs with nothing under it (gate ceiling ${rr(RUNLIMIT, 1)} mm), best of ${tried} angles`);
+        violations.push(`layer ${k} z=${rr(z, 2)} (${p0.tag}): ${rr(free.run, 1)} mm of thread runs with nothing under it (gate ceiling ${rr(RUNLIMIT, 1)} mm), best of ${tried} angles`);
       const span = 2 * free.span;
       if(!(span <= RUNLIMIT))
-        violations.push(`layer ${k} z=${rr(z, 2)} (${p.tag}): free span ${rr(span, 1)} mm over the layer below exceeds ${rr(RUNLIMIT, 1)} mm`);
-      if(span > worstSpan){ worstSpan = span; worstSpanAt = { k, z: rr(z, 2), tag: p.tag }; }
+        violations.push(`layer ${k} z=${rr(z, 2)} (${p0.tag}): free span ${rr(span, 1)} mm over the layer below exceeds ${rr(RUNLIMIT, 1)} mm`);
+      if(span > worstSpan){ worstSpan = span; worstSpanAt = { k, z: rr(z, 2), tag: p0.tag }; }
       if(free.run > worstRun) worstRun = free.run;
       /* the body may not grow outward past what the previous layer's BODY can carry */
       const zPrev = zs - LH;
@@ -772,21 +1172,21 @@ export function generateField(o){
          far the new edge really stands out; the authority is the MEASURED run above, which looks at
          the material the machine actually laid down instead of at the field. */
       if(growth > ALLOW) warnings.push(`layer ${k} z=${rr(z, 2)}: section grows ${rr(growth, 2)} mm outward (field estimate; measured run ${rr(free.run, 1)} mm)`);
-      if(growth > worstGrowth){ worstGrowth = growth; worstGrowthAt = { k, z: rr(z, 2), tag: p.tag }; }
+      if(growth > worstGrowth){ worstGrowth = growth; worstGrowthAt = { k, z: rr(z, 2), tag: p0.tag }; }
     }
 
-    layers.push({ k, zBot: rr(z, 4), zTop: rr(z + LH, 4), w: 2.0, tab: 0, web: 'staple', phase: p.tag,
+    layers.push({ k, zBot: rr(z, 4), zTop: rr(z + LH, 4), w: 2.0, tab: 0, web: 'staple', phase: p0.tag,
       contours: [], paths, silhouette: silhouettes[0], silhouettes });
-    plan.push({ k, z: rr(z, 3), tag: p.tag, islands: loops.length, kinds: [...new Set(kinds)],
-      spacing_mm: rr(p.spacing, 2), maxSpacing_mm: rr(maxSpacing, 2), rimOnly: rimOnlyCount,
+    plan.push({ k, z: rr(z, 3), tag: p0.tag, parts: [...new Set(pre.map(q => q.p.tag))], islands: loops.length, kinds: [...new Set(kinds)],
+      spacing_mm: rr(p0.spacing, 2), maxSpacing_mm: rr(maxSpacing, 2), rimOnly: rimOnlyCount,
       angle_deg: rr(usedAngle, 1), freeSpan_mm: rr(2 * free.span, 2), freeRun_mm: rr(free.run, 2), unsupported: free.unsupported,
       growth_mm: rr(growth, 2), fill_mm: rr(fillLen, 0) });
-    if(prevPlan && (prevPlan.tag !== p.tag || prevPlan.islands !== loops.length))
-      events.push({ z: rr(z, 2), k, event: `${prevPlan.tag}/${prevPlan.islands} -> ${p.tag}/${loops.length}` });
+    if(prevPlan && (prevPlan.tag !== p0.tag || prevPlan.islands !== loops.length))
+      events.push({ z: rr(z, 2), k, event: `${prevPlan.tag}/${prevPlan.islands} -> ${p0.tag}/${loops.length}` });
     prevGrid = hashPoints([].concat(...supportPts), 0.8);
-    prevPlan = { tag: p.tag, islands: loops.length };
+    prevPlan = { tag: p0.tag, islands: loops.length };
     prevLoops = loops; prevTracks = tracks;
-    if(o.report && k % 25 === 0) process.stderr.write(`  layer ${k}/${N} z=${rr(z, 1)} islands=${loops.length} ${p.tag} run=${rr(free.run, 1)} span=${rr(2 * free.span, 1)} growth=${rr(growth, 2)}\n`);
+    if(o.report && k % 25 === 0) process.stderr.write(`  layer ${k}/${N} z=${rr(z, 1)} islands=${loops.length} ${p0.tag} run=${rr(free.run, 1)} span=${rr(2 * free.span, 1)} growth=${rr(growth, 2)}\n`);
   }
 
   /* foundation: three touching brim rings around EVERY first-layer island */
@@ -829,8 +1229,9 @@ export function generateField(o){
       weavePhaseStep_rad: DPHI, supportReach_mm: rr(REACH, 2),
       worstFreeSpan_mm: rr(worstSpan, 2), worstFreeSpanAt: worstSpanAt, worstValleyRun_mm: rr(worstRun, 2),
       pointsPulledIntoBody: pulledTotal, pointsEmitted: emittedTotal, worstPullBack_mm: rr(worstPull, 2),
+      layersWithAmplitudeClampedToTheSection: ampClampedLayers,
       worstOutwardGrowth_mm: rr(worstGrowth, 2), worstOutwardGrowthAt: worstGrowthAt,
-      fillLength_m: rr(totalFill / 1000, 1), tags: [...new Set(plan.map(q => q.tag))],
+      fillLength_m: rr(totalFill / 1000, 1), tags: [...new Set(plan.map(q => q.tag))], parts: [...new Set([].concat(...plan.map(q => q.parts || [])))],
       patterns: [...new Set([].concat(...plan.map(q => q.kinds)))] },
     layerProgram: plan.filter((_, i) => i % 5 === 0 || i === plan.length - 1),
     events, violations, warnings,
@@ -958,11 +1359,11 @@ function main(argv){
   const flag = (n) => argv.includes('--' + n);
   const variant = opt('variant'), machine = opt('machine'), out = opt('out');
   if(!variant || !machine || !out){
-    console.error('usage: node core/weft_field_geometry.mjs --variant stolica --machine a1 --out FILE [--svg FILE] [--name NAME] [--H mm] [--dphi rad] [--allow-assumed-bead] [--report]');
+    console.error('usage: node core/weft_field_geometry.mjs --variant stolica --machine a1 --out FILE [--svg FILE] [--name NAME] [--H mm] [--dphi rad] [--kmax N] [--allow-assumed-bead] [--report]');
     process.exit(2);
   }
   const r = generateField({ variant, machine, out, name: opt('name'), H: opt('H'), dphi: opt('dphi'),
-    meshEvery: opt('mesh-every'), allowAssumedBead: flag('allow-assumed-bead'), report: flag('report') });
+    meshEvery: opt('mesh-every'), kmax: opt('kmax'), allowAssumedBead: flag('allow-assumed-bead'), report: flag('report') });
   for(const w of r.warnings) console.error('note: ' + w);
   if(r.violations.length){
     console.error('REFUSED:');

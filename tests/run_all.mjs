@@ -13,6 +13,8 @@ const python=has(process.env.WEFT_PYTHON||'python3',['-c','import numpy, scipy']
 const plan=[
   ['pure_weft.test.mjs',[]],                                   // a layer is rim + core, never a closed loop: no wall, no slicer infill
   ['field_weft.test.mjs',[]],                                  // a VOLUME woven as one line per island: four feet merge into one chair, holes and all
+  ['sokol_weft.test.mjs',[]],                                  // the skin carries the drawing: a spatial wave anchor, one layer with many parts, and SOKOL itself
+  ['header_truth.test.mjs',[]],                                // the first ten lines of the shipped .gcode belong to THIS print, on CRLF, LF and the mix an A1 build really is
   ['bambu_thumbnails.test.mjs',[]],                            // G-668: prevent native Send Print buffer overrun
   ['first_layer.test.mjs',[]],                                 // startup cannot become preview layer 1; real bed extrusion required
   ['build_parity.test.mjs',[]],                                  // Node chain == the printed LIMIT16 (G-code + 3MF)

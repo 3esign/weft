@@ -11,6 +11,7 @@
    printed, so the judgement is visible and arguable rather than hidden in a threshold. */
 import fs from 'node:fs';
 import path from 'node:path';
+import { gcodeFrom3mf } from '../core/weft_build.mjs';
 const near = (a, b) => Math.hypot(b[0] - a[0], b[1] - a[1]);
 /* monotone chain, then the hull's perimeter: how long a pure loop around this run would have been */
 function hullPerimeter(pts){
@@ -24,9 +25,19 @@ function hullPerimeter(pts){
   let per = 0; for(let i = 0; i < h.length; i++) per += near(h[i], h[(i + 1) % h.length]);
   return per;
 }
-let bad = 0;
+/* A .gcode.3mf IS A ZIP. Read as text it yields no G01 lines, so the file came back with 0 runs and
+   this tool printed "no closed body path in any file" — a green verdict on a file it had never read.
+   That is worse than a red one, and it sat in the evidence chain of three shipped bodies and a chair.
+   Containers are unzipped now, and ZERO body runs is a REFUSAL: a measurement that measured nothing
+   is not a pass. Found 2026-10-02, by using the chair's own container as a control. */
+function sourceOf(file){
+  const buf = fs.readFileSync(file);
+  if(buf.length > 4 && buf[0] === 0x50 && buf[1] === 0x4b) return gcodeFrom3mf(buf).text;
+  return buf.toString('utf8');
+}
+let bad = 0, empty = 0;
 for(const file of process.argv.slice(2)){
-  const lines = fs.readFileSync(file, 'utf8').split(/\r?\n/);
+  const lines = sourceOf(file).split(/\r?\n/);
   const pos = { x: null, y: null }; let z = 0, feature = '', run = [], runLine = 0, runZ = 0;
   const runs = []; let total = 0;
   const flush = () => { if(run.length > 2) runs.push({ pts: run, line: runLine, z: runZ, feature }); run = []; };
@@ -60,6 +71,8 @@ for(const file of process.argv.slice(2)){
   for(const c of closed.slice(0, 8)) console.log(`   WALL  z=${c.z} line ${c.line} "${c.feature}" ${c.pts} pts, closes within ${c.closure_mm} mm, length ${c.len_mm} mm vs hull ${c.hull_mm} mm (x${c.ratio})`);
   for(const c of homing.slice(0, 8)) console.log(`   note  z=${c.z} line ${c.line} ends ${c.closure_mm} mm from its start, but ran ${c.ratio}x its own hull — a filled run, not a wall`);
   if(closed.length) bad++;
+  if(!body.length){ empty++; console.error(`   NOTHING MEASURED in ${name}: 0 extrusion runs found`); }
 }
 if(bad){ console.error(`REFUSED: ${bad} file(s) still carry a closed body path — that is a wall`); process.exit(1); }
+if(empty){ console.error(`REFUSED: ${empty} file(s) yielded no extrusion at all — this tool did not measure them`); process.exit(1); }
 console.log('pure weft: no closed body path in any file');

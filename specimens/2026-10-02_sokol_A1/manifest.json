@@ -1,0 +1,35 @@
+{
+ "name": "SOKOL",
+ "model": "geometry",
+ "built": "2026-10-02T11:08:17",
+ "machine": {
+  "id": "a1",
+  "label": "Bambu Lab A1",
+  "plate": [
+   256,
+   256
+  ],
+  "maxZ": 256,
+  "bead": 0.45,
+  "beadSource": "ASSUMED",
+  "beadEvidence": "carried over from the A2L; never calibrated on this machine — run the C1 thin-wall test on the A1 and measure before trusting",
+  "lh": 0.24,
+  "firstLayerBead": 0.52,
+  "temp": 220,
+  "bed": 65,
+  "start": "exports/a1_start_block_harvested_2026-10-01.gcode",
+  "end": "exports/a1_end_block_harvested_2026-10-01.gcode",
+  "route": "bambu3mf"
+ },
+ "geometry": "SOKOL_geometry.json",
+ "shipped": [
+  "SOKOL.gcode",
+  "SOKOL.gcode.3mf"
+ ],
+ "gate": "SOKOL_gate.json",
+ "gateLayers": "SOKOL_gate_layers.json",
+ "report": "SOKOL_report.json",
+ "builder": "weft.mjs",
+ "core": "core-2026-09-19-first-layer",
+ "outcome": "NOT PRINTED — fill this in after the print, with photographs"
+}

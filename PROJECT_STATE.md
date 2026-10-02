@@ -692,3 +692,87 @@ prints. `tests/field_weft.test.mjs` is in npm test.
 The STL (179 MB), geometry dump (35 MB) and raw G-code (66 MB) are not committed — they rebuild from the
 generator in one command, recorded with SHA-256 in the specimen README. Bead on the A1 is still ASSUMED
 0.45 mm. No print initiated.
+
+
+## 2026-10-02 — SOKOL: the skin carries the drawing (pure-weft/v2, second pass)
+
+Semir: "experiment with all techniques, release your outmost creative force and make me a sculpture of
+SOKOL." A falcon is not another chair: a chair can be described by one trunk and a slab, and a perched
+peregrine cannot be described at all unless the layer can hold a tail blade, two scaled tarsi, two
+feathered wings and a hooded head at the same height and weave each of them differently.
+
+**SOKOL**, specimens/2026-10-02_sokol_A1/: 88.5 x 85.4 x 187.92 mm, 783 layers, 1142.7 m of thread,
+142.7 g, 18h 50m on the container's own estimate. The island program is the figure: 1 (the rock) -> 5 (two tarsi, the tail blade,
+two wings) -> 4 (the tarsi merge) -> 3 (the tail is taken into the trunk) -> 1 (the wings rejoin the
+mantle at z 121). The two windows between wing and flank are open over 63.0 mm of height, and
+they are the point: a porous interior behind a closed skin is still a closed skin.
+
+### Three things the engine gained
+
+- **A SPATIAL WAVE ANCHOR.** The rim's wave used to count lobes along the PERIMETER with the phase
+  drifting per layer, so the openings spiralled. Right for stone and down, wrong for a feather: `t = 0`
+  is wherever marching squares entered the contour, and a section that changes width redistributes
+  every lobe under it. The new anchor is a standing wave in the plate's own coordinates — in `y` for
+  the tail, in `x` for the wings — so the groove holds its position layer after layer. Measured drift
+  over 33 layers of a straight blade: **0.000 mm**, against 0.34 mm for the arc anchor on the same
+  shape (`tests/sokol_weft.test.mjs`). It carries a smaller crossing component, because a
+  one-direction wave leaves any face PERPENDICULAR to it at a single depth, and that cost 33 mm of
+  unsupported thread before it was understood.
+- **ONE HEIGHT, MANY PARTS.** `planFor(loop, ...)` answers per ISLAND, so the same layer weaves the
+  tail as a plate-anchored wave, the wings as a crossing one, and the tarsi as a fast-drifting arc.
+- **A LOFT AND A CAPSULE** (`profileAt`, `sdCapsule3`). An ellipsoid cannot be a belly: its bottom is
+  a POINT, and a point thirty millimetres above the rock is a floating island. The trunk is a
+  keyframe loft whose first section fits inside the merged tarsi.
+
+### Five defects it uncovered, all of them latent in the chair
+
+1. **The rim could come home on itself.** Pass A sits at `m + A(1+w)`, pass B at `m + gap + A(1-w)`;
+   those are EQUAL where `w = gap/2A`, and the drift eventually lands that value on the seam. The
+   chair's own test, at half scale, had three rims home to within 0.14 mm and one to within 0 — closed
+   loops, in a process whose premise is that there are none. The seam is now placed at the minimum of
+   `w`, where the two passes stand `gap + 2A` apart, and pass B gives back its last millimetre if the
+   section is locally too thin for even that. A refusal guards it on every island of every layer.
+2. **The weave flipped instead of fading.** A section thinning past what the weave needs used to flip
+   to a plain concentric rim, and the flip jumped the innermost pass a whole pitch sideways. The
+   amplitude is CLAMPED to the room the section has, continuously, down to zero.
+3. **Island identity was thrown away on any topology change.** When one island merged, every island
+   in that layer lost its age and its weave ramp — a two-millimetre jump in a rim that had not moved.
+   Matching is now mutual nearest neighbour on centroid **and** perimeter.
+4. **A pinch thinner than a bead was treated as a connection.** Two surfaces parting face to face are
+   joined by a strip a few tenths thick and a centimetre long; no pitch, angle or wave prints that.
+   Such a loop is cut and the halves become two islands — which is what the machine does anyway.
+   `findPinch` and `ringCollapses` also disagreed about what a pinch is (`far` differed by 2x), so a
+   section could fall between them: refused by one, invisible to the other.
+5. **A crack is not a waist.** Where a wing meets a trunk the union carries a 4 mm long, 1 mm wide
+   notch at each end of the contact. The old reach counted that as a collapsed ring and dropped the
+   whole section to a plain rim, leaving an 18.5 mm void inside one layer. A waist divides the
+   section, so both arcs between the two points must be a real part of the boundary.
+
+And one defect in the EVIDENCE rather than the work: **`tools/check_pure_weft.mjs` was reading a
+`.gcode.3mf` as plain text.** A ZIP has no `G01` lines, so it found 0 runs and printed "no closed body
+path in any file" — a green verdict on a file it had never opened, standing in the evidence chain of
+four shipped bodies. It unzips containers now and refuses any file it read no extrusion from. Re-run
+properly, every earlier claim holds: the chair's container reads 1198 runs / 756.7 m / 0 walls, and
+PUN_KOCKA / PUN_SUNDJER / PUN_DRVO read 120.0 / 48.5 / 24.2 m, 0 walls — exactly their READMEs. The
+claim was true; the check was not doing anything.
+
+And a sixth, found while shipping this one and older than any of them: **the plain .gcode header was
+never written.** `fixHeader` splits the file on `'\n'`; the harvested A1 start block is a Windows
+export, so its lines keep a `'\r'`, and every pattern ends in `$` without the `m` flag — `.` does not
+match `'\r'`, so all six substitutions missed in silence while the build printed the correct stats.
+SOKOL.gcode and STOLICA.gcode shipped carrying the TEMPLATE's header: 167 layers, 7.20 g, max Z 40.04,
+for a 783-layer 188 mm body. The container was never affected — the packer rewrites the same fields
+with its own anchored replace — so the defect only ever reached an SD card. PUN_KOCKA.gcode, built in
+the A2L era when everything was LF, still carries a correct header: that is the control. Fixed in the
+PATTERNS, not in the split; the first attempt normalised the line endings and grew SOKOL.gcode by
+2.76 MB, rewriting 2.7 million lines to repair six. `weft.mjs` now READS THE HEADER BACK off the disk
+and refuses if it disagrees with the moves, because a log line is not evidence that a file changed.
+`tests/header_truth.test.mjs` holds CRLF, LF and the mixed case an A1 build really is.
+
+Because 1 to 5 were latent in the chair, **its rebuild command no longer reproduces its SHA-256** — it
+produces a better body. The shipped container is untouched and still gates clean; the note is in its
+specimen README.
+
+Gate S1 + layered S2-S8/ORDER: PASS — 0 floating, 0 long bridge, 0 cantilever on 2 739 915 points; S2 INFO · S3 PASS · S4 PASS · S5 INFO · S7 INFO · S8 WARN · ORDER N/A, 0 findings on the G-code and again inside the container. `check_pure_weft`
+on the shipped container: 0 walls in 2031 body runs, 1141.0 m. Control, a genuine Bambu slice: 28 walls. `tests/sokol_weft.test.mjs`
+is in npm test. Bead on the A1 is still ASSUMED 0.45 mm. No print initiated.
