@@ -41,3 +41,9 @@ specimens/2026-10-02_sokol_A1/SOKOL.gcode
 specimens/2026-10-02_sokol_A2L/SOKOL.stl
 specimens/2026-10-02_sokol_A2L/SOKOL_geometry.json
 specimens/2026-10-02_sokol_A2L/SOKOL.gcode
+
+# ZA_STAMPU/ is the PC shelf for the printer: copies of already-shipped builds, kept where
+# Semir reaches for them. The specimen folder stays the single source of truth, so only the
+# shelf's README travels — the binaries would be a second origin for the same bytes (2026-10-02).
+ZA_STAMPU/*
+!ZA_STAMPU/README.md
