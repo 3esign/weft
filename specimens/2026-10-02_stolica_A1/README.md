@@ -81,5 +81,9 @@ re-gate before printing from a fresh build; the committed `STOLICA.gcode.3mf` is
 while the harvested A1 start block is CRLF, so every substitution missed in silence. The committed
 `STOLICA.gcode.3mf` was never affected; the packer rewrites those fields itself. Fixed in
 `core/weft_build.mjs`, guarded in `weft.mjs` (the header is read back off the disk and compared with
-the moves), held by `tests/header_truth.test.mjs`. Rebuild to get a plain `.gcode` that tells the
-truth about itself; see `specimens/2026-10-02_sokol_A1/README.md`.
+the moves), held by `tests/header_truth.test.mjs`. See `specimens/2026-10-02_sokol_A1/README.md`.
+
+The copy on the two shelves (`data/lab/A1_puna_tela/`, `Downloads/A1_puna_tela/`) has had its header
+repaired in place — same moves, six lines rewritten, +74 bytes — and now reads 708 layers, 93.59 g,
+max Z 169.92. Its SHA-256 is therefore no longer the one recorded above:
+`0cdfb568c8d6091d171f3087cda9dacc4e4ecde667cf749929c2398f8e626ac0`.
