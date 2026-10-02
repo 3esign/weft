@@ -1,0 +1,244 @@
+{
+ "specimen": "2026-10-02_pure_weft_ENDER",
+ "process": "pure-weft/v1",
+ "generator": "core/weft_solid_geometry.mjs",
+ "builder": "weft.mjs",
+ "core": "core-2026-09-19-first-layer",
+ "built": "2026-10-02T19:23:59",
+ "machine": {
+  "id": "ender",
+  "label": "Creality Ender-3 V4",
+  "plate": [
+   220,
+   220
+  ],
+  "maxZ": 235,
+  "nozzle": 0.4,
+  "bead": 0.42,
+  "beadSource": "ASSUMED",
+  "beadEvidence": "NEVER CALIBRATED. Run the C1 thin-wall test on this machine and put the measured width here before trusting anything built for it.",
+  "lh": 0.2,
+  "firstLayerBead": 0.48,
+  "temp": 220,
+  "bed": 60,
+  "start": "exports/ender_start.gcode",
+  "end": "exports/ender_end.gcode",
+  "route": "gcode"
+ },
+ "note": "The small half of the pair Semir asked for on 2026-10-02: these three on the Creality, SOKOL enlarged on the A2L. Route is plain .gcode — straight to the SD card, no slicer. Same three bodies as specimens/2026-10-01_pure_weft_A1, regenerated for the Ender (bead 0.42, layer 0.20), so the layer programs differ: 120 / 100 / 150 layers against the A1’s 100 / 83 / 125. PUN_KOCKA first FAILED the gate with four LONG_BRIDGE up to 19.79 mm at z 23 on the first cap course; the material was fine and the gate was aliasing — a dense course typed ‘wall’ was LOD’d to ~2.5 mm vertices over a 4.71 mm pitch below, and support is decided at vertices. Fixed at the source: a fill is typed ‘bridge’ (vertices preserved) when THIS layer is sparse OR the layer below is. Guard: tests/pure_weft.test.mjs. Files marked inRepository:false are excluded for size per repository policy and listed by SHA-256; rebuild them with the two commands in README.md.",
+ "bodies": [
+  {
+   "name": "PUN_KOCKA",
+   "size_mm": [
+    42,
+    42,
+    24
+   ],
+   "layers": 120,
+   "thread_m": 141.1,
+   "filament_mm": 4658.04,
+   "grams": 14.12,
+   "time": "1h 47m 50s",
+   "bodyRuns": 240,
+   "shipped": [
+    "PUN_KOCKA.gcode"
+   ],
+   "files": {
+    "PUN_KOCKA.gcode": {
+     "bytes": 11309835,
+     "sha256": "2ab2d085221105c13462cedb5f36735d8ed356c0ef0f986233065218284ae9a3",
+     "inRepository": true
+    },
+    "PUN_KOCKA.stl": {
+     "bytes": 21796684,
+     "sha256": "e08da10112e934fb9b962ca95b187617c21656910faaa6ee99d20f613f19a9ff",
+     "inRepository": false
+    },
+    "PUN_KOCKA_ENDER.svg": {
+     "bytes": 198051,
+     "sha256": "064c67b2fdce08c998d25b5a396ddd6ff1afb78495241049aed250694552d06d",
+     "inRepository": true
+    },
+    "PUN_KOCKA_gate.json": {
+     "bytes": 1481,
+     "sha256": "1046c1dc4fb4933d066601189343ddd204ff7f6bfa37213cc426f4da912caa2e",
+     "inRepository": true
+    },
+    "PUN_KOCKA_gate_layers.json": {
+     "bytes": 6602,
+     "sha256": "737143dcf98276daa8f9bb5c82757fe40cf02e285376b1deeb00cdddf3944644",
+     "inRepository": true
+    },
+    "PUN_KOCKA_geometry.json": {
+     "bytes": 8015809,
+     "sha256": "f6e82104c41166b7581ddf863e218c4ecd2004fc8bb13e83b8657b1cbe451e3c",
+     "inRepository": false
+    },
+    "PUN_KOCKA_report.json": {
+     "bytes": 56773,
+     "sha256": "60ff621ebccc91843aa07bf689aafea9446e8f1d9bb7ff6ab69dfd5e1d5758d5",
+     "inRepository": true
+    }
+   },
+   "gate": {
+    "PASS": true,
+    "problems": 0,
+    "checked_points": 315037,
+    "bridges": 16016,
+    "floating": 0,
+    "cantilever": 0,
+    "long_bridge": 0,
+    "firstLayer": true,
+    "first_layer_islands": 1
+   },
+   "pureWeft": {
+    "walls": 0,
+    "runsEndingNearStart": 0,
+    "checkedWith": "tools/check_pure_weft.mjs"
+   },
+   "outcome": "NOT PRINTED — fill this in after the print, with photographs"
+  },
+  {
+   "name": "PUN_SUNDJER",
+   "size_mm": [
+    36.8,
+    36.6,
+    20
+   ],
+   "layers": 100,
+   "thread_m": 57.1,
+   "filament_mm": 1967.47,
+   "grams": 5.96,
+   "time": "43m 48s",
+   "bodyRuns": 200,
+   "shipped": [
+    "PUN_SUNDJER.gcode"
+   ],
+   "files": {
+    "PUN_SUNDJER.gcode": {
+     "bytes": 4649548,
+     "sha256": "864d69f61afa44679364158a88a809304f3e3a846af7dc59df1c8ca617c236a7",
+     "inRepository": true
+    },
+    "PUN_SUNDJER.stl": {
+     "bytes": 7407484,
+     "sha256": "2e4f7edbf6f41b4242da3ea24580caac08f0ddcc42657ad59b775d5f3a452ca4",
+     "inRepository": false
+    },
+    "PUN_SUNDJER_ENDER.svg": {
+     "bytes": 100888,
+     "sha256": "46f161aab560ee5b348b4da1fc8962778b627df5e9e6393e397e84ce1828ba54",
+     "inRepository": true
+    },
+    "PUN_SUNDJER_gate.json": {
+     "bytes": 1511,
+     "sha256": "a7cf2906cd15226b0272f71afbd9fbfcd88f7830a6da296982ac8f570cb7cace",
+     "inRepository": true
+    },
+    "PUN_SUNDJER_gate_layers.json": {
+     "bytes": 6583,
+     "sha256": "65538f2093e015e71950ed1c91ce2d9af1d71015a4eba35aac5a65c439c05cea",
+     "inRepository": true
+    },
+    "PUN_SUNDJER_geometry.json": {
+     "bytes": 3223312,
+     "sha256": "ce503f7a4b080d48a4b81b7e689a4224e50fecac4310b5f8b7f196eda5591995",
+     "inRepository": false
+    },
+    "PUN_SUNDJER_report.json": {
+     "bytes": 40209,
+     "sha256": "3d3413eda09775ec374252ac2590e36730d23ba758c0f5ea60a1329e4675244b",
+     "inRepository": true
+    }
+   },
+   "gate": {
+    "PASS": true,
+    "problems": 0,
+    "checked_points": 128262,
+    "bridges": 4808,
+    "floating": 0,
+    "cantilever": 0,
+    "long_bridge": 0,
+    "firstLayer": true,
+    "first_layer_islands": 1
+   },
+   "pureWeft": {
+    "walls": 0,
+    "runsEndingNearStart": 0,
+    "checkedWith": "tools/check_pure_weft.mjs"
+   },
+   "outcome": "NOT PRINTED — fill this in after the print, with photographs"
+  },
+  {
+   "name": "PUN_DRVO",
+   "size_mm": [
+    27,
+    27,
+    30
+   ],
+   "layers": 150,
+   "thread_m": 28.8,
+   "filament_mm": 1086.29,
+   "grams": 3.29,
+   "time": "21m 27s",
+   "bodyRuns": 300,
+   "shipped": [
+    "PUN_DRVO.gcode"
+   ],
+   "files": {
+    "PUN_DRVO.gcode": {
+     "bytes": 2439205,
+     "sha256": "0258c9c01f06a38bf78192da8bb1170d184149c52294692cf6277c7a9563002b",
+     "inRepository": true
+    },
+    "PUN_DRVO.stl": {
+     "bytes": 4562284,
+     "sha256": "790d4b7873940b411471e66a7fa94d452f27483bff6276cf8b978ccbb09cfbfb",
+     "inRepository": false
+    },
+    "PUN_DRVO_ENDER.svg": {
+     "bytes": 67209,
+     "sha256": "c7459cf9649b39ef432fd62058db0b3b975936c2b85f84fd4c8a016e0264e3b7",
+     "inRepository": true
+    },
+    "PUN_DRVO_gate.json": {
+     "bytes": 1509,
+     "sha256": "a96090690b991549f2cb48ced0cfdbff219383406706c9f7b5351b385aa5ed37",
+     "inRepository": true
+    },
+    "PUN_DRVO_gate_layers.json": {
+     "bytes": 6594,
+     "sha256": "8354e87b327d2c75fc04eb9730aeb52953b74448e45d23600aaa49ae10905486",
+     "inRepository": true
+    },
+    "PUN_DRVO_geometry.json": {
+     "bytes": 2579965,
+     "sha256": "71560b0d0c1153e1fe1bf2435a05cad7a039ca9500dc16a4da3ccc64a391bd8d",
+     "inRepository": false
+    },
+    "PUN_DRVO_report.json": {
+     "bytes": 68452,
+     "sha256": "a8b1ad3042f3859194b09102ed59d915828672ffb8384d76ac1115104ce307e2",
+     "inRepository": true
+    }
+   },
+   "gate": {
+    "PASS": true,
+    "problems": 0,
+    "checked_points": 66086,
+    "bridges": 1804,
+    "floating": 0,
+    "cantilever": 0,
+    "long_bridge": 0,
+    "firstLayer": true,
+    "first_layer_islands": 1
+   },
+   "pureWeft": {
+    "walls": 0,
+    "runsEndingNearStart": 0,
+    "checkedWith": "tools/check_pure_weft.mjs"
+   },
+   "outcome": "NOT PRINTED — fill this in after the print, with photographs"
+  }
+ ]
+}

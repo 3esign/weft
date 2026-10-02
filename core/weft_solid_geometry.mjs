@@ -408,8 +408,14 @@ export function generateSolid(o){
     ];
     let fillLen = 0;
     if(fill){
-      /* sparse fill = typed bridge (vertices preserved, 0.5 mm sampling); dense fill may be LOD'd freely */
-      const sparse = fill.maxSpacing > 1.2;
+      /* sparse fill = typed bridge (vertices preserved, 0.5 mm sampling); dense fill may be LOD'd freely.
+         What bridges is decided by the layer BELOW, not by this one. The first cap layer is dense
+         (0.85 mm) and so was typed 'wall', which let LOD thin its vertices to ~2.5 mm apart — while the
+         crescendo under it stands 4.71 mm apart. The gate samples support AT VERTICES, so vertex spacing
+         coarser than the pitch below aliases: a chord really crossing a line every 4.71 mm had vertices
+         that kept landing in between, and the run read as one 19.79 mm LONG_BRIDGE that does not exist
+         (ENDER PUN_KOCKA, z 23, 2026-10-02; the A1 passed the same geometry only by lucky alignment). */
+      const sparse = fill.maxSpacing > 1.2 || (prevPlan && prevPlan.maxSpacing > 1.2);
       const fillPts = (sparse ? resample(fill.pts, CHORD_STEP * 0.9) : fill.pts).map(([x, y]) => [rr(x, 3), rr(y, 3)]);
       paths.push({ pts: fillPts, role: sparse ? 'bridge' : 'wall', closed: false, bead, speed: V.speed, label: `${p.kind}-${p.tag}`, tile: 'body',
         intent: `${PROCESS}: ${p.kind} ${detail}, spacing ${rr(p.spacing, 2)} mm, layer ${k + 1}/${N}` });

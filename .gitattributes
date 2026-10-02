@@ -1,0 +1,11 @@
+# A toolpath is a DELIVERABLE, not source. core.autocrlf=true was rewriting every .gcode on
+# checkout, so a clean clone produced a file whose bytes — and therefore whose SHA-256 in the
+# specimen manifests — differed from the one measured and shipped. It is not academic: the harvested
+# Bambu start blocks are CRLF exports, and the header-rewrite bug of 2026-10-02 (anchored patterns
+# ending on `$` not matching a line that ends `\r`) was exactly a line-ending bug in this file class.
+# These travel byte for byte.
+*.gcode -text
+*.3mf   -text
+*.stl   -text
+*.png   -text
+*.gguf  -text

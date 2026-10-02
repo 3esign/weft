@@ -1,0 +1,1937 @@
+{
+  "report": {
+    "name": "PUN_SUNDJER",
+    "machine": "Creality Ender-3 V4",
+    "bed_mm": [
+      220,
+      220
+    ],
+    "layers": 203,
+    "globalZLevels": 100,
+    "expectedZLevels": 100,
+    "logicalCells": null,
+    "experimentalMembraneOverride": false,
+    "maxBodiesPerZ": 1,
+    "size_mm": [
+      37,
+      36.6,
+      20
+    ],
+    "plate_mm": [
+      91.7,
+      91.8,
+      128.2,
+      128
+    ],
+    "fitsPlate": true,
+    "grammarCounts": {},
+    "threadLength_m": 57.6,
+    "weldNodes": 0,
+    "rawPaths": 200,
+    "unintendedOverlaps": 0,
+    "seamClosures": 0,
+    "overlapSamples": [],
+    "kinematic_h": 0.53,
+    "routeA_estimate_h": 5,
+    "caps": [],
+    "events": [
+      {
+        "z": 1,
+        "k": 5,
+        "event": "base -> field"
+      },
+      {
+        "z": 18.8,
+        "k": 94,
+        "event": "field -> cap"
+      }
+    ],
+    "contourCounts": [
+      [
+        0,
+        0
+      ]
+    ],
+    "perLayerSample": [
+      {
+        "k": 0,
+        "z": 0,
+        "contours": 0,
+        "paths": 2,
+        "nodes": 0
+      },
+      {
+        "k": 40,
+        "z": 8,
+        "contours": 0,
+        "paths": 2,
+        "nodes": 0
+      },
+      {
+        "k": 80,
+        "z": 16,
+        "contours": 0,
+        "paths": 2,
+        "nodes": 0
+      }
+    ],
+    "membranes": [],
+    "gateLayers": {
+      "version": "gate-layers-2026-09-25-krak",
+      "vector": "S2 INFO · S3 PASS · S4 PASS · S5 INFO · S7 INFO · S8 PASS · ORDER N/A",
+      "refusedBy": [],
+      "findings": 0,
+      "S2": {
+        "worst": {
+          "k": 3,
+          "z": 0.6,
+          "runs10": 0,
+          "free_mm": 0,
+          "longest_mm": 0
+        },
+        "free_m": 0,
+        "declared": 0
+      },
+      "S3": {
+        "worst": null,
+        "neverTied": 0,
+        "declared": 0
+      },
+      "S4": {
+        "overflights": 0,
+        "closest": null,
+        "declared": 0
+      },
+      "S5": {
+        "ratio": 0.352,
+        "contact_mm2": 858.1,
+        "lever_mm": 123
+      },
+      "S7": {
+        "weakest": [
+          {
+            "k": 75,
+            "z": 15,
+            "carried": 0.775,
+            "onSolid": 1,
+            "pileMax": 0,
+            "solidComponents": 1,
+            "largestSolidExtent_mm": 47.1,
+            "above": 25
+          },
+          {
+            "k": 69,
+            "z": 13.8,
+            "carried": 0.776,
+            "onSolid": 1,
+            "pileMax": 0,
+            "solidComponents": 1,
+            "largestSolidExtent_mm": 47.9,
+            "above": 31
+          },
+          {
+            "k": 73,
+            "z": 14.6,
+            "carried": 0.778,
+            "onSolid": 1,
+            "pileMax": 0,
+            "solidComponents": 1,
+            "largestSolidExtent_mm": 47.7,
+            "above": 27
+          }
+        ]
+      },
+      "S8": {
+        "periodTwoLayers": 0,
+        "medianCrossing_deg": 42.5
+      },
+      "ORDER": {
+        "verdict": "N/A",
+        "aboveRisk_mm": 1,
+        "zonesWithFindings": []
+      }
+    }
+  },
+  "geometry": {
+    "name": "PUN_SUNDJER",
+    "variant": "sundjer",
+    "title": "SUNDJER PUN",
+    "concept": "density as a field: a twisting tri-lobe blob, spacing varies inside every layer, direction steps by the golden angle",
+    "generator": "core/weft_solid_geometry.mjs",
+    "process": "pure-weft/v1",
+    "generatedAt": "2026-10-02",
+    "machine": "ender",
+    "machineLabel": "Creality Ender-3 V4",
+    "machineQualification": {
+      "beadSource": "ASSUMED",
+      "beadEvidence": "NEVER CALIBRATED. Run the C1 thin-wall test on this machine and put the measured width here before trusting anything built for it.",
+      "assumedAcknowledged": true
+    },
+    "size_mm": [
+      37,
+      36.6,
+      20
+    ],
+    "H": 20,
+    "totalLayers": 100,
+    "args": {
+      "lh": 0.2,
+      "bead": 0.42,
+      "firstLayerBead": 0.48,
+      "firstLayerSpeed": 12,
+      "w": 2,
+      "e": 0,
+      "r0": 18.48,
+      "K": 8,
+      "foundation": 3,
+      "maxbridge": 12,
+      "maxcantilever": 3,
+      "allow": 0.6,
+      "minanchor": 0.5,
+      "maxCapRadius": 20,
+      "speed": 32,
+      "bridgeSpeed": 18,
+      "temp": 220,
+      "bed": 60,
+      "fan": 100
+    },
+    "gatePolicy": {
+      "meaning": "a solid body: every span between fill crossings must be a legal bridge; nothing is declared experimental",
+      "bridge_mm": 12,
+      "cantilever_mm": 3,
+      "first_layer_max_islands": 1
+    },
+    "solid": {
+      "basePolicy": "5 solid layers (first at 0.50 mm spacing, then 0.85)",
+      "capPolicy": "6 solid layers at 0.85 mm",
+      "worstFreeSpanEst_mm": 7.17,
+      "fillLength_m": 38.1,
+      "patterns": [
+        "lines"
+      ],
+      "tags": [
+        "base",
+        "field",
+        "cap"
+      ]
+    },
+    "layerProgram": [
+      {
+        "k": 0,
+        "z": 0,
+        "kind": "lines",
+        "tag": "base",
+        "spacing_mm": 0.5,
+        "maxSpacing_mm": 0.5,
+        "rim_mm": [
+          0.5
+        ],
+        "rimDepth_mm": 0.5,
+        "angle_deg": 0,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 1392,
+        "nLines": 57
+      },
+      {
+        "k": 1,
+        "z": 0.2,
+        "kind": "lines",
+        "tag": "base",
+        "spacing_mm": 0.85,
+        "maxSpacing_mm": 0.85,
+        "rim_mm": [
+          0.5
+        ],
+        "rimDepth_mm": 0.5,
+        "angle_deg": 137.5,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 853,
+        "nLines": 35
+      },
+      {
+        "k": 2,
+        "z": 0.4,
+        "kind": "lines",
+        "tag": "base",
+        "spacing_mm": 0.85,
+        "maxSpacing_mm": 0.85,
+        "rim_mm": [
+          0.5
+        ],
+        "rimDepth_mm": 0.5,
+        "angle_deg": 95,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 860,
+        "nLines": 35
+      },
+      {
+        "k": 3,
+        "z": 0.6,
+        "kind": "lines",
+        "tag": "base",
+        "spacing_mm": 0.85,
+        "maxSpacing_mm": 0.85,
+        "rim_mm": [
+          0.5
+        ],
+        "rimDepth_mm": 0.5,
+        "angle_deg": 52.5,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 861,
+        "nLines": 34
+      },
+      {
+        "k": 4,
+        "z": 0.8,
+        "kind": "lines",
+        "tag": "base",
+        "spacing_mm": 0.85,
+        "maxSpacing_mm": 0.85,
+        "rim_mm": [
+          0.5
+        ],
+        "rimDepth_mm": 0.5,
+        "angle_deg": 10,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 873,
+        "nLines": 35
+      },
+      {
+        "k": 5,
+        "z": 1,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 2.41,
+        "maxSpacing_mm": 3.24,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 147.5,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 322,
+        "nLines": 12
+      },
+      {
+        "k": 6,
+        "z": 1.2,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 2.41,
+        "maxSpacing_mm": 3.24,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 105.1,
+        "freeSpanEst_mm": 4.79,
+        "fill_mm": 335,
+        "nLines": 13
+      },
+      {
+        "k": 7,
+        "z": 1.4,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 2.42,
+        "maxSpacing_mm": 3.26,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 62.6,
+        "freeSpanEst_mm": 4.79,
+        "fill_mm": 336,
+        "nLines": 13
+      },
+      {
+        "k": 8,
+        "z": 1.6,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 2.42,
+        "maxSpacing_mm": 3.27,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 20.1,
+        "freeSpanEst_mm": 4.83,
+        "fill_mm": 327,
+        "nLines": 12
+      },
+      {
+        "k": 9,
+        "z": 1.8,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 2.43,
+        "maxSpacing_mm": 3.27,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 157.6,
+        "freeSpanEst_mm": 4.84,
+        "fill_mm": 330,
+        "nLines": 12
+      },
+      {
+        "k": 10,
+        "z": 2,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 2.43,
+        "maxSpacing_mm": 3.28,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 115.1,
+        "freeSpanEst_mm": 4.85,
+        "fill_mm": 342,
+        "nLines": 13
+      },
+      {
+        "k": 11,
+        "z": 2.2,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 2.44,
+        "maxSpacing_mm": 3.29,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 72.6,
+        "freeSpanEst_mm": 4.86,
+        "fill_mm": 345,
+        "nLines": 13
+      },
+      {
+        "k": 12,
+        "z": 2.4,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 3.31,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 30.1,
+        "freeSpanEst_mm": 4.87,
+        "fill_mm": 333,
+        "nLines": 12
+      },
+      {
+        "k": 13,
+        "z": 2.6,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 2.46,
+        "maxSpacing_mm": 3.32,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 167.6,
+        "freeSpanEst_mm": 4.89,
+        "fill_mm": 347,
+        "nLines": 13
+      },
+      {
+        "k": 14,
+        "z": 2.8,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 2.47,
+        "maxSpacing_mm": 3.33,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 125.1,
+        "freeSpanEst_mm": 4.91,
+        "fill_mm": 349,
+        "nLines": 13
+      },
+      {
+        "k": 15,
+        "z": 3,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 2.47,
+        "maxSpacing_mm": 3.34,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 82.6,
+        "freeSpanEst_mm": 4.93,
+        "fill_mm": 338,
+        "nLines": 12
+      },
+      {
+        "k": 16,
+        "z": 3.2,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 2.48,
+        "maxSpacing_mm": 3.35,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 40.1,
+        "freeSpanEst_mm": 4.94,
+        "fill_mm": 339,
+        "nLines": 12
+      },
+      {
+        "k": 17,
+        "z": 3.4,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 2.49,
+        "maxSpacing_mm": 3.37,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 177.6,
+        "freeSpanEst_mm": 4.96,
+        "fill_mm": 354,
+        "nLines": 13
+      },
+      {
+        "k": 18,
+        "z": 3.6,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 2.5,
+        "maxSpacing_mm": 3.38,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 135.1,
+        "freeSpanEst_mm": 4.98,
+        "fill_mm": 357,
+        "nLines": 13
+      },
+      {
+        "k": 19,
+        "z": 3.8,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 2.52,
+        "maxSpacing_mm": 3.39,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 92.7,
+        "freeSpanEst_mm": 5,
+        "fill_mm": 345,
+        "nLines": 12
+      },
+      {
+        "k": 20,
+        "z": 4,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 2.53,
+        "maxSpacing_mm": 3.41,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 50.2,
+        "freeSpanEst_mm": 5.02,
+        "fill_mm": 344,
+        "nLines": 12
+      },
+      {
+        "k": 21,
+        "z": 4.2,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 2.54,
+        "maxSpacing_mm": 3.43,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 7.7,
+        "freeSpanEst_mm": 5.05,
+        "fill_mm": 362,
+        "nLines": 13
+      },
+      {
+        "k": 22,
+        "z": 4.4,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 2.55,
+        "maxSpacing_mm": 3.44,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 145.2,
+        "freeSpanEst_mm": 5.07,
+        "fill_mm": 360,
+        "nLines": 13
+      },
+      {
+        "k": 23,
+        "z": 4.6,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 2.56,
+        "maxSpacing_mm": 3.46,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 102.7,
+        "freeSpanEst_mm": 5.1,
+        "fill_mm": 350,
+        "nLines": 12
+      },
+      {
+        "k": 24,
+        "z": 4.8,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 2.58,
+        "maxSpacing_mm": 3.47,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 60.2,
+        "freeSpanEst_mm": 5.12,
+        "fill_mm": 348,
+        "nLines": 12
+      },
+      {
+        "k": 25,
+        "z": 5,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 2.59,
+        "maxSpacing_mm": 3.49,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 17.7,
+        "freeSpanEst_mm": 5.13,
+        "fill_mm": 364,
+        "nLines": 13
+      },
+      {
+        "k": 26,
+        "z": 5.2,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 2.6,
+        "maxSpacing_mm": 3.51,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 155.2,
+        "freeSpanEst_mm": 5.17,
+        "fill_mm": 351,
+        "nLines": 12
+      },
+      {
+        "k": 27,
+        "z": 5.4,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 2.62,
+        "maxSpacing_mm": 3.53,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 112.7,
+        "freeSpanEst_mm": 5.2,
+        "fill_mm": 353,
+        "nLines": 12
+      },
+      {
+        "k": 28,
+        "z": 5.6,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 2.63,
+        "maxSpacing_mm": 3.55,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 70.2,
+        "freeSpanEst_mm": 5.23,
+        "fill_mm": 365,
+        "nLines": 13
+      },
+      {
+        "k": 29,
+        "z": 5.8,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 2.65,
+        "maxSpacing_mm": 3.57,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 27.7,
+        "freeSpanEst_mm": 5.26,
+        "fill_mm": 367,
+        "nLines": 13
+      },
+      {
+        "k": 30,
+        "z": 6,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 2.66,
+        "maxSpacing_mm": 3.57,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 165.2,
+        "freeSpanEst_mm": 5.29,
+        "fill_mm": 355,
+        "nLines": 12
+      },
+      {
+        "k": 31,
+        "z": 6.2,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 2.68,
+        "maxSpacing_mm": 3.6,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 122.7,
+        "freeSpanEst_mm": 5.29,
+        "fill_mm": 354,
+        "nLines": 12
+      },
+      {
+        "k": 32,
+        "z": 6.4,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 2.7,
+        "maxSpacing_mm": 3.62,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 80.3,
+        "freeSpanEst_mm": 5.33,
+        "fill_mm": 367,
+        "nLines": 13
+      },
+      {
+        "k": 33,
+        "z": 6.6,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 2.71,
+        "maxSpacing_mm": 3.65,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 37.8,
+        "freeSpanEst_mm": 5.36,
+        "fill_mm": 354,
+        "nLines": 12
+      },
+      {
+        "k": 34,
+        "z": 6.8,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 2.73,
+        "maxSpacing_mm": 3.67,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 175.3,
+        "freeSpanEst_mm": 5.4,
+        "fill_mm": 358,
+        "nLines": 12
+      },
+      {
+        "k": 35,
+        "z": 7,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 2.74,
+        "maxSpacing_mm": 3.66,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 132.8,
+        "freeSpanEst_mm": 5.43,
+        "fill_mm": 355,
+        "nLines": 12
+      },
+      {
+        "k": 36,
+        "z": 7.2,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 2.76,
+        "maxSpacing_mm": 3.69,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 90.3,
+        "freeSpanEst_mm": 5.42,
+        "fill_mm": 357,
+        "nLines": 12
+      },
+      {
+        "k": 37,
+        "z": 7.4,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 2.78,
+        "maxSpacing_mm": 3.71,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 47.8,
+        "freeSpanEst_mm": 5.46,
+        "fill_mm": 357,
+        "nLines": 12
+      },
+      {
+        "k": 38,
+        "z": 7.6,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 2.79,
+        "maxSpacing_mm": 3.75,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 5.3,
+        "freeSpanEst_mm": 5.5,
+        "fill_mm": 353,
+        "nLines": 12
+      },
+      {
+        "k": 39,
+        "z": 7.8,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 2.81,
+        "maxSpacing_mm": 3.77,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 142.8,
+        "freeSpanEst_mm": 5.56,
+        "fill_mm": 354,
+        "nLines": 12
+      },
+      {
+        "k": 40,
+        "z": 8,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 2.83,
+        "maxSpacing_mm": 3.79,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 100.3,
+        "freeSpanEst_mm": 5.59,
+        "fill_mm": 356,
+        "nLines": 12
+      },
+      {
+        "k": 41,
+        "z": 8.2,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 2.85,
+        "maxSpacing_mm": 3.81,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 57.8,
+        "freeSpanEst_mm": 5.62,
+        "fill_mm": 353,
+        "nLines": 12
+      },
+      {
+        "k": 42,
+        "z": 8.4,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 2.86,
+        "maxSpacing_mm": 3.83,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 15.3,
+        "freeSpanEst_mm": 5.64,
+        "fill_mm": 339,
+        "nLines": 11
+      },
+      {
+        "k": 43,
+        "z": 8.6,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 2.88,
+        "maxSpacing_mm": 3.85,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 152.8,
+        "freeSpanEst_mm": 5.67,
+        "fill_mm": 355,
+        "nLines": 12
+      },
+      {
+        "k": 44,
+        "z": 8.8,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 2.9,
+        "maxSpacing_mm": 3.91,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 110.3,
+        "freeSpanEst_mm": 5.7,
+        "fill_mm": 353,
+        "nLines": 12
+      },
+      {
+        "k": 45,
+        "z": 9,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 2.92,
+        "maxSpacing_mm": 3.93,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 67.9,
+        "freeSpanEst_mm": 5.78,
+        "fill_mm": 338,
+        "nLines": 11
+      },
+      {
+        "k": 46,
+        "z": 9.2,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 2.94,
+        "maxSpacing_mm": 3.95,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 25.4,
+        "freeSpanEst_mm": 5.82,
+        "fill_mm": 337,
+        "nLines": 11
+      },
+      {
+        "k": 47,
+        "z": 9.4,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 2.95,
+        "maxSpacing_mm": 3.97,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 162.9,
+        "freeSpanEst_mm": 5.85,
+        "fill_mm": 351,
+        "nLines": 12
+      },
+      {
+        "k": 48,
+        "z": 9.6,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 2.97,
+        "maxSpacing_mm": 3.99,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 120.4,
+        "freeSpanEst_mm": 5.88,
+        "fill_mm": 337,
+        "nLines": 11
+      },
+      {
+        "k": 49,
+        "z": 9.8,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 2.99,
+        "maxSpacing_mm": 4.04,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 77.9,
+        "freeSpanEst_mm": 5.91,
+        "fill_mm": 332,
+        "nLines": 11
+      },
+      {
+        "k": 50,
+        "z": 10,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 3.01,
+        "maxSpacing_mm": 4.06,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 35.4,
+        "freeSpanEst_mm": 5.98,
+        "fill_mm": 335,
+        "nLines": 11
+      },
+      {
+        "k": 51,
+        "z": 10.2,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 3.03,
+        "maxSpacing_mm": 4.08,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 172.9,
+        "freeSpanEst_mm": 6.01,
+        "fill_mm": 334,
+        "nLines": 11
+      },
+      {
+        "k": 52,
+        "z": 10.4,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 3.05,
+        "maxSpacing_mm": 4.11,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 130.4,
+        "freeSpanEst_mm": 6.04,
+        "fill_mm": 313,
+        "nLines": 10
+      },
+      {
+        "k": 53,
+        "z": 10.6,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 3.06,
+        "maxSpacing_mm": 4.13,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 87.9,
+        "freeSpanEst_mm": 6.08,
+        "fill_mm": 330,
+        "nLines": 11
+      },
+      {
+        "k": 54,
+        "z": 10.8,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 3.08,
+        "maxSpacing_mm": 4.15,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 45.4,
+        "freeSpanEst_mm": 6.11,
+        "fill_mm": 333,
+        "nLines": 11
+      },
+      {
+        "k": 55,
+        "z": 11,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 3.1,
+        "maxSpacing_mm": 4.18,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 2.9,
+        "freeSpanEst_mm": 6.15,
+        "fill_mm": 329,
+        "nLines": 11
+      },
+      {
+        "k": 56,
+        "z": 11.2,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 3.12,
+        "maxSpacing_mm": 4.21,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 140.4,
+        "freeSpanEst_mm": 6.19,
+        "fill_mm": 314,
+        "nLines": 10
+      },
+      {
+        "k": 57,
+        "z": 11.4,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 3.14,
+        "maxSpacing_mm": 4.23,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 97.9,
+        "freeSpanEst_mm": 6.23,
+        "fill_mm": 327,
+        "nLines": 11
+      },
+      {
+        "k": 58,
+        "z": 11.6,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 3.15,
+        "maxSpacing_mm": 4.26,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 55.5,
+        "freeSpanEst_mm": 6.27,
+        "fill_mm": 328,
+        "nLines": 11
+      },
+      {
+        "k": 59,
+        "z": 11.8,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 3.17,
+        "maxSpacing_mm": 4.28,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 13,
+        "freeSpanEst_mm": 6.3,
+        "fill_mm": 308,
+        "nLines": 10
+      },
+      {
+        "k": 60,
+        "z": 12,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 3.19,
+        "maxSpacing_mm": 4.3,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 150.5,
+        "freeSpanEst_mm": 6.33,
+        "fill_mm": 310,
+        "nLines": 10
+      },
+      {
+        "k": 61,
+        "z": 12.2,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 3.21,
+        "maxSpacing_mm": 4.32,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 108,
+        "freeSpanEst_mm": 6.36,
+        "fill_mm": 305,
+        "nLines": 10
+      },
+      {
+        "k": 62,
+        "z": 12.4,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 3.22,
+        "maxSpacing_mm": 4.35,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 65.5,
+        "freeSpanEst_mm": 6.4,
+        "fill_mm": 320,
+        "nLines": 11
+      },
+      {
+        "k": 63,
+        "z": 12.6,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 3.24,
+        "maxSpacing_mm": 4.37,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 23,
+        "freeSpanEst_mm": 6.44,
+        "fill_mm": 306,
+        "nLines": 10
+      },
+      {
+        "k": 64,
+        "z": 12.8,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 3.26,
+        "maxSpacing_mm": 4.4,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 160.5,
+        "freeSpanEst_mm": 6.47,
+        "fill_mm": 285,
+        "nLines": 9
+      },
+      {
+        "k": 65,
+        "z": 13,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 3.27,
+        "maxSpacing_mm": 4.42,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 118,
+        "freeSpanEst_mm": 6.51,
+        "fill_mm": 314,
+        "nLines": 11
+      },
+      {
+        "k": 66,
+        "z": 13.2,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 3.29,
+        "maxSpacing_mm": 4.42,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 75.5,
+        "freeSpanEst_mm": 6.54,
+        "fill_mm": 299,
+        "nLines": 10
+      },
+      {
+        "k": 67,
+        "z": 13.4,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 3.3,
+        "maxSpacing_mm": 4.45,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 33,
+        "freeSpanEst_mm": 6.55,
+        "fill_mm": 281,
+        "nLines": 9
+      },
+      {
+        "k": 68,
+        "z": 13.6,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 3.32,
+        "maxSpacing_mm": 4.47,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 170.5,
+        "freeSpanEst_mm": 6.59,
+        "fill_mm": 280,
+        "nLines": 9
+      },
+      {
+        "k": 69,
+        "z": 13.8,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 3.34,
+        "maxSpacing_mm": 4.5,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 128,
+        "freeSpanEst_mm": 6.62,
+        "fill_mm": 295,
+        "nLines": 10
+      },
+      {
+        "k": 70,
+        "z": 14,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 3.35,
+        "maxSpacing_mm": 4.52,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 85.5,
+        "freeSpanEst_mm": 6.65,
+        "fill_mm": 295,
+        "nLines": 10
+      },
+      {
+        "k": 71,
+        "z": 14.2,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 3.37,
+        "maxSpacing_mm": 4.51,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 43.1,
+        "freeSpanEst_mm": 6.69,
+        "fill_mm": 274,
+        "nLines": 9
+      },
+      {
+        "k": 72,
+        "z": 14.4,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 3.38,
+        "maxSpacing_mm": 4.53,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 0.6,
+        "freeSpanEst_mm": 6.67,
+        "fill_mm": 276,
+        "nLines": 9
+      },
+      {
+        "k": 73,
+        "z": 14.6,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 3.4,
+        "maxSpacing_mm": 4.56,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 138.1,
+        "freeSpanEst_mm": 6.71,
+        "fill_mm": 290,
+        "nLines": 10
+      },
+      {
+        "k": 74,
+        "z": 14.8,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 3.41,
+        "maxSpacing_mm": 4.58,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 95.6,
+        "freeSpanEst_mm": 6.74,
+        "fill_mm": 270,
+        "nLines": 9
+      },
+      {
+        "k": 75,
+        "z": 15,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 3.42,
+        "maxSpacing_mm": 4.6,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 53.1,
+        "freeSpanEst_mm": 6.78,
+        "fill_mm": 271,
+        "nLines": 9
+      },
+      {
+        "k": 76,
+        "z": 15.2,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 3.44,
+        "maxSpacing_mm": 4.59,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 10.6,
+        "freeSpanEst_mm": 6.81,
+        "fill_mm": 271,
+        "nLines": 9
+      },
+      {
+        "k": 77,
+        "z": 15.4,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 3.45,
+        "maxSpacing_mm": 4.6,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 148.1,
+        "freeSpanEst_mm": 6.8,
+        "fill_mm": 279,
+        "nLines": 10
+      },
+      {
+        "k": 78,
+        "z": 15.6,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 3.46,
+        "maxSpacing_mm": 4.62,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 105.6,
+        "freeSpanEst_mm": 6.81,
+        "fill_mm": 265,
+        "nLines": 9
+      },
+      {
+        "k": 79,
+        "z": 15.8,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 3.47,
+        "maxSpacing_mm": 4.64,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 63.1,
+        "freeSpanEst_mm": 6.84,
+        "fill_mm": 266,
+        "nLines": 9
+      },
+      {
+        "k": 80,
+        "z": 16,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 3.48,
+        "maxSpacing_mm": 4.66,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 20.6,
+        "freeSpanEst_mm": 6.87,
+        "fill_mm": 262,
+        "nLines": 9
+      },
+      {
+        "k": 81,
+        "z": 16.2,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 3.5,
+        "maxSpacing_mm": 4.69,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 158.1,
+        "freeSpanEst_mm": 6.9,
+        "fill_mm": 260,
+        "nLines": 9
+      },
+      {
+        "k": 82,
+        "z": 16.4,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 3.51,
+        "maxSpacing_mm": 4.7,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 115.6,
+        "freeSpanEst_mm": 6.95,
+        "fill_mm": 253,
+        "nLines": 9
+      },
+      {
+        "k": 83,
+        "z": 16.6,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 3.52,
+        "maxSpacing_mm": 4.71,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 73.1,
+        "freeSpanEst_mm": 6.96,
+        "fill_mm": 257,
+        "nLines": 9
+      },
+      {
+        "k": 84,
+        "z": 16.8,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 3.53,
+        "maxSpacing_mm": 4.72,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 30.7,
+        "freeSpanEst_mm": 6.98,
+        "fill_mm": 255,
+        "nLines": 9
+      },
+      {
+        "k": 85,
+        "z": 17,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 3.53,
+        "maxSpacing_mm": 4.7,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 168.2,
+        "freeSpanEst_mm": 6.99,
+        "fill_mm": 253,
+        "nLines": 9
+      },
+      {
+        "k": 86,
+        "z": 17.2,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 3.54,
+        "maxSpacing_mm": 4.78,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 125.7,
+        "freeSpanEst_mm": 6.95,
+        "fill_mm": 234,
+        "nLines": 8
+      },
+      {
+        "k": 87,
+        "z": 17.4,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 3.55,
+        "maxSpacing_mm": 4.78,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 83.2,
+        "freeSpanEst_mm": 7.07,
+        "fill_mm": 250,
+        "nLines": 9
+      },
+      {
+        "k": 88,
+        "z": 17.6,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 3.56,
+        "maxSpacing_mm": 4.79,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 40.7,
+        "freeSpanEst_mm": 7.08,
+        "fill_mm": 247,
+        "nLines": 9
+      },
+      {
+        "k": 89,
+        "z": 17.8,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 3.57,
+        "maxSpacing_mm": 4.8,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 178.2,
+        "freeSpanEst_mm": 7.09,
+        "fill_mm": 232,
+        "nLines": 8
+      },
+      {
+        "k": 90,
+        "z": 18,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 3.57,
+        "maxSpacing_mm": 4.71,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 135.7,
+        "freeSpanEst_mm": 7.1,
+        "fill_mm": 228,
+        "nLines": 8
+      },
+      {
+        "k": 91,
+        "z": 18.2,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 3.58,
+        "maxSpacing_mm": 4.72,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 93.2,
+        "freeSpanEst_mm": 6.97,
+        "fill_mm": 229,
+        "nLines": 8
+      },
+      {
+        "k": 92,
+        "z": 18.4,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 3.58,
+        "maxSpacing_mm": 4.84,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 50.7,
+        "freeSpanEst_mm": 6.99,
+        "fill_mm": 224,
+        "nLines": 8
+      },
+      {
+        "k": 93,
+        "z": 18.6,
+        "kind": "lines",
+        "tag": "field",
+        "spacing_mm": 3.59,
+        "maxSpacing_mm": 4.84,
+        "rim_mm": [
+          0.5,
+          1
+        ],
+        "rimDepth_mm": 1.5,
+        "angle_deg": 8.2,
+        "freeSpanEst_mm": 7.16,
+        "fill_mm": 222,
+        "nLines": 8
+      },
+      {
+        "k": 94,
+        "z": 18.8,
+        "kind": "lines",
+        "tag": "cap",
+        "spacing_mm": 0.85,
+        "maxSpacing_mm": 0.85,
+        "rim_mm": [
+          0.5
+        ],
+        "rimDepth_mm": 0.5,
+        "angle_deg": 145.7,
+        "freeSpanEst_mm": 7.17,
+        "fill_mm": 882,
+        "nLines": 35
+      },
+      {
+        "k": 95,
+        "z": 19,
+        "kind": "lines",
+        "tag": "cap",
+        "spacing_mm": 0.85,
+        "maxSpacing_mm": 0.85,
+        "rim_mm": [
+          0.5
+        ],
+        "rimDepth_mm": 0.5,
+        "angle_deg": 103.2,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 876,
+        "nLines": 35
+      },
+      {
+        "k": 96,
+        "z": 19.2,
+        "kind": "lines",
+        "tag": "cap",
+        "spacing_mm": 0.85,
+        "maxSpacing_mm": 0.85,
+        "rim_mm": [
+          0.5
+        ],
+        "rimDepth_mm": 0.5,
+        "angle_deg": 60.8,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 866,
+        "nLines": 35
+      },
+      {
+        "k": 97,
+        "z": 19.4,
+        "kind": "lines",
+        "tag": "cap",
+        "spacing_mm": 0.85,
+        "maxSpacing_mm": 0.85,
+        "rim_mm": [
+          0.5
+        ],
+        "rimDepth_mm": 0.5,
+        "angle_deg": 18.3,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 862,
+        "nLines": 35
+      },
+      {
+        "k": 98,
+        "z": 19.6,
+        "kind": "lines",
+        "tag": "cap",
+        "spacing_mm": 0.85,
+        "maxSpacing_mm": 0.85,
+        "rim_mm": [
+          0.5
+        ],
+        "rimDepth_mm": 0.5,
+        "angle_deg": 155.8,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 844,
+        "nLines": 34
+      },
+      {
+        "k": 99,
+        "z": 19.8,
+        "kind": "lines",
+        "tag": "cap",
+        "spacing_mm": 0.85,
+        "maxSpacing_mm": 0.85,
+        "rim_mm": [
+          0.5
+        ],
+        "rimDepth_mm": 0.5,
+        "angle_deg": 113.3,
+        "freeSpanEst_mm": 0,
+        "fill_mm": 845,
+        "nLines": 35
+      }
+    ],
+    "events": [
+      {
+        "z": 1,
+        "k": 5,
+        "event": "base -> field"
+      },
+      {
+        "z": 18.8,
+        "k": 94,
+        "event": "field -> cap"
+      }
+    ],
+    "violations": [],
+    "warnings": []
+  },
+  "design": null,
+  "preset": null,
+  "builder": "weft.mjs (core/weft_core.js + core/weft_gate.js, no browser, no Python)",
+  "gate": {
+    "bead": 0.42,
+    "maxbridge": 12,
+    "maxcantilever": 3,
+    "allow": 0.6,
+    "minanchor": 0.5,
+    "maxCapRadius": 20,
+    "maxislands": 1,
+    "file": "C:\\Svemir\\!Projekti\\weft\\specimens\\2026-10-02_pure_weft_ENDER\\PUN_SUNDJER.gcode"
+  }
+}

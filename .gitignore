@@ -26,3 +26,18 @@ bridge/log/
 specimens/2026-10-02_stolica_A1/STOLICA.stl
 specimens/2026-10-02_stolica_A1/STOLICA_geometry.json
 specimens/2026-10-02_stolica_A1/STOLICA.gcode
+
+# The Ender cut of the three full bodies: display STLs (21/7/4.5 MB) and geometry dumps (8/3/2.6 MB)
+# are reproducible from core/weft_solid_geometry.mjs. Toolpaths and evidence travel; the bulk does
+# not. Rebuild commands and SHA-256 are in the specimen README/manifest (2026-10-02).
+specimens/2026-10-02_pure_weft_ENDER/*.stl
+specimens/2026-10-02_pure_weft_ENDER/*_geometry.json
+
+# SOKOL, both cuts: 188 mm and 280 mm. Same reason — the container and the G-code are the delivery,
+# the mesh and the field dump are a rebuild away (core/weft_field_geometry.mjs).
+specimens/2026-10-02_sokol_A1/SOKOL.stl
+specimens/2026-10-02_sokol_A1/SOKOL_geometry.json
+specimens/2026-10-02_sokol_A1/SOKOL.gcode
+specimens/2026-10-02_sokol_A2L/SOKOL.stl
+specimens/2026-10-02_sokol_A2L/SOKOL_geometry.json
+specimens/2026-10-02_sokol_A2L/SOKOL.gcode
