@@ -1,0 +1,35 @@
+{
+ "name": "SOKOL_A2L",
+ "model": "geometry",
+ "built": "2026-10-03T07:28:33",
+ "machine": {
+  "id": "a2l",
+  "label": "Bambu Lab A2L",
+  "plate": [
+   330,
+   320
+  ],
+  "maxZ": 325,
+  "bead": 0.45,
+  "beadSource": "measured",
+  "beadEvidence": "specimens/2026-08-31_D5_R140_A2L_physical and specimens/2026-09-02_P0_suma_2x2_physical — both printed to completion at this bead",
+  "lh": 0.24,
+  "firstLayerBead": 0.52,
+  "temp": 220,
+  "bed": 55,
+  "start": "exports/a2l_start_block_template_2026-09-02.gcode",
+  "end": "exports/a2l_end_block_harvested_2026-09-02.gcode",
+  "route": "bambu3mf"
+ },
+ "geometry": "SOKOL_A2L_geometry.json",
+ "shipped": [
+  "SOKOL_A2L.gcode",
+  "SOKOL_A2L.gcode.3mf"
+ ],
+ "gate": "SOKOL_A2L_gate.json",
+ "gateLayers": "SOKOL_A2L_gate_layers.json",
+ "report": "SOKOL_A2L_report.json",
+ "builder": "weft.mjs",
+ "core": "core-2026-09-19-first-layer",
+ "outcome": "NOT PRINTED — fill this in after the print, with photographs"
+}

@@ -141,6 +141,11 @@ async function cmdBuild(){
     name = name || path.basename(opt('design')).replace(/\.json$/, '');
   } else die('say what to build: a model name, --preset NAME, --design params.json or --geo geometry.json');
 
+  /* Every file that leaves here says which printer it is for (2026-10-03): STOLICA.gcode.3mf, built for
+     the A1, was sent to the A2L and Bambu Studio refused it as an A1 file. A name that does not already
+     carry the machine gets it appended, so a shelf of .gcode can never again hide its printer. */
+  name = printerTag(name, machineId);
+
   const W = createWeftCore();
   let report;
   if(design){
@@ -404,3 +409,10 @@ else if(cmd === 'build') await cmdBuild();
 else if(cmd === 'check') cmdCheck();
 else if(cmd === 'serve') cmdServe();
 else { console.log(fs.readFileSync(fileURLToPath(import.meta.url), 'utf8').split('*/')[0].replace(/^\/\*\s*/, '')); process.exit(cmd ? 1 : 0); }
+
+/* STOLICA + a2l -> STOLICA_A2L; P2b_penjac_3_A2L, GORA_ENDER3V4_X1 and SOKOL_a1 are left alone. */
+export function printerTag(name, machineId){
+  const tag = String(machineId || '').toUpperCase();
+  if(!tag || !name) return name;
+  return new RegExp(`(^|[_-])${tag}`, 'i').test(name) ? name : `${name}_${tag}`;
+}

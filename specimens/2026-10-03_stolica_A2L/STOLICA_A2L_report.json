@@ -1,0 +1,5838 @@
+{
+  "report": {
+    "name": "STOLICA_A2L",
+    "machine": "Bambu A2L",
+    "bed_mm": [
+      330,
+      320
+    ],
+    "layers": 1210,
+    "globalZLevels": 708,
+    "expectedZLevels": 708,
+    "logicalCells": null,
+    "experimentalMembraneOverride": false,
+    "maxBodiesPerZ": 4,
+    "size_mm": [
+      82.3,
+      89.2,
+      169.92
+    ],
+    "plate_mm": [
+      124.1,
+      118.1,
+      206,
+      206.9
+    ],
+    "fitsPlate": true,
+    "grammarCounts": {},
+    "threadLength_m": 757.9,
+    "weldNodes": 0,
+    "rawPaths": 1198,
+    "unintendedOverlaps": 125963,
+    "seamClosures": 0,
+    "overlapSamples": [
+      {
+        "z": 0,
+        "role": "wall",
+        "ov": 99
+      },
+      {
+        "z": 0,
+        "role": "wall",
+        "ov": 96
+      },
+      {
+        "z": 0,
+        "role": "wall",
+        "ov": 99
+      },
+      {
+        "z": 0,
+        "role": "wall",
+        "ov": 96
+      },
+      {
+        "z": 0.24,
+        "role": "wall",
+        "ov": 97
+      },
+      {
+        "z": 0.24,
+        "role": "wall",
+        "ov": 99
+      },
+      {
+        "z": 0.24,
+        "role": "wall",
+        "ov": 97
+      },
+      {
+        "z": 0.24,
+        "role": "wall",
+        "ov": 99
+      },
+      {
+        "z": 0.48,
+        "role": "wall",
+        "ov": 86
+      },
+      {
+        "z": 0.48,
+        "role": "wall",
+        "ov": 85
+      },
+      {
+        "z": 0.48,
+        "role": "wall",
+        "ov": 86
+      },
+      {
+        "z": 0.48,
+        "role": "wall",
+        "ov": 85
+      }
+    ],
+    "kinematic_h": 7.02,
+    "routeA_estimate_h": 66.2,
+    "caps": [],
+    "events": [
+      {
+        "z": 0.96,
+        "k": 4,
+        "event": "base/4 -> stopalo/4"
+      },
+      {
+        "z": 16.08,
+        "k": 67,
+        "event": "stopalo/4 -> noga/4"
+      },
+      {
+        "z": 16.32,
+        "k": 68,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 16.56,
+        "k": 69,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 17.04,
+        "k": 71,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 17.28,
+        "k": 72,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 17.76,
+        "k": 74,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 18,
+        "k": 75,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 18.48,
+        "k": 77,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 18.72,
+        "k": 78,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 19.2,
+        "k": 80,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 19.44,
+        "k": 81,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 19.92,
+        "k": 83,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 20.16,
+        "k": 84,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 20.64,
+        "k": 86,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 20.88,
+        "k": 87,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 21.36,
+        "k": 89,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 21.6,
+        "k": 90,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 22.08,
+        "k": 92,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 22.32,
+        "k": 93,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 22.8,
+        "k": 95,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 23.04,
+        "k": 96,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 23.52,
+        "k": 98,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 23.76,
+        "k": 99,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 24.24,
+        "k": 101,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 24.48,
+        "k": 102,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 24.96,
+        "k": 104,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 25.2,
+        "k": 105,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 25.68,
+        "k": 107,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 25.92,
+        "k": 108,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 26.4,
+        "k": 110,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 26.64,
+        "k": 111,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 27.12,
+        "k": 113,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 27.36,
+        "k": 114,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 27.84,
+        "k": 116,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 28.08,
+        "k": 117,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 28.56,
+        "k": 119,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 28.8,
+        "k": 120,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 29.28,
+        "k": 122,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 29.52,
+        "k": 123,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 30,
+        "k": 125,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 30.24,
+        "k": 126,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 30.72,
+        "k": 128,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 30.96,
+        "k": 129,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 31.44,
+        "k": 131,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 31.68,
+        "k": 132,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 32.16,
+        "k": 134,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 32.4,
+        "k": 135,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 32.88,
+        "k": 137,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 33.12,
+        "k": 138,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 33.6,
+        "k": 140,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 33.84,
+        "k": 141,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 34.32,
+        "k": 143,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 34.56,
+        "k": 144,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 35.04,
+        "k": 146,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 35.28,
+        "k": 147,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 35.76,
+        "k": 149,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 36,
+        "k": 150,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 36.48,
+        "k": 152,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 36.72,
+        "k": 153,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 37.2,
+        "k": 155,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 37.44,
+        "k": 156,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 37.92,
+        "k": 158,
+        "event": "noga/4 -> noga-veza/2"
+      },
+      {
+        "z": 38.16,
+        "k": 159,
+        "event": "noga-veza/2 -> noga/2"
+      },
+      {
+        "z": 38.64,
+        "k": 161,
+        "event": "noga/2 -> noga-veza/2"
+      },
+      {
+        "z": 38.88,
+        "k": 162,
+        "event": "noga-veza/2 -> noga/2"
+      },
+      {
+        "z": 39.36,
+        "k": 164,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 39.36,
+        "k": 164,
+        "event": "noga/2 -> noga-veza/1"
+      },
+      {
+        "z": 39.6,
+        "k": 165,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 39.6,
+        "k": 165,
+        "event": "fill angle 0 -> 90 after 2 measured tries"
+      },
+      {
+        "z": 39.6,
+        "k": 165,
+        "event": "noga-veza/1 -> noga/1"
+      },
+      {
+        "z": 39.84,
+        "k": 166,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 40.08,
+        "k": 167,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 40.08,
+        "k": 167,
+        "event": "noga/1 -> noga-veza/1"
+      },
+      {
+        "z": 40.32,
+        "k": 168,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 40.32,
+        "k": 168,
+        "event": "noga-veza/1 -> noga/1"
+      },
+      {
+        "z": 40.56,
+        "k": 169,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 40.8,
+        "k": 170,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 40.8,
+        "k": 170,
+        "event": "noga/1 -> noga-veza/1"
+      },
+      {
+        "z": 41.04,
+        "k": 171,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 41.04,
+        "k": 171,
+        "event": "noga-veza/1 -> noga/1"
+      },
+      {
+        "z": 41.28,
+        "k": 172,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 41.52,
+        "k": 173,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 41.52,
+        "k": 173,
+        "event": "noga/1 -> noga-veza/1"
+      },
+      {
+        "z": 41.76,
+        "k": 174,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 41.76,
+        "k": 174,
+        "event": "fill angle 0 -> 90 after 2 measured tries"
+      },
+      {
+        "z": 41.76,
+        "k": 174,
+        "event": "noga-veza/1 -> noga/1"
+      },
+      {
+        "z": 42,
+        "k": 175,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 42.24,
+        "k": 176,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 42.24,
+        "k": 176,
+        "event": "noga/1 -> noga-veza/1"
+      },
+      {
+        "z": 42.48,
+        "k": 177,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 42.48,
+        "k": 177,
+        "event": "noga-veza/1 -> noga/1"
+      },
+      {
+        "z": 42.72,
+        "k": 178,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 42.96,
+        "k": 179,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 42.96,
+        "k": 179,
+        "event": "noga/1 -> noga-veza/1"
+      },
+      {
+        "z": 43.2,
+        "k": 180,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 43.2,
+        "k": 180,
+        "event": "noga-veza/1 -> noga/1"
+      },
+      {
+        "z": 43.44,
+        "k": 181,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 43.68,
+        "k": 182,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 43.68,
+        "k": 182,
+        "event": "fill angle 0 -> 90 after 2 measured tries"
+      },
+      {
+        "z": 43.68,
+        "k": 182,
+        "event": "noga/1 -> noga-veza/1"
+      },
+      {
+        "z": 43.92,
+        "k": 183,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 43.92,
+        "k": 183,
+        "event": "noga-veza/1 -> noga/1"
+      },
+      {
+        "z": 44.16,
+        "k": 184,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 44.4,
+        "k": 185,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 44.4,
+        "k": 185,
+        "event": "noga/1 -> noga-veza/1"
+      },
+      {
+        "z": 44.64,
+        "k": 186,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 44.64,
+        "k": 186,
+        "event": "noga-veza/1 -> noga/1"
+      },
+      {
+        "z": 44.88,
+        "k": 187,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 45.12,
+        "k": 188,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 45.12,
+        "k": 188,
+        "event": "noga/1 -> noga-veza/1"
+      },
+      {
+        "z": 45.36,
+        "k": 189,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 45.36,
+        "k": 189,
+        "event": "noga-veza/1 -> noga/1"
+      },
+      {
+        "z": 45.6,
+        "k": 190,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 45.84,
+        "k": 191,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 45.84,
+        "k": 191,
+        "event": "fill angle 0 -> 90 after 2 measured tries"
+      },
+      {
+        "z": 45.84,
+        "k": 191,
+        "event": "noga/1 -> noga-veza/1"
+      },
+      {
+        "z": 46.08,
+        "k": 192,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 46.08,
+        "k": 192,
+        "event": "noga-veza/1 -> noga/1"
+      },
+      {
+        "z": 46.32,
+        "k": 193,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 46.56,
+        "k": 194,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 46.56,
+        "k": 194,
+        "event": "noga/1 -> noga-veza/1"
+      },
+      {
+        "z": 46.8,
+        "k": 195,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 46.8,
+        "k": 195,
+        "event": "noga-veza/1 -> noga/1"
+      },
+      {
+        "z": 47.04,
+        "k": 196,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 47.28,
+        "k": 197,
+        "event": "noga/1 -> noga-veza/1"
+      },
+      {
+        "z": 47.52,
+        "k": 198,
+        "event": "noga-veza/1 -> noga/1"
+      },
+      {
+        "z": 48,
+        "k": 200,
+        "event": "fill angle 0 -> 90 after 2 measured tries"
+      },
+      {
+        "z": 48,
+        "k": 200,
+        "event": "noga/1 -> noga-veza/1"
+      },
+      {
+        "z": 48.24,
+        "k": 201,
+        "event": "noga-veza/1 -> noga/1"
+      },
+      {
+        "z": 48.72,
+        "k": 203,
+        "event": "noga/1 -> noga-veza/1"
+      },
+      {
+        "z": 48.96,
+        "k": 204,
+        "event": "noga-veza/1 -> noga/1"
+      },
+      {
+        "z": 49.44,
+        "k": 206,
+        "event": "noga/1 -> noga-veza/1"
+      },
+      {
+        "z": 49.68,
+        "k": 207,
+        "event": "noga-veza/1 -> noga/1"
+      },
+      {
+        "z": 50.16,
+        "k": 209,
+        "event": "fill angle 0 -> 90 after 2 measured tries"
+      },
+      {
+        "z": 50.16,
+        "k": 209,
+        "event": "noga/1 -> noga-veza/1"
+      },
+      {
+        "z": 50.4,
+        "k": 210,
+        "event": "noga-veza/1 -> noga/1"
+      },
+      {
+        "z": 50.88,
+        "k": 212,
+        "event": "noga/1 -> noga-veza/1"
+      },
+      {
+        "z": 51.12,
+        "k": 213,
+        "event": "noga-veza/1 -> noga/1"
+      },
+      {
+        "z": 51.6,
+        "k": 215,
+        "event": "noga/1 -> noga-veza/1"
+      },
+      {
+        "z": 51.84,
+        "k": 216,
+        "event": "noga-veza/1 -> noga/1"
+      },
+      {
+        "z": 52.32,
+        "k": 218,
+        "event": "fill angle 0 -> 90 after 2 measured tries"
+      },
+      {
+        "z": 52.32,
+        "k": 218,
+        "event": "noga/1 -> noga-veza/1"
+      },
+      {
+        "z": 52.56,
+        "k": 219,
+        "event": "fill angle 0 -> 0 after 9 measured tries"
+      },
+      {
+        "z": 52.56,
+        "k": 219,
+        "event": "noga-veza/1 -> noga/1"
+      },
+      {
+        "z": 52.8,
+        "k": 220,
+        "event": "fill angle 0 -> 0 after 9 measured tries"
+      },
+      {
+        "z": 53.04,
+        "k": 221,
+        "event": "noga/1 -> noga-veza/1"
+      },
+      {
+        "z": 53.28,
+        "k": 222,
+        "event": "noga-veza/1 -> noga/1"
+      },
+      {
+        "z": 53.76,
+        "k": 224,
+        "event": "noga/1 -> noga-veza/1"
+      },
+      {
+        "z": 54,
+        "k": 225,
+        "event": "noga-veza/1 -> noga/1"
+      },
+      {
+        "z": 54.48,
+        "k": 227,
+        "event": "fill angle 0 -> 90 after 2 measured tries"
+      },
+      {
+        "z": 54.48,
+        "k": 227,
+        "event": "noga/1 -> noga-veza/1"
+      },
+      {
+        "z": 54.72,
+        "k": 228,
+        "event": "noga-veza/1 -> noga/1"
+      },
+      {
+        "z": 55.2,
+        "k": 230,
+        "event": "noga/1 -> noga-veza/1"
+      },
+      {
+        "z": 55.44,
+        "k": 231,
+        "event": "noga-veza/1 -> noga/1"
+      },
+      {
+        "z": 55.92,
+        "k": 233,
+        "event": "noga/1 -> noga-veza/1"
+      },
+      {
+        "z": 56.16,
+        "k": 234,
+        "event": "noga-veza/1 -> sediste/1"
+      },
+      {
+        "z": 86.64,
+        "k": 361,
+        "event": "sediste/1 -> sediste-lezaj/1"
+      },
+      {
+        "z": 88.08,
+        "k": 367,
+        "event": "sediste-lezaj/1 -> naslon-mreza/2"
+      },
+      {
+        "z": 90.48,
+        "k": 377,
+        "event": "naslon-mreza/2 -> naslon-mreza/1"
+      },
+      {
+        "z": 115.68,
+        "k": 482,
+        "event": "naslon-mreza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 115.92,
+        "k": 483,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 116.16,
+        "k": 484,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 116.4,
+        "k": 485,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 116.64,
+        "k": 486,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 116.88,
+        "k": 487,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 117.12,
+        "k": 488,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 117.36,
+        "k": 489,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 117.6,
+        "k": 490,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 117.84,
+        "k": 491,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 118.08,
+        "k": 492,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 118.32,
+        "k": 493,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 118.56,
+        "k": 494,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 118.8,
+        "k": 495,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 119.04,
+        "k": 496,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 119.28,
+        "k": 497,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 119.52,
+        "k": 498,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 119.76,
+        "k": 499,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 120,
+        "k": 500,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 120.24,
+        "k": 501,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 120.48,
+        "k": 502,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 120.72,
+        "k": 503,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 120.96,
+        "k": 504,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 121.2,
+        "k": 505,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 121.44,
+        "k": 506,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 121.68,
+        "k": 507,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 121.92,
+        "k": 508,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 122.16,
+        "k": 509,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 122.4,
+        "k": 510,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 122.64,
+        "k": 511,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 122.88,
+        "k": 512,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 123.12,
+        "k": 513,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 123.36,
+        "k": 514,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 123.6,
+        "k": 515,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 123.84,
+        "k": 516,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 124.08,
+        "k": 517,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 124.32,
+        "k": 518,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 124.56,
+        "k": 519,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 124.8,
+        "k": 520,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 125.04,
+        "k": 521,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 125.28,
+        "k": 522,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 125.52,
+        "k": 523,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 125.76,
+        "k": 524,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 126,
+        "k": 525,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 126.24,
+        "k": 526,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 126.48,
+        "k": 527,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 126.72,
+        "k": 528,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 126.96,
+        "k": 529,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 127.2,
+        "k": 530,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 127.44,
+        "k": 531,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 127.68,
+        "k": 532,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 127.92,
+        "k": 533,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 128.16,
+        "k": 534,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 128.4,
+        "k": 535,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 128.64,
+        "k": 536,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 128.88,
+        "k": 537,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 129.12,
+        "k": 538,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 129.36,
+        "k": 539,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 129.6,
+        "k": 540,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 129.84,
+        "k": 541,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 130.08,
+        "k": 542,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 130.32,
+        "k": 543,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 130.56,
+        "k": 544,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 130.8,
+        "k": 545,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 131.04,
+        "k": 546,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 131.28,
+        "k": 547,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 131.52,
+        "k": 548,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 131.76,
+        "k": 549,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 132,
+        "k": 550,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 132.24,
+        "k": 551,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 132.48,
+        "k": 552,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 132.72,
+        "k": 553,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 132.96,
+        "k": 554,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 133.2,
+        "k": 555,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 133.44,
+        "k": 556,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 133.68,
+        "k": 557,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 133.92,
+        "k": 558,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 134.16,
+        "k": 559,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 134.4,
+        "k": 560,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 134.64,
+        "k": 561,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 134.88,
+        "k": 562,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 135.12,
+        "k": 563,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 135.36,
+        "k": 564,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 135.6,
+        "k": 565,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 135.84,
+        "k": 566,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 136.08,
+        "k": 567,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 136.32,
+        "k": 568,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 136.56,
+        "k": 569,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 136.8,
+        "k": 570,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 137.04,
+        "k": 571,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 137.28,
+        "k": 572,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 137.52,
+        "k": 573,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 137.76,
+        "k": 574,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 138,
+        "k": 575,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 138.24,
+        "k": 576,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 138.48,
+        "k": 577,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 138.72,
+        "k": 578,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 138.96,
+        "k": 579,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 139.2,
+        "k": 580,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 139.44,
+        "k": 581,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 139.68,
+        "k": 582,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 139.92,
+        "k": 583,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 140.16,
+        "k": 584,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 140.4,
+        "k": 585,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 140.64,
+        "k": 586,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 140.88,
+        "k": 587,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 141.12,
+        "k": 588,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 141.36,
+        "k": 589,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 141.6,
+        "k": 590,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 141.84,
+        "k": 591,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 142.08,
+        "k": 592,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 142.32,
+        "k": 593,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 142.56,
+        "k": 594,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 142.8,
+        "k": 595,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 143.04,
+        "k": 596,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 143.28,
+        "k": 597,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 143.52,
+        "k": 598,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 143.76,
+        "k": 599,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 144,
+        "k": 600,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 144.24,
+        "k": 601,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 144.48,
+        "k": 602,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 144.72,
+        "k": 603,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 144.96,
+        "k": 604,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 145.2,
+        "k": 605,
+        "event": "naslon-talas/1 -> naslon-vrh/1"
+      }
+    ],
+    "contourCounts": [
+      [
+        0,
+        0
+      ]
+    ],
+    "perLayerSample": [
+      {
+        "k": 0,
+        "z": 0,
+        "contours": 0,
+        "paths": 4,
+        "nodes": 0
+      },
+      {
+        "k": 40,
+        "z": 9.6,
+        "contours": 0,
+        "paths": 4,
+        "nodes": 0
+      },
+      {
+        "k": 80,
+        "z": 19.2,
+        "contours": 0,
+        "paths": 4,
+        "nodes": 0
+      },
+      {
+        "k": 120,
+        "z": 28.8,
+        "contours": 0,
+        "paths": 4,
+        "nodes": 0
+      },
+      {
+        "k": 160,
+        "z": 38.4,
+        "contours": 0,
+        "paths": 2,
+        "nodes": 0
+      },
+      {
+        "k": 200,
+        "z": 48,
+        "contours": 0,
+        "paths": 1,
+        "nodes": 0
+      },
+      {
+        "k": 240,
+        "z": 57.6,
+        "contours": 0,
+        "paths": 1,
+        "nodes": 0
+      },
+      {
+        "k": 280,
+        "z": 67.2,
+        "contours": 0,
+        "paths": 1,
+        "nodes": 0
+      },
+      {
+        "k": 320,
+        "z": 76.8,
+        "contours": 0,
+        "paths": 1,
+        "nodes": 0
+      },
+      {
+        "k": 360,
+        "z": 86.4,
+        "contours": 0,
+        "paths": 1,
+        "nodes": 0
+      },
+      {
+        "k": 400,
+        "z": 96,
+        "contours": 0,
+        "paths": 1,
+        "nodes": 0
+      },
+      {
+        "k": 440,
+        "z": 105.6,
+        "contours": 0,
+        "paths": 1,
+        "nodes": 0
+      },
+      {
+        "k": 480,
+        "z": 115.2,
+        "contours": 0,
+        "paths": 1,
+        "nodes": 0
+      },
+      {
+        "k": 520,
+        "z": 124.8,
+        "contours": 0,
+        "paths": 1,
+        "nodes": 0
+      },
+      {
+        "k": 560,
+        "z": 134.4,
+        "contours": 0,
+        "paths": 1,
+        "nodes": 0
+      },
+      {
+        "k": 600,
+        "z": 144,
+        "contours": 0,
+        "paths": 1,
+        "nodes": 0
+      },
+      {
+        "k": 640,
+        "z": 153.6,
+        "contours": 0,
+        "paths": 1,
+        "nodes": 0
+      },
+      {
+        "k": 680,
+        "z": 163.2,
+        "contours": 0,
+        "paths": 1,
+        "nodes": 0
+      }
+    ],
+    "membranes": [],
+    "gateLayers": {
+      "version": "gate-layers-2026-09-25-krak",
+      "vector": "S2 INFO · S3 PASS · S4 PASS · S5 INFO · S7 INFO · S8 WARN · ORDER N/A",
+      "refusedBy": [],
+      "findings": 0,
+      "S2": {
+        "worst": {
+          "k": 2,
+          "z": 0.72,
+          "runs10": 0,
+          "free_mm": 0,
+          "longest_mm": 0
+        },
+        "free_m": 0.07,
+        "declared": 0
+      },
+      "S3": {
+        "worst": null,
+        "neverTied": 0,
+        "declared": 0
+      },
+      "S4": {
+        "overflights": 0,
+        "closest": null,
+        "declared": 0
+      },
+      "S5": {
+        "ratio": 0.087,
+        "contact_mm2": 1668.2,
+        "lever_mm": 112.9
+      },
+      "S7": {
+        "weakest": [
+          {
+            "k": 362,
+            "z": 86.88,
+            "carried": 0.563,
+            "onSolid": 1,
+            "pileMax": 0,
+            "solidComponents": 1,
+            "largestSolidExtent_mm": 116.7,
+            "above": 346
+          },
+          {
+            "k": 325,
+            "z": 78,
+            "carried": 0.605,
+            "onSolid": 1,
+            "pileMax": 1,
+            "solidComponents": 1,
+            "largestSolidExtent_mm": 116.3,
+            "above": 383
+          },
+          {
+            "k": 361,
+            "z": 86.64,
+            "carried": 0.628,
+            "onSolid": 1,
+            "pileMax": 0,
+            "solidComponents": 1,
+            "largestSolidExtent_mm": 116.7,
+            "above": 347
+          }
+        ]
+      },
+      "S8": {
+        "periodTwoLayers": 1,
+        "medianCrossing_deg": 44.7
+      },
+      "ORDER": {
+        "verdict": "N/A",
+        "aboveRisk_mm": 1,
+        "zonesWithFindings": []
+      }
+    }
+  },
+  "geometry": {
+    "name": "STOLICA",
+    "variant": "stolica",
+    "title": "STOLICA",
+    "concept": "a chair that begins as four separate round feet, merges into one seat and continues as a back — porous on every side, one line per island",
+    "generator": "core/weft_field_geometry.mjs",
+    "process": "pure-weft/v2",
+    "generatedAt": "2026-10-02",
+    "machine": "a1",
+    "machineLabel": "Bambu Lab A1",
+    "machineQualification": {
+      "beadSource": "ASSUMED",
+      "beadEvidence": "carried over from the A2L; never calibrated on this machine — run the C1 thin-wall test on the A1 and measure before trusting",
+      "assumedAcknowledged": true
+    },
+    "size_mm": [
+      82.3,
+      89.2,
+      169.92
+    ],
+    "H": 169.92,
+    "totalLayers": 708,
+    "args": {
+      "lh": 0.24,
+      "bead": 0.45,
+      "firstLayerBead": 0.52,
+      "firstLayerSpeed": 12,
+      "w": 2,
+      "e": 0,
+      "r0": 41.15,
+      "K": 8,
+      "foundation": 3,
+      "maxbridge": 12,
+      "maxcantilever": 3,
+      "allow": 0.6,
+      "minanchor": 0.5,
+      "maxCapRadius": 20,
+      "speed": 50,
+      "bridgeSpeed": 18,
+      "temp": 220,
+      "bed": 65,
+      "fan": 100
+    },
+    "gatePolicy": {
+      "meaning": "a volumetric body woven as one line per island: the outside is as open as the inside, and every span between crossings must be a legal bridge",
+      "bridge_mm": 12,
+      "cantilever_mm": 3,
+      "first_layer_max_islands": 4
+    },
+    "field": {
+      "firstLayerIslands": 4,
+      "maxIslands": 4,
+      "weavePhaseStep_rad": 0.28,
+      "supportReach_mm": 0.9,
+      "worstFreeSpan_mm": 7.02,
+      "worstFreeSpanAt": {
+        "k": 18,
+        "z": 4.32,
+        "tag": "stopalo"
+      },
+      "worstValleyRun_mm": 10.46,
+      "pointsPulledIntoBody": 12,
+      "pointsEmitted": 1533835,
+      "worstPullBack_mm": 0.05,
+      "worstOutwardGrowth_mm": 0.75,
+      "worstOutwardGrowthAt": {
+        "k": 158,
+        "z": 37.92,
+        "tag": "noga-veza"
+      },
+      "fillLength_m": 757.1,
+      "tags": [
+        "base",
+        "stopalo",
+        "noga",
+        "noga-veza",
+        "sediste",
+        "sediste-lezaj",
+        "naslon-mreza",
+        "naslon-talas",
+        "naslon-veza",
+        "naslon-vrh"
+      ],
+      "patterns": [
+        "lines",
+        "spiral",
+        "rim-only"
+      ]
+    },
+    "layerProgram": [
+      {
+        "k": 0,
+        "z": 0,
+        "tag": "base",
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 0.5,
+        "maxSpacing_mm": 0.55,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 0,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0,
+        "fill_mm": 2429
+      },
+      {
+        "k": 5,
+        "z": 1.2,
+        "tag": "stopalo",
+        "islands": 4,
+        "kinds": [
+          "spiral"
+        ],
+        "spacing_mm": 2.6,
+        "maxSpacing_mm": 2.6,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 0.64,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0,
+        "fill_mm": 710
+      },
+      {
+        "k": 10,
+        "z": 2.4,
+        "tag": "stopalo",
+        "islands": 4,
+        "kinds": [
+          "spiral"
+        ],
+        "spacing_mm": 2.6,
+        "maxSpacing_mm": 2.6,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 1.02,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0,
+        "fill_mm": 662
+      },
+      {
+        "k": 15,
+        "z": 3.6,
+        "tag": "stopalo",
+        "islands": 4,
+        "kinds": [
+          "spiral"
+        ],
+        "spacing_mm": 2.6,
+        "maxSpacing_mm": 2.6,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 0.51,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0,
+        "fill_mm": 635
+      },
+      {
+        "k": 20,
+        "z": 4.8,
+        "tag": "stopalo",
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.6,
+        "maxSpacing_mm": 2.6,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 0.58,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0,
+        "fill_mm": 818
+      },
+      {
+        "k": 25,
+        "z": 6,
+        "tag": "stopalo",
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.6,
+        "maxSpacing_mm": 2.6,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 0.49,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0,
+        "fill_mm": 763
+      },
+      {
+        "k": 30,
+        "z": 7.2,
+        "tag": "stopalo",
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.6,
+        "maxSpacing_mm": 2.6,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 0.59,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0,
+        "fill_mm": 731
+      },
+      {
+        "k": 35,
+        "z": 8.4,
+        "tag": "stopalo",
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.6,
+        "maxSpacing_mm": 2.6,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 0.5,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0,
+        "fill_mm": 685
+      },
+      {
+        "k": 40,
+        "z": 9.6,
+        "tag": "stopalo",
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.6,
+        "maxSpacing_mm": 2.6,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 0.51,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0,
+        "fill_mm": 667
+      },
+      {
+        "k": 45,
+        "z": 10.8,
+        "tag": "stopalo",
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.6,
+        "maxSpacing_mm": 2.6,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 1.91,
+        "freeRun_mm": 0.76,
+        "unsupported": 16,
+        "growth_mm": 0,
+        "fill_mm": 642
+      },
+      {
+        "k": 50,
+        "z": 12,
+        "tag": "stopalo",
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.6,
+        "maxSpacing_mm": 2.6,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 0.5,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0,
+        "fill_mm": 586
+      },
+      {
+        "k": 55,
+        "z": 13.2,
+        "tag": "stopalo",
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.6,
+        "maxSpacing_mm": 2.6,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 0.51,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0,
+        "fill_mm": 558
+      },
+      {
+        "k": 60,
+        "z": 14.4,
+        "tag": "stopalo",
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.6,
+        "maxSpacing_mm": 2.6,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 0.49,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0,
+        "fill_mm": 554
+      },
+      {
+        "k": 65,
+        "z": 15.6,
+        "tag": "stopalo",
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.6,
+        "maxSpacing_mm": 2.6,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 1.81,
+        "freeRun_mm": 0.48,
+        "unsupported": 1,
+        "growth_mm": 0,
+        "fill_mm": 540
+      },
+      {
+        "k": 70,
+        "z": 16.8,
+        "tag": "noga",
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.6,
+        "maxSpacing_mm": 2.6,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.34,
+        "freeRun_mm": 1.08,
+        "unsupported": 35,
+        "growth_mm": 0.49,
+        "fill_mm": 550
+      },
+      {
+        "k": 75,
+        "z": 18,
+        "tag": "noga",
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.6,
+        "maxSpacing_mm": 2.6,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.33,
+        "freeRun_mm": 6.99,
+        "unsupported": 78,
+        "growth_mm": 0.46,
+        "fill_mm": 555
+      },
+      {
+        "k": 80,
+        "z": 19.2,
+        "tag": "noga-veza",
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "rimOnly": 0,
+        "angle_deg": 120,
+        "freeSpan_mm": 2.63,
+        "freeRun_mm": 1.1,
+        "unsupported": 95,
+        "growth_mm": 0.43,
+        "fill_mm": 593
+      },
+      {
+        "k": 85,
+        "z": 20.4,
+        "tag": "noga",
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.6,
+        "maxSpacing_mm": 2.6,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.43,
+        "freeRun_mm": 1.35,
+        "unsupported": 39,
+        "growth_mm": 0.4,
+        "fill_mm": 548
+      },
+      {
+        "k": 90,
+        "z": 21.6,
+        "tag": "noga",
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.6,
+        "maxSpacing_mm": 2.6,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.82,
+        "freeRun_mm": 1.48,
+        "unsupported": 89,
+        "growth_mm": 0.37,
+        "fill_mm": 548
+      },
+      {
+        "k": 95,
+        "z": 22.8,
+        "tag": "noga-veza",
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "rimOnly": 0,
+        "angle_deg": 60,
+        "freeSpan_mm": 2.61,
+        "freeRun_mm": 0.99,
+        "unsupported": 59,
+        "growth_mm": 0.34,
+        "fill_mm": 564
+      },
+      {
+        "k": 100,
+        "z": 24,
+        "tag": "noga",
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.6,
+        "maxSpacing_mm": 2.6,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 1.94,
+        "freeRun_mm": 0.63,
+        "unsupported": 8,
+        "growth_mm": 0.31,
+        "fill_mm": 552
+      },
+      {
+        "k": 105,
+        "z": 25.2,
+        "tag": "noga",
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.6,
+        "maxSpacing_mm": 2.6,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.82,
+        "freeRun_mm": 1.48,
+        "unsupported": 64,
+        "growth_mm": 0.29,
+        "fill_mm": 551
+      },
+      {
+        "k": 110,
+        "z": 26.4,
+        "tag": "noga-veza",
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.41,
+        "freeRun_mm": 6.24,
+        "unsupported": 83,
+        "growth_mm": 0.26,
+        "fill_mm": 553
+      },
+      {
+        "k": 115,
+        "z": 27.6,
+        "tag": "noga",
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.6,
+        "maxSpacing_mm": 2.6,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 1.55,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.24,
+        "fill_mm": 547
+      },
+      {
+        "k": 120,
+        "z": 28.8,
+        "tag": "noga",
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.6,
+        "maxSpacing_mm": 2.6,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.32,
+        "freeRun_mm": 4.34,
+        "unsupported": 93,
+        "growth_mm": 0.22,
+        "fill_mm": 556
+      },
+      {
+        "k": 125,
+        "z": 30,
+        "tag": "noga-veza",
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "rimOnly": 0,
+        "angle_deg": 120,
+        "freeSpan_mm": 2.58,
+        "freeRun_mm": 0.99,
+        "unsupported": 42,
+        "growth_mm": 0.2,
+        "fill_mm": 591
+      },
+      {
+        "k": 130,
+        "z": 31.2,
+        "tag": "noga",
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.6,
+        "maxSpacing_mm": 2.6,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 1.4,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.18,
+        "fill_mm": 555
+      },
+      {
+        "k": 135,
+        "z": 32.4,
+        "tag": "noga",
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.6,
+        "maxSpacing_mm": 2.6,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.77,
+        "freeRun_mm": 1.49,
+        "unsupported": 56,
+        "growth_mm": 0.16,
+        "fill_mm": 551
+      },
+      {
+        "k": 140,
+        "z": 33.6,
+        "tag": "noga-veza",
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "rimOnly": 0,
+        "angle_deg": 60,
+        "freeSpan_mm": 2.54,
+        "freeRun_mm": 1,
+        "unsupported": 40,
+        "growth_mm": 0.14,
+        "fill_mm": 564
+      },
+      {
+        "k": 145,
+        "z": 34.8,
+        "tag": "noga",
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.6,
+        "maxSpacing_mm": 2.6,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 1.34,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.15,
+        "fill_mm": 551
+      },
+      {
+        "k": 150,
+        "z": 36,
+        "tag": "noga",
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.6,
+        "maxSpacing_mm": 2.6,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.8,
+        "freeRun_mm": 1.5,
+        "unsupported": 78,
+        "growth_mm": 0.16,
+        "fill_mm": 562
+      },
+      {
+        "k": 155,
+        "z": 37.2,
+        "tag": "noga-veza",
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.17,
+        "freeRun_mm": 0.77,
+        "unsupported": 13,
+        "growth_mm": 0.23,
+        "fill_mm": 569
+      },
+      {
+        "k": 160,
+        "z": 38.4,
+        "tag": "noga",
+        "islands": 2,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 2.6,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 2,
+        "angle_deg": 0,
+        "freeSpan_mm": 0.96,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.38,
+        "fill_mm": 782
+      },
+      {
+        "k": 165,
+        "z": 39.6,
+        "tag": "noga",
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.6,
+        "maxSpacing_mm": 2.6,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.8,
+        "freeRun_mm": 1.49,
+        "unsupported": 101,
+        "growth_mm": 0.32,
+        "fill_mm": 705
+      },
+      {
+        "k": 170,
+        "z": 40.8,
+        "tag": "noga-veza",
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "rimOnly": 0,
+        "angle_deg": 120,
+        "freeSpan_mm": 2.59,
+        "freeRun_mm": 1,
+        "unsupported": 73,
+        "growth_mm": 0.08,
+        "fill_mm": 692
+      },
+      {
+        "k": 175,
+        "z": 42,
+        "tag": "noga",
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.6,
+        "maxSpacing_mm": 2.6,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.57,
+        "freeRun_mm": 1,
+        "unsupported": 59,
+        "growth_mm": 0.07,
+        "fill_mm": 706
+      },
+      {
+        "k": 180,
+        "z": 43.2,
+        "tag": "noga",
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.6,
+        "maxSpacing_mm": 2.6,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.75,
+        "freeRun_mm": 1.5,
+        "unsupported": 76,
+        "growth_mm": 0.05,
+        "fill_mm": 656
+      },
+      {
+        "k": 185,
+        "z": 44.4,
+        "tag": "noga-veza",
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "rimOnly": 0,
+        "angle_deg": 60,
+        "freeSpan_mm": 2.61,
+        "freeRun_mm": 1,
+        "unsupported": 64,
+        "growth_mm": 0.06,
+        "fill_mm": 625
+      },
+      {
+        "k": 190,
+        "z": 45.6,
+        "tag": "noga",
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.6,
+        "maxSpacing_mm": 2.6,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.63,
+        "freeRun_mm": 1.79,
+        "unsupported": 40,
+        "growth_mm": 0.07,
+        "fill_mm": 635
+      },
+      {
+        "k": 195,
+        "z": 46.8,
+        "tag": "noga",
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.6,
+        "maxSpacing_mm": 2.6,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.78,
+        "freeRun_mm": 1.5,
+        "unsupported": 90,
+        "growth_mm": 0.1,
+        "fill_mm": 568
+      },
+      {
+        "k": 200,
+        "z": 48,
+        "tag": "noga-veza",
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.62,
+        "freeRun_mm": 1,
+        "unsupported": 104,
+        "growth_mm": 0.13,
+        "fill_mm": 565
+      },
+      {
+        "k": 205,
+        "z": 49.2,
+        "tag": "noga",
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.6,
+        "maxSpacing_mm": 2.6,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 1.55,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.18,
+        "fill_mm": 564
+      },
+      {
+        "k": 210,
+        "z": 50.4,
+        "tag": "noga",
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.6,
+        "maxSpacing_mm": 2.6,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.8,
+        "freeRun_mm": 1,
+        "unsupported": 163,
+        "growth_mm": 0.24,
+        "fill_mm": 594
+      },
+      {
+        "k": 215,
+        "z": 51.6,
+        "tag": "noga-veza",
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "rimOnly": 0,
+        "angle_deg": 120,
+        "freeSpan_mm": 2.61,
+        "freeRun_mm": 1,
+        "unsupported": 157,
+        "growth_mm": 0.34,
+        "fill_mm": 671
+      },
+      {
+        "k": 220,
+        "z": 52.8,
+        "tag": "noga",
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.6,
+        "maxSpacing_mm": 2.6,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 1.06,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0,
+        "fill_mm": 620
+      },
+      {
+        "k": 225,
+        "z": 54,
+        "tag": "noga",
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.6,
+        "maxSpacing_mm": 2.6,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.81,
+        "freeRun_mm": 1.5,
+        "unsupported": 185,
+        "growth_mm": 0,
+        "fill_mm": 626
+      },
+      {
+        "k": 230,
+        "z": 55.2,
+        "tag": "noga-veza",
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "rimOnly": 0,
+        "angle_deg": 60,
+        "freeSpan_mm": 2.63,
+        "freeRun_mm": 0.99,
+        "unsupported": 163,
+        "growth_mm": 0,
+        "fill_mm": 621
+      },
+      {
+        "k": 235,
+        "z": 56.4,
+        "tag": "sediste",
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.6,
+        "maxSpacing_mm": 2.9,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 2.62,
+        "freeRun_mm": 1.5,
+        "unsupported": 161,
+        "growth_mm": 0.02,
+        "fill_mm": 681
+      },
+      {
+        "k": 240,
+        "z": 57.6,
+        "tag": "sediste",
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.61,
+        "maxSpacing_mm": 2.9,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.62,
+        "freeRun_mm": 1.5,
+        "unsupported": 167,
+        "growth_mm": 0.07,
+        "fill_mm": 642
+      },
+      {
+        "k": 245,
+        "z": 58.8,
+        "tag": "sediste",
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.63,
+        "maxSpacing_mm": 2.9,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 2.64,
+        "freeRun_mm": 1.5,
+        "unsupported": 178,
+        "growth_mm": 0.13,
+        "fill_mm": 693
+      },
+      {
+        "k": 250,
+        "z": 60,
+        "tag": "sediste",
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.66,
+        "maxSpacing_mm": 2.9,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.66,
+        "freeRun_mm": 1.5,
+        "unsupported": 196,
+        "growth_mm": 0.2,
+        "fill_mm": 730
+      },
+      {
+        "k": 255,
+        "z": 61.2,
+        "tag": "sediste",
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.7,
+        "maxSpacing_mm": 2.9,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 2.71,
+        "freeRun_mm": 1.5,
+        "unsupported": 457,
+        "growth_mm": 0.28,
+        "fill_mm": 835
+      },
+      {
+        "k": 260,
+        "z": 62.4,
+        "tag": "sediste",
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.75,
+        "maxSpacing_mm": 2.9,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.75,
+        "freeRun_mm": 2.23,
+        "unsupported": 392,
+        "growth_mm": 0.38,
+        "fill_mm": 859
+      },
+      {
+        "k": 265,
+        "z": 63.6,
+        "tag": "sediste",
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.9,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 2.84,
+        "freeRun_mm": 2.57,
+        "unsupported": 475,
+        "growth_mm": 0.49,
+        "fill_mm": 1003
+      },
+      {
+        "k": 270,
+        "z": 64.8,
+        "tag": "sediste",
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.86,
+        "maxSpacing_mm": 2.9,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 3.17,
+        "freeRun_mm": 2.25,
+        "unsupported": 681,
+        "growth_mm": 0.56,
+        "fill_mm": 1130
+      },
+      {
+        "k": 275,
+        "z": 66,
+        "tag": "sediste",
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.92,
+        "maxSpacing_mm": 2.92,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 3.08,
+        "freeRun_mm": 2.63,
+        "unsupported": 734,
+        "growth_mm": 0.59,
+        "fill_mm": 1369
+      },
+      {
+        "k": 280,
+        "z": 67.2,
+        "tag": "sediste",
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.99,
+        "maxSpacing_mm": 2.99,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 3.23,
+        "freeRun_mm": 2.64,
+        "unsupported": 872,
+        "growth_mm": 0.6,
+        "fill_mm": 1439
+      },
+      {
+        "k": 285,
+        "z": 68.4,
+        "tag": "sediste",
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 3.07,
+        "maxSpacing_mm": 3.07,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 3.12,
+        "freeRun_mm": 2.63,
+        "unsupported": 977,
+        "growth_mm": 0.6,
+        "fill_mm": 1675
+      },
+      {
+        "k": 290,
+        "z": 69.6,
+        "tag": "sediste",
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 3.14,
+        "maxSpacing_mm": 3.14,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 3.16,
+        "freeRun_mm": 2,
+        "unsupported": 1239,
+        "growth_mm": 0.58,
+        "fill_mm": 1829
+      },
+      {
+        "k": 295,
+        "z": 70.8,
+        "tag": "sediste",
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 3.22,
+        "maxSpacing_mm": 3.22,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 3.23,
+        "freeRun_mm": 2.5,
+        "unsupported": 995,
+        "growth_mm": 0.55,
+        "fill_mm": 2097
+      },
+      {
+        "k": 300,
+        "z": 72,
+        "tag": "sediste",
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 3.3,
+        "maxSpacing_mm": 3.3,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 3.29,
+        "freeRun_mm": 2.49,
+        "unsupported": 1403,
+        "growth_mm": 0.51,
+        "fill_mm": 2105
+      },
+      {
+        "k": 305,
+        "z": 73.2,
+        "tag": "sediste",
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 3.38,
+        "maxSpacing_mm": 3.38,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 3.39,
+        "freeRun_mm": 2.5,
+        "unsupported": 1568,
+        "growth_mm": 0.45,
+        "fill_mm": 2355
+      },
+      {
+        "k": 310,
+        "z": 74.4,
+        "tag": "sediste",
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 3.46,
+        "maxSpacing_mm": 3.46,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 3.47,
+        "freeRun_mm": 2.5,
+        "unsupported": 1696,
+        "growth_mm": 0.38,
+        "fill_mm": 2424
+      },
+      {
+        "k": 315,
+        "z": 75.6,
+        "tag": "sediste",
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 3.53,
+        "maxSpacing_mm": 3.53,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 3.54,
+        "freeRun_mm": 2.5,
+        "unsupported": 1629,
+        "growth_mm": 0.3,
+        "fill_mm": 2682
+      },
+      {
+        "k": 320,
+        "z": 76.8,
+        "tag": "sediste",
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 3.61,
+        "maxSpacing_mm": 3.61,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 3.61,
+        "freeRun_mm": 3,
+        "unsupported": 1794,
+        "growth_mm": 0.2,
+        "fill_mm": 2511
+      },
+      {
+        "k": 325,
+        "z": 78,
+        "tag": "sediste",
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 3.68,
+        "maxSpacing_mm": 3.68,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 3.68,
+        "freeRun_mm": 3,
+        "unsupported": 1605,
+        "growth_mm": 0.1,
+        "fill_mm": 2670
+      },
+      {
+        "k": 330,
+        "z": 79.2,
+        "tag": "sediste",
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 3.74,
+        "maxSpacing_mm": 3.74,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 3.74,
+        "freeRun_mm": 3,
+        "unsupported": 1631,
+        "growth_mm": 0,
+        "fill_mm": 2601
+      },
+      {
+        "k": 335,
+        "z": 80.4,
+        "tag": "sediste",
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 3.8,
+        "maxSpacing_mm": 3.8,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 3.8,
+        "freeRun_mm": 3,
+        "unsupported": 1627,
+        "growth_mm": 0,
+        "fill_mm": 2726
+      },
+      {
+        "k": 340,
+        "z": 81.6,
+        "tag": "sediste",
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 3.85,
+        "maxSpacing_mm": 3.85,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 3.86,
+        "freeRun_mm": 3,
+        "unsupported": 1627,
+        "growth_mm": 0,
+        "fill_mm": 2471
+      },
+      {
+        "k": 345,
+        "z": 82.8,
+        "tag": "sediste",
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 3.9,
+        "maxSpacing_mm": 3.9,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 3.91,
+        "freeRun_mm": 3.5,
+        "unsupported": 1626,
+        "growth_mm": 0,
+        "fill_mm": 2592
+      },
+      {
+        "k": 350,
+        "z": 84,
+        "tag": "sediste",
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 3.94,
+        "maxSpacing_mm": 3.94,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 3.95,
+        "freeRun_mm": 3.5,
+        "unsupported": 1619,
+        "growth_mm": 0.01,
+        "fill_mm": 2521
+      },
+      {
+        "k": 355,
+        "z": 85.2,
+        "tag": "sediste",
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 3.97,
+        "maxSpacing_mm": 3.97,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 3.98,
+        "freeRun_mm": 3.5,
+        "unsupported": 1605,
+        "growth_mm": 0,
+        "fill_mm": 2665
+      },
+      {
+        "k": 360,
+        "z": 86.4,
+        "tag": "sediste",
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 3.99,
+        "maxSpacing_mm": 3.99,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 4,
+        "freeRun_mm": 3.5,
+        "unsupported": 1684,
+        "growth_mm": 0,
+        "fill_mm": 2353
+      },
+      {
+        "k": 365,
+        "z": 87.6,
+        "tag": "sediste-lezaj",
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.1,
+        "maxSpacing_mm": 1.6,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 1.2,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0,
+        "fill_mm": 6888
+      },
+      {
+        "k": 370,
+        "z": 88.8,
+        "tag": "naslon-mreza",
+        "islands": 2,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 3.2,
+        "maxSpacing_mm": 3.2,
+        "rimOnly": 0,
+        "angle_deg": 60,
+        "freeSpan_mm": 3.22,
+        "freeRun_mm": 2,
+        "unsupported": 490,
+        "growth_mm": 0,
+        "fill_mm": 1333
+      },
+      {
+        "k": 375,
+        "z": 90,
+        "tag": "naslon-mreza",
+        "islands": 2,
+        "kinds": [
+          "lines",
+          "rim-only"
+        ],
+        "spacing_mm": 3.2,
+        "maxSpacing_mm": 3.2,
+        "rimOnly": 1,
+        "angle_deg": 0,
+        "freeSpan_mm": 3.22,
+        "freeRun_mm": 3.58,
+        "unsupported": 1122,
+        "growth_mm": 0,
+        "fill_mm": 1463
+      },
+      {
+        "k": 380,
+        "z": 91.2,
+        "tag": "naslon-mreza",
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 3.2,
+        "maxSpacing_mm": 3.2,
+        "rimOnly": 0,
+        "angle_deg": 120,
+        "freeSpan_mm": 3.2,
+        "freeRun_mm": 1.99,
+        "unsupported": 115,
+        "growth_mm": 0,
+        "fill_mm": 573
+      },
+      {
+        "k": 385,
+        "z": 92.4,
+        "tag": "naslon-mreza",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 3.2,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 60,
+        "freeSpan_mm": 0.35,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 872
+      },
+      {
+        "k": 390,
+        "z": 93.6,
+        "tag": "naslon-mreza",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 3.2,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 0,
+        "freeSpan_mm": 0.26,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 880
+      },
+      {
+        "k": 395,
+        "z": 94.8,
+        "tag": "naslon-mreza",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 3.2,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 120,
+        "freeSpan_mm": 0.54,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 881
+      },
+      {
+        "k": 400,
+        "z": 96,
+        "tag": "naslon-mreza",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 3.2,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 60,
+        "freeSpan_mm": 0.9,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 875
+      },
+      {
+        "k": 405,
+        "z": 97.2,
+        "tag": "naslon-mreza",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 3.2,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 0,
+        "freeSpan_mm": 0.58,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 880
+      },
+      {
+        "k": 410,
+        "z": 98.4,
+        "tag": "naslon-mreza",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 3.2,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 120,
+        "freeSpan_mm": 0.35,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 872
+      },
+      {
+        "k": 415,
+        "z": 99.6,
+        "tag": "naslon-mreza",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 3.2,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 60,
+        "freeSpan_mm": 0.26,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 880
+      },
+      {
+        "k": 420,
+        "z": 100.8,
+        "tag": "naslon-mreza",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 3.2,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 0,
+        "freeSpan_mm": 0.54,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 881
+      },
+      {
+        "k": 425,
+        "z": 102,
+        "tag": "naslon-mreza",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 3.2,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 120,
+        "freeSpan_mm": 0.9,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 875
+      },
+      {
+        "k": 430,
+        "z": 103.2,
+        "tag": "naslon-mreza",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 3.2,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 60,
+        "freeSpan_mm": 0.58,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 880
+      },
+      {
+        "k": 435,
+        "z": 104.4,
+        "tag": "naslon-mreza",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 3.2,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 0,
+        "freeSpan_mm": 0.35,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 872
+      },
+      {
+        "k": 440,
+        "z": 105.6,
+        "tag": "naslon-mreza",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 3.2,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 120,
+        "freeSpan_mm": 0.26,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 880
+      },
+      {
+        "k": 445,
+        "z": 106.8,
+        "tag": "naslon-mreza",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 3.2,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 60,
+        "freeSpan_mm": 0.54,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 881
+      },
+      {
+        "k": 450,
+        "z": 108,
+        "tag": "naslon-mreza",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 3.2,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 0,
+        "freeSpan_mm": 0.9,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 875
+      },
+      {
+        "k": 455,
+        "z": 109.2,
+        "tag": "naslon-mreza",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 3.2,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 120,
+        "freeSpan_mm": 0.58,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 880
+      },
+      {
+        "k": 460,
+        "z": 110.4,
+        "tag": "naslon-mreza",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 3.2,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 60,
+        "freeSpan_mm": 0.35,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 872
+      },
+      {
+        "k": 465,
+        "z": 111.6,
+        "tag": "naslon-mreza",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 3.2,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 0,
+        "freeSpan_mm": 0.26,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 880
+      },
+      {
+        "k": 470,
+        "z": 112.8,
+        "tag": "naslon-mreza",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 3.2,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 120,
+        "freeSpan_mm": 0.54,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 881
+      },
+      {
+        "k": 475,
+        "z": 114,
+        "tag": "naslon-mreza",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 3.2,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 60,
+        "freeSpan_mm": 0.9,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 875
+      },
+      {
+        "k": 480,
+        "z": 115.2,
+        "tag": "naslon-mreza",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 3.2,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 0,
+        "freeSpan_mm": 0.58,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 880
+      },
+      {
+        "k": 485,
+        "z": 116.4,
+        "tag": "naslon-veza",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 3,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 90,
+        "freeSpan_mm": 0.35,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 872
+      },
+      {
+        "k": 490,
+        "z": 117.6,
+        "tag": "naslon-talas",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 3.4,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 0,
+        "freeSpan_mm": 0.26,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 880
+      },
+      {
+        "k": 495,
+        "z": 118.8,
+        "tag": "naslon-veza",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 3,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 90,
+        "freeSpan_mm": 0.54,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 881
+      },
+      {
+        "k": 500,
+        "z": 120,
+        "tag": "naslon-talas",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 3.4,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 0,
+        "freeSpan_mm": 0.9,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 875
+      },
+      {
+        "k": 505,
+        "z": 121.2,
+        "tag": "naslon-veza",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 3,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 90,
+        "freeSpan_mm": 0.58,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 880
+      },
+      {
+        "k": 510,
+        "z": 122.4,
+        "tag": "naslon-talas",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 3.4,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 0,
+        "freeSpan_mm": 0.35,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 872
+      },
+      {
+        "k": 515,
+        "z": 123.6,
+        "tag": "naslon-veza",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 3,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 90,
+        "freeSpan_mm": 0.26,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 880
+      },
+      {
+        "k": 520,
+        "z": 124.8,
+        "tag": "naslon-talas",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 3.4,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 0,
+        "freeSpan_mm": 0.54,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 881
+      },
+      {
+        "k": 525,
+        "z": 126,
+        "tag": "naslon-veza",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 3,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 90,
+        "freeSpan_mm": 0.9,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 875
+      },
+      {
+        "k": 530,
+        "z": 127.2,
+        "tag": "naslon-talas",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 3.4,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 0,
+        "freeSpan_mm": 0.58,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 880
+      },
+      {
+        "k": 535,
+        "z": 128.4,
+        "tag": "naslon-veza",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 3,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 90,
+        "freeSpan_mm": 0.35,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 872
+      },
+      {
+        "k": 540,
+        "z": 129.6,
+        "tag": "naslon-talas",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 3.4,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 0,
+        "freeSpan_mm": 0.26,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 880
+      },
+      {
+        "k": 545,
+        "z": 130.8,
+        "tag": "naslon-veza",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 3,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 90,
+        "freeSpan_mm": 0.54,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 881
+      },
+      {
+        "k": 550,
+        "z": 132,
+        "tag": "naslon-talas",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 3.4,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 0,
+        "freeSpan_mm": 0.9,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 875
+      },
+      {
+        "k": 555,
+        "z": 133.2,
+        "tag": "naslon-veza",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 3,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 90,
+        "freeSpan_mm": 0.58,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 880
+      },
+      {
+        "k": 560,
+        "z": 134.4,
+        "tag": "naslon-talas",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 3.4,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 0,
+        "freeSpan_mm": 0.35,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 872
+      },
+      {
+        "k": 565,
+        "z": 135.6,
+        "tag": "naslon-veza",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 3,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 90,
+        "freeSpan_mm": 0.26,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 880
+      },
+      {
+        "k": 570,
+        "z": 136.8,
+        "tag": "naslon-talas",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 3.4,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 0,
+        "freeSpan_mm": 0.54,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 881
+      },
+      {
+        "k": 575,
+        "z": 138,
+        "tag": "naslon-veza",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 3,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 90,
+        "freeSpan_mm": 0.9,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 875
+      },
+      {
+        "k": 580,
+        "z": 139.2,
+        "tag": "naslon-talas",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 3.4,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 0,
+        "freeSpan_mm": 0.58,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 880
+      },
+      {
+        "k": 585,
+        "z": 140.4,
+        "tag": "naslon-veza",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 3,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 90,
+        "freeSpan_mm": 0.35,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 872
+      },
+      {
+        "k": 590,
+        "z": 141.6,
+        "tag": "naslon-talas",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 3.4,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 0,
+        "freeSpan_mm": 0.26,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 880
+      },
+      {
+        "k": 595,
+        "z": 142.8,
+        "tag": "naslon-veza",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 3,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 90,
+        "freeSpan_mm": 0.54,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 881
+      },
+      {
+        "k": 600,
+        "z": 144,
+        "tag": "naslon-talas",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 3.4,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 0,
+        "freeSpan_mm": 0.9,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 875
+      },
+      {
+        "k": 605,
+        "z": 145.2,
+        "tag": "naslon-vrh",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 3,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 45,
+        "freeSpan_mm": 0.48,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 892
+      },
+      {
+        "k": 610,
+        "z": 146.4,
+        "tag": "naslon-vrh",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 2.99,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 90,
+        "freeSpan_mm": 0.37,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 882
+      },
+      {
+        "k": 615,
+        "z": 147.6,
+        "tag": "naslon-vrh",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 2.98,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 135,
+        "freeSpan_mm": 0.37,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 894
+      },
+      {
+        "k": 620,
+        "z": 148.8,
+        "tag": "naslon-vrh",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 2.95,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 0,
+        "freeSpan_mm": 0.31,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 875
+      },
+      {
+        "k": 625,
+        "z": 150,
+        "tag": "naslon-vrh",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 2.92,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 45,
+        "freeSpan_mm": 0.9,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 878
+      },
+      {
+        "k": 630,
+        "z": 151.2,
+        "tag": "naslon-vrh",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 2.88,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 90,
+        "freeSpan_mm": 0.32,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 892
+      },
+      {
+        "k": 635,
+        "z": 152.4,
+        "tag": "naslon-vrh",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 2.83,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 135,
+        "freeSpan_mm": 0.37,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 882
+      },
+      {
+        "k": 640,
+        "z": 153.6,
+        "tag": "naslon-vrh",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 2.78,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 0,
+        "freeSpan_mm": 0.37,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 894
+      },
+      {
+        "k": 645,
+        "z": 154.8,
+        "tag": "naslon-vrh",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 2.73,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 45,
+        "freeSpan_mm": 0.31,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 875
+      },
+      {
+        "k": 650,
+        "z": 156,
+        "tag": "naslon-vrh",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 2.67,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 90,
+        "freeSpan_mm": 0.9,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 878
+      },
+      {
+        "k": 655,
+        "z": 157.2,
+        "tag": "naslon-vrh",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 2.61,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 135,
+        "freeSpan_mm": 0.32,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 892
+      },
+      {
+        "k": 660,
+        "z": 158.4,
+        "tag": "naslon-vrh",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 2.55,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 0,
+        "freeSpan_mm": 0.37,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 882
+      },
+      {
+        "k": 665,
+        "z": 159.6,
+        "tag": "naslon-vrh",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 2.49,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 45,
+        "freeSpan_mm": 0.37,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 894
+      },
+      {
+        "k": 670,
+        "z": 160.8,
+        "tag": "naslon-vrh",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 2.44,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 90,
+        "freeSpan_mm": 0.31,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 875
+      },
+      {
+        "k": 675,
+        "z": 162,
+        "tag": "naslon-vrh",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 2.39,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 135,
+        "freeSpan_mm": 0.9,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 878
+      },
+      {
+        "k": 680,
+        "z": 163.2,
+        "tag": "naslon-vrh",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 2.34,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 0,
+        "freeSpan_mm": 0.32,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 892
+      },
+      {
+        "k": 685,
+        "z": 164.4,
+        "tag": "naslon-vrh",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 2.3,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 45,
+        "freeSpan_mm": 0.37,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 882
+      },
+      {
+        "k": 690,
+        "z": 165.6,
+        "tag": "naslon-vrh",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 2.26,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 90,
+        "freeSpan_mm": 0.66,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 719
+      },
+      {
+        "k": 695,
+        "z": 166.8,
+        "tag": "naslon-vrh",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 2.23,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 135,
+        "freeSpan_mm": 1.47,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 3252
+      },
+      {
+        "k": 700,
+        "z": 168,
+        "tag": "naslon-vrh",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 2.21,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 0,
+        "freeSpan_mm": 1.45,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0,
+        "fill_mm": 705
+      },
+      {
+        "k": 705,
+        "z": 169.2,
+        "tag": "naslon-vrh",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 2.2,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 45,
+        "freeSpan_mm": 0.7,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0,
+        "fill_mm": 4207
+      },
+      {
+        "k": 707,
+        "z": 169.68,
+        "tag": "naslon-vrh",
+        "islands": 1,
+        "kinds": [
+          "rim-only"
+        ],
+        "spacing_mm": 2.2,
+        "maxSpacing_mm": 1.5,
+        "rimOnly": 1,
+        "angle_deg": 135,
+        "freeSpan_mm": 0.62,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0,
+        "fill_mm": 677
+      }
+    ],
+    "events": [
+      {
+        "z": 0.96,
+        "k": 4,
+        "event": "base/4 -> stopalo/4"
+      },
+      {
+        "z": 16.08,
+        "k": 67,
+        "event": "stopalo/4 -> noga/4"
+      },
+      {
+        "z": 16.32,
+        "k": 68,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 16.56,
+        "k": 69,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 17.04,
+        "k": 71,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 17.28,
+        "k": 72,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 17.76,
+        "k": 74,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 18,
+        "k": 75,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 18.48,
+        "k": 77,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 18.72,
+        "k": 78,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 19.2,
+        "k": 80,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 19.44,
+        "k": 81,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 19.92,
+        "k": 83,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 20.16,
+        "k": 84,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 20.64,
+        "k": 86,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 20.88,
+        "k": 87,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 21.36,
+        "k": 89,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 21.6,
+        "k": 90,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 22.08,
+        "k": 92,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 22.32,
+        "k": 93,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 22.8,
+        "k": 95,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 23.04,
+        "k": 96,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 23.52,
+        "k": 98,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 23.76,
+        "k": 99,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 24.24,
+        "k": 101,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 24.48,
+        "k": 102,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 24.96,
+        "k": 104,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 25.2,
+        "k": 105,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 25.68,
+        "k": 107,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 25.92,
+        "k": 108,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 26.4,
+        "k": 110,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 26.64,
+        "k": 111,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 27.12,
+        "k": 113,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 27.36,
+        "k": 114,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 27.84,
+        "k": 116,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 28.08,
+        "k": 117,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 28.56,
+        "k": 119,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 28.8,
+        "k": 120,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 29.28,
+        "k": 122,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 29.52,
+        "k": 123,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 30,
+        "k": 125,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 30.24,
+        "k": 126,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 30.72,
+        "k": 128,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 30.96,
+        "k": 129,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 31.44,
+        "k": 131,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 31.68,
+        "k": 132,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 32.16,
+        "k": 134,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 32.4,
+        "k": 135,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 32.88,
+        "k": 137,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 33.12,
+        "k": 138,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 33.6,
+        "k": 140,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 33.84,
+        "k": 141,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 34.32,
+        "k": 143,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 34.56,
+        "k": 144,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 35.04,
+        "k": 146,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 35.28,
+        "k": 147,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 35.76,
+        "k": 149,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 36,
+        "k": 150,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 36.48,
+        "k": 152,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 36.72,
+        "k": 153,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 37.2,
+        "k": 155,
+        "event": "noga/4 -> noga-veza/4"
+      },
+      {
+        "z": 37.44,
+        "k": 156,
+        "event": "noga-veza/4 -> noga/4"
+      },
+      {
+        "z": 37.92,
+        "k": 158,
+        "event": "noga/4 -> noga-veza/2"
+      },
+      {
+        "z": 38.16,
+        "k": 159,
+        "event": "noga-veza/2 -> noga/2"
+      },
+      {
+        "z": 38.64,
+        "k": 161,
+        "event": "noga/2 -> noga-veza/2"
+      },
+      {
+        "z": 38.88,
+        "k": 162,
+        "event": "noga-veza/2 -> noga/2"
+      },
+      {
+        "z": 39.36,
+        "k": 164,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 39.36,
+        "k": 164,
+        "event": "noga/2 -> noga-veza/1"
+      },
+      {
+        "z": 39.6,
+        "k": 165,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 39.6,
+        "k": 165,
+        "event": "fill angle 0 -> 90 after 2 measured tries"
+      },
+      {
+        "z": 39.6,
+        "k": 165,
+        "event": "noga-veza/1 -> noga/1"
+      },
+      {
+        "z": 39.84,
+        "k": 166,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 40.08,
+        "k": 167,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 40.08,
+        "k": 167,
+        "event": "noga/1 -> noga-veza/1"
+      },
+      {
+        "z": 40.32,
+        "k": 168,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 40.32,
+        "k": 168,
+        "event": "noga-veza/1 -> noga/1"
+      },
+      {
+        "z": 40.56,
+        "k": 169,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 40.8,
+        "k": 170,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 40.8,
+        "k": 170,
+        "event": "noga/1 -> noga-veza/1"
+      },
+      {
+        "z": 41.04,
+        "k": 171,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 41.04,
+        "k": 171,
+        "event": "noga-veza/1 -> noga/1"
+      },
+      {
+        "z": 41.28,
+        "k": 172,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 41.52,
+        "k": 173,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 41.52,
+        "k": 173,
+        "event": "noga/1 -> noga-veza/1"
+      },
+      {
+        "z": 41.76,
+        "k": 174,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 41.76,
+        "k": 174,
+        "event": "fill angle 0 -> 90 after 2 measured tries"
+      },
+      {
+        "z": 41.76,
+        "k": 174,
+        "event": "noga-veza/1 -> noga/1"
+      },
+      {
+        "z": 42,
+        "k": 175,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 42.24,
+        "k": 176,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 42.24,
+        "k": 176,
+        "event": "noga/1 -> noga-veza/1"
+      },
+      {
+        "z": 42.48,
+        "k": 177,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 42.48,
+        "k": 177,
+        "event": "noga-veza/1 -> noga/1"
+      },
+      {
+        "z": 42.72,
+        "k": 178,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 42.96,
+        "k": 179,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 42.96,
+        "k": 179,
+        "event": "noga/1 -> noga-veza/1"
+      },
+      {
+        "z": 43.2,
+        "k": 180,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 43.2,
+        "k": 180,
+        "event": "noga-veza/1 -> noga/1"
+      },
+      {
+        "z": 43.44,
+        "k": 181,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 43.68,
+        "k": 182,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 43.68,
+        "k": 182,
+        "event": "fill angle 0 -> 90 after 2 measured tries"
+      },
+      {
+        "z": 43.68,
+        "k": 182,
+        "event": "noga/1 -> noga-veza/1"
+      },
+      {
+        "z": 43.92,
+        "k": 183,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 43.92,
+        "k": 183,
+        "event": "noga-veza/1 -> noga/1"
+      },
+      {
+        "z": 44.16,
+        "k": 184,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 44.4,
+        "k": 185,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 44.4,
+        "k": 185,
+        "event": "noga/1 -> noga-veza/1"
+      },
+      {
+        "z": 44.64,
+        "k": 186,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 44.64,
+        "k": 186,
+        "event": "noga-veza/1 -> noga/1"
+      },
+      {
+        "z": 44.88,
+        "k": 187,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 45.12,
+        "k": 188,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 45.12,
+        "k": 188,
+        "event": "noga/1 -> noga-veza/1"
+      },
+      {
+        "z": 45.36,
+        "k": 189,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 45.36,
+        "k": 189,
+        "event": "noga-veza/1 -> noga/1"
+      },
+      {
+        "z": 45.6,
+        "k": 190,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 45.84,
+        "k": 191,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 45.84,
+        "k": 191,
+        "event": "fill angle 0 -> 90 after 2 measured tries"
+      },
+      {
+        "z": 45.84,
+        "k": 191,
+        "event": "noga/1 -> noga-veza/1"
+      },
+      {
+        "z": 46.08,
+        "k": 192,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 46.08,
+        "k": 192,
+        "event": "noga-veza/1 -> noga/1"
+      },
+      {
+        "z": 46.32,
+        "k": 193,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 46.56,
+        "k": 194,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 46.56,
+        "k": 194,
+        "event": "noga/1 -> noga-veza/1"
+      },
+      {
+        "z": 46.8,
+        "k": 195,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 46.8,
+        "k": 195,
+        "event": "noga-veza/1 -> noga/1"
+      },
+      {
+        "z": 47.04,
+        "k": 196,
+        "event": "1 interior hole(s) in the section"
+      },
+      {
+        "z": 47.28,
+        "k": 197,
+        "event": "noga/1 -> noga-veza/1"
+      },
+      {
+        "z": 47.52,
+        "k": 198,
+        "event": "noga-veza/1 -> noga/1"
+      },
+      {
+        "z": 48,
+        "k": 200,
+        "event": "fill angle 0 -> 90 after 2 measured tries"
+      },
+      {
+        "z": 48,
+        "k": 200,
+        "event": "noga/1 -> noga-veza/1"
+      },
+      {
+        "z": 48.24,
+        "k": 201,
+        "event": "noga-veza/1 -> noga/1"
+      },
+      {
+        "z": 48.72,
+        "k": 203,
+        "event": "noga/1 -> noga-veza/1"
+      },
+      {
+        "z": 48.96,
+        "k": 204,
+        "event": "noga-veza/1 -> noga/1"
+      },
+      {
+        "z": 49.44,
+        "k": 206,
+        "event": "noga/1 -> noga-veza/1"
+      },
+      {
+        "z": 49.68,
+        "k": 207,
+        "event": "noga-veza/1 -> noga/1"
+      },
+      {
+        "z": 50.16,
+        "k": 209,
+        "event": "fill angle 0 -> 90 after 2 measured tries"
+      },
+      {
+        "z": 50.16,
+        "k": 209,
+        "event": "noga/1 -> noga-veza/1"
+      },
+      {
+        "z": 50.4,
+        "k": 210,
+        "event": "noga-veza/1 -> noga/1"
+      },
+      {
+        "z": 50.88,
+        "k": 212,
+        "event": "noga/1 -> noga-veza/1"
+      },
+      {
+        "z": 51.12,
+        "k": 213,
+        "event": "noga-veza/1 -> noga/1"
+      },
+      {
+        "z": 51.6,
+        "k": 215,
+        "event": "noga/1 -> noga-veza/1"
+      },
+      {
+        "z": 51.84,
+        "k": 216,
+        "event": "noga-veza/1 -> noga/1"
+      },
+      {
+        "z": 52.32,
+        "k": 218,
+        "event": "fill angle 0 -> 90 after 2 measured tries"
+      },
+      {
+        "z": 52.32,
+        "k": 218,
+        "event": "noga/1 -> noga-veza/1"
+      },
+      {
+        "z": 52.56,
+        "k": 219,
+        "event": "fill angle 0 -> 0 after 9 measured tries"
+      },
+      {
+        "z": 52.56,
+        "k": 219,
+        "event": "noga-veza/1 -> noga/1"
+      },
+      {
+        "z": 52.8,
+        "k": 220,
+        "event": "fill angle 0 -> 0 after 9 measured tries"
+      },
+      {
+        "z": 53.04,
+        "k": 221,
+        "event": "noga/1 -> noga-veza/1"
+      },
+      {
+        "z": 53.28,
+        "k": 222,
+        "event": "noga-veza/1 -> noga/1"
+      },
+      {
+        "z": 53.76,
+        "k": 224,
+        "event": "noga/1 -> noga-veza/1"
+      },
+      {
+        "z": 54,
+        "k": 225,
+        "event": "noga-veza/1 -> noga/1"
+      },
+      {
+        "z": 54.48,
+        "k": 227,
+        "event": "fill angle 0 -> 90 after 2 measured tries"
+      },
+      {
+        "z": 54.48,
+        "k": 227,
+        "event": "noga/1 -> noga-veza/1"
+      },
+      {
+        "z": 54.72,
+        "k": 228,
+        "event": "noga-veza/1 -> noga/1"
+      },
+      {
+        "z": 55.2,
+        "k": 230,
+        "event": "noga/1 -> noga-veza/1"
+      },
+      {
+        "z": 55.44,
+        "k": 231,
+        "event": "noga-veza/1 -> noga/1"
+      },
+      {
+        "z": 55.92,
+        "k": 233,
+        "event": "noga/1 -> noga-veza/1"
+      },
+      {
+        "z": 56.16,
+        "k": 234,
+        "event": "noga-veza/1 -> sediste/1"
+      },
+      {
+        "z": 86.64,
+        "k": 361,
+        "event": "sediste/1 -> sediste-lezaj/1"
+      },
+      {
+        "z": 88.08,
+        "k": 367,
+        "event": "sediste-lezaj/1 -> naslon-mreza/2"
+      },
+      {
+        "z": 90.48,
+        "k": 377,
+        "event": "naslon-mreza/2 -> naslon-mreza/1"
+      },
+      {
+        "z": 115.68,
+        "k": 482,
+        "event": "naslon-mreza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 115.92,
+        "k": 483,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 116.16,
+        "k": 484,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 116.4,
+        "k": 485,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 116.64,
+        "k": 486,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 116.88,
+        "k": 487,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 117.12,
+        "k": 488,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 117.36,
+        "k": 489,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 117.6,
+        "k": 490,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 117.84,
+        "k": 491,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 118.08,
+        "k": 492,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 118.32,
+        "k": 493,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 118.56,
+        "k": 494,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 118.8,
+        "k": 495,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 119.04,
+        "k": 496,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 119.28,
+        "k": 497,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 119.52,
+        "k": 498,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 119.76,
+        "k": 499,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 120,
+        "k": 500,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 120.24,
+        "k": 501,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 120.48,
+        "k": 502,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 120.72,
+        "k": 503,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 120.96,
+        "k": 504,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 121.2,
+        "k": 505,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 121.44,
+        "k": 506,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 121.68,
+        "k": 507,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 121.92,
+        "k": 508,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 122.16,
+        "k": 509,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 122.4,
+        "k": 510,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 122.64,
+        "k": 511,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 122.88,
+        "k": 512,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 123.12,
+        "k": 513,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 123.36,
+        "k": 514,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 123.6,
+        "k": 515,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 123.84,
+        "k": 516,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 124.08,
+        "k": 517,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 124.32,
+        "k": 518,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 124.56,
+        "k": 519,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 124.8,
+        "k": 520,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 125.04,
+        "k": 521,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 125.28,
+        "k": 522,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 125.52,
+        "k": 523,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 125.76,
+        "k": 524,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 126,
+        "k": 525,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 126.24,
+        "k": 526,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 126.48,
+        "k": 527,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 126.72,
+        "k": 528,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 126.96,
+        "k": 529,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 127.2,
+        "k": 530,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 127.44,
+        "k": 531,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 127.68,
+        "k": 532,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 127.92,
+        "k": 533,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 128.16,
+        "k": 534,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 128.4,
+        "k": 535,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 128.64,
+        "k": 536,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 128.88,
+        "k": 537,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 129.12,
+        "k": 538,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 129.36,
+        "k": 539,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 129.6,
+        "k": 540,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 129.84,
+        "k": 541,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 130.08,
+        "k": 542,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 130.32,
+        "k": 543,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 130.56,
+        "k": 544,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 130.8,
+        "k": 545,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 131.04,
+        "k": 546,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 131.28,
+        "k": 547,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 131.52,
+        "k": 548,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 131.76,
+        "k": 549,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 132,
+        "k": 550,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 132.24,
+        "k": 551,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 132.48,
+        "k": 552,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 132.72,
+        "k": 553,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 132.96,
+        "k": 554,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 133.2,
+        "k": 555,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 133.44,
+        "k": 556,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 133.68,
+        "k": 557,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 133.92,
+        "k": 558,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 134.16,
+        "k": 559,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 134.4,
+        "k": 560,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 134.64,
+        "k": 561,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 134.88,
+        "k": 562,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 135.12,
+        "k": 563,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 135.36,
+        "k": 564,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 135.6,
+        "k": 565,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 135.84,
+        "k": 566,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 136.08,
+        "k": 567,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 136.32,
+        "k": 568,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 136.56,
+        "k": 569,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 136.8,
+        "k": 570,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 137.04,
+        "k": 571,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 137.28,
+        "k": 572,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 137.52,
+        "k": 573,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 137.76,
+        "k": 574,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 138,
+        "k": 575,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 138.24,
+        "k": 576,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 138.48,
+        "k": 577,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 138.72,
+        "k": 578,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 138.96,
+        "k": 579,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 139.2,
+        "k": 580,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 139.44,
+        "k": 581,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 139.68,
+        "k": 582,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 139.92,
+        "k": 583,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 140.16,
+        "k": 584,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 140.4,
+        "k": 585,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 140.64,
+        "k": 586,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 140.88,
+        "k": 587,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 141.12,
+        "k": 588,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 141.36,
+        "k": 589,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 141.6,
+        "k": 590,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 141.84,
+        "k": 591,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 142.08,
+        "k": 592,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 142.32,
+        "k": 593,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 142.56,
+        "k": 594,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 142.8,
+        "k": 595,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 143.04,
+        "k": 596,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 143.28,
+        "k": 597,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 143.52,
+        "k": 598,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 143.76,
+        "k": 599,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 144,
+        "k": 600,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 144.24,
+        "k": 601,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 144.48,
+        "k": 602,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 144.72,
+        "k": 603,
+        "event": "naslon-talas/1 -> naslon-veza/1"
+      },
+      {
+        "z": 144.96,
+        "k": 604,
+        "event": "naslon-veza/1 -> naslon-talas/1"
+      },
+      {
+        "z": 145.2,
+        "k": 605,
+        "event": "naslon-talas/1 -> naslon-vrh/1"
+      }
+    ],
+    "violations": [],
+    "warnings": [
+      "layer 158 z=37.92: section grows 0.75 mm outward (field estimate; measured run 3.6 mm)",
+      "layer 281 z=67.44: section grows 0.6 mm outward (field estimate; measured run 2 mm)"
+    ]
+  },
+  "design": null,
+  "preset": null,
+  "builder": "weft.mjs (core/weft_core.js + core/weft_gate.js, no browser, no Python)",
+  "gate": {
+    "bead": 0.45,
+    "maxbridge": 12,
+    "maxcantilever": 3,
+    "allow": 0.6,
+    "minanchor": 0.5,
+    "maxCapRadius": 20,
+    "maxislands": 4,
+    "file": "D:\\Svemir\\!Projekti\\weft\\specimens\\2026-10-03_stolica_A2L\\STOLICA_A2L.gcode"
+  }
+}
