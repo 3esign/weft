@@ -38,3 +38,7 @@ node weft.mjs build --geo specimens/2026-10-03_stolica_A2L/STOLICA_A2L_geometry.
 | `STOLICA_A2L.gcode` (not committed) | `7508018e69fc1cccfc2de2bb5f6990322c94f30af01c7780910f22c8fff9af23` |
 
 Outcome: **NOT PRINTED.** Fill this in after the print, with photographs.
+
+## Dopuna: fotografije prijavljenog pada stolice
+
+Četiri fotografije su povezane u [dopuni analize](../../docs/STOLICA_FAIL_2026-10.md). Vizuelni pregled i pripadnost konkretnoj verziji nisu potvrđeni. Ovaj zapis ne menja istorijski ishod ovog specimena bez dokaza.

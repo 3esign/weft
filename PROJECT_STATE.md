@@ -776,3 +776,17 @@ specimen README.
 Gate S1 + layered S2-S8/ORDER: PASS — 0 floating, 0 long bridge, 0 cantilever on 2 739 915 points; S2 INFO · S3 PASS · S4 PASS · S5 INFO · S7 INFO · S8 WARN · ORDER N/A, 0 findings on the G-code and again inside the container. `check_pure_weft`
 on the shipped container: 0 walls in 2031 body runs, 1141.0 m. Control, a genuine Bambu slice: 28 walls. `tests/sokol_weft.test.mjs`
 is in npm test. Bead on the A1 is still ASSUMED 0.45 mm. No print initiated.
+
+## Nastavak SOKOL V2c i stolice — provereni artefakti 2026-10-03
+
+- SOKOL V2c: postojeća geometrija `specimens/2026-10-03_sokol_ender/sokol_v2c_geometry.json` (67.440.623 bajta); log `v2c_gen.err.log` završava sa `OK geometry`. To NIJE završni build gate.
+- Pokrenut canonical build za `ender`, ime `SOKOL_V2`, izlaz `specimens/2026-10-03_sokol_ender/v2c_package`, `--nostl --i-know-the-bead-is-a-guess`. PID 29288 viđen aktivan, bez manifesta; ne pokretati duplikat. PID je samo istorijski trag: ponovo proveriti pre odluke.
+- G-code i spremnost za štampu nisu potvrđeni. Node pozivi su visili bez značajnog CPU napretka; inventar JSON-a takođe nije završio. Ne tvrditi da je build odbijen niti da je uspeo. Nema razloga za ponavljanje generatora.
+- Kontinuitet: [MODEL_TO_PRINT](docs/MODEL_TO_PRINT.md), `tools/finish_sokol.mjs status`, zatim `resume` tek ako nema aktivnog builda. Ako manifest postoji: `deliver`. Skripta odbija nepotpun paket i ne menja gate.
+- `finish_sokol.mjs status` testiran kroz PowerShell Start-Process: prijavio aktivan build 29288, manifest false, lock false. Sintaksa proverena `node --check`, bez stderr. Resume/deliver nisu end-to-end potvrđeni.
+- Fotografije stolice povezane: [STOLICA_FAIL_2026-10](docs/STOLICA_FAIL_2026-10.md) i dopune A1/A2L README-a. Vizuelna dijagnoza i identitet verzije ostaju otvoreni.
+- Ender bead 0.42 je ASSUMED; izričita dozvola za build nije fizička kalibracija. Autorski V2c (srčana praznina, kljun, trake gustine) zahteva i vizuelni pregled; ne mešati gate sa prepoznatljivošću sokola.
+
+## Privatni studio i korigovan naslon · 2026-10-04
+
+Nova lokalna implementacija: `private-studio/README.md`, ulaz za modele `private-studio/AGENTS.md`. STL/OBJ zatvorena tela, višestruki preseci i rupe, gustina po XY/Z, promenljiva širina proceduralnog zida, orijentacija, prvi sloj, recepti i A2L final-byte/nominal-contact gate. Lokalno izuzeto iz git-a; postojeći no-push zaključani remoti sačuvani. Testovi i ograničenja: `private-studio/qa/VERDICT.md`. Snimci: `private-studio/knowledge/media/INDEX.md`; poređenje naslona: `private-studio/knowledge/chair/CHAIR_STATUS.md`. Fizički status novog izlaza UNPRINTED.

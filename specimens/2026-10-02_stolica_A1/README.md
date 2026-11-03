@@ -87,3 +87,7 @@ The copy on the two shelves (`data/lab/A1_puna_tela/`, `Downloads/A1_puna_tela/`
 repaired in place — same moves, six lines rewritten, +74 bytes — and now reads 708 layers, 93.59 g,
 max Z 169.92. Its SHA-256 is therefore no longer the one recorded above:
 `0cdfb568c8d6091d171f3087cda9dacc4e4ecde667cf749929c2398f8e626ac0`.
+
+## Dopuna: fotografije prijavljenog pada stolice
+
+Četiri fotografije su povezane u [dopuni analize](../../docs/STOLICA_FAIL_2026-10.md). Vizuelni pregled i pripadnost konkretnoj verziji nisu potvrđeni. Ovaj zapis ne menja istorijski ishod ovog specimena bez dokaza.
