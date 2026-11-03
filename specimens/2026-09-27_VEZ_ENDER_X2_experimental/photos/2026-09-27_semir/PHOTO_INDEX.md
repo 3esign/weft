@@ -4,16 +4,16 @@ SHA-256 parity with the phone 13/13 (manifest.json). Operator identification: Se
 
 | photo | sha256 | source |
 |---|---|---|
-| 20260927_124455.jpg | `178a042d1e733fc1871aca2a42c932ba16ad67410d12f56b7ee2a5794b6529a3` | phone /sdcard/DCIM/Camera via tools/phone_ssh.js (manifest.json parity 13/13) |
-| 20260927_124509.jpg | `9aefb741fe4624773df43ecbc2e805aa1dad9572a3a6bde9922aa253310e4378` | phone /sdcard/DCIM/Camera via tools/phone_ssh.js (manifest.json parity 13/13) |
-| 20260927_124511.jpg | `87a22247b6b48ddaa85d8948341d3cfb5b34087497238c59ae7d987df611bb47` | phone /sdcard/DCIM/Camera via tools/phone_ssh.js (manifest.json parity 13/13) |
-| 20260927_124518.jpg | `189b4e7e659e12dfe9cbbd1e85639543ef33e5b6f21bd3873ea9f4081f6af80d` | phone /sdcard/DCIM/Camera via tools/phone_ssh.js (manifest.json parity 13/13) |
-| 20260927_124556.jpg | `a2918f57e344fa335216434567030603a1d24dbf62695b074183ac92bf57da31` | phone /sdcard/DCIM/Camera via tools/phone_ssh.js (manifest.json parity 13/13) |
-| 20260927_124601.jpg | `9100cc8a88e62e9ba042fd857a37295a71f835090640021d8ca739ee7647924c` | phone /sdcard/DCIM/Camera via tools/phone_ssh.js (manifest.json parity 13/13) |
-| 20260927_124612.jpg | `ce6725122084a0adea8772740c93aa6869f34d58a1ed0d42dffa39ae972a5bee` | phone /sdcard/DCIM/Camera via tools/phone_ssh.js (manifest.json parity 13/13) |
-| 20260927_124703.jpg | `497a0439bb798db560c41f3a8a782e7200e88ed5d2dfbb0f95d45d6dafa73446` | phone /sdcard/DCIM/Camera via tools/phone_ssh.js (manifest.json parity 13/13) |
-| 20260927_124708.jpg | `3117f1c8cbc60a11ac4085a662596079e10f1fd2ee1001e19cf6d990dcd47216` | phone /sdcard/DCIM/Camera via tools/phone_ssh.js (manifest.json parity 13/13) |
-| 20260927_124710.jpg | `e1382dc1a68ef747a1fb4a8db07ed979a27e330213d62349b205c8bd2c486c20` | phone /sdcard/DCIM/Camera via tools/phone_ssh.js (manifest.json parity 13/13) |
-| 20260927_124712.jpg | `9562cffc8d57e60deb9f4dd22a6dfa99778090e9bde924bf52a88b96f67f2640` | phone /sdcard/DCIM/Camera via tools/phone_ssh.js (manifest.json parity 13/13) |
-| 20260927_124718.jpg | `08a3bdc4056748997af58365950c1217bede655982431890e810f5b62fbcf42d` | phone /sdcard/DCIM/Camera via tools/phone_ssh.js (manifest.json parity 13/13) |
-| 20260927_124720.jpg | `3e0861ea597f12e93bf1834a02c43ca75ec029ce1b812bdc43baa72d91a97da6` | phone /sdcard/DCIM/Camera via tools/phone_ssh.js (manifest.json parity 13/13) |
+| 20260927_124455.jpg | `333157985a8929f39297e7d52166a96774e8eb8f32f9915eb6e574f6c58829fc` | phone /sdcard/DCIM/Camera via tools/phone_ssh.js (manifest.json parity 13/13) |
+| 20260927_124509.jpg | `d0b771e3c32637887938ae1bf372254a62df20beac2310d5ddb205527f54975d` | phone /sdcard/DCIM/Camera via tools/phone_ssh.js (manifest.json parity 13/13) |
+| 20260927_124511.jpg | `14aa50ea1d01756aef4aa23138d20f62be857598fe08c4832c70512be37c5ce8` | phone /sdcard/DCIM/Camera via tools/phone_ssh.js (manifest.json parity 13/13) |
+| 20260927_124518.jpg | `ba8c7ed5163b2bd884448195faef3d3ac0ace50f347fc4e0621fe665156244f4` | phone /sdcard/DCIM/Camera via tools/phone_ssh.js (manifest.json parity 13/13) |
+| 20260927_124556.jpg | `c23da62bc0f838b575be916ea34d4aa2234bd0f15ae42fac26d2bb25e43cd605` | phone /sdcard/DCIM/Camera via tools/phone_ssh.js (manifest.json parity 13/13) |
+| 20260927_124601.jpg | `cc2eef89fac76e7f5b59b933edda711862daa513fb0e45232398ddb88b9fa450` | phone /sdcard/DCIM/Camera via tools/phone_ssh.js (manifest.json parity 13/13) |
+| 20260927_124612.jpg | `fe81de6b64256048c369fc3a2a9cb903d7638d7b07d6233cf0a3394398708a7e` | phone /sdcard/DCIM/Camera via tools/phone_ssh.js (manifest.json parity 13/13) |
+| 20260927_124703.jpg | `4d8fe38a410977a0455bcd25de467c42923581f7216ca93cb19214adbc54e114` | phone /sdcard/DCIM/Camera via tools/phone_ssh.js (manifest.json parity 13/13) |
+| 20260927_124708.jpg | `59a6abe2268ff77ab2157f011ca2d0acb560d086f0300b3ee74f5ce6dbadf9f2` | phone /sdcard/DCIM/Camera via tools/phone_ssh.js (manifest.json parity 13/13) |
+| 20260927_124710.jpg | `579b2dc135981a7feeafd54ce8782d192d19b0e39bb1ad761f76c0a6f45f4209` | phone /sdcard/DCIM/Camera via tools/phone_ssh.js (manifest.json parity 13/13) |
+| 20260927_124712.jpg | `70f0b74c17c859c70919285f683e0bc7834c79c1c33cb874257ce97db85ef717` | phone /sdcard/DCIM/Camera via tools/phone_ssh.js (manifest.json parity 13/13) |
+| 20260927_124718.jpg | `2245713b5f5cef98b1a81584ff0641d6dbd093b2e58d7c31ee09896a9168bcde` | phone /sdcard/DCIM/Camera via tools/phone_ssh.js (manifest.json parity 13/13) |
+| 20260927_124720.jpg | `26fefd0679136c9c9a50fb63d72fb4cc0b97b5c2f02885274e19bccc8218b3dd` | phone /sdcard/DCIM/Camera via tools/phone_ssh.js (manifest.json parity 13/13) |

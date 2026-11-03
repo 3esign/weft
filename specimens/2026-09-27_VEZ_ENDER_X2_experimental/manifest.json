@@ -9,73 +9,99 @@
     "to": "2026-09-27T12:47:20+02:00"
   },
   "count": 13,
-  "totalBytes": 22064655,
+  "totalBytes": 21525923,
   "phoneLocalSha256Parity": "13/13",
   "files": [
     {
       "name": "20260927_124455.jpg",
-      "bytes": 1847208,
-      "sha256": "178a042d1e733fc1871aca2a42c932ba16ad67410d12f56b7ee2a5794b6529a3"
+      "bytes": 1795968,
+      "sha256": "333157985a8929f39297e7d52166a96774e8eb8f32f9915eb6e574f6c58829fc",
+      "sha256_pre_exif_strip": "178a042d1e733fc1871aca2a42c932ba16ad67410d12f56b7ee2a5794b6529a3",
+      "bytes_pre_exif_strip": 1847208
     },
     {
       "name": "20260927_124509.jpg",
-      "bytes": 1843429,
-      "sha256": "9aefb741fe4624773df43ecbc2e805aa1dad9572a3a6bde9922aa253310e4378"
+      "bytes": 1792348,
+      "sha256": "d0b771e3c32637887938ae1bf372254a62df20beac2310d5ddb205527f54975d",
+      "sha256_pre_exif_strip": "9aefb741fe4624773df43ecbc2e805aa1dad9572a3a6bde9922aa253310e4378",
+      "bytes_pre_exif_strip": 1843429
     },
     {
       "name": "20260927_124511.jpg",
-      "bytes": 1743172,
-      "sha256": "87a22247b6b48ddaa85d8948341d3cfb5b34087497238c59ae7d987df611bb47"
+      "bytes": 1695743,
+      "sha256": "14aa50ea1d01756aef4aa23138d20f62be857598fe08c4832c70512be37c5ce8",
+      "sha256_pre_exif_strip": "87a22247b6b48ddaa85d8948341d3cfb5b34087497238c59ae7d987df611bb47",
+      "bytes_pre_exif_strip": 1743172
     },
     {
       "name": "20260927_124518.jpg",
-      "bytes": 1804076,
-      "sha256": "189b4e7e659e12dfe9cbbd1e85639543ef33e5b6f21bd3873ea9f4081f6af80d"
+      "bytes": 1753605,
+      "sha256": "ba8c7ed5163b2bd884448195faef3d3ac0ace50f347fc4e0621fe665156244f4",
+      "sha256_pre_exif_strip": "189b4e7e659e12dfe9cbbd1e85639543ef33e5b6f21bd3873ea9f4081f6af80d",
+      "bytes_pre_exif_strip": 1804076
     },
     {
       "name": "20260927_124556.jpg",
-      "bytes": 1705347,
-      "sha256": "a2918f57e344fa335216434567030603a1d24dbf62695b074183ac92bf57da31"
+      "bytes": 1660210,
+      "sha256": "c23da62bc0f838b575be916ea34d4aa2234bd0f15ae42fac26d2bb25e43cd605",
+      "sha256_pre_exif_strip": "a2918f57e344fa335216434567030603a1d24dbf62695b074183ac92bf57da31",
+      "bytes_pre_exif_strip": 1705347
     },
     {
       "name": "20260927_124601.jpg",
-      "bytes": 1756120,
-      "sha256": "9100cc8a88e62e9ba042fd857a37295a71f835090640021d8ca739ee7647924c"
+      "bytes": 1715970,
+      "sha256": "cc2eef89fac76e7f5b59b933edda711862daa513fb0e45232398ddb88b9fa450",
+      "sha256_pre_exif_strip": "9100cc8a88e62e9ba042fd857a37295a71f835090640021d8ca739ee7647924c",
+      "bytes_pre_exif_strip": 1756120
     },
     {
       "name": "20260927_124612.jpg",
-      "bytes": 1623598,
-      "sha256": "ce6725122084a0adea8772740c93aa6869f34d58a1ed0d42dffa39ae972a5bee"
+      "bytes": 1587033,
+      "sha256": "fe81de6b64256048c369fc3a2a9cb903d7638d7b07d6233cf0a3394398708a7e",
+      "sha256_pre_exif_strip": "ce6725122084a0adea8772740c93aa6869f34d58a1ed0d42dffa39ae972a5bee",
+      "bytes_pre_exif_strip": 1623598
     },
     {
       "name": "20260927_124703.jpg",
-      "bytes": 1624815,
-      "sha256": "497a0439bb798db560c41f3a8a782e7200e88ed5d2dfbb0f95d45d6dafa73446"
+      "bytes": 1589822,
+      "sha256": "4d8fe38a410977a0455bcd25de467c42923581f7216ca93cb19214adbc54e114",
+      "sha256_pre_exif_strip": "497a0439bb798db560c41f3a8a782e7200e88ed5d2dfbb0f95d45d6dafa73446",
+      "bytes_pre_exif_strip": 1624815
     },
     {
       "name": "20260927_124708.jpg",
-      "bytes": 1669411,
-      "sha256": "3117f1c8cbc60a11ac4085a662596079e10f1fd2ee1001e19cf6d990dcd47216"
+      "bytes": 1633269,
+      "sha256": "59a6abe2268ff77ab2157f011ca2d0acb560d086f0300b3ee74f5ce6dbadf9f2",
+      "sha256_pre_exif_strip": "3117f1c8cbc60a11ac4085a662596079e10f1fd2ee1001e19cf6d990dcd47216",
+      "bytes_pre_exif_strip": 1669411
     },
     {
       "name": "20260927_124710.jpg",
-      "bytes": 1628015,
-      "sha256": "e1382dc1a68ef747a1fb4a8db07ed979a27e330213d62349b205c8bd2c486c20"
+      "bytes": 1594505,
+      "sha256": "579b2dc135981a7feeafd54ce8782d192d19b0e39bb1ad761f76c0a6f45f4209",
+      "sha256_pre_exif_strip": "e1382dc1a68ef747a1fb4a8db07ed979a27e330213d62349b205c8bd2c486c20",
+      "bytes_pre_exif_strip": 1628015
     },
     {
       "name": "20260927_124712.jpg",
-      "bytes": 1528390,
-      "sha256": "9562cffc8d57e60deb9f4dd22a6dfa99778090e9bde924bf52a88b96f67f2640"
+      "bytes": 1491650,
+      "sha256": "70f0b74c17c859c70919285f683e0bc7834c79c1c33cb874257ce97db85ef717",
+      "sha256_pre_exif_strip": "9562cffc8d57e60deb9f4dd22a6dfa99778090e9bde924bf52a88b96f67f2640",
+      "bytes_pre_exif_strip": 1528390
     },
     {
       "name": "20260927_124718.jpg",
-      "bytes": 1650290,
-      "sha256": "08a3bdc4056748997af58365950c1217bede655982431890e810f5b62fbcf42d"
+      "bytes": 1612769,
+      "sha256": "2245713b5f5cef98b1a81584ff0641d6dbd093b2e58d7c31ee09896a9168bcde",
+      "sha256_pre_exif_strip": "08a3bdc4056748997af58365950c1217bede655982431890e810f5b62fbcf42d",
+      "bytes_pre_exif_strip": 1650290
     },
     {
       "name": "20260927_124720.jpg",
-      "bytes": 1640784,
-      "sha256": "3e0861ea597f12e93bf1834a02c43ca75ec029ce1b812bdc43baa72d91a97da6"
+      "bytes": 1603031,
+      "sha256": "26fefd0679136c9c9a50fb63d72fb4cc0b97b5c2f02885274e19bccc8218b3dd",
+      "sha256_pre_exif_strip": "3e0861ea597f12e93bf1834a02c43ca75ec029ce1b812bdc43baa72d91a97da6",
+      "bytes_pre_exif_strip": 1640784
     }
   ]
 }

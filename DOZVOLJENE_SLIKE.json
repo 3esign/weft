@@ -1,0 +1,1092 @@
+{
+  "schema": "svemir.media-allowlist.v1",
+  "updatedAt": "2026-11-03T13:50:11.601Z",
+  "policy": "default-deny-unlisted-media",
+  "approved": [
+    {
+      "path": "docs/img/courtyard_suma2x2.jpg",
+      "sha256": "279841b31e470533af1f7a83080de1ad4f4ee569d9468f128f44a96e682f72f9",
+      "bytes": 140726,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.459Z"
+    },
+    {
+      "path": "docs/img/crown_d5.jpg",
+      "sha256": "cbf124b756af9cc76f5e1ee30330f6e9d50d68fa92c0d016064910192f22a0c2",
+      "bytes": 166145,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.459Z"
+    },
+    {
+      "path": "docs/img/d5_object.jpg",
+      "sha256": "e0f55a01569a9cb5bf82acf4ab01afecb708eea8b00707e5837bf8a40686563b",
+      "bytes": 151440,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.460Z"
+    },
+    {
+      "path": "docs/img/gora_elevation.jpg",
+      "sha256": "9377305bf67a6a7bbd7e7cfebb124e1199d1854c95b037056e72c3e2bc166c0e",
+      "bytes": 308902,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.461Z"
+    },
+    {
+      "path": "docs/img/hero.jpg",
+      "sha256": "66951b462fd42d0943f7b33fddfe388f35b6a0884e88b240bd377b0ae8958ce9",
+      "bytes": 171900,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.461Z"
+    },
+    {
+      "path": "docs/img/limit16_a2l.jpg",
+      "sha256": "43fa0784996b10cebfbcfc35ac744df0603b08f3d8cf3a03768295aeb0ceedd1",
+      "bytes": 192106,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.462Z"
+    },
+    {
+      "path": "docs/img/mera_membrane.jpg",
+      "sha256": "ea548d50ebe4f6235c70288692b7c5dbe6bf722059e7684e8725e9369b60bb20",
+      "bytes": 94057,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.462Z"
+    },
+    {
+      "path": "docs/img/oblak_window.jpg",
+      "sha256": "9d78f8807cefacc8d4dba44cbe6d5b9df1cf1ebd9728fd21223d30c3fed6d7ac",
+      "bytes": 162340,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.463Z"
+    },
+    {
+      "path": "docs/img/p2b_preview.jpg",
+      "sha256": "14a4858c7ddc00185911f0efe82b861d516f3981b3bbaddfdd6db034349d7fc5",
+      "bytes": 32135,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.463Z"
+    },
+    {
+      "path": "docs/img/slicer_incident.jpg",
+      "sha256": "1ea71a5fe3d4b4e819885f224b8cd108e9f2b8619b0b0fa20275771fefbafff0",
+      "bytes": 41773,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.463Z"
+    },
+    {
+      "path": "docs/img/suma2x2_object.jpg",
+      "sha256": "1536f250cce8f05b1ab36860253a683e7f5b3bd2d05bcdce56f2909aba7693a0",
+      "bytes": 304426,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.464Z"
+    },
+    {
+      "path": "docs/img/vrtlog_v1.jpg",
+      "sha256": "e6b9d7f5c84862955a77515c9ee43f589a5abd9fd30637474f26de69a007da54",
+      "bytes": 101554,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.465Z"
+    },
+    {
+      "path": "docs/img/weave_suma2x2.jpg",
+      "sha256": "75588581816ee14ba939128b3422a0b01cfb2e96dd6a95e11b0b73f0f401ce67",
+      "bytes": 117321,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.465Z"
+    },
+    {
+      "path": "specimens/2026-09-02_P0_suma_2x2_physical/P0_suma_2x2_preview.png",
+      "sha256": "e122fc511dc6c9c92906b9022f6be3f3cdeeb65fcc5d02b516e79b3627d5df6f",
+      "bytes": 583526,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.466Z"
+    },
+    {
+      "path": "specimens/2026-09-02_P2b_penjac_3legs_A2L_physical/P2b_penjac_3_A2L_preview.png",
+      "sha256": "8e538923f34df93c53b2d26d68d36441ad469211887580858820189e6198d8a1",
+      "bytes": 241356,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.467Z"
+    },
+    {
+      "path": "specimens/2026-09-03_MERA_A2L_4x4_v1_physical/MERA_A2L_4x4_v1_plan.png",
+      "sha256": "9a39500e1cb1e8a9c1eaf2da04130d39eae79f2a35a199b66b0701786ab78df0",
+      "bytes": 48692,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.467Z"
+    },
+    {
+      "path": "specimens/2026-09-03_MERA_A2L_4x4_v1_physical/MERA_A2L_4x4_v1_plan.svg",
+      "sha256": "30a247904a5ae2575d18cc7101bd8ebb2c40c4756a28ff3c3bda8d541aee1a92",
+      "bytes": 32569,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.484Z"
+    },
+    {
+      "path": "specimens/2026-09-03_MERA_A2L_4x4_v1_physical/photos/2026-09-04_semir/MERA_A_01.jpg",
+      "sha256": "24ee8b6d0e8608286146a4ef63f46a8da548784c3c078ef1b4d74e3ff3f74f4a",
+      "bytes": 193193,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.485Z"
+    },
+    {
+      "path": "specimens/2026-09-03_MERA_A2L_4x4_v1_physical/photos/2026-09-04_semir/MERA_A_02.jpg",
+      "sha256": "34c66415d82eb8b1da0b54e2fb2101213aa8727d72a0dee9ab7de4ae927249d5",
+      "bytes": 199280,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.485Z"
+    },
+    {
+      "path": "specimens/2026-09-03_MERA_A2L_4x4_v1_physical/photos/2026-09-04_semir/MERA_A_03.jpg",
+      "sha256": "9649c7b95b50e6198d1293265b96f00bd6053d25398959f323eb73929e0ee8f5",
+      "bytes": 179386,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.486Z"
+    },
+    {
+      "path": "specimens/2026-09-03_MERA_A2L_4x4_v1_physical/photos/2026-09-04_semir/MERA_B_01.jpg",
+      "sha256": "a7f0c4573632791c97f6659d4812f0a2bd5c16313c032058953a50149b98ff6c",
+      "bytes": 168274,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.486Z"
+    },
+    {
+      "path": "specimens/2026-09-03_MERA_A2L_4x4_v1_physical/photos/2026-09-04_semir/MERA_B_02.jpg",
+      "sha256": "316eaef5dd133e1b742630bbeb97f268f6dc3eb712a9762f2ee152c5d9291329",
+      "bytes": 132336,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.487Z"
+    },
+    {
+      "path": "specimens/2026-09-03_MERA_A2L_4x4_v1_physical/photos/2026-09-04_semir/MERA_B_03.jpg",
+      "sha256": "e19fbe3bd8a8f50da172c7315e93987298a0b75fd54606253742630f9fb1de2a",
+      "bytes": 131422,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.487Z"
+    },
+    {
+      "path": "specimens/2026-09-03_MERA_A2L_4x4_v1_physical/photos/2026-09-04_semir/MERA_B_04.jpg",
+      "sha256": "93f2a0862a8c83207c35322290f9e2d14156e18ba470e291011a34e70ab775a6",
+      "bytes": 190804,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.488Z"
+    },
+    {
+      "path": "specimens/2026-09-03_MERA_A2L_4x4_v1_physical/photos/2026-09-04_semir/MERA_B_05.jpg",
+      "sha256": "bf8a497c8b773116e810bcefc56ccf1e6be8b7b0ef60c78c14effec053b0b366",
+      "bytes": 190453,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.488Z"
+    },
+    {
+      "path": "specimens/2026-09-03_MERA_A2L_4x4_v1_physical/photos/2026-09-04_semir/MERA_C_01.jpg",
+      "sha256": "de2bd17b55f3743f14b5dc54d37cfb2685a6ec70ad71e30caf9776531df5949e",
+      "bytes": 186206,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.489Z"
+    },
+    {
+      "path": "specimens/2026-09-03_MERA_A2L_4x4_v1_physical/photos/2026-09-04_semir/MERA_C_02.jpg",
+      "sha256": "a3bd99e83c9c55671b6b4c8c053f1d9dce634a24a88816b395477f9b87415343",
+      "bytes": 197373,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.489Z"
+    },
+    {
+      "path": "specimens/2026-09-03_MERA_A2L_4x4_v1_physical/photos/2026-09-04_semir/MERA_C_03.jpg",
+      "sha256": "6a727f1c2db29a9b65a33f9dc3ebc8679152ed02f5307e4191d542f8f387c290",
+      "bytes": 208990,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.490Z"
+    },
+    {
+      "path": "specimens/2026-09-03_MERA_A2L_4x4_v1_physical/photos/2026-09-04_semir/MERA_C_04.jpg",
+      "sha256": "84080d53fa303d4e0fb6b4948e725a4bab7535530c86f91d9378e73c241e2b32",
+      "bytes": 192243,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.490Z"
+    },
+    {
+      "path": "specimens/2026-09-03_MERA_A2L_4x4_v1_physical/photos/2026-09-04_semir/MERA_C_05.jpg",
+      "sha256": "1d3c0b6a28e7936d3c8ba738889c7ff5309aa61881d2bec5c9bca8f479f6bd1b",
+      "bytes": 155854,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.491Z"
+    },
+    {
+      "path": "specimens/2026-09-03_MERA_A2L_4x4_v1_physical/photos/2026-09-04_semir/MERA_D_01.jpg",
+      "sha256": "71e1c41c6cc45f16936e36f5bd5813065fd411174b4baac99123bcbbb6fbaf50",
+      "bytes": 209657,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.491Z"
+    },
+    {
+      "path": "specimens/2026-09-03_MERA_A2L_4x4_v1_physical/photos/2026-09-04_semir/MERA_D_02.jpg",
+      "sha256": "ecce32c5aaa0c9982dc8c87fb181a4329763c78934e3680666c8302341340d13",
+      "bytes": 205941,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.492Z"
+    },
+    {
+      "path": "specimens/2026-09-03_MERA_A2L_4x4_v1_physical/photos/2026-09-04_semir/MERA_D_03.jpg",
+      "sha256": "792de76ddedb66d0fe5aa627ad34f2136f308b2b0c1e425920eca04e902fe4be",
+      "bytes": 220635,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.493Z"
+    },
+    {
+      "path": "specimens/2026-09-03_V1_vrtlog_ender_physical/V1_vrtlog_preview.png",
+      "sha256": "51bf61115caad94886b5a6c95e4f9aada008f8e4f0190c8c731902ed9e003e66",
+      "bytes": 430700,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.494Z"
+    },
+    {
+      "path": "specimens/2026-09-04_DAH_A2L_v1_pending/DAH_A2L_v1_preview.png",
+      "sha256": "bb97492d90b74db2a8893cab40c2a39aebb453fe47140d2a89765ee36ec002e4",
+      "bytes": 86745,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.494Z"
+    },
+    {
+      "path": "specimens/2026-09-04_DAH_A2L_v1_pending/DAH_A2L_v1_preview.svg",
+      "sha256": "81244d9780dab5f46827eb802c3635731b7af83ee0ece02d7aa15acb36589e8b",
+      "bytes": 16117,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.507Z"
+    },
+    {
+      "path": "specimens/2026-09-04_LIMIT16_A2L_physical/LIMIT16_A2L_v1_plan.png",
+      "sha256": "789e4300905a1c009ca791c8d6e2f42ab54236be76af00ab2501fe4e18410819",
+      "bytes": 74540,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.507Z"
+    },
+    {
+      "path": "specimens/2026-09-04_LIMIT16_A2L_physical/LIMIT16_A2L_v1_plan.svg",
+      "sha256": "387e95f580234970b6fd309025a332bac342900721bb76f8c4bb66939342ada2",
+      "bytes": 4762,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.545Z"
+    },
+    {
+      "path": "specimens/2026-09-04_LIMIT16_ENDER3V4_physical/LIMIT16_ENDER3V4_v1_plan.png",
+      "sha256": "538a355dd98291cd1f5ab66158fe2bea098cfe2fbb0ed99fc1afb8eb781fe479",
+      "bytes": 74917,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.545Z"
+    },
+    {
+      "path": "specimens/2026-09-04_LIMIT16_ENDER3V4_physical/LIMIT16_ENDER3V4_v1_plan.svg",
+      "sha256": "dd375f9ab7c0c8bb390cb897a300158c127c60eb19cf997e05022f7d35926535",
+      "bytes": 4768,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.560Z"
+    },
+    {
+      "path": "specimens/2026-09-04_ODJEK_ENDER3V4_v1_pending/ODJEK_ENDER3V4_v1_preview.png",
+      "sha256": "be20de7afd82179751703f44af35ea147afa02f07a49cf13fc9985e79809fb06",
+      "bytes": 92814,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.561Z"
+    },
+    {
+      "path": "specimens/2026-09-04_ODJEK_ENDER3V4_v1_pending/ODJEK_ENDER3V4_v1_preview.svg",
+      "sha256": "de0d6bed13c073adad778399853782122a9b472c29f3f405cb00ed365bf5d843",
+      "bytes": 14331,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.561Z"
+    },
+    {
+      "path": "specimens/2026-09-04_RASEP_A2L_X1_experimental/RASEP_A2L_X1_preview.png",
+      "sha256": "6883a6b683f8b25a5ffaa14d1e44cfee327fd1a3239c3fb404d8cce1cf8c7e97",
+      "bytes": 159388,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.562Z"
+    },
+    {
+      "path": "specimens/2026-09-04_RASEP_A2L_X1_experimental/RASEP_A2L_X1_preview.svg",
+      "sha256": "4ae578096d90da2b6e13a128a06d04e0bb95e5850440dbe8d8420b9d51ff0864",
+      "bytes": 151723,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.574Z"
+    },
+    {
+      "path": "specimens/2026-09-04_VEO_ENDER3V4_X1_experimental/VEO_ENDER3V4_X1_preview.png",
+      "sha256": "f330b295f3d5171703e3f0a8a66785969af32fe12d6c4dd88b619d6eb00fcd4b",
+      "bytes": 121574,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.574Z"
+    },
+    {
+      "path": "specimens/2026-09-04_VEO_ENDER3V4_X1_experimental/VEO_ENDER3V4_X1_preview.svg",
+      "sha256": "adb20faad0f0aff7307a5d024ab94be59da0ab861d60ae04804842d9f0375a6b",
+      "bytes": 125416,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.593Z"
+    },
+    {
+      "path": "specimens/2026-09-05_GORA_ENDER3V4_X1_experimental/GORA_ENDER3V4_X1_preview.png",
+      "sha256": "bf827ade2d402443ff3637865274e79a36146839c119e64ff95d7236dd4a1601",
+      "bytes": 832456,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.595Z"
+    },
+    {
+      "path": "specimens/2026-09-05_GORA_ENDER3V4_X1_experimental/GORA_ENDER3V4_X1_preview.svg",
+      "sha256": "155789458333781df869555196a156221f2c0d33e2c06beaf8c4e30a688b7b83",
+      "bytes": 643188,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.605Z"
+    },
+    {
+      "path": "specimens/2026-09-05_OBLAK_A2L_X1_experimental/OBLAK_A2L_X1_preview.png",
+      "sha256": "374cd7c62ef99c7637f67ccf0c03a018fa639301bc656897ad5d136a81002cad",
+      "bytes": 1077121,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.607Z"
+    },
+    {
+      "path": "specimens/2026-09-05_OBLAK_A2L_X1_experimental/OBLAK_A2L_X1_preview.svg",
+      "sha256": "4c71d9a18ed8426380d53413ce802e0c8feb975d0452bf2d85c93d952430525f",
+      "bytes": 1031422,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.657Z"
+    },
+    {
+      "path": "specimens/2026-09-17_KOCKA_TKANJE_A2L_X1_experimental/KOCKA_TKANJE_A2L_X1_preview.png",
+      "sha256": "504655ce8a83430a2a8fd00a4d5f634e6d6b3347b328a0418284b74393ef3cab",
+      "bytes": 227596,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.658Z"
+    },
+    {
+      "path": "specimens/2026-09-17_KOCKA_TKANJE_A2L_X1_experimental/KOCKA_TKANJE_A2L_X1_preview.svg",
+      "sha256": "b87b4d48bec31c7f716dd9818128798f3b44a6432f7fc9945f9f3092e1979fb3",
+      "bytes": 1246054,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.681Z"
+    },
+    {
+      "path": "specimens/2026-09-17_ZIGURAT_TKANJE_A2L_X1_experimental/ZIGURAT_TKANJE_A2L_X1_preview.png",
+      "sha256": "4814f5372dd625a41bc2264b841b52c76599c06876f9191287997ea29c82a251",
+      "bytes": 1565122,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.684Z"
+    },
+    {
+      "path": "specimens/2026-09-17_ZIGURAT_TKANJE_A2L_X1_experimental/ZIGURAT_TKANJE_A2L_X1_preview.svg",
+      "sha256": "9255e925458b78acee7ddbb5c730a38636bc19dcc7220832bbf5e0d1f4c425ec",
+      "bytes": 6382892,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.780Z"
+    },
+    {
+      "path": "specimens/2026-09-17_ZIGURAT_VRTLOG_ENDER3V4_X1_experimental/ZIGURAT_VRTLOG_ENDER3V4_X1_preview.png",
+      "sha256": "9b2cb3cf592311e87d1af941639dc6827ebb08566f8d96e09ca1b4bbb6343dac",
+      "bytes": 808194,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.782Z"
+    },
+    {
+      "path": "specimens/2026-09-17_ZIGURAT_VRTLOG_ENDER3V4_X1_experimental/ZIGURAT_VRTLOG_ENDER3V4_X1_preview.svg",
+      "sha256": "d81e6e667e7d8646ba30ddbdde615a02651c4b2926f956a2205f7148d81253e1",
+      "bytes": 3039832,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.825Z"
+    },
+    {
+      "path": "specimens/2026-09-18_ZIGURAT2_TKANJE_A2L_X2_experimental/photos/2026-09-19_semir/B01_upper_overview.png",
+      "sha256": "809da54849ab440c5029141bb32c8d71dc9f4875f58589f0de5e8c832f2bd8e7",
+      "bytes": 3313528,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.858Z"
+    },
+    {
+      "path": "specimens/2026-09-18_ZIGURAT2_TKANJE_A2L_X2_experimental/photos/2026-09-19_semir/B02_roof_detail.png",
+      "sha256": "d649910bee64ab017ed2a849fa20b415daf3161696bdb471ec2729c8850bb430",
+      "bytes": 3231393,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.865Z"
+    },
+    {
+      "path": "specimens/2026-09-18_ZIGURAT2_TKANJE_A2L_X2_experimental/photos/2026-09-19_semir/B03_lower_woven_transition.png",
+      "sha256": "9f1ef0b6bbdc204914a820c4c46442a3bf114b2f2876d2484299e3f10f1546d9",
+      "bytes": 3907317,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.874Z"
+    },
+    {
+      "path": "specimens/2026-09-18_ZIGURAT2_TKANJE_A2L_X2_experimental/photos/2026-09-19_semir/B04_middle_transition.png",
+      "sha256": "65bf201debc6376043eabfa80cee71ff147082c4fe5d0d027673938101dad235",
+      "bytes": 3544406,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.882Z"
+    },
+    {
+      "path": "specimens/2026-09-18_ZIGURAT2_TKANJE_A2L_X2_experimental/photos/2026-09-19_semir/B05_lower_wall_junction.png",
+      "sha256": "730e29456cad971b97ed02e741cfc4ce5c50b591f9a2a5c4822cf18c4ad97f9a",
+      "bytes": 3884853,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.890Z"
+    },
+    {
+      "path": "specimens/2026-09-18_ZIGURAT2_TKANJE_A2L_X2_experimental/ZIGURAT2_TKANJE_A2L_X2_preview.png",
+      "sha256": "5eabe88cc599c26f5030dece70ca2751031624ddb8e0a6f06230ee044f921cf8",
+      "bytes": 498844,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.826Z"
+    },
+    {
+      "path": "specimens/2026-09-18_ZIGURAT2_TKANJE_A2L_X2_experimental/ZIGURAT2_TKANJE_A2L_X2_preview.svg",
+      "sha256": "06cf8e1431a202fc16cbf96fe075643e62636430214b23fbce84895e40e5e6bb",
+      "bytes": 1915011,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.850Z"
+    },
+    {
+      "path": "specimens/2026-09-18_ZIGURAT2_VRTLOG_ENDER3V4_X2_experimental/photos/2026-09-18_semir/1000142553.webp",
+      "sha256": "ae646ddbe179bc7cd7020ae3e81b616b4d5385dffd47702152b4309935ec5e43",
+      "bytes": 211638,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.896Z"
+    },
+    {
+      "path": "specimens/2026-09-18_ZIGURAT2_VRTLOG_ENDER3V4_X2_experimental/photos/2026-09-18_semir/1000142554.webp",
+      "sha256": "5cc04a2d4cb9b6da8121faebe3c9191e0405401109b634937162a166b76d1d8d",
+      "bytes": 80628,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.897Z"
+    },
+    {
+      "path": "specimens/2026-09-18_ZIGURAT2_VRTLOG_ENDER3V4_X2_experimental/photos/2026-09-18_semir/1000142555.webp",
+      "sha256": "05af88dbae5c3641cc987aa0bb90c1460c9fe9254646fc1dae2c96d21df7be63",
+      "bytes": 141236,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.897Z"
+    },
+    {
+      "path": "specimens/2026-09-18_ZIGURAT2_VRTLOG_ENDER3V4_X2_experimental/photos/2026-09-18_semir/1000142556.webp",
+      "sha256": "f0f6120334eb13f69feb56809297be77c592ed3dcc03df888c8df3808fd32e6d",
+      "bytes": 211908,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.898Z"
+    },
+    {
+      "path": "specimens/2026-09-18_ZIGURAT2_VRTLOG_ENDER3V4_X2_experimental/photos/2026-09-18_semir/1000142557.webp",
+      "sha256": "0bfff88f373fc3e207003867aeb5e907107f072d22180f1724c6ac2399deabe0",
+      "bytes": 238232,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.898Z"
+    },
+    {
+      "path": "specimens/2026-09-18_ZIGURAT2_VRTLOG_ENDER3V4_X2_experimental/photos/2026-09-18_semir/1000142558.webp",
+      "sha256": "f90c99c251ba7b11f2902999abd8fbd29610d58bda02fad7f1a455de63e6d4ce",
+      "bytes": 212288,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.899Z"
+    },
+    {
+      "path": "specimens/2026-09-18_ZIGURAT2_VRTLOG_ENDER3V4_X2_experimental/photos/2026-09-18_semir/1000142559.webp",
+      "sha256": "cd756f4b12fafb0b66fa9ba2e702a699cc7208b9be8a919039a1c15cbc30f036",
+      "bytes": 190464,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.899Z"
+    },
+    {
+      "path": "specimens/2026-09-18_ZIGURAT2_VRTLOG_ENDER3V4_X2_experimental/photos/2026-09-18_semir/1000142563.webp",
+      "sha256": "6e1d747bd42feb40d0809f92293e0c747a38618edeaff72523f521af1d1525c8",
+      "bytes": 258590,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.900Z"
+    },
+    {
+      "path": "specimens/2026-09-18_ZIGURAT2_VRTLOG_ENDER3V4_X2_experimental/photos/2026-09-18_semir/1000142564.webp",
+      "sha256": "050cd104a633c251a9ce99c8e1578fd9a7d7614338df22eac4a11256b6c8fbed",
+      "bytes": 229606,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.901Z"
+    },
+    {
+      "path": "specimens/2026-09-18_ZIGURAT2_VRTLOG_ENDER3V4_X2_experimental/photos/2026-09-18_semir/1000142565.webp",
+      "sha256": "f8dbe0f10f66277646f45907e5ddd01793d251d1205c52b23a7eae5764ec5bbd",
+      "bytes": 247450,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.901Z"
+    },
+    {
+      "path": "specimens/2026-09-18_ZIGURAT2_VRTLOG_ENDER3V4_X2_experimental/ZIGURAT2_VRTLOG_ENDER3V4_X2_preview.png",
+      "sha256": "5c601a0d1c3e41b603fa8386b79dc9b53909152f733f981044eb5ac6fadd7e75",
+      "bytes": 253673,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.891Z"
+    },
+    {
+      "path": "specimens/2026-09-18_ZIGURAT2_VRTLOG_ENDER3V4_X2_experimental/ZIGURAT2_VRTLOG_ENDER3V4_X2_preview.svg",
+      "sha256": "5016685f6b4719ca5652bf6fe1b9ab87a26381647831dddb2855397ead0e59c5",
+      "bytes": 923924,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.896Z"
+    },
+    {
+      "path": "specimens/2026-09-19_OBRTAJ_ENDER_H7_experimental/OBRTAJ_ENDER_H7_front.png",
+      "sha256": "9573121adc19997c2a67a11428b07c57120df5f149dd41ddbe319077094a08b0",
+      "bytes": 37898,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.902Z"
+    },
+    {
+      "path": "specimens/2026-09-19_OBRTAJ_ENDER_H7_experimental/OBRTAJ_ENDER_H7_preview.png",
+      "sha256": "75d9656da70084ca6c725cadf0f141430e5bd4213aab72e09b217c6ee934e692",
+      "bytes": 325184,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.902Z"
+    },
+    {
+      "path": "specimens/2026-09-19_OBRTAJ_ENDER_H7_experimental/OBRTAJ_ENDER_H7_roof.png",
+      "sha256": "ea934997ec10bec80ba833e3eec376d08c0ec5152853b61367c4097d06d4128b",
+      "bytes": 72187,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.903Z"
+    },
+    {
+      "path": "specimens/2026-09-19_RAZMAK_A2L_H4_experimental/RAZMAK_A2L_H4_front.png",
+      "sha256": "b19f47ea490fe7bef98e9b808b19e2c3363c9839ba10b1e14e64b72ee8324e31",
+      "bytes": 38882,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.903Z"
+    },
+    {
+      "path": "specimens/2026-09-19_RAZMAK_A2L_H4_experimental/RAZMAK_A2L_H4_preview.png",
+      "sha256": "14594148e861828e724e56f19b8e3fc82823d643edb918989eb1fc1b05649945",
+      "bytes": 350081,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.904Z"
+    },
+    {
+      "path": "specimens/2026-09-19_RAZMAK_A2L_H4_experimental/RAZMAK_A2L_H4_roof.png",
+      "sha256": "079a948b8fbb8b7ae8772085afb4e3502ef9f44887b4f791f21692ed0b0cfd94",
+      "bytes": 58968,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.904Z"
+    },
+    {
+      "path": "specimens/2026-09-19_RAZMAK_A2L_H4_experimental/SEND_PRINT_FIX/plate_1_small.png",
+      "sha256": "5c3c7b0d47a18e9e0d2255a59c6010786608f5241c9a447151d0560e5b79ed2c",
+      "bytes": 12490,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.905Z"
+    },
+    {
+      "path": "specimens/2026-09-19_RAZMAK_A2L_H4_experimental/SEND_PRINT_FIX/plate_1.png",
+      "sha256": "a1c42a5fef1ec47ddc39473685d4fb4bb82a10f1cfdf62efd6cd43c66921a4e3",
+      "bytes": 153661,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.904Z"
+    },
+    {
+      "path": "specimens/2026-09-24_DOMET_A2L_X1_experimental/DOMET_A2L_X1_preview.svg",
+      "sha256": "debf1d44fc286992a2f8f27c2791eb962bb956a7ea922528550e3b094f6526ac",
+      "bytes": 112504,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.971Z"
+    },
+    {
+      "path": "specimens/2026-09-24_DOMET_ENDER3V4_X1_experimental/DOMET_ENDER3V4_X1_preview.svg",
+      "sha256": "20409092af4b259ddf08835c0baf562a9f560f1d8a5c9c9831f69cea37251084",
+      "bytes": 116206,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.998Z"
+    },
+    {
+      "path": "specimens/2026-09-24_DOMET_ENDER3V4_X2_experimental/FIRST_LAYER_EVIDENCE.svg",
+      "sha256": "ae868fc8ef12c3f1e4df14ea5ac0dbfb8040488ddcd926defe398fd8bc6a4f21",
+      "bytes": 45719,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.031Z"
+    },
+    {
+      "path": "specimens/2026-09-24_DOMET2_ENDER3V4_X2_experimental/FIRST_LAYER_EVIDENCE.svg",
+      "sha256": "269e57d11198ceb2a9302c7381d51e5b1393a76e4676db884c5a785939595a97",
+      "bytes": 42090,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:10.951Z"
+    },
+    {
+      "path": "specimens/2026-09-24_KRAK_A2L_X1_experimental/KRAK_A2L_X1_plan.svg",
+      "sha256": "2fc06cb958308d27804ead77a78469be359b5e19cf8fe3eb43d82bedb67988fe",
+      "bytes": 69708,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.048Z"
+    },
+    {
+      "path": "specimens/2026-09-24_KRAK_A2L_X1_experimental/photos/2026-09-25_KRAK_A2L_08.jpeg",
+      "sha256": "89817a3307769442719dcc26e2495e66644783c4f710fbac54ea09e87501660f",
+      "bytes": 355001,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.049Z"
+    },
+    {
+      "path": "specimens/2026-09-24_KRAK_A2L_X1_experimental/photos/2026-09-25_KRAK_A2L_09.jpeg",
+      "sha256": "f4052dfa286195543f1847b5ba6b170daaa2c839586bcd3950ebbf2805414a11",
+      "bytes": 470708,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.050Z"
+    },
+    {
+      "path": "specimens/2026-09-24_KRAK_A2L_X1_experimental/photos/2026-09-25_KRAK_A2L_10.jpeg",
+      "sha256": "2ad385e73593fb0fd4b0e93323aba50195e0f4a210bc3b3b4118ec96364c3281",
+      "bytes": 421684,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.051Z"
+    },
+    {
+      "path": "specimens/2026-09-24_KRAK_A2L_X1_experimental/photos/2026-09-25_KRAK_A2L_11.jpeg",
+      "sha256": "fbedd1d3e28e3de3375775e6ff1c87feb3a34c979a7fde939485defdb52211e0",
+      "bytes": 391322,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.052Z"
+    },
+    {
+      "path": "specimens/2026-09-24_KRAK_A2L_X1_experimental/photos/2026-09-25_KRAK_A2L_13.jpeg",
+      "sha256": "2aae70717ac2db1f0c87782e393aae00de0219a4b743eda30ce4b0e110166fab",
+      "bytes": 385879,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.053Z"
+    },
+    {
+      "path": "specimens/2026-09-24_KRAK_A2L_X1_experimental/photos/2026-09-25_KRAK_A2L_14.jpeg",
+      "sha256": "6e51b7cb497c09070aad214845b91f44673e2d7233f5c32571396d8042fdea7c",
+      "bytes": 283271,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.055Z"
+    },
+    {
+      "path": "specimens/2026-09-24_KRAK_A2L_X1_experimental/photos/2026-09-25_KRAK_A2L_15.jpeg",
+      "sha256": "04b4e2a5af6d66ac543a8afea4d27b4101bd9ad8bbedbb1e789ed105616e027e",
+      "bytes": 461457,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.057Z"
+    },
+    {
+      "path": "specimens/2026-09-24_KRAK_A2L_X1_experimental/photos/2026-09-25_KRAK_A2L_16.jpeg",
+      "sha256": "ec850eb88dd8355cc38357a0350005ce3d2053f332c8e5c71932f0efc050d575",
+      "bytes": 337770,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.058Z"
+    },
+    {
+      "path": "specimens/2026-09-24_KRAK_ENDER3V4_X1_experimental/KRAK_ENDER3V4_X1_plan.svg",
+      "sha256": "9b912c33d1da316e4eb288bf5e2bea0df9bbfbef78198e0ac1ec08d03e020886",
+      "bytes": 69708,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.075Z"
+    },
+    {
+      "path": "specimens/2026-09-24_KRAK_ENDER3V4_X1_experimental/photos/2026-09-25_KRAK_ENDER3V4_01.jpeg",
+      "sha256": "365e0b43fb9bb9ed639b509fca2916b57332f272e5a1df5699b27f32540d73cd",
+      "bytes": 250369,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.075Z"
+    },
+    {
+      "path": "specimens/2026-09-24_KRAK_ENDER3V4_X1_experimental/photos/2026-09-25_KRAK_ENDER3V4_02.jpeg",
+      "sha256": "da8bc60d2b96aed53ef4fbd3fd0a4fa7db2a0ff25bb8b7aab0def33fe2d299b8",
+      "bytes": 351282,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.076Z"
+    },
+    {
+      "path": "specimens/2026-09-24_KRAK_ENDER3V4_X1_experimental/photos/2026-09-25_KRAK_ENDER3V4_03.jpeg",
+      "sha256": "65125870343048ddeb645d9921686f9afd9dd1ddbc1ac1616bc8b2c72a07ac4b",
+      "bytes": 331209,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.077Z"
+    },
+    {
+      "path": "specimens/2026-09-24_KRAK_ENDER3V4_X1_experimental/photos/2026-09-25_KRAK_ENDER3V4_04.jpeg",
+      "sha256": "d79cefa8ed15436441b796a61636b78f526f9a8b48319faef40120d53541c8bd",
+      "bytes": 332699,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.078Z"
+    },
+    {
+      "path": "specimens/2026-09-24_KRAK_ENDER3V4_X1_experimental/photos/2026-09-25_KRAK_ENDER3V4_05.jpeg",
+      "sha256": "5b2472c80a177936c6470b93f42e11457a54b9dc4dbae8aadd6e4f56ee91b33f",
+      "bytes": 311316,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.079Z"
+    },
+    {
+      "path": "specimens/2026-09-24_KRAK_ENDER3V4_X1_experimental/photos/2026-09-25_KRAK_ENDER3V4_06.jpeg",
+      "sha256": "a09813ef996eb3575807b350b40c8ee06e04f7cb26e2459d7c4818740490b1a5",
+      "bytes": 357030,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.080Z"
+    },
+    {
+      "path": "specimens/2026-09-24_KRAK_ENDER3V4_X1_experimental/photos/2026-09-25_KRAK_ENDER3V4_07.jpeg",
+      "sha256": "fd9625b59066370f1c5cd8f59ab50cc766806d9977ced00fb986fd608ea61af1",
+      "bytes": 281130,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.081Z"
+    },
+    {
+      "path": "specimens/2026-09-24_KRAK_ENDER3V4_X1_experimental/photos/2026-09-25_KRAK_ENDER3V4_12.jpeg",
+      "sha256": "eab02834ca39c1e8e8a5d75dd3f5c6d9dac0159177595eb68a1a086a9aba5cb2",
+      "bytes": 321475,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.081Z"
+    },
+    {
+      "path": "specimens/2026-09-25_KUKA_A2L_X1_experimental/KUKA_A2L_X1_plan.svg",
+      "sha256": "2c23f659209559db2509908fb26e49a04b89381777f4dbd63f4d4c493d4561e7",
+      "bytes": 149754,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.136Z"
+    },
+    {
+      "path": "specimens/2026-09-25_KUKA_ENDER_X1_experimental/KUKA_ENDER_X1_plan.svg",
+      "sha256": "2f27b952c9b66ad3706e758fd7bb5b36968092c0f4d6b42ce48c0cecd0ea9003",
+      "bytes": 149756,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.138Z"
+    },
+    {
+      "path": "specimens/2026-09-25_KUKA_ENDER_X1_experimental/photos/2026-09-26_semir/WhatsApp Image 2026-09-26 at 8.57.34 PM.jpeg",
+      "sha256": "74abf5b1910c79153d1910c543ca7bd0bd07f0cd2d7165f2f949063d41793dac",
+      "bytes": 376095,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.139Z"
+    },
+    {
+      "path": "specimens/2026-09-25_KUKA_ENDER_X1_experimental/photos/2026-09-26_semir/WhatsApp Image 2026-09-26 at 8.57.35 PM (1).jpeg",
+      "sha256": "87e7022bb99007cdb503e54f2ff93f6e02557231dabff43ea273435f82844277",
+      "bytes": 302334,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.139Z"
+    },
+    {
+      "path": "specimens/2026-09-25_KUKA_ENDER_X1_experimental/photos/2026-09-26_semir/WhatsApp Image 2026-09-26 at 8.57.35 PM (2).jpeg",
+      "sha256": "d8899c70ff72a711cd451042b3617b9436b4cb2e60c7ebcb68eba920c1cd078f",
+      "bytes": 312058,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.140Z"
+    },
+    {
+      "path": "specimens/2026-09-25_KUKA_ENDER_X1_experimental/photos/2026-09-26_semir/WhatsApp Image 2026-09-26 at 8.57.35 PM.jpeg",
+      "sha256": "1fa745f5bccf40b5fe9cd21ed55214b73bd94c51c6478ed0fcc3f1d66577b458",
+      "bytes": 331369,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.141Z"
+    },
+    {
+      "path": "specimens/2026-09-25_KUKA_ENDER_X1_experimental/photos/2026-09-26_semir/WhatsApp Image 2026-09-26 at 8.57.36 PM.jpeg",
+      "sha256": "fdbf58d51ccf2e22fd5734da53277bf87278d792d33b9f137a16a4bf1d45719f",
+      "bytes": 352938,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.142Z"
+    },
+    {
+      "path": "specimens/2026-09-25_KUKA_ENDER_X1_experimental/photos/2026-09-26_semir/WhatsApp Image 2026-09-26 at 8.57.37 PM.jpeg",
+      "sha256": "9586a53b0e4091cf2245588409600dc4a42f71f903683d045625831bc90c36a5",
+      "bytes": 392081,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.143Z"
+    },
+    {
+      "path": "specimens/2026-09-25_KUKA_ENDER_X1_experimental/photos/2026-09-26_semir/WhatsApp Image 2026-09-26 at 8.57.38 PM (1).jpeg",
+      "sha256": "46dc67b6c6cb2d48f7ad404c4e0db3a0c4a20ecca3978777cb3265153ee5e542",
+      "bytes": 350668,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.144Z"
+    },
+    {
+      "path": "specimens/2026-09-25_KUKA_ENDER_X1_experimental/photos/2026-09-26_semir/WhatsApp Image 2026-09-26 at 8.57.38 PM.jpeg",
+      "sha256": "3a863de866ddba0ffd69810b37471997b8260c310ff247459fffc144bafb2996",
+      "bytes": 367451,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.145Z"
+    },
+    {
+      "path": "specimens/2026-09-25_KUKA_ENDER_X1_experimental/photos/2026-09-26_semir/WhatsApp Image 2026-09-26 at 8.57.39 PM (1).jpeg",
+      "sha256": "96bcef67f76db0e1f3fc243d78ccfb5a5c8a2b94209fa4d20eae17a66939bbd1",
+      "bytes": 364859,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.146Z"
+    },
+    {
+      "path": "specimens/2026-09-25_KUKA_ENDER_X1_experimental/photos/2026-09-26_semir/WhatsApp Image 2026-09-26 at 8.57.39 PM.jpeg",
+      "sha256": "dec76ef3d9c6739da766b8d8545ddecb35c648b3ccb3d895e821a04092d094e4",
+      "bytes": 360861,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.147Z"
+    },
+    {
+      "path": "specimens/2026-09-25_PRAG_A2L_X1_experimental/photos/2026-09-25_semir/WhatsApp Image 2026-09-25 at 11.33.33 PM (2).jpeg",
+      "sha256": "1e39051ae7c093d6961879e32f846db0a1fccf46dc66ce94e9561828e53e3d8a",
+      "bytes": 244734,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.159Z"
+    },
+    {
+      "path": "specimens/2026-09-25_PRAG_A2L_X1_experimental/photos/2026-09-25_semir/WhatsApp Image 2026-09-25 at 11.33.33 PM (3).jpeg",
+      "sha256": "bc10e088ae63d3185ac3b645bf90f939ed929cc2f726d95b6a8e8c83ffd39b9d",
+      "bytes": 205794,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.160Z"
+    },
+    {
+      "path": "specimens/2026-09-25_PRAG_A2L_X1_experimental/photos/2026-09-25_semir/WhatsApp Image 2026-09-25 at 11.33.34 PM (1).jpeg",
+      "sha256": "d8fb5ce03bceefac420fc85bed96ed70224e98296e72d6312aff5df57a7977d3",
+      "bytes": 229867,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.160Z"
+    },
+    {
+      "path": "specimens/2026-09-25_PRAG_A2L_X1_experimental/photos/2026-09-25_semir/WhatsApp Image 2026-09-25 at 11.33.34 PM (2).jpeg",
+      "sha256": "3b1e92f7b35014e7258fb5931901b5b5524c127df32a79a28ba09231ff422c00",
+      "bytes": 366900,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.161Z"
+    },
+    {
+      "path": "specimens/2026-09-25_PRAG_A2L_X1_experimental/photos/2026-09-25_semir/WhatsApp Image 2026-09-25 at 11.33.34 PM.jpeg",
+      "sha256": "ab1678cf852383494cf800518fdba6c37d6a3d6fba676b99ce0404e10fc638e6",
+      "bytes": 236260,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.162Z"
+    },
+    {
+      "path": "specimens/2026-09-25_PRAG_A2L_X1_experimental/PRAG_A2L_X1_plan.svg",
+      "sha256": "c307f60e0ac103d4ea2ac081ffc51dffc7fc9cb888a4d79117932714481ff3c4",
+      "bytes": 112985,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.159Z"
+    },
+    {
+      "path": "specimens/2026-09-25_PRAG_ENDER_X1_experimental/photos/2026-09-25_semir/WhatsApp Image 2026-09-25 at 11.33.31 PM.jpeg",
+      "sha256": "336b8170c7a9ba2ffb51d68c8040f46cfafb0986cc34c137d79587b7712691ea",
+      "bytes": 176936,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.173Z"
+    },
+    {
+      "path": "specimens/2026-09-25_PRAG_ENDER_X1_experimental/photos/2026-09-25_semir/WhatsApp Image 2026-09-25 at 11.33.32 PM (1).jpeg",
+      "sha256": "53e64f6979ac714a5327a23824464f3f9742eb691cdc15111ecceead697f137e",
+      "bytes": 212679,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.174Z"
+    },
+    {
+      "path": "specimens/2026-09-25_PRAG_ENDER_X1_experimental/photos/2026-09-25_semir/WhatsApp Image 2026-09-25 at 11.33.32 PM.jpeg",
+      "sha256": "e446de944d73259a0ce0f4b1b7c7436c1b2d87ff9adf949e60df38f24860bca2",
+      "bytes": 182341,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.175Z"
+    },
+    {
+      "path": "specimens/2026-09-25_PRAG_ENDER_X1_experimental/photos/2026-09-25_semir/WhatsApp Image 2026-09-25 at 11.33.33 PM (1).jpeg",
+      "sha256": "f75b94857052245c2bf66fd74959ea4d85d063080e7639163f2c1c28c33aa83f",
+      "bytes": 205025,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.175Z"
+    },
+    {
+      "path": "specimens/2026-09-25_PRAG_ENDER_X1_experimental/photos/2026-09-25_semir/WhatsApp Image 2026-09-25 at 11.33.33 PM.jpeg",
+      "sha256": "fb7bca35d8d42f83e9c12b26cd3627488f29648477c415aeea8f55c60efa78d8",
+      "bytes": 196522,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.176Z"
+    },
+    {
+      "path": "specimens/2026-09-25_PRAG_ENDER_X1_experimental/PRAG_ENDER_X1_plan.svg",
+      "sha256": "de2c666bbfbad503f916a322c9eaadec05ae7357844ccb23b6a7138bfcb973b1",
+      "bytes": 112987,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.173Z"
+    },
+    {
+      "path": "specimens/2026-09-27_VEZ_ENDER_X2_experimental/photos/2026-09-27_semir/20260927_124455.jpg",
+      "sha256": "333157985a8929f39297e7d52166a96774e8eb8f32f9915eb6e574f6c58829fc",
+      "bytes": 1795968,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.180Z"
+    },
+    {
+      "path": "specimens/2026-09-27_VEZ_ENDER_X2_experimental/photos/2026-09-27_semir/20260927_124509.jpg",
+      "sha256": "d0b771e3c32637887938ae1bf372254a62df20beac2310d5ddb205527f54975d",
+      "bytes": 1792348,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.183Z"
+    },
+    {
+      "path": "specimens/2026-09-27_VEZ_ENDER_X2_experimental/photos/2026-09-27_semir/20260927_124511.jpg",
+      "sha256": "14aa50ea1d01756aef4aa23138d20f62be857598fe08c4832c70512be37c5ce8",
+      "bytes": 1695743,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.187Z"
+    },
+    {
+      "path": "specimens/2026-09-27_VEZ_ENDER_X2_experimental/photos/2026-09-27_semir/20260927_124518.jpg",
+      "sha256": "ba8c7ed5163b2bd884448195faef3d3ac0ace50f347fc4e0621fe665156244f4",
+      "bytes": 1753605,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.191Z"
+    },
+    {
+      "path": "specimens/2026-09-27_VEZ_ENDER_X2_experimental/photos/2026-09-27_semir/20260927_124556.jpg",
+      "sha256": "c23da62bc0f838b575be916ea34d4aa2234bd0f15ae42fac26d2bb25e43cd605",
+      "bytes": 1660210,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.194Z"
+    },
+    {
+      "path": "specimens/2026-09-27_VEZ_ENDER_X2_experimental/photos/2026-09-27_semir/20260927_124601.jpg",
+      "sha256": "cc2eef89fac76e7f5b59b933edda711862daa513fb0e45232398ddb88b9fa450",
+      "bytes": 1715970,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.198Z"
+    },
+    {
+      "path": "specimens/2026-09-27_VEZ_ENDER_X2_experimental/photos/2026-09-27_semir/20260927_124612.jpg",
+      "sha256": "fe81de6b64256048c369fc3a2a9cb903d7638d7b07d6233cf0a3394398708a7e",
+      "bytes": 1587033,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.202Z"
+    },
+    {
+      "path": "specimens/2026-09-27_VEZ_ENDER_X2_experimental/photos/2026-09-27_semir/20260927_124703.jpg",
+      "sha256": "4d8fe38a410977a0455bcd25de467c42923581f7216ca93cb19214adbc54e114",
+      "bytes": 1589822,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.205Z"
+    },
+    {
+      "path": "specimens/2026-09-27_VEZ_ENDER_X2_experimental/photos/2026-09-27_semir/20260927_124708.jpg",
+      "sha256": "59a6abe2268ff77ab2157f011ca2d0acb560d086f0300b3ee74f5ce6dbadf9f2",
+      "bytes": 1633269,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.209Z"
+    },
+    {
+      "path": "specimens/2026-09-27_VEZ_ENDER_X2_experimental/photos/2026-09-27_semir/20260927_124710.jpg",
+      "sha256": "579b2dc135981a7feeafd54ce8782d192d19b0e39bb1ad761f76c0a6f45f4209",
+      "bytes": 1594505,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.212Z"
+    },
+    {
+      "path": "specimens/2026-09-27_VEZ_ENDER_X2_experimental/photos/2026-09-27_semir/20260927_124712.jpg",
+      "sha256": "70f0b74c17c859c70919285f683e0bc7834c79c1c33cb874257ce97db85ef717",
+      "bytes": 1491650,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.215Z"
+    },
+    {
+      "path": "specimens/2026-09-27_VEZ_ENDER_X2_experimental/photos/2026-09-27_semir/20260927_124718.jpg",
+      "sha256": "2245713b5f5cef98b1a81584ff0641d6dbd093b2e58d7c31ee09896a9168bcde",
+      "bytes": 1612769,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.219Z"
+    },
+    {
+      "path": "specimens/2026-09-27_VEZ_ENDER_X2_experimental/photos/2026-09-27_semir/20260927_124720.jpg",
+      "sha256": "26fefd0679136c9c9a50fb63d72fb4cc0b97b5c2f02885274e19bccc8218b3dd",
+      "bytes": 1603031,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.222Z"
+    },
+    {
+      "path": "specimens/2026-09-30_solid_infill/PUN_DRVO.svg",
+      "sha256": "8a954065ec74bbca091caf1b9efbd6b29229d41aa3c84fcf296e44dbce902c26",
+      "bytes": 58883,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.256Z"
+    },
+    {
+      "path": "specimens/2026-09-30_solid_infill/PUN_KOCKA.svg",
+      "sha256": "9c10490d828b7778ab445fd86bff0925b6eb7021638f66af0aa2c2eab7e2e5ac",
+      "bytes": 155788,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.270Z"
+    },
+    {
+      "path": "specimens/2026-09-30_solid_infill/PUN_SUNDJER.svg",
+      "sha256": "cad2de02aae0a7827b0aa0b7d58521dcce7bbf0ec19aead35a330da6cfc9dbe4",
+      "bytes": 93259,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.280Z"
+    },
+    {
+      "path": "specimens/2026-10-01_solid_infill_A1/PUN_DRVO_A1.svg",
+      "sha256": "d428c1e330208d4a55ebd187bc3da12d85dcd8080299afa7e42ec113264e12c2",
+      "bytes": 58877,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.320Z"
+    },
+    {
+      "path": "specimens/2026-10-01_solid_infill_A1/PUN_KOCKA_A1.svg",
+      "sha256": "7da2eee0811a6815c950391d36323f5506505b88463e6489d939bd93804ec65a",
+      "bytes": 155782,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.335Z"
+    },
+    {
+      "path": "specimens/2026-10-01_solid_infill_A1/PUN_SUNDJER_A1.svg",
+      "sha256": "78b305ae7d345439c4ef926f1711e2e58e7711fc58bd3d0dc04ec2b35cf9d8e5",
+      "bytes": 93253,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.353Z"
+    },
+    {
+      "path": "specimens/2026-10-02_pure_weft_ENDER/PUN_DRVO_ENDER.svg",
+      "sha256": "c7459cf9649b39ef432fd62058db0b3b975936c2b85f84fd4c8a016e0264e3b7",
+      "bytes": 67209,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.402Z"
+    },
+    {
+      "path": "specimens/2026-10-02_pure_weft_ENDER/PUN_KOCKA_ENDER.svg",
+      "sha256": "064c67b2fdce08c998d25b5a396ddd6ff1afb78495241049aed250694552d06d",
+      "bytes": 198051,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.410Z"
+    },
+    {
+      "path": "specimens/2026-10-02_pure_weft_ENDER/PUN_SUNDJER_ENDER.svg",
+      "sha256": "46f161aab560ee5b348b4da1fc8962778b627df5e9e6393e397e84ce1828ba54",
+      "bytes": 100888,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.429Z"
+    },
+    {
+      "path": "specimens/2026-10-02_sokol_A1/SOKOL_program.svg",
+      "sha256": "3ba493802cac02d667171f06df73db7524ba57770f535c24e703ad34276786d6",
+      "bytes": 511998,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.482Z"
+    },
+    {
+      "path": "specimens/2026-10-02_stolica_A1/STOLICA_program.svg",
+      "sha256": "089eb4e4e934408c077ed114f04377faf7dccdb9acdf7619f306664b44a7558a",
+      "bytes": 309604,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.527Z"
+    },
+    {
+      "path": "specimens/2026-10-03_sokol_A2L/SOKOL_A2L_program.svg",
+      "sha256": "9d37d716eadd4b6f05516f298c1cdb310ee7328585dd5470b48788d23c449c2f",
+      "bytes": 511998,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.579Z"
+    },
+    {
+      "path": "specimens/2026-10-03_stolica_A2L/STOLICA_A2L_program.svg",
+      "sha256": "089eb4e4e934408c077ed114f04377faf7dccdb9acdf7619f306664b44a7558a",
+      "bytes": 309604,
+      "approvedBy": "Semir Poturak (G-3495 forensic audit)",
+      "approvedAt": "2026-11-03T13:50:11.592Z"
+    }
+  ]
+}
