@@ -1,0 +1,45 @@
+{
+  "recordedAt": "2026-10-04T16:11:20.271Z",
+  "files": [
+    {
+      "file": "sokol-failure-AUDIT.md",
+      "bytes": 8865,
+      "sha256": "3232a8ef016cc111b66316307484071a78cec49860f17c5e275c674649d81c21"
+    },
+    {
+      "file": "sokol-failure-audit.mjs",
+      "bytes": 6254,
+      "sha256": "df0827d7614ef0270ccf82eaca19d3ec2268501e0c7d47aad09db939014a153b"
+    },
+    {
+      "file": "sokol-failure-audit.json",
+      "bytes": 1861832,
+      "sha256": "ce3d348d5d11df20032f30f12b46f412c57d51109cf6faf9982c579bedc3254a"
+    },
+    {
+      "file": "sokol-source-transition-audit.mjs",
+      "bytes": 1082,
+      "sha256": "1fd11573c0a3c5efc2e59cab17f92a212f437d3152fe9520cbe7ff25ac593520"
+    },
+    {
+      "file": "sokol-failure-transitions.json",
+      "bytes": 75139,
+      "sha256": "1589d49e7a5a82c4c81ae3819683dd14971612b184e117140bf614041c681435"
+    },
+    {
+      "file": "sokol-final-transition-audit.mjs",
+      "bytes": 5076,
+      "sha256": "ca8171fd4a268c2a4eb6e71bf1a9b4ee01e4b9c4efdab0f7b5dd118e9327c03c"
+    },
+    {
+      "file": "sokol-final-transition-audit.json",
+      "bytes": 48808,
+      "sha256": "53ad2728bea11e9430cf02c45288eb9a37044fb0d184f185720299fcd0efc17c"
+    },
+    {
+      "file": "sokol_machine_audit.mjs",
+      "bytes": 5054,
+      "sha256": "8ea087e11e494b78749320c6b61ced01de86ae4dea93d3eaba9336a8a98a0314"
+    }
+  ]
+}

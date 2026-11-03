@@ -1,0 +1,4918 @@
+{
+  "report": {
+    "name": "SOKOL_V2_ENDER",
+    "machine": "Creality Ender-3 V4",
+    "bed_mm": [
+      220,
+      220
+    ],
+    "layers": 2442,
+    "globalZLevels": 940,
+    "expectedZLevels": 940,
+    "logicalCells": null,
+    "experimentalMembraneOverride": false,
+    "maxBodiesPerZ": 5,
+    "size_mm": [
+      89.9,
+      85.3,
+      188
+    ],
+    "plate_mm": [
+      55.8,
+      67.5,
+      145.3,
+      152.5
+    ],
+    "fitsPlate": true,
+    "grammarCounts": {},
+    "threadLength_m": 1404.4,
+    "weldNodes": 0,
+    "rawPaths": 2439,
+    "unintendedOverlaps": 253960,
+    "seamClosures": 0,
+    "overlapSamples": [
+      {
+        "z": 0,
+        "role": "wall",
+        "ov": 111
+      },
+      {
+        "z": 0.2,
+        "role": "wall",
+        "ov": 115
+      },
+      {
+        "z": 0.4,
+        "role": "wall",
+        "ov": 116
+      },
+      {
+        "z": 0.6,
+        "role": "wall",
+        "ov": 115
+      },
+      {
+        "z": 0.8,
+        "role": "bridge",
+        "ov": 119
+      },
+      {
+        "z": 1,
+        "role": "bridge",
+        "ov": 109
+      },
+      {
+        "z": 1.2,
+        "role": "bridge",
+        "ov": 112
+      },
+      {
+        "z": 1.4,
+        "role": "bridge",
+        "ov": 117
+      },
+      {
+        "z": 1.6,
+        "role": "bridge",
+        "ov": 118
+      },
+      {
+        "z": 1.8,
+        "role": "bridge",
+        "ov": 116
+      },
+      {
+        "z": 2,
+        "role": "bridge",
+        "ov": 115
+      },
+      {
+        "z": 2.2,
+        "role": "bridge",
+        "ov": 115
+      }
+    ],
+    "kinematic_h": 13,
+    "routeA_estimate_h": 122.7,
+    "caps": [],
+    "events": [
+      {
+        "z": 0.8,
+        "k": 4,
+        "event": "temelj/1 -> kamen/1"
+      },
+      {
+        "z": 6.6,
+        "k": 33,
+        "event": "kamen/1 -> kamen-lezaj/1"
+      },
+      {
+        "z": 8.8,
+        "k": 44,
+        "event": "4 section(s) cut into 5 island(s) at a pinch under 1.94 mm"
+      },
+      {
+        "z": 8.8,
+        "k": 44,
+        "event": "kamen-lezaj/1 -> kamen-lezaj/5"
+      },
+      {
+        "z": 9,
+        "k": 45,
+        "event": "kamen-lezaj/5 -> grud/5"
+      },
+      {
+        "z": 11,
+        "k": 55,
+        "event": "grud/5 -> grud-talas/5"
+      },
+      {
+        "z": 22,
+        "k": 110,
+        "event": "grud-talas/5 -> grud-resetka/5"
+      },
+      {
+        "z": 33,
+        "k": 165,
+        "event": "grud-resetka/5 -> grud/5"
+      },
+      {
+        "z": 35,
+        "k": 175,
+        "event": "grud/5 -> grud/4"
+      },
+      {
+        "z": 44,
+        "k": 220,
+        "event": "grud/4 -> grud-talas/4"
+      },
+      {
+        "z": 46.6,
+        "k": 233,
+        "event": "grud-talas/4 -> grud-pokrivka/4"
+      },
+      {
+        "z": 53.6,
+        "k": 268,
+        "event": "grud-pokrivka/4 -> grud-talas/4"
+      },
+      {
+        "z": 55,
+        "k": 275,
+        "event": "grud-talas/4 -> grud-resetka/4"
+      },
+      {
+        "z": 57.6,
+        "k": 288,
+        "event": "grud-resetka/4 -> grud-resetka/3"
+      },
+      {
+        "z": 66,
+        "k": 330,
+        "event": "grud-resetka/3 -> grud/3"
+      },
+      {
+        "z": 77,
+        "k": 385,
+        "event": "grud/3 -> grud-talas/3"
+      },
+      {
+        "z": 88,
+        "k": 440,
+        "event": "grud-talas/3 -> grud-resetka/3"
+      },
+      {
+        "z": 99,
+        "k": 495,
+        "event": "fill angle 90 -> 180 after 2 measured tries"
+      },
+      {
+        "z": 99,
+        "k": 495,
+        "event": "grud-resetka/3 -> grud/3"
+      },
+      {
+        "z": 110,
+        "k": 550,
+        "event": "grud/3 -> grud-talas/3"
+      },
+      {
+        "z": 117.6,
+        "k": 588,
+        "event": "grud-talas/3 -> grud-pokrivka/3"
+      },
+      {
+        "z": 121.2,
+        "k": 606,
+        "event": "grud-pokrivka/3 -> grud-pokrivka/1"
+      },
+      {
+        "z": 130.6,
+        "k": 653,
+        "event": "grud-pokrivka/1 -> grud-resetka/1"
+      },
+      {
+        "z": 132,
+        "k": 660,
+        "event": "grud-resetka/1 -> grud/1"
+      },
+      {
+        "z": 134,
+        "k": 670,
+        "event": "grud/1 -> vrat/1"
+      },
+      {
+        "z": 152,
+        "k": 760,
+        "event": "vrat/1 -> glava/1"
+      }
+    ],
+    "contourCounts": [
+      [
+        0,
+        0
+      ]
+    ],
+    "perLayerSample": [
+      {
+        "k": 0,
+        "z": 0,
+        "contours": 0,
+        "paths": 1,
+        "nodes": 0
+      },
+      {
+        "k": 40,
+        "z": 8,
+        "contours": 0,
+        "paths": 1,
+        "nodes": 0
+      },
+      {
+        "k": 80,
+        "z": 16,
+        "contours": 0,
+        "paths": 5,
+        "nodes": 0
+      },
+      {
+        "k": 120,
+        "z": 24,
+        "contours": 0,
+        "paths": 5,
+        "nodes": 0
+      },
+      {
+        "k": 160,
+        "z": 32,
+        "contours": 0,
+        "paths": 5,
+        "nodes": 0
+      },
+      {
+        "k": 200,
+        "z": 40,
+        "contours": 0,
+        "paths": 4,
+        "nodes": 0
+      },
+      {
+        "k": 240,
+        "z": 48,
+        "contours": 0,
+        "paths": 4,
+        "nodes": 0
+      },
+      {
+        "k": 280,
+        "z": 56,
+        "contours": 0,
+        "paths": 4,
+        "nodes": 0
+      },
+      {
+        "k": 320,
+        "z": 64,
+        "contours": 0,
+        "paths": 3,
+        "nodes": 0
+      },
+      {
+        "k": 360,
+        "z": 72,
+        "contours": 0,
+        "paths": 3,
+        "nodes": 0
+      },
+      {
+        "k": 400,
+        "z": 80,
+        "contours": 0,
+        "paths": 3,
+        "nodes": 0
+      },
+      {
+        "k": 440,
+        "z": 88,
+        "contours": 0,
+        "paths": 3,
+        "nodes": 0
+      },
+      {
+        "k": 480,
+        "z": 96,
+        "contours": 0,
+        "paths": 3,
+        "nodes": 0
+      },
+      {
+        "k": 520,
+        "z": 104,
+        "contours": 0,
+        "paths": 3,
+        "nodes": 0
+      },
+      {
+        "k": 560,
+        "z": 112,
+        "contours": 0,
+        "paths": 3,
+        "nodes": 0
+      },
+      {
+        "k": 600,
+        "z": 120,
+        "contours": 0,
+        "paths": 3,
+        "nodes": 0
+      },
+      {
+        "k": 640,
+        "z": 128,
+        "contours": 0,
+        "paths": 1,
+        "nodes": 0
+      },
+      {
+        "k": 680,
+        "z": 136,
+        "contours": 0,
+        "paths": 1,
+        "nodes": 0
+      },
+      {
+        "k": 720,
+        "z": 144,
+        "contours": 0,
+        "paths": 1,
+        "nodes": 0
+      },
+      {
+        "k": 760,
+        "z": 152,
+        "contours": 0,
+        "paths": 1,
+        "nodes": 0
+      },
+      {
+        "k": 800,
+        "z": 160,
+        "contours": 0,
+        "paths": 1,
+        "nodes": 0
+      },
+      {
+        "k": 840,
+        "z": 168,
+        "contours": 0,
+        "paths": 1,
+        "nodes": 0
+      },
+      {
+        "k": 880,
+        "z": 176,
+        "contours": 0,
+        "paths": 1,
+        "nodes": 0
+      },
+      {
+        "k": 920,
+        "z": 184,
+        "contours": 0,
+        "paths": 1,
+        "nodes": 0
+      }
+    ],
+    "membranes": [],
+    "gateLayers": {
+      "version": "gate-layers-2026-09-25-krak",
+      "vector": "S2 INFO · S3 PASS · S4 PASS · S5 INFO · S7 INFO · S8 WARN · ORDER N/A",
+      "refusedBy": [],
+      "findings": 0,
+      "S2": {
+        "worst": {
+          "k": 3,
+          "z": 0.6,
+          "runs10": 0,
+          "free_mm": 0,
+          "longest_mm": 0
+        },
+        "free_m": 0.02,
+        "declared": 0
+      },
+      "S3": {
+        "worst": null,
+        "neverTied": 0,
+        "declared": 0
+      },
+      "S4": {
+        "overflights": 0,
+        "closest": null,
+        "declared": 0
+      },
+      "S5": {
+        "ratio": 0.257,
+        "contact_mm2": 4251.1,
+        "lever_mm": 87.9
+      },
+      "S7": {
+        "weakest": [
+          {
+            "k": 34,
+            "z": 6.8,
+            "carried": 0.706,
+            "onSolid": 1,
+            "pileMax": 0,
+            "solidComponents": 1,
+            "largestSolidExtent_mm": 99.3,
+            "above": 906
+          },
+          {
+            "k": 7,
+            "z": 1.4,
+            "carried": 0.747,
+            "onSolid": 1,
+            "pileMax": 0,
+            "solidComponents": 1,
+            "largestSolidExtent_mm": 99.6,
+            "above": 933
+          },
+          {
+            "k": 19,
+            "z": 3.8,
+            "carried": 0.754,
+            "onSolid": 1,
+            "pileMax": 0,
+            "solidComponents": 1,
+            "largestSolidExtent_mm": 99.8,
+            "above": 921
+          }
+        ]
+      },
+      "S8": {
+        "periodTwoLayers": 1,
+        "medianCrossing_deg": 45
+      },
+      "ORDER": {
+        "verdict": "N/A",
+        "aboveRisk_mm": 1,
+        "zonesWithFindings": []
+      }
+    }
+  },
+  "geometry": {
+    "name": "SOKOL_V2",
+    "variant": "sokol_v2c",
+    "title": "SOKOL V2c",
+    "concept": "autorska varijanta: izdubljeno srce, vrh glave bez kape (linije do vrha)",
+    "generator": "core/weft_field_geometry.mjs",
+    "process": "pure-weft/v2",
+    "generatedAt": "2026-10-03",
+    "machine": "ender",
+    "machineLabel": "Creality Ender-3 V4",
+    "machineQualification": {
+      "beadSource": "ASSUMED",
+      "beadEvidence": "NEVER CALIBRATED. Run the C1 thin-wall test on this machine and put the measured width here before trusting anything built for it.",
+      "assumedAcknowledged": true
+    },
+    "size_mm": [
+      88.4,
+      85.3,
+      188
+    ],
+    "H": 188,
+    "totalLayers": 940,
+    "args": {
+      "lh": 0.2,
+      "bead": 0.42,
+      "firstLayerBead": 0.48,
+      "firstLayerSpeed": 12,
+      "w": 2,
+      "e": 0,
+      "r0": 44.19,
+      "K": 8,
+      "foundation": 3,
+      "maxbridge": 12,
+      "maxcantilever": 3,
+      "allow": 0.6,
+      "minanchor": 0.5,
+      "maxCapRadius": 20,
+      "speed": 50,
+      "bridgeSpeed": 18,
+      "temp": 220,
+      "bed": 60,
+      "fan": 100
+    },
+    "gatePolicy": {
+      "meaning": "a volumetric body woven as one line per island: the outside is as open as the inside, and every span between crossings must be a legal bridge",
+      "bridge_mm": 12,
+      "cantilever_mm": 3,
+      "first_layer_max_islands": 1
+    },
+    "field": {
+      "firstLayerIslands": 1,
+      "maxIslands": 5,
+      "weavePhaseStep_rad": 0.28,
+      "supportReach_mm": 0.9,
+      "worstFreeSpan_mm": 4.73,
+      "worstFreeSpanAt": {
+        "k": 570,
+        "z": 114,
+        "tag": "grud-talas"
+      },
+      "worstValleyRun_mm": 8.17,
+      "pointsPulledIntoBody": 71,
+      "pointsEmitted": 2710037,
+      "worstPullBack_mm": 0.31,
+      "layersWithAmplitudeClampedToTheSection": 60,
+      "worstOutwardGrowth_mm": 4.03,
+      "worstOutwardGrowthAt": {
+        "k": 287,
+        "z": 57.4,
+        "tag": "grud-resetka"
+      },
+      "fillLength_m": 1403.7,
+      "tags": [
+        "temelj",
+        "kamen",
+        "kamen-lezaj",
+        "grud",
+        "grud-talas",
+        "grud-resetka",
+        "grud-pokrivka",
+        "vrat",
+        "glava"
+      ],
+      "parts": [
+        "temelj",
+        "kamen",
+        "kamen-lezaj",
+        "krilo",
+        "noga",
+        "rep",
+        "grud",
+        "grud-talas",
+        "krilo-pokrivka",
+        "rep-pokrivka",
+        "grud-pokrivka",
+        "grud-resetka",
+        "vrat",
+        "glava"
+      ],
+      "patterns": [
+        "lines",
+        "rim-only",
+        "sine"
+      ]
+    },
+    "layerProgram": [
+      {
+        "k": 0,
+        "z": 0,
+        "tag": "temelj",
+        "parts": [
+          "temelj"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 0.5,
+        "maxSpacing_mm": 0.55,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 0,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0,
+        "fill_mm": 8131
+      },
+      {
+        "k": 5,
+        "z": 1,
+        "tag": "kamen",
+        "parts": [
+          "kamen"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.4,
+        "maxSpacing_mm": 3.63,
+        "rimOnly": 0,
+        "angle_deg": 150,
+        "freeSpan_mm": 3.6,
+        "freeRun_mm": 3.99,
+        "unsupported": 852,
+        "growth_mm": 0.01,
+        "fill_mm": 2089
+      },
+      {
+        "k": 10,
+        "z": 2,
+        "tag": "kamen",
+        "parts": [
+          "kamen"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.4,
+        "maxSpacing_mm": 3.8,
+        "rimOnly": 0,
+        "angle_deg": 120,
+        "freeSpan_mm": 3.7,
+        "freeRun_mm": 3.99,
+        "unsupported": 703,
+        "growth_mm": 0.01,
+        "fill_mm": 2061
+      },
+      {
+        "k": 15,
+        "z": 3,
+        "tag": "kamen",
+        "parts": [
+          "kamen"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.4,
+        "maxSpacing_mm": 3.8,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 3.66,
+        "freeRun_mm": 4,
+        "unsupported": 793,
+        "growth_mm": 0.01,
+        "fill_mm": 2009
+      },
+      {
+        "k": 20,
+        "z": 4,
+        "tag": "kamen",
+        "parts": [
+          "kamen"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.4,
+        "maxSpacing_mm": 3.8,
+        "rimOnly": 0,
+        "angle_deg": 60,
+        "freeSpan_mm": 3.37,
+        "freeRun_mm": 3.96,
+        "unsupported": 693,
+        "growth_mm": 0.01,
+        "fill_mm": 2013
+      },
+      {
+        "k": 25,
+        "z": 5,
+        "tag": "kamen",
+        "parts": [
+          "kamen"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.4,
+        "maxSpacing_mm": 3.63,
+        "rimOnly": 0,
+        "angle_deg": 30,
+        "freeSpan_mm": 3.24,
+        "freeRun_mm": 3.46,
+        "unsupported": 654,
+        "growth_mm": 0.01,
+        "fill_mm": 2122
+      },
+      {
+        "k": 30,
+        "z": 6,
+        "tag": "kamen",
+        "parts": [
+          "kamen"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.4,
+        "maxSpacing_mm": 3.37,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 3.53,
+        "freeRun_mm": 3.5,
+        "unsupported": 936,
+        "growth_mm": 0.02,
+        "fill_mm": 2204
+      },
+      {
+        "k": 35,
+        "z": 7,
+        "tag": "kamen-lezaj",
+        "parts": [
+          "kamen-lezaj"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 0.95,
+        "maxSpacing_mm": 1.15,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 1.27,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 4509
+      },
+      {
+        "k": 40,
+        "z": 8,
+        "tag": "kamen-lezaj",
+        "parts": [
+          "kamen-lezaj"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 0.95,
+        "maxSpacing_mm": 1.15,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 1.14,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0,
+        "fill_mm": 4500
+      },
+      {
+        "k": 45,
+        "z": 9,
+        "tag": "grud",
+        "parts": [
+          "krilo",
+          "noga",
+          "rep"
+        ],
+        "islands": 5,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.16,
+        "maxSpacing_mm": 2.3,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 1.07,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0,
+        "fill_mm": 1405
+      },
+      {
+        "k": 50,
+        "z": 10,
+        "tag": "grud",
+        "parts": [
+          "krilo",
+          "noga",
+          "rep"
+        ],
+        "islands": 5,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.42,
+        "maxSpacing_mm": 2.3,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 1.88,
+        "freeRun_mm": 0.49,
+        "unsupported": 3,
+        "growth_mm": 0,
+        "fill_mm": 1183
+      },
+      {
+        "k": 55,
+        "z": 11,
+        "tag": "grud-talas",
+        "parts": [
+          "krilo",
+          "noga",
+          "rep"
+        ],
+        "islands": 5,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.75,
+        "maxSpacing_mm": 2.56,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.14,
+        "freeRun_mm": 0.97,
+        "unsupported": 12,
+        "growth_mm": 0.02,
+        "fill_mm": 1103
+      },
+      {
+        "k": 60,
+        "z": 12,
+        "tag": "grud-talas",
+        "parts": [
+          "krilo",
+          "noga",
+          "rep"
+        ],
+        "islands": 5,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 3.16,
+        "maxSpacing_mm": 2.56,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.2,
+        "freeRun_mm": 0.94,
+        "unsupported": 5,
+        "growth_mm": 0.03,
+        "fill_mm": 1023
+      },
+      {
+        "k": 65,
+        "z": 13,
+        "tag": "grud-talas",
+        "parts": [
+          "krilo",
+          "noga",
+          "rep"
+        ],
+        "islands": 5,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 3.43,
+        "maxSpacing_mm": 2.56,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.4,
+        "freeRun_mm": 0.99,
+        "unsupported": 13,
+        "growth_mm": 0.04,
+        "fill_mm": 989
+      },
+      {
+        "k": 70,
+        "z": 14,
+        "tag": "grud-talas",
+        "parts": [
+          "krilo",
+          "noga",
+          "rep"
+        ],
+        "islands": 5,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 3.49,
+        "maxSpacing_mm": 2.56,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.4,
+        "freeRun_mm": 0.43,
+        "unsupported": 2,
+        "growth_mm": 0.04,
+        "fill_mm": 961
+      },
+      {
+        "k": 75,
+        "z": 15,
+        "tag": "grud-talas",
+        "parts": [
+          "krilo",
+          "noga",
+          "rep"
+        ],
+        "islands": 5,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 3.32,
+        "maxSpacing_mm": 2.58,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.29,
+        "freeRun_mm": 0.43,
+        "unsupported": 1,
+        "growth_mm": 0.05,
+        "fill_mm": 936
+      },
+      {
+        "k": 80,
+        "z": 16,
+        "tag": "grud-talas",
+        "parts": [
+          "krilo",
+          "noga",
+          "rep"
+        ],
+        "islands": 5,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.96,
+        "maxSpacing_mm": 2.61,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.46,
+        "freeRun_mm": 0.44,
+        "unsupported": 1,
+        "growth_mm": 0.06,
+        "fill_mm": 956
+      },
+      {
+        "k": 85,
+        "z": 17,
+        "tag": "grud-talas",
+        "parts": [
+          "krilo",
+          "noga",
+          "rep"
+        ],
+        "islands": 5,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.54,
+        "maxSpacing_mm": 2.67,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.22,
+        "freeRun_mm": 0.43,
+        "unsupported": 1,
+        "growth_mm": 0.06,
+        "fill_mm": 880
+      },
+      {
+        "k": 90,
+        "z": 18,
+        "tag": "grud-talas",
+        "parts": [
+          "krilo",
+          "noga",
+          "rep"
+        ],
+        "islands": 5,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.18,
+        "maxSpacing_mm": 2.73,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 1.69,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.06,
+        "fill_mm": 873
+      },
+      {
+        "k": 95,
+        "z": 19,
+        "tag": "grud-talas",
+        "parts": [
+          "krilo",
+          "noga",
+          "rep"
+        ],
+        "islands": 5,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.01,
+        "maxSpacing_mm": 2.75,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.24,
+        "freeRun_mm": 0.48,
+        "unsupported": 3,
+        "growth_mm": 0.06,
+        "fill_mm": 899
+      },
+      {
+        "k": 100,
+        "z": 20,
+        "tag": "grud-talas",
+        "parts": [
+          "krilo",
+          "noga",
+          "rep"
+        ],
+        "islands": 5,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.07,
+        "maxSpacing_mm": 2.75,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.58,
+        "freeRun_mm": 0.92,
+        "unsupported": 2,
+        "growth_mm": 0.06,
+        "fill_mm": 854
+      },
+      {
+        "k": 105,
+        "z": 21,
+        "tag": "grud-talas",
+        "parts": [
+          "krilo",
+          "noga",
+          "rep"
+        ],
+        "islands": 5,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.34,
+        "maxSpacing_mm": 2.75,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 1.86,
+        "freeRun_mm": 0.45,
+        "unsupported": 1,
+        "growth_mm": 0.06,
+        "fill_mm": 889
+      },
+      {
+        "k": 110,
+        "z": 22,
+        "tag": "grud-resetka",
+        "parts": [
+          "krilo",
+          "rep",
+          "noga"
+        ],
+        "islands": 5,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.7,
+        "maxSpacing_mm": 2.75,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.64,
+        "freeRun_mm": 0.92,
+        "unsupported": 5,
+        "growth_mm": 0.06,
+        "fill_mm": 914
+      },
+      {
+        "k": 115,
+        "z": 23,
+        "tag": "grud-resetka",
+        "parts": [
+          "krilo",
+          "rep",
+          "noga"
+        ],
+        "islands": 5,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 3.13,
+        "maxSpacing_mm": 2.75,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 2.25,
+        "freeRun_mm": 0.46,
+        "unsupported": 2,
+        "growth_mm": 0.07,
+        "fill_mm": 889
+      },
+      {
+        "k": 120,
+        "z": 24,
+        "tag": "grud-resetka",
+        "parts": [
+          "krilo",
+          "rep",
+          "noga"
+        ],
+        "islands": 5,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 3.43,
+        "maxSpacing_mm": 2.75,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.25,
+        "freeRun_mm": 0.46,
+        "unsupported": 3,
+        "growth_mm": 0.07,
+        "fill_mm": 875
+      },
+      {
+        "k": 125,
+        "z": 25,
+        "tag": "grud-resetka",
+        "parts": [
+          "krilo",
+          "rep",
+          "noga"
+        ],
+        "islands": 5,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 3.49,
+        "maxSpacing_mm": 2.75,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 1.96,
+        "freeRun_mm": 0.46,
+        "unsupported": 1,
+        "growth_mm": 0.07,
+        "fill_mm": 918
+      },
+      {
+        "k": 130,
+        "z": 26,
+        "tag": "grud-resetka",
+        "parts": [
+          "krilo",
+          "rep",
+          "noga"
+        ],
+        "islands": 5,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 3.3,
+        "maxSpacing_mm": 2.75,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.56,
+        "freeRun_mm": 0.46,
+        "unsupported": 2,
+        "growth_mm": 0.08,
+        "fill_mm": 916
+      },
+      {
+        "k": 135,
+        "z": 27,
+        "tag": "grud-resetka",
+        "parts": [
+          "krilo",
+          "rep",
+          "noga"
+        ],
+        "islands": 5,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.93,
+        "maxSpacing_mm": 2.75,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 2.63,
+        "freeRun_mm": 0.92,
+        "unsupported": 3,
+        "growth_mm": 0.08,
+        "fill_mm": 897
+      },
+      {
+        "k": 140,
+        "z": 28,
+        "tag": "grud-resetka",
+        "parts": [
+          "krilo",
+          "rep",
+          "noga"
+        ],
+        "islands": 5,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.47,
+        "maxSpacing_mm": 2.75,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.24,
+        "freeRun_mm": 0.43,
+        "unsupported": 1,
+        "growth_mm": 0.08,
+        "fill_mm": 934
+      },
+      {
+        "k": 145,
+        "z": 29,
+        "tag": "grud-resetka",
+        "parts": [
+          "krilo",
+          "rep",
+          "noga"
+        ],
+        "islands": 5,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.1,
+        "maxSpacing_mm": 2.75,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 1.73,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.09,
+        "fill_mm": 888
+      },
+      {
+        "k": 150,
+        "z": 30,
+        "tag": "grud-resetka",
+        "parts": [
+          "krilo",
+          "rep",
+          "noga"
+        ],
+        "islands": 5,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.91,
+        "maxSpacing_mm": 2.75,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.25,
+        "freeRun_mm": 0.5,
+        "unsupported": 7,
+        "growth_mm": 0.09,
+        "fill_mm": 931
+      },
+      {
+        "k": 155,
+        "z": 31,
+        "tag": "grud-resetka",
+        "parts": [
+          "krilo",
+          "rep",
+          "noga"
+        ],
+        "islands": 5,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.97,
+        "maxSpacing_mm": 2.75,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 2.66,
+        "freeRun_mm": 0.46,
+        "unsupported": 2,
+        "growth_mm": 0.09,
+        "fill_mm": 962
+      },
+      {
+        "k": 160,
+        "z": 32,
+        "tag": "grud-resetka",
+        "parts": [
+          "krilo",
+          "rep",
+          "noga"
+        ],
+        "islands": 5,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.27,
+        "maxSpacing_mm": 2.75,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.28,
+        "freeRun_mm": 0.43,
+        "unsupported": 1,
+        "growth_mm": 0.1,
+        "fill_mm": 933
+      },
+      {
+        "k": 165,
+        "z": 33,
+        "tag": "grud",
+        "parts": [
+          "krilo",
+          "rep",
+          "noga"
+        ],
+        "islands": 5,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.75,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.21,
+        "freeRun_mm": 0.46,
+        "unsupported": 2,
+        "growth_mm": 0.11,
+        "fill_mm": 936
+      },
+      {
+        "k": 170,
+        "z": 34,
+        "tag": "grud",
+        "parts": [
+          "krilo",
+          "rep",
+          "noga"
+        ],
+        "islands": 5,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 3.18,
+        "maxSpacing_mm": 2.75,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.22,
+        "freeRun_mm": 0.48,
+        "unsupported": 5,
+        "growth_mm": 0.13,
+        "fill_mm": 958
+      },
+      {
+        "k": 175,
+        "z": 35,
+        "tag": "grud",
+        "parts": [
+          "krilo",
+          "rep",
+          "grud"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines",
+          "rim-only"
+        ],
+        "spacing_mm": 3.44,
+        "maxSpacing_mm": 2.75,
+        "rimOnly": 1,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.57,
+        "freeRun_mm": 2,
+        "unsupported": 89,
+        "growth_mm": 0.17,
+        "fill_mm": 1005
+      },
+      {
+        "k": 180,
+        "z": 36,
+        "tag": "grud",
+        "parts": [
+          "krilo",
+          "rep",
+          "grud"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 3.49,
+        "maxSpacing_mm": 3.49,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 1.88,
+        "freeRun_mm": 0.5,
+        "unsupported": 1,
+        "growth_mm": 0.18,
+        "fill_mm": 966
+      },
+      {
+        "k": 185,
+        "z": 37,
+        "tag": "grud",
+        "parts": [
+          "krilo",
+          "rep",
+          "grud"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 3.33,
+        "maxSpacing_mm": 3.33,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 3.36,
+        "freeRun_mm": 1.99,
+        "unsupported": 48,
+        "growth_mm": 0.22,
+        "fill_mm": 983
+      },
+      {
+        "k": 190,
+        "z": 38,
+        "tag": "grud",
+        "parts": [
+          "krilo",
+          "rep",
+          "grud"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 3.09,
+        "freeRun_mm": 1.49,
+        "unsupported": 48,
+        "growth_mm": 0.06,
+        "fill_mm": 1009
+      },
+      {
+        "k": 195,
+        "z": 39,
+        "tag": "grud",
+        "parts": [
+          "krilo",
+          "rep",
+          "grud"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.6,
+        "maxSpacing_mm": 2.75,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.65,
+        "freeRun_mm": 1,
+        "unsupported": 41,
+        "growth_mm": 0.06,
+        "fill_mm": 1037
+      },
+      {
+        "k": 200,
+        "z": 40,
+        "tag": "grud",
+        "parts": [
+          "krilo",
+          "rep",
+          "grud"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.27,
+        "maxSpacing_mm": 2.75,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.33,
+        "freeRun_mm": 0.99,
+        "unsupported": 38,
+        "growth_mm": 0.07,
+        "fill_mm": 1058
+      },
+      {
+        "k": 205,
+        "z": 41,
+        "tag": "grud",
+        "parts": [
+          "krilo",
+          "rep",
+          "grud"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.11,
+        "maxSpacing_mm": 2.75,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.28,
+        "freeRun_mm": 0.5,
+        "unsupported": 35,
+        "growth_mm": 0.11,
+        "fill_mm": 1065
+      },
+      {
+        "k": 210,
+        "z": 42,
+        "tag": "grud",
+        "parts": [
+          "krilo",
+          "rep",
+          "grud"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.16,
+        "maxSpacing_mm": 2.75,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.24,
+        "freeRun_mm": 0.92,
+        "unsupported": 44,
+        "growth_mm": 0.17,
+        "fill_mm": 1067
+      },
+      {
+        "k": 215,
+        "z": 43,
+        "tag": "grud",
+        "parts": [
+          "krilo",
+          "rep",
+          "grud"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.42,
+        "maxSpacing_mm": 2.75,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.37,
+        "freeRun_mm": 1,
+        "unsupported": 49,
+        "growth_mm": 0.22,
+        "fill_mm": 1087
+      },
+      {
+        "k": 220,
+        "z": 44,
+        "tag": "grud-talas",
+        "parts": [
+          "krilo",
+          "rep",
+          "grud-talas"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines",
+          "sine"
+        ],
+        "spacing_mm": 2.75,
+        "maxSpacing_mm": 2.75,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.74,
+        "freeRun_mm": 1.33,
+        "unsupported": 104,
+        "growth_mm": 0.25,
+        "fill_mm": 1105
+      },
+      {
+        "k": 225,
+        "z": 45,
+        "tag": "grud-talas",
+        "parts": [
+          "krilo",
+          "rep",
+          "grud-talas"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines",
+          "sine"
+        ],
+        "spacing_mm": 3.16,
+        "maxSpacing_mm": 3.16,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 3.05,
+        "freeRun_mm": 1.97,
+        "unsupported": 75,
+        "growth_mm": 0.31,
+        "fill_mm": 1191
+      },
+      {
+        "k": 230,
+        "z": 46,
+        "tag": "grud-talas",
+        "parts": [
+          "krilo",
+          "rep",
+          "grud-talas"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines",
+          "sine"
+        ],
+        "spacing_mm": 3.43,
+        "maxSpacing_mm": 3.43,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 4.36,
+        "freeRun_mm": 3.47,
+        "unsupported": 223,
+        "growth_mm": 0.33,
+        "fill_mm": 1179
+      },
+      {
+        "k": 235,
+        "z": 47,
+        "tag": "grud-pokrivka",
+        "parts": [
+          "krilo-pokrivka",
+          "rep-pokrivka",
+          "grud-pokrivka"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.1,
+        "maxSpacing_mm": 2.24,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 1.6,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.32,
+        "fill_mm": 1828
+      },
+      {
+        "k": 240,
+        "z": 48,
+        "tag": "grud-pokrivka",
+        "parts": [
+          "krilo-pokrivka",
+          "grud-pokrivka",
+          "rep-pokrivka"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.1,
+        "maxSpacing_mm": 2.17,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 1.34,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.27,
+        "fill_mm": 1928
+      },
+      {
+        "k": 245,
+        "z": 49,
+        "tag": "grud-pokrivka",
+        "parts": [
+          "krilo-pokrivka",
+          "grud-pokrivka",
+          "rep-pokrivka"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.1,
+        "maxSpacing_mm": 2.02,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 1.65,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.15,
+        "fill_mm": 1960
+      },
+      {
+        "k": 250,
+        "z": 50,
+        "tag": "grud-pokrivka",
+        "parts": [
+          "krilo-pokrivka",
+          "grud-pokrivka",
+          "rep-pokrivka"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.1,
+        "maxSpacing_mm": 1.86,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 1.85,
+        "freeRun_mm": 0.46,
+        "unsupported": 1,
+        "growth_mm": 0.06,
+        "fill_mm": 1941
+      },
+      {
+        "k": 255,
+        "z": 51,
+        "tag": "grud-pokrivka",
+        "parts": [
+          "krilo-pokrivka",
+          "grud-pokrivka",
+          "rep-pokrivka"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.1,
+        "maxSpacing_mm": 1.71,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 1.72,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.12,
+        "fill_mm": 1976
+      },
+      {
+        "k": 260,
+        "z": 52,
+        "tag": "grud-pokrivka",
+        "parts": [
+          "krilo-pokrivka",
+          "grud-pokrivka",
+          "rep-pokrivka"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.1,
+        "maxSpacing_mm": 1.64,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 1.25,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.22,
+        "fill_mm": 2024
+      },
+      {
+        "k": 265,
+        "z": 53,
+        "tag": "grud-pokrivka",
+        "parts": [
+          "krilo-pokrivka",
+          "grud-pokrivka",
+          "rep-pokrivka"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.1,
+        "maxSpacing_mm": 1.67,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 1.58,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.3,
+        "fill_mm": 2066
+      },
+      {
+        "k": 270,
+        "z": 54,
+        "tag": "grud-talas",
+        "parts": [
+          "krilo",
+          "grud-talas",
+          "rep"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines",
+          "sine"
+        ],
+        "spacing_mm": 2.34,
+        "maxSpacing_mm": 2.75,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 3.55,
+        "freeRun_mm": 2.49,
+        "unsupported": 172,
+        "growth_mm": 0.36,
+        "fill_mm": 1531
+      },
+      {
+        "k": 275,
+        "z": 55,
+        "tag": "grud-resetka",
+        "parts": [
+          "krilo",
+          "grud-resetka",
+          "rep"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.7,
+        "maxSpacing_mm": 2.75,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 3.31,
+        "freeRun_mm": 3.5,
+        "unsupported": 153,
+        "growth_mm": 0.39,
+        "fill_mm": 1590
+      },
+      {
+        "k": 280,
+        "z": 56,
+        "tag": "grud-resetka",
+        "parts": [
+          "krilo",
+          "grud-resetka",
+          "rep"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 3.13,
+        "maxSpacing_mm": 2.93,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.66,
+        "freeRun_mm": 1.5,
+        "unsupported": 131,
+        "growth_mm": 0.47,
+        "fill_mm": 1663
+      },
+      {
+        "k": 285,
+        "z": 57,
+        "tag": "grud-resetka",
+        "parts": [
+          "krilo",
+          "grud-resetka",
+          "rep"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 3.43,
+        "maxSpacing_mm": 3.19,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 2.59,
+        "freeRun_mm": 1.86,
+        "unsupported": 91,
+        "growth_mm": 0.73,
+        "fill_mm": 1666
+      },
+      {
+        "k": 290,
+        "z": 58,
+        "tag": "grud-resetka",
+        "parts": [
+          "krilo",
+          "grud-resetka"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 3.49,
+        "maxSpacing_mm": 3.11,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 3.02,
+        "freeRun_mm": 2,
+        "unsupported": 281,
+        "growth_mm": 0.5,
+        "fill_mm": 1605
+      },
+      {
+        "k": 295,
+        "z": 59,
+        "tag": "grud-resetka",
+        "parts": [
+          "krilo",
+          "grud-resetka"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 3.3,
+        "maxSpacing_mm": 3.18,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 2.97,
+        "freeRun_mm": 1.98,
+        "unsupported": 225,
+        "growth_mm": 0.25,
+        "fill_mm": 1594
+      },
+      {
+        "k": 300,
+        "z": 60,
+        "tag": "grud-resetka",
+        "parts": [
+          "krilo",
+          "grud-resetka"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.93,
+        "maxSpacing_mm": 2.75,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.98,
+        "freeRun_mm": 1.99,
+        "unsupported": 314,
+        "growth_mm": 0.15,
+        "fill_mm": 1718
+      },
+      {
+        "k": 305,
+        "z": 61,
+        "tag": "grud-resetka",
+        "parts": [
+          "krilo",
+          "grud-resetka"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.47,
+        "maxSpacing_mm": 3.11,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 2.63,
+        "freeRun_mm": 1,
+        "unsupported": 148,
+        "growth_mm": 0.08,
+        "fill_mm": 1659
+      },
+      {
+        "k": 310,
+        "z": 62,
+        "tag": "grud-resetka",
+        "parts": [
+          "krilo",
+          "grud-resetka"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.1,
+        "maxSpacing_mm": 3.11,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.99,
+        "freeRun_mm": 1.99,
+        "unsupported": 286,
+        "growth_mm": 0.06,
+        "fill_mm": 1671
+      },
+      {
+        "k": 315,
+        "z": 63,
+        "tag": "grud-resetka",
+        "parts": [
+          "krilo",
+          "grud-resetka"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.91,
+        "maxSpacing_mm": 3.11,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 3.02,
+        "freeRun_mm": 1.99,
+        "unsupported": 249,
+        "growth_mm": 0.06,
+        "fill_mm": 1621
+      },
+      {
+        "k": 320,
+        "z": 64,
+        "tag": "grud-resetka",
+        "parts": [
+          "krilo",
+          "grud-resetka"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.97,
+        "maxSpacing_mm": 2.75,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.86,
+        "freeRun_mm": 2,
+        "unsupported": 348,
+        "growth_mm": 0.07,
+        "fill_mm": 1768
+      },
+      {
+        "k": 325,
+        "z": 65,
+        "tag": "grud-resetka",
+        "parts": [
+          "krilo",
+          "grud-resetka"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.27,
+        "maxSpacing_mm": 3.11,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 2.61,
+        "freeRun_mm": 1.49,
+        "unsupported": 158,
+        "growth_mm": 0.07,
+        "fill_mm": 1666
+      },
+      {
+        "k": 330,
+        "z": 66,
+        "tag": "grud",
+        "parts": [
+          "krilo",
+          "grud"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.99,
+        "freeRun_mm": 2,
+        "unsupported": 436,
+        "growth_mm": 0.09,
+        "fill_mm": 1676
+      },
+      {
+        "k": 335,
+        "z": 67,
+        "tag": "grud",
+        "parts": [
+          "krilo",
+          "grud"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 3.18,
+        "maxSpacing_mm": 3.18,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 3.13,
+        "freeRun_mm": 1.5,
+        "unsupported": 353,
+        "growth_mm": 0.11,
+        "fill_mm": 1576
+      },
+      {
+        "k": 340,
+        "z": 68,
+        "tag": "grud",
+        "parts": [
+          "krilo",
+          "grud"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 3.44,
+        "maxSpacing_mm": 3.44,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 3.42,
+        "freeRun_mm": 2,
+        "unsupported": 361,
+        "growth_mm": 0.12,
+        "fill_mm": 1621
+      },
+      {
+        "k": 345,
+        "z": 69,
+        "tag": "grud",
+        "parts": [
+          "krilo",
+          "grud"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 3.49,
+        "maxSpacing_mm": 3.49,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 3.51,
+        "freeRun_mm": 2,
+        "unsupported": 372,
+        "growth_mm": 0.13,
+        "fill_mm": 1681
+      },
+      {
+        "k": 350,
+        "z": 70,
+        "tag": "grud",
+        "parts": [
+          "krilo",
+          "grud"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 3.33,
+        "maxSpacing_mm": 3.33,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 3.39,
+        "freeRun_mm": 2,
+        "unsupported": 400,
+        "growth_mm": 0.12,
+        "fill_mm": 1677
+      },
+      {
+        "k": 355,
+        "z": 71,
+        "tag": "grud",
+        "parts": [
+          "krilo",
+          "grud"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 3.09,
+        "freeRun_mm": 1.5,
+        "unsupported": 409,
+        "growth_mm": 0.11,
+        "fill_mm": 1788
+      },
+      {
+        "k": 360,
+        "z": 72,
+        "tag": "grud",
+        "parts": [
+          "krilo",
+          "grud"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.6,
+        "maxSpacing_mm": 2.75,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.7,
+        "freeRun_mm": 1,
+        "unsupported": 403,
+        "growth_mm": 0.1,
+        "fill_mm": 1960
+      },
+      {
+        "k": 365,
+        "z": 73,
+        "tag": "grud",
+        "parts": [
+          "krilo",
+          "grud"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.27,
+        "maxSpacing_mm": 2.75,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.36,
+        "freeRun_mm": 1,
+        "unsupported": 344,
+        "growth_mm": 0.09,
+        "fill_mm": 2058
+      },
+      {
+        "k": 370,
+        "z": 74,
+        "tag": "grud",
+        "parts": [
+          "krilo",
+          "grud"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.11,
+        "maxSpacing_mm": 2.75,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.15,
+        "freeRun_mm": 0.5,
+        "unsupported": 270,
+        "growth_mm": 0.07,
+        "fill_mm": 2141
+      },
+      {
+        "k": 375,
+        "z": 75,
+        "tag": "grud",
+        "parts": [
+          "krilo",
+          "grud"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.16,
+        "maxSpacing_mm": 2.75,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.54,
+        "freeRun_mm": 0.91,
+        "unsupported": 275,
+        "growth_mm": 0.05,
+        "fill_mm": 2112
+      },
+      {
+        "k": 380,
+        "z": 76,
+        "tag": "grud",
+        "parts": [
+          "krilo",
+          "grud"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.42,
+        "maxSpacing_mm": 2.75,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.63,
+        "freeRun_mm": 1,
+        "unsupported": 347,
+        "growth_mm": 0.04,
+        "fill_mm": 2054
+      },
+      {
+        "k": 385,
+        "z": 77,
+        "tag": "grud-talas",
+        "parts": [
+          "krilo",
+          "grud-talas"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines",
+          "sine"
+        ],
+        "spacing_mm": 2.75,
+        "maxSpacing_mm": 2.75,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.76,
+        "freeRun_mm": 1.35,
+        "unsupported": 765,
+        "growth_mm": 0.03,
+        "fill_mm": 2053
+      },
+      {
+        "k": 390,
+        "z": 78,
+        "tag": "grud-talas",
+        "parts": [
+          "krilo",
+          "grud-talas"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines",
+          "sine"
+        ],
+        "spacing_mm": 3.16,
+        "maxSpacing_mm": 3.16,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 3.83,
+        "freeRun_mm": 3.84,
+        "unsupported": 629,
+        "growth_mm": 0.04,
+        "fill_mm": 1864
+      },
+      {
+        "k": 395,
+        "z": 79,
+        "tag": "grud-talas",
+        "parts": [
+          "krilo",
+          "grud-talas"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines",
+          "sine"
+        ],
+        "spacing_mm": 3.43,
+        "maxSpacing_mm": 3.43,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 4.6,
+        "freeRun_mm": 3.76,
+        "unsupported": 728,
+        "growth_mm": 0.07,
+        "fill_mm": 1942
+      },
+      {
+        "k": 400,
+        "z": 80,
+        "tag": "grud-talas",
+        "parts": [
+          "krilo",
+          "grud-talas"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines",
+          "sine"
+        ],
+        "spacing_mm": 3.49,
+        "maxSpacing_mm": 3.49,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 4.56,
+        "freeRun_mm": 3.85,
+        "unsupported": 698,
+        "growth_mm": 0.09,
+        "fill_mm": 1910
+      },
+      {
+        "k": 405,
+        "z": 81,
+        "tag": "grud-talas",
+        "parts": [
+          "krilo",
+          "grud-talas"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines",
+          "sine"
+        ],
+        "spacing_mm": 3.32,
+        "maxSpacing_mm": 3.32,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 4.19,
+        "freeRun_mm": 3.24,
+        "unsupported": 735,
+        "growth_mm": 0.11,
+        "fill_mm": 2040
+      },
+      {
+        "k": 410,
+        "z": 82,
+        "tag": "grud-talas",
+        "parts": [
+          "krilo",
+          "grud-talas"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines",
+          "sine"
+        ],
+        "spacing_mm": 2.96,
+        "maxSpacing_mm": 2.96,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 3.76,
+        "freeRun_mm": 3.61,
+        "unsupported": 691,
+        "growth_mm": 0.13,
+        "fill_mm": 2009
+      },
+      {
+        "k": 415,
+        "z": 83,
+        "tag": "grud-talas",
+        "parts": [
+          "krilo",
+          "grud-talas"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines",
+          "sine"
+        ],
+        "spacing_mm": 2.54,
+        "maxSpacing_mm": 2.75,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 3.44,
+        "freeRun_mm": 2.77,
+        "unsupported": 626,
+        "growth_mm": 0.13,
+        "fill_mm": 2183
+      },
+      {
+        "k": 420,
+        "z": 84,
+        "tag": "grud-talas",
+        "parts": [
+          "krilo",
+          "grud-talas"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines",
+          "sine"
+        ],
+        "spacing_mm": 2.18,
+        "maxSpacing_mm": 2.75,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 3.26,
+        "freeRun_mm": 3.07,
+        "unsupported": 514,
+        "growth_mm": 0.13,
+        "fill_mm": 2404
+      },
+      {
+        "k": 425,
+        "z": 85,
+        "tag": "grud-talas",
+        "parts": [
+          "krilo",
+          "grud-talas"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines",
+          "sine"
+        ],
+        "spacing_mm": 2.01,
+        "maxSpacing_mm": 2.75,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 3.65,
+        "freeRun_mm": 2.79,
+        "unsupported": 800,
+        "growth_mm": 0.12,
+        "fill_mm": 2566
+      },
+      {
+        "k": 430,
+        "z": 86,
+        "tag": "grud-talas",
+        "parts": [
+          "krilo",
+          "grud-talas"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines",
+          "sine"
+        ],
+        "spacing_mm": 2.07,
+        "maxSpacing_mm": 2.75,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 3.43,
+        "freeRun_mm": 2.79,
+        "unsupported": 567,
+        "growth_mm": 0.1,
+        "fill_mm": 2438
+      },
+      {
+        "k": 435,
+        "z": 87,
+        "tag": "grud-talas",
+        "parts": [
+          "krilo",
+          "grud-talas"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines",
+          "sine"
+        ],
+        "spacing_mm": 2.34,
+        "maxSpacing_mm": 2.75,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 3.88,
+        "freeRun_mm": 2.93,
+        "unsupported": 815,
+        "growth_mm": 0.09,
+        "fill_mm": 2351
+      },
+      {
+        "k": 440,
+        "z": 88,
+        "tag": "grud-resetka",
+        "parts": [
+          "krilo",
+          "grud-resetka"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.7,
+        "maxSpacing_mm": 2.75,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 3.35,
+        "freeRun_mm": 2,
+        "unsupported": 449,
+        "growth_mm": 0.06,
+        "fill_mm": 2371
+      },
+      {
+        "k": 445,
+        "z": 89,
+        "tag": "grud-resetka",
+        "parts": [
+          "krilo",
+          "grud-resetka"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 3.13,
+        "maxSpacing_mm": 3.33,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 2.67,
+        "freeRun_mm": 1.5,
+        "unsupported": 246,
+        "growth_mm": 0.05,
+        "fill_mm": 2156
+      },
+      {
+        "k": 450,
+        "z": 90,
+        "tag": "grud-resetka",
+        "parts": [
+          "krilo",
+          "grud-resetka"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 3.43,
+        "maxSpacing_mm": 3.33,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 3.17,
+        "freeRun_mm": 2.48,
+        "unsupported": 397,
+        "growth_mm": 0.05,
+        "fill_mm": 2346
+      },
+      {
+        "k": 455,
+        "z": 91,
+        "tag": "grud-resetka",
+        "parts": [
+          "krilo",
+          "grud-resetka"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 3.49,
+        "maxSpacing_mm": 3.33,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 3.11,
+        "freeRun_mm": 1.99,
+        "unsupported": 370,
+        "growth_mm": 0.05,
+        "fill_mm": 2187
+      },
+      {
+        "k": 460,
+        "z": 92,
+        "tag": "grud-resetka",
+        "parts": [
+          "krilo",
+          "grud-resetka"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 3.3,
+        "maxSpacing_mm": 3.08,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 3.12,
+        "freeRun_mm": 2,
+        "unsupported": 512,
+        "growth_mm": 0.04,
+        "fill_mm": 2386
+      },
+      {
+        "k": 465,
+        "z": 93,
+        "tag": "grud-resetka",
+        "parts": [
+          "krilo",
+          "grud-resetka"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.93,
+        "maxSpacing_mm": 3.33,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 2.69,
+        "freeRun_mm": 1.5,
+        "unsupported": 250,
+        "growth_mm": 0.04,
+        "fill_mm": 2181
+      },
+      {
+        "k": 470,
+        "z": 94,
+        "tag": "grud-resetka",
+        "parts": [
+          "krilo",
+          "grud-resetka"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.47,
+        "maxSpacing_mm": 3.33,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 3.19,
+        "freeRun_mm": 2,
+        "unsupported": 418,
+        "growth_mm": 0.04,
+        "fill_mm": 2186
+      },
+      {
+        "k": 475,
+        "z": 95,
+        "tag": "grud-resetka",
+        "parts": [
+          "krilo",
+          "grud-resetka"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.1,
+        "maxSpacing_mm": 3.33,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 3.23,
+        "freeRun_mm": 2.49,
+        "unsupported": 387,
+        "growth_mm": 0.03,
+        "fill_mm": 2218
+      },
+      {
+        "k": 480,
+        "z": 96,
+        "tag": "grud-resetka",
+        "parts": [
+          "krilo",
+          "grud-resetka"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.91,
+        "maxSpacing_mm": 2.75,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 3.26,
+        "freeRun_mm": 2.48,
+        "unsupported": 544,
+        "growth_mm": 0.03,
+        "fill_mm": 2307
+      },
+      {
+        "k": 485,
+        "z": 97,
+        "tag": "grud-resetka",
+        "parts": [
+          "krilo",
+          "grud-resetka"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.97,
+        "maxSpacing_mm": 3.33,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 2.68,
+        "freeRun_mm": 1.5,
+        "unsupported": 254,
+        "growth_mm": 0.02,
+        "fill_mm": 2155
+      },
+      {
+        "k": 490,
+        "z": 98,
+        "tag": "grud-resetka",
+        "parts": [
+          "krilo",
+          "grud-resetka"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.27,
+        "maxSpacing_mm": 3.25,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 3.01,
+        "freeRun_mm": 2,
+        "unsupported": 409,
+        "growth_mm": 0.02,
+        "fill_mm": 2131
+      },
+      {
+        "k": 495,
+        "z": 99,
+        "tag": "grud",
+        "parts": [
+          "krilo",
+          "grud"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "rimOnly": 0,
+        "angle_deg": 180,
+        "freeSpan_mm": 3.2,
+        "freeRun_mm": 1.5,
+        "unsupported": 428,
+        "growth_mm": 0.02,
+        "fill_mm": 2067
+      },
+      {
+        "k": 500,
+        "z": 100,
+        "tag": "grud",
+        "parts": [
+          "krilo",
+          "grud"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 3.18,
+        "maxSpacing_mm": 3.18,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 3.13,
+        "freeRun_mm": 1.5,
+        "unsupported": 471,
+        "growth_mm": 0.02,
+        "fill_mm": 1974
+      },
+      {
+        "k": 505,
+        "z": 101,
+        "tag": "grud",
+        "parts": [
+          "krilo",
+          "grud"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 3.44,
+        "maxSpacing_mm": 3.44,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 3.42,
+        "freeRun_mm": 2,
+        "unsupported": 474,
+        "growth_mm": 0.02,
+        "fill_mm": 1894
+      },
+      {
+        "k": 510,
+        "z": 102,
+        "tag": "grud",
+        "parts": [
+          "krilo",
+          "grud"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 3.49,
+        "maxSpacing_mm": 3.49,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 3.5,
+        "freeRun_mm": 1.99,
+        "unsupported": 460,
+        "growth_mm": 0.03,
+        "fill_mm": 1860
+      },
+      {
+        "k": 515,
+        "z": 103,
+        "tag": "grud",
+        "parts": [
+          "krilo",
+          "grud"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 3.33,
+        "maxSpacing_mm": 3.33,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 3.4,
+        "freeRun_mm": 2,
+        "unsupported": 486,
+        "growth_mm": 0.05,
+        "fill_mm": 1883
+      },
+      {
+        "k": 520,
+        "z": 104,
+        "tag": "grud",
+        "parts": [
+          "krilo",
+          "grud"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 3,
+        "maxSpacing_mm": 3,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 3.1,
+        "freeRun_mm": 1.5,
+        "unsupported": 482,
+        "growth_mm": 0.06,
+        "fill_mm": 1905
+      },
+      {
+        "k": 525,
+        "z": 105,
+        "tag": "grud",
+        "parts": [
+          "krilo",
+          "grud"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.6,
+        "maxSpacing_mm": 2.75,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.72,
+        "freeRun_mm": 1,
+        "unsupported": 455,
+        "growth_mm": 0.07,
+        "fill_mm": 2043
+      },
+      {
+        "k": 530,
+        "z": 106,
+        "tag": "grud",
+        "parts": [
+          "krilo",
+          "grud"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.27,
+        "maxSpacing_mm": 2.75,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.56,
+        "freeRun_mm": 1,
+        "unsupported": 380,
+        "growth_mm": 0.08,
+        "fill_mm": 2122
+      },
+      {
+        "k": 535,
+        "z": 107,
+        "tag": "grud",
+        "parts": [
+          "krilo",
+          "grud"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.11,
+        "maxSpacing_mm": 2.75,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.15,
+        "freeRun_mm": 0.5,
+        "unsupported": 277,
+        "growth_mm": 0.08,
+        "fill_mm": 2120
+      },
+      {
+        "k": 540,
+        "z": 108,
+        "tag": "grud",
+        "parts": [
+          "krilo",
+          "grud"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.16,
+        "maxSpacing_mm": 2.75,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.56,
+        "freeRun_mm": 0.92,
+        "unsupported": 280,
+        "growth_mm": 0.08,
+        "fill_mm": 2098
+      },
+      {
+        "k": 545,
+        "z": 109,
+        "tag": "grud",
+        "parts": [
+          "krilo",
+          "grud"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.42,
+        "maxSpacing_mm": 2.75,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.56,
+        "freeRun_mm": 1,
+        "unsupported": 363,
+        "growth_mm": 0.08,
+        "fill_mm": 2016
+      },
+      {
+        "k": 550,
+        "z": 110,
+        "tag": "grud-talas",
+        "parts": [
+          "krilo",
+          "grud-talas"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines",
+          "sine"
+        ],
+        "spacing_mm": 2.75,
+        "maxSpacing_mm": 2.75,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.75,
+        "freeRun_mm": 1.33,
+        "unsupported": 829,
+        "growth_mm": 0.08,
+        "fill_mm": 1965
+      },
+      {
+        "k": 555,
+        "z": 111,
+        "tag": "grud-talas",
+        "parts": [
+          "krilo",
+          "grud-talas"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines",
+          "sine"
+        ],
+        "spacing_mm": 3.16,
+        "maxSpacing_mm": 3.16,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 4.06,
+        "freeRun_mm": 3.83,
+        "unsupported": 642,
+        "growth_mm": 0.08,
+        "fill_mm": 1943
+      },
+      {
+        "k": 560,
+        "z": 112,
+        "tag": "grud-talas",
+        "parts": [
+          "krilo",
+          "grud-talas"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines",
+          "sine"
+        ],
+        "spacing_mm": 3.43,
+        "maxSpacing_mm": 3.43,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 4.39,
+        "freeRun_mm": 3.12,
+        "unsupported": 828,
+        "growth_mm": 0.07,
+        "fill_mm": 1787
+      },
+      {
+        "k": 565,
+        "z": 113,
+        "tag": "grud-talas",
+        "parts": [
+          "krilo",
+          "grud-talas"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines",
+          "sine"
+        ],
+        "spacing_mm": 3.49,
+        "maxSpacing_mm": 3.49,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 4.45,
+        "freeRun_mm": 3.48,
+        "unsupported": 751,
+        "growth_mm": 0.07,
+        "fill_mm": 1765
+      },
+      {
+        "k": 570,
+        "z": 114,
+        "tag": "grud-talas",
+        "parts": [
+          "krilo",
+          "grud-talas"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines",
+          "sine"
+        ],
+        "spacing_mm": 3.32,
+        "maxSpacing_mm": 3.32,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 4.73,
+        "freeRun_mm": 4.07,
+        "unsupported": 805,
+        "growth_mm": 0.06,
+        "fill_mm": 1737
+      },
+      {
+        "k": 575,
+        "z": 115,
+        "tag": "grud-talas",
+        "parts": [
+          "krilo",
+          "grud-talas"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines",
+          "sine"
+        ],
+        "spacing_mm": 2.96,
+        "maxSpacing_mm": 2.96,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 4.39,
+        "freeRun_mm": 3.78,
+        "unsupported": 593,
+        "growth_mm": 0.05,
+        "fill_mm": 1821
+      },
+      {
+        "k": 580,
+        "z": 116,
+        "tag": "grud-talas",
+        "parts": [
+          "krilo",
+          "grud-talas"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines",
+          "sine"
+        ],
+        "spacing_mm": 2.54,
+        "maxSpacing_mm": 2.75,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 3.65,
+        "freeRun_mm": 3.08,
+        "unsupported": 563,
+        "growth_mm": 0.03,
+        "fill_mm": 1865
+      },
+      {
+        "k": 585,
+        "z": 117,
+        "tag": "grud-talas",
+        "parts": [
+          "krilo",
+          "grud-talas"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines",
+          "sine"
+        ],
+        "spacing_mm": 2.18,
+        "maxSpacing_mm": 2.75,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 3.52,
+        "freeRun_mm": 2.8,
+        "unsupported": 505,
+        "growth_mm": 0.02,
+        "fill_mm": 1963
+      },
+      {
+        "k": 590,
+        "z": 118,
+        "tag": "grud-pokrivka",
+        "parts": [
+          "krilo-pokrivka",
+          "grud-pokrivka"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.1,
+        "maxSpacing_mm": 1.64,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 1.59,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0,
+        "fill_mm": 2881
+      },
+      {
+        "k": 595,
+        "z": 119,
+        "tag": "grud-pokrivka",
+        "parts": [
+          "krilo-pokrivka",
+          "grud-pokrivka"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.1,
+        "maxSpacing_mm": 1.67,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 1.58,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.09,
+        "fill_mm": 2825
+      },
+      {
+        "k": 600,
+        "z": 120,
+        "tag": "grud-pokrivka",
+        "parts": [
+          "krilo-pokrivka",
+          "grud-pokrivka"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.1,
+        "maxSpacing_mm": 1.78,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 1.68,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.17,
+        "fill_mm": 2745
+      },
+      {
+        "k": 605,
+        "z": 121,
+        "tag": "grud-pokrivka",
+        "parts": [
+          "krilo-pokrivka",
+          "grud-pokrivka"
+        ],
+        "islands": 3,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.1,
+        "maxSpacing_mm": 1.94,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 1.82,
+        "freeRun_mm": 0.49,
+        "unsupported": 1,
+        "growth_mm": 0.47,
+        "fill_mm": 2789
+      },
+      {
+        "k": 610,
+        "z": 122,
+        "tag": "grud-pokrivka",
+        "parts": [
+          "grud-pokrivka"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.1,
+        "maxSpacing_mm": 1.26,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 1.81,
+        "freeRun_mm": 0.34,
+        "unsupported": 1,
+        "growth_mm": 1.09,
+        "fill_mm": 3522
+      },
+      {
+        "k": 615,
+        "z": 123,
+        "tag": "grud-pokrivka",
+        "parts": [
+          "grud-pokrivka"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.1,
+        "maxSpacing_mm": 2.17,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 2.54,
+        "freeRun_mm": 1.48,
+        "unsupported": 55,
+        "growth_mm": 0.74,
+        "fill_mm": 2878
+      },
+      {
+        "k": 620,
+        "z": 124,
+        "tag": "grud-pokrivka",
+        "parts": [
+          "grud-pokrivka"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.1,
+        "maxSpacing_mm": 2.24,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.2,
+        "freeRun_mm": 1.84,
+        "unsupported": 82,
+        "growth_mm": 1.18,
+        "fill_mm": 2511
+      },
+      {
+        "k": 625,
+        "z": 125,
+        "tag": "grud-pokrivka",
+        "parts": [
+          "grud-pokrivka"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.1,
+        "maxSpacing_mm": 2.17,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 1.79,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.46,
+        "fill_mm": 2319
+      },
+      {
+        "k": 630,
+        "z": 126,
+        "tag": "grud-pokrivka",
+        "parts": [
+          "grud-pokrivka"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.1,
+        "maxSpacing_mm": 2.02,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.03,
+        "freeRun_mm": 0.93,
+        "unsupported": 19,
+        "growth_mm": 0.15,
+        "fill_mm": 2203
+      },
+      {
+        "k": 635,
+        "z": 127,
+        "tag": "grud-pokrivka",
+        "parts": [
+          "grud-pokrivka"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.1,
+        "maxSpacing_mm": 1.86,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 1.65,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.05,
+        "fill_mm": 2019
+      },
+      {
+        "k": 640,
+        "z": 128,
+        "tag": "grud-pokrivka",
+        "parts": [
+          "grud-pokrivka"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.1,
+        "maxSpacing_mm": 1.71,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 1.62,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.01,
+        "fill_mm": 1918
+      },
+      {
+        "k": 645,
+        "z": 129,
+        "tag": "grud-pokrivka",
+        "parts": [
+          "grud-pokrivka"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.1,
+        "maxSpacing_mm": 1.64,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 1.48,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0,
+        "fill_mm": 1814
+      },
+      {
+        "k": 650,
+        "z": 130,
+        "tag": "grud-pokrivka",
+        "parts": [
+          "grud-pokrivka"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.1,
+        "maxSpacing_mm": 1.67,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 1.62,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0,
+        "fill_mm": 1737
+      },
+      {
+        "k": 655,
+        "z": 131,
+        "tag": "grud-resetka",
+        "parts": [
+          "grud-resetka"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.27,
+        "maxSpacing_mm": 3.03,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 2.72,
+        "freeRun_mm": 1.5,
+        "unsupported": 201,
+        "growth_mm": 0.01,
+        "fill_mm": 1095
+      },
+      {
+        "k": 660,
+        "z": 132,
+        "tag": "grud",
+        "parts": [
+          "grud"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.8,
+        "maxSpacing_mm": 2.8,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.88,
+        "freeRun_mm": 1.5,
+        "unsupported": 159,
+        "growth_mm": 0.07,
+        "fill_mm": 933
+      },
+      {
+        "k": 665,
+        "z": 133,
+        "tag": "grud",
+        "parts": [
+          "grud"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 3.18,
+        "maxSpacing_mm": 3.18,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 3.14,
+        "freeRun_mm": 1.5,
+        "unsupported": 340,
+        "growth_mm": 0.09,
+        "fill_mm": 838
+      },
+      {
+        "k": 670,
+        "z": 134,
+        "tag": "vrat",
+        "parts": [
+          "vrat"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.3,
+        "maxSpacing_mm": 2.5,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 3.41,
+        "freeRun_mm": 2.63,
+        "unsupported": 484,
+        "growth_mm": 0.13,
+        "fill_mm": 953
+      },
+      {
+        "k": 675,
+        "z": 135,
+        "tag": "vrat",
+        "parts": [
+          "vrat"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.3,
+        "maxSpacing_mm": 2.5,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 1.71,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.04,
+        "fill_mm": 921
+      },
+      {
+        "k": 680,
+        "z": 136,
+        "tag": "vrat",
+        "parts": [
+          "vrat"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.3,
+        "maxSpacing_mm": 2.5,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 1.48,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.04,
+        "fill_mm": 901
+      },
+      {
+        "k": 685,
+        "z": 137,
+        "tag": "vrat",
+        "parts": [
+          "vrat"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.3,
+        "maxSpacing_mm": 2.5,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 1.62,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0,
+        "fill_mm": 865
+      },
+      {
+        "k": 690,
+        "z": 138,
+        "tag": "vrat",
+        "parts": [
+          "vrat"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.3,
+        "maxSpacing_mm": 2.5,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.3,
+        "freeRun_mm": 2.41,
+        "unsupported": 77,
+        "growth_mm": 0.01,
+        "fill_mm": 769
+      },
+      {
+        "k": 695,
+        "z": 139,
+        "tag": "vrat",
+        "parts": [
+          "vrat"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.3,
+        "maxSpacing_mm": 2.5,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 1.89,
+        "freeRun_mm": 1,
+        "unsupported": 2,
+        "growth_mm": 0.01,
+        "fill_mm": 700
+      },
+      {
+        "k": 700,
+        "z": 140,
+        "tag": "vrat",
+        "parts": [
+          "vrat"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.3,
+        "maxSpacing_mm": 2.5,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.05,
+        "freeRun_mm": 0.97,
+        "unsupported": 25,
+        "growth_mm": 0.01,
+        "fill_mm": 669
+      },
+      {
+        "k": 705,
+        "z": 141,
+        "tag": "vrat",
+        "parts": [
+          "vrat"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.3,
+        "maxSpacing_mm": 2.5,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 1.91,
+        "freeRun_mm": 0.5,
+        "unsupported": 1,
+        "growth_mm": 0.01,
+        "fill_mm": 613
+      },
+      {
+        "k": 710,
+        "z": 142,
+        "tag": "vrat",
+        "parts": [
+          "vrat"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.3,
+        "maxSpacing_mm": 2.5,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.03,
+        "freeRun_mm": 0.5,
+        "unsupported": 1,
+        "growth_mm": 0.01,
+        "fill_mm": 579
+      },
+      {
+        "k": 715,
+        "z": 143,
+        "tag": "vrat",
+        "parts": [
+          "vrat"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.3,
+        "maxSpacing_mm": 2.5,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 1.66,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 542
+      },
+      {
+        "k": 720,
+        "z": 144,
+        "tag": "vrat",
+        "parts": [
+          "vrat"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.3,
+        "maxSpacing_mm": 2.5,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.17,
+        "freeRun_mm": 0.43,
+        "unsupported": 1,
+        "growth_mm": 0.04,
+        "fill_mm": 533
+      },
+      {
+        "k": 725,
+        "z": 145,
+        "tag": "vrat",
+        "parts": [
+          "vrat"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.3,
+        "maxSpacing_mm": 2.5,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 1.66,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.05,
+        "fill_mm": 474
+      },
+      {
+        "k": 730,
+        "z": 146,
+        "tag": "vrat",
+        "parts": [
+          "vrat"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.3,
+        "maxSpacing_mm": 2.5,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 1.75,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.08,
+        "fill_mm": 455
+      },
+      {
+        "k": 735,
+        "z": 147,
+        "tag": "vrat",
+        "parts": [
+          "vrat"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.3,
+        "maxSpacing_mm": 2.5,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 1.73,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.14,
+        "fill_mm": 438
+      },
+      {
+        "k": 740,
+        "z": 148,
+        "tag": "vrat",
+        "parts": [
+          "vrat"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.3,
+        "maxSpacing_mm": 2.5,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 1.5,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.19,
+        "fill_mm": 436
+      },
+      {
+        "k": 745,
+        "z": 149,
+        "tag": "vrat",
+        "parts": [
+          "vrat"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.3,
+        "maxSpacing_mm": 2.5,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.11,
+        "freeRun_mm": 0.44,
+        "unsupported": 1,
+        "growth_mm": 0.34,
+        "fill_mm": 465
+      },
+      {
+        "k": 750,
+        "z": 150,
+        "tag": "vrat",
+        "parts": [
+          "vrat"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.3,
+        "maxSpacing_mm": 2.5,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 1.67,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.36,
+        "fill_mm": 444
+      },
+      {
+        "k": 755,
+        "z": 151,
+        "tag": "vrat",
+        "parts": [
+          "vrat"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.3,
+        "maxSpacing_mm": 2.5,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 1.48,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.3,
+        "fill_mm": 455
+      },
+      {
+        "k": 760,
+        "z": 152,
+        "tag": "glava",
+        "parts": [
+          "glava"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.7,
+        "maxSpacing_mm": 1.9,
+        "rimOnly": 0,
+        "angle_deg": 120,
+        "freeSpan_mm": 2.32,
+        "freeRun_mm": 1.02,
+        "unsupported": 108,
+        "growth_mm": 0.22,
+        "fill_mm": 526
+      },
+      {
+        "k": 765,
+        "z": 153,
+        "tag": "glava",
+        "parts": [
+          "glava"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.7,
+        "maxSpacing_mm": 1.9,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 1.75,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.23,
+        "fill_mm": 514
+      },
+      {
+        "k": 770,
+        "z": 154,
+        "tag": "glava",
+        "parts": [
+          "glava"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.7,
+        "maxSpacing_mm": 1.9,
+        "rimOnly": 0,
+        "angle_deg": 60,
+        "freeSpan_mm": 1.73,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.24,
+        "fill_mm": 524
+      },
+      {
+        "k": 775,
+        "z": 155,
+        "tag": "glava",
+        "parts": [
+          "glava"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.7,
+        "maxSpacing_mm": 1.9,
+        "rimOnly": 0,
+        "angle_deg": 30,
+        "freeSpan_mm": 1.74,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.23,
+        "fill_mm": 531
+      },
+      {
+        "k": 780,
+        "z": 156,
+        "tag": "glava",
+        "parts": [
+          "glava"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.7,
+        "maxSpacing_mm": 1.9,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 1.74,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.22,
+        "fill_mm": 561
+      },
+      {
+        "k": 785,
+        "z": 157,
+        "tag": "glava",
+        "parts": [
+          "glava"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.7,
+        "maxSpacing_mm": 1.9,
+        "rimOnly": 0,
+        "angle_deg": 150,
+        "freeSpan_mm": 1.73,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.23,
+        "fill_mm": 548
+      },
+      {
+        "k": 790,
+        "z": 158,
+        "tag": "glava",
+        "parts": [
+          "glava"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.7,
+        "maxSpacing_mm": 1.9,
+        "rimOnly": 0,
+        "angle_deg": 120,
+        "freeSpan_mm": 1.73,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.23,
+        "fill_mm": 569
+      },
+      {
+        "k": 795,
+        "z": 159,
+        "tag": "glava",
+        "parts": [
+          "glava"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.7,
+        "maxSpacing_mm": 1.9,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 1.72,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.28,
+        "fill_mm": 576
+      },
+      {
+        "k": 800,
+        "z": 160,
+        "tag": "glava",
+        "parts": [
+          "glava"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.7,
+        "maxSpacing_mm": 1.9,
+        "rimOnly": 0,
+        "angle_deg": 60,
+        "freeSpan_mm": 1.73,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.26,
+        "fill_mm": 608
+      },
+      {
+        "k": 805,
+        "z": 161,
+        "tag": "glava",
+        "parts": [
+          "glava"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.7,
+        "maxSpacing_mm": 1.9,
+        "rimOnly": 0,
+        "angle_deg": 30,
+        "freeSpan_mm": 1.84,
+        "freeRun_mm": 0.91,
+        "unsupported": 4,
+        "growth_mm": 0.34,
+        "fill_mm": 674
+      },
+      {
+        "k": 810,
+        "z": 162,
+        "tag": "glava",
+        "parts": [
+          "glava"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.7,
+        "maxSpacing_mm": 1.9,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 1.73,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.28,
+        "fill_mm": 683
+      },
+      {
+        "k": 815,
+        "z": 163,
+        "tag": "glava",
+        "parts": [
+          "glava"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.7,
+        "maxSpacing_mm": 1.9,
+        "rimOnly": 0,
+        "angle_deg": 150,
+        "freeSpan_mm": 1.74,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.35,
+        "fill_mm": 711
+      },
+      {
+        "k": 820,
+        "z": 164,
+        "tag": "glava",
+        "parts": [
+          "glava"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.7,
+        "maxSpacing_mm": 1.9,
+        "rimOnly": 0,
+        "angle_deg": 120,
+        "freeSpan_mm": 1.75,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.13,
+        "fill_mm": 753
+      },
+      {
+        "k": 825,
+        "z": 165,
+        "tag": "glava",
+        "parts": [
+          "glava"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.7,
+        "maxSpacing_mm": 1.9,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 1.84,
+        "freeRun_mm": 0.28,
+        "unsupported": 2,
+        "growth_mm": 0.04,
+        "fill_mm": 772
+      },
+      {
+        "k": 830,
+        "z": 166,
+        "tag": "glava",
+        "parts": [
+          "glava"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.7,
+        "maxSpacing_mm": 1.9,
+        "rimOnly": 0,
+        "angle_deg": 60,
+        "freeSpan_mm": 1.73,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.04,
+        "fill_mm": 715
+      },
+      {
+        "k": 835,
+        "z": 167,
+        "tag": "glava",
+        "parts": [
+          "glava"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.7,
+        "maxSpacing_mm": 1.9,
+        "rimOnly": 0,
+        "angle_deg": 30,
+        "freeSpan_mm": 1.75,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.04,
+        "fill_mm": 750
+      },
+      {
+        "k": 840,
+        "z": 168,
+        "tag": "glava",
+        "parts": [
+          "glava"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.7,
+        "maxSpacing_mm": 1.9,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 1.73,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.03,
+        "fill_mm": 787
+      },
+      {
+        "k": 845,
+        "z": 169,
+        "tag": "glava",
+        "parts": [
+          "glava"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.7,
+        "maxSpacing_mm": 1.9,
+        "rimOnly": 0,
+        "angle_deg": 150,
+        "freeSpan_mm": 1.75,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 744
+      },
+      {
+        "k": 850,
+        "z": 170,
+        "tag": "glava",
+        "parts": [
+          "glava"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.7,
+        "maxSpacing_mm": 1.7,
+        "rimOnly": 0,
+        "angle_deg": 120,
+        "freeSpan_mm": 1.74,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 803
+      },
+      {
+        "k": 855,
+        "z": 171,
+        "tag": "glava",
+        "parts": [
+          "glava"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.7,
+        "maxSpacing_mm": 1.9,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 1.74,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.01,
+        "fill_mm": 734
+      },
+      {
+        "k": 860,
+        "z": 172,
+        "tag": "glava",
+        "parts": [
+          "glava"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.7,
+        "maxSpacing_mm": 1.9,
+        "rimOnly": 0,
+        "angle_deg": 60,
+        "freeSpan_mm": 1.77,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.01,
+        "fill_mm": 746
+      },
+      {
+        "k": 865,
+        "z": 173,
+        "tag": "glava",
+        "parts": [
+          "glava"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.7,
+        "maxSpacing_mm": 1.9,
+        "rimOnly": 0,
+        "angle_deg": 30,
+        "freeSpan_mm": 1.73,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 827
+      },
+      {
+        "k": 870,
+        "z": 174,
+        "tag": "glava",
+        "parts": [
+          "glava"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.7,
+        "maxSpacing_mm": 1.9,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 1.76,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.08,
+        "fill_mm": 824
+      },
+      {
+        "k": 875,
+        "z": 175,
+        "tag": "glava",
+        "parts": [
+          "glava"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.7,
+        "maxSpacing_mm": 1.9,
+        "rimOnly": 0,
+        "angle_deg": 150,
+        "freeSpan_mm": 1.72,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.16,
+        "fill_mm": 798
+      },
+      {
+        "k": 880,
+        "z": 176,
+        "tag": "glava",
+        "parts": [
+          "glava"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.7,
+        "maxSpacing_mm": 1.7,
+        "rimOnly": 0,
+        "angle_deg": 120,
+        "freeSpan_mm": 1.74,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.37,
+        "fill_mm": 691
+      },
+      {
+        "k": 885,
+        "z": 177,
+        "tag": "glava",
+        "parts": [
+          "glava"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.7,
+        "maxSpacing_mm": 1.9,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 1.75,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0,
+        "fill_mm": 707
+      },
+      {
+        "k": 890,
+        "z": 178,
+        "tag": "glava",
+        "parts": [
+          "glava"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.7,
+        "maxSpacing_mm": 1.9,
+        "rimOnly": 0,
+        "angle_deg": 60,
+        "freeSpan_mm": 1.73,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0,
+        "fill_mm": 569
+      },
+      {
+        "k": 895,
+        "z": 179,
+        "tag": "glava",
+        "parts": [
+          "glava"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.7,
+        "maxSpacing_mm": 1.9,
+        "rimOnly": 0,
+        "angle_deg": 30,
+        "freeSpan_mm": 1.71,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0,
+        "fill_mm": 514
+      },
+      {
+        "k": 900,
+        "z": 180,
+        "tag": "glava",
+        "parts": [
+          "glava"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.7,
+        "maxSpacing_mm": 1.9,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 1.73,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0,
+        "fill_mm": 479
+      },
+      {
+        "k": 905,
+        "z": 181,
+        "tag": "glava",
+        "parts": [
+          "glava"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.7,
+        "maxSpacing_mm": 1.9,
+        "rimOnly": 0,
+        "angle_deg": 150,
+        "freeSpan_mm": 1.73,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0,
+        "fill_mm": 441
+      },
+      {
+        "k": 910,
+        "z": 182,
+        "tag": "glava",
+        "parts": [
+          "glava"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.7,
+        "maxSpacing_mm": 1.9,
+        "rimOnly": 0,
+        "angle_deg": 120,
+        "freeSpan_mm": 1.83,
+        "freeRun_mm": 0.48,
+        "unsupported": 2,
+        "growth_mm": 0,
+        "fill_mm": 436
+      },
+      {
+        "k": 915,
+        "z": 183,
+        "tag": "glava",
+        "parts": [
+          "glava"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.7,
+        "maxSpacing_mm": 1.9,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 1.75,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0,
+        "fill_mm": 384
+      },
+      {
+        "k": 920,
+        "z": 184,
+        "tag": "glava",
+        "parts": [
+          "glava"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.7,
+        "maxSpacing_mm": 1.9,
+        "rimOnly": 0,
+        "angle_deg": 60,
+        "freeSpan_mm": 1.73,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0,
+        "fill_mm": 328
+      },
+      {
+        "k": 925,
+        "z": 185,
+        "tag": "glava",
+        "parts": [
+          "glava"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.7,
+        "maxSpacing_mm": 1.9,
+        "rimOnly": 0,
+        "angle_deg": 30,
+        "freeSpan_mm": 1.78,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0,
+        "fill_mm": 282
+      },
+      {
+        "k": 930,
+        "z": 186,
+        "tag": "glava",
+        "parts": [
+          "glava"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.7,
+        "maxSpacing_mm": 1.9,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 1.71,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0,
+        "fill_mm": 236
+      },
+      {
+        "k": 935,
+        "z": 187,
+        "tag": "glava",
+        "parts": [
+          "glava"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.7,
+        "maxSpacing_mm": 1.9,
+        "rimOnly": 0,
+        "angle_deg": 150,
+        "freeSpan_mm": 1.68,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0,
+        "fill_mm": 161
+      },
+      {
+        "k": 939,
+        "z": 187.8,
+        "tag": "glava",
+        "parts": [
+          "glava"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.7,
+        "maxSpacing_mm": 1.9,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 1.71,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0,
+        "fill_mm": 121
+      }
+    ],
+    "events": [
+      {
+        "z": 0.8,
+        "k": 4,
+        "event": "temelj/1 -> kamen/1"
+      },
+      {
+        "z": 6.6,
+        "k": 33,
+        "event": "kamen/1 -> kamen-lezaj/1"
+      },
+      {
+        "z": 8.8,
+        "k": 44,
+        "event": "4 section(s) cut into 5 island(s) at a pinch under 1.94 mm"
+      },
+      {
+        "z": 8.8,
+        "k": 44,
+        "event": "kamen-lezaj/1 -> kamen-lezaj/5"
+      },
+      {
+        "z": 9,
+        "k": 45,
+        "event": "kamen-lezaj/5 -> grud/5"
+      },
+      {
+        "z": 11,
+        "k": 55,
+        "event": "grud/5 -> grud-talas/5"
+      },
+      {
+        "z": 22,
+        "k": 110,
+        "event": "grud-talas/5 -> grud-resetka/5"
+      },
+      {
+        "z": 33,
+        "k": 165,
+        "event": "grud-resetka/5 -> grud/5"
+      },
+      {
+        "z": 35,
+        "k": 175,
+        "event": "grud/5 -> grud/4"
+      },
+      {
+        "z": 44,
+        "k": 220,
+        "event": "grud/4 -> grud-talas/4"
+      },
+      {
+        "z": 46.6,
+        "k": 233,
+        "event": "grud-talas/4 -> grud-pokrivka/4"
+      },
+      {
+        "z": 53.6,
+        "k": 268,
+        "event": "grud-pokrivka/4 -> grud-talas/4"
+      },
+      {
+        "z": 55,
+        "k": 275,
+        "event": "grud-talas/4 -> grud-resetka/4"
+      },
+      {
+        "z": 57.6,
+        "k": 288,
+        "event": "grud-resetka/4 -> grud-resetka/3"
+      },
+      {
+        "z": 66,
+        "k": 330,
+        "event": "grud-resetka/3 -> grud/3"
+      },
+      {
+        "z": 77,
+        "k": 385,
+        "event": "grud/3 -> grud-talas/3"
+      },
+      {
+        "z": 88,
+        "k": 440,
+        "event": "grud-talas/3 -> grud-resetka/3"
+      },
+      {
+        "z": 99,
+        "k": 495,
+        "event": "fill angle 90 -> 180 after 2 measured tries"
+      },
+      {
+        "z": 99,
+        "k": 495,
+        "event": "grud-resetka/3 -> grud/3"
+      },
+      {
+        "z": 110,
+        "k": 550,
+        "event": "grud/3 -> grud-talas/3"
+      },
+      {
+        "z": 117.6,
+        "k": 588,
+        "event": "grud-talas/3 -> grud-pokrivka/3"
+      },
+      {
+        "z": 121.2,
+        "k": 606,
+        "event": "grud-pokrivka/3 -> grud-pokrivka/1"
+      },
+      {
+        "z": 130.6,
+        "k": 653,
+        "event": "grud-pokrivka/1 -> grud-resetka/1"
+      },
+      {
+        "z": 132,
+        "k": 660,
+        "event": "grud-resetka/1 -> grud/1"
+      },
+      {
+        "z": 134,
+        "k": 670,
+        "event": "grud/1 -> vrat/1"
+      },
+      {
+        "z": 152,
+        "k": 760,
+        "event": "vrat/1 -> glava/1"
+      }
+    ],
+    "violations": [],
+    "warnings": [
+      "layer 284 z=56.8: section grows 0.63 mm outward (field estimate; measured run 1.5 mm)",
+      "layer 285 z=57: section grows 0.73 mm outward (field estimate; measured run 1.9 mm)",
+      "layer 286 z=57.2: section grows 0.94 mm outward (field estimate; measured run 2.3 mm)",
+      "layer 287 z=57.4: section grows 4.03 mm outward (field estimate; measured run 4.2 mm)",
+      "layer 288 z=57.6: section grows 0.72 mm outward (field estimate; measured run 8 mm)",
+      "layer 289 z=57.8: section grows 0.64 mm outward (field estimate; measured run 1 mm)",
+      "layer 606 z=121.2: section grows 1.04 mm outward (field estimate; measured run 2 mm)",
+      "layer 607 z=121.4: section grows 1.08 mm outward (field estimate; measured run 1 mm)",
+      "layer 608 z=121.6: section grows 1.49 mm outward (field estimate; measured run 0 mm)",
+      "layer 610 z=122: section grows 1.09 mm outward (field estimate; measured run 0.3 mm)",
+      "layer 611 z=122.2: section grows 1.17 mm outward (field estimate; measured run 0.5 mm)",
+      "layer 612 z=122.4: section grows 0.66 mm outward (field estimate; measured run 0.9 mm)",
+      "layer 613 z=122.6: section grows 1.66 mm outward (field estimate; measured run 0 mm)",
+      "layer 615 z=123: section grows 0.74 mm outward (field estimate; measured run 1.5 mm)",
+      "layer 616 z=123.2: section grows 1.13 mm outward (field estimate; measured run 0.8 mm)",
+      "layer 617 z=123.4: section grows 0.86 mm outward (field estimate; measured run 2.2 mm)",
+      "layer 618 z=123.6: section grows 1.12 mm outward (field estimate; measured run 1 mm)",
+      "layer 619 z=123.8: section grows 1.39 mm outward (field estimate; measured run 1 mm)",
+      "layer 620 z=124: section grows 1.18 mm outward (field estimate; measured run 1.8 mm)",
+      "layer 621 z=124.2: section grows 0.91 mm outward (field estimate; measured run 1.3 mm)",
+      "layer 623 z=124.6: section grows 0.78 mm outward (field estimate; measured run 1.3 mm)",
+      "layer 627 z=125.4: section grows 0.6 mm outward (field estimate; measured run 0.9 mm)",
+      "layer 882 z=176.4: section grows 1 mm outward (field estimate; measured run 0 mm)",
+      "layer 883 z=176.6: section grows 2.3 mm outward (field estimate; measured run 1.7 mm)"
+    ]
+  },
+  "design": null,
+  "preset": null,
+  "builder": "weft.mjs (core/weft_core.js + core/weft_gate.js, no browser, no Python)",
+  "gate": {
+    "bead": 0.42,
+    "maxbridge": 12,
+    "maxcantilever": 3,
+    "allow": 0.6,
+    "minanchor": 0.5,
+    "maxCapRadius": 20,
+    "maxislands": 1,
+    "file": "C:\\Svemir\\!Projekti\\weft\\specimens\\2026-10-03_sokol_ender\\v2c_package\\SOKOL_V2_ENDER.gcode"
+  }
+}

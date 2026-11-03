@@ -1,0 +1,139 @@
+{
+  "status": "PASS",
+  "failures": [],
+  "warnings": [
+    "Centroid is a uniform-deposition estimate from path lengths and stadium bead sections; intersections are double-counted. Hull is a first-layer centerline hull, not actual contact area. Neither estimates strength, adhesion, dynamics, or physical success.",
+    "Canonical gates are not rerun here. This audit checks identity, prefix fidelity and artifact consistency only."
+  ],
+  "hashes": {
+    "geometry": {
+      "file": "C:\\Svemir\\data\\brain\\scratch\\lira-a2l\\LIRA_A2L_geometry.json",
+      "sha256": "1fe4daa225b83764d37da3c9e7f283830a23d9ac06ccaf8f5914240435ad3fd1"
+    },
+    "probeGeometry": {
+      "file": "C:\\Svemir\\data\\brain\\scratch\\lira-a2l\\probe_geometry.json",
+      "sha256": "9c00c4b36b5446ef74f9c87435a0992ac91bf31336fa83853e939d4f4128b43b"
+    },
+    "raw": {
+      "file": "C:\\Svemir\\data\\brain\\scratch\\lira-a2l\\package\\LIRA_A2L.gcode",
+      "sha256": "9349a90af2a537c9f201d327e52dc056076f53dd4b856e19f69f05efaf8c1dd0",
+      "bytes": 120710778
+    },
+    "container": {
+      "file": "C:\\Svemir\\data\\brain\\scratch\\lira-a2l\\package\\LIRA_A2L.gcode.3mf",
+      "sha256": "6f5654726674b5f25ee050db763219915e3a51f3236832167685989648fc11b5",
+      "bytes": 26447779
+    }
+  },
+  "prefix": {
+    "layers": 80,
+    "top_mm": 19.2,
+    "geometryMatches": true,
+    "mismatchingLayerIndices": [],
+    "gcodeMatches": true
+  },
+  "topologyTransitions": [
+    {
+      "k": 0,
+      "z": 0,
+      "islands": 4
+    },
+    {
+      "k": 211,
+      "z": 50.64,
+      "islands": 2
+    },
+    {
+      "k": 271,
+      "z": 65.04,
+      "islands": 1
+    },
+    {
+      "k": 544,
+      "z": 130.56,
+      "islands": 2
+    },
+    {
+      "k": 815,
+      "z": 195.6,
+      "islands": 1
+    }
+  ],
+  "geometryBounds_mm": [
+    -55.861,
+    -50.89,
+    0,
+    55.861,
+    58.573,
+    216
+  ],
+  "growthDiagnostic": {
+    "k": 270,
+    "z": 64.8,
+    "tag": "paired-arches",
+    "fieldGradientEstimate_mm": 24.1,
+    "maxOutwardSilhouetteStep_mm": 0.9111,
+    "atXY": [
+      -0.035,
+      -5.074
+    ],
+    "outsideVertices": 105,
+    "meaning": "Current boundary vertices outside the previous silhouettes, measured to the nearest previous boundary segment. This is not bead support, a swept extrusion length, or a strength test."
+  },
+  "modelOnly": {
+    "thread_m": 1463.82,
+    "estimatedDepositedVolume_mm3": 140060,
+    "estimatedCentroid_mm": [
+      0.217,
+      12.608,
+      103.937
+    ],
+    "firstLayerCenterlineHullArea_mm2": 7944.3,
+    "centroidProjectionHullMargin_mm": 31.77
+  },
+  "raw": {
+    "extrusionMoves": 3436050,
+    "layers": 900,
+    "headerLayers": 900,
+    "headerZ": 216,
+    "modelBounds_mm": [
+      109.139,
+      109.11,
+      0.24,
+      220.861,
+      218.573,
+      216
+    ],
+    "footerZ": [
+      216.4
+    ],
+    "bodyMotionSha256": "12093a411b79b11402926ba29ef8c9bd56478c517dfeac6fe01403bab240c12f",
+    "prefixMotionSha256": "684f15f72a465004c7663e8f174f4d7e3a763fe11af8afa68fd311b0f9567290",
+    "modelFilament_mm": 58227.2768
+  },
+  "container": {
+    "extrusionMoves": 3436050,
+    "layers": 900,
+    "headerLayers": 900,
+    "headerZ": 216,
+    "modelBounds_mm": [
+      109.139,
+      109.11,
+      0.24,
+      220.861,
+      218.573,
+      216
+    ],
+    "footerZ": [
+      216.4
+    ],
+    "bodyMotionSha256": "12093a411b79b11402926ba29ef8c9bd56478c517dfeac6fe01403bab240c12f",
+    "prefixMotionSha256": "684f15f72a465004c7663e8f174f4d7e3a763fe11af8afa68fd311b0f9567290",
+    "modelFilament_mm": 58227.2768
+  },
+  "machine": {
+    "manifest": "a2l",
+    "printer_model": "Bambu Lab A2L",
+    "printer_settings_id": "Bambu Lab A2L 0.4 nozzle"
+  }
+}

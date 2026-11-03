@@ -47,3 +47,27 @@ specimens/2026-10-02_sokol_A2L/SOKOL.gcode
 # shelf's README travels — the binaries would be a second origin for the same bytes (2026-10-02).
 ZA_STAMPU/*
 !ZA_STAMPU/README.md
+
+# Bodies 2026-10/11 (SOKOL_A2L 2nd cut, sokol_ender V2c, STOLICA_A2L, LIRA_A2L, KOCKA_REVERZ):
+# mesh, field dump and raw G-code are reproducible from core/weft_field_geometry.mjs and the
+# specimen build scripts; the container (.gcode.3mf), gates, manifests and evidence travel.
+# Rebuild commands and SHA-256 live in each specimen README/manifest (2026-11-03).
+specimens/2026-10-03_sokol_A2L/*.stl
+specimens/2026-10-03_sokol_A2L/*_geometry.json
+specimens/2026-10-03_sokol_A2L/*.gcode
+specimens/2026-10-03_sokol_ender/v2c_package/*.gcode
+specimens/2026-10-03_sokol_ender/sokol_v2c_geometry.json
+# Physical phone photos live in the Svemir karantin (data/karantin-slika/weft/2026-11-03);
+# originals never travel inside the repo — evidence.json keeps their SHA-256 (G-3495 gate).
+specimens/2026-10-03_sokol_ender/physical_2026-10-04/originals/
+specimens/2026-10-03_stolica_A2L/*.stl
+specimens/2026-10-03_stolica_A2L/*_geometry.json
+specimens/2026-10-03_stolica_A2L/*.gcode
+specimens/2026-10-04_LIRA_A2L/package/*.gcode
+specimens/2026-10-04_LIRA_A2L/probe_package/*.gcode
+specimens/2026-10-04_LIRA_A2L/*_geometry.json
+specimens/2026-10-04_LIRA_A2L/preview.html
+specimens/2026-11-03_KOCKA_REVERZ/**/*.gcode
+specimens/2026-11-03_KOCKA_REVERZ/**/*_geometry.json
+# deletion staging area — its bytes never enter history
+_to_delete/

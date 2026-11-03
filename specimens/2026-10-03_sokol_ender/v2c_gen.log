@@ -1,0 +1,34 @@
+{
+ "name": "SOKOL_V2",
+ "machine": "Creality Ender-3 V4",
+ "size_mm": [
+  88.4,
+  85.3,
+  188
+ ],
+ "layers": 940,
+ "firstLayerIslands": 1,
+ "maxIslands": 5,
+ "patterns": [
+  "lines",
+  "rim-only",
+  "sine"
+ ],
+ "tags": [
+  "temelj",
+  "kamen",
+  "kamen-lezaj",
+  "grud",
+  "grud-talas",
+  "grud-resetka",
+  "grud-pokrivka",
+  "vrat",
+  "glava"
+ ],
+ "thread_m": 1403.7,
+ "worstFreeSpan_mm": 4.73,
+ "worstValleyRun_mm": 8.17,
+ "worstGrowth_mm": 4.03,
+ "meshFaces": 58464,
+ "events": 26
+}

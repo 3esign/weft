@@ -1,0 +1,682 @@
+{
+  "report": {
+    "name": "LIRA_ROOT_A2L",
+    "machine": "Bambu A2L",
+    "bed_mm": [
+      330,
+      320
+    ],
+    "layers": 332,
+    "globalZLevels": 80,
+    "expectedZLevels": 80,
+    "logicalCells": null,
+    "experimentalMembraneOverride": false,
+    "maxBodiesPerZ": 4,
+    "size_mm": [
+      94.2,
+      92.2,
+      19.2
+    ],
+    "plate_mm": [
+      118.1,
+      114.1,
+      211.8,
+      205.9
+    ],
+    "fitsPlate": true,
+    "grammarCounts": {},
+    "threadLength_m": 131.1,
+    "weldNodes": 0,
+    "rawPaths": 320,
+    "unintendedOverlaps": 33297,
+    "seamClosures": 0,
+    "overlapSamples": [
+      {
+        "z": 0,
+        "role": "wall",
+        "ov": 118
+      },
+      {
+        "z": 0,
+        "role": "wall",
+        "ov": 102
+      },
+      {
+        "z": 0,
+        "role": "wall",
+        "ov": 108
+      },
+      {
+        "z": 0,
+        "role": "wall",
+        "ov": 117
+      },
+      {
+        "z": 0.24,
+        "role": "wall",
+        "ov": 97
+      },
+      {
+        "z": 0.24,
+        "role": "wall",
+        "ov": 111
+      },
+      {
+        "z": 0.24,
+        "role": "wall",
+        "ov": 98
+      },
+      {
+        "z": 0.24,
+        "role": "wall",
+        "ov": 120
+      },
+      {
+        "z": 0.48,
+        "role": "wall",
+        "ov": 116
+      },
+      {
+        "z": 0.48,
+        "role": "wall",
+        "ov": 100
+      },
+      {
+        "z": 0.48,
+        "role": "wall",
+        "ov": 89
+      },
+      {
+        "z": 0.48,
+        "role": "wall",
+        "ov": 102
+      }
+    ],
+    "kinematic_h": 1.21,
+    "routeA_estimate_h": 11.5,
+    "caps": [],
+    "events": [
+      {
+        "z": 2.16,
+        "k": 9,
+        "event": "root-base/4 -> root-transition/4"
+      },
+      {
+        "z": 16.08,
+        "k": 67,
+        "event": "root-transition/4 -> paired-arches/4"
+      }
+    ],
+    "contourCounts": [
+      [
+        0,
+        0
+      ]
+    ],
+    "perLayerSample": [
+      {
+        "k": 0,
+        "z": 0,
+        "contours": 0,
+        "paths": 4,
+        "nodes": 0
+      },
+      {
+        "k": 40,
+        "z": 9.6,
+        "contours": 0,
+        "paths": 4,
+        "nodes": 0
+      }
+    ],
+    "membranes": [],
+    "gateLayers": {
+      "version": "gate-layers-2026-09-25-krak",
+      "vector": "S2 INFO · S3 PASS · S4 PASS · S5 INFO · S7 INFO · S8 PASS · ORDER N/A",
+      "refusedBy": [],
+      "findings": 0,
+      "S2": {
+        "worst": {
+          "k": 2,
+          "z": 0.72,
+          "runs10": 0,
+          "free_mm": 0,
+          "longest_mm": 0
+        },
+        "free_m": 0,
+        "declared": 0
+      },
+      "S3": {
+        "worst": null,
+        "neverTied": 0,
+        "declared": 0
+      },
+      "S4": {
+        "overflights": 0,
+        "closest": null,
+        "declared": 0
+      },
+      "S5": {
+        "ratio": 1.249,
+        "contact_mm2": 2391.5,
+        "lever_mm": 101
+      },
+      "S7": {
+        "weakest": [
+          {
+            "k": 57,
+            "z": 13.68,
+            "carried": 0.923,
+            "onSolid": 1,
+            "pileMax": 0,
+            "solidComponents": 4,
+            "largestSolidExtent_mm": 28,
+            "above": 23
+          },
+          {
+            "k": 51,
+            "z": 12.24,
+            "carried": 0.927,
+            "onSolid": 1,
+            "pileMax": 0,
+            "solidComponents": 4,
+            "largestSolidExtent_mm": 28.6,
+            "above": 29
+          },
+          {
+            "k": 55,
+            "z": 13.2,
+            "carried": 0.927,
+            "onSolid": 1,
+            "pileMax": 0,
+            "solidComponents": 4,
+            "largestSolidExtent_mm": 28.1,
+            "above": 25
+          }
+        ]
+      },
+      "S8": {
+        "periodTwoLayers": 0,
+        "medianCrossing_deg": 45
+      },
+      "ORDER": {
+        "verdict": "N/A",
+        "aboveRisk_mm": 1,
+        "zonesWithFindings": []
+      }
+    }
+  },
+  "geometry": {
+    "name": "LIRA_A2L",
+    "variant": "lira",
+    "title": "LIRA",
+    "concept": "four round roots join as two lateral arches, open into a saddle and rise as a split lyre back; the thread is visible on every side",
+    "generator": "core/weft_field_geometry.mjs",
+    "process": "pure-weft/v2",
+    "generatedAt": "2026-10-04",
+    "machine": "a2l",
+    "machineLabel": "Bambu Lab A2L",
+    "machineQualification": {
+      "beadSource": "measured",
+      "beadEvidence": "specimens/2026-08-31_D5_R140_A2L_physical and specimens/2026-09-02_P0_suma_2x2_physical — both printed to completion at this bead",
+      "assumedAcknowledged": false
+    },
+    "size_mm": [
+      91.2,
+      89.2,
+      19.2
+    ],
+    "H": 19.2,
+    "totalLayers": 80,
+    "args": {
+      "lh": 0.24,
+      "bead": 0.45,
+      "firstLayerBead": 0.52,
+      "firstLayerSpeed": 12,
+      "w": 2,
+      "e": 0,
+      "r0": 45.6,
+      "K": 8,
+      "foundation": 3,
+      "maxbridge": 12,
+      "maxcantilever": 3,
+      "allow": 0.6,
+      "minanchor": 0.5,
+      "maxCapRadius": 20,
+      "speed": 36,
+      "bridgeSpeed": 16,
+      "temp": 220,
+      "bed": 55,
+      "fan": 100
+    },
+    "gatePolicy": {
+      "meaning": "a volumetric body woven as one line per island: the outside is as open as the inside, and every span between crossings must be a legal bridge",
+      "bridge_mm": 12,
+      "cantilever_mm": 3,
+      "first_layer_max_islands": 4
+    },
+    "field": {
+      "firstLayerIslands": 4,
+      "maxIslands": 4,
+      "weavePhaseStep_rad": 0.1,
+      "supportReach_mm": 0.9,
+      "worstFreeSpan_mm": 2.48,
+      "worstFreeSpanAt": {
+        "k": 73,
+        "z": 17.52,
+        "tag": "paired-arches"
+      },
+      "worstValleyRun_mm": 1.49,
+      "pointsPulledIntoBody": 0,
+      "pointsEmitted": 259015,
+      "worstPullBack_mm": 0,
+      "layersWithAmplitudeClampedToTheSection": 0,
+      "worstOutwardGrowth_mm": 0.04,
+      "worstOutwardGrowthAt": {
+        "k": 79,
+        "z": 18.96,
+        "tag": "paired-arches"
+      },
+      "fillLength_m": 130.2,
+      "tags": [
+        "root-base",
+        "root-transition",
+        "paired-arches"
+      ],
+      "parts": [
+        "root-base",
+        "root-transition",
+        "paired-arches"
+      ],
+      "patterns": [
+        "lines"
+      ]
+    },
+    "layerProgram": [
+      {
+        "k": 0,
+        "z": 0,
+        "tag": "root-base",
+        "parts": [
+          "root-base"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 0.5,
+        "maxSpacing_mm": 0.55,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 0,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0,
+        "fill_mm": 3663
+      },
+      {
+        "k": 5,
+        "z": 1.2,
+        "tag": "root-base",
+        "parts": [
+          "root-base"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 0.85,
+        "maxSpacing_mm": 0.85,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 0.96,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0,
+        "fill_mm": 2458
+      },
+      {
+        "k": 10,
+        "z": 2.4,
+        "tag": "root-transition",
+        "parts": [
+          "root-transition"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 0.85,
+        "maxSpacing_mm": 0.85,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 0.97,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0,
+        "fill_mm": 2397
+      },
+      {
+        "k": 15,
+        "z": 3.6,
+        "tag": "root-transition",
+        "parts": [
+          "root-transition"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 0.92,
+        "maxSpacing_mm": 0.92,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 1,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0,
+        "fill_mm": 2297
+      },
+      {
+        "k": 20,
+        "z": 4.8,
+        "tag": "root-transition",
+        "parts": [
+          "root-transition"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.04,
+        "maxSpacing_mm": 1.04,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 1.13,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0,
+        "fill_mm": 2076
+      },
+      {
+        "k": 25,
+        "z": 6,
+        "tag": "root-transition",
+        "parts": [
+          "root-transition"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.21,
+        "maxSpacing_mm": 1.21,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 1.3,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0,
+        "fill_mm": 1797
+      },
+      {
+        "k": 30,
+        "z": 7.2,
+        "tag": "root-transition",
+        "parts": [
+          "root-transition"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.41,
+        "maxSpacing_mm": 1.41,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 1.74,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0,
+        "fill_mm": 1588
+      },
+      {
+        "k": 35,
+        "z": 8.4,
+        "tag": "root-transition",
+        "parts": [
+          "root-transition"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.63,
+        "maxSpacing_mm": 1.63,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 1.64,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0,
+        "fill_mm": 1478
+      },
+      {
+        "k": 40,
+        "z": 9.6,
+        "tag": "root-transition",
+        "parts": [
+          "root-transition"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.85,
+        "maxSpacing_mm": 1.85,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 1.84,
+        "freeRun_mm": 0.5,
+        "unsupported": 20,
+        "growth_mm": 0,
+        "fill_mm": 1352
+      },
+      {
+        "k": 45,
+        "z": 10.8,
+        "tag": "root-transition",
+        "parts": [
+          "root-transition"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.06,
+        "maxSpacing_mm": 2.06,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 2.04,
+        "freeRun_mm": 0.5,
+        "unsupported": 102,
+        "growth_mm": 0,
+        "fill_mm": 1296
+      },
+      {
+        "k": 50,
+        "z": 12,
+        "tag": "root-transition",
+        "parts": [
+          "root-transition"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.23,
+        "maxSpacing_mm": 2.23,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.23,
+        "freeRun_mm": 1,
+        "unsupported": 144,
+        "growth_mm": 0,
+        "fill_mm": 1246
+      },
+      {
+        "k": 55,
+        "z": 13.2,
+        "tag": "root-transition",
+        "parts": [
+          "root-transition"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.37,
+        "maxSpacing_mm": 2.37,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 2.37,
+        "freeRun_mm": 1,
+        "unsupported": 152,
+        "growth_mm": 0,
+        "fill_mm": 1237
+      },
+      {
+        "k": 60,
+        "z": 14.4,
+        "tag": "root-transition",
+        "parts": [
+          "root-transition"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.44,
+        "maxSpacing_mm": 2.44,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.45,
+        "freeRun_mm": 1,
+        "unsupported": 166,
+        "growth_mm": 0,
+        "fill_mm": 1234
+      },
+      {
+        "k": 65,
+        "z": 15.6,
+        "tag": "root-transition",
+        "parts": [
+          "root-transition"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 2.47,
+        "freeRun_mm": 1,
+        "unsupported": 151,
+        "growth_mm": 0,
+        "fill_mm": 1176
+      },
+      {
+        "k": 70,
+        "z": 16.8,
+        "tag": "paired-arches",
+        "parts": [
+          "paired-arches"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.46,
+        "freeRun_mm": 1,
+        "unsupported": 139,
+        "growth_mm": 0,
+        "fill_mm": 1189
+      },
+      {
+        "k": 75,
+        "z": 18,
+        "tag": "paired-arches",
+        "parts": [
+          "paired-arches"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 2.44,
+        "freeRun_mm": 1,
+        "unsupported": 145,
+        "growth_mm": 0.02,
+        "fill_mm": 1186
+      },
+      {
+        "k": 79,
+        "z": 18.96,
+        "tag": "paired-arches",
+        "parts": [
+          "paired-arches"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 2.44,
+        "freeRun_mm": 1,
+        "unsupported": 144,
+        "growth_mm": 0.04,
+        "fill_mm": 1160
+      }
+    ],
+    "events": [
+      {
+        "z": 2.16,
+        "k": 9,
+        "event": "root-base/4 -> root-transition/4"
+      },
+      {
+        "z": 16.08,
+        "k": 67,
+        "event": "root-transition/4 -> paired-arches/4"
+      }
+    ],
+    "violations": [],
+    "warnings": []
+  },
+  "design": null,
+  "preset": null,
+  "builder": "weft.mjs (core/weft_core.js + core/weft_gate.js, no browser, no Python)",
+  "gate": {
+    "bead": 0.45,
+    "maxbridge": 12,
+    "maxcantilever": 3,
+    "allow": 0.6,
+    "minanchor": 0.5,
+    "maxCapRadius": 20,
+    "maxislands": 4,
+    "file": "C:\\Svemir\\data\\brain\\scratch\\lira-a2l\\probe_package\\LIRA_ROOT_A2L.gcode"
+  }
+}

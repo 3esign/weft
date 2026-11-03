@@ -1,0 +1,4387 @@
+{
+  "report": {
+    "name": "LIRA_A2L",
+    "machine": "Bambu A2L",
+    "bed_mm": [
+      330,
+      320
+    ],
+    "layers": 1876,
+    "globalZLevels": 900,
+    "expectedZLevels": 900,
+    "logicalCells": null,
+    "experimentalMembraneOverride": false,
+    "maxBodiesPerZ": 4,
+    "size_mm": [
+      112.2,
+      109.9,
+      216
+    ],
+    "plate_mm": [
+      109.1,
+      109.1,
+      220.9,
+      218.6
+    ],
+    "fitsPlate": true,
+    "grammarCounts": {},
+    "threadLength_m": 1464.8,
+    "weldNodes": 0,
+    "rawPaths": 1864,
+    "unintendedOverlaps": 203873,
+    "seamClosures": 0,
+    "overlapSamples": [
+      {
+        "z": 0,
+        "role": "wall",
+        "ov": 118
+      },
+      {
+        "z": 0,
+        "role": "wall",
+        "ov": 102
+      },
+      {
+        "z": 0,
+        "role": "wall",
+        "ov": 108
+      },
+      {
+        "z": 0,
+        "role": "wall",
+        "ov": 117
+      },
+      {
+        "z": 0.24,
+        "role": "wall",
+        "ov": 97
+      },
+      {
+        "z": 0.24,
+        "role": "wall",
+        "ov": 111
+      },
+      {
+        "z": 0.24,
+        "role": "wall",
+        "ov": 98
+      },
+      {
+        "z": 0.24,
+        "role": "wall",
+        "ov": 120
+      },
+      {
+        "z": 0.48,
+        "role": "wall",
+        "ov": 116
+      },
+      {
+        "z": 0.48,
+        "role": "wall",
+        "ov": 100
+      },
+      {
+        "z": 0.48,
+        "role": "wall",
+        "ov": 89
+      },
+      {
+        "z": 0.48,
+        "role": "wall",
+        "ov": 102
+      }
+    ],
+    "kinematic_h": 13.56,
+    "routeA_estimate_h": 127.9,
+    "caps": [],
+    "events": [
+      {
+        "z": 2.16,
+        "k": 9,
+        "event": "root-base/4 -> root-transition/4"
+      },
+      {
+        "z": 16.08,
+        "k": 67,
+        "event": "root-transition/4 -> paired-arches/4"
+      },
+      {
+        "z": 50.64,
+        "k": 211,
+        "event": "paired-arches/4 -> paired-arches/2"
+      },
+      {
+        "z": 65.04,
+        "k": 271,
+        "event": "paired-arches/2 -> arch-junction/1"
+      },
+      {
+        "z": 76.08,
+        "k": 317,
+        "event": "arch-junction/1 -> saddle/1"
+      },
+      {
+        "z": 113.04,
+        "k": 471,
+        "event": "saddle/1 -> saddle-landing/1"
+      },
+      {
+        "z": 118.08,
+        "k": 492,
+        "event": "saddle-landing/1 -> back-root/1"
+      },
+      {
+        "z": 130.56,
+        "k": 544,
+        "event": "back-root/1 -> back-root/2"
+      },
+      {
+        "z": 135.12,
+        "k": 563,
+        "event": "back-root/2 -> lyre-window/2"
+      },
+      {
+        "z": 190.08,
+        "k": 792,
+        "event": "lyre-window/2 -> crown/2"
+      },
+      {
+        "z": 195.6,
+        "k": 815,
+        "event": "crown/2 -> crown/1"
+      }
+    ],
+    "contourCounts": [
+      [
+        0,
+        0
+      ]
+    ],
+    "perLayerSample": [
+      {
+        "k": 0,
+        "z": 0,
+        "contours": 0,
+        "paths": 4,
+        "nodes": 0
+      },
+      {
+        "k": 40,
+        "z": 9.6,
+        "contours": 0,
+        "paths": 4,
+        "nodes": 0
+      },
+      {
+        "k": 80,
+        "z": 19.2,
+        "contours": 0,
+        "paths": 4,
+        "nodes": 0
+      },
+      {
+        "k": 120,
+        "z": 28.8,
+        "contours": 0,
+        "paths": 4,
+        "nodes": 0
+      },
+      {
+        "k": 160,
+        "z": 38.4,
+        "contours": 0,
+        "paths": 4,
+        "nodes": 0
+      },
+      {
+        "k": 200,
+        "z": 48,
+        "contours": 0,
+        "paths": 4,
+        "nodes": 0
+      },
+      {
+        "k": 240,
+        "z": 57.6,
+        "contours": 0,
+        "paths": 2,
+        "nodes": 0
+      },
+      {
+        "k": 280,
+        "z": 67.2,
+        "contours": 0,
+        "paths": 1,
+        "nodes": 0
+      },
+      {
+        "k": 320,
+        "z": 76.8,
+        "contours": 0,
+        "paths": 1,
+        "nodes": 0
+      },
+      {
+        "k": 360,
+        "z": 86.4,
+        "contours": 0,
+        "paths": 1,
+        "nodes": 0
+      },
+      {
+        "k": 400,
+        "z": 96,
+        "contours": 0,
+        "paths": 1,
+        "nodes": 0
+      },
+      {
+        "k": 440,
+        "z": 105.6,
+        "contours": 0,
+        "paths": 1,
+        "nodes": 0
+      },
+      {
+        "k": 480,
+        "z": 115.2,
+        "contours": 0,
+        "paths": 1,
+        "nodes": 0
+      },
+      {
+        "k": 520,
+        "z": 124.8,
+        "contours": 0,
+        "paths": 1,
+        "nodes": 0
+      },
+      {
+        "k": 560,
+        "z": 134.4,
+        "contours": 0,
+        "paths": 2,
+        "nodes": 0
+      },
+      {
+        "k": 600,
+        "z": 144,
+        "contours": 0,
+        "paths": 2,
+        "nodes": 0
+      },
+      {
+        "k": 640,
+        "z": 153.6,
+        "contours": 0,
+        "paths": 2,
+        "nodes": 0
+      },
+      {
+        "k": 680,
+        "z": 163.2,
+        "contours": 0,
+        "paths": 2,
+        "nodes": 0
+      },
+      {
+        "k": 720,
+        "z": 172.8,
+        "contours": 0,
+        "paths": 2,
+        "nodes": 0
+      },
+      {
+        "k": 760,
+        "z": 182.4,
+        "contours": 0,
+        "paths": 2,
+        "nodes": 0
+      },
+      {
+        "k": 800,
+        "z": 192,
+        "contours": 0,
+        "paths": 2,
+        "nodes": 0
+      },
+      {
+        "k": 840,
+        "z": 201.6,
+        "contours": 0,
+        "paths": 1,
+        "nodes": 0
+      },
+      {
+        "k": 880,
+        "z": 211.2,
+        "contours": 0,
+        "paths": 1,
+        "nodes": 0
+      }
+    ],
+    "membranes": [],
+    "gateLayers": {
+      "version": "gate-layers-2026-09-25-krak",
+      "vector": "S2 INFO · S3 PASS · S4 PASS · S5 INFO · S7 INFO · S8 WARN · ORDER N/A",
+      "refusedBy": [],
+      "findings": 0,
+      "S2": {
+        "worst": {
+          "k": 2,
+          "z": 0.72,
+          "runs10": 0,
+          "free_mm": 0,
+          "longest_mm": 0
+        },
+        "free_m": 0.01,
+        "declared": 0
+      },
+      "S3": {
+        "worst": null,
+        "neverTied": 0,
+        "declared": 0
+      },
+      "S4": {
+        "overflights": 0,
+        "closest": null,
+        "declared": 0
+      },
+      "S5": {
+        "ratio": 0.11,
+        "contact_mm2": 2391.5,
+        "lever_mm": 101
+      },
+      "S7": {
+        "weakest": [
+          {
+            "k": 465,
+            "z": 111.6,
+            "carried": 0.8,
+            "onSolid": 1,
+            "pileMax": 0,
+            "solidComponents": 1,
+            "largestSolidExtent_mm": 150.8,
+            "above": 435
+          },
+          {
+            "k": 437,
+            "z": 104.88,
+            "carried": 0.802,
+            "onSolid": 1,
+            "pileMax": 0,
+            "solidComponents": 1,
+            "largestSolidExtent_mm": 138.9,
+            "above": 463
+          },
+          {
+            "k": 443,
+            "z": 106.32,
+            "carried": 0.802,
+            "onSolid": 1,
+            "pileMax": 0,
+            "solidComponents": 1,
+            "largestSolidExtent_mm": 143.7,
+            "above": 457
+          }
+        ]
+      },
+      "S8": {
+        "periodTwoLayers": 8,
+        "medianCrossing_deg": 45
+      },
+      "ORDER": {
+        "verdict": "N/A",
+        "aboveRisk_mm": 1,
+        "zonesWithFindings": []
+      }
+    }
+  },
+  "geometry": {
+    "name": "LIRA_A2L",
+    "variant": "lira",
+    "title": "LIRA",
+    "concept": "four round roots join as two lateral arches, open into a saddle and rise as a split lyre back; the thread is visible on every side",
+    "generator": "core/weft_field_geometry.mjs",
+    "process": "pure-weft/v2",
+    "generatedAt": "2026-10-04",
+    "machine": "a2l",
+    "machineLabel": "Bambu Lab A2L",
+    "machineQualification": {
+      "beadSource": "measured",
+      "beadEvidence": "specimens/2026-08-31_D5_R140_A2L_physical and specimens/2026-09-02_P0_suma_2x2_physical — both printed to completion at this bead",
+      "assumedAcknowledged": false
+    },
+    "size_mm": [
+      112.2,
+      109.9,
+      216
+    ],
+    "H": 216,
+    "totalLayers": 900,
+    "args": {
+      "lh": 0.24,
+      "bead": 0.45,
+      "firstLayerBead": 0.52,
+      "firstLayerSpeed": 12,
+      "w": 2,
+      "e": 0,
+      "r0": 56.09,
+      "K": 8,
+      "foundation": 3,
+      "maxbridge": 12,
+      "maxcantilever": 3,
+      "allow": 0.6,
+      "minanchor": 0.5,
+      "maxCapRadius": 20,
+      "speed": 36,
+      "bridgeSpeed": 16,
+      "temp": 220,
+      "bed": 55,
+      "fan": 100
+    },
+    "gatePolicy": {
+      "meaning": "a volumetric body woven as one line per island: the outside is as open as the inside, and every span between crossings must be a legal bridge",
+      "bridge_mm": 12,
+      "cantilever_mm": 3,
+      "first_layer_max_islands": 4
+    },
+    "field": {
+      "firstLayerIslands": 4,
+      "maxIslands": 4,
+      "weavePhaseStep_rad": 0.1,
+      "supportReach_mm": 0.9,
+      "worstFreeSpan_mm": 3.37,
+      "worstFreeSpanAt": {
+        "k": 736,
+        "z": 176.64,
+        "tag": "lyre-window"
+      },
+      "worstValleyRun_mm": 5.15,
+      "pointsPulledIntoBody": 11,
+      "pointsEmitted": 2892679,
+      "worstPullBack_mm": 0.05,
+      "layersWithAmplitudeClampedToTheSection": 3,
+      "worstOutwardGrowth_mm": 24.1,
+      "worstOutwardGrowthAt": {
+        "k": 270,
+        "z": 64.8,
+        "tag": "paired-arches"
+      },
+      "fillLength_m": 1463.8,
+      "tags": [
+        "root-base",
+        "root-transition",
+        "paired-arches",
+        "arch-junction",
+        "saddle",
+        "saddle-landing",
+        "back-root",
+        "lyre-window",
+        "crown"
+      ],
+      "parts": [
+        "root-base",
+        "root-transition",
+        "paired-arches",
+        "arch-junction",
+        "saddle",
+        "saddle-landing",
+        "back-root",
+        "lyre-window",
+        "crown"
+      ],
+      "patterns": [
+        "lines",
+        "rim-only",
+        "sine"
+      ]
+    },
+    "layerProgram": [
+      {
+        "k": 0,
+        "z": 0,
+        "tag": "root-base",
+        "parts": [
+          "root-base"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 0.5,
+        "maxSpacing_mm": 0.55,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 0,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0,
+        "fill_mm": 3663
+      },
+      {
+        "k": 5,
+        "z": 1.2,
+        "tag": "root-base",
+        "parts": [
+          "root-base"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 0.85,
+        "maxSpacing_mm": 0.85,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 0.96,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0,
+        "fill_mm": 2458
+      },
+      {
+        "k": 10,
+        "z": 2.4,
+        "tag": "root-transition",
+        "parts": [
+          "root-transition"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 0.85,
+        "maxSpacing_mm": 0.85,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 0.97,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0,
+        "fill_mm": 2397
+      },
+      {
+        "k": 15,
+        "z": 3.6,
+        "tag": "root-transition",
+        "parts": [
+          "root-transition"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 0.92,
+        "maxSpacing_mm": 0.92,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 1,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0,
+        "fill_mm": 2297
+      },
+      {
+        "k": 20,
+        "z": 4.8,
+        "tag": "root-transition",
+        "parts": [
+          "root-transition"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.04,
+        "maxSpacing_mm": 1.04,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 1.13,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0,
+        "fill_mm": 2076
+      },
+      {
+        "k": 25,
+        "z": 6,
+        "tag": "root-transition",
+        "parts": [
+          "root-transition"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.21,
+        "maxSpacing_mm": 1.21,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 1.3,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0,
+        "fill_mm": 1797
+      },
+      {
+        "k": 30,
+        "z": 7.2,
+        "tag": "root-transition",
+        "parts": [
+          "root-transition"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.41,
+        "maxSpacing_mm": 1.41,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 1.74,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0,
+        "fill_mm": 1588
+      },
+      {
+        "k": 35,
+        "z": 8.4,
+        "tag": "root-transition",
+        "parts": [
+          "root-transition"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.63,
+        "maxSpacing_mm": 1.63,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 1.64,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0,
+        "fill_mm": 1478
+      },
+      {
+        "k": 40,
+        "z": 9.6,
+        "tag": "root-transition",
+        "parts": [
+          "root-transition"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.85,
+        "maxSpacing_mm": 1.85,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 1.84,
+        "freeRun_mm": 0.5,
+        "unsupported": 20,
+        "growth_mm": 0,
+        "fill_mm": 1352
+      },
+      {
+        "k": 45,
+        "z": 10.8,
+        "tag": "root-transition",
+        "parts": [
+          "root-transition"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.06,
+        "maxSpacing_mm": 2.06,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 2.04,
+        "freeRun_mm": 0.5,
+        "unsupported": 102,
+        "growth_mm": 0,
+        "fill_mm": 1296
+      },
+      {
+        "k": 50,
+        "z": 12,
+        "tag": "root-transition",
+        "parts": [
+          "root-transition"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.23,
+        "maxSpacing_mm": 2.23,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.23,
+        "freeRun_mm": 1,
+        "unsupported": 144,
+        "growth_mm": 0,
+        "fill_mm": 1246
+      },
+      {
+        "k": 55,
+        "z": 13.2,
+        "tag": "root-transition",
+        "parts": [
+          "root-transition"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.37,
+        "maxSpacing_mm": 2.37,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 2.37,
+        "freeRun_mm": 1,
+        "unsupported": 152,
+        "growth_mm": 0,
+        "fill_mm": 1237
+      },
+      {
+        "k": 60,
+        "z": 14.4,
+        "tag": "root-transition",
+        "parts": [
+          "root-transition"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.44,
+        "maxSpacing_mm": 2.44,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.45,
+        "freeRun_mm": 1,
+        "unsupported": 166,
+        "growth_mm": 0,
+        "fill_mm": 1234
+      },
+      {
+        "k": 65,
+        "z": 15.6,
+        "tag": "root-transition",
+        "parts": [
+          "root-transition"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 2.47,
+        "freeRun_mm": 1,
+        "unsupported": 151,
+        "growth_mm": 0,
+        "fill_mm": 1176
+      },
+      {
+        "k": 70,
+        "z": 16.8,
+        "tag": "paired-arches",
+        "parts": [
+          "paired-arches"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.46,
+        "freeRun_mm": 1,
+        "unsupported": 139,
+        "growth_mm": 0,
+        "fill_mm": 1189
+      },
+      {
+        "k": 75,
+        "z": 18,
+        "tag": "paired-arches",
+        "parts": [
+          "paired-arches"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 2.44,
+        "freeRun_mm": 1,
+        "unsupported": 145,
+        "growth_mm": 0.02,
+        "fill_mm": 1186
+      },
+      {
+        "k": 80,
+        "z": 19.2,
+        "tag": "paired-arches",
+        "parts": [
+          "paired-arches"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.48,
+        "freeRun_mm": 1,
+        "unsupported": 143,
+        "growth_mm": 0.04,
+        "fill_mm": 1187
+      },
+      {
+        "k": 85,
+        "z": 20.4,
+        "tag": "paired-arches",
+        "parts": [
+          "paired-arches"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 2.45,
+        "freeRun_mm": 1,
+        "unsupported": 141,
+        "growth_mm": 0.06,
+        "fill_mm": 1150
+      },
+      {
+        "k": 90,
+        "z": 21.6,
+        "tag": "paired-arches",
+        "parts": [
+          "paired-arches"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.45,
+        "freeRun_mm": 1,
+        "unsupported": 140,
+        "growth_mm": 0.08,
+        "fill_mm": 1147
+      },
+      {
+        "k": 95,
+        "z": 22.8,
+        "tag": "paired-arches",
+        "parts": [
+          "paired-arches"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 2.45,
+        "freeRun_mm": 1,
+        "unsupported": 142,
+        "growth_mm": 0.1,
+        "fill_mm": 1178
+      },
+      {
+        "k": 100,
+        "z": 24,
+        "tag": "paired-arches",
+        "parts": [
+          "paired-arches"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.48,
+        "freeRun_mm": 1,
+        "unsupported": 137,
+        "growth_mm": 0.11,
+        "fill_mm": 1147
+      },
+      {
+        "k": 105,
+        "z": 25.2,
+        "tag": "paired-arches",
+        "parts": [
+          "paired-arches"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 2.48,
+        "freeRun_mm": 1,
+        "unsupported": 134,
+        "growth_mm": 0.12,
+        "fill_mm": 1139
+      },
+      {
+        "k": 110,
+        "z": 26.4,
+        "tag": "paired-arches",
+        "parts": [
+          "paired-arches"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.46,
+        "freeRun_mm": 1,
+        "unsupported": 141,
+        "growth_mm": 0.14,
+        "fill_mm": 1190
+      },
+      {
+        "k": 115,
+        "z": 27.6,
+        "tag": "paired-arches",
+        "parts": [
+          "paired-arches"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 2.46,
+        "freeRun_mm": 1,
+        "unsupported": 139,
+        "growth_mm": 0.15,
+        "fill_mm": 1179
+      },
+      {
+        "k": 120,
+        "z": 28.8,
+        "tag": "paired-arches",
+        "parts": [
+          "paired-arches"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.47,
+        "freeRun_mm": 1,
+        "unsupported": 136,
+        "growth_mm": 0.16,
+        "fill_mm": 1173
+      },
+      {
+        "k": 125,
+        "z": 30,
+        "tag": "paired-arches",
+        "parts": [
+          "paired-arches"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 2.46,
+        "freeRun_mm": 1,
+        "unsupported": 137,
+        "growth_mm": 0.16,
+        "fill_mm": 1178
+      },
+      {
+        "k": 130,
+        "z": 31.2,
+        "tag": "paired-arches",
+        "parts": [
+          "paired-arches"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.47,
+        "freeRun_mm": 1,
+        "unsupported": 136,
+        "growth_mm": 0.18,
+        "fill_mm": 1159
+      },
+      {
+        "k": 135,
+        "z": 32.4,
+        "tag": "paired-arches",
+        "parts": [
+          "paired-arches"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 2.47,
+        "freeRun_mm": 1,
+        "unsupported": 135,
+        "growth_mm": 0.18,
+        "fill_mm": 1158
+      },
+      {
+        "k": 140,
+        "z": 33.6,
+        "tag": "paired-arches",
+        "parts": [
+          "paired-arches"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.47,
+        "freeRun_mm": 1,
+        "unsupported": 137,
+        "growth_mm": 0.19,
+        "fill_mm": 1143
+      },
+      {
+        "k": 145,
+        "z": 34.8,
+        "tag": "paired-arches",
+        "parts": [
+          "paired-arches"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 2.48,
+        "freeRun_mm": 1.47,
+        "unsupported": 136,
+        "growth_mm": 0.19,
+        "fill_mm": 1136
+      },
+      {
+        "k": 150,
+        "z": 36,
+        "tag": "paired-arches",
+        "parts": [
+          "paired-arches"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.46,
+        "freeRun_mm": 1,
+        "unsupported": 138,
+        "growth_mm": 0.2,
+        "fill_mm": 1175
+      },
+      {
+        "k": 155,
+        "z": 37.2,
+        "tag": "paired-arches",
+        "parts": [
+          "paired-arches"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 2.46,
+        "freeRun_mm": 1,
+        "unsupported": 143,
+        "growth_mm": 0.2,
+        "fill_mm": 1196
+      },
+      {
+        "k": 160,
+        "z": 38.4,
+        "tag": "paired-arches",
+        "parts": [
+          "paired-arches"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.46,
+        "freeRun_mm": 1,
+        "unsupported": 138,
+        "growth_mm": 0.2,
+        "fill_mm": 1123
+      },
+      {
+        "k": 165,
+        "z": 39.6,
+        "tag": "paired-arches",
+        "parts": [
+          "paired-arches"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 2.48,
+        "freeRun_mm": 1,
+        "unsupported": 136,
+        "growth_mm": 0.2,
+        "fill_mm": 1140
+      },
+      {
+        "k": 170,
+        "z": 40.8,
+        "tag": "paired-arches",
+        "parts": [
+          "paired-arches"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.48,
+        "freeRun_mm": 1,
+        "unsupported": 137,
+        "growth_mm": 0.2,
+        "fill_mm": 1171
+      },
+      {
+        "k": 175,
+        "z": 42,
+        "tag": "paired-arches",
+        "parts": [
+          "paired-arches"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 2.48,
+        "freeRun_mm": 1,
+        "unsupported": 134,
+        "growth_mm": 0.2,
+        "fill_mm": 1144
+      },
+      {
+        "k": 180,
+        "z": 43.2,
+        "tag": "paired-arches",
+        "parts": [
+          "paired-arches"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.47,
+        "freeRun_mm": 1,
+        "unsupported": 139,
+        "growth_mm": 0.21,
+        "fill_mm": 1176
+      },
+      {
+        "k": 185,
+        "z": 44.4,
+        "tag": "paired-arches",
+        "parts": [
+          "paired-arches"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 2.46,
+        "freeRun_mm": 1,
+        "unsupported": 140,
+        "growth_mm": 0.22,
+        "fill_mm": 1147
+      },
+      {
+        "k": 190,
+        "z": 45.6,
+        "tag": "paired-arches",
+        "parts": [
+          "paired-arches"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.48,
+        "freeRun_mm": 1,
+        "unsupported": 139,
+        "growth_mm": 0.24,
+        "fill_mm": 1140
+      },
+      {
+        "k": 195,
+        "z": 46.8,
+        "tag": "paired-arches",
+        "parts": [
+          "paired-arches"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 2.47,
+        "freeRun_mm": 1,
+        "unsupported": 139,
+        "growth_mm": 0.26,
+        "fill_mm": 1136
+      },
+      {
+        "k": 200,
+        "z": 48,
+        "tag": "paired-arches",
+        "parts": [
+          "paired-arches"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.47,
+        "freeRun_mm": 1,
+        "unsupported": 139,
+        "growth_mm": 0.28,
+        "fill_mm": 1166
+      },
+      {
+        "k": 205,
+        "z": 49.2,
+        "tag": "paired-arches",
+        "parts": [
+          "paired-arches"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 2.48,
+        "freeRun_mm": 1,
+        "unsupported": 134,
+        "growth_mm": 0.29,
+        "fill_mm": 1124
+      },
+      {
+        "k": 210,
+        "z": 50.4,
+        "tag": "paired-arches",
+        "parts": [
+          "paired-arches"
+        ],
+        "islands": 4,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.46,
+        "freeRun_mm": 1,
+        "unsupported": 145,
+        "growth_mm": 0.59,
+        "fill_mm": 1196
+      },
+      {
+        "k": 215,
+        "z": 51.6,
+        "tag": "paired-arches",
+        "parts": [
+          "paired-arches"
+        ],
+        "islands": 2,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 2.48,
+        "freeRun_mm": 1,
+        "unsupported": 186,
+        "growth_mm": 0.65,
+        "fill_mm": 1005
+      },
+      {
+        "k": 220,
+        "z": 52.8,
+        "tag": "paired-arches",
+        "parts": [
+          "paired-arches"
+        ],
+        "islands": 2,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.46,
+        "freeRun_mm": 1.16,
+        "unsupported": 206,
+        "growth_mm": 0.55,
+        "fill_mm": 994
+      },
+      {
+        "k": 225,
+        "z": 54,
+        "tag": "paired-arches",
+        "parts": [
+          "paired-arches"
+        ],
+        "islands": 2,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 2.46,
+        "freeRun_mm": 1,
+        "unsupported": 156,
+        "growth_mm": 0.48,
+        "fill_mm": 923
+      },
+      {
+        "k": 230,
+        "z": 55.2,
+        "tag": "paired-arches",
+        "parts": [
+          "paired-arches"
+        ],
+        "islands": 2,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.47,
+        "freeRun_mm": 1,
+        "unsupported": 162,
+        "growth_mm": 0.44,
+        "fill_mm": 921
+      },
+      {
+        "k": 235,
+        "z": 56.4,
+        "tag": "paired-arches",
+        "parts": [
+          "paired-arches"
+        ],
+        "islands": 2,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 2.47,
+        "freeRun_mm": 1,
+        "unsupported": 151,
+        "growth_mm": 0.42,
+        "fill_mm": 896
+      },
+      {
+        "k": 240,
+        "z": 57.6,
+        "tag": "paired-arches",
+        "parts": [
+          "paired-arches"
+        ],
+        "islands": 2,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.46,
+        "freeRun_mm": 1,
+        "unsupported": 159,
+        "growth_mm": 0.4,
+        "fill_mm": 873
+      },
+      {
+        "k": 245,
+        "z": 58.8,
+        "tag": "paired-arches",
+        "parts": [
+          "paired-arches"
+        ],
+        "islands": 2,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 2.47,
+        "freeRun_mm": 1,
+        "unsupported": 147,
+        "growth_mm": 0.38,
+        "fill_mm": 851
+      },
+      {
+        "k": 250,
+        "z": 60,
+        "tag": "paired-arches",
+        "parts": [
+          "paired-arches"
+        ],
+        "islands": 2,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.47,
+        "freeRun_mm": 1,
+        "unsupported": 148,
+        "growth_mm": 0.36,
+        "fill_mm": 856
+      },
+      {
+        "k": 255,
+        "z": 61.2,
+        "tag": "paired-arches",
+        "parts": [
+          "paired-arches"
+        ],
+        "islands": 2,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 2.47,
+        "freeRun_mm": 1,
+        "unsupported": 154,
+        "growth_mm": 0.33,
+        "fill_mm": 862
+      },
+      {
+        "k": 260,
+        "z": 62.4,
+        "tag": "paired-arches",
+        "parts": [
+          "paired-arches"
+        ],
+        "islands": 2,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.46,
+        "freeRun_mm": 1.47,
+        "unsupported": 150,
+        "growth_mm": 0.3,
+        "fill_mm": 793
+      },
+      {
+        "k": 265,
+        "z": 63.6,
+        "tag": "paired-arches",
+        "parts": [
+          "paired-arches"
+        ],
+        "islands": 2,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 2.47,
+        "freeRun_mm": 1,
+        "unsupported": 134,
+        "growth_mm": 0.31,
+        "fill_mm": 812
+      },
+      {
+        "k": 270,
+        "z": 64.8,
+        "tag": "paired-arches",
+        "parts": [
+          "paired-arches"
+        ],
+        "islands": 2,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 3.01,
+        "freeRun_mm": 1.48,
+        "unsupported": 153,
+        "growth_mm": 24.1,
+        "fill_mm": 812
+      },
+      {
+        "k": 275,
+        "z": 66,
+        "tag": "arch-junction",
+        "parts": [
+          "arch-junction"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 2.47,
+        "freeRun_mm": 1,
+        "unsupported": 172,
+        "growth_mm": 0.45,
+        "fill_mm": 685
+      },
+      {
+        "k": 280,
+        "z": 67.2,
+        "tag": "arch-junction",
+        "parts": [
+          "arch-junction"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.47,
+        "freeRun_mm": 1,
+        "unsupported": 157,
+        "growth_mm": 0.25,
+        "fill_mm": 682
+      },
+      {
+        "k": 285,
+        "z": 68.4,
+        "tag": "arch-junction",
+        "parts": [
+          "arch-junction"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 2.45,
+        "freeRun_mm": 1,
+        "unsupported": 154,
+        "growth_mm": 0.16,
+        "fill_mm": 672
+      },
+      {
+        "k": 290,
+        "z": 69.6,
+        "tag": "arch-junction",
+        "parts": [
+          "arch-junction"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.46,
+        "freeRun_mm": 1,
+        "unsupported": 143,
+        "growth_mm": 0.1,
+        "fill_mm": 610
+      },
+      {
+        "k": 295,
+        "z": 70.8,
+        "tag": "arch-junction",
+        "parts": [
+          "arch-junction"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 2.47,
+        "freeRun_mm": 1,
+        "unsupported": 146,
+        "growth_mm": 0.05,
+        "fill_mm": 627
+      },
+      {
+        "k": 300,
+        "z": 72,
+        "tag": "arch-junction",
+        "parts": [
+          "arch-junction"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.48,
+        "freeRun_mm": 1,
+        "unsupported": 129,
+        "growth_mm": 0.06,
+        "fill_mm": 594
+      },
+      {
+        "k": 305,
+        "z": 73.2,
+        "tag": "arch-junction",
+        "parts": [
+          "arch-junction"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 2.47,
+        "freeRun_mm": 1,
+        "unsupported": 138,
+        "growth_mm": 0.01,
+        "fill_mm": 647
+      },
+      {
+        "k": 310,
+        "z": 74.4,
+        "tag": "arch-junction",
+        "parts": [
+          "arch-junction"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.48,
+        "freeRun_mm": 1,
+        "unsupported": 149,
+        "growth_mm": 0.01,
+        "fill_mm": 622
+      },
+      {
+        "k": 315,
+        "z": 75.6,
+        "tag": "arch-junction",
+        "parts": [
+          "arch-junction"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 2.41,
+        "freeRun_mm": 1,
+        "unsupported": 148,
+        "growth_mm": 0.01,
+        "fill_mm": 639
+      },
+      {
+        "k": 320,
+        "z": 76.8,
+        "tag": "saddle",
+        "parts": [
+          "saddle"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.25,
+        "maxSpacing_mm": 2.25,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.29,
+        "freeRun_mm": 1,
+        "unsupported": 119,
+        "growth_mm": 0.02,
+        "fill_mm": 640
+      },
+      {
+        "k": 325,
+        "z": 78,
+        "tag": "saddle",
+        "parts": [
+          "saddle"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.25,
+        "maxSpacing_mm": 2.25,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 2.27,
+        "freeRun_mm": 1,
+        "unsupported": 121,
+        "growth_mm": 0.04,
+        "fill_mm": 657
+      },
+      {
+        "k": 330,
+        "z": 79.2,
+        "tag": "saddle",
+        "parts": [
+          "saddle"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.25,
+        "maxSpacing_mm": 2.25,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.27,
+        "freeRun_mm": 1,
+        "unsupported": 121,
+        "growth_mm": 0.07,
+        "fill_mm": 681
+      },
+      {
+        "k": 335,
+        "z": 80.4,
+        "tag": "saddle",
+        "parts": [
+          "saddle"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.25,
+        "maxSpacing_mm": 2.25,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 2.27,
+        "freeRun_mm": 1,
+        "unsupported": 131,
+        "growth_mm": 0.12,
+        "fill_mm": 667
+      },
+      {
+        "k": 340,
+        "z": 81.6,
+        "tag": "saddle",
+        "parts": [
+          "saddle"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.25,
+        "maxSpacing_mm": 2.25,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.26,
+        "freeRun_mm": 1,
+        "unsupported": 131,
+        "growth_mm": 0.21,
+        "fill_mm": 680
+      },
+      {
+        "k": 345,
+        "z": 82.8,
+        "tag": "saddle",
+        "parts": [
+          "saddle"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.25,
+        "maxSpacing_mm": 2.25,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 2.27,
+        "freeRun_mm": 1,
+        "unsupported": 145,
+        "growth_mm": 0.32,
+        "fill_mm": 771
+      },
+      {
+        "k": 350,
+        "z": 84,
+        "tag": "saddle",
+        "parts": [
+          "saddle"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.25,
+        "maxSpacing_mm": 2.25,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.32,
+        "freeRun_mm": 1.27,
+        "unsupported": 228,
+        "growth_mm": 0.39,
+        "fill_mm": 848
+      },
+      {
+        "k": 355,
+        "z": 85.2,
+        "tag": "saddle",
+        "parts": [
+          "saddle"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.25,
+        "maxSpacing_mm": 2.25,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 2.29,
+        "freeRun_mm": 1.5,
+        "unsupported": 276,
+        "growth_mm": 0.43,
+        "fill_mm": 958
+      },
+      {
+        "k": 360,
+        "z": 86.4,
+        "tag": "saddle",
+        "parts": [
+          "saddle"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.25,
+        "maxSpacing_mm": 2.25,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.28,
+        "freeRun_mm": 1.04,
+        "unsupported": 299,
+        "growth_mm": 0.47,
+        "fill_mm": 1092
+      },
+      {
+        "k": 365,
+        "z": 87.6,
+        "tag": "saddle",
+        "parts": [
+          "saddle"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.25,
+        "maxSpacing_mm": 2.25,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 2.47,
+        "freeRun_mm": 1.26,
+        "unsupported": 401,
+        "growth_mm": 0.49,
+        "fill_mm": 1305
+      },
+      {
+        "k": 370,
+        "z": 88.8,
+        "tag": "saddle",
+        "parts": [
+          "saddle"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.25,
+        "maxSpacing_mm": 2.25,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.42,
+        "freeRun_mm": 1.5,
+        "unsupported": 456,
+        "growth_mm": 0.52,
+        "fill_mm": 1414
+      },
+      {
+        "k": 375,
+        "z": 90,
+        "tag": "saddle",
+        "parts": [
+          "saddle"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.25,
+        "maxSpacing_mm": 2.25,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 2.29,
+        "freeRun_mm": 1.75,
+        "unsupported": 493,
+        "growth_mm": 0.54,
+        "fill_mm": 1636
+      },
+      {
+        "k": 380,
+        "z": 91.2,
+        "tag": "saddle",
+        "parts": [
+          "saddle"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.25,
+        "maxSpacing_mm": 2.25,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.28,
+        "freeRun_mm": 1,
+        "unsupported": 477,
+        "growth_mm": 0.56,
+        "fill_mm": 1875
+      },
+      {
+        "k": 385,
+        "z": 92.4,
+        "tag": "saddle",
+        "parts": [
+          "saddle"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.25,
+        "maxSpacing_mm": 2.25,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 2.3,
+        "freeRun_mm": 1,
+        "unsupported": 570,
+        "growth_mm": 0.56,
+        "fill_mm": 2178
+      },
+      {
+        "k": 390,
+        "z": 93.6,
+        "tag": "saddle",
+        "parts": [
+          "saddle"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.25,
+        "maxSpacing_mm": 2.25,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.28,
+        "freeRun_mm": 1.48,
+        "unsupported": 665,
+        "growth_mm": 0.57,
+        "fill_mm": 2435
+      },
+      {
+        "k": 395,
+        "z": 94.8,
+        "tag": "saddle",
+        "parts": [
+          "saddle"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.25,
+        "maxSpacing_mm": 2.25,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 2.29,
+        "freeRun_mm": 1,
+        "unsupported": 759,
+        "growth_mm": 0.56,
+        "fill_mm": 2682
+      },
+      {
+        "k": 400,
+        "z": 96,
+        "tag": "saddle",
+        "parts": [
+          "saddle"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.25,
+        "maxSpacing_mm": 2.25,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.28,
+        "freeRun_mm": 2.44,
+        "unsupported": 915,
+        "growth_mm": 0.56,
+        "fill_mm": 2825
+      },
+      {
+        "k": 405,
+        "z": 97.2,
+        "tag": "saddle",
+        "parts": [
+          "saddle"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.25,
+        "maxSpacing_mm": 2.25,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 2.29,
+        "freeRun_mm": 1,
+        "unsupported": 960,
+        "growth_mm": 0.55,
+        "fill_mm": 3262
+      },
+      {
+        "k": 410,
+        "z": 98.4,
+        "tag": "saddle",
+        "parts": [
+          "saddle"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.25,
+        "maxSpacing_mm": 2.25,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.28,
+        "freeRun_mm": 1,
+        "unsupported": 1061,
+        "growth_mm": 0.54,
+        "fill_mm": 3528
+      },
+      {
+        "k": 415,
+        "z": 99.6,
+        "tag": "saddle",
+        "parts": [
+          "saddle"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.25,
+        "maxSpacing_mm": 2.25,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 2.29,
+        "freeRun_mm": 1,
+        "unsupported": 1186,
+        "growth_mm": 0.51,
+        "fill_mm": 3838
+      },
+      {
+        "k": 420,
+        "z": 100.8,
+        "tag": "saddle",
+        "parts": [
+          "saddle"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.25,
+        "maxSpacing_mm": 2.25,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.3,
+        "freeRun_mm": 1,
+        "unsupported": 1265,
+        "growth_mm": 0.48,
+        "fill_mm": 4159
+      },
+      {
+        "k": 425,
+        "z": 102,
+        "tag": "saddle",
+        "parts": [
+          "saddle"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.25,
+        "maxSpacing_mm": 2.25,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 2.29,
+        "freeRun_mm": 1,
+        "unsupported": 1391,
+        "growth_mm": 0.45,
+        "fill_mm": 4428
+      },
+      {
+        "k": 430,
+        "z": 103.2,
+        "tag": "saddle",
+        "parts": [
+          "saddle"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.25,
+        "maxSpacing_mm": 2.25,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.28,
+        "freeRun_mm": 1,
+        "unsupported": 1493,
+        "growth_mm": 0.42,
+        "fill_mm": 4693
+      },
+      {
+        "k": 435,
+        "z": 104.4,
+        "tag": "saddle",
+        "parts": [
+          "saddle"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.25,
+        "maxSpacing_mm": 2.25,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 2.28,
+        "freeRun_mm": 1,
+        "unsupported": 1598,
+        "growth_mm": 0.44,
+        "fill_mm": 5015
+      },
+      {
+        "k": 440,
+        "z": 105.6,
+        "tag": "saddle",
+        "parts": [
+          "saddle"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.25,
+        "maxSpacing_mm": 2.25,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.29,
+        "freeRun_mm": 2.06,
+        "unsupported": 1713,
+        "growth_mm": 0.67,
+        "fill_mm": 5236
+      },
+      {
+        "k": 445,
+        "z": 106.8,
+        "tag": "saddle",
+        "parts": [
+          "saddle"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.25,
+        "maxSpacing_mm": 2.25,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 2.3,
+        "freeRun_mm": 1,
+        "unsupported": 1760,
+        "growth_mm": 0.28,
+        "fill_mm": 5474
+      },
+      {
+        "k": 450,
+        "z": 108,
+        "tag": "saddle",
+        "parts": [
+          "saddle"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.25,
+        "maxSpacing_mm": 2.25,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.29,
+        "freeRun_mm": 1,
+        "unsupported": 1825,
+        "growth_mm": 0.22,
+        "fill_mm": 5581
+      },
+      {
+        "k": 455,
+        "z": 109.2,
+        "tag": "saddle",
+        "parts": [
+          "saddle"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.25,
+        "maxSpacing_mm": 2.25,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 2.29,
+        "freeRun_mm": 1,
+        "unsupported": 1874,
+        "growth_mm": 0.16,
+        "fill_mm": 5722
+      },
+      {
+        "k": 460,
+        "z": 110.4,
+        "tag": "saddle",
+        "parts": [
+          "saddle"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.25,
+        "maxSpacing_mm": 2.25,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.29,
+        "freeRun_mm": 1,
+        "unsupported": 1893,
+        "growth_mm": 0.09,
+        "fill_mm": 5795
+      },
+      {
+        "k": 465,
+        "z": 111.6,
+        "tag": "saddle",
+        "parts": [
+          "saddle"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.25,
+        "maxSpacing_mm": 2.25,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 2.29,
+        "freeRun_mm": 1,
+        "unsupported": 1948,
+        "growth_mm": 0.02,
+        "fill_mm": 5825
+      },
+      {
+        "k": 470,
+        "z": 112.8,
+        "tag": "saddle",
+        "parts": [
+          "saddle"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.25,
+        "maxSpacing_mm": 2.25,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.29,
+        "freeRun_mm": 1,
+        "unsupported": 1950,
+        "growth_mm": 0,
+        "fill_mm": 5884
+      },
+      {
+        "k": 475,
+        "z": 114,
+        "tag": "saddle-landing",
+        "parts": [
+          "saddle-landing"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.57,
+        "maxSpacing_mm": 1.64,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 1.86,
+        "freeRun_mm": 0.5,
+        "unsupported": 210,
+        "growth_mm": 0,
+        "fill_mm": 7952
+      },
+      {
+        "k": 480,
+        "z": 115.2,
+        "tag": "saddle-landing",
+        "parts": [
+          "saddle-landing"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 0.88,
+        "maxSpacing_mm": 1.36,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 1.01,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0,
+        "fill_mm": 13323
+      },
+      {
+        "k": 485,
+        "z": 116.4,
+        "tag": "saddle-landing",
+        "parts": [
+          "saddle-landing"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 0.88,
+        "maxSpacing_mm": 1.36,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 1,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0,
+        "fill_mm": 13525
+      },
+      {
+        "k": 490,
+        "z": 117.6,
+        "tag": "saddle-landing",
+        "parts": [
+          "saddle-landing"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 0.88,
+        "maxSpacing_mm": 1.36,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 1,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0,
+        "fill_mm": 13851
+      },
+      {
+        "k": 495,
+        "z": 118.8,
+        "tag": "back-root",
+        "parts": [
+          "back-root"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 0.88,
+        "maxSpacing_mm": 0.88,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 1.03,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0,
+        "fill_mm": 2130
+      },
+      {
+        "k": 500,
+        "z": 120,
+        "tag": "back-root",
+        "parts": [
+          "back-root"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 0.88,
+        "maxSpacing_mm": 1.29,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 1.06,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.01,
+        "fill_mm": 1988
+      },
+      {
+        "k": 505,
+        "z": 121.2,
+        "tag": "back-root",
+        "parts": [
+          "back-root"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 0.9,
+        "maxSpacing_mm": 1.37,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 0.99,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.01,
+        "fill_mm": 2032
+      },
+      {
+        "k": 510,
+        "z": 122.4,
+        "tag": "back-root",
+        "parts": [
+          "back-root"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 1.59,
+        "maxSpacing_mm": 1.59,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 1.47,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0,
+        "fill_mm": 1333
+      },
+      {
+        "k": 515,
+        "z": 123.6,
+        "tag": "back-root",
+        "parts": [
+          "back-root"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.37,
+        "maxSpacing_mm": 2.37,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 2.3,
+        "freeRun_mm": 1,
+        "unsupported": 195,
+        "growth_mm": 0,
+        "fill_mm": 1093
+      },
+      {
+        "k": 520,
+        "z": 124.8,
+        "tag": "back-root",
+        "parts": [
+          "back-root"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.47,
+        "freeRun_mm": 1,
+        "unsupported": 228,
+        "growth_mm": 0.01,
+        "fill_mm": 1004
+      },
+      {
+        "k": 525,
+        "z": 126,
+        "tag": "back-root",
+        "parts": [
+          "back-root"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 2.47,
+        "freeRun_mm": 1,
+        "unsupported": 241,
+        "growth_mm": 0.01,
+        "fill_mm": 1128
+      },
+      {
+        "k": 530,
+        "z": 127.2,
+        "tag": "back-root",
+        "parts": [
+          "back-root"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.47,
+        "freeRun_mm": 1.45,
+        "unsupported": 239,
+        "growth_mm": 0.02,
+        "fill_mm": 1121
+      },
+      {
+        "k": 535,
+        "z": 128.4,
+        "tag": "back-root",
+        "parts": [
+          "back-root"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 2.47,
+        "freeRun_mm": 1,
+        "unsupported": 234,
+        "growth_mm": 0.03,
+        "fill_mm": 1099
+      },
+      {
+        "k": 540,
+        "z": 129.6,
+        "tag": "back-root",
+        "parts": [
+          "back-root"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.47,
+        "freeRun_mm": 1,
+        "unsupported": 232,
+        "growth_mm": 0.03,
+        "fill_mm": 1033
+      },
+      {
+        "k": 545,
+        "z": 130.8,
+        "tag": "back-root",
+        "parts": [
+          "back-root"
+        ],
+        "islands": 2,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 2.44,
+        "freeRun_mm": 1,
+        "unsupported": 241,
+        "growth_mm": 0.03,
+        "fill_mm": 1122
+      },
+      {
+        "k": 550,
+        "z": 132,
+        "tag": "back-root",
+        "parts": [
+          "back-root"
+        ],
+        "islands": 2,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.49,
+        "freeRun_mm": 1,
+        "unsupported": 234,
+        "growth_mm": 0.03,
+        "fill_mm": 1072
+      },
+      {
+        "k": 555,
+        "z": 133.2,
+        "tag": "back-root",
+        "parts": [
+          "back-root"
+        ],
+        "islands": 2,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 2.47,
+        "freeRun_mm": 1,
+        "unsupported": 196,
+        "growth_mm": 0.03,
+        "fill_mm": 1113
+      },
+      {
+        "k": 560,
+        "z": 134.4,
+        "tag": "back-root",
+        "parts": [
+          "back-root"
+        ],
+        "islands": 2,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.48,
+        "freeRun_mm": 1,
+        "unsupported": 185,
+        "growth_mm": 0.03,
+        "fill_mm": 995
+      },
+      {
+        "k": 565,
+        "z": 135.6,
+        "tag": "lyre-window",
+        "parts": [
+          "lyre-window"
+        ],
+        "islands": 2,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 2.48,
+        "freeRun_mm": 1,
+        "unsupported": 199,
+        "growth_mm": 0.04,
+        "fill_mm": 1087
+      },
+      {
+        "k": 570,
+        "z": 136.8,
+        "tag": "lyre-window",
+        "parts": [
+          "lyre-window"
+        ],
+        "islands": 2,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.47,
+        "freeRun_mm": 1,
+        "unsupported": 189,
+        "growth_mm": 0.04,
+        "fill_mm": 1042
+      },
+      {
+        "k": 575,
+        "z": 138,
+        "tag": "lyre-window",
+        "parts": [
+          "lyre-window"
+        ],
+        "islands": 2,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 2.48,
+        "freeRun_mm": 1,
+        "unsupported": 178,
+        "growth_mm": 0.04,
+        "fill_mm": 1018
+      },
+      {
+        "k": 580,
+        "z": 139.2,
+        "tag": "lyre-window",
+        "parts": [
+          "lyre-window"
+        ],
+        "islands": 2,
+        "kinds": [
+          "sine"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 1.38,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.03,
+        "fill_mm": 1000
+      },
+      {
+        "k": 585,
+        "z": 140.4,
+        "tag": "lyre-window",
+        "parts": [
+          "lyre-window"
+        ],
+        "islands": 2,
+        "kinds": [
+          "sine"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 2.47,
+        "freeRun_mm": 1.8,
+        "unsupported": 309,
+        "growth_mm": 0.03,
+        "fill_mm": 982
+      },
+      {
+        "k": 590,
+        "z": 141.6,
+        "tag": "lyre-window",
+        "parts": [
+          "lyre-window"
+        ],
+        "islands": 2,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.96,
+        "freeRun_mm": 1.99,
+        "unsupported": 147,
+        "growth_mm": 0.03,
+        "fill_mm": 972
+      },
+      {
+        "k": 595,
+        "z": 142.8,
+        "tag": "lyre-window",
+        "parts": [
+          "lyre-window"
+        ],
+        "islands": 2,
+        "kinds": [
+          "sine"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 2.98,
+        "freeRun_mm": 1.77,
+        "unsupported": 245,
+        "growth_mm": 0.03,
+        "fill_mm": 966
+      },
+      {
+        "k": 600,
+        "z": 144,
+        "tag": "lyre-window",
+        "parts": [
+          "lyre-window"
+        ],
+        "islands": 2,
+        "kinds": [
+          "sine"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 1.63,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 978
+      },
+      {
+        "k": 605,
+        "z": 145.2,
+        "tag": "lyre-window",
+        "parts": [
+          "lyre-window"
+        ],
+        "islands": 2,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 3.02,
+        "freeRun_mm": 1.49,
+        "unsupported": 141,
+        "growth_mm": 0.02,
+        "fill_mm": 942
+      },
+      {
+        "k": 610,
+        "z": 146.4,
+        "tag": "lyre-window",
+        "parts": [
+          "lyre-window"
+        ],
+        "islands": 2,
+        "kinds": [
+          "sine"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 2.89,
+        "freeRun_mm": 1.53,
+        "unsupported": 231,
+        "growth_mm": 0.02,
+        "fill_mm": 940
+      },
+      {
+        "k": 615,
+        "z": 147.6,
+        "tag": "lyre-window",
+        "parts": [
+          "lyre-window"
+        ],
+        "islands": 2,
+        "kinds": [
+          "sine"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 2.45,
+        "freeRun_mm": 1.58,
+        "unsupported": 249,
+        "growth_mm": 0.01,
+        "fill_mm": 949
+      },
+      {
+        "k": 620,
+        "z": 148.8,
+        "tag": "lyre-window",
+        "parts": [
+          "lyre-window"
+        ],
+        "islands": 2,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.99,
+        "freeRun_mm": 1.99,
+        "unsupported": 120,
+        "growth_mm": 0.01,
+        "fill_mm": 862
+      },
+      {
+        "k": 625,
+        "z": 150,
+        "tag": "lyre-window",
+        "parts": [
+          "lyre-window"
+        ],
+        "islands": 2,
+        "kinds": [
+          "sine"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 3.25,
+        "freeRun_mm": 1.5,
+        "unsupported": 225,
+        "growth_mm": 0,
+        "fill_mm": 883
+      },
+      {
+        "k": 630,
+        "z": 151.2,
+        "tag": "lyre-window",
+        "parts": [
+          "lyre-window"
+        ],
+        "islands": 2,
+        "kinds": [
+          "sine"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 2.47,
+        "freeRun_mm": 1.02,
+        "unsupported": 237,
+        "growth_mm": 0.01,
+        "fill_mm": 912
+      },
+      {
+        "k": 635,
+        "z": 152.4,
+        "tag": "lyre-window",
+        "parts": [
+          "lyre-window"
+        ],
+        "islands": 2,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 1.66,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.01,
+        "fill_mm": 931
+      },
+      {
+        "k": 640,
+        "z": 153.6,
+        "tag": "lyre-window",
+        "parts": [
+          "lyre-window"
+        ],
+        "islands": 2,
+        "kinds": [
+          "sine"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 3.22,
+        "freeRun_mm": 1.84,
+        "unsupported": 221,
+        "growth_mm": 0.02,
+        "fill_mm": 882
+      },
+      {
+        "k": 645,
+        "z": 154.8,
+        "tag": "lyre-window",
+        "parts": [
+          "lyre-window"
+        ],
+        "islands": 2,
+        "kinds": [
+          "sine"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 2.47,
+        "freeRun_mm": 1.86,
+        "unsupported": 249,
+        "growth_mm": 0.02,
+        "fill_mm": 884
+      },
+      {
+        "k": 650,
+        "z": 156,
+        "tag": "lyre-window",
+        "parts": [
+          "lyre-window"
+        ],
+        "islands": 2,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.84,
+        "freeRun_mm": 1.49,
+        "unsupported": 138,
+        "growth_mm": 0.03,
+        "fill_mm": 896
+      },
+      {
+        "k": 655,
+        "z": 157.2,
+        "tag": "lyre-window",
+        "parts": [
+          "lyre-window"
+        ],
+        "islands": 2,
+        "kinds": [
+          "sine"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 3.2,
+        "freeRun_mm": 1.6,
+        "unsupported": 227,
+        "growth_mm": 0.03,
+        "fill_mm": 871
+      },
+      {
+        "k": 660,
+        "z": 158.4,
+        "tag": "lyre-window",
+        "parts": [
+          "lyre-window"
+        ],
+        "islands": 2,
+        "kinds": [
+          "sine"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 1.68,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.03,
+        "fill_mm": 962
+      },
+      {
+        "k": 665,
+        "z": 159.6,
+        "tag": "lyre-window",
+        "parts": [
+          "lyre-window"
+        ],
+        "islands": 2,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 3,
+        "freeRun_mm": 1.5,
+        "unsupported": 130,
+        "growth_mm": 0.03,
+        "fill_mm": 885
+      },
+      {
+        "k": 670,
+        "z": 160.8,
+        "tag": "lyre-window",
+        "parts": [
+          "lyre-window"
+        ],
+        "islands": 2,
+        "kinds": [
+          "sine"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 3.09,
+        "freeRun_mm": 1.53,
+        "unsupported": 207,
+        "growth_mm": 0.03,
+        "fill_mm": 905
+      },
+      {
+        "k": 675,
+        "z": 162,
+        "tag": "lyre-window",
+        "parts": [
+          "lyre-window"
+        ],
+        "islands": 2,
+        "kinds": [
+          "sine"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 2.47,
+        "freeRun_mm": 1.86,
+        "unsupported": 263,
+        "growth_mm": 0.04,
+        "fill_mm": 916
+      },
+      {
+        "k": 680,
+        "z": 163.2,
+        "tag": "lyre-window",
+        "parts": [
+          "lyre-window"
+        ],
+        "islands": 2,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 3.07,
+        "freeRun_mm": 2,
+        "unsupported": 128,
+        "growth_mm": 0.04,
+        "fill_mm": 833
+      },
+      {
+        "k": 685,
+        "z": 164.4,
+        "tag": "lyre-window",
+        "parts": [
+          "lyre-window"
+        ],
+        "islands": 2,
+        "kinds": [
+          "sine"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 3.14,
+        "freeRun_mm": 1.52,
+        "unsupported": 230,
+        "growth_mm": 0.04,
+        "fill_mm": 877
+      },
+      {
+        "k": 690,
+        "z": 165.6,
+        "tag": "lyre-window",
+        "parts": [
+          "lyre-window"
+        ],
+        "islands": 2,
+        "kinds": [
+          "sine"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 2.48,
+        "freeRun_mm": 1.02,
+        "unsupported": 240,
+        "growth_mm": 0.04,
+        "fill_mm": 908
+      },
+      {
+        "k": 695,
+        "z": 166.8,
+        "tag": "lyre-window",
+        "parts": [
+          "lyre-window"
+        ],
+        "islands": 2,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 1.58,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.03,
+        "fill_mm": 869
+      },
+      {
+        "k": 700,
+        "z": 168,
+        "tag": "lyre-window",
+        "parts": [
+          "lyre-window"
+        ],
+        "islands": 2,
+        "kinds": [
+          "sine"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 3.12,
+        "freeRun_mm": 1.8,
+        "unsupported": 203,
+        "growth_mm": 0.03,
+        "fill_mm": 890
+      },
+      {
+        "k": 705,
+        "z": 169.2,
+        "tag": "lyre-window",
+        "parts": [
+          "lyre-window"
+        ],
+        "islands": 2,
+        "kinds": [
+          "sine"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 2.47,
+        "freeRun_mm": 1.85,
+        "unsupported": 244,
+        "growth_mm": 0.03,
+        "fill_mm": 910
+      },
+      {
+        "k": 710,
+        "z": 170.4,
+        "tag": "lyre-window",
+        "parts": [
+          "lyre-window"
+        ],
+        "islands": 2,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.89,
+        "freeRun_mm": 1.98,
+        "unsupported": 124,
+        "growth_mm": 0.03,
+        "fill_mm": 899
+      },
+      {
+        "k": 715,
+        "z": 171.6,
+        "tag": "lyre-window",
+        "parts": [
+          "lyre-window"
+        ],
+        "islands": 2,
+        "kinds": [
+          "sine"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 3.23,
+        "freeRun_mm": 1.54,
+        "unsupported": 202,
+        "growth_mm": 0.02,
+        "fill_mm": 913
+      },
+      {
+        "k": 720,
+        "z": 172.8,
+        "tag": "lyre-window",
+        "parts": [
+          "lyre-window"
+        ],
+        "islands": 2,
+        "kinds": [
+          "sine"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 1.66,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.02,
+        "fill_mm": 901
+      },
+      {
+        "k": 725,
+        "z": 174,
+        "tag": "lyre-window",
+        "parts": [
+          "lyre-window"
+        ],
+        "islands": 2,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 3.1,
+        "freeRun_mm": 1.49,
+        "unsupported": 128,
+        "growth_mm": 0.01,
+        "fill_mm": 892
+      },
+      {
+        "k": 730,
+        "z": 175.2,
+        "tag": "lyre-window",
+        "parts": [
+          "lyre-window"
+        ],
+        "islands": 2,
+        "kinds": [
+          "sine"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 3.08,
+        "freeRun_mm": 1.53,
+        "unsupported": 204,
+        "growth_mm": 0.01,
+        "fill_mm": 932
+      },
+      {
+        "k": 735,
+        "z": 176.4,
+        "tag": "lyre-window",
+        "parts": [
+          "lyre-window"
+        ],
+        "islands": 2,
+        "kinds": [
+          "sine"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 2.47,
+        "freeRun_mm": 1.79,
+        "unsupported": 225,
+        "growth_mm": 0,
+        "fill_mm": 895
+      },
+      {
+        "k": 740,
+        "z": 177.6,
+        "tag": "lyre-window",
+        "parts": [
+          "lyre-window"
+        ],
+        "islands": 2,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 3.15,
+        "freeRun_mm": 2.48,
+        "unsupported": 125,
+        "growth_mm": 0.02,
+        "fill_mm": 813
+      },
+      {
+        "k": 745,
+        "z": 178.8,
+        "tag": "lyre-window",
+        "parts": [
+          "lyre-window"
+        ],
+        "islands": 2,
+        "kinds": [
+          "sine"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 3.28,
+        "freeRun_mm": 1.58,
+        "unsupported": 211,
+        "growth_mm": 0.05,
+        "fill_mm": 878
+      },
+      {
+        "k": 750,
+        "z": 180,
+        "tag": "lyre-window",
+        "parts": [
+          "lyre-window"
+        ],
+        "islands": 2,
+        "kinds": [
+          "sine"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 2.47,
+        "freeRun_mm": 1.02,
+        "unsupported": 250,
+        "growth_mm": 0.08,
+        "fill_mm": 900
+      },
+      {
+        "k": 755,
+        "z": 181.2,
+        "tag": "lyre-window",
+        "parts": [
+          "lyre-window"
+        ],
+        "islands": 2,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 1.53,
+        "freeRun_mm": 0,
+        "unsupported": 0,
+        "growth_mm": 0.11,
+        "fill_mm": 938
+      },
+      {
+        "k": 760,
+        "z": 182.4,
+        "tag": "lyre-window",
+        "parts": [
+          "lyre-window"
+        ],
+        "islands": 2,
+        "kinds": [
+          "sine"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 3.23,
+        "freeRun_mm": 1.77,
+        "unsupported": 219,
+        "growth_mm": 0.14,
+        "fill_mm": 951
+      },
+      {
+        "k": 765,
+        "z": 183.6,
+        "tag": "lyre-window",
+        "parts": [
+          "lyre-window"
+        ],
+        "islands": 2,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 2.46,
+        "freeRun_mm": 1,
+        "unsupported": 143,
+        "growth_mm": 0.16,
+        "fill_mm": 942
+      },
+      {
+        "k": 770,
+        "z": 184.8,
+        "tag": "lyre-window",
+        "parts": [
+          "lyre-window"
+        ],
+        "islands": 2,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.49,
+        "freeRun_mm": 1.48,
+        "unsupported": 153,
+        "growth_mm": 0.18,
+        "fill_mm": 913
+      },
+      {
+        "k": 775,
+        "z": 186,
+        "tag": "lyre-window",
+        "parts": [
+          "lyre-window"
+        ],
+        "islands": 2,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 2.45,
+        "freeRun_mm": 1,
+        "unsupported": 161,
+        "growth_mm": 0.19,
+        "fill_mm": 947
+      },
+      {
+        "k": 780,
+        "z": 187.2,
+        "tag": "lyre-window",
+        "parts": [
+          "lyre-window"
+        ],
+        "islands": 2,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.46,
+        "freeRun_mm": 1,
+        "unsupported": 167,
+        "growth_mm": 0.2,
+        "fill_mm": 887
+      },
+      {
+        "k": 785,
+        "z": 188.4,
+        "tag": "lyre-window",
+        "parts": [
+          "lyre-window"
+        ],
+        "islands": 2,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 2.47,
+        "freeRun_mm": 1,
+        "unsupported": 162,
+        "growth_mm": 0.21,
+        "fill_mm": 962
+      },
+      {
+        "k": 790,
+        "z": 189.6,
+        "tag": "lyre-window",
+        "parts": [
+          "lyre-window"
+        ],
+        "islands": 2,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.47,
+        "freeRun_mm": 1.47,
+        "unsupported": 164,
+        "growth_mm": 0.21,
+        "fill_mm": 968
+      },
+      {
+        "k": 795,
+        "z": 190.8,
+        "tag": "crown",
+        "parts": [
+          "crown"
+        ],
+        "islands": 2,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 2.47,
+        "freeRun_mm": 1,
+        "unsupported": 168,
+        "growth_mm": 0.22,
+        "fill_mm": 1017
+      },
+      {
+        "k": 800,
+        "z": 192,
+        "tag": "crown",
+        "parts": [
+          "crown"
+        ],
+        "islands": 2,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.49,
+        "freeRun_mm": 1,
+        "unsupported": 178,
+        "growth_mm": 0.21,
+        "fill_mm": 939
+      },
+      {
+        "k": 805,
+        "z": 193.2,
+        "tag": "crown",
+        "parts": [
+          "crown"
+        ],
+        "islands": 2,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 2.47,
+        "freeRun_mm": 1,
+        "unsupported": 180,
+        "growth_mm": 0.2,
+        "fill_mm": 1054
+      },
+      {
+        "k": 810,
+        "z": 194.4,
+        "tag": "crown",
+        "parts": [
+          "crown"
+        ],
+        "islands": 2,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.47,
+        "freeRun_mm": 1,
+        "unsupported": 190,
+        "growth_mm": 0.2,
+        "fill_mm": 1045
+      },
+      {
+        "k": 815,
+        "z": 195.6,
+        "tag": "crown",
+        "parts": [
+          "crown"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 2.7,
+        "freeRun_mm": 3.86,
+        "unsupported": 209,
+        "growth_mm": 1.02,
+        "fill_mm": 1060
+      },
+      {
+        "k": 820,
+        "z": 196.8,
+        "tag": "crown",
+        "parts": [
+          "crown"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.49,
+        "freeRun_mm": 1,
+        "unsupported": 227,
+        "growth_mm": 0.31,
+        "fill_mm": 894
+      },
+      {
+        "k": 825,
+        "z": 198,
+        "tag": "crown",
+        "parts": [
+          "crown"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 2.47,
+        "freeRun_mm": 1,
+        "unsupported": 202,
+        "growth_mm": 0.19,
+        "fill_mm": 967
+      },
+      {
+        "k": 830,
+        "z": 199.2,
+        "tag": "crown",
+        "parts": [
+          "crown"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.45,
+        "freeRun_mm": 1.44,
+        "unsupported": 213,
+        "growth_mm": 0.12,
+        "fill_mm": 996
+      },
+      {
+        "k": 835,
+        "z": 200.4,
+        "tag": "crown",
+        "parts": [
+          "crown"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 2.47,
+        "freeRun_mm": 1,
+        "unsupported": 211,
+        "growth_mm": 0.07,
+        "fill_mm": 964
+      },
+      {
+        "k": 840,
+        "z": 201.6,
+        "tag": "crown",
+        "parts": [
+          "crown"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.47,
+        "freeRun_mm": 1,
+        "unsupported": 196,
+        "growth_mm": 0.04,
+        "fill_mm": 885
+      },
+      {
+        "k": 845,
+        "z": 202.8,
+        "tag": "crown",
+        "parts": [
+          "crown"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 2.49,
+        "freeRun_mm": 1,
+        "unsupported": 205,
+        "growth_mm": 0.02,
+        "fill_mm": 1022
+      },
+      {
+        "k": 850,
+        "z": 204,
+        "tag": "crown",
+        "parts": [
+          "crown"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.47,
+        "freeRun_mm": 1,
+        "unsupported": 207,
+        "growth_mm": 0,
+        "fill_mm": 945
+      },
+      {
+        "k": 855,
+        "z": 205.2,
+        "tag": "crown",
+        "parts": [
+          "crown"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 2.45,
+        "freeRun_mm": 1,
+        "unsupported": 201,
+        "growth_mm": 0.01,
+        "fill_mm": 968
+      },
+      {
+        "k": 860,
+        "z": 206.4,
+        "tag": "crown",
+        "parts": [
+          "crown"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.47,
+        "freeRun_mm": 1,
+        "unsupported": 196,
+        "growth_mm": 0.02,
+        "fill_mm": 849
+      },
+      {
+        "k": 865,
+        "z": 207.6,
+        "tag": "crown",
+        "parts": [
+          "crown"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 2.47,
+        "freeRun_mm": 1,
+        "unsupported": 192,
+        "growth_mm": 0.02,
+        "fill_mm": 930
+      },
+      {
+        "k": 870,
+        "z": 208.8,
+        "tag": "crown",
+        "parts": [
+          "crown"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.46,
+        "freeRun_mm": 1,
+        "unsupported": 191,
+        "growth_mm": 0.02,
+        "fill_mm": 994
+      },
+      {
+        "k": 875,
+        "z": 210,
+        "tag": "crown",
+        "parts": [
+          "crown"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 2.45,
+        "freeRun_mm": 1,
+        "unsupported": 185,
+        "growth_mm": 0.02,
+        "fill_mm": 938
+      },
+      {
+        "k": 880,
+        "z": 211.2,
+        "tag": "crown",
+        "parts": [
+          "crown"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 0,
+        "freeSpan_mm": 2.48,
+        "freeRun_mm": 1,
+        "unsupported": 176,
+        "growth_mm": 0.02,
+        "fill_mm": 938
+      },
+      {
+        "k": 885,
+        "z": 212.4,
+        "tag": "crown",
+        "parts": [
+          "crown"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 45,
+        "freeSpan_mm": 2.48,
+        "freeRun_mm": 1.48,
+        "unsupported": 201,
+        "growth_mm": 0.02,
+        "fill_mm": 924
+      },
+      {
+        "k": 890,
+        "z": 213.6,
+        "tag": "crown",
+        "parts": [
+          "crown"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 90,
+        "freeSpan_mm": 2.46,
+        "freeRun_mm": 1,
+        "unsupported": 194,
+        "growth_mm": 0.01,
+        "fill_mm": 915
+      },
+      {
+        "k": 895,
+        "z": 214.8,
+        "tag": "crown",
+        "parts": [
+          "crown"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 2.47,
+        "freeRun_mm": 1,
+        "unsupported": 187,
+        "growth_mm": 0.01,
+        "fill_mm": 925
+      },
+      {
+        "k": 899,
+        "z": 215.76,
+        "tag": "crown",
+        "parts": [
+          "crown"
+        ],
+        "islands": 1,
+        "kinds": [
+          "lines"
+        ],
+        "spacing_mm": 2.45,
+        "maxSpacing_mm": 2.45,
+        "rimOnly": 0,
+        "angle_deg": 135,
+        "freeSpan_mm": 2.47,
+        "freeRun_mm": 1,
+        "unsupported": 230,
+        "growth_mm": 0,
+        "fill_mm": 1020
+      }
+    ],
+    "events": [
+      {
+        "z": 2.16,
+        "k": 9,
+        "event": "root-base/4 -> root-transition/4"
+      },
+      {
+        "z": 16.08,
+        "k": 67,
+        "event": "root-transition/4 -> paired-arches/4"
+      },
+      {
+        "z": 50.64,
+        "k": 211,
+        "event": "paired-arches/4 -> paired-arches/2"
+      },
+      {
+        "z": 65.04,
+        "k": 271,
+        "event": "paired-arches/2 -> arch-junction/1"
+      },
+      {
+        "z": 76.08,
+        "k": 317,
+        "event": "arch-junction/1 -> saddle/1"
+      },
+      {
+        "z": 113.04,
+        "k": 471,
+        "event": "saddle/1 -> saddle-landing/1"
+      },
+      {
+        "z": 118.08,
+        "k": 492,
+        "event": "saddle-landing/1 -> back-root/1"
+      },
+      {
+        "z": 130.56,
+        "k": 544,
+        "event": "back-root/1 -> back-root/2"
+      },
+      {
+        "z": 135.12,
+        "k": 563,
+        "event": "back-root/2 -> lyre-window/2"
+      },
+      {
+        "z": 190.08,
+        "k": 792,
+        "event": "lyre-window/2 -> crown/2"
+      },
+      {
+        "z": 195.6,
+        "k": 815,
+        "event": "crown/2 -> crown/1"
+      }
+    ],
+    "violations": [],
+    "warnings": [
+      "layer 211 z=50.64: section grows 1.18 mm outward (field estimate; measured run 5.2 mm)",
+      "layer 213 z=51.12: section grows 0.81 mm outward (field estimate; measured run 0.4 mm)",
+      "layer 214 z=51.36: section grows 0.72 mm outward (field estimate; measured run 1 mm)",
+      "layer 215 z=51.6: section grows 0.65 mm outward (field estimate; measured run 1 mm)",
+      "layer 270 z=64.8: section grows 24.1 mm outward (field estimate; measured run 1.5 mm)",
+      "layer 271 z=65.04: section grows 1.04 mm outward (field estimate; measured run 2 mm)",
+      "layer 440 z=105.6: section grows 0.67 mm outward (field estimate; measured run 2.1 mm)",
+      "layer 441 z=105.84: section grows 1.08 mm outward (field estimate; measured run 1.3 mm)",
+      "layer 815 z=195.6: section grows 1.02 mm outward (field estimate; measured run 3.9 mm)"
+    ]
+  },
+  "design": null,
+  "preset": null,
+  "builder": "weft.mjs (core/weft_core.js + core/weft_gate.js, no browser, no Python)",
+  "gate": {
+    "bead": 0.45,
+    "maxbridge": 12,
+    "maxcantilever": 3,
+    "allow": 0.6,
+    "minanchor": 0.5,
+    "maxCapRadius": 20,
+    "maxislands": 4,
+    "file": "C:\\Svemir\\data\\brain\\scratch\\lira-a2l\\package\\LIRA_A2L.gcode"
+  }
+}

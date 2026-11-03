@@ -1,0 +1,134 @@
+{
+  "file": "C:\\Svemir\\!Projekti\\weft\\specimens\\2026-11-03_KOCKA_REVERZ\\KOCKA_REVERZ_A2L_250\\KOCKA_REVERZ_A2L_250.gcode.3mf",
+  "layers": 1041,
+  "firstLayer": {
+    "PASS": true,
+    "version": 1,
+    "firstModelZ": 0.24,
+    "firstPreviewZ": 0.24,
+    "segments": 3702,
+    "length_mm": 1715.747,
+    "filament_mm": 80.20522,
+    "startupSegments": 0,
+    "issues": []
+  },
+  "params": {
+    "bead": 0.45,
+    "allow": 0.6,
+    "maxbridge": 12,
+    "res": 0.2,
+    "bedz": 0.5,
+    "maxislands": 0,
+    "maxcantilever": 3
+  },
+  "stats": {
+    "floating": 0,
+    "long_bridge": 0,
+    "cantilever": 0,
+    "bridges": 211823,
+    "bad_membrane": 0,
+    "unanchored_membrane": 0,
+    "checked_paths": 1038,
+    "checked_points": 4851147,
+    "exempt_layers": 3,
+    "first_layer_islands": 1
+  },
+  "byRole": {},
+  "worstGaps": [
+    [
+      144,
+      "bridge",
+      4.12,
+      4.42
+    ],
+    [
+      144.24,
+      "bridge",
+      4.12,
+      4.42
+    ],
+    [
+      144.72,
+      "bridge",
+      4.12,
+      4.42
+    ],
+    [
+      140.16,
+      "bridge",
+      4.08,
+      4.4
+    ],
+    [
+      141.6,
+      "bridge",
+      4.08,
+      4.4
+    ],
+    [
+      142.32,
+      "bridge",
+      4.12,
+      4.4
+    ],
+    [
+      143.52,
+      "bridge",
+      4.16,
+      4.4
+    ],
+    [
+      144.48,
+      "bridge",
+      4.16,
+      4.4
+    ],
+    [
+      132,
+      "bridge",
+      4,
+      4.4
+    ],
+    [
+      132.24,
+      "bridge",
+      3.98,
+      4.4
+    ],
+    [
+      134.4,
+      "bridge",
+      4.03,
+      4.4
+    ],
+    [
+      134.64,
+      "bridge",
+      4.02,
+      4.4
+    ],
+    [
+      136.08,
+      "bridge",
+      4.05,
+      4.4
+    ],
+    [
+      138.48,
+      "bridge",
+      4.05,
+      4.4
+    ],
+    [
+      138.72,
+      "bridge",
+      4.08,
+      4.4
+    ]
+  ],
+  "membranes": [],
+  "problems": [],
+  "problem_count": 0,
+  "PASS": true,
+  "packagedGcodeEntry": "Metadata/plate_1.gcode"
+}

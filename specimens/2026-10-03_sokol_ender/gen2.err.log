@@ -1,0 +1,55 @@
+  layer 0/850 z=0 islands=1 temelj run=0 span=0 growth=0
+  layer 25/850 z=5 islands=1 kamen run=2.5 span=3 growth=0.02
+  layer 50/850 z=10 islands=5 grud-talas run=0.4 span=2 growth=0.02
+  layer 75/850 z=15 islands=5 grud-talas run=0.5 span=1.9 growth=0.06
+  layer 100/850 z=20 islands=5 grud-resetka run=1 span=2 growth=0.06
+  layer 125/850 z=25 islands=5 grud-resetka run=0.5 span=1.8 growth=0.09
+  layer 150/850 z=30 islands=5 grud run=1 span=2 growth=0.11
+  layer 175/850 z=35 islands=4 grud run=1 span=2.5 growth=0.1
+  layer 200/850 z=40 islands=4 grud-talas run=2.6 span=3.7 growth=0.26
+  layer 225/850 z=45 islands=4 grud-pokrivka run=0 span=1.6 growth=0.06
+  layer 250/850 z=50 islands=4 grud-resetka run=1 span=2.3 growth=0.4
+  layer 275/850 z=55 islands=3 grud-resetka run=1.5 span=2.7 growth=0.09
+  layer 300/850 z=60 islands=3 grud run=1 span=2.6 growth=0.1
+  layer 325/850 z=65 islands=3 grud run=1 span=2.5 growth=0.1
+  layer 350/850 z=70 islands=3 grud-talas run=3 span=3.3 growth=0.03
+  layer 375/850 z=75 islands=3 grud-talas run=3 span=3 growth=0.13
+  layer 400/850 z=80 islands=3 grud-resetka run=2 span=2.9 growth=0.05
+  layer 425/850 z=85 islands=3 grud-resetka run=1 span=2.4 growth=0.04
+  layer 450/850 z=90 islands=3 grud run=1 span=2.7 growth=0.02
+  layer 475/850 z=95 islands=3 grud run=1 span=2.4 growth=0.07
+  layer 500/850 z=100 islands=3 grud-talas run=3 span=3.2 growth=0.08
+  layer 525/850 z=105 islands=3 grud-talas run=2.6 span=3.4 growth=0.03
+  layer 550/850 z=110 islands=1 grud-pokrivka run=0 span=1.3 growth=0.52
+  layer 575/850 z=115 islands=1 grud-pokrivka run=0 span=1.1 growth=0.04
+  layer 600/850 z=120 islands=1 grud run=1 span=2.7 growth=0.11
+  layer 625/850 z=125 islands=1 vrat run=1 span=2.2 growth=0.01
+  layer 650/850 z=130 islands=1 vrat run=0.5 span=2 growth=0.04
+  layer 675/850 z=135 islands=1 vrat run=0 span=1.7 growth=0.36
+  layer 700/850 z=140 islands=1 glava run=0 span=1.6 growth=0.23
+  layer 725/850 z=145 islands=1 glava run=0 span=1.6 growth=0.3
+  layer 750/850 z=150 islands=1 glava run=0 span=1.7 growth=0.04
+  layer 775/850 z=155 islands=1 glava run=0 span=1.6 growth=0.01
+  layer 800/850 z=160 islands=1 kapa run=0 span=1.5 growth=0
+  layer 825/850 z=165 islands=1 kapa run=0 span=1.7 growth=0
+note: layer 257 z=51.4: section grows 0.66 mm outward (field estimate; measured run 1.4 mm)
+note: layer 258 z=51.6: section grows 0.82 mm outward (field estimate; measured run 1 mm)
+note: layer 259 z=51.8: section grows 1.33 mm outward (field estimate; measured run 1.9 mm)
+note: layer 260 z=52: section grows 1.32 mm outward (field estimate; measured run 6 mm)
+note: layer 261 z=52.2: section grows 0.66 mm outward (field estimate; measured run 1 mm)
+note: layer 547 z=109.4: section grows 0.95 mm outward (field estimate; measured run 0 mm)
+note: layer 548 z=109.6: section grows 0.68 mm outward (field estimate; measured run 1.4 mm)
+note: layer 551 z=110.2: section grows 0.95 mm outward (field estimate; measured run 0 mm)
+note: layer 552 z=110.4: section grows 1.55 mm outward (field estimate; measured run 0 mm)
+note: layer 554 z=110.8: section grows 0.98 mm outward (field estimate; measured run 0.5 mm)
+note: layer 556 z=111.2: section grows 0.87 mm outward (field estimate; measured run 0.5 mm)
+note: layer 558 z=111.6: section grows 0.77 mm outward (field estimate; measured run 1.8 mm)
+note: layer 559 z=111.8: section grows 1.4 mm outward (field estimate; measured run 1 mm)
+note: layer 560 z=112: section grows 0.69 mm outward (field estimate; measured run 1 mm)
+note: layer 561 z=112.2: section grows 1.21 mm outward (field estimate; measured run 0 mm)
+note: layer 562 z=112.4: section grows 1.1 mm outward (field estimate; measured run 1 mm)
+note: layer 563 z=112.6: section grows 0.88 mm outward (field estimate; measured run 0.5 mm)
+note: layer 565 z=113: section grows 0.62 mm outward (field estimate; measured run 0.3 mm)
+note: layer 797 z=159.4: section grows 0.61 mm outward (field estimate; measured run 0 mm)
+REFUSED:
+  * layer 547 z=109.4 (grud-pokrivka): 6/5237 points outside the body, worst 0.91 mm — that is a broken layer, not rounding

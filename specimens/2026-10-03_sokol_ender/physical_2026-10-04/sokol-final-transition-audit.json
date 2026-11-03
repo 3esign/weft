@@ -1,0 +1,2426 @@
+{
+  "at": "2026-10-04T16:05:23.737Z",
+  "file": "C:\\Svemir\\!Projekti\\weft\\ZA_STAMPU\\CREALITY_Ender3V4\\SOKOL_V2c\\SOKOL_V2_ENDER.gcode",
+  "sha256": "d7b09b685db757da401bf3d7b136b93aa00b9457287afc1120c155bcf4818832",
+  "method": "Exact parsed final G0/G1 XY segments with relative/absolute E and positions. Nominal contact at midpoint samples <=0.35mm apart requires previous-Z segment within0.42mm (sum of half-beads), no0.6mm allowance. This does not measure real welds or prove photographed onset.",
+  "assumptions": {
+    "bead_mm": 0.42,
+    "beadSource": "ASSUMED inherited Ender profile",
+    "maxBridge_mm": 12,
+    "maxCantilever_mm": 3
+  },
+  "layers": [
+    {
+      "k": 605,
+      "z": 121.2,
+      "pathCount": 3,
+      "segments": 6591,
+      "lineFirst": 2642345,
+      "lineLast": 2648951
+    },
+    {
+      "k": 606,
+      "z": 121.4,
+      "pathCount": 1,
+      "segments": 120192,
+      "lineFirst": 2648963,
+      "lineLast": 2769154
+    },
+    {
+      "k": 607,
+      "z": 121.6,
+      "pathCount": 1,
+      "segments": 1819,
+      "lineFirst": 2769163,
+      "lineLast": 2770981
+    }
+  ],
+  "nominal": {
+    "definition": "Length-weighted midpoint samples <=0.35 mm apart. Nominal contact: XY distance to previous-layer segment <= half the sum of the two commanded bead widths. No extra 0.6 mm support allowance. Actual bead shape and weld strength remain unmeasured.",
+    "policy": {
+      "maxBridge": 12,
+      "maxCantilever": 3,
+      "source": "Conservative local design policy using inherited span budgets with stricter nominal contact; not a calibrated physical failure threshold."
+    },
+    "PASS": false,
+    "findings": [
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.72,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 19.19,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 16.37,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.67,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.28,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 16.88,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.3,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.1,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 18.81,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 20.19,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 16.82,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 12.45,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.9,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.51,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 16.87,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.3,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.39,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 18.85,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 16.53,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 17,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 15.38,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.83,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 12.06,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.68,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 19.14,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 16.33,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 16.05,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 15.18,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 15.82,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 13.25,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 13.81,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 18.64,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 16.37,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 15.35,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.72,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 16.58,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 13.78,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.1,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 18.56,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 20.18,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 16.7,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 12.44,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.9,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.51,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 16.87,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.3,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.38,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 18.85,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 16.21,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 12.24,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 15.29,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 21.42,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 12.44,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.82,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 12.06,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.67,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 18.9,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 16.32,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 16.04,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 15.17,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 15.57,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 13.01,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 18.53,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 16.37,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 15.6,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.72,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 15.85,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 13.53,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.09,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 18.55,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.97,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 16.68,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 12.43,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.9,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.51,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 16.87,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.3,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.13,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 18.84,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 12.47,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.97,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 21.31,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.29,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.82,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 12.06,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.67,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 19.13,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 16.56,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 12.03,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 16.28,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 15.41,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 15.31,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 13.95,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 15.73,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 18.53,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 16.37,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 15.59,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.71,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 15.84,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 13.52,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.07,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 18.53,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 18.75,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 16.92,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 12.41,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.9,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.51,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 16.86,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.29,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.12,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 18.83,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 20.22,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 12.46,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 15.17,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 16.01,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.82,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 12.06,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.67,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 18.89,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 16.55,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 12.02,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 16.51,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 15.4,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 15.06,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 13.25,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 15.71,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 16.36,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 15.58,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.95,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 15.84,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 13.51,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.06,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 18.52,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 16.9,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 12.64,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 15.15,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.51,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 16.62,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.04,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.11,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 18.82,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 20.2,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 16.81,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 12.45,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.45,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 15.99,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.83,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 12.06,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.42,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 18.88,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 16.54,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 12.01,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 16.24,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 15.63,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 36,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 12.48,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 15.68,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 16.36,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 15.82,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 15.19,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 15.83,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 13.26,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 18.39,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 20.61,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 16.88,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 12.61,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 15.14,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.5,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 16.61,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.04,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.1,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 18.56,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 20.18,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 16.69,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 12.43,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.43,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.82,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.41,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 18.87,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 16.53,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 34.6,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 21.3,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 15.42,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 12.23,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 16.36,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 15.81,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 15.18,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 15.57,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 13.01,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 15.72,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 18.94,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 20.07,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 15.14,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.5,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 16.6,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 13.79,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.09,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 18.55,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 16.63,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 16.92,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 12.41,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.82,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.4,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 18.87,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 15.96,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 12.24,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.46,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 16.64,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 16.35,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 16.04,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 15.17,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 15.31,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 13.71,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 15.69,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 18.33,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 15.14,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.5,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 16.6,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 13.78,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.07,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 18.53,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 16.89,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 12.63,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 12.7,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.82,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.39,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 18.85,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 12.46,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.45,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 16.35,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 16.27,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 15.4,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 13.69,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 17.47,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 12.48,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 20.89,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 15.13,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.49,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 16.59,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 13.77,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 13.93,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 18.39,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 20.09,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 17.11,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 12.73,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.82,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.38,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 18.84,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 20.21,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 16.7,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 12.44,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 12.04,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 16.33,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.98,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 21.02,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 15.66,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 20.35,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 15.37,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.73,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 15.85,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 13.51,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 15.71,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.82,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.12,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 18.82,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 20.18,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 16.92,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 12.41,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 16.32,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 12.03,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.22,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 20.27,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 18.4,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 15.36,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.72,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 15.59,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 13.25,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 20.88,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.82,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.09,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 18.55,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 16.88,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 12.85,
+        "limit_mm": 12
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 16.5,
+        "limit_mm": 12
+      },
+      {
+        "k": 607,
+        "z": 121.6,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 18.76,
+        "limit_mm": 12
+      },
+      {
+        "k": 607,
+        "z": 121.6,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.65,
+        "limit_mm": 12
+      },
+      {
+        "k": 607,
+        "z": 121.6,
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 21.37,
+        "limit_mm": 12
+      }
+    ],
+    "rows": [
+      {
+        "k": 605,
+        "z": 121.2,
+        "length_mm": 2788.6,
+        "nominalTouchFraction": null,
+        "selfStackFraction": null,
+        "longestNominalRun_mm": 0,
+        "commandedExtrusionTime_s": 154.9
+      },
+      {
+        "k": 606,
+        "z": 121.4,
+        "length_mm": 51195.4,
+        "nominalTouchFraction": 0.6649,
+        "selfStackFraction": 0.1482,
+        "longestNominalRun_mm": 36,
+        "commandedExtrusionTime_s": 2844.2
+      },
+      {
+        "k": 607,
+        "z": 121.6,
+        "length_mm": 3538.1,
+        "nominalTouchFraction": 0.8542,
+        "selfStackFraction": 0.2959,
+        "longestNominalRun_mm": 21.37,
+        "commandedExtrusionTime_s": 70.8
+      }
+    ],
+    "weakestWith20LayersAbove": []
+  },
+  "criticalLayer": {
+    "z": 121.4,
+    "problemCount": 284,
+    "firstThree": [
+      {
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 14.718,
+        "limit_mm": 12,
+        "startLine": 2649251,
+        "endLine": 2649281,
+        "startXY": [
+          87.03575000000001,
+          108.72825
+        ],
+        "endXY": [
+          86.64325,
+          108.3405
+        ],
+        "firstSegment": {
+          "line": 2649251,
+          "a": [
+            87.305,
+            108.981
+          ],
+          "b": [
+            86.946,
+            108.644
+          ]
+        },
+        "lastSegment": {
+          "line": 2649281,
+          "a": [
+            86.554,
+            108.257
+          ],
+          "b": [
+            86.911,
+            108.591
+          ]
+        },
+        "leftAnchor": {
+          "line": 2649251,
+          "XY": [
+            87.21525,
+            108.89675
+          ],
+          "previousLayerLine": 2644604,
+          "distance_mm": 0.4147181271659108
+        },
+        "rightAnchor": {
+          "line": 2649281,
+          "XY": [
+            86.82175000000001,
+            108.5075
+          ],
+          "previousLayerLine": 2644605,
+          "distance_mm": 0.41744071919068804
+        }
+      },
+      {
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 19.186,
+        "limit_mm": 12,
+        "startLine": 2649293,
+        "endLine": 2649332,
+        "startXY": [
+          86.31375,
+          108.0065
+        ],
+        "endXY": [
+          86.52775,
+          108.225
+        ],
+        "firstSegment": {
+          "line": 2649293,
+          "a": [
+            86.577,
+            108.257
+          ],
+          "b": [
+            86.226,
+            107.923
+          ]
+        },
+        "lastSegment": {
+          "line": 2649332,
+          "a": [
+            86.263,
+            107.973
+          ],
+          "b": [
+            86.616,
+            108.309
+          ]
+        },
+        "leftAnchor": {
+          "line": 2649293,
+          "XY": [
+            86.48925,
+            108.1735
+          ],
+          "previousLayerLine": 2644606,
+          "distance_mm": 0.4159555640329946
+        },
+        "rightAnchor": {
+          "line": 2649333,
+          "XY": [
+            86.70425,
+            108.393
+          ],
+          "previousLayerLine": 2644605,
+          "distance_mm": 0.41932801653942253
+        }
+      },
+      {
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 16.371,
+        "limit_mm": 12,
+        "startLine": 2649425,
+        "endLine": 2649457,
+        "startXY": [
+          86.82975,
+          108.5215
+        ],
+        "endXY": [
+          86.43725,
+          108.13325
+        ],
+        "firstSegment": {
+          "line": 2649425,
+          "a": [
+            86.92,
+            108.607
+          ],
+          "b": [
+            86.559,
+            108.265
+          ]
+        },
+        "lastSegment": {
+          "line": 2649457,
+          "a": [
+            86.168,
+            107.879
+          ],
+          "b": [
+            86.527,
+            108.218
+          ]
+        },
+        "leftAnchor": {
+          "line": 2649424,
+          "XY": [
+            87.01050000000001,
+            108.6925
+          ],
+          "previousLayerLine": 2644604,
+          "distance_mm": 0.41507168055649574
+        },
+        "rightAnchor": {
+          "line": 2649458,
+          "XY": [
+            86.617,
+            108.30275
+          ],
+          "previousLayerLine": 2644605,
+          "distance_mm": 0.4170276522402468
+        }
+      }
+    ],
+    "longest": [
+      {
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 36.003,
+        "limit_mm": 12,
+        "startLine": 2694349,
+        "endLine": 2694426,
+        "startXY": [
+          107.3475,
+          113.48525
+        ],
+        "endXY": [
+          108.875,
+          115.0105
+        ],
+        "firstSegment": {
+          "line": 2694349,
+          "a": [
+            107.439,
+            113.57
+          ],
+          "b": [
+            107.073,
+            113.231
+          ]
+        },
+        "lastSegment": {
+          "line": 2694426,
+          "a": [
+            108.785,
+            114.925
+          ],
+          "b": [
+            109.145,
+            115.267
+          ]
+        },
+        "leftAnchor": {
+          "line": 2694348,
+          "XY": [
+            107.53049999999999,
+            113.6545
+          ],
+          "previousLayerLine": 2645534,
+          "distance_mm": 0.41365746699413597
+        },
+        "rightAnchor": {
+          "line": 2694426,
+          "XY": [
+            109.05499999999999,
+            115.1815
+          ],
+          "previousLayerLine": 2645529,
+          "distance_mm": 0.41542523394710074
+        }
+      },
+      {
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 34.602,
+        "limit_mm": 12,
+        "startLine": 2703310,
+        "endLine": 2703383,
+        "startXY": [
+          106.80225,
+          112.94125
+        ],
+        "endXY": [
+          109.95349999999999,
+          116.09
+        ],
+        "firstSegment": {
+          "line": 2703310,
+          "a": [
+            106.89,
+            113.022
+          ],
+          "b": [
+            106.539,
+            112.699
+          ]
+        },
+        "lastSegment": {
+          "line": 2703383,
+          "a": [
+            109.691,
+            115.838
+          ],
+          "b": [
+            110.041,
+            116.174
+          ]
+        },
+        "leftAnchor": {
+          "line": 2703309,
+          "XY": [
+            106.97749999999999,
+            113.10275
+          ],
+          "previousLayerLine": 2645535,
+          "distance_mm": 0.41454135047061835
+        },
+        "rightAnchor": {
+          "line": 2703384,
+          "XY": [
+            110.1285,
+            116.25800000000001
+          ],
+          "previousLayerLine": 2645526,
+          "distance_mm": 0.41687764318794074
+        }
+      },
+      {
+        "kind": "NOMINAL_BRIDGE",
+        "run_mm": 21.419,
+        "limit_mm": 12,
+        "startLine": 2664361,
+        "endLine": 2664407,
+        "startXY": [
+          109.9525,
+          116.087
+        ],
+        "endXY": [
+          112.69,
+          118.91550000000001
+        ],
+        "firstSegment": {
+          "line": 2664361,
+          "a": [
+            110.04,
+            116.171
+          ],
+          "b": [
+            109.69,
+            115.835
+          ]
+        },
+        "lastSegment": {
+          "line": 2664407,
+          "a": [
+            112.592,
+            118.912
+          ],
+          "b": [
+            112.984,
+            118.926
+          ]
+        },
+        "leftAnchor": {
+          "line": 2664360,
+          "XY": [
+            110.1275,
+            116.25525
+          ],
+          "previousLayerLine": 2645526,
+          "distance_mm": 0.41563644636320607
+        },
+        "rightAnchor": {
+          "line": 2664407,
+          "XY": [
+            112.886,
+            118.9225
+          ],
+          "previousLayerLine": 2645519,
+          "distance_mm": 0.3516022245612739
+        }
+      }
+    ]
+  }
+}

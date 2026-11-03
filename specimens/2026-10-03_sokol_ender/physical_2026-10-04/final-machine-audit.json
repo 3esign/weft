@@ -1,0 +1,6696 @@
+{
+  "schema": 1,
+  "file": "!Projekti/weft/ZA_STAMPU/CREALITY_Ender3V4/SOKOL_V2c/SOKOL_V2_ENDER.gcode",
+  "sha256": "d7b09b685db757da401bf3d7b136b93aa00b9457287afc1120c155bcf4818832",
+  "bytes": 120164432,
+  "commands": 3424704,
+  "firstLayerZ": 0.2,
+  "lastLayerZ": 188,
+  "physicalLayers": 940,
+  "modeTrace": [
+    {
+      "line": 16,
+      "command": "G90",
+      "model": false
+    },
+    {
+      "line": 17,
+      "command": "M83",
+      "model": false
+    },
+    {
+      "line": 3434880,
+      "command": "G91",
+      "model": true
+    },
+    {
+      "line": 3434883,
+      "command": "G90",
+      "model": true
+    }
+  ],
+  "temperatures": [
+    {
+      "line": 8,
+      "command": "M140",
+      "value": 0
+    },
+    {
+      "line": 9,
+      "command": "M104",
+      "value": 0
+    },
+    {
+      "line": 12,
+      "command": "M104",
+      "value": 220
+    }
+  ],
+  "fanCommands": [
+    {
+      "line": 4006,
+      "command": "M106",
+      "value": 255
+    },
+    {
+      "line": 3434879,
+      "command": "M106",
+      "value": 0
+    }
+  ],
+  "bodyBox": {
+    "min": [
+      55.84,
+      67.538,
+      0.2
+    ],
+    "max": [
+      145.271,
+      152.462,
+      188
+    ]
+  },
+  "commandedBox": {
+    "min": [
+      20,
+      2,
+      0.2
+    ],
+    "max": [
+      150,
+      152.462,
+      193
+    ]
+  },
+  "commandedIdealSeconds": 76499.07603149742,
+  "bodyIdealSeconds": 76492.00769816338,
+  "dwellSeconds": 0,
+  "extrudingFilament_mm": 44078.100440060276,
+  "estimatedModelMass_g_atAssumedDensity1_26": 133.5855226743378,
+  "maxExtrudingSpeed_mm_s": 50,
+  "maxVolumetric_mm3_s": 5.988380013198516,
+  "retractions": 2307,
+  "opaqueCommands": [
+    "START_PRINT",
+    "T0",
+    "BED_MESH_PROFILE",
+    "SET_VELOCITY_LIMIT",
+    "END_PRINT"
+  ],
+  "layerSummaries": [
+    {
+      "z": 0.2,
+      "extrusionPath_mm": 8856.461737652706,
+      "filament_mm": 321.8730600000059,
+      "extrusionSeconds": 738.0384781377228,
+      "segments": 3942
+    },
+    {
+      "z": 0.4,
+      "extrusionPath_mm": 5066.212443041065,
+      "filament_mm": 158.84697999999972,
+      "extrusionSeconds": 101.324248860821,
+      "segments": 2232
+    },
+    {
+      "z": 0.6,
+      "extrusionPath_mm": 5014.87045157408,
+      "filament_mm": 157.2368499999998,
+      "extrusionSeconds": 100.29740903148095,
+      "segments": 2175
+    },
+    {
+      "z": 0.8,
+      "extrusionPath_mm": 5066.212443041065,
+      "filament_mm": 158.84697999999972,
+      "extrusionSeconds": 101.324248860821,
+      "segments": 2232
+    },
+    {
+      "z": 1,
+      "extrusionPath_mm": 2061.1145723616028,
+      "filament_mm": 64.6241300000029,
+      "extrusionSeconds": 114.50636513120536,
+      "segments": 4538
+    },
+    {
+      "z": 1.2,
+      "extrusionPath_mm": 2088.758982994459,
+      "filament_mm": 65.49190000000183,
+      "extrusionSeconds": 116.04216572191815,
+      "segments": 4672
+    },
+    {
+      "z": 1.4,
+      "extrusionPath_mm": 2129.2889238668013,
+      "filament_mm": 66.76130000000042,
+      "extrusionSeconds": 118.29382910370953,
+      "segments": 4819
+    },
+    {
+      "z": 1.6,
+      "extrusionPath_mm": 2124.6015311630727,
+      "filament_mm": 66.61572000000295,
+      "extrusionSeconds": 118.03341839795438,
+      "segments": 4860
+    },
+    {
+      "z": 1.8,
+      "extrusionPath_mm": 2054.7958451868585,
+      "filament_mm": 64.42674000000295,
+      "extrusionSeconds": 114.15532473260977,
+      "segments": 4746
+    },
+    {
+      "z": 2,
+      "extrusionPath_mm": 2008.855327665864,
+      "filament_mm": 62.98309000000016,
+      "extrusionSeconds": 111.6030737592152,
+      "segments": 4659
+    },
+    {
+      "z": 2.2,
+      "extrusionPath_mm": 2060.5426514046635,
+      "filament_mm": 64.60718000000107,
+      "extrusionSeconds": 114.47459174470629,
+      "segments": 4781
+    },
+    {
+      "z": 2.4,
+      "extrusionPath_mm": 2046.049239470978,
+      "filament_mm": 64.15170000000137,
+      "extrusionSeconds": 113.6694021928345,
+      "segments": 4754
+    },
+    {
+      "z": 2.6,
+      "extrusionPath_mm": 2193.7455916605227,
+      "filament_mm": 68.77801000000014,
+      "extrusionSeconds": 121.87475509224714,
+      "segments": 5036
+    },
+    {
+      "z": 2.8,
+      "extrusionPath_mm": 2153.3744456584814,
+      "filament_mm": 67.51717000000109,
+      "extrusionSeconds": 119.63191364769582,
+      "segments": 4962
+    },
+    {
+      "z": 3,
+      "extrusionPath_mm": 2012.33732892636,
+      "filament_mm": 63.09468000000119,
+      "extrusionSeconds": 111.79651827368843,
+      "segments": 4682
+    },
+    {
+      "z": 3.2,
+      "extrusionPath_mm": 2008.9259261558896,
+      "filament_mm": 62.985940000001605,
+      "extrusionSeconds": 111.60699589754996,
+      "segments": 4671
+    },
+    {
+      "z": 3.4,
+      "extrusionPath_mm": 2039.066747100792,
+      "filament_mm": 63.93367000000339,
+      "extrusionSeconds": 113.28148595005017,
+      "segments": 4734
+    },
+    {
+      "z": 3.6,
+      "extrusionPath_mm": 2056.085324149095,
+      "filament_mm": 64.46477000000112,
+      "extrusionSeconds": 114.2269624527309,
+      "segments": 4765
+    },
+    {
+      "z": 3.8,
+      "extrusionPath_mm": 2159.4903356542477,
+      "filament_mm": 67.70593000000031,
+      "extrusionSeconds": 119.97168531412329,
+      "segments": 4967
+    },
+    {
+      "z": 4,
+      "extrusionPath_mm": 2097.807993454518,
+      "filament_mm": 65.77497000000258,
+      "extrusionSeconds": 116.54488852525766,
+      "segments": 4853
+    },
+    {
+      "z": 4.2,
+      "extrusionPath_mm": 2012.9873480168903,
+      "filament_mm": 63.11468000000137,
+      "extrusionSeconds": 111.83263044538606,
+      "segments": 4693
+    },
+    {
+      "z": 4.4,
+      "extrusionPath_mm": 2017.6187720425237,
+      "filament_mm": 63.2573400000006,
+      "extrusionSeconds": 112.08993178013591,
+      "segments": 4686
+    },
+    {
+      "z": 4.6,
+      "extrusionPath_mm": 2050.6700244379504,
+      "filament_mm": 64.29680000000076,
+      "extrusionSeconds": 113.92611246877736,
+      "segments": 4754
+    },
+    {
+      "z": 4.8,
+      "extrusionPath_mm": 2090.28351840654,
+      "filament_mm": 65.53742000000106,
+      "extrusionSeconds": 116.12686213369835,
+      "segments": 4840
+    },
+    {
+      "z": 5,
+      "extrusionPath_mm": 2138.0393925093167,
+      "filament_mm": 67.03149999999954,
+      "extrusionSeconds": 118.77996625051532,
+      "segments": 4936
+    },
+    {
+      "z": 5.2,
+      "extrusionPath_mm": 2121.6986993743894,
+      "filament_mm": 66.52342000000326,
+      "extrusionSeconds": 117.87214996524904,
+      "segments": 4894
+    },
+    {
+      "z": 5.4,
+      "extrusionPath_mm": 2069.1726028066873,
+      "filament_mm": 64.8761600000032,
+      "extrusionSeconds": 114.95403348926575,
+      "segments": 4781
+    },
+    {
+      "z": 5.6,
+      "extrusionPath_mm": 2043.6677577014989,
+      "filament_mm": 64.07431000000065,
+      "extrusionSeconds": 113.53709765008317,
+      "segments": 4743
+    },
+    {
+      "z": 5.8,
+      "extrusionPath_mm": 2053.9012140921764,
+      "filament_mm": 64.39681000000103,
+      "extrusionSeconds": 114.10562300512395,
+      "segments": 4769
+    },
+    {
+      "z": 6,
+      "extrusionPath_mm": 2078.816621828982,
+      "filament_mm": 65.17836000000129,
+      "extrusionSeconds": 115.48981232383493,
+      "segments": 4800
+    },
+    {
+      "z": 6.2,
+      "extrusionPath_mm": 2203.9871124477004,
+      "filament_mm": 69.10426000000209,
+      "extrusionSeconds": 122.44372846931029,
+      "segments": 5059
+    },
+    {
+      "z": 6.4,
+      "extrusionPath_mm": 2085.1996816184933,
+      "filament_mm": 65.38099000000088,
+      "extrusionSeconds": 115.84442675658522,
+      "segments": 4814
+    },
+    {
+      "z": 6.6,
+      "extrusionPath_mm": 2026.6881545109504,
+      "filament_mm": 63.54411000000253,
+      "extrusionSeconds": 112.5937863617245,
+      "segments": 4701
+    },
+    {
+      "z": 6.8,
+      "extrusionPath_mm": 4555.487197456761,
+      "filament_mm": 142.83424999999997,
+      "extrusionSeconds": 91.10974394913448,
+      "segments": 2314
+    },
+    {
+      "z": 7,
+      "extrusionPath_mm": 4512.550722217389,
+      "filament_mm": 141.48642000000046,
+      "extrusionSeconds": 90.25101444434911,
+      "segments": 2236
+    },
+    {
+      "z": 7.2,
+      "extrusionPath_mm": 4508.46370150757,
+      "filament_mm": 141.35924999999972,
+      "extrusionSeconds": 90.16927403015103,
+      "segments": 2252
+    },
+    {
+      "z": 7.4,
+      "extrusionPath_mm": 4556.630075438882,
+      "filament_mm": 142.86924000000127,
+      "extrusionSeconds": 91.13260150877774,
+      "segments": 2291
+    },
+    {
+      "z": 7.6,
+      "extrusionPath_mm": 4509.217454054373,
+      "filament_mm": 141.3829200000001,
+      "extrusionSeconds": 90.18434908108713,
+      "segments": 2261
+    },
+    {
+      "z": 7.8,
+      "extrusionPath_mm": 4520.4403604905765,
+      "filament_mm": 141.7347099999996,
+      "extrusionSeconds": 90.40880720981195,
+      "segments": 2259
+    },
+    {
+      "z": 8,
+      "extrusionPath_mm": 4501.112881276882,
+      "filament_mm": 141.12837000000016,
+      "extrusionSeconds": 90.022257625538,
+      "segments": 2303
+    },
+    {
+      "z": 8.2,
+      "extrusionPath_mm": 4498.338457259537,
+      "filament_mm": 141.04305000000022,
+      "extrusionSeconds": 89.96676914519102,
+      "segments": 2305
+    },
+    {
+      "z": 8.4,
+      "extrusionPath_mm": 4528.683549169852,
+      "filament_mm": 141.99344999999974,
+      "extrusionSeconds": 90.57367098339698,
+      "segments": 2339
+    },
+    {
+      "z": 8.6,
+      "extrusionPath_mm": 4622.218382132751,
+      "filament_mm": 144.92582000000107,
+      "extrusionSeconds": 92.44436764265555,
+      "segments": 2499
+    },
+    {
+      "z": 8.8,
+      "extrusionPath_mm": 4627.03147966874,
+      "filament_mm": 145.07698999999997,
+      "extrusionSeconds": 92.54062959337506,
+      "segments": 2486
+    },
+    {
+      "z": 9,
+      "extrusionPath_mm": 2547.4511350614434,
+      "filament_mm": 79.87333999999987,
+      "extrusionSeconds": 50.94902270122863,
+      "segments": 1537
+    },
+    {
+      "z": 9.2,
+      "extrusionPath_mm": 1405.3149088205325,
+      "filament_mm": 44.06241000000036,
+      "extrusionSeconds": 78.07305049002976,
+      "segments": 3211
+    },
+    {
+      "z": 9.4,
+      "extrusionPath_mm": 1379.8900992168528,
+      "filament_mm": 43.265000000000185,
+      "extrusionSeconds": 76.66056106760324,
+      "segments": 3301
+    },
+    {
+      "z": 9.6,
+      "extrusionPath_mm": 1269.7788574235599,
+      "filament_mm": 39.81284000000056,
+      "extrusionSeconds": 70.54326985686441,
+      "segments": 2995
+    },
+    {
+      "z": 9.8,
+      "extrusionPath_mm": 1236.0130265250314,
+      "filament_mm": 38.75400999999989,
+      "extrusionSeconds": 68.66739036250206,
+      "segments": 2955
+    },
+    {
+      "z": 10,
+      "extrusionPath_mm": 1206.9016325130367,
+      "filament_mm": 37.841330000000035,
+      "extrusionSeconds": 67.05009069516902,
+      "segments": 3062
+    },
+    {
+      "z": 10.2,
+      "extrusionPath_mm": 1183.331148866321,
+      "filament_mm": 37.102570000000014,
+      "extrusionSeconds": 65.74061938146194,
+      "segments": 3015
+    },
+    {
+      "z": 10.4,
+      "extrusionPath_mm": 1137.7075193637684,
+      "filament_mm": 35.67253999999994,
+      "extrusionSeconds": 63.20597329798682,
+      "segments": 2982
+    },
+    {
+      "z": 10.6,
+      "extrusionPath_mm": 1134.96469086978,
+      "filament_mm": 35.586069999999886,
+      "extrusionSeconds": 63.05359393721026,
+      "segments": 2969
+    },
+    {
+      "z": 10.8,
+      "extrusionPath_mm": 1130.2257314330386,
+      "filament_mm": 35.43815000000012,
+      "extrusionSeconds": 62.790318412946625,
+      "segments": 2922
+    },
+    {
+      "z": 11,
+      "extrusionPath_mm": 1078.8731483139406,
+      "filament_mm": 33.82737000000017,
+      "extrusionSeconds": 59.937397128552654,
+      "segments": 2855
+    },
+    {
+      "z": 11.2,
+      "extrusionPath_mm": 1103.0791595159312,
+      "filament_mm": 34.5855400000002,
+      "extrusionSeconds": 61.282175528663096,
+      "segments": 2933
+    },
+    {
+      "z": 11.4,
+      "extrusionPath_mm": 1049.3414584543307,
+      "filament_mm": 32.901339999999855,
+      "extrusionSeconds": 58.29674769190754,
+      "segments": 2774
+    },
+    {
+      "z": 11.6,
+      "extrusionPath_mm": 1035.5344482683217,
+      "filament_mm": 32.468649999999975,
+      "extrusionSeconds": 57.529691570462894,
+      "segments": 2708
+    },
+    {
+      "z": 11.8,
+      "extrusionPath_mm": 1049.0061884721315,
+      "filament_mm": 32.89089999999989,
+      "extrusionSeconds": 58.27812158178523,
+      "segments": 2763
+    },
+    {
+      "z": 12,
+      "extrusionPath_mm": 1046.5403314043601,
+      "filament_mm": 32.81427999999998,
+      "extrusionSeconds": 58.14112952246487,
+      "segments": 2758
+    },
+    {
+      "z": 12.2,
+      "extrusionPath_mm": 1022.769728143518,
+      "filament_mm": 32.06881000000001,
+      "extrusionSeconds": 56.820540452417454,
+      "segments": 2749
+    },
+    {
+      "z": 12.4,
+      "extrusionPath_mm": 1023.3009632573903,
+      "filament_mm": 32.08453000000009,
+      "extrusionSeconds": 56.850053514299624,
+      "segments": 2746
+    },
+    {
+      "z": 12.6,
+      "extrusionPath_mm": 1014.8118049505758,
+      "filament_mm": 31.81854000000004,
+      "extrusionSeconds": 56.378433608365654,
+      "segments": 2739
+    },
+    {
+      "z": 12.8,
+      "extrusionPath_mm": 1048.150260679503,
+      "filament_mm": 32.864400000000046,
+      "extrusionSeconds": 58.23057003775043,
+      "segments": 2688
+    },
+    {
+      "z": 13,
+      "extrusionPath_mm": 1000.4901750936783,
+      "filament_mm": 31.369670000000003,
+      "extrusionSeconds": 55.58278750520454,
+      "segments": 2597
+    },
+    {
+      "z": 13.2,
+      "extrusionPath_mm": 989.1226375226696,
+      "filament_mm": 31.01315999999982,
+      "extrusionSeconds": 54.951257640148775,
+      "segments": 2641
+    },
+    {
+      "z": 13.4,
+      "extrusionPath_mm": 968.6320232143016,
+      "filament_mm": 30.370899999999907,
+      "extrusionSeconds": 53.812890178572395,
+      "segments": 2643
+    },
+    {
+      "z": 13.6,
+      "extrusionPath_mm": 966.7586818473618,
+      "filament_mm": 30.312509999999943,
+      "extrusionSeconds": 53.70881565818671,
+      "segments": 2568
+    },
+    {
+      "z": 13.8,
+      "extrusionPath_mm": 940.4423328556253,
+      "filament_mm": 29.485960000000045,
+      "extrusionSeconds": 52.246796269756985,
+      "segments": 2528
+    },
+    {
+      "z": 14,
+      "extrusionPath_mm": 970.1323697624455,
+      "filament_mm": 30.41774999999994,
+      "extrusionSeconds": 53.89624276458019,
+      "segments": 2529
+    },
+    {
+      "z": 14.2,
+      "extrusionPath_mm": 961.3100027332528,
+      "filament_mm": 30.14096000000006,
+      "extrusionSeconds": 53.40611126295864,
+      "segments": 2593
+    },
+    {
+      "z": 14.4,
+      "extrusionPath_mm": 949.0786181018727,
+      "filament_mm": 29.7576599999999,
+      "extrusionSeconds": 52.72658989454889,
+      "segments": 2610
+    },
+    {
+      "z": 14.6,
+      "extrusionPath_mm": 930.8470887224537,
+      "filament_mm": 29.185760000000084,
+      "extrusionSeconds": 51.71372715124713,
+      "segments": 2509
+    },
+    {
+      "z": 14.8,
+      "extrusionPath_mm": 943.8453377763071,
+      "filament_mm": 29.59377999999993,
+      "extrusionSeconds": 52.43585209868388,
+      "segments": 2473
+    },
+    {
+      "z": 15,
+      "extrusionPath_mm": 936.5067045020635,
+      "filament_mm": 29.363490000000148,
+      "extrusionSeconds": 52.02815025011476,
+      "segments": 2562
+    },
+    {
+      "z": 15.2,
+      "extrusionPath_mm": 936.0959715393111,
+      "filament_mm": 29.35112999999993,
+      "extrusionSeconds": 52.005331752184055,
+      "segments": 2569
+    },
+    {
+      "z": 15.4,
+      "extrusionPath_mm": 899.7232689928301,
+      "filament_mm": 28.21006999999993,
+      "extrusionSeconds": 49.98462605515742,
+      "segments": 2378
+    },
+    {
+      "z": 15.6,
+      "extrusionPath_mm": 934.2910516765942,
+      "filament_mm": 29.29486999999992,
+      "extrusionSeconds": 51.90505842647763,
+      "segments": 2443
+    },
+    {
+      "z": 15.8,
+      "extrusionPath_mm": 947.8053112952182,
+      "filament_mm": 29.71768000000008,
+      "extrusionSeconds": 52.65585062751194,
+      "segments": 2583
+    },
+    {
+      "z": 16,
+      "extrusionPath_mm": 933.4492495418476,
+      "filament_mm": 29.267549999999904,
+      "extrusionSeconds": 51.85829164121373,
+      "segments": 2557
+    },
+    {
+      "z": 16.2,
+      "extrusionPath_mm": 955.602165437547,
+      "filament_mm": 29.962209999999928,
+      "extrusionSeconds": 53.089009190975396,
+      "segments": 2546
+    },
+    {
+      "z": 16.4,
+      "extrusionPath_mm": 904.332199713223,
+      "filament_mm": 28.354919999999954,
+      "extrusionSeconds": 50.240677761845554,
+      "segments": 2429
+    },
+    {
+      "z": 16.6,
+      "extrusionPath_mm": 889.0993697771082,
+      "filament_mm": 27.877179999999992,
+      "extrusionSeconds": 49.39440943206133,
+      "segments": 2385
+    },
+    {
+      "z": 16.8,
+      "extrusionPath_mm": 902.1420152171822,
+      "filament_mm": 28.286249999999985,
+      "extrusionSeconds": 50.11900084539903,
+      "segments": 2361
+    },
+    {
+      "z": 17,
+      "extrusionPath_mm": 886.6647951314917,
+      "filament_mm": 27.801320000000022,
+      "extrusionSeconds": 49.25915528508285,
+      "segments": 2332
+    },
+    {
+      "z": 17.2,
+      "extrusionPath_mm": 879.629250335289,
+      "filament_mm": 27.5803300000001,
+      "extrusionSeconds": 48.86829168529411,
+      "segments": 2428
+    },
+    {
+      "z": 17.4,
+      "extrusionPath_mm": 883.7871147476174,
+      "filament_mm": 27.71024999999998,
+      "extrusionSeconds": 49.099284152645254,
+      "segments": 2382
+    },
+    {
+      "z": 17.6,
+      "extrusionPath_mm": 901.6016117691737,
+      "filament_mm": 28.269049999999947,
+      "extrusionSeconds": 50.08897843162085,
+      "segments": 2423
+    },
+    {
+      "z": 17.8,
+      "extrusionPath_mm": 893.6227561622773,
+      "filament_mm": 28.019460000000006,
+      "extrusionSeconds": 49.64570867568204,
+      "segments": 2404
+    },
+    {
+      "z": 18,
+      "extrusionPath_mm": 900.5846481732026,
+      "filament_mm": 28.236770000000032,
+      "extrusionSeconds": 50.03248045406708,
+      "segments": 2407
+    },
+    {
+      "z": 18.2,
+      "extrusionPath_mm": 873.22985580109,
+      "filament_mm": 27.379359999999927,
+      "extrusionSeconds": 48.51276976672721,
+      "segments": 2299
+    },
+    {
+      "z": 18.4,
+      "extrusionPath_mm": 867.849261440087,
+      "filament_mm": 27.211239999999986,
+      "extrusionSeconds": 48.213847857782234,
+      "segments": 2338
+    },
+    {
+      "z": 18.6,
+      "extrusionPath_mm": 920.7280563060096,
+      "filament_mm": 28.868390000000048,
+      "extrusionSeconds": 51.15155868366729,
+      "segments": 2507
+    },
+    {
+      "z": 18.8,
+      "extrusionPath_mm": 882.6017087858611,
+      "filament_mm": 27.67280999999985,
+      "extrusionSeconds": 49.03342826588129,
+      "segments": 2368
+    },
+    {
+      "z": 19,
+      "extrusionPath_mm": 896.3108964247227,
+      "filament_mm": 28.103239999999957,
+      "extrusionSeconds": 49.795049801373736,
+      "segments": 2392
+    },
+    {
+      "z": 19.2,
+      "extrusionPath_mm": 899.1267415434004,
+      "filament_mm": 28.191889999999912,
+      "extrusionSeconds": 49.951485641300145,
+      "segments": 2469
+    },
+    {
+      "z": 19.4,
+      "extrusionPath_mm": 886.8834192115156,
+      "filament_mm": 27.80721999999983,
+      "extrusionSeconds": 49.27130106730634,
+      "segments": 2314
+    },
+    {
+      "z": 19.6,
+      "extrusionPath_mm": 898.2147873409257,
+      "filament_mm": 28.16315000000008,
+      "extrusionSeconds": 49.90082151894022,
+      "segments": 2338
+    },
+    {
+      "z": 19.8,
+      "extrusionPath_mm": 851.6563577216305,
+      "filament_mm": 26.70328999999999,
+      "extrusionSeconds": 47.31424209564622,
+      "segments": 2306
+    },
+    {
+      "z": 20,
+      "extrusionPath_mm": 869.8664931909266,
+      "filament_mm": 27.27398999999993,
+      "extrusionSeconds": 48.32591628838486,
+      "segments": 2280
+    },
+    {
+      "z": 20.2,
+      "extrusionPath_mm": 854.4053881095128,
+      "filament_mm": 26.789459999999988,
+      "extrusionSeconds": 47.46696600608427,
+      "segments": 2310
+    },
+    {
+      "z": 20.4,
+      "extrusionPath_mm": 856.7879864447739,
+      "filament_mm": 26.86429000000008,
+      "extrusionSeconds": 47.59933258026564,
+      "segments": 2375
+    },
+    {
+      "z": 20.6,
+      "extrusionPath_mm": 857.3782405528596,
+      "filament_mm": 26.88292999999999,
+      "extrusionSeconds": 47.63212447515931,
+      "segments": 2374
+    },
+    {
+      "z": 20.8,
+      "extrusionPath_mm": 873.7062130148129,
+      "filament_mm": 27.395429999999983,
+      "extrusionSeconds": 48.53923405637872,
+      "segments": 2293
+    },
+    {
+      "z": 21,
+      "extrusionPath_mm": 900.2643657969171,
+      "filament_mm": 28.227010000000043,
+      "extrusionSeconds": 50.0146869887179,
+      "segments": 2410
+    },
+    {
+      "z": 21.2,
+      "extrusionPath_mm": 889.0721973487919,
+      "filament_mm": 27.875880000000063,
+      "extrusionSeconds": 49.39289985271113,
+      "segments": 2376
+    },
+    {
+      "z": 21.4,
+      "extrusionPath_mm": 888.1022801766671,
+      "filament_mm": 27.845720000000032,
+      "extrusionSeconds": 49.33901556536995,
+      "segments": 2314
+    },
+    {
+      "z": 21.6,
+      "extrusionPath_mm": 904.3899640474548,
+      "filament_mm": 28.356429999999943,
+      "extrusionSeconds": 50.24388689152563,
+      "segments": 2417
+    },
+    {
+      "z": 21.8,
+      "extrusionPath_mm": 897.420143564277,
+      "filament_mm": 28.137759999999993,
+      "extrusionSeconds": 49.85667464246011,
+      "segments": 2466
+    },
+    {
+      "z": 22,
+      "extrusionPath_mm": 880.6495676150075,
+      "filament_mm": 27.611759999999965,
+      "extrusionSeconds": 48.92497597861154,
+      "segments": 2369
+    },
+    {
+      "z": 22.2,
+      "extrusionPath_mm": 913.7089285023301,
+      "filament_mm": 28.64893999999993,
+      "extrusionSeconds": 50.76160713901848,
+      "segments": 2440
+    },
+    {
+      "z": 22.4,
+      "extrusionPath_mm": 869.8706547598558,
+      "filament_mm": 27.27418999999992,
+      "extrusionSeconds": 48.32614748665887,
+      "segments": 2355
+    },
+    {
+      "z": 22.6,
+      "extrusionPath_mm": 889.3683504419917,
+      "filament_mm": 27.88574000000006,
+      "extrusionSeconds": 49.409352802333096,
+      "segments": 2387
+    },
+    {
+      "z": 22.8,
+      "extrusionPath_mm": 879.2694837659761,
+      "filament_mm": 27.569029999999913,
+      "extrusionSeconds": 48.84830465366521,
+      "segments": 2300
+    },
+    {
+      "z": 23,
+      "extrusionPath_mm": 906.4240239844257,
+      "filament_mm": 28.42041000000011,
+      "extrusionSeconds": 50.35689022135697,
+      "segments": 2364
+    },
+    {
+      "z": 23.2,
+      "extrusionPath_mm": 888.8131418173388,
+      "filament_mm": 27.86776000000002,
+      "extrusionSeconds": 49.37850787874151,
+      "segments": 2451
+    },
+    {
+      "z": 23.4,
+      "extrusionPath_mm": 859.9470523433837,
+      "filament_mm": 26.962549999999872,
+      "extrusionSeconds": 47.77483624129918,
+      "segments": 2310
+    },
+    {
+      "z": 23.6,
+      "extrusionPath_mm": 896.9965024630832,
+      "filament_mm": 28.12486,
+      "extrusionSeconds": 49.83313902572686,
+      "segments": 2384
+    },
+    {
+      "z": 23.8,
+      "extrusionPath_mm": 893.1514381056849,
+      "filament_mm": 28.00487000000012,
+      "extrusionSeconds": 49.61952433920479,
+      "segments": 2377
+    },
+    {
+      "z": 24,
+      "extrusionPath_mm": 885.8003922942717,
+      "filament_mm": 27.773930000000068,
+      "extrusionSeconds": 49.211132905237754,
+      "segments": 2372
+    },
+    {
+      "z": 24.2,
+      "extrusionPath_mm": 875.0896532850231,
+      "filament_mm": 27.437240000000006,
+      "extrusionSeconds": 48.616091849168136,
+      "segments": 2275
+    },
+    {
+      "z": 24.4,
+      "extrusionPath_mm": 933.9788230457333,
+      "filament_mm": 29.284840000000074,
+      "extrusionSeconds": 51.88771239142968,
+      "segments": 2415
+    },
+    {
+      "z": 24.6,
+      "extrusionPath_mm": 914.6073000747123,
+      "filament_mm": 28.67692999999998,
+      "extrusionSeconds": 50.811516670817234,
+      "segments": 2488
+    },
+    {
+      "z": 24.8,
+      "extrusionPath_mm": 911.7424657305982,
+      "filament_mm": 28.587010000000014,
+      "extrusionSeconds": 50.652359207255756,
+      "segments": 2484
+    },
+    {
+      "z": 25,
+      "extrusionPath_mm": 907.1105151130845,
+      "filament_mm": 28.441390000000016,
+      "extrusionSeconds": 50.39502861739361,
+      "segments": 2452
+    },
+    {
+      "z": 25.2,
+      "extrusionPath_mm": 917.9537447102857,
+      "filament_mm": 28.782190000000014,
+      "extrusionSeconds": 50.99743026168238,
+      "segments": 2437
+    },
+    {
+      "z": 25.4,
+      "extrusionPath_mm": 914.2697547968752,
+      "filament_mm": 28.66669999999993,
+      "extrusionSeconds": 50.79276415538192,
+      "segments": 2375
+    },
+    {
+      "z": 25.6,
+      "extrusionPath_mm": 915.2055886197257,
+      "filament_mm": 28.696210000000033,
+      "extrusionSeconds": 50.84475492331769,
+      "segments": 2448
+    },
+    {
+      "z": 25.8,
+      "extrusionPath_mm": 887.8430464640519,
+      "filament_mm": 27.837859999999814,
+      "extrusionSeconds": 49.324613692447556,
+      "segments": 2385
+    },
+    {
+      "z": 26,
+      "extrusionPath_mm": 892.7596647990756,
+      "filament_mm": 27.99135999999994,
+      "extrusionSeconds": 49.597759155504306,
+      "segments": 2320
+    },
+    {
+      "z": 26.2,
+      "extrusionPath_mm": 916.0586202865524,
+      "filament_mm": 28.722589999999954,
+      "extrusionSeconds": 50.89214557147508,
+      "segments": 2431
+    },
+    {
+      "z": 26.4,
+      "extrusionPath_mm": 887.2989551790596,
+      "filament_mm": 27.820949999999993,
+      "extrusionSeconds": 49.29438639883643,
+      "segments": 2379
+    },
+    {
+      "z": 26.6,
+      "extrusionPath_mm": 896.6979632734433,
+      "filament_mm": 28.11499000000002,
+      "extrusionSeconds": 49.81655351519124,
+      "segments": 2468
+    },
+    {
+      "z": 26.8,
+      "extrusionPath_mm": 900.0055435067835,
+      "filament_mm": 28.219089999999937,
+      "extrusionSeconds": 50.00030797259943,
+      "segments": 2476
+    },
+    {
+      "z": 27,
+      "extrusionPath_mm": 877.1313211998763,
+      "filament_mm": 27.50205999999994,
+      "extrusionSeconds": 48.72951784443787,
+      "segments": 2369
+    },
+    {
+      "z": 27.2,
+      "extrusionPath_mm": 897.4879655739574,
+      "filament_mm": 28.140159999999888,
+      "extrusionSeconds": 49.86044253188662,
+      "segments": 2351
+    },
+    {
+      "z": 27.4,
+      "extrusionPath_mm": 883.5371315672601,
+      "filament_mm": 27.70268999999998,
+      "extrusionSeconds": 49.08539619818116,
+      "segments": 2311
+    },
+    {
+      "z": 27.6,
+      "extrusionPath_mm": 928.7731404845763,
+      "filament_mm": 29.12156999999999,
+      "extrusionSeconds": 51.598507804698684,
+      "segments": 2467
+    },
+    {
+      "z": 27.8,
+      "extrusionPath_mm": 931.0991202767759,
+      "filament_mm": 29.19425999999996,
+      "extrusionSeconds": 51.7277289042655,
+      "segments": 2480
+    },
+    {
+      "z": 28,
+      "extrusionPath_mm": 920.1638098429269,
+      "filament_mm": 28.8512800000001,
+      "extrusionSeconds": 51.120211657940295,
+      "segments": 2520
+    },
+    {
+      "z": 28.2,
+      "extrusionPath_mm": 933.8143379954058,
+      "filament_mm": 29.278810000000117,
+      "extrusionSeconds": 51.87857433307799,
+      "segments": 2547
+    },
+    {
+      "z": 28.4,
+      "extrusionPath_mm": 933.8892386630317,
+      "filament_mm": 29.281460000000063,
+      "extrusionSeconds": 51.88273548127992,
+      "segments": 2490
+    },
+    {
+      "z": 28.6,
+      "extrusionPath_mm": 893.5450247113016,
+      "filament_mm": 28.017150000000044,
+      "extrusionSeconds": 49.64139026173932,
+      "segments": 2411
+    },
+    {
+      "z": 28.8,
+      "extrusionPath_mm": 917.3317680858123,
+      "filament_mm": 28.762800000000016,
+      "extrusionSeconds": 50.962876004767516,
+      "segments": 2453
+    },
+    {
+      "z": 29,
+      "extrusionPath_mm": 902.2857513933942,
+      "filament_mm": 28.290520000000015,
+      "extrusionSeconds": 50.12698618852223,
+      "segments": 2390
+    },
+    {
+      "z": 29.2,
+      "extrusionPath_mm": 888.0396726844585,
+      "filament_mm": 27.843549999999965,
+      "extrusionSeconds": 49.335537371359116,
+      "segments": 2381
+    },
+    {
+      "z": 29.4,
+      "extrusionPath_mm": 903.9013635055901,
+      "filament_mm": 28.34076999999987,
+      "extrusionSeconds": 50.216742416977056,
+      "segments": 2408
+    },
+    {
+      "z": 29.6,
+      "extrusionPath_mm": 898.5416236311405,
+      "filament_mm": 28.172689999999957,
+      "extrusionSeconds": 49.91897909061882,
+      "segments": 2405
+    },
+    {
+      "z": 29.8,
+      "extrusionPath_mm": 923.9787760569307,
+      "filament_mm": 28.9701799999999,
+      "extrusionSeconds": 51.33215422538534,
+      "segments": 2406
+    },
+    {
+      "z": 30,
+      "extrusionPath_mm": 930.7987986961134,
+      "filament_mm": 29.184479999999812,
+      "extrusionSeconds": 51.71104437200621,
+      "segments": 2408
+    },
+    {
+      "z": 30.2,
+      "extrusionPath_mm": 930.7432400358468,
+      "filament_mm": 29.18265999999999,
+      "extrusionSeconds": 51.70795777976938,
+      "segments": 2431
+    },
+    {
+      "z": 30.4,
+      "extrusionPath_mm": 907.3444854848344,
+      "filament_mm": 28.44920000000001,
+      "extrusionSeconds": 50.408026971379684,
+      "segments": 2379
+    },
+    {
+      "z": 30.6,
+      "extrusionPath_mm": 916.4635543270948,
+      "filament_mm": 28.734459999999988,
+      "extrusionSeconds": 50.91464190706083,
+      "segments": 2458
+    },
+    {
+      "z": 30.8,
+      "extrusionPath_mm": 914.0629355777255,
+      "filament_mm": 28.65997000000002,
+      "extrusionSeconds": 50.781274198762496,
+      "segments": 2451
+    },
+    {
+      "z": 31,
+      "extrusionPath_mm": 896.838117661808,
+      "filament_mm": 28.120190000000036,
+      "extrusionSeconds": 49.82433987010063,
+      "segments": 2417
+    },
+    {
+      "z": 31.2,
+      "extrusionPath_mm": 962.1337086055682,
+      "filament_mm": 30.16729999999987,
+      "extrusionSeconds": 53.45187270030948,
+      "segments": 2550
+    },
+    {
+      "z": 31.4,
+      "extrusionPath_mm": 901.1144606024442,
+      "filament_mm": 28.253709999999995,
+      "extrusionSeconds": 50.0619144779138,
+      "segments": 2377
+    },
+    {
+      "z": 31.6,
+      "extrusionPath_mm": 889.5548233691828,
+      "filament_mm": 27.891330000000067,
+      "extrusionSeconds": 49.41971240939877,
+      "segments": 2418
+    },
+    {
+      "z": 31.8,
+      "extrusionPath_mm": 924.5121129911759,
+      "filament_mm": 28.98822000000007,
+      "extrusionSeconds": 51.36178405506535,
+      "segments": 2491
+    },
+    {
+      "z": 32,
+      "extrusionPath_mm": 920.9994954694747,
+      "filament_mm": 28.877500000000158,
+      "extrusionSeconds": 51.16663863719314,
+      "segments": 2486
+    },
+    {
+      "z": 32.2,
+      "extrusionPath_mm": 933.4135325910697,
+      "filament_mm": 29.26681999999999,
+      "extrusionSeconds": 51.85630736617067,
+      "segments": 2567
+    },
+    {
+      "z": 32.4,
+      "extrusionPath_mm": 918.7088287287631,
+      "filament_mm": 28.80492999999992,
+      "extrusionSeconds": 51.039379373820196,
+      "segments": 2469
+    },
+    {
+      "z": 32.6,
+      "extrusionPath_mm": 899.4787331513458,
+      "filament_mm": 28.20252999999987,
+      "extrusionSeconds": 49.97104073063018,
+      "segments": 2430
+    },
+    {
+      "z": 32.8,
+      "extrusionPath_mm": 911.2819225386452,
+      "filament_mm": 28.57275999999991,
+      "extrusionSeconds": 50.62677347436918,
+      "segments": 2410
+    },
+    {
+      "z": 33,
+      "extrusionPath_mm": 919.5716085441261,
+      "filament_mm": 28.832660000000136,
+      "extrusionSeconds": 51.08731158578475,
+      "segments": 2498
+    },
+    {
+      "z": 33.2,
+      "extrusionPath_mm": 935.5737519782703,
+      "filament_mm": 29.33449000000009,
+      "extrusionSeconds": 51.97631955434849,
+      "segments": 2516
+    },
+    {
+      "z": 33.4,
+      "extrusionPath_mm": 931.1497520000355,
+      "filament_mm": 29.195160000000016,
+      "extrusionSeconds": 51.73054177777971,
+      "segments": 2443
+    },
+    {
+      "z": 33.6,
+      "extrusionPath_mm": 921.9140291177393,
+      "filament_mm": 28.906140000000008,
+      "extrusionSeconds": 51.217446062096805,
+      "segments": 2491
+    },
+    {
+      "z": 33.8,
+      "extrusionPath_mm": 969.4919518184199,
+      "filament_mm": 30.39814000000007,
+      "extrusionSeconds": 53.860663989912034,
+      "segments": 2621
+    },
+    {
+      "z": 34,
+      "extrusionPath_mm": 953.0461449359314,
+      "filament_mm": 29.881830000000036,
+      "extrusionSeconds": 52.94700805199641,
+      "segments": 2625
+    },
+    {
+      "z": 34.2,
+      "extrusionPath_mm": 958.4286729342856,
+      "filament_mm": 30.050910000000002,
+      "extrusionSeconds": 53.24603738523804,
+      "segments": 2567
+    },
+    {
+      "z": 34.4,
+      "extrusionPath_mm": 968.3280560379094,
+      "filament_mm": 30.362079999999963,
+      "extrusionSeconds": 53.79600311321729,
+      "segments": 2527
+    },
+    {
+      "z": 34.6,
+      "extrusionPath_mm": 972.5236325375822,
+      "filament_mm": 30.493700000000064,
+      "extrusionSeconds": 54.02909069653241,
+      "segments": 2611
+    },
+    {
+      "z": 34.8,
+      "extrusionPath_mm": 952.3832690462626,
+      "filament_mm": 29.861570000000047,
+      "extrusionSeconds": 52.910181613681864,
+      "segments": 2576
+    },
+    {
+      "z": 35,
+      "extrusionPath_mm": 987.4461527830085,
+      "filament_mm": 30.960749999999827,
+      "extrusionSeconds": 54.85811959905649,
+      "segments": 2638
+    },
+    {
+      "z": 35.2,
+      "extrusionPath_mm": 1004.6131139025234,
+      "filament_mm": 31.49866999999991,
+      "extrusionSeconds": 55.81183966125133,
+      "segments": 2800
+    },
+    {
+      "z": 35.4,
+      "extrusionPath_mm": 986.7966358769486,
+      "filament_mm": 30.940119999999997,
+      "extrusionSeconds": 54.82203532649746,
+      "segments": 2828
+    },
+    {
+      "z": 35.6,
+      "extrusionPath_mm": 986.2201512511591,
+      "filament_mm": 30.92181999999979,
+      "extrusionSeconds": 54.79000840284216,
+      "segments": 2750
+    },
+    {
+      "z": 35.8,
+      "extrusionPath_mm": 1058.6186982902268,
+      "filament_mm": 33.19249999999993,
+      "extrusionSeconds": 58.81214990501264,
+      "segments": 3127
+    },
+    {
+      "z": 36,
+      "extrusionPath_mm": 992.1860470637339,
+      "filament_mm": 31.109299999999934,
+      "extrusionSeconds": 55.12144705909623,
+      "segments": 2759
+    },
+    {
+      "z": 36.2,
+      "extrusionPath_mm": 965.7879247842196,
+      "filament_mm": 30.281730000000024,
+      "extrusionSeconds": 53.654884710234015,
+      "segments": 2379
+    },
+    {
+      "z": 36.4,
+      "extrusionPath_mm": 972.1563870006024,
+      "filament_mm": 30.48198000000004,
+      "extrusionSeconds": 54.00868816670001,
+      "segments": 2395
+    },
+    {
+      "z": 36.6,
+      "extrusionPath_mm": 955.8480763194714,
+      "filament_mm": 29.969699999999992,
+      "extrusionSeconds": 53.10267090663758,
+      "segments": 2547
+    },
+    {
+      "z": 36.8,
+      "extrusionPath_mm": 937.1260354290796,
+      "filament_mm": 29.382799999999957,
+      "extrusionSeconds": 52.0625575238379,
+      "segments": 2439
+    },
+    {
+      "z": 37,
+      "extrusionPath_mm": 962.9179081947043,
+      "filament_mm": 30.191210000000066,
+      "extrusionSeconds": 53.495439344150185,
+      "segments": 2627
+    },
+    {
+      "z": 37.2,
+      "extrusionPath_mm": 982.8017725724776,
+      "filament_mm": 30.81432999999991,
+      "extrusionSeconds": 54.60009847624846,
+      "segments": 2580
+    },
+    {
+      "z": 37.4,
+      "extrusionPath_mm": 1026.9124141250065,
+      "filament_mm": 32.198250000000115,
+      "extrusionSeconds": 57.050689673611515,
+      "segments": 2640
+    },
+    {
+      "z": 37.6,
+      "extrusionPath_mm": 989.1697692739082,
+      "filament_mm": 31.01416000000007,
+      "extrusionSeconds": 54.95387607077292,
+      "segments": 2633
+    },
+    {
+      "z": 37.8,
+      "extrusionPath_mm": 986.8369532254637,
+      "filament_mm": 30.94163999999997,
+      "extrusionSeconds": 54.8242751791921,
+      "segments": 2553
+    },
+    {
+      "z": 38,
+      "extrusionPath_mm": 996.8743006494433,
+      "filament_mm": 31.256129999999988,
+      "extrusionSeconds": 55.38190559163551,
+      "segments": 2693
+    },
+    {
+      "z": 38.2,
+      "extrusionPath_mm": 1009.1370336370014,
+      "filament_mm": 31.64089999999989,
+      "extrusionSeconds": 56.06316853538891,
+      "segments": 2647
+    },
+    {
+      "z": 38.4,
+      "extrusionPath_mm": 983.765398177388,
+      "filament_mm": 30.845559999999946,
+      "extrusionSeconds": 54.65363323207716,
+      "segments": 2602
+    },
+    {
+      "z": 38.6,
+      "extrusionPath_mm": 1040.079770668001,
+      "filament_mm": 32.61041999999996,
+      "extrusionSeconds": 57.782209481555824,
+      "segments": 2804
+    },
+    {
+      "z": 38.8,
+      "extrusionPath_mm": 1068.630707238273,
+      "filament_mm": 33.50637000000012,
+      "extrusionSeconds": 59.36837262434823,
+      "segments": 2735
+    },
+    {
+      "z": 39,
+      "extrusionPath_mm": 1020.732026408632,
+      "filament_mm": 32.00422999999996,
+      "extrusionSeconds": 56.707334800479664,
+      "segments": 2718
+    },
+    {
+      "z": 39.2,
+      "extrusionPath_mm": 1036.673296166793,
+      "filament_mm": 32.50456999999998,
+      "extrusionSeconds": 57.59296089815513,
+      "segments": 2658
+    },
+    {
+      "z": 39.4,
+      "extrusionPath_mm": 1030.1973365828537,
+      "filament_mm": 32.30088999999992,
+      "extrusionSeconds": 57.233185365714526,
+      "segments": 2716
+    },
+    {
+      "z": 39.6,
+      "extrusionPath_mm": 1052.2011158405978,
+      "filament_mm": 32.99106000000004,
+      "extrusionSeconds": 58.45561754670009,
+      "segments": 2730
+    },
+    {
+      "z": 39.8,
+      "extrusionPath_mm": 1017.5135737731724,
+      "filament_mm": 31.90350000000017,
+      "extrusionSeconds": 56.5285318762874,
+      "segments": 2736
+    },
+    {
+      "z": 40,
+      "extrusionPath_mm": 1023.5570187597268,
+      "filament_mm": 32.092900000000085,
+      "extrusionSeconds": 56.86427881998553,
+      "segments": 2744
+    },
+    {
+      "z": 40.2,
+      "extrusionPath_mm": 1057.9145172401575,
+      "filament_mm": 33.17057000000008,
+      "extrusionSeconds": 58.77302873556461,
+      "segments": 2728
+    },
+    {
+      "z": 40.4,
+      "extrusionPath_mm": 1022.5953033747605,
+      "filament_mm": 32.063439999999915,
+      "extrusionSeconds": 56.81085018748714,
+      "segments": 2670
+    },
+    {
+      "z": 40.6,
+      "extrusionPath_mm": 1020.285663568664,
+      "filament_mm": 31.99096000000002,
+      "extrusionSeconds": 56.68253686492578,
+      "segments": 2581
+    },
+    {
+      "z": 40.8,
+      "extrusionPath_mm": 1059.479681418544,
+      "filament_mm": 33.219169999999984,
+      "extrusionSeconds": 58.859982301030286,
+      "segments": 2744
+    },
+    {
+      "z": 41,
+      "extrusionPath_mm": 1067.1798938341376,
+      "filament_mm": 33.460739999999994,
+      "extrusionSeconds": 59.28777187967435,
+      "segments": 2676
+    },
+    {
+      "z": 41.2,
+      "extrusionPath_mm": 1064.5743063590317,
+      "filament_mm": 33.37876000000009,
+      "extrusionSeconds": 59.14301701994607,
+      "segments": 2815
+    },
+    {
+      "z": 41.4,
+      "extrusionPath_mm": 1044.8760121380408,
+      "filament_mm": 32.761379999999896,
+      "extrusionSeconds": 58.04866734100243,
+      "segments": 2688
+    },
+    {
+      "z": 41.6,
+      "extrusionPath_mm": 1098.2981459047655,
+      "filament_mm": 34.43751000000005,
+      "extrusionSeconds": 61.01656366137606,
+      "segments": 2890
+    },
+    {
+      "z": 41.8,
+      "extrusionPath_mm": 1085.9818286824368,
+      "filament_mm": 34.050679999999986,
+      "extrusionSeconds": 60.33232381569087,
+      "segments": 2730
+    },
+    {
+      "z": 42,
+      "extrusionPath_mm": 1044.0216512392233,
+      "filament_mm": 32.734580000000065,
+      "extrusionSeconds": 58.00120284662392,
+      "segments": 2729
+    },
+    {
+      "z": 42.2,
+      "extrusionPath_mm": 1067.2312600150758,
+      "filament_mm": 33.46226999999993,
+      "extrusionSeconds": 59.290625556392804,
+      "segments": 2722
+    },
+    {
+      "z": 42.4,
+      "extrusionPath_mm": 1096.262609476793,
+      "filament_mm": 34.372000000000234,
+      "extrusionSeconds": 60.90347830426681,
+      "segments": 2864
+    },
+    {
+      "z": 42.6,
+      "extrusionPath_mm": 1091.993238080442,
+      "filament_mm": 34.23866000000001,
+      "extrusionSeconds": 60.66629100446914,
+      "segments": 2821
+    },
+    {
+      "z": 42.8,
+      "extrusionPath_mm": 1091.4756208428412,
+      "filament_mm": 34.222569999999926,
+      "extrusionSeconds": 60.63753449126936,
+      "segments": 2926
+    },
+    {
+      "z": 43,
+      "extrusionPath_mm": 1132.3841248381736,
+      "filament_mm": 35.50504999999996,
+      "extrusionSeconds": 62.91022915767703,
+      "segments": 2919
+    },
+    {
+      "z": 43.2,
+      "extrusionPath_mm": 1087.338312241748,
+      "filament_mm": 34.09332000000022,
+      "extrusionSeconds": 60.407684013430455,
+      "segments": 2915
+    },
+    {
+      "z": 43.4,
+      "extrusionPath_mm": 1123.4574915873748,
+      "filament_mm": 35.22508999999995,
+      "extrusionSeconds": 62.41430508818755,
+      "segments": 2856
+    },
+    {
+      "z": 43.6,
+      "extrusionPath_mm": 1137.1723107057137,
+      "filament_mm": 35.655270000000186,
+      "extrusionSeconds": 63.17623948365058,
+      "segments": 2992
+    },
+    {
+      "z": 43.8,
+      "extrusionPath_mm": 1103.8389352432753,
+      "filament_mm": 34.6104899999999,
+      "extrusionSeconds": 61.324385291293765,
+      "segments": 2928
+    },
+    {
+      "z": 44,
+      "extrusionPath_mm": 1139.076880316044,
+      "filament_mm": 35.715540000000054,
+      "extrusionSeconds": 63.28204890644679,
+      "segments": 2975
+    },
+    {
+      "z": 44.2,
+      "extrusionPath_mm": 1105.0287392244875,
+      "filament_mm": 34.64718000000021,
+      "extrusionSeconds": 61.39048551247179,
+      "segments": 3151
+    },
+    {
+      "z": 44.4,
+      "extrusionPath_mm": 1128.4438457845154,
+      "filament_mm": 35.38198000000026,
+      "extrusionSeconds": 62.69132476580679,
+      "segments": 3116
+    },
+    {
+      "z": 44.6,
+      "extrusionPath_mm": 1155.529040421794,
+      "filament_mm": 36.230779999999655,
+      "extrusionSeconds": 64.19605780121078,
+      "segments": 3276
+    },
+    {
+      "z": 44.8,
+      "extrusionPath_mm": 1090.7609959612744,
+      "filament_mm": 34.20040000000007,
+      "extrusionSeconds": 60.59783310895975,
+      "segments": 2994
+    },
+    {
+      "z": 45,
+      "extrusionPath_mm": 1197.3050805082607,
+      "filament_mm": 37.541269999999926,
+      "extrusionSeconds": 66.51694891712543,
+      "segments": 3299
+    },
+    {
+      "z": 45.2,
+      "extrusionPath_mm": 1190.7434877653561,
+      "filament_mm": 37.33564000000032,
+      "extrusionSeconds": 66.15241598696379,
+      "segments": 3192
+    },
+    {
+      "z": 45.4,
+      "extrusionPath_mm": 1163.4309990216607,
+      "filament_mm": 36.47876,
+      "extrusionSeconds": 64.63505550120358,
+      "segments": 3236
+    },
+    {
+      "z": 45.6,
+      "extrusionPath_mm": 1158.4752775989964,
+      "filament_mm": 36.323780000000106,
+      "extrusionSeconds": 64.35973764438894,
+      "segments": 3185
+    },
+    {
+      "z": 45.8,
+      "extrusionPath_mm": 1210.9673440131762,
+      "filament_mm": 37.969539999999924,
+      "extrusionSeconds": 67.27596355628769,
+      "segments": 3386
+    },
+    {
+      "z": 46,
+      "extrusionPath_mm": 1206.7158387367317,
+      "filament_mm": 37.8360200000001,
+      "extrusionSeconds": 67.03976881870733,
+      "segments": 3286
+    },
+    {
+      "z": 46.2,
+      "extrusionPath_mm": 1178.5711431138745,
+      "filament_mm": 36.9539700000002,
+      "extrusionSeconds": 65.4761746174379,
+      "segments": 3285
+    },
+    {
+      "z": 46.4,
+      "extrusionPath_mm": 1165.557572412202,
+      "filament_mm": 36.54558999999999,
+      "extrusionSeconds": 64.75319846734469,
+      "segments": 3256
+    },
+    {
+      "z": 46.6,
+      "extrusionPath_mm": 1223.6168579233088,
+      "filament_mm": 38.36610000000007,
+      "extrusionSeconds": 67.97871432907267,
+      "segments": 3288
+    },
+    {
+      "z": 46.8,
+      "extrusionPath_mm": 1769.6180214172161,
+      "filament_mm": 55.48464000000027,
+      "extrusionSeconds": 98.312112300956,
+      "segments": 4421
+    },
+    {
+      "z": 47,
+      "extrusionPath_mm": 1817.2950898698716,
+      "filament_mm": 56.98015000000025,
+      "extrusionSeconds": 100.96083832610404,
+      "segments": 4487
+    },
+    {
+      "z": 47.2,
+      "extrusionPath_mm": 1827.6237673138262,
+      "filament_mm": 57.30280000000042,
+      "extrusionSeconds": 101.53465373965633,
+      "segments": 4621
+    },
+    {
+      "z": 47.4,
+      "extrusionPath_mm": 1766.9544359286185,
+      "filament_mm": 55.4014900000001,
+      "extrusionSeconds": 98.16413532936801,
+      "segments": 4364
+    },
+    {
+      "z": 47.6,
+      "extrusionPath_mm": 1843.8685020033508,
+      "filament_mm": 57.81268000000026,
+      "extrusionSeconds": 102.43713900018585,
+      "segments": 4558
+    },
+    {
+      "z": 47.8,
+      "extrusionPath_mm": 1812.3769424370184,
+      "filament_mm": 56.82542999999975,
+      "extrusionSeconds": 100.68760791316728,
+      "segments": 4533
+    },
+    {
+      "z": 48,
+      "extrusionPath_mm": 1871.5818342318578,
+      "filament_mm": 58.68267000000048,
+      "extrusionSeconds": 103.9767685684356,
+      "segments": 4544
+    },
+    {
+      "z": 48.2,
+      "extrusionPath_mm": 1927.575238557923,
+      "filament_mm": 60.43680000000056,
+      "extrusionSeconds": 107.08751325321644,
+      "segments": 4771
+    },
+    {
+      "z": 48.4,
+      "extrusionPath_mm": 1953.00883109957,
+      "filament_mm": 61.23307000000085,
+      "extrusionSeconds": 108.50049061664053,
+      "segments": 4691
+    },
+    {
+      "z": 48.6,
+      "extrusionPath_mm": 1894.2341162211187,
+      "filament_mm": 59.393360000000186,
+      "extrusionSeconds": 105.23522867894968,
+      "segments": 4665
+    },
+    {
+      "z": 48.8,
+      "extrusionPath_mm": 1878.3533605243097,
+      "filament_mm": 58.89400000000011,
+      "extrusionSeconds": 104.35296447357167,
+      "segments": 4741
+    },
+    {
+      "z": 49,
+      "extrusionPath_mm": 1918.8542160378793,
+      "filament_mm": 60.16449000000008,
+      "extrusionSeconds": 106.60301200210144,
+      "segments": 4698
+    },
+    {
+      "z": 49.2,
+      "extrusionPath_mm": 1959.8911162407117,
+      "filament_mm": 61.45121000000098,
+      "extrusionSeconds": 108.88283979114964,
+      "segments": 4910
+    },
+    {
+      "z": 49.4,
+      "extrusionPath_mm": 1942.748901432064,
+      "filament_mm": 60.913260000000164,
+      "extrusionSeconds": 107.93049452400304,
+      "segments": 4812
+    },
+    {
+      "z": 49.6,
+      "extrusionPath_mm": 1955.1342288964756,
+      "filament_mm": 61.30299000000039,
+      "extrusionSeconds": 108.61856827202568,
+      "segments": 4719
+    },
+    {
+      "z": 49.8,
+      "extrusionPath_mm": 1999.2043852408558,
+      "filament_mm": 62.68406000000043,
+      "extrusionSeconds": 111.06691029115943,
+      "segments": 4865
+    },
+    {
+      "z": 50,
+      "extrusionPath_mm": 1985.2280469304808,
+      "filament_mm": 62.24440000000014,
+      "extrusionSeconds": 110.29044705169338,
+      "segments": 4956
+    },
+    {
+      "z": 50.2,
+      "extrusionPath_mm": 1941.261481892407,
+      "filament_mm": 60.86608000000014,
+      "extrusionSeconds": 107.8478601051333,
+      "segments": 4731
+    },
+    {
+      "z": 50.4,
+      "extrusionPath_mm": 1976.6045982741991,
+      "filament_mm": 61.97508000000072,
+      "extrusionSeconds": 109.81136657078802,
+      "segments": 4825
+    },
+    {
+      "z": 50.6,
+      "extrusionPath_mm": 1941.1357216047609,
+      "filament_mm": 60.86199000000045,
+      "extrusionSeconds": 107.84087342248668,
+      "segments": 4869
+    },
+    {
+      "z": 50.8,
+      "extrusionPath_mm": 1920.6702521144296,
+      "filament_mm": 60.21933000000041,
+      "extrusionSeconds": 106.70390289524595,
+      "segments": 4758
+    },
+    {
+      "z": 51,
+      "extrusionPath_mm": 1947.401656771779,
+      "filament_mm": 61.059170000000286,
+      "extrusionSeconds": 108.18898093176459,
+      "segments": 4684
+    },
+    {
+      "z": 51.2,
+      "extrusionPath_mm": 1975.7060149398953,
+      "filament_mm": 61.94690000000099,
+      "extrusionSeconds": 109.76144527443678,
+      "segments": 4825
+    },
+    {
+      "z": 51.4,
+      "extrusionPath_mm": 1971.631655820126,
+      "filament_mm": 61.81873000000065,
+      "extrusionSeconds": 109.53509199000524,
+      "segments": 4853
+    },
+    {
+      "z": 51.6,
+      "extrusionPath_mm": 1984.8424463804117,
+      "filament_mm": 62.23264000000019,
+      "extrusionSeconds": 110.26902479891048,
+      "segments": 4820
+    },
+    {
+      "z": 51.8,
+      "extrusionPath_mm": 1966.8400942105386,
+      "filament_mm": 61.669200000000075,
+      "extrusionSeconds": 109.26889412280802,
+      "segments": 4770
+    },
+    {
+      "z": 52,
+      "extrusionPath_mm": 2026.2658546994876,
+      "filament_mm": 63.531430000000704,
+      "extrusionSeconds": 112.57032526108159,
+      "segments": 4916
+    },
+    {
+      "z": 52.2,
+      "extrusionPath_mm": 2023.7612256911013,
+      "filament_mm": 63.45243000000061,
+      "extrusionSeconds": 112.43117920505985,
+      "segments": 4981
+    },
+    {
+      "z": 52.4,
+      "extrusionPath_mm": 2040.3893056449335,
+      "filament_mm": 63.975200000000164,
+      "extrusionSeconds": 113.35496142471841,
+      "segments": 5011
+    },
+    {
+      "z": 52.6,
+      "extrusionPath_mm": 2016.7626929059886,
+      "filament_mm": 63.23242000000001,
+      "extrusionSeconds": 112.04237182810961,
+      "segments": 4808
+    },
+    {
+      "z": 52.8,
+      "extrusionPath_mm": 2034.5502061392904,
+      "filament_mm": 63.790989999999944,
+      "extrusionSeconds": 113.03056700773777,
+      "segments": 4868
+    },
+    {
+      "z": 53,
+      "extrusionPath_mm": 2093.3423328740855,
+      "filament_mm": 65.63564999999976,
+      "extrusionSeconds": 116.29679627078285,
+      "segments": 5060
+    },
+    {
+      "z": 53.2,
+      "extrusionPath_mm": 2066.3380667423567,
+      "filament_mm": 64.78795999999983,
+      "extrusionSeconds": 114.79655926346491,
+      "segments": 5066
+    },
+    {
+      "z": 53.4,
+      "extrusionPath_mm": 2019.2251074696603,
+      "filament_mm": 63.312439999999725,
+      "extrusionSeconds": 112.17917263720304,
+      "segments": 5050
+    },
+    {
+      "z": 53.6,
+      "extrusionPath_mm": 2125.7522166580234,
+      "filament_mm": 66.65087000000052,
+      "extrusionSeconds": 118.09734536988907,
+      "segments": 5266
+    },
+    {
+      "z": 53.8,
+      "extrusionPath_mm": 1461.6117591899456,
+      "filament_mm": 45.82737999999994,
+      "extrusionSeconds": 81.20065328832989,
+      "segments": 4217
+    },
+    {
+      "z": 54,
+      "extrusionPath_mm": 1484.107726268934,
+      "filament_mm": 46.53340000000012,
+      "extrusionSeconds": 82.45042923716285,
+      "segments": 4254
+    },
+    {
+      "z": 54.2,
+      "extrusionPath_mm": 1530.9094134348654,
+      "filament_mm": 47.999840000000084,
+      "extrusionSeconds": 85.05052296860345,
+      "segments": 4284
+    },
+    {
+      "z": 54.4,
+      "extrusionPath_mm": 1485.3706305954854,
+      "filament_mm": 46.57177000000029,
+      "extrusionSeconds": 82.52059058863703,
+      "segments": 4142
+    },
+    {
+      "z": 54.6,
+      "extrusionPath_mm": 1494.9759140317308,
+      "filament_mm": 46.873570000000505,
+      "extrusionSeconds": 83.05421744620699,
+      "segments": 4207
+    },
+    {
+      "z": 54.8,
+      "extrusionPath_mm": 1515.7699511355645,
+      "filament_mm": 47.525710000000196,
+      "extrusionSeconds": 84.20944172975257,
+      "segments": 4275
+    },
+    {
+      "z": 55,
+      "extrusionPath_mm": 1450.1416572903165,
+      "filament_mm": 45.46740000000037,
+      "extrusionSeconds": 80.56342540501684,
+      "segments": 4123
+    },
+    {
+      "z": 55.2,
+      "extrusionPath_mm": 1590.1877561563533,
+      "filament_mm": 49.85860000000037,
+      "extrusionSeconds": 88.34376423090718,
+      "segments": 3962
+    },
+    {
+      "z": 55.4,
+      "extrusionPath_mm": 1574.824030144859,
+      "filament_mm": 49.376840000000044,
+      "extrusionSeconds": 87.4902238969373,
+      "segments": 3944
+    },
+    {
+      "z": 55.6,
+      "extrusionPath_mm": 1526.2295083647973,
+      "filament_mm": 47.8537199999999,
+      "extrusionSeconds": 84.79052824248802,
+      "segments": 3854
+    },
+    {
+      "z": 55.8,
+      "extrusionPath_mm": 1639.8574104374713,
+      "filament_mm": 51.4163399999999,
+      "extrusionSeconds": 91.10318946874837,
+      "segments": 4075
+    },
+    {
+      "z": 56,
+      "extrusionPath_mm": 1576.7742724880572,
+      "filament_mm": 49.43922999999995,
+      "extrusionSeconds": 87.59857069378062,
+      "segments": 4007
+    },
+    {
+      "z": 56.2,
+      "extrusionPath_mm": 1662.73369618981,
+      "filament_mm": 52.134370000000324,
+      "extrusionSeconds": 92.37409423276597,
+      "segments": 4200
+    },
+    {
+      "z": 56.4,
+      "extrusionPath_mm": 1592.2684872814839,
+      "filament_mm": 49.92449000000036,
+      "extrusionSeconds": 88.45936040452672,
+      "segments": 4067
+    },
+    {
+      "z": 56.6,
+      "extrusionPath_mm": 1619.2629568127832,
+      "filament_mm": 50.77059999999997,
+      "extrusionSeconds": 89.95905315626604,
+      "segments": 4218
+    },
+    {
+      "z": 56.8,
+      "extrusionPath_mm": 1596.141884157139,
+      "filament_mm": 50.04528000000081,
+      "extrusionSeconds": 88.67454911984093,
+      "segments": 4123
+    },
+    {
+      "z": 57,
+      "extrusionPath_mm": 1689.2436426735383,
+      "filament_mm": 52.96580999999992,
+      "extrusionSeconds": 93.84686903741893,
+      "segments": 4289
+    },
+    {
+      "z": 57.2,
+      "extrusionPath_mm": 1665.672233604131,
+      "filament_mm": 52.22460000000003,
+      "extrusionSeconds": 92.53734631133996,
+      "segments": 4185
+    },
+    {
+      "z": 57.4,
+      "extrusionPath_mm": 1805.0304554586705,
+      "filament_mm": 56.59704999999997,
+      "extrusionSeconds": 100.2794697477026,
+      "segments": 4483
+    },
+    {
+      "z": 57.6,
+      "extrusionPath_mm": 1767.544581483484,
+      "filament_mm": 55.420460000000624,
+      "extrusionSeconds": 98.1969211935262,
+      "segments": 4363
+    },
+    {
+      "z": 57.8,
+      "extrusionPath_mm": 1734.861399212566,
+      "filament_mm": 54.39179000000117,
+      "extrusionSeconds": 96.38118884513923,
+      "segments": 3982
+    },
+    {
+      "z": 58,
+      "extrusionPath_mm": 1573.7664717500777,
+      "filament_mm": 49.341610000000884,
+      "extrusionSeconds": 87.43147065278073,
+      "segments": 4025
+    },
+    {
+      "z": 58.2,
+      "extrusionPath_mm": 1604.567404042729,
+      "filament_mm": 50.31030999999999,
+      "extrusionSeconds": 89.14263355792899,
+      "segments": 3989
+    },
+    {
+      "z": 58.4,
+      "extrusionPath_mm": 1615.267155526982,
+      "filament_mm": 50.64449000000032,
+      "extrusionSeconds": 89.73706419594141,
+      "segments": 4011
+    },
+    {
+      "z": 58.6,
+      "extrusionPath_mm": 1668.1069697418416,
+      "filament_mm": 52.301720000000756,
+      "extrusionSeconds": 92.67260943010137,
+      "segments": 4202
+    },
+    {
+      "z": 58.8,
+      "extrusionPath_mm": 1585.2522987947536,
+      "filament_mm": 49.70278000000059,
+      "extrusionSeconds": 88.06957215526234,
+      "segments": 4076
+    },
+    {
+      "z": 59,
+      "extrusionPath_mm": 1583.4564876539587,
+      "filament_mm": 49.64696999999979,
+      "extrusionSeconds": 87.96980486966396,
+      "segments": 3976
+    },
+    {
+      "z": 59.2,
+      "extrusionPath_mm": 1594.011071658886,
+      "filament_mm": 49.97882000000005,
+      "extrusionSeconds": 88.55617064771445,
+      "segments": 3991
+    },
+    {
+      "z": 59.4,
+      "extrusionPath_mm": 1754.940446353895,
+      "filament_mm": 55.02450000000174,
+      "extrusionSeconds": 97.49669146410284,
+      "segments": 4405
+    },
+    {
+      "z": 59.6,
+      "extrusionPath_mm": 1721.3861823348905,
+      "filament_mm": 53.972650000000364,
+      "extrusionSeconds": 95.63256568527072,
+      "segments": 4338
+    },
+    {
+      "z": 59.8,
+      "extrusionPath_mm": 1729.1245881964637,
+      "filament_mm": 54.215050000000005,
+      "extrusionSeconds": 96.06247712202618,
+      "segments": 4257
+    },
+    {
+      "z": 60,
+      "extrusionPath_mm": 1689.819332144737,
+      "filament_mm": 52.98362000000093,
+      "extrusionSeconds": 93.8788517858186,
+      "segments": 4285
+    },
+    {
+      "z": 60.2,
+      "extrusionPath_mm": 1717.8848414050021,
+      "filament_mm": 53.860270000000334,
+      "extrusionSeconds": 95.43804674472058,
+      "segments": 4351
+    },
+    {
+      "z": 60.4,
+      "extrusionPath_mm": 1586.1380868300457,
+      "filament_mm": 49.73272000000047,
+      "extrusionSeconds": 88.11878260166768,
+      "segments": 3986
+    },
+    {
+      "z": 60.6,
+      "extrusionPath_mm": 1659.9710270053076,
+      "filament_mm": 52.048289999999795,
+      "extrusionSeconds": 92.22061261140604,
+      "segments": 4252
+    },
+    {
+      "z": 60.8,
+      "extrusionPath_mm": 1641.4417298898616,
+      "filament_mm": 51.465900000000175,
+      "extrusionSeconds": 91.19120721610231,
+      "segments": 4113
+    },
+    {
+      "z": 61,
+      "extrusionPath_mm": 1812.9744866460435,
+      "filament_mm": 56.84264000000038,
+      "extrusionSeconds": 100.72080481367198,
+      "segments": 4464
+    },
+    {
+      "z": 61.2,
+      "extrusionPath_mm": 1658.9586647191013,
+      "filament_mm": 52.015040000000546,
+      "extrusionSeconds": 92.16437026217088,
+      "segments": 4252
+    },
+    {
+      "z": 61.4,
+      "extrusionPath_mm": 1670.762053832677,
+      "filament_mm": 52.38501000000027,
+      "extrusionSeconds": 92.82011410181495,
+      "segments": 4166
+    },
+    {
+      "z": 61.6,
+      "extrusionPath_mm": 1673.343229183949,
+      "filament_mm": 52.467620000000174,
+      "extrusionSeconds": 92.9635127324405,
+      "segments": 4281
+    },
+    {
+      "z": 61.8,
+      "extrusionPath_mm": 1795.8066540208279,
+      "filament_mm": 56.30564999999996,
+      "extrusionSeconds": 99.7670363344923,
+      "segments": 4397
+    },
+    {
+      "z": 62,
+      "extrusionPath_mm": 1727.8738014290834,
+      "filament_mm": 54.17601999999999,
+      "extrusionSeconds": 95.99298896828194,
+      "segments": 4300
+    },
+    {
+      "z": 62.2,
+      "extrusionPath_mm": 1670.7415179545535,
+      "filament_mm": 52.38398999999972,
+      "extrusionSeconds": 92.81897321969745,
+      "segments": 4288
+    },
+    {
+      "z": 62.4,
+      "extrusionPath_mm": 1688.0228922334761,
+      "filament_mm": 52.92664000000017,
+      "extrusionSeconds": 93.7790495685256,
+      "segments": 4200
+    },
+    {
+      "z": 62.6,
+      "extrusionPath_mm": 1764.1311156456304,
+      "filament_mm": 55.31182999999932,
+      "extrusionSeconds": 98.00728420253499,
+      "segments": 4468
+    },
+    {
+      "z": 62.8,
+      "extrusionPath_mm": 1640.5707983371901,
+      "filament_mm": 51.43906000000068,
+      "extrusionSeconds": 91.14282212984386,
+      "segments": 4092
+    },
+    {
+      "z": 63,
+      "extrusionPath_mm": 1627.0525805166699,
+      "filament_mm": 51.01531999999989,
+      "extrusionSeconds": 90.39181002870461,
+      "segments": 4216
+    },
+    {
+      "z": 63.2,
+      "extrusionPath_mm": 1621.1493479973985,
+      "filament_mm": 50.83006000000005,
+      "extrusionSeconds": 90.06385266652137,
+      "segments": 4081
+    },
+    {
+      "z": 63.4,
+      "extrusionPath_mm": 1735.9908552982806,
+      "filament_mm": 54.427990000000136,
+      "extrusionSeconds": 96.44393640545704,
+      "segments": 4434
+    },
+    {
+      "z": 63.6,
+      "extrusionPath_mm": 1642.3215458631844,
+      "filament_mm": 51.494160000000385,
+      "extrusionSeconds": 91.24008588128812,
+      "segments": 4131
+    },
+    {
+      "z": 63.8,
+      "extrusionPath_mm": 1691.4753526659365,
+      "filament_mm": 53.03317999999993,
+      "extrusionSeconds": 93.97085292588602,
+      "segments": 4336
+    },
+    {
+      "z": 64,
+      "extrusionPath_mm": 1702.2064168005386,
+      "filament_mm": 53.37065000000131,
+      "extrusionSeconds": 94.56702315558407,
+      "segments": 4233
+    },
+    {
+      "z": 64.2,
+      "extrusionPath_mm": 1768.4580660063423,
+      "filament_mm": 55.44757000000039,
+      "extrusionSeconds": 98.24767033368745,
+      "segments": 4495
+    },
+    {
+      "z": 64.4,
+      "extrusionPath_mm": 1686.7955052002378,
+      "filament_mm": 52.88843000000015,
+      "extrusionSeconds": 93.71086140001194,
+      "segments": 4208
+    },
+    {
+      "z": 64.6,
+      "extrusionPath_mm": 1659.5805459094256,
+      "filament_mm": 52.03381000000079,
+      "extrusionSeconds": 92.19891921718973,
+      "segments": 4280
+    },
+    {
+      "z": 64.8,
+      "extrusionPath_mm": 1625.1845475233904,
+      "filament_mm": 50.956430000000054,
+      "extrusionSeconds": 90.28803041796436,
+      "segments": 4092
+    },
+    {
+      "z": 65,
+      "extrusionPath_mm": 1748.4333736556446,
+      "filament_mm": 54.81719000000037,
+      "extrusionSeconds": 97.13518742531467,
+      "segments": 4476
+    },
+    {
+      "z": 65.2,
+      "extrusionPath_mm": 1666.2369343251762,
+      "filament_mm": 52.24357000000091,
+      "extrusionSeconds": 92.56871857361955,
+      "segments": 4199
+    },
+    {
+      "z": 65.4,
+      "extrusionPath_mm": 1726.099505979205,
+      "filament_mm": 54.12039999999973,
+      "extrusionSeconds": 95.89441699884357,
+      "segments": 4446
+    },
+    {
+      "z": 65.6,
+      "extrusionPath_mm": 1760.702564825605,
+      "filament_mm": 55.20564999999999,
+      "extrusionSeconds": 97.81680915697594,
+      "segments": 4418
+    },
+    {
+      "z": 65.8,
+      "extrusionPath_mm": 1764.7678161222057,
+      "filament_mm": 55.33016000000081,
+      "extrusionSeconds": 98.04265645123319,
+      "segments": 4525
+    },
+    {
+      "z": 66,
+      "extrusionPath_mm": 1745.9364781300076,
+      "filament_mm": 54.742270000000225,
+      "extrusionSeconds": 96.99647100722106,
+      "segments": 4375
+    },
+    {
+      "z": 66.2,
+      "extrusionPath_mm": 1675.7347407681286,
+      "filament_mm": 52.54076000000023,
+      "extrusionSeconds": 93.09637448711815,
+      "segments": 4355
+    },
+    {
+      "z": 66.4,
+      "extrusionPath_mm": 1631.1929457585504,
+      "filament_mm": 51.14473999999958,
+      "extrusionSeconds": 90.62183031992036,
+      "segments": 4141
+    },
+    {
+      "z": 66.6,
+      "extrusionPath_mm": 1589.7262081269766,
+      "filament_mm": 49.84292000000072,
+      "extrusionSeconds": 88.31812267372088,
+      "segments": 4162
+    },
+    {
+      "z": 66.8,
+      "extrusionPath_mm": 1545.197268488937,
+      "filament_mm": 48.449270000000176,
+      "extrusionSeconds": 85.844292693829,
+      "segments": 3958
+    },
+    {
+      "z": 67,
+      "extrusionPath_mm": 1624.0419169992324,
+      "filament_mm": 50.92060000000034,
+      "extrusionSeconds": 90.224550944403,
+      "segments": 4246
+    },
+    {
+      "z": 67.2,
+      "extrusionPath_mm": 1575.6028198366494,
+      "filament_mm": 49.40257000000037,
+      "extrusionSeconds": 87.53348999092414,
+      "segments": 4016
+    },
+    {
+      "z": 67.4,
+      "extrusionPath_mm": 1609.684914041269,
+      "filament_mm": 50.46918999999998,
+      "extrusionSeconds": 89.42693966895962,
+      "segments": 4141
+    },
+    {
+      "z": 67.6,
+      "extrusionPath_mm": 1656.908149858529,
+      "filament_mm": 51.95144000000033,
+      "extrusionSeconds": 92.05045276991815,
+      "segments": 4288
+    },
+    {
+      "z": 67.8,
+      "extrusionPath_mm": 1600.2284764199496,
+      "filament_mm": 50.17484000000001,
+      "extrusionSeconds": 88.90158202333022,
+      "segments": 4065
+    },
+    {
+      "z": 68,
+      "extrusionPath_mm": 1574.485171676074,
+      "filament_mm": 49.36532000000016,
+      "extrusionSeconds": 87.47139842644809,
+      "segments": 4110
+    },
+    {
+      "z": 68.2,
+      "extrusionPath_mm": 1621.083987329516,
+      "filament_mm": 50.827159999999665,
+      "extrusionSeconds": 90.06022151830533,
+      "segments": 4100
+    },
+    {
+      "z": 68.4,
+      "extrusionPath_mm": 1629.2376616809604,
+      "filament_mm": 51.081910000000306,
+      "extrusionSeconds": 90.51320342672015,
+      "segments": 4219
+    },
+    {
+      "z": 68.6,
+      "extrusionPath_mm": 1665.3881261307579,
+      "filament_mm": 52.21560000000053,
+      "extrusionSeconds": 92.52156256282109,
+      "segments": 4163
+    },
+    {
+      "z": 68.8,
+      "extrusionPath_mm": 1603.585308836237,
+      "filament_mm": 50.27714000000032,
+      "extrusionSeconds": 89.08807271312546,
+      "segments": 4172
+    },
+    {
+      "z": 69,
+      "extrusionPath_mm": 1637.7734100145499,
+      "filament_mm": 51.35179000000071,
+      "extrusionSeconds": 90.9874116674742,
+      "segments": 4118
+    },
+    {
+      "z": 69.2,
+      "extrusionPath_mm": 1680.7749712862365,
+      "filament_mm": 52.700780000000115,
+      "extrusionSeconds": 93.37638729367967,
+      "segments": 4328
+    },
+    {
+      "z": 69.4,
+      "extrusionPath_mm": 1670.436405338872,
+      "filament_mm": 52.37510000000038,
+      "extrusionSeconds": 92.80202251882638,
+      "segments": 4206
+    },
+    {
+      "z": 69.6,
+      "extrusionPath_mm": 1692.8995247164678,
+      "filament_mm": 53.08002999999982,
+      "extrusionSeconds": 94.04997359535882,
+      "segments": 4365
+    },
+    {
+      "z": 69.8,
+      "extrusionPath_mm": 1695.8217240552376,
+      "filament_mm": 53.17037000000008,
+      "extrusionSeconds": 94.21231800306775,
+      "segments": 4263
+    },
+    {
+      "z": 70,
+      "extrusionPath_mm": 1730.5889693550128,
+      "filament_mm": 54.260739999999544,
+      "extrusionSeconds": 96.14383163083511,
+      "segments": 4462
+    },
+    {
+      "z": 70.2,
+      "extrusionPath_mm": 1676.8798025368399,
+      "filament_mm": 52.576730000000474,
+      "extrusionSeconds": 93.15998902982261,
+      "segments": 4234
+    },
+    {
+      "z": 70.4,
+      "extrusionPath_mm": 1657.9377067505939,
+      "filament_mm": 51.98394000000074,
+      "extrusionSeconds": 92.10765037503216,
+      "segments": 4313
+    },
+    {
+      "z": 70.6,
+      "extrusionPath_mm": 1706.514828124435,
+      "filament_mm": 53.50666000000036,
+      "extrusionSeconds": 94.80637934024465,
+      "segments": 4316
+    },
+    {
+      "z": 70.8,
+      "extrusionPath_mm": 1718.2886762597927,
+      "filament_mm": 53.87559999999983,
+      "extrusionSeconds": 95.46048201443304,
+      "segments": 4466
+    },
+    {
+      "z": 71,
+      "extrusionPath_mm": 1729.6591205467741,
+      "filament_mm": 54.23297000000094,
+      "extrusionSeconds": 96.09217336370851,
+      "segments": 4409
+    },
+    {
+      "z": 71.2,
+      "extrusionPath_mm": 1787.580844278693,
+      "filament_mm": 56.04714999999991,
+      "extrusionSeconds": 99.31004690437194,
+      "segments": 4627
+    },
+    {
+      "z": 71.4,
+      "extrusionPath_mm": 1809.8517753595324,
+      "filament_mm": 56.74637000000017,
+      "extrusionSeconds": 100.54732085330794,
+      "segments": 4558
+    },
+    {
+      "z": 71.6,
+      "extrusionPath_mm": 1812.931321125157,
+      "filament_mm": 56.844180000000215,
+      "extrusionSeconds": 100.71840672917548,
+      "segments": 4675
+    },
+    {
+      "z": 71.8,
+      "extrusionPath_mm": 1863.8039913793575,
+      "filament_mm": 58.43801000000096,
+      "extrusionSeconds": 103.54466618774241,
+      "segments": 4676
+    },
+    {
+      "z": 72,
+      "extrusionPath_mm": 1883.015413033195,
+      "filament_mm": 59.040359999999836,
+      "extrusionSeconds": 104.61196739073064,
+      "segments": 4821
+    },
+    {
+      "z": 72.2,
+      "extrusionPath_mm": 1959.911388238197,
+      "filament_mm": 61.448379999999666,
+      "extrusionSeconds": 108.88396601323397,
+      "segments": 4874
+    },
+    {
+      "z": 72.4,
+      "extrusionPath_mm": 1848.6925898931754,
+      "filament_mm": 57.96352000000037,
+      "extrusionSeconds": 102.70514388295364,
+      "segments": 4772
+    },
+    {
+      "z": 72.6,
+      "extrusionPath_mm": 1849.7693147279365,
+      "filament_mm": 57.99586000000054,
+      "extrusionSeconds": 102.76496192932862,
+      "segments": 4644
+    },
+    {
+      "z": 72.8,
+      "extrusionPath_mm": 1968.4903185031603,
+      "filament_mm": 61.71914000000048,
+      "extrusionSeconds": 109.36057325017602,
+      "segments": 5003
+    },
+    {
+      "z": 73,
+      "extrusionPath_mm": 2001.4539085154443,
+      "filament_mm": 62.75337000000123,
+      "extrusionSeconds": 111.19188380641266,
+      "segments": 4957
+    },
+    {
+      "z": 73.2,
+      "extrusionPath_mm": 2058.1991113496924,
+      "filament_mm": 64.52998999999971,
+      "extrusionSeconds": 114.34439507498273,
+      "segments": 5185
+    },
+    {
+      "z": 73.4,
+      "extrusionPath_mm": 2045.4377887983785,
+      "filament_mm": 64.134460000001,
+      "extrusionSeconds": 113.63543271102168,
+      "segments": 5067
+    },
+    {
+      "z": 73.6,
+      "extrusionPath_mm": 2081.779303296404,
+      "filament_mm": 65.27172000000185,
+      "extrusionSeconds": 115.65440573868776,
+      "segments": 5105
+    },
+    {
+      "z": 73.8,
+      "extrusionPath_mm": 2104.6464934549153,
+      "filament_mm": 65.98834000000076,
+      "extrusionSeconds": 116.92480519193462,
+      "segments": 5278
+    },
+    {
+      "z": 74,
+      "extrusionPath_mm": 2075.6848767244414,
+      "filament_mm": 65.0796199999996,
+      "extrusionSeconds": 115.31582648468982,
+      "segments": 5064
+    },
+    {
+      "z": 74.2,
+      "extrusionPath_mm": 2141.060555382607,
+      "filament_mm": 67.12911000000098,
+      "extrusionSeconds": 118.9478086323651,
+      "segments": 5369
+    },
+    {
+      "z": 74.4,
+      "extrusionPath_mm": 2065.783599205371,
+      "filament_mm": 64.77156000000014,
+      "extrusionSeconds": 114.76575551140972,
+      "segments": 5044
+    },
+    {
+      "z": 74.6,
+      "extrusionPath_mm": 2073.1011252362205,
+      "filament_mm": 64.99780999999982,
+      "extrusionSeconds": 115.17228473534233,
+      "segments": 5106
+    },
+    {
+      "z": 74.8,
+      "extrusionPath_mm": 2032.2413129939112,
+      "filament_mm": 63.719279999999834,
+      "extrusionSeconds": 112.90229516632937,
+      "segments": 5155
+    },
+    {
+      "z": 75,
+      "extrusionPath_mm": 2126.6386302712576,
+      "filament_mm": 66.67628000000079,
+      "extrusionSeconds": 118.14659057062033,
+      "segments": 5193
+    },
+    {
+      "z": 75.2,
+      "extrusionPath_mm": 2111.722189252651,
+      "filament_mm": 66.21007000000068,
+      "extrusionSeconds": 117.31789940292695,
+      "segments": 5210
+    },
+    {
+      "z": 75.4,
+      "extrusionPath_mm": 2068.945358291904,
+      "filament_mm": 64.86724000000075,
+      "extrusionSeconds": 114.94140879399527,
+      "segments": 5223
+    },
+    {
+      "z": 75.6,
+      "extrusionPath_mm": 2137.601759036658,
+      "filament_mm": 67.0221100000008,
+      "extrusionSeconds": 118.75565327981401,
+      "segments": 5237
+    },
+    {
+      "z": 75.8,
+      "extrusionPath_mm": 2128.5780911439697,
+      "filament_mm": 66.74159000000064,
+      "extrusionSeconds": 118.25433839688753,
+      "segments": 5238
+    },
+    {
+      "z": 76,
+      "extrusionPath_mm": 2038.8127482382415,
+      "filament_mm": 63.92621000000059,
+      "extrusionSeconds": 113.26737490212328,
+      "segments": 5197
+    },
+    {
+      "z": 76.2,
+      "extrusionPath_mm": 2054.458147603173,
+      "filament_mm": 64.41416000000042,
+      "extrusionSeconds": 114.13656375573296,
+      "segments": 5095
+    },
+    {
+      "z": 76.4,
+      "extrusionPath_mm": 1940.2196027026064,
+      "filament_mm": 60.83398000000062,
+      "extrusionSeconds": 107.7899779279241,
+      "segments": 4876
+    },
+    {
+      "z": 76.6,
+      "extrusionPath_mm": 1943.6845449425855,
+      "filament_mm": 60.94143000000122,
+      "extrusionSeconds": 107.98247471903022,
+      "segments": 5003
+    },
+    {
+      "z": 76.8,
+      "extrusionPath_mm": 2011.1489222541836,
+      "filament_mm": 63.05854000000082,
+      "extrusionSeconds": 111.73049568078612,
+      "segments": 5143
+    },
+    {
+      "z": 77,
+      "extrusionPath_mm": 1871.6825594651846,
+      "filament_mm": 58.68373000000071,
+      "extrusionSeconds": 103.98236441473023,
+      "segments": 4733
+    },
+    {
+      "z": 77.2,
+      "extrusionPath_mm": 2052.645099574606,
+      "filament_mm": 64.35873999999981,
+      "extrusionSeconds": 114.03583886525573,
+      "segments": 6028
+    },
+    {
+      "z": 77.4,
+      "extrusionPath_mm": 2066.781172230017,
+      "filament_mm": 64.80215000000051,
+      "extrusionSeconds": 114.82117623500095,
+      "segments": 6140
+    },
+    {
+      "z": 77.6,
+      "extrusionPath_mm": 1963.342968493555,
+      "filament_mm": 61.558759999999936,
+      "extrusionSeconds": 109.07460936075267,
+      "segments": 5915
+    },
+    {
+      "z": 77.8,
+      "extrusionPath_mm": 1965.9425220068704,
+      "filament_mm": 61.640049999999874,
+      "extrusionSeconds": 109.21902900038086,
+      "segments": 5902
+    },
+    {
+      "z": 78,
+      "extrusionPath_mm": 1977.243207845166,
+      "filament_mm": 61.99526000000047,
+      "extrusionSeconds": 109.84684488028641,
+      "segments": 5773
+    },
+    {
+      "z": 78.2,
+      "extrusionPath_mm": 1863.7753975254354,
+      "filament_mm": 58.437440000000414,
+      "extrusionSeconds": 103.54307764030233,
+      "segments": 5486
+    },
+    {
+      "z": 78.4,
+      "extrusionPath_mm": 1911.8471755785986,
+      "filament_mm": 59.944390000000865,
+      "extrusionSeconds": 106.21373197658839,
+      "segments": 5593
+    },
+    {
+      "z": 78.6,
+      "extrusionPath_mm": 1957.6167741300721,
+      "filament_mm": 61.37911000000061,
+      "extrusionSeconds": 108.75648745167047,
+      "segments": 5708
+    },
+    {
+      "z": 78.8,
+      "extrusionPath_mm": 1991.7896828356202,
+      "filament_mm": 62.44985000000086,
+      "extrusionSeconds": 110.65498237975604,
+      "segments": 5828
+    },
+    {
+      "z": 79,
+      "extrusionPath_mm": 1980.7269368449188,
+      "filament_mm": 62.104019999999906,
+      "extrusionSeconds": 110.04038538027316,
+      "segments": 5780
+    },
+    {
+      "z": 79.2,
+      "extrusionPath_mm": 1942.4697712757552,
+      "filament_mm": 60.90436000000042,
+      "extrusionSeconds": 107.91498729309647,
+      "segments": 5686
+    },
+    {
+      "z": 79.4,
+      "extrusionPath_mm": 1894.4998633590858,
+      "filament_mm": 59.39971000000034,
+      "extrusionSeconds": 105.24999240883749,
+      "segments": 5583
+    },
+    {
+      "z": 79.6,
+      "extrusionPath_mm": 2005.9048297605423,
+      "filament_mm": 62.89310000000041,
+      "extrusionSeconds": 111.43915720891873,
+      "segments": 5801
+    },
+    {
+      "z": 79.8,
+      "extrusionPath_mm": 1867.147565880519,
+      "filament_mm": 58.542120000000395,
+      "extrusionSeconds": 103.73042032669535,
+      "segments": 5522
+    },
+    {
+      "z": 80,
+      "extrusionPath_mm": 1942.4127539781837,
+      "filament_mm": 60.90238000000024,
+      "extrusionSeconds": 107.9118196654537,
+      "segments": 5690
+    },
+    {
+      "z": 80.2,
+      "extrusionPath_mm": 1910.1278736279376,
+      "filament_mm": 59.889629999999954,
+      "extrusionSeconds": 106.1182152015518,
+      "segments": 5617
+    },
+    {
+      "z": 80.4,
+      "extrusionPath_mm": 1967.3891151291596,
+      "filament_mm": 61.68498000000032,
+      "extrusionSeconds": 109.29939528495363,
+      "segments": 5736
+    },
+    {
+      "z": 80.6,
+      "extrusionPath_mm": 1882.3636910147998,
+      "filament_mm": 59.018860000000195,
+      "extrusionSeconds": 104.57576061193308,
+      "segments": 5606
+    },
+    {
+      "z": 80.8,
+      "extrusionPath_mm": 2009.2053200401256,
+      "filament_mm": 62.99633000000027,
+      "extrusionSeconds": 111.62251778000699,
+      "segments": 5842
+    },
+    {
+      "z": 81,
+      "extrusionPath_mm": 1916.1617799947505,
+      "filament_mm": 60.07865000000029,
+      "extrusionSeconds": 106.45343222193075,
+      "segments": 5631
+    },
+    {
+      "z": 81.2,
+      "extrusionPath_mm": 2040.1322914715906,
+      "filament_mm": 63.966460000000886,
+      "extrusionSeconds": 113.34068285953312,
+      "segments": 5828
+    },
+    {
+      "z": 81.4,
+      "extrusionPath_mm": 2003.9178893651979,
+      "filament_mm": 62.831350000000675,
+      "extrusionSeconds": 111.32877163139908,
+      "segments": 5781
+    },
+    {
+      "z": 81.6,
+      "extrusionPath_mm": 2019.2908137251336,
+      "filament_mm": 63.31319000000057,
+      "extrusionSeconds": 112.18282298472924,
+      "segments": 5820
+    },
+    {
+      "z": 81.8,
+      "extrusionPath_mm": 1997.2313498499743,
+      "filament_mm": 62.62127000000012,
+      "extrusionSeconds": 110.95729721388788,
+      "segments": 5845
+    },
+    {
+      "z": 82,
+      "extrusionPath_mm": 2061.0458596181847,
+      "filament_mm": 64.62287000000006,
+      "extrusionSeconds": 114.50254775656606,
+      "segments": 5965
+    },
+    {
+      "z": 82.2,
+      "extrusionPath_mm": 2009.4606221509546,
+      "filament_mm": 63.00618000000028,
+      "extrusionSeconds": 111.63670123060817,
+      "segments": 5941
+    },
+    {
+      "z": 82.4,
+      "extrusionPath_mm": 2126.2473798150613,
+      "filament_mm": 66.6675099999999,
+      "extrusionSeconds": 118.12485443417052,
+      "segments": 6197
+    },
+    {
+      "z": 82.6,
+      "extrusionPath_mm": 2084.524990282909,
+      "filament_mm": 65.3594,
+      "extrusionSeconds": 115.80694390460626,
+      "segments": 6181
+    },
+    {
+      "z": 82.8,
+      "extrusionPath_mm": 2108.8186027488323,
+      "filament_mm": 66.12050000000016,
+      "extrusionSeconds": 117.15658904160152,
+      "segments": 6262
+    },
+    {
+      "z": 83,
+      "extrusionPath_mm": 2130.0488110357846,
+      "filament_mm": 66.78617999999985,
+      "extrusionSeconds": 118.33604505754258,
+      "segments": 6378
+    },
+    {
+      "z": 83.2,
+      "extrusionPath_mm": 2183.107448784696,
+      "filament_mm": 68.44988000000032,
+      "extrusionSeconds": 121.2837471547056,
+      "segments": 6555
+    },
+    {
+      "z": 83.4,
+      "extrusionPath_mm": 2297.2230196916985,
+      "filament_mm": 72.02666999999963,
+      "extrusionSeconds": 127.62350109398218,
+      "segments": 6857
+    },
+    {
+      "z": 83.6,
+      "extrusionPath_mm": 2299.0067300280157,
+      "filament_mm": 72.08317000000027,
+      "extrusionSeconds": 127.72259611266736,
+      "segments": 6883
+    },
+    {
+      "z": 83.8,
+      "extrusionPath_mm": 2390.291267972955,
+      "filament_mm": 74.9458000000007,
+      "extrusionSeconds": 132.79395933182911,
+      "segments": 7176
+    },
+    {
+      "z": 84,
+      "extrusionPath_mm": 2344.2518031746895,
+      "filament_mm": 73.50214999999977,
+      "extrusionSeconds": 130.236211287481,
+      "segments": 7114
+    },
+    {
+      "z": 84.2,
+      "extrusionPath_mm": 2403.754781351734,
+      "filament_mm": 75.36762000000058,
+      "extrusionSeconds": 133.54193229731868,
+      "segments": 7361
+    },
+    {
+      "z": 84.4,
+      "extrusionPath_mm": 2423.71689729072,
+      "filament_mm": 75.99372000000044,
+      "extrusionSeconds": 134.65093873837287,
+      "segments": 7329
+    },
+    {
+      "z": 84.6,
+      "extrusionPath_mm": 2444.349847776934,
+      "filament_mm": 76.64000999999989,
+      "extrusionSeconds": 135.79721376538333,
+      "segments": 7489
+    },
+    {
+      "z": 84.8,
+      "extrusionPath_mm": 2505.0473569352225,
+      "filament_mm": 78.54370000000029,
+      "extrusionSeconds": 139.16929760751177,
+      "segments": 7591
+    },
+    {
+      "z": 85,
+      "extrusionPath_mm": 2490.111613757872,
+      "filament_mm": 78.07448999999986,
+      "extrusionSeconds": 138.3395340976594,
+      "segments": 7644
+    },
+    {
+      "z": 85.2,
+      "extrusionPath_mm": 2565.752411054423,
+      "filament_mm": 80.44650000000003,
+      "extrusionSeconds": 142.54180061413447,
+      "segments": 7752
+    },
+    {
+      "z": 85.4,
+      "extrusionPath_mm": 2434.1839282851674,
+      "filament_mm": 76.32269000000002,
+      "extrusionSeconds": 135.23244046028748,
+      "segments": 7394
+    },
+    {
+      "z": 85.6,
+      "extrusionPath_mm": 2495.146410467114,
+      "filament_mm": 78.23298999999999,
+      "extrusionSeconds": 138.61924502595124,
+      "segments": 7518
+    },
+    {
+      "z": 85.8,
+      "extrusionPath_mm": 2459.1619772685126,
+      "filament_mm": 77.10612999999907,
+      "extrusionSeconds": 136.62010984824965,
+      "segments": 7400
+    },
+    {
+      "z": 86,
+      "extrusionPath_mm": 2396.7479300775744,
+      "filament_mm": 75.14797999999995,
+      "extrusionSeconds": 133.15266278208736,
+      "segments": 7269
+    },
+    {
+      "z": 86.2,
+      "extrusionPath_mm": 2437.509612350309,
+      "filament_mm": 76.42583999999978,
+      "extrusionSeconds": 135.4172006861282,
+      "segments": 7466
+    },
+    {
+      "z": 86.4,
+      "extrusionPath_mm": 2497.830219216923,
+      "filament_mm": 78.31622000000016,
+      "extrusionSeconds": 138.76834551205135,
+      "segments": 7498
+    },
+    {
+      "z": 86.6,
+      "extrusionPath_mm": 2411.2231779720387,
+      "filament_mm": 75.60181000000027,
+      "extrusionSeconds": 133.95684322066884,
+      "segments": 7422
+    },
+    {
+      "z": 86.8,
+      "extrusionPath_mm": 2426.248898770892,
+      "filament_mm": 76.07263000000023,
+      "extrusionSeconds": 134.7916054872721,
+      "segments": 7335
+    },
+    {
+      "z": 87,
+      "extrusionPath_mm": 2425.585744565932,
+      "filament_mm": 76.0522400000006,
+      "extrusionSeconds": 134.75476358699555,
+      "segments": 7368
+    },
+    {
+      "z": 87.2,
+      "extrusionPath_mm": 2351.3816381660263,
+      "filament_mm": 73.7259499999999,
+      "extrusionSeconds": 130.63231323144495,
+      "segments": 7094
+    },
+    {
+      "z": 87.4,
+      "extrusionPath_mm": 2279.3322937713247,
+      "filament_mm": 71.46737000000026,
+      "extrusionSeconds": 126.6295718761836,
+      "segments": 6984
+    },
+    {
+      "z": 87.6,
+      "extrusionPath_mm": 2219.6680917196936,
+      "filament_mm": 69.59646999999998,
+      "extrusionSeconds": 123.31489398442766,
+      "segments": 6799
+    },
+    {
+      "z": 87.8,
+      "extrusionPath_mm": 2302.054487594697,
+      "filament_mm": 72.17893999999983,
+      "extrusionSeconds": 127.8919159774826,
+      "segments": 6802
+    },
+    {
+      "z": 88,
+      "extrusionPath_mm": 2248.5152415998677,
+      "filament_mm": 70.50001000000022,
+      "extrusionSeconds": 124.91751342221474,
+      "segments": 6664
+    },
+    {
+      "z": 88.2,
+      "extrusionPath_mm": 2370.62547245588,
+      "filament_mm": 74.32772000000074,
+      "extrusionSeconds": 131.70141513643154,
+      "segments": 5802
+    },
+    {
+      "z": 88.4,
+      "extrusionPath_mm": 2172.7779513933547,
+      "filament_mm": 68.12504000000084,
+      "extrusionSeconds": 120.70988618851672,
+      "segments": 5401
+    },
+    {
+      "z": 88.6,
+      "extrusionPath_mm": 2321.680240820916,
+      "filament_mm": 72.79441000000023,
+      "extrusionSeconds": 128.9822356011606,
+      "segments": 5748
+    },
+    {
+      "z": 88.8,
+      "extrusionPath_mm": 2154.9304556141033,
+      "filament_mm": 67.56633000000082,
+      "extrusionSeconds": 119.71835864522652,
+      "segments": 5469
+    },
+    {
+      "z": 89,
+      "extrusionPath_mm": 2306.791646274847,
+      "filament_mm": 72.32547000000146,
+      "extrusionSeconds": 128.15509145970742,
+      "segments": 5767
+    },
+    {
+      "z": 89.2,
+      "extrusionPath_mm": 2155.743094916392,
+      "filament_mm": 67.59003000000104,
+      "extrusionSeconds": 119.76350527313087,
+      "segments": 5450
+    },
+    {
+      "z": 89.4,
+      "extrusionPath_mm": 2324.490595027426,
+      "filament_mm": 72.88016000000039,
+      "extrusionSeconds": 129.13836639041133,
+      "segments": 5802
+    },
+    {
+      "z": 89.6,
+      "extrusionPath_mm": 2211.181578442515,
+      "filament_mm": 69.32741000000122,
+      "extrusionSeconds": 122.84342102457974,
+      "segments": 5549
+    },
+    {
+      "z": 89.8,
+      "extrusionPath_mm": 2396.844550392548,
+      "filament_mm": 75.149820000002,
+      "extrusionSeconds": 133.15803057735675,
+      "segments": 5851
+    },
+    {
+      "z": 90,
+      "extrusionPath_mm": 2259.8703430194255,
+      "filament_mm": 70.85668000000244,
+      "extrusionSeconds": 125.54835238996792,
+      "segments": 5486
+    },
+    {
+      "z": 90.2,
+      "extrusionPath_mm": 2346.061585870776,
+      "filament_mm": 73.55880000000118,
+      "extrusionSeconds": 130.33675477059876,
+      "segments": 5687
+    },
+    {
+      "z": 90.4,
+      "extrusionPath_mm": 2330.4776396868347,
+      "filament_mm": 73.06903000000146,
+      "extrusionSeconds": 129.47097998260017,
+      "segments": 5658
+    },
+    {
+      "z": 90.6,
+      "extrusionPath_mm": 2425.9895141804914,
+      "filament_mm": 76.06382000000058,
+      "extrusionSeconds": 134.777195232249,
+      "segments": 5903
+    },
+    {
+      "z": 90.8,
+      "extrusionPath_mm": 2245.778541173752,
+      "filament_mm": 70.41221000000117,
+      "extrusionSeconds": 124.76547450964999,
+      "segments": 5584
+    },
+    {
+      "z": 91,
+      "extrusionPath_mm": 2254.264943626585,
+      "filament_mm": 70.68242000000058,
+      "extrusionSeconds": 125.23694131258726,
+      "segments": 5637
+    },
+    {
+      "z": 91.2,
+      "extrusionPath_mm": 2187.3659335923735,
+      "filament_mm": 68.58310000000044,
+      "extrusionSeconds": 121.52032964401964,
+      "segments": 5499
+    },
+    {
+      "z": 91.4,
+      "extrusionPath_mm": 2345.7551616468563,
+      "filament_mm": 73.5467200000007,
+      "extrusionSeconds": 130.31973120259556,
+      "segments": 5834
+    },
+    {
+      "z": 91.6,
+      "extrusionPath_mm": 2298.791241002233,
+      "filament_mm": 72.07558000000073,
+      "extrusionSeconds": 127.7106245001216,
+      "segments": 5731
+    },
+    {
+      "z": 91.8,
+      "extrusionPath_mm": 2275.9146542050485,
+      "filament_mm": 71.35892000000054,
+      "extrusionSeconds": 126.43970301138764,
+      "segments": 5692
+    },
+    {
+      "z": 92,
+      "extrusionPath_mm": 2212.5824895014243,
+      "filament_mm": 69.37224000000104,
+      "extrusionSeconds": 122.9212494167428,
+      "segments": 5423
+    },
+    {
+      "z": 92.2,
+      "extrusionPath_mm": 2386.2408045383295,
+      "filament_mm": 74.81637000000315,
+      "extrusionSeconds": 132.56893358545642,
+      "segments": 5784
+    },
+    {
+      "z": 92.4,
+      "extrusionPath_mm": 2176.004785625894,
+      "filament_mm": 68.22515000000162,
+      "extrusionSeconds": 120.8891547569913,
+      "segments": 5395
+    },
+    {
+      "z": 92.6,
+      "extrusionPath_mm": 2283.9758873363876,
+      "filament_mm": 71.611240000001,
+      "extrusionSeconds": 126.88754929646467,
+      "segments": 5640
+    },
+    {
+      "z": 92.8,
+      "extrusionPath_mm": 2217.6141827023744,
+      "filament_mm": 69.52967000000164,
+      "extrusionSeconds": 123.20078792790815,
+      "segments": 5524
+    },
+    {
+      "z": 93,
+      "extrusionPath_mm": 2407.497623906297,
+      "filament_mm": 75.48394000000049,
+      "extrusionSeconds": 133.74986799479302,
+      "segments": 5973
+    },
+    {
+      "z": 93.2,
+      "extrusionPath_mm": 2180.9271464330714,
+      "filament_mm": 68.38041000000027,
+      "extrusionSeconds": 121.16261924627891,
+      "segments": 5521
+    },
+    {
+      "z": 93.4,
+      "extrusionPath_mm": 2174.072795589488,
+      "filament_mm": 68.16371999999967,
+      "extrusionSeconds": 120.78182197719403,
+      "segments": 5532
+    },
+    {
+      "z": 93.6,
+      "extrusionPath_mm": 2143.328746619943,
+      "filament_mm": 67.20033000000032,
+      "extrusionSeconds": 119.0738192566604,
+      "segments": 5476
+    },
+    {
+      "z": 93.8,
+      "extrusionPath_mm": 2343.953081580021,
+      "filament_mm": 73.49295000000085,
+      "extrusionSeconds": 130.21961564333287,
+      "segments": 5871
+    },
+    {
+      "z": 94,
+      "extrusionPath_mm": 2175.0583948281346,
+      "filament_mm": 68.19624000000074,
+      "extrusionSeconds": 120.83657749044984,
+      "segments": 5522
+    },
+    {
+      "z": 94.2,
+      "extrusionPath_mm": 2186.4989019886807,
+      "filament_mm": 68.55389000000137,
+      "extrusionSeconds": 121.47216122159242,
+      "segments": 5505
+    },
+    {
+      "z": 94.4,
+      "extrusionPath_mm": 2153.4849201517454,
+      "filament_mm": 67.52015000000117,
+      "extrusionSeconds": 119.63805111953931,
+      "segments": 5395
+    },
+    {
+      "z": 94.6,
+      "extrusionPath_mm": 2292.9819712805565,
+      "filament_mm": 71.89493000000147,
+      "extrusionSeconds": 127.38788729336348,
+      "segments": 5670
+    },
+    {
+      "z": 94.8,
+      "extrusionPath_mm": 2160.503312305572,
+      "filament_mm": 67.73837000000195,
+      "extrusionSeconds": 120.02796179475186,
+      "segments": 5452
+    },
+    {
+      "z": 95,
+      "extrusionPath_mm": 2250.8115390208277,
+      "filament_mm": 70.5728500000006,
+      "extrusionSeconds": 125.04508550115722,
+      "segments": 5665
+    },
+    {
+      "z": 95.2,
+      "extrusionPath_mm": 2218.3943641616465,
+      "filament_mm": 69.55362000000055,
+      "extrusionSeconds": 123.2441313423106,
+      "segments": 5591
+    },
+    {
+      "z": 95.4,
+      "extrusionPath_mm": 2271.4321153611204,
+      "filament_mm": 71.21553000000186,
+      "extrusionSeconds": 126.19067307561095,
+      "segments": 5704
+    },
+    {
+      "z": 95.6,
+      "extrusionPath_mm": 2151.9434749187226,
+      "filament_mm": 67.4723200000009,
+      "extrusionSeconds": 119.55241527326106,
+      "segments": 5469
+    },
+    {
+      "z": 95.8,
+      "extrusionPath_mm": 2196.6297728153227,
+      "filament_mm": 68.874320000001,
+      "extrusionSeconds": 122.03498737863151,
+      "segments": 5540
+    },
+    {
+      "z": 96,
+      "extrusionPath_mm": 2205.6654455818557,
+      "filament_mm": 69.15681000000032,
+      "extrusionSeconds": 122.53696919899001,
+      "segments": 5578
+    },
+    {
+      "z": 96.2,
+      "extrusionPath_mm": 2307.4045365632155,
+      "filament_mm": 72.345990000001,
+      "extrusionSeconds": 128.18914092017528,
+      "segments": 5770
+    },
+    {
+      "z": 96.4,
+      "extrusionPath_mm": 2179.716080619412,
+      "filament_mm": 68.34164000000166,
+      "extrusionSeconds": 121.09533781218825,
+      "segments": 5503
+    },
+    {
+      "z": 96.6,
+      "extrusionPath_mm": 2223.4237511825518,
+      "filament_mm": 69.71103999999917,
+      "extrusionSeconds": 123.52354173236411,
+      "segments": 5621
+    },
+    {
+      "z": 96.8,
+      "extrusionPath_mm": 2215.6911232204156,
+      "filament_mm": 69.4694500000003,
+      "extrusionSeconds": 123.09395129002074,
+      "segments": 5598
+    },
+    {
+      "z": 97,
+      "extrusionPath_mm": 2280.379376224586,
+      "filament_mm": 71.49934000000113,
+      "extrusionSeconds": 126.6877431235858,
+      "segments": 5686
+    },
+    {
+      "z": 97.2,
+      "extrusionPath_mm": 2154.8847701931113,
+      "filament_mm": 67.56274000000242,
+      "extrusionSeconds": 119.71582056628364,
+      "segments": 5471
+    },
+    {
+      "z": 97.4,
+      "extrusionPath_mm": 2104.5882336753252,
+      "filament_mm": 65.98665999999972,
+      "extrusionSeconds": 116.92156853751892,
+      "segments": 5288
+    },
+    {
+      "z": 97.6,
+      "extrusionPath_mm": 2157.8339227103033,
+      "filament_mm": 67.65608000000098,
+      "extrusionSeconds": 119.87966237279272,
+      "segments": 5407
+    },
+    {
+      "z": 97.8,
+      "extrusionPath_mm": 2298.1786716237793,
+      "filament_mm": 72.05568000000127,
+      "extrusionSeconds": 127.67659286798803,
+      "segments": 5746
+    },
+    {
+      "z": 98,
+      "extrusionPath_mm": 2113.893430351715,
+      "filament_mm": 66.27703000000182,
+      "extrusionSeconds": 117.43852390842667,
+      "segments": 5366
+    },
+    {
+      "z": 98.2,
+      "extrusionPath_mm": 2131.145067056548,
+      "filament_mm": 66.8210000000003,
+      "extrusionSeconds": 118.39694816980634,
+      "segments": 5431
+    },
+    {
+      "z": 98.4,
+      "extrusionPath_mm": 2116.840006531878,
+      "filament_mm": 66.3701700000003,
+      "extrusionSeconds": 117.60222258510164,
+      "segments": 5407
+    },
+    {
+      "z": 98.6,
+      "extrusionPath_mm": 2306.9543449566536,
+      "filament_mm": 72.32983999999975,
+      "extrusionSeconds": 128.1641302753679,
+      "segments": 5776
+    },
+    {
+      "z": 98.8,
+      "extrusionPath_mm": 2132.3560183161258,
+      "filament_mm": 66.85760000000077,
+      "extrusionSeconds": 118.4642232397821,
+      "segments": 5430
+    },
+    {
+      "z": 99,
+      "extrusionPath_mm": 2149.824382220981,
+      "filament_mm": 67.40410999999962,
+      "extrusionSeconds": 119.43468790116326,
+      "segments": 5463
+    },
+    {
+      "z": 99.2,
+      "extrusionPath_mm": 2067.0593361215438,
+      "filament_mm": 64.81100999999997,
+      "extrusionSeconds": 114.83662978453188,
+      "segments": 5262
+    },
+    {
+      "z": 99.4,
+      "extrusionPath_mm": 2064.49981869763,
+      "filament_mm": 64.7292300000004,
+      "extrusionSeconds": 114.69443437208554,
+      "segments": 5296
+    },
+    {
+      "z": 99.6,
+      "extrusionPath_mm": 2074.7842793481736,
+      "filament_mm": 65.0531400000004,
+      "extrusionSeconds": 115.26579329712033,
+      "segments": 5295
+    },
+    {
+      "z": 99.8,
+      "extrusionPath_mm": 2001.6208660073635,
+      "filament_mm": 62.75794000000019,
+      "extrusionSeconds": 111.20115922263261,
+      "segments": 5146
+    },
+    {
+      "z": 100,
+      "extrusionPath_mm": 2014.566747147361,
+      "filament_mm": 63.16524000000038,
+      "extrusionSeconds": 111.92037484151811,
+      "segments": 5178
+    },
+    {
+      "z": 100.2,
+      "extrusionPath_mm": 1974.030834667534,
+      "filament_mm": 61.89380000000107,
+      "extrusionSeconds": 109.66837970374702,
+      "segments": 5070
+    },
+    {
+      "z": 100.4,
+      "extrusionPath_mm": 1994.8879440604123,
+      "filament_mm": 62.54717,
+      "extrusionSeconds": 110.82710800335497,
+      "segments": 5121
+    },
+    {
+      "z": 100.6,
+      "extrusionPath_mm": 1918.2868870868372,
+      "filament_mm": 60.14609999999994,
+      "extrusionSeconds": 106.57149372704342,
+      "segments": 4961
+    },
+    {
+      "z": 100.8,
+      "extrusionPath_mm": 1934.5927604370363,
+      "filament_mm": 60.65701000000033,
+      "extrusionSeconds": 107.477375579836,
+      "segments": 4977
+    },
+    {
+      "z": 101,
+      "extrusionPath_mm": 1877.514696994021,
+      "filament_mm": 58.8691700000008,
+      "extrusionSeconds": 104.30637205522191,
+      "segments": 4863
+    },
+    {
+      "z": 101.2,
+      "extrusionPath_mm": 1894.1086991636955,
+      "filament_mm": 59.38821000000032,
+      "extrusionSeconds": 105.22826106464932,
+      "segments": 4878
+    },
+    {
+      "z": 101.4,
+      "extrusionPath_mm": 1875.1050955173375,
+      "filament_mm": 58.792170000000176,
+      "extrusionSeconds": 104.17250530651572,
+      "segments": 4802
+    },
+    {
+      "z": 101.6,
+      "extrusionPath_mm": 1876.9603139467147,
+      "filament_mm": 58.85012999999988,
+      "extrusionSeconds": 104.27557299703955,
+      "segments": 4853
+    },
+    {
+      "z": 101.8,
+      "extrusionPath_mm": 1913.8908123754807,
+      "filament_mm": 60.00742000000006,
+      "extrusionSeconds": 106.32726735419402,
+      "segments": 4934
+    },
+    {
+      "z": 102,
+      "extrusionPath_mm": 2012.7642446798177,
+      "filament_mm": 63.109039999999666,
+      "extrusionSeconds": 111.82023581554579,
+      "segments": 5133
+    },
+    {
+      "z": 102.2,
+      "extrusionPath_mm": 1860.0278047151749,
+      "filament_mm": 58.31817999999948,
+      "extrusionSeconds": 103.33487803972933,
+      "segments": 4799
+    },
+    {
+      "z": 102.4,
+      "extrusionPath_mm": 1968.6959519673494,
+      "filament_mm": 61.72830999999975,
+      "extrusionSeconds": 109.37199733152029,
+      "segments": 5033
+    },
+    {
+      "z": 102.6,
+      "extrusionPath_mm": 1882.7217728980856,
+      "filament_mm": 59.02976,
+      "extrusionSeconds": 104.59565404989081,
+      "segments": 4858
+    },
+    {
+      "z": 102.8,
+      "extrusionPath_mm": 1945.3691754263657,
+      "filament_mm": 60.99463999999974,
+      "extrusionSeconds": 108.07606530146455,
+      "segments": 4983
+    },
+    {
+      "z": 103,
+      "extrusionPath_mm": 1845.3336896566534,
+      "filament_mm": 57.86009000000048,
+      "extrusionSeconds": 102.51853831425765,
+      "segments": 4777
+    },
+    {
+      "z": 103.2,
+      "extrusionPath_mm": 1882.9614045096534,
+      "filament_mm": 59.038630000000154,
+      "extrusionSeconds": 104.6089669172008,
+      "segments": 4884
+    },
+    {
+      "z": 103.4,
+      "extrusionPath_mm": 1894.8591843580666,
+      "filament_mm": 59.409320000000854,
+      "extrusionSeconds": 105.26995468655564,
+      "segments": 4907
+    },
+    {
+      "z": 103.6,
+      "extrusionPath_mm": 1870.1712552064182,
+      "filament_mm": 58.63621999999997,
+      "extrusionSeconds": 103.8984030670234,
+      "segments": 4848
+    },
+    {
+      "z": 103.8,
+      "extrusionPath_mm": 1924.9129236162894,
+      "filament_mm": 60.353480000000786,
+      "extrusionSeconds": 106.93960686757038,
+      "segments": 4956
+    },
+    {
+      "z": 104,
+      "extrusionPath_mm": 2000.6582565232766,
+      "filament_mm": 62.72920999999996,
+      "extrusionSeconds": 111.14768091795999,
+      "segments": 5129
+    },
+    {
+      "z": 104.2,
+      "extrusionPath_mm": 1905.3656856248765,
+      "filament_mm": 59.73987999999955,
+      "extrusionSeconds": 105.85364920137775,
+      "segments": 4954
+    },
+    {
+      "z": 104.4,
+      "extrusionPath_mm": 1986.2728247345249,
+      "filament_mm": 62.27731999999988,
+      "extrusionSeconds": 110.34849026302969,
+      "segments": 5104
+    },
+    {
+      "z": 104.6,
+      "extrusionPath_mm": 1970.6423425825105,
+      "filament_mm": 61.786420000000525,
+      "extrusionSeconds": 109.48013014346971,
+      "segments": 5073
+    },
+    {
+      "z": 104.8,
+      "extrusionPath_mm": 2000.6370123188976,
+      "filament_mm": 62.72571000000054,
+      "extrusionSeconds": 111.14650068438074,
+      "segments": 5155
+    },
+    {
+      "z": 105,
+      "extrusionPath_mm": 2060.330653525325,
+      "filament_mm": 64.5975199999999,
+      "extrusionSeconds": 114.46281408474111,
+      "segments": 5276
+    },
+    {
+      "z": 105.2,
+      "extrusionPath_mm": 2042.5362965930874,
+      "filament_mm": 64.04251999999946,
+      "extrusionSeconds": 113.47423869961555,
+      "segments": 5206
+    },
+    {
+      "z": 105.4,
+      "extrusionPath_mm": 1971.451339189111,
+      "filament_mm": 61.81113999999979,
+      "extrusionSeconds": 109.52507439939063,
+      "segments": 5062
+    },
+    {
+      "z": 105.6,
+      "extrusionPath_mm": 2013.1741661801368,
+      "filament_mm": 63.12035000000074,
+      "extrusionSeconds": 111.84300923222979,
+      "segments": 5161
+    },
+    {
+      "z": 105.8,
+      "extrusionPath_mm": 2077.2353986726926,
+      "filament_mm": 65.1272100000003,
+      "extrusionSeconds": 115.40196659292455,
+      "segments": 5288
+    },
+    {
+      "z": 106,
+      "extrusionPath_mm": 2107.1013087083143,
+      "filament_mm": 66.06708000000015,
+      "extrusionSeconds": 117.06118381712977,
+      "segments": 5321
+    },
+    {
+      "z": 106.2,
+      "extrusionPath_mm": 2122.0166294225746,
+      "filament_mm": 66.53384999999989,
+      "extrusionSeconds": 117.88981274569882,
+      "segments": 5333
+    },
+    {
+      "z": 106.4,
+      "extrusionPath_mm": 2092.692604481951,
+      "filament_mm": 65.61242000000031,
+      "extrusionSeconds": 116.26070024899677,
+      "segments": 5285
+    },
+    {
+      "z": 106.6,
+      "extrusionPath_mm": 2098.0993968760245,
+      "filament_mm": 65.7834000000013,
+      "extrusionSeconds": 116.56107760421989,
+      "segments": 5275
+    },
+    {
+      "z": 106.8,
+      "extrusionPath_mm": 2116.3984302584167,
+      "filament_mm": 66.35833000000011,
+      "extrusionSeconds": 117.57769056991269,
+      "segments": 5345
+    },
+    {
+      "z": 107,
+      "extrusionPath_mm": 2183.4808916952634,
+      "filament_mm": 68.4580500000011,
+      "extrusionSeconds": 121.30449398307167,
+      "segments": 5476
+    },
+    {
+      "z": 107.2,
+      "extrusionPath_mm": 2120.4421117647917,
+      "filament_mm": 66.48387000000025,
+      "extrusionSeconds": 117.80233954248922,
+      "segments": 5318
+    },
+    {
+      "z": 107.4,
+      "extrusionPath_mm": 2153.2938499901647,
+      "filament_mm": 67.51445000000096,
+      "extrusionSeconds": 119.62743611056048,
+      "segments": 5392
+    },
+    {
+      "z": 107.6,
+      "extrusionPath_mm": 2232.6481691866557,
+      "filament_mm": 70.00234999999982,
+      "extrusionSeconds": 124.03600939925963,
+      "segments": 5549
+    },
+    {
+      "z": 107.8,
+      "extrusionPath_mm": 2159.599829854207,
+      "filament_mm": 67.71053000000087,
+      "extrusionSeconds": 119.97776832522815,
+      "segments": 5364
+    },
+    {
+      "z": 108,
+      "extrusionPath_mm": 2181.8973825024314,
+      "filament_mm": 68.4098899999997,
+      "extrusionSeconds": 121.21652125013439,
+      "segments": 5467
+    },
+    {
+      "z": 108.2,
+      "extrusionPath_mm": 2097.5916985515646,
+      "filament_mm": 65.76526000000109,
+      "extrusionSeconds": 116.53287214175063,
+      "segments": 5259
+    },
+    {
+      "z": 108.4,
+      "extrusionPath_mm": 2035.480087092932,
+      "filament_mm": 63.816990000000814,
+      "extrusionSeconds": 113.08222706072063,
+      "segments": 5101
+    },
+    {
+      "z": 108.6,
+      "extrusionPath_mm": 2060.480006646609,
+      "filament_mm": 64.60410000000198,
+      "extrusionSeconds": 114.47111148036421,
+      "segments": 5205
+    },
+    {
+      "z": 108.8,
+      "extrusionPath_mm": 2140.8948774011155,
+      "filament_mm": 67.12607000000077,
+      "extrusionSeconds": 118.93860430006055,
+      "segments": 5359
+    },
+    {
+      "z": 109,
+      "extrusionPath_mm": 2013.1559869162438,
+      "filament_mm": 63.124160000000835,
+      "extrusionSeconds": 111.84199927312177,
+      "segments": 5088
+    },
+    {
+      "z": 109.2,
+      "extrusionPath_mm": 2015.607034524768,
+      "filament_mm": 63.19513999999992,
+      "extrusionSeconds": 111.97816858471083,
+      "segments": 5136
+    },
+    {
+      "z": 109.4,
+      "extrusionPath_mm": 1928.4330081739893,
+      "filament_mm": 60.46318000000189,
+      "extrusionSeconds": 107.13516712077526,
+      "segments": 4958
+    },
+    {
+      "z": 109.6,
+      "extrusionPath_mm": 1976.1210700532872,
+      "filament_mm": 61.95890000000011,
+      "extrusionSeconds": 109.78450389185046,
+      "segments": 5000
+    },
+    {
+      "z": 109.8,
+      "extrusionPath_mm": 1968.9279751511845,
+      "filament_mm": 61.73358000000141,
+      "extrusionSeconds": 109.38488750839612,
+      "segments": 5054
+    },
+    {
+      "z": 110,
+      "extrusionPath_mm": 1892.6123360889583,
+      "filament_mm": 59.34099000000084,
+      "extrusionSeconds": 105.1451297827166,
+      "segments": 4876
+    },
+    {
+      "z": 110.2,
+      "extrusionPath_mm": 1964.9138039053937,
+      "filament_mm": 61.60856000000023,
+      "extrusionSeconds": 109.16187799474453,
+      "segments": 5978
+    },
+    {
+      "z": 110.4,
+      "extrusionPath_mm": 1946.4028068417629,
+      "filament_mm": 61.02768000000024,
+      "extrusionSeconds": 108.13348926898675,
+      "segments": 5889
+    },
+    {
+      "z": 110.6,
+      "extrusionPath_mm": 1962.122441859061,
+      "filament_mm": 61.520360000000245,
+      "extrusionSeconds": 109.00680232550258,
+      "segments": 5877
+    },
+    {
+      "z": 110.8,
+      "extrusionPath_mm": 1947.5778441955465,
+      "filament_mm": 61.06458999999996,
+      "extrusionSeconds": 108.19876912197432,
+      "segments": 5810
+    },
+    {
+      "z": 111,
+      "extrusionPath_mm": 1967.7320296707117,
+      "filament_mm": 61.6958700000004,
+      "extrusionSeconds": 109.31844609281723,
+      "segments": 5802
+    },
+    {
+      "z": 111.2,
+      "extrusionPath_mm": 1942.658355345305,
+      "filament_mm": 60.90911000000031,
+      "extrusionSeconds": 107.9254641858501,
+      "segments": 5717
+    },
+    {
+      "z": 111.4,
+      "extrusionPath_mm": 1842.8063347043353,
+      "filament_mm": 57.77884000000066,
+      "extrusionSeconds": 102.37812970579633,
+      "segments": 5506
+    },
+    {
+      "z": 111.6,
+      "extrusionPath_mm": 1854.4974524267009,
+      "filament_mm": 58.145970000000524,
+      "extrusionSeconds": 103.02763624592804,
+      "segments": 5513
+    },
+    {
+      "z": 111.8,
+      "extrusionPath_mm": 1808.4200887065974,
+      "filament_mm": 56.701540000000044,
+      "extrusionSeconds": 100.46778270592185,
+      "segments": 5383
+    },
+    {
+      "z": 112,
+      "extrusionPath_mm": 1811.7166645606421,
+      "filament_mm": 56.80518000000034,
+      "extrusionSeconds": 100.65092580892455,
+      "segments": 5353
+    },
+    {
+      "z": 112.2,
+      "extrusionPath_mm": 1787.0689069681912,
+      "filament_mm": 56.03131000000019,
+      "extrusionSeconds": 99.28160594267779,
+      "segments": 5313
+    },
+    {
+      "z": 112.4,
+      "extrusionPath_mm": 1883.4567970618682,
+      "filament_mm": 59.05363999999993,
+      "extrusionSeconds": 104.6364887256601,
+      "segments": 5465
+    },
+    {
+      "z": 112.6,
+      "extrusionPath_mm": 1814.155080938163,
+      "filament_mm": 56.88120000000046,
+      "extrusionSeconds": 100.78639338545379,
+      "segments": 5336
+    },
+    {
+      "z": 112.8,
+      "extrusionPath_mm": 1845.6140924824824,
+      "filament_mm": 57.86742000000019,
+      "extrusionSeconds": 102.53411624902698,
+      "segments": 5380
+    },
+    {
+      "z": 113,
+      "extrusionPath_mm": 1800.2819671463612,
+      "filament_mm": 56.445139999999654,
+      "extrusionSeconds": 100.01566484146467,
+      "segments": 5298
+    },
+    {
+      "z": 113.2,
+      "extrusionPath_mm": 1765.416576524263,
+      "filament_mm": 55.35304999999989,
+      "extrusionSeconds": 98.07869869579224,
+      "segments": 5179
+    },
+    {
+      "z": 113.4,
+      "extrusionPath_mm": 1808.1011582594124,
+      "filament_mm": 56.69115000000021,
+      "extrusionSeconds": 100.45006434774564,
+      "segments": 5319
+    },
+    {
+      "z": 113.6,
+      "extrusionPath_mm": 1790.7019225429692,
+      "filament_mm": 56.14579000000043,
+      "extrusionSeconds": 99.48344014127505,
+      "segments": 5266
+    },
+    {
+      "z": 113.8,
+      "extrusionPath_mm": 1822.8291239555087,
+      "filament_mm": 57.153000000000006,
+      "extrusionSeconds": 101.26828466419514,
+      "segments": 5371
+    },
+    {
+      "z": 114,
+      "extrusionPath_mm": 1886.1446537093623,
+      "filament_mm": 59.138360000000745,
+      "extrusionSeconds": 104.78581409496458,
+      "segments": 5456
+    },
+    {
+      "z": 114.2,
+      "extrusionPath_mm": 1737.4204368161327,
+      "filament_mm": 54.47584000000018,
+      "extrusionSeconds": 96.5233576008956,
+      "segments": 5181
+    },
+    {
+      "z": 114.4,
+      "extrusionPath_mm": 1824.910827354534,
+      "filament_mm": 57.218950000000405,
+      "extrusionSeconds": 101.38393485303021,
+      "segments": 5402
+    },
+    {
+      "z": 114.6,
+      "extrusionPath_mm": 1731.0846569420764,
+      "filament_mm": 54.277040000000106,
+      "extrusionSeconds": 96.17136983011525,
+      "segments": 5218
+    },
+    {
+      "z": 114.8,
+      "extrusionPath_mm": 1785.3607132715993,
+      "filament_mm": 55.979040000000396,
+      "extrusionSeconds": 99.18670629286612,
+      "segments": 5332
+    },
+    {
+      "z": 115,
+      "extrusionPath_mm": 1749.6431982823497,
+      "filament_mm": 54.85923000000005,
+      "extrusionSeconds": 97.20239990457506,
+      "segments": 5306
+    },
+    {
+      "z": 115.2,
+      "extrusionPath_mm": 1821.1636005829687,
+      "filament_mm": 57.10193000000038,
+      "extrusionSeconds": 101.1757555879429,
+      "segments": 5465
+    },
+    {
+      "z": 115.4,
+      "extrusionPath_mm": 1846.2516343818006,
+      "filament_mm": 57.88803000000056,
+      "extrusionSeconds": 102.56953524343254,
+      "segments": 5557
+    },
+    {
+      "z": 115.6,
+      "extrusionPath_mm": 1843.7406312155697,
+      "filament_mm": 57.80915000000011,
+      "extrusionSeconds": 102.43003506753125,
+      "segments": 5539
+    },
+    {
+      "z": 115.8,
+      "extrusionPath_mm": 1896.846143190994,
+      "filament_mm": 59.47371000000022,
+      "extrusionSeconds": 105.38034128838848,
+      "segments": 5700
+    },
+    {
+      "z": 116,
+      "extrusionPath_mm": 1884.0821399435376,
+      "filament_mm": 59.073970000000436,
+      "extrusionSeconds": 104.67122999686381,
+      "segments": 5684
+    },
+    {
+      "z": 116.2,
+      "extrusionPath_mm": 1865.1187757732903,
+      "filament_mm": 58.47934000000007,
+      "extrusionSeconds": 103.61770976518284,
+      "segments": 5671
+    },
+    {
+      "z": 116.4,
+      "extrusionPath_mm": 1898.3830423787895,
+      "filament_mm": 59.52211999999999,
+      "extrusionSeconds": 105.46572457660011,
+      "segments": 5757
+    },
+    {
+      "z": 116.6,
+      "extrusionPath_mm": 1931.2720446064834,
+      "filament_mm": 60.55323000000032,
+      "extrusionSeconds": 107.29289136702626,
+      "segments": 5899
+    },
+    {
+      "z": 116.8,
+      "extrusionPath_mm": 1954.9492404661873,
+      "filament_mm": 61.296000000000205,
+      "extrusionSeconds": 108.60829113700976,
+      "segments": 5960
+    },
+    {
+      "z": 117,
+      "extrusionPath_mm": 1943.2402561914048,
+      "filament_mm": 60.928549999999724,
+      "extrusionSeconds": 107.95779201063306,
+      "segments": 5972
+    },
+    {
+      "z": 117.2,
+      "extrusionPath_mm": 1962.97335497042,
+      "filament_mm": 61.546739999999545,
+      "extrusionSeconds": 109.0540752761341,
+      "segments": 5990
+    },
+    {
+      "z": 117.4,
+      "extrusionPath_mm": 2001.1897759794695,
+      "filament_mm": 62.74526999999999,
+      "extrusionSeconds": 111.17720977663738,
+      "segments": 6169
+    },
+    {
+      "z": 117.6,
+      "extrusionPath_mm": 1986.743961874397,
+      "filament_mm": 62.29265000000009,
+      "extrusionSeconds": 110.37466454857729,
+      "segments": 6085
+    },
+    {
+      "z": 117.8,
+      "extrusionPath_mm": 2881.410617470927,
+      "filament_mm": 90.34092000000047,
+      "extrusionSeconds": 160.07836763726843,
+      "segments": 6875
+    },
+    {
+      "z": 118,
+      "extrusionPath_mm": 2913.135277120524,
+      "filament_mm": 91.33588000000262,
+      "extrusionSeconds": 161.84084872892038,
+      "segments": 6909
+    },
+    {
+      "z": 118.2,
+      "extrusionPath_mm": 2881.2955686332134,
+      "filament_mm": 90.33969000000252,
+      "extrusionSeconds": 160.07197603517733,
+      "segments": 6878
+    },
+    {
+      "z": 118.4,
+      "extrusionPath_mm": 2913.7617190761302,
+      "filament_mm": 91.35702000000325,
+      "extrusionSeconds": 161.87565105978388,
+      "segments": 6908
+    },
+    {
+      "z": 118.6,
+      "extrusionPath_mm": 2865.4756295565057,
+      "filament_mm": 89.83918999999877,
+      "extrusionSeconds": 159.1930905309133,
+      "segments": 6784
+    },
+    {
+      "z": 118.8,
+      "extrusionPath_mm": 2898.3697642567186,
+      "filament_mm": 90.87442000000222,
+      "extrusionSeconds": 161.02054245871088,
+      "segments": 6804
+    },
+    {
+      "z": 119,
+      "extrusionPath_mm": 2816.5630784874334,
+      "filament_mm": 88.30868000000017,
+      "extrusionSeconds": 156.47572658263113,
+      "segments": 6605
+    },
+    {
+      "z": 119.2,
+      "extrusionPath_mm": 2824.54041255936,
+      "filament_mm": 88.56052000000325,
+      "extrusionSeconds": 156.9189118088503,
+      "segments": 6732
+    },
+    {
+      "z": 119.4,
+      "extrusionPath_mm": 2889.61818487463,
+      "filament_mm": 90.59698000000098,
+      "extrusionSeconds": 160.53434360414437,
+      "segments": 6892
+    },
+    {
+      "z": 119.6,
+      "extrusionPath_mm": 2800.576034937388,
+      "filament_mm": 87.81138000000274,
+      "extrusionSeconds": 155.58755749652727,
+      "segments": 6591
+    },
+    {
+      "z": 119.8,
+      "extrusionPath_mm": 2814.3302127255897,
+      "filament_mm": 88.24224000000099,
+      "extrusionSeconds": 156.351678484755,
+      "segments": 6741
+    },
+    {
+      "z": 120,
+      "extrusionPath_mm": 2841.9620155455164,
+      "filament_mm": 89.10734000000238,
+      "extrusionSeconds": 157.88677864141724,
+      "segments": 6775
+    },
+    {
+      "z": 120.2,
+      "extrusionPath_mm": 2744.5684255614146,
+      "filament_mm": 86.04782000000216,
+      "extrusionSeconds": 152.47602364229223,
+      "segments": 6406
+    },
+    {
+      "z": 120.4,
+      "extrusionPath_mm": 2816.2126713269085,
+      "filament_mm": 88.29891000000173,
+      "extrusionSeconds": 156.45625951816015,
+      "segments": 6733
+    },
+    {
+      "z": 120.6,
+      "extrusionPath_mm": 2763.396065981754,
+      "filament_mm": 86.64378000000085,
+      "extrusionSeconds": 153.5220036656513,
+      "segments": 6505
+    },
+    {
+      "z": 120.8,
+      "extrusionPath_mm": 2822.33352477929,
+      "filament_mm": 88.49238000000149,
+      "extrusionSeconds": 156.7963069321874,
+      "segments": 6717
+    },
+    {
+      "z": 121,
+      "extrusionPath_mm": 2727.794044116316,
+      "filament_mm": 85.52789000000068,
+      "extrusionSeconds": 151.54411356201413,
+      "segments": 6422
+    },
+    {
+      "z": 121.2,
+      "extrusionPath_mm": 2788.649936396369,
+      "filament_mm": 87.43467000000207,
+      "extrusionSeconds": 154.92499646646507,
+      "segments": 6591
+    },
+    {
+      "z": 121.4,
+      "extrusionPath_mm": 51195.35859491234,
+      "filament_mm": 1605.207399999599,
+      "extrusionSeconds": 2844.1865886060064,
+      "segments": 120192
+    },
+    {
+      "z": 121.6,
+      "extrusionPath_mm": 3538.142232954306,
+      "filament_mm": 110.93587000000053,
+      "extrusionSeconds": 70.76284465908581,
+      "segments": 1819
+    },
+    {
+      "z": 121.8,
+      "extrusionPath_mm": 2748.049176964233,
+      "filament_mm": 86.16243999999985,
+      "extrusionSeconds": 54.96098353928489,
+      "segments": 1404
+    },
+    {
+      "z": 122,
+      "extrusionPath_mm": 3415.3513853677796,
+      "filament_mm": 107.08572000000066,
+      "extrusionSeconds": 68.30702770735559,
+      "segments": 2013
+    },
+    {
+      "z": 122.2,
+      "extrusionPath_mm": 3522.394002276573,
+      "filament_mm": 110.43987999999882,
+      "extrusionSeconds": 195.68855568203153,
+      "segments": 7911
+    },
+    {
+      "z": 122.4,
+      "extrusionPath_mm": 3086.2406956276154,
+      "filament_mm": 96.76412999999776,
+      "extrusionSeconds": 171.45781642375894,
+      "segments": 7004
+    },
+    {
+      "z": 122.6,
+      "extrusionPath_mm": 2761.155423305635,
+      "filament_mm": 86.57012000000202,
+      "extrusionSeconds": 153.39752351697908,
+      "segments": 6394
+    },
+    {
+      "z": 122.8,
+      "extrusionPath_mm": 2976.4653197696807,
+      "filament_mm": 93.3237100000009,
+      "extrusionSeconds": 165.35918443164775,
+      "segments": 6790
+    },
+    {
+      "z": 123,
+      "extrusionPath_mm": 3138.5948000290705,
+      "filament_mm": 98.40924000000155,
+      "extrusionSeconds": 174.3663777793876,
+      "segments": 7118
+    },
+    {
+      "z": 123.2,
+      "extrusionPath_mm": 2877.62043008673,
+      "filament_mm": 90.22563000000224,
+      "extrusionSeconds": 159.86780167148513,
+      "segments": 6570
+    },
+    {
+      "z": 123.4,
+      "extrusionPath_mm": 2560.453234906427,
+      "filament_mm": 80.27814000000093,
+      "extrusionSeconds": 142.2474019392413,
+      "segments": 5897
+    },
+    {
+      "z": 123.6,
+      "extrusionPath_mm": 2764.973804325957,
+      "filament_mm": 86.69141999999974,
+      "extrusionSeconds": 153.60965579588606,
+      "segments": 6299
+    },
+    {
+      "z": 123.8,
+      "extrusionPath_mm": 2877.287281009167,
+      "filament_mm": 90.21519999999894,
+      "extrusionSeconds": 159.84929338939105,
+      "segments": 6521
+    },
+    {
+      "z": 124,
+      "extrusionPath_mm": 2676.3910234056602,
+      "filament_mm": 83.91395999999982,
+      "extrusionSeconds": 148.68839018920698,
+      "segments": 6083
+    },
+    {
+      "z": 124.2,
+      "extrusionPath_mm": 2511.0913793004293,
+      "filament_mm": 78.73206000000172,
+      "extrusionSeconds": 139.50507662779998,
+      "segments": 5726
+    },
+    {
+      "z": 124.4,
+      "extrusionPath_mm": 2524.159882884595,
+      "filament_mm": 79.14144000000178,
+      "extrusionSeconds": 140.2311046046983,
+      "segments": 5732
+    },
+    {
+      "z": 124.6,
+      "extrusionPath_mm": 2561.3992608266212,
+      "filament_mm": 80.31014000000059,
+      "extrusionSeconds": 142.29995893481035,
+      "segments": 5792
+    },
+    {
+      "z": 124.8,
+      "extrusionPath_mm": 2435.5824108338925,
+      "filament_mm": 76.36424000000127,
+      "extrusionSeconds": 135.31013393521917,
+      "segments": 5507
+    },
+    {
+      "z": 125,
+      "extrusionPath_mm": 2418.1698892881527,
+      "filament_mm": 75.81988000000071,
+      "extrusionSeconds": 134.34277162712164,
+      "segments": 5456
+    },
+    {
+      "z": 125.2,
+      "extrusionPath_mm": 2318.746476540219,
+      "filament_mm": 72.70273000000284,
+      "extrusionSeconds": 128.81924869667725,
+      "segments": 5244
+    },
+    {
+      "z": 125.4,
+      "extrusionPath_mm": 2343.501205537874,
+      "filament_mm": 73.47715000000095,
+      "extrusionSeconds": 130.19451141877235,
+      "segments": 5284
+    },
+    {
+      "z": 125.6,
+      "extrusionPath_mm": 2289.898431775043,
+      "filament_mm": 71.79664000000224,
+      "extrusionSeconds": 127.21657954305587,
+      "segments": 5162
+    },
+    {
+      "z": 125.8,
+      "extrusionPath_mm": 2243.2036522639296,
+      "filament_mm": 70.33300999999949,
+      "extrusionSeconds": 124.62242512577332,
+      "segments": 5065
+    },
+    {
+      "z": 126,
+      "extrusionPath_mm": 2169.1084686302033,
+      "filament_mm": 68.0098800000017,
+      "extrusionSeconds": 120.5060260350106,
+      "segments": 4906
+    },
+    {
+      "z": 126.2,
+      "extrusionPath_mm": 2203.1776131850884,
+      "filament_mm": 69.07801000000033,
+      "extrusionSeconds": 122.398756288062,
+      "segments": 4934
+    },
+    {
+      "z": 126.4,
+      "extrusionPath_mm": 2204.266376923067,
+      "filament_mm": 69.11080000000224,
+      "extrusionSeconds": 122.45924316239152,
+      "segments": 4949
+    },
+    {
+      "z": 126.6,
+      "extrusionPath_mm": 2167.8905470420946,
+      "filament_mm": 67.9699399999998,
+      "extrusionSeconds": 120.4383637245561,
+      "segments": 4867
+    },
+    {
+      "z": 126.8,
+      "extrusionPath_mm": 2112.2523697728006,
+      "filament_mm": 66.22923000000154,
+      "extrusionSeconds": 117.34735387626597,
+      "segments": 4730
+    },
+    {
+      "z": 127,
+      "extrusionPath_mm": 2009.128302225704,
+      "filament_mm": 62.994379999999815,
+      "extrusionSeconds": 111.61823901253976,
+      "segments": 4532
+    },
+    {
+      "z": 127.2,
+      "extrusionPath_mm": 2018.6641006046425,
+      "filament_mm": 63.29244000000221,
+      "extrusionSeconds": 112.1480055891444,
+      "segments": 4546
+    },
+    {
+      "z": 127.4,
+      "extrusionPath_mm": 2060.737191460258,
+      "filament_mm": 64.61123000000187,
+      "extrusionSeconds": 114.48539952556935,
+      "segments": 4642
+    },
+    {
+      "z": 127.6,
+      "extrusionPath_mm": 1970.2134378189178,
+      "filament_mm": 61.775210000001344,
+      "extrusionSeconds": 109.45630210104927,
+      "segments": 4420
+    },
+    {
+      "z": 127.8,
+      "extrusionPath_mm": 1916.9987365448246,
+      "filament_mm": 60.10628000000063,
+      "extrusionSeconds": 106.49992980804471,
+      "segments": 4317
+    },
+    {
+      "z": 128,
+      "extrusionPath_mm": 1973.5823574989358,
+      "filament_mm": 61.87886000000189,
+      "extrusionSeconds": 109.6434643054941,
+      "segments": 4441
+    },
+    {
+      "z": 128.2,
+      "extrusionPath_mm": 1917.6426252806514,
+      "filament_mm": 60.12464000000068,
+      "extrusionSeconds": 106.53570140447957,
+      "segments": 4335
+    },
+    {
+      "z": 128.4,
+      "extrusionPath_mm": 1886.560951123004,
+      "filament_mm": 59.15213000000154,
+      "extrusionSeconds": 104.80894172905361,
+      "segments": 4254
+    },
+    {
+      "z": 128.6,
+      "extrusionPath_mm": 1834.3208884412584,
+      "filament_mm": 57.51217000000026,
+      "extrusionSeconds": 101.90671602451013,
+      "segments": 4153
+    },
+    {
+      "z": 128.8,
+      "extrusionPath_mm": 1879.9019932618357,
+      "filament_mm": 58.942200000001996,
+      "extrusionSeconds": 104.43899962565429,
+      "segments": 4254
+    },
+    {
+      "z": 129,
+      "extrusionPath_mm": 1832.3701388746958,
+      "filament_mm": 57.44940000000063,
+      "extrusionSeconds": 101.79834104859208,
+      "segments": 4129
+    },
+    {
+      "z": 129.2,
+      "extrusionPath_mm": 1813.8496537899916,
+      "filament_mm": 56.869970000001494,
+      "extrusionSeconds": 100.76942521055244,
+      "segments": 4088
+    },
+    {
+      "z": 129.4,
+      "extrusionPath_mm": 1826.6920118317046,
+      "filament_mm": 57.2715300000002,
+      "extrusionSeconds": 101.4828895462056,
+      "segments": 4131
+    },
+    {
+      "z": 129.6,
+      "extrusionPath_mm": 1821.0550158618203,
+      "filament_mm": 57.09693000000207,
+      "extrusionSeconds": 101.16972310343323,
+      "segments": 4098
+    },
+    {
+      "z": 129.8,
+      "extrusionPath_mm": 1764.2515481344492,
+      "filament_mm": 55.31681000000041,
+      "extrusionSeconds": 98.01397489635755,
+      "segments": 4016
+    },
+    {
+      "z": 130,
+      "extrusionPath_mm": 1772.8810298698345,
+      "filament_mm": 55.58840000000149,
+      "extrusionSeconds": 98.49339054832421,
+      "segments": 4002
+    },
+    {
+      "z": 130.2,
+      "extrusionPath_mm": 1736.7910761021753,
+      "filament_mm": 54.45489000000055,
+      "extrusionSeconds": 96.48839311678776,
+      "segments": 3937
+    },
+    {
+      "z": 130.4,
+      "extrusionPath_mm": 1755.5227821141852,
+      "filament_mm": 55.03998000000076,
+      "extrusionSeconds": 97.52904345078464,
+      "segments": 3959
+    },
+    {
+      "z": 130.6,
+      "extrusionPath_mm": 1727.7023294203295,
+      "filament_mm": 54.17059000000014,
+      "extrusionSeconds": 95.98346274557571,
+      "segments": 3935
+    },
+    {
+      "z": 130.8,
+      "extrusionPath_mm": 1066.7351997508638,
+      "filament_mm": 33.4452600000002,
+      "extrusionSeconds": 59.263066652824165,
+      "segments": 2570
+    },
+    {
+      "z": 131,
+      "extrusionPath_mm": 1043.3225262499905,
+      "filament_mm": 32.71293999999997,
+      "extrusionSeconds": 57.962362569444466,
+      "segments": 2545
+    },
+    {
+      "z": 131.2,
+      "extrusionPath_mm": 1095.3925844920689,
+      "filament_mm": 34.345300000000115,
+      "extrusionSeconds": 60.8551435828929,
+      "segments": 2658
+    },
+    {
+      "z": 131.4,
+      "extrusionPath_mm": 1059.4622290895488,
+      "filament_mm": 33.218700000000084,
+      "extrusionSeconds": 58.859012727197175,
+      "segments": 2580
+    },
+    {
+      "z": 131.6,
+      "extrusionPath_mm": 1026.8798029846107,
+      "filament_mm": 32.19761999999991,
+      "extrusionSeconds": 57.04887794358873,
+      "segments": 2510
+    },
+    {
+      "z": 131.8,
+      "extrusionPath_mm": 1025.1835723199836,
+      "filament_mm": 32.14239999999988,
+      "extrusionSeconds": 56.954642906667054,
+      "segments": 2505
+    },
+    {
+      "z": 132,
+      "extrusionPath_mm": 1017.0185603528482,
+      "filament_mm": 31.887140000000045,
+      "extrusionSeconds": 56.50103113071365,
+      "segments": 2487
+    },
+    {
+      "z": 132.2,
+      "extrusionPath_mm": 932.9888959441398,
+      "filament_mm": 29.25163999999976,
+      "extrusionSeconds": 51.83271644134123,
+      "segments": 2324
+    },
+    {
+      "z": 132.4,
+      "extrusionPath_mm": 875.4513796526498,
+      "filament_mm": 27.449159999999928,
+      "extrusionSeconds": 48.636187758481014,
+      "segments": 2203
+    },
+    {
+      "z": 132.6,
+      "extrusionPath_mm": 912.9947589840461,
+      "filament_mm": 28.62606000000002,
+      "extrusionSeconds": 50.721931054669646,
+      "segments": 2263
+    },
+    {
+      "z": 132.8,
+      "extrusionPath_mm": 866.7960029310667,
+      "filament_mm": 27.177589999999988,
+      "extrusionSeconds": 48.15533349617045,
+      "segments": 2166
+    },
+    {
+      "z": 133,
+      "extrusionPath_mm": 846.5745759465977,
+      "filament_mm": 26.542529999999946,
+      "extrusionSeconds": 47.03192088592237,
+      "segments": 2118
+    },
+    {
+      "z": 133.2,
+      "extrusionPath_mm": 838.0372211772766,
+      "filament_mm": 26.276049999999902,
+      "extrusionSeconds": 46.557623398737675,
+      "segments": 2101
+    },
+    {
+      "z": 133.4,
+      "extrusionPath_mm": 836.6844748944554,
+      "filament_mm": 26.234449999999935,
+      "extrusionSeconds": 46.482470827470294,
+      "segments": 2098
+    },
+    {
+      "z": 133.6,
+      "extrusionPath_mm": 766.9937274873324,
+      "filament_mm": 24.049400000000034,
+      "extrusionSeconds": 42.61076263818542,
+      "segments": 1953
+    },
+    {
+      "z": 133.8,
+      "extrusionPath_mm": 788.4094198618602,
+      "filament_mm": 24.719880000000035,
+      "extrusionSeconds": 43.800523325658496,
+      "segments": 2001
+    },
+    {
+      "z": 134,
+      "extrusionPath_mm": 779.6994987498821,
+      "filament_mm": 24.446859999999976,
+      "extrusionSeconds": 43.31663881943787,
+      "segments": 1976
+    },
+    {
+      "z": 134.2,
+      "extrusionPath_mm": 953.3527078229081,
+      "filament_mm": 29.892069999999904,
+      "extrusionSeconds": 52.96403932349427,
+      "segments": 2325
+    },
+    {
+      "z": 134.4,
+      "extrusionPath_mm": 922.4085687821901,
+      "filament_mm": 28.92220999999997,
+      "extrusionSeconds": 51.24492048789927,
+      "segments": 2258
+    },
+    {
+      "z": 134.6,
+      "extrusionPath_mm": 964.1807423918782,
+      "filament_mm": 30.22974999999963,
+      "extrusionSeconds": 53.56559679954861,
+      "segments": 2338
+    },
+    {
+      "z": 134.8,
+      "extrusionPath_mm": 976.4603310907083,
+      "filament_mm": 30.617350000000126,
+      "extrusionSeconds": 54.24779617170619,
+      "segments": 2358
+    },
+    {
+      "z": 135,
+      "extrusionPath_mm": 914.7277935223177,
+      "filament_mm": 28.681550000000026,
+      "extrusionSeconds": 50.81821075124026,
+      "segments": 2229
+    },
+    {
+      "z": 135.2,
+      "extrusionPath_mm": 920.6417200212784,
+      "filament_mm": 28.866980000000012,
+      "extrusionSeconds": 51.14676222340443,
+      "segments": 2253
+    },
+    {
+      "z": 135.4,
+      "extrusionPath_mm": 936.7155845383053,
+      "filament_mm": 29.369320000000013,
+      "extrusionSeconds": 52.039754696573276,
+      "segments": 2288
+    },
+    {
+      "z": 135.6,
+      "extrusionPath_mm": 893.7247533034852,
+      "filament_mm": 28.021340000000098,
+      "extrusionSeconds": 49.6513751835267,
+      "segments": 2198
+    },
+    {
+      "z": 135.8,
+      "extrusionPath_mm": 893.1381840718742,
+      "filament_mm": 28.003400000000035,
+      "extrusionSeconds": 49.61878800399304,
+      "segments": 2188
+    },
+    {
+      "z": 136,
+      "extrusionPath_mm": 846.2320986090056,
+      "filament_mm": 26.532820000000026,
+      "extrusionSeconds": 47.01289436716658,
+      "segments": 2087
+    },
+    {
+      "z": 136.2,
+      "extrusionPath_mm": 900.8462176103509,
+      "filament_mm": 28.24567000000004,
+      "extrusionSeconds": 50.04701208946366,
+      "segments": 2192
+    },
+    {
+      "z": 136.4,
+      "extrusionPath_mm": 859.7358083931531,
+      "filament_mm": 26.95576999999994,
+      "extrusionSeconds": 47.76310046628665,
+      "segments": 2124
+    },
+    {
+      "z": 136.6,
+      "extrusionPath_mm": 885.6027064630346,
+      "filament_mm": 27.772760000000012,
+      "extrusionSeconds": 49.200150359057226,
+      "segments": 2178
+    },
+    {
+      "z": 136.8,
+      "extrusionPath_mm": 876.2828284470434,
+      "filament_mm": 27.475400000000153,
+      "extrusionSeconds": 48.68237935816932,
+      "segments": 2161
+    },
+    {
+      "z": 137,
+      "extrusionPath_mm": 825.4910003233347,
+      "filament_mm": 25.88425000000017,
+      "extrusionSeconds": 45.86061112907386,
+      "segments": 2036
+    },
+    {
+      "z": 137.2,
+      "extrusionPath_mm": 865.2224548658105,
+      "filament_mm": 27.128400000000205,
+      "extrusionSeconds": 48.067914159212016,
+      "segments": 2121
+    },
+    {
+      "z": 137.4,
+      "extrusionPath_mm": 849.262321113221,
+      "filament_mm": 26.627059999999773,
+      "extrusionSeconds": 47.18124006184501,
+      "segments": 2100
+    },
+    {
+      "z": 137.6,
+      "extrusionPath_mm": 832.3714063978431,
+      "filament_mm": 26.10012999999977,
+      "extrusionSeconds": 46.24285591099154,
+      "segments": 2051
+    },
+    {
+      "z": 137.8,
+      "extrusionPath_mm": 833.208245511918,
+      "filament_mm": 26.12463000000001,
+      "extrusionSeconds": 46.289346972885006,
+      "segments": 2024
+    },
+    {
+      "z": 138,
+      "extrusionPath_mm": 827.3995483781447,
+      "filament_mm": 25.94483000000001,
+      "extrusionSeconds": 45.96664157656383,
+      "segments": 2032
+    },
+    {
+      "z": 138.2,
+      "extrusionPath_mm": 768.7054817047442,
+      "filament_mm": 24.101590000000026,
+      "extrusionSeconds": 42.70586009470811,
+      "segments": 1879
+    },
+    {
+      "z": 138.4,
+      "extrusionPath_mm": 770.889038955284,
+      "filament_mm": 24.170830000000144,
+      "extrusionSeconds": 42.8271688308492,
+      "segments": 1867
+    },
+    {
+      "z": 138.6,
+      "extrusionPath_mm": 771.801130777179,
+      "filament_mm": 24.199079999999828,
+      "extrusionSeconds": 42.87784059873232,
+      "segments": 1873
+    },
+    {
+      "z": 138.8,
+      "extrusionPath_mm": 717.5718652601682,
+      "filament_mm": 22.499219999999987,
+      "extrusionSeconds": 39.865103625565,
+      "segments": 1778
+    },
+    {
+      "z": 139,
+      "extrusionPath_mm": 697.8512507816641,
+      "filament_mm": 21.88139999999991,
+      "extrusionSeconds": 38.769513932314716,
+      "segments": 1727
+    },
+    {
+      "z": 139.2,
+      "extrusionPath_mm": 700.3398677454127,
+      "filament_mm": 21.95769000000005,
+      "extrusionSeconds": 38.907770430300786,
+      "segments": 1732
+    },
+    {
+      "z": 139.4,
+      "extrusionPath_mm": 658.9440692782568,
+      "filament_mm": 20.660889999999995,
+      "extrusionSeconds": 36.608003848792244,
+      "segments": 1634
+    },
+    {
+      "z": 139.6,
+      "extrusionPath_mm": 648.8121519348036,
+      "filament_mm": 20.343029999999832,
+      "extrusionSeconds": 36.045119551933645,
+      "segments": 1626
+    },
+    {
+      "z": 139.8,
+      "extrusionPath_mm": 645.0538946685739,
+      "filament_mm": 20.226320000000015,
+      "extrusionSeconds": 35.83632748158734,
+      "segments": 1613
+    },
+    {
+      "z": 140,
+      "extrusionPath_mm": 649.1726134890461,
+      "filament_mm": 20.35403999999995,
+      "extrusionSeconds": 36.065145193835654,
+      "segments": 1620
+    },
+    {
+      "z": 140.2,
+      "extrusionPath_mm": 669.2828569482327,
+      "filament_mm": 20.985269999999964,
+      "extrusionSeconds": 37.18238094156835,
+      "segments": 1657
+    },
+    {
+      "z": 140.4,
+      "extrusionPath_mm": 649.9727297927064,
+      "filament_mm": 20.379360000000077,
+      "extrusionSeconds": 36.109596099594995,
+      "segments": 1618
+    },
+    {
+      "z": 140.6,
+      "extrusionPath_mm": 661.2446962004303,
+      "filament_mm": 20.732860000000052,
+      "extrusionSeconds": 36.73581645557933,
+      "segments": 1631
+    },
+    {
+      "z": 140.8,
+      "extrusionPath_mm": 661.0881735068301,
+      "filament_mm": 20.728240000000145,
+      "extrusionSeconds": 36.72712075037951,
+      "segments": 1639
+    },
+    {
+      "z": 141,
+      "extrusionPath_mm": 612.0267591396902,
+      "filament_mm": 19.189259999999944,
+      "extrusionSeconds": 34.001486618871766,
+      "segments": 1537
+    },
+    {
+      "z": 141.2,
+      "extrusionPath_mm": 612.7575837628751,
+      "filament_mm": 19.21172000000001,
+      "extrusionSeconds": 34.042087986826594,
+      "segments": 1523
+    },
+    {
+      "z": 141.4,
+      "extrusionPath_mm": 642.4259334261149,
+      "filament_mm": 20.144299999999962,
+      "extrusionSeconds": 35.69032963478416,
+      "segments": 1589
+    },
+    {
+      "z": 141.6,
+      "extrusionPath_mm": 588.7982973481468,
+      "filament_mm": 18.461200000000055,
+      "extrusionSeconds": 32.71101651934135,
+      "segments": 1483
+    },
+    {
+      "z": 141.8,
+      "extrusionPath_mm": 591.6248806490037,
+      "filament_mm": 18.55017000000014,
+      "extrusionSeconds": 32.86804892494466,
+      "segments": 1488
+    },
+    {
+      "z": 142,
+      "extrusionPath_mm": 631.0186131826576,
+      "filament_mm": 19.785409999999995,
+      "extrusionSeconds": 35.056589621258674,
+      "segments": 1568
+    },
+    {
+      "z": 142.2,
+      "extrusionPath_mm": 578.785895466601,
+      "filament_mm": 18.146920000000048,
+      "extrusionSeconds": 32.154771970366546,
+      "segments": 1465
+    },
+    {
+      "z": 142.4,
+      "extrusionPath_mm": 569.2989795541243,
+      "filament_mm": 17.850150000000003,
+      "extrusionSeconds": 31.62772108634026,
+      "segments": 1437
+    },
+    {
+      "z": 142.6,
+      "extrusionPath_mm": 583.5164932401766,
+      "filament_mm": 18.29488999999996,
+      "extrusionSeconds": 32.41758295778765,
+      "segments": 1456
+    },
+    {
+      "z": 142.8,
+      "extrusionPath_mm": 528.487257772042,
+      "filament_mm": 16.570019999999996,
+      "extrusionSeconds": 29.360403209557916,
+      "segments": 1340
+    },
+    {
+      "z": 143,
+      "extrusionPath_mm": 528.406524260679,
+      "filament_mm": 16.567540000000044,
+      "extrusionSeconds": 29.355918014481976,
+      "segments": 1341
+    },
+    {
+      "z": 143.2,
+      "extrusionPath_mm": 541.8558604747998,
+      "filament_mm": 16.98294000000003,
+      "extrusionSeconds": 30.10310335971115,
+      "segments": 1360
+    },
+    {
+      "z": 143.4,
+      "extrusionPath_mm": 519.8313079045349,
+      "filament_mm": 16.299020000000006,
+      "extrusionSeconds": 28.8795171058074,
+      "segments": 1317
+    },
+    {
+      "z": 143.6,
+      "extrusionPath_mm": 535.1821037853825,
+      "filament_mm": 16.780119999999968,
+      "extrusionSeconds": 29.73233909918797,
+      "segments": 1347
+    },
+    {
+      "z": 143.8,
+      "extrusionPath_mm": 546.7578515172818,
+      "filament_mm": 17.14304,
+      "extrusionSeconds": 30.37543619540449,
+      "segments": 1368
+    },
+    {
+      "z": 144,
+      "extrusionPath_mm": 516.0061461488748,
+      "filament_mm": 16.178239999999963,
+      "extrusionSeconds": 28.66700811938194,
+      "segments": 1315
+    },
+    {
+      "z": 144.2,
+      "extrusionPath_mm": 533.451880769902,
+      "filament_mm": 16.72605,
+      "extrusionSeconds": 29.636215598327915,
+      "segments": 1346
+    },
+    {
+      "z": 144.4,
+      "extrusionPath_mm": 534.728632170659,
+      "filament_mm": 16.766100000000023,
+      "extrusionSeconds": 29.70714623170334,
+      "segments": 1349
+    },
+    {
+      "z": 144.6,
+      "extrusionPath_mm": 487.8165851647811,
+      "filament_mm": 15.284809999999991,
+      "extrusionSeconds": 27.100921398043265,
+      "segments": 1257
+    },
+    {
+      "z": 144.8,
+      "extrusionPath_mm": 518.7256305621505,
+      "filament_mm": 16.26402000000002,
+      "extrusionSeconds": 28.818090586785925,
+      "segments": 1297
+    },
+    {
+      "z": 145,
+      "extrusionPath_mm": 497.645862450828,
+      "filament_mm": 15.603039999999972,
+      "extrusionSeconds": 27.646992358379354,
+      "segments": 1257
+    },
+    {
+      "z": 145.2,
+      "extrusionPath_mm": 474.32406081399637,
+      "filament_mm": 14.872459999999982,
+      "extrusionSeconds": 26.35133671188869,
+      "segments": 1208
+    },
+    {
+      "z": 145.4,
+      "extrusionPath_mm": 470.0290042878858,
+      "filament_mm": 14.736960000000009,
+      "extrusionSeconds": 26.11272246043806,
+      "segments": 1199
+    },
+    {
+      "z": 145.6,
+      "extrusionPath_mm": 513.9128204043393,
+      "filament_mm": 16.112900000000003,
+      "extrusionSeconds": 28.55071224468554,
+      "segments": 1287
+    },
+    {
+      "z": 145.8,
+      "extrusionPath_mm": 505.9645571927469,
+      "filament_mm": 15.864719999999972,
+      "extrusionSeconds": 28.109142066263733,
+      "segments": 1266
+    },
+    {
+      "z": 146,
+      "extrusionPath_mm": 457.49491030500263,
+      "filament_mm": 14.343509999999986,
+      "extrusionSeconds": 25.41638390583318,
+      "segments": 1162
+    },
+    {
+      "z": 146.2,
+      "extrusionPath_mm": 454.5878267227971,
+      "filament_mm": 14.260030000000054,
+      "extrusionSeconds": 25.25487926237767,
+      "segments": 1154
+    },
+    {
+      "z": 146.4,
+      "extrusionPath_mm": 476.8093744495569,
+      "filament_mm": 14.949190000000067,
+      "extrusionSeconds": 26.489409691642116,
+      "segments": 1206
+    },
+    {
+      "z": 146.6,
+      "extrusionPath_mm": 451.9882232627575,
+      "filament_mm": 14.176910000000019,
+      "extrusionSeconds": 25.110456847930937,
+      "segments": 1155
+    },
+    {
+      "z": 146.8,
+      "extrusionPath_mm": 456.12229397016006,
+      "filament_mm": 14.301560000000007,
+      "extrusionSeconds": 25.340127442786674,
+      "segments": 1161
+    },
+    {
+      "z": 147,
+      "extrusionPath_mm": 473.39859734348784,
+      "filament_mm": 14.84698000000001,
+      "extrusionSeconds": 26.299922074638186,
+      "segments": 1197
+    },
+    {
+      "z": 147.2,
+      "extrusionPath_mm": 438.4632936576908,
+      "filament_mm": 13.747279999999979,
+      "extrusionSeconds": 24.359071869871666,
+      "segments": 1107
+    },
+    {
+      "z": 147.4,
+      "extrusionPath_mm": 447.73950300442715,
+      "filament_mm": 14.038509999999926,
+      "extrusionSeconds": 24.874416833579243,
+      "segments": 1137
+    },
+    {
+      "z": 147.6,
+      "extrusionPath_mm": 460.08452950384185,
+      "filament_mm": 14.430160000000006,
+      "extrusionSeconds": 25.560251639102336,
+      "segments": 1164
+    },
+    {
+      "z": 147.8,
+      "extrusionPath_mm": 451.37654381126976,
+      "filament_mm": 14.152649999999898,
+      "extrusionSeconds": 25.0764746561817,
+      "segments": 1148
+    },
+    {
+      "z": 148,
+      "extrusionPath_mm": 454.430561453387,
+      "filament_mm": 14.254399999999976,
+      "extrusionSeconds": 25.246142302965968,
+      "segments": 1157
+    },
+    {
+      "z": 148.2,
+      "extrusionPath_mm": 436.0587298688399,
+      "filament_mm": 13.672880000000001,
+      "extrusionSeconds": 24.225484992713334,
+      "segments": 1115
+    },
+    {
+      "z": 148.4,
+      "extrusionPath_mm": 440.5522629391627,
+      "filament_mm": 13.81327,
+      "extrusionSeconds": 24.475125718842463,
+      "segments": 1126
+    },
+    {
+      "z": 148.6,
+      "extrusionPath_mm": 457.40538531278554,
+      "filament_mm": 14.352949999999998,
+      "extrusionSeconds": 25.411410295154724,
+      "segments": 1164
+    },
+    {
+      "z": 148.8,
+      "extrusionPath_mm": 476.98292327543425,
+      "filament_mm": 14.954569999999995,
+      "extrusionSeconds": 26.499051293079617,
+      "segments": 1200
+    },
+    {
+      "z": 149,
+      "extrusionPath_mm": 469.92393565267065,
+      "filament_mm": 14.733369999999985,
+      "extrusionSeconds": 26.106885314037307,
+      "segments": 1187
+    },
+    {
+      "z": 149.2,
+      "extrusionPath_mm": 465.14295754329214,
+      "filament_mm": 14.583789999999953,
+      "extrusionSeconds": 25.841275419071767,
+      "segments": 1177
+    },
+    {
+      "z": 149.4,
+      "extrusionPath_mm": 436.13451537294327,
+      "filament_mm": 13.674869999999995,
+      "extrusionSeconds": 24.229695298496825,
+      "segments": 1110
+    },
+    {
+      "z": 149.6,
+      "extrusionPath_mm": 475.15176475501073,
+      "filament_mm": 14.898049999999987,
+      "extrusionSeconds": 26.397320264167202,
+      "segments": 1196
+    },
+    {
+      "z": 149.8,
+      "extrusionPath_mm": 446.11250430120134,
+      "filament_mm": 13.987309999999988,
+      "extrusionSeconds": 24.784028016733416,
+      "segments": 1131
+    },
+    {
+      "z": 150,
+      "extrusionPath_mm": 451.0456743692201,
+      "filament_mm": 14.141710000000012,
+      "extrusionSeconds": 25.058093020512075,
+      "segments": 1143
+    },
+    {
+      "z": 150.2,
+      "extrusionPath_mm": 443.802526141679,
+      "filament_mm": 13.925410000000005,
+      "extrusionSeconds": 24.65569589675997,
+      "segments": 1126
+    },
+    {
+      "z": 150.4,
+      "extrusionPath_mm": 448.8305312235196,
+      "filament_mm": 14.072539999999988,
+      "extrusionSeconds": 24.935029512417735,
+      "segments": 1136
+    },
+    {
+      "z": 150.6,
+      "extrusionPath_mm": 468.40021983390795,
+      "filament_mm": 14.686269999999993,
+      "extrusionSeconds": 26.022234435217122,
+      "segments": 1175
+    },
+    {
+      "z": 150.8,
+      "extrusionPath_mm": 424.3212990289126,
+      "filament_mm": 13.304310000000003,
+      "extrusionSeconds": 23.57340550160619,
+      "segments": 1083
+    },
+    {
+      "z": 151,
+      "extrusionPath_mm": 464.0381735582264,
+      "filament_mm": 14.54908,
+      "extrusionSeconds": 25.779898531012613,
+      "segments": 1166
+    },
+    {
+      "z": 151.2,
+      "extrusionPath_mm": 455.1890698686322,
+      "filament_mm": 14.271619999999974,
+      "extrusionSeconds": 25.288281659368455,
+      "segments": 1149
+    },
+    {
+      "z": 151.4,
+      "extrusionPath_mm": 438.60385674739257,
+      "filament_mm": 13.751650000000016,
+      "extrusionSeconds": 24.36688093041083,
+      "segments": 1118
+    },
+    {
+      "z": 151.6,
+      "extrusionPath_mm": 436.02120649101164,
+      "filament_mm": 13.670999999999994,
+      "extrusionSeconds": 24.22340036061181,
+      "segments": 1108
+    },
+    {
+      "z": 151.8,
+      "extrusionPath_mm": 445.4278728089682,
+      "filament_mm": 13.965850000000088,
+      "extrusionSeconds": 24.745992933831506,
+      "segments": 1130
+    },
+    {
+      "z": 152,
+      "extrusionPath_mm": 433.80223116825726,
+      "filament_mm": 13.601009999999997,
+      "extrusionSeconds": 24.10012395379201,
+      "segments": 1110
+    },
+    {
+      "z": 152.2,
+      "extrusionPath_mm": 525.794471275817,
+      "filament_mm": 16.485599999999952,
+      "extrusionSeconds": 29.21080395976769,
+      "segments": 1292
+    },
+    {
+      "z": 152.4,
+      "extrusionPath_mm": 532.0185516923391,
+      "filament_mm": 16.686640000000054,
+      "extrusionSeconds": 29.556586205129832,
+      "segments": 1305
+    },
+    {
+      "z": 152.6,
+      "extrusionPath_mm": 498.7678417795655,
+      "filament_mm": 15.638709999999943,
+      "extrusionSeconds": 27.709324543309197,
+      "segments": 1243
+    },
+    {
+      "z": 152.8,
+      "extrusionPath_mm": 520.3747667765276,
+      "filament_mm": 16.315519999999953,
+      "extrusionSeconds": 28.90970926536261,
+      "segments": 1277
+    },
+    {
+      "z": 153,
+      "extrusionPath_mm": 522.8355847872273,
+      "filament_mm": 16.393049999999942,
+      "extrusionSeconds": 29.046421377068075,
+      "segments": 1289
+    },
+    {
+      "z": 153.2,
+      "extrusionPath_mm": 514.1510453885732,
+      "filament_mm": 16.121039999999976,
+      "extrusionSeconds": 28.563946966031796,
+      "segments": 1266
+    },
+    {
+      "z": 153.4,
+      "extrusionPath_mm": 514.8817626127185,
+      "filament_mm": 16.143279999999965,
+      "extrusionSeconds": 28.604542367373238,
+      "segments": 1273
+    },
+    {
+      "z": 153.6,
+      "extrusionPath_mm": 543.3939835681676,
+      "filament_mm": 17.036980000000018,
+      "extrusionSeconds": 30.188554642675953,
+      "segments": 1325
+    },
+    {
+      "z": 153.8,
+      "extrusionPath_mm": 528.3026830348324,
+      "filament_mm": 16.56358,
+      "extrusionSeconds": 29.350149057490675,
+      "segments": 1294
+    },
+    {
+      "z": 154,
+      "extrusionPath_mm": 526.8602275517547,
+      "filament_mm": 16.519059999999975,
+      "extrusionSeconds": 29.27001264176415,
+      "segments": 1287
+    },
+    {
+      "z": 154.2,
+      "extrusionPath_mm": 524.2801017119923,
+      "filament_mm": 16.438040000000058,
+      "extrusionSeconds": 29.12667231733301,
+      "segments": 1290
+    },
+    {
+      "z": 154.4,
+      "extrusionPath_mm": 541.4290093622693,
+      "filament_mm": 16.975089999999987,
+      "extrusionSeconds": 30.079389409014915,
+      "segments": 1315
+    },
+    {
+      "z": 154.6,
+      "extrusionPath_mm": 518.9135572250459,
+      "filament_mm": 16.26968999999998,
+      "extrusionSeconds": 28.82853095694699,
+      "segments": 1280
+    },
+    {
+      "z": 154.8,
+      "extrusionPath_mm": 522.9931652998064,
+      "filament_mm": 16.401370000000032,
+      "extrusionSeconds": 29.055175849989237,
+      "segments": 1286
+    },
+    {
+      "z": 155,
+      "extrusionPath_mm": 537.2481129923301,
+      "filament_mm": 16.84534999999996,
+      "extrusionSeconds": 29.847117388462692,
+      "segments": 1315
+    },
+    {
+      "z": 155.2,
+      "extrusionPath_mm": 530.7735076924495,
+      "filament_mm": 16.64112000000004,
+      "extrusionSeconds": 29.48741709402507,
+      "segments": 1296
+    },
+    {
+      "z": 155.4,
+      "extrusionPath_mm": 521.9111397758475,
+      "filament_mm": 16.36359999999995,
+      "extrusionSeconds": 28.995063320880405,
+      "segments": 1280
+    },
+    {
+      "z": 155.6,
+      "extrusionPath_mm": 525.9653716156076,
+      "filament_mm": 16.49102000000004,
+      "extrusionSeconds": 29.220298423089012,
+      "segments": 1283
+    },
+    {
+      "z": 155.8,
+      "extrusionPath_mm": 528.9424299181104,
+      "filament_mm": 16.584319999999988,
+      "extrusionSeconds": 29.385690551006096,
+      "segments": 1294
+    },
+    {
+      "z": 156,
+      "extrusionPath_mm": 534.812707138174,
+      "filament_mm": 16.76827000000004,
+      "extrusionSeconds": 29.711817063231823,
+      "segments": 1313
+    },
+    {
+      "z": 156.2,
+      "extrusionPath_mm": 560.8034128570057,
+      "filament_mm": 17.584199999999953,
+      "extrusionSeconds": 31.155745158722578,
+      "segments": 1349
+    },
+    {
+      "z": 156.4,
+      "extrusionPath_mm": 565.6949339190381,
+      "filament_mm": 17.736990000000006,
+      "extrusionSeconds": 31.427496328835513,
+      "segments": 1371
+    },
+    {
+      "z": 156.6,
+      "extrusionPath_mm": 551.1020105612344,
+      "filament_mm": 17.278979999999994,
+      "extrusionSeconds": 30.616778364512964,
+      "segments": 1329
+    },
+    {
+      "z": 156.8,
+      "extrusionPath_mm": 547.3959315925931,
+      "filament_mm": 17.16299999999999,
+      "extrusionSeconds": 30.410885088477393,
+      "segments": 1332
+    },
+    {
+      "z": 157,
+      "extrusionPath_mm": 572.4943341238221,
+      "filament_mm": 17.949710000000067,
+      "extrusionSeconds": 31.805240784656863,
+      "segments": 1380
+    },
+    {
+      "z": 157.2,
+      "extrusionPath_mm": 548.2665100823217,
+      "filament_mm": 17.189829999999994,
+      "extrusionSeconds": 30.459250560128925,
+      "segments": 1345
+    },
+    {
+      "z": 157.4,
+      "extrusionPath_mm": 552.5382564464632,
+      "filament_mm": 17.324679999999915,
+      "extrusionSeconds": 30.69656980258128,
+      "segments": 1352
+    },
+    {
+      "z": 157.6,
+      "extrusionPath_mm": 544.0809680794868,
+      "filament_mm": 17.05868999999997,
+      "extrusionSeconds": 30.226720448860426,
+      "segments": 1320
+    },
+    {
+      "z": 157.8,
+      "extrusionPath_mm": 567.7763907244517,
+      "filament_mm": 17.80139000000007,
+      "extrusionSeconds": 31.543132818025114,
+      "segments": 1374
+    },
+    {
+      "z": 158,
+      "extrusionPath_mm": 591.6968824502011,
+      "filament_mm": 18.552109999999995,
+      "extrusionSeconds": 32.87204902501123,
+      "segments": 1426
+    },
+    {
+      "z": 158.2,
+      "extrusionPath_mm": 568.65133526489,
+      "filament_mm": 17.82857999999999,
+      "extrusionSeconds": 31.59174084804949,
+      "segments": 1384
+    },
+    {
+      "z": 158.4,
+      "extrusionPath_mm": 593.7626370620798,
+      "filament_mm": 18.616340000000125,
+      "extrusionSeconds": 32.98681317011552,
+      "segments": 1432
+    },
+    {
+      "z": 158.6,
+      "extrusionPath_mm": 582.636662519708,
+      "filament_mm": 18.267839999999968,
+      "extrusionSeconds": 32.36870347331716,
+      "segments": 1411
+    },
+    {
+      "z": 158.8,
+      "extrusionPath_mm": 588.3143673847734,
+      "filament_mm": 18.445870000000014,
+      "extrusionSeconds": 32.684131521376216,
+      "segments": 1423
+    },
+    {
+      "z": 159,
+      "extrusionPath_mm": 603.5512027929002,
+      "filament_mm": 18.922619999999995,
+      "extrusionSeconds": 33.53062237738333,
+      "segments": 1452
+    },
+    {
+      "z": 159.2,
+      "extrusionPath_mm": 575.844633849143,
+      "filament_mm": 18.055119999999995,
+      "extrusionSeconds": 31.991368547174506,
+      "segments": 1402
+    },
+    {
+      "z": 159.4,
+      "extrusionPath_mm": 622.9716844558906,
+      "filament_mm": 19.532690000000013,
+      "extrusionSeconds": 34.60953802532721,
+      "segments": 1504
+    },
+    {
+      "z": 159.6,
+      "extrusionPath_mm": 609.3755766314465,
+      "filament_mm": 19.106130000000004,
+      "extrusionSeconds": 33.85419870174695,
+      "segments": 1478
+    },
+    {
+      "z": 159.8,
+      "extrusionPath_mm": 597.6952083646872,
+      "filament_mm": 18.73963000000004,
+      "extrusionSeconds": 33.2052893535935,
+      "segments": 1449
+    },
+    {
+      "z": 160,
+      "extrusionPath_mm": 628.9925394514547,
+      "filament_mm": 19.721309999999995,
+      "extrusionSeconds": 34.944029969525246,
+      "segments": 1521
+    },
+    {
+      "z": 160.2,
+      "extrusionPath_mm": 607.883240744107,
+      "filament_mm": 19.059440000000034,
+      "extrusionSeconds": 33.77129115245036,
+      "segments": 1485
+    },
+    {
+      "z": 160.4,
+      "extrusionPath_mm": 634.6486953336325,
+      "filament_mm": 19.898260000000107,
+      "extrusionSeconds": 35.2582608518684,
+      "segments": 1535
+    },
+    {
+      "z": 160.6,
+      "extrusionPath_mm": 630.4023807700788,
+      "filament_mm": 19.765370000000043,
+      "extrusionSeconds": 35.02235448722663,
+      "segments": 1534
+    },
+    {
+      "z": 160.8,
+      "extrusionPath_mm": 650.3910322795637,
+      "filament_mm": 20.401060000000154,
+      "extrusionSeconds": 36.13283512664246,
+      "segments": 1576
+    },
+    {
+      "z": 161,
+      "extrusionPath_mm": 643.5161781556515,
+      "filament_mm": 20.177709999999916,
+      "extrusionSeconds": 35.750898786425346,
+      "segments": 1561
+    },
+    {
+      "z": 161.2,
+      "extrusionPath_mm": 674.1864809996687,
+      "filament_mm": 21.138389999999994,
+      "extrusionSeconds": 37.454804499981456,
+      "segments": 1623
+    },
+    {
+      "z": 161.4,
+      "extrusionPath_mm": 654.9684729230189,
+      "filament_mm": 20.5352,
+      "extrusionSeconds": 36.38713738461215,
+      "segments": 1595
+    },
+    {
+      "z": 161.6,
+      "extrusionPath_mm": 683.9856427073494,
+      "filament_mm": 21.446250000000003,
+      "extrusionSeconds": 37.999202372630606,
+      "segments": 1647
+    },
+    {
+      "z": 161.8,
+      "extrusionPath_mm": 692.060184796809,
+      "filament_mm": 21.698980000000095,
+      "extrusionSeconds": 38.447788044267014,
+      "segments": 1662
+    },
+    {
+      "z": 162,
+      "extrusionPath_mm": 680.9238836780456,
+      "filament_mm": 21.349370000000036,
+      "extrusionSeconds": 37.82910464878028,
+      "segments": 1636
+    },
+    {
+      "z": 162.2,
+      "extrusionPath_mm": 683.2483724447991,
+      "filament_mm": 21.422450000000094,
+      "extrusionSeconds": 37.9582429136005,
+      "segments": 1646
+    },
+    {
+      "z": 162.4,
+      "extrusionPath_mm": 715.2026568966969,
+      "filament_mm": 22.423640000000205,
+      "extrusionSeconds": 39.73348093870572,
+      "segments": 1719
+    },
+    {
+      "z": 162.6,
+      "extrusionPath_mm": 679.7230967240777,
+      "filament_mm": 21.31142000000004,
+      "extrusionSeconds": 37.7623942624488,
+      "segments": 1655
+    },
+    {
+      "z": 162.8,
+      "extrusionPath_mm": 677.6864544479421,
+      "filament_mm": 21.24825000000004,
+      "extrusionSeconds": 37.64924746932995,
+      "segments": 1656
+    },
+    {
+      "z": 163,
+      "extrusionPath_mm": 684.566334599772,
+      "filament_mm": 21.463620000000063,
+      "extrusionSeconds": 38.0314630333207,
+      "segments": 1659
+    },
+    {
+      "z": 163.2,
+      "extrusionPath_mm": 711.4451223463868,
+      "filament_mm": 22.305870000000194,
+      "extrusionSeconds": 39.52472901924381,
+      "segments": 1716
+    },
+    {
+      "z": 163.4,
+      "extrusionPath_mm": 728.2669787974124,
+      "filament_mm": 22.834390000000095,
+      "extrusionSeconds": 40.459276599856224,
+      "segments": 1754
+    },
+    {
+      "z": 163.6,
+      "extrusionPath_mm": 756.3005121435465,
+      "filament_mm": 23.71298000000007,
+      "extrusionSeconds": 42.016695119085774,
+      "segments": 1802
+    },
+    {
+      "z": 163.8,
+      "extrusionPath_mm": 743.5477047063644,
+      "filament_mm": 23.312690000000003,
+      "extrusionSeconds": 41.30820581702036,
+      "segments": 1786
+    },
+    {
+      "z": 164,
+      "extrusionPath_mm": 724.267388383568,
+      "filament_mm": 22.708430000000003,
+      "extrusionSeconds": 40.23707713242052,
+      "segments": 1749
+    },
+    {
+      "z": 164.2,
+      "extrusionPath_mm": 753.4602465587819,
+      "filament_mm": 23.623580000000057,
+      "extrusionSeconds": 41.85890258659874,
+      "segments": 1796
+    },
+    {
+      "z": 164.4,
+      "extrusionPath_mm": 728.3441906971633,
+      "filament_mm": 22.83679999999996,
+      "extrusionSeconds": 40.46356614984233,
+      "segments": 1767
+    },
+    {
+      "z": 164.6,
+      "extrusionPath_mm": 724.1902177121242,
+      "filament_mm": 22.70614000000002,
+      "extrusionSeconds": 40.2327898728958,
+      "segments": 1742
+    },
+    {
+      "z": 164.8,
+      "extrusionPath_mm": 779.1840599035555,
+      "filament_mm": 24.430340000000104,
+      "extrusionSeconds": 43.28800332797537,
+      "segments": 1864
+    },
+    {
+      "z": 165,
+      "extrusionPath_mm": 766.4944987471521,
+      "filament_mm": 24.032340000000175,
+      "extrusionSeconds": 42.58302770817565,
+      "segments": 1849
+    },
+    {
+      "z": 165.2,
+      "extrusionPath_mm": 771.7272163831757,
+      "filament_mm": 24.196690000000057,
+      "extrusionSeconds": 42.873734243509865,
+      "segments": 1859
+    },
+    {
+      "z": 165.4,
+      "extrusionPath_mm": 721.4841258921238,
+      "filament_mm": 22.621440000000018,
+      "extrusionSeconds": 40.08245143845145,
+      "segments": 1753
+    },
+    {
+      "z": 165.6,
+      "extrusionPath_mm": 749.8942252396446,
+      "filament_mm": 23.51208000000019,
+      "extrusionSeconds": 41.66079029109155,
+      "segments": 1812
+    },
+    {
+      "z": 165.8,
+      "extrusionPath_mm": 765.0794871102777,
+      "filament_mm": 23.988350000000086,
+      "extrusionSeconds": 42.50441595057101,
+      "segments": 1843
+    },
+    {
+      "z": 166,
+      "extrusionPath_mm": 753.0004033993708,
+      "filament_mm": 23.608930000000065,
+      "extrusionSeconds": 41.83335574440954,
+      "segments": 1818
+    },
+    {
+      "z": 166.2,
+      "extrusionPath_mm": 715.3205774718487,
+      "filament_mm": 22.42792000000002,
+      "extrusionSeconds": 39.74003208176931,
+      "segments": 1750
+    },
+    {
+      "z": 166.4,
+      "extrusionPath_mm": 766.2859695890226,
+      "filament_mm": 24.02672999999998,
+      "extrusionSeconds": 42.571442754945465,
+      "segments": 1846
+    },
+    {
+      "z": 166.6,
+      "extrusionPath_mm": 751.863431625609,
+      "filament_mm": 23.573609999999984,
+      "extrusionSeconds": 41.770190645867096,
+      "segments": 1820
+    },
+    {
+      "z": 166.8,
+      "extrusionPath_mm": 755.5761223537002,
+      "filament_mm": 23.689700000000045,
+      "extrusionSeconds": 41.9764512418722,
+      "segments": 1824
+    },
+    {
+      "z": 167,
+      "extrusionPath_mm": 760.54824763559,
+      "filament_mm": 23.846789999999796,
+      "extrusionSeconds": 42.2526804241994,
+      "segments": 1832
+    },
+    {
+      "z": 167.2,
+      "extrusionPath_mm": 750.420454055271,
+      "filament_mm": 23.528139999999997,
+      "extrusionSeconds": 41.69002522529285,
+      "segments": 1809
+    },
+    {
+      "z": 167.4,
+      "extrusionPath_mm": 736.0744240308082,
+      "filament_mm": 23.078420000000065,
+      "extrusionSeconds": 40.89302355726725,
+      "segments": 1783
+    },
+    {
+      "z": 167.6,
+      "extrusionPath_mm": 713.8395047505041,
+      "filament_mm": 22.381279999999865,
+      "extrusionSeconds": 39.65775026391721,
+      "segments": 1750
+    },
+    {
+      "z": 167.8,
+      "extrusionPath_mm": 757.8894752935107,
+      "filament_mm": 23.762659999999943,
+      "extrusionSeconds": 42.104970849639436,
+      "segments": 1831
+    },
+    {
+      "z": 168,
+      "extrusionPath_mm": 791.1624482817142,
+      "filament_mm": 24.80637000000002,
+      "extrusionSeconds": 43.95346934898417,
+      "segments": 1904
+    },
+    {
+      "z": 168.2,
+      "extrusionPath_mm": 786.9076893592651,
+      "filament_mm": 24.672949999999968,
+      "extrusionSeconds": 43.7170938532924,
+      "segments": 1888
+    },
+    {
+      "z": 168.4,
+      "extrusionPath_mm": 810.0594292285874,
+      "filament_mm": 25.398210000000024,
+      "extrusionSeconds": 45.00330162381052,
+      "segments": 1925
+    },
+    {
+      "z": 168.6,
+      "extrusionPath_mm": 910.6772273353101,
+      "filament_mm": 28.55326000000004,
+      "extrusionSeconds": 50.593179296406255,
+      "segments": 2162
+    },
+    {
+      "z": 168.8,
+      "extrusionPath_mm": 896.2048302871073,
+      "filament_mm": 28.099150000000037,
+      "extrusionSeconds": 49.789157238172315,
+      "segments": 2122
+    },
+    {
+      "z": 169,
+      "extrusionPath_mm": 857.7726161110216,
+      "filament_mm": 26.894209999999823,
+      "extrusionSeconds": 47.654034228390586,
+      "segments": 2040
+    },
+    {
+      "z": 169.2,
+      "extrusionPath_mm": 744.4548691436434,
+      "filament_mm": 23.340550000000057,
+      "extrusionSeconds": 41.35860384131366,
+      "segments": 1788
+    },
+    {
+      "z": 169.4,
+      "extrusionPath_mm": 749.9354607623973,
+      "filament_mm": 23.513820000000006,
+      "extrusionSeconds": 41.66308115346667,
+      "segments": 1789
+    },
+    {
+      "z": 169.6,
+      "extrusionPath_mm": 838.2541194410328,
+      "filament_mm": 26.28246000000037,
+      "extrusionSeconds": 46.569673302279405,
+      "segments": 1908
+    },
+    {
+      "z": 169.8,
+      "extrusionPath_mm": 841.8488586638881,
+      "filament_mm": 26.39549000000003,
+      "extrusionSeconds": 46.769381036882756,
+      "segments": 1894
+    },
+    {
+      "z": 170,
+      "extrusionPath_mm": 722.1315131029153,
+      "filament_mm": 22.64098000000003,
+      "extrusionSeconds": 40.118417394606254,
+      "segments": 1735
+    },
+    {
+      "z": 170.2,
+      "extrusionPath_mm": 802.7068555169072,
+      "filament_mm": 25.16773999999995,
+      "extrusionSeconds": 44.59482530649511,
+      "segments": 1984
+    },
+    {
+      "z": 170.4,
+      "extrusionPath_mm": 857.1975191438135,
+      "filament_mm": 26.87609000000005,
+      "extrusionSeconds": 47.62208439687852,
+      "segments": 2095
+    },
+    {
+      "z": 170.6,
+      "extrusionPath_mm": 897.0887322698724,
+      "filament_mm": 28.127509999999955,
+      "extrusionSeconds": 49.83826290388177,
+      "segments": 2182
+    },
+    {
+      "z": 170.8,
+      "extrusionPath_mm": 913.5602617510156,
+      "filament_mm": 28.643740000000133,
+      "extrusionSeconds": 50.7533478750565,
+      "segments": 2234
+    },
+    {
+      "z": 171,
+      "extrusionPath_mm": 831.1399261638172,
+      "filament_mm": 26.05908000000006,
+      "extrusionSeconds": 46.17444034243433,
+      "segments": 2056
+    },
+    {
+      "z": 171.2,
+      "extrusionPath_mm": 734.4005675120902,
+      "filament_mm": 23.026420000000073,
+      "extrusionSeconds": 40.800031528449296,
+      "segments": 1849
+    },
+    {
+      "z": 171.4,
+      "extrusionPath_mm": 803.7557681376782,
+      "filament_mm": 25.201059999999927,
+      "extrusionSeconds": 44.65309822987094,
+      "segments": 1989
+    },
+    {
+      "z": 171.6,
+      "extrusionPath_mm": 882.7745705364617,
+      "filament_mm": 27.678619999999913,
+      "extrusionSeconds": 49.04303169647014,
+      "segments": 2149
+    },
+    {
+      "z": 171.8,
+      "extrusionPath_mm": 948.1330293358475,
+      "filament_mm": 29.72737999999983,
+      "extrusionSeconds": 52.67405718532514,
+      "segments": 2278
+    },
+    {
+      "z": 172,
+      "extrusionPath_mm": 847.9531275459248,
+      "filament_mm": 26.586320000000036,
+      "extrusionSeconds": 47.10850708588476,
+      "segments": 2088
+    },
+    {
+      "z": 172.2,
+      "extrusionPath_mm": 746.2925661198783,
+      "filament_mm": 23.399150000000034,
+      "extrusionSeconds": 41.460698117771074,
+      "segments": 1865
+    },
+    {
+      "z": 172.4,
+      "extrusionPath_mm": 672.0763401709847,
+      "filament_mm": 21.072659999999974,
+      "extrusionSeconds": 37.33757445394339,
+      "segments": 1713
+    },
+    {
+      "z": 172.6,
+      "extrusionPath_mm": 745.5887337399374,
+      "filament_mm": 23.37710000000012,
+      "extrusionSeconds": 41.42159631888557,
+      "segments": 1849
+    },
+    {
+      "z": 172.8,
+      "extrusionPath_mm": 891.0303833054047,
+      "filament_mm": 27.9368900000001,
+      "extrusionSeconds": 49.50168796141177,
+      "segments": 2164
+    },
+    {
+      "z": 173,
+      "extrusionPath_mm": 828.6207217592967,
+      "filament_mm": 25.981090000000034,
+      "extrusionSeconds": 46.03448454218321,
+      "segments": 2029
+    },
+    {
+      "z": 173.2,
+      "extrusionPath_mm": 826.7172898956215,
+      "filament_mm": 25.920700000000057,
+      "extrusionSeconds": 45.92873832753463,
+      "segments": 2026
+    },
+    {
+      "z": 173.4,
+      "extrusionPath_mm": 763.2591672154877,
+      "filament_mm": 23.930790000000066,
+      "extrusionSeconds": 42.403287067527245,
+      "segments": 1891
+    },
+    {
+      "z": 173.6,
+      "extrusionPath_mm": 677.8840235689302,
+      "filament_mm": 21.25418000000006,
+      "extrusionSeconds": 37.66022353160713,
+      "segments": 1721
+    },
+    {
+      "z": 173.8,
+      "extrusionPath_mm": 722.6796374304761,
+      "filament_mm": 22.65912,
+      "extrusionSeconds": 40.14886874613753,
+      "segments": 1804
+    },
+    {
+      "z": 174,
+      "extrusionPath_mm": 818.79700429794,
+      "filament_mm": 25.67214000000004,
+      "extrusionSeconds": 45.48872246099669,
+      "segments": 1998
+    },
+    {
+      "z": 174.2,
+      "extrusionPath_mm": 823.5536554523696,
+      "filament_mm": 25.821550000000098,
+      "extrusionSeconds": 45.75298085846484,
+      "segments": 2000
+    },
+    {
+      "z": 174.4,
+      "extrusionPath_mm": 742.8139971079631,
+      "filament_mm": 23.289910000000116,
+      "extrusionSeconds": 41.267444283775795,
+      "segments": 1842
+    },
+    {
+      "z": 174.6,
+      "extrusionPath_mm": 728.2736232685717,
+      "filament_mm": 22.834420000000012,
+      "extrusionSeconds": 40.45964573714315,
+      "segments": 1797
+    },
+    {
+      "z": 174.8,
+      "extrusionPath_mm": 633.0071134836679,
+      "filament_mm": 19.847070000000027,
+      "extrusionSeconds": 35.16706186020369,
+      "segments": 1610
+    },
+    {
+      "z": 175,
+      "extrusionPath_mm": 713.5870578121571,
+      "filament_mm": 22.37390999999999,
+      "extrusionSeconds": 39.64372543400904,
+      "segments": 1774
+    },
+    {
+      "z": 175.2,
+      "extrusionPath_mm": 798.4993181941053,
+      "filament_mm": 25.03621000000001,
+      "extrusionSeconds": 44.36107323300602,
+      "segments": 1938
+    },
+    {
+      "z": 175.4,
+      "extrusionPath_mm": 779.266091486034,
+      "filament_mm": 24.43395000000003,
+      "extrusionSeconds": 43.292560638113045,
+      "segments": 1887
+    },
+    {
+      "z": 175.6,
+      "extrusionPath_mm": 770.869537880637,
+      "filament_mm": 24.169710000000254,
+      "extrusionSeconds": 42.82608543781346,
+      "segments": 1879
+    },
+    {
+      "z": 175.8,
+      "extrusionPath_mm": 719.5094154244871,
+      "filament_mm": 22.55935999999998,
+      "extrusionSeconds": 39.97274530136048,
+      "segments": 1766
+    },
+    {
+      "z": 176,
+      "extrusionPath_mm": 640.6110624674388,
+      "filament_mm": 20.084889999999948,
+      "extrusionSeconds": 35.58950347041344,
+      "segments": 1564
+    },
+    {
+      "z": 176.2,
+      "extrusionPath_mm": 691.1136609930209,
+      "filament_mm": 21.669009999999997,
+      "extrusionSeconds": 38.3952033885013,
+      "segments": 1610
+    },
+    {
+      "z": 176.4,
+      "extrusionPath_mm": 677.8024477282771,
+      "filament_mm": 21.251380000000015,
+      "extrusionSeconds": 37.655691540459785,
+      "segments": 1487
+    },
+    {
+      "z": 176.6,
+      "extrusionPath_mm": 722.5621321450709,
+      "filament_mm": 22.655140000000006,
+      "extrusionSeconds": 40.142340674726356,
+      "segments": 1655
+    },
+    {
+      "z": 176.8,
+      "extrusionPath_mm": 600.934933191593,
+      "filament_mm": 18.84146000000016,
+      "extrusionSeconds": 33.38527406619978,
+      "segments": 1440
+    },
+    {
+      "z": 177,
+      "extrusionPath_mm": 600.4573578766592,
+      "filament_mm": 18.826460000000065,
+      "extrusionSeconds": 33.35874210425882,
+      "segments": 1455
+    },
+    {
+      "z": 177.2,
+      "extrusionPath_mm": 707.270610762017,
+      "filament_mm": 22.17670999999997,
+      "extrusionSeconds": 39.29281170900069,
+      "segments": 1664
+    },
+    {
+      "z": 177.4,
+      "extrusionPath_mm": 736.5923529138904,
+      "filament_mm": 23.094390000000114,
+      "extrusionSeconds": 40.921797384104956,
+      "segments": 1726
+    },
+    {
+      "z": 177.6,
+      "extrusionPath_mm": 627.0894531440748,
+      "filament_mm": 19.661530000000045,
+      "extrusionSeconds": 34.838302952448565,
+      "segments": 1496
+    },
+    {
+      "z": 177.8,
+      "extrusionPath_mm": 575.3393767040344,
+      "filament_mm": 18.038709999999973,
+      "extrusionSeconds": 31.9632987057797,
+      "segments": 1393
+    },
+    {
+      "z": 178,
+      "extrusionPath_mm": 606.7060765725328,
+      "filament_mm": 19.02240000000014,
+      "extrusionSeconds": 33.705893142918754,
+      "segments": 1454
+    },
+    {
+      "z": 178.2,
+      "extrusionPath_mm": 568.5942858304932,
+      "filament_mm": 17.827450000000024,
+      "extrusionSeconds": 31.58857143502769,
+      "segments": 1371
+    },
+    {
+      "z": 178.4,
+      "extrusionPath_mm": 531.0359623074783,
+      "filament_mm": 16.65006000000006,
+      "extrusionSeconds": 29.501997905971074,
+      "segments": 1294
+    },
+    {
+      "z": 178.6,
+      "extrusionPath_mm": 556.9691548562143,
+      "filament_mm": 17.462650000000075,
+      "extrusionSeconds": 30.94273082534526,
+      "segments": 1335
+    },
+    {
+      "z": 178.8,
+      "extrusionPath_mm": 533.7714370558847,
+      "filament_mm": 16.735619999999923,
+      "extrusionSeconds": 29.653968725326855,
+      "segments": 1289
+    },
+    {
+      "z": 179,
+      "extrusionPath_mm": 533.3913776632479,
+      "filament_mm": 16.714029999999926,
+      "extrusionSeconds": 29.632854314624876,
+      "segments": 1281
+    },
+    {
+      "z": 179.2,
+      "extrusionPath_mm": 513.6478168597521,
+      "filament_mm": 16.104579999999988,
+      "extrusionSeconds": 28.535989825541776,
+      "segments": 1245
+    },
+    {
+      "z": 179.4,
+      "extrusionPath_mm": 517.55317786644,
+      "filament_mm": 16.22668000000011,
+      "extrusionSeconds": 28.752954325913414,
+      "segments": 1250
+    },
+    {
+      "z": 179.6,
+      "extrusionPath_mm": 505.72359633139956,
+      "filament_mm": 15.856069999999994,
+      "extrusionSeconds": 28.09575535174446,
+      "segments": 1239
+    },
+    {
+      "z": 179.8,
+      "extrusionPath_mm": 508.8747082082627,
+      "filament_mm": 15.955270000000052,
+      "extrusionSeconds": 28.27081712268125,
+      "segments": 1234
+    },
+    {
+      "z": 180,
+      "extrusionPath_mm": 509.3344817292177,
+      "filament_mm": 15.96938000000006,
+      "extrusionSeconds": 28.296360096067612,
+      "segments": 1231
+    },
+    {
+      "z": 180.2,
+      "extrusionPath_mm": 478.722928601986,
+      "filament_mm": 15.010049999999987,
+      "extrusionSeconds": 26.59571825566624,
+      "segments": 1165
+    },
+    {
+      "z": 180.4,
+      "extrusionPath_mm": 467.3329640076278,
+      "filament_mm": 14.65246000000001,
+      "extrusionSeconds": 25.96294244486816,
+      "segments": 1147
+    },
+    {
+      "z": 180.6,
+      "extrusionPath_mm": 479.63678761244046,
+      "filament_mm": 15.037980000000074,
+      "extrusionSeconds": 26.646488200691106,
+      "segments": 1167
+    },
+    {
+      "z": 180.8,
+      "extrusionPath_mm": 464.0459641340128,
+      "filament_mm": 14.549089999999996,
+      "extrusionSeconds": 25.78033134077844,
+      "segments": 1135
+    },
+    {
+      "z": 181,
+      "extrusionPath_mm": 462.8475829337812,
+      "filament_mm": 14.51219000000005,
+      "extrusionSeconds": 25.71375460743241,
+      "segments": 1137
+    },
+    {
+      "z": 181.2,
+      "extrusionPath_mm": 440.5496573978536,
+      "filament_mm": 13.81299999999998,
+      "extrusionSeconds": 24.474980966547452,
+      "segments": 1075
+    },
+    {
+      "z": 181.4,
+      "extrusionPath_mm": 461.3272586465203,
+      "filament_mm": 14.453729999999968,
+      "extrusionSeconds": 25.62929214702869,
+      "segments": 1123
+    },
+    {
+      "z": 181.6,
+      "extrusionPath_mm": 439.96610345410096,
+      "filament_mm": 13.794579999999973,
+      "extrusionSeconds": 24.442561303005625,
+      "segments": 1072
+    },
+    {
+      "z": 181.8,
+      "extrusionPath_mm": 414.54216925227115,
+      "filament_mm": 12.997449999999969,
+      "extrusionSeconds": 23.030120514015007,
+      "segments": 1015
+    },
+    {
+      "z": 182,
+      "extrusionPath_mm": 445.6122999344307,
+      "filament_mm": 13.971459999999984,
+      "extrusionSeconds": 24.756238885246162,
+      "segments": 1083
+    },
+    {
+      "z": 182.2,
+      "extrusionPath_mm": 436.21761538555086,
+      "filament_mm": 13.677279999999962,
+      "extrusionSeconds": 24.234311965863885,
+      "segments": 1022
+    },
+    {
+      "z": 182.4,
+      "extrusionPath_mm": 421.9063481944378,
+      "filament_mm": 13.228270000000004,
+      "extrusionSeconds": 23.43924156635766,
+      "segments": 1030
+    },
+    {
+      "z": 182.6,
+      "extrusionPath_mm": 413.6273920224527,
+      "filament_mm": 12.96842000000001,
+      "extrusionSeconds": 22.97929955680295,
+      "segments": 1013
+    },
+    {
+      "z": 182.8,
+      "extrusionPath_mm": 400.8127615070671,
+      "filament_mm": 12.56670000000003,
+      "extrusionSeconds": 22.267375639281585,
+      "segments": 978
+    },
+    {
+      "z": 183,
+      "extrusionPath_mm": 405.0375581471471,
+      "filament_mm": 12.699489999999983,
+      "extrusionSeconds": 22.502086563730394,
+      "segments": 986
+    },
+    {
+      "z": 183.2,
+      "extrusionPath_mm": 384.30996268503935,
+      "filament_mm": 12.049739999999982,
+      "extrusionSeconds": 21.350553482502235,
+      "segments": 940
+    },
+    {
+      "z": 183.4,
+      "extrusionPath_mm": 387.1192394964126,
+      "filament_mm": 12.137379999999975,
+      "extrusionSeconds": 21.506624416467442,
+      "segments": 933
+    },
+    {
+      "z": 183.6,
+      "extrusionPath_mm": 355.5068226168051,
+      "filament_mm": 11.146630000000004,
+      "extrusionSeconds": 19.750379034266956,
+      "segments": 878
+    },
+    {
+      "z": 183.8,
+      "extrusionPath_mm": 340.34846547087284,
+      "filament_mm": 10.671450000000002,
+      "extrusionSeconds": 18.90824808171519,
+      "segments": 847
+    },
+    {
+      "z": 184,
+      "extrusionPath_mm": 352.05507459900195,
+      "filament_mm": 11.038440000000012,
+      "extrusionSeconds": 19.558615255500065,
+      "segments": 863
+    },
+    {
+      "z": 184.2,
+      "extrusionPath_mm": 328.2431005982474,
+      "filament_mm": 10.291700000000002,
+      "extrusionSeconds": 18.23572781101375,
+      "segments": 806
+    },
+    {
+      "z": 184.4,
+      "extrusionPath_mm": 328.7517684159019,
+      "filament_mm": 10.307729999999978,
+      "extrusionSeconds": 18.263987134216645,
+      "segments": 795
+    },
+    {
+      "z": 184.6,
+      "extrusionPath_mm": 312.32234817060174,
+      "filament_mm": 9.792500000000004,
+      "extrusionSeconds": 17.35124156503343,
+      "segments": 778
+    },
+    {
+      "z": 184.8,
+      "extrusionPath_mm": 296.79211445207585,
+      "filament_mm": 9.305449999999986,
+      "extrusionSeconds": 16.488450802893084,
+      "segments": 746
+    },
+    {
+      "z": 185,
+      "extrusionPath_mm": 301.4581617807374,
+      "filament_mm": 9.451840000000004,
+      "extrusionSeconds": 16.747675654485366,
+      "segments": 737
+    },
+    {
+      "z": 185.2,
+      "extrusionPath_mm": 282.0662968816299,
+      "filament_mm": 8.84361,
+      "extrusionSeconds": 15.670349826757226,
+      "segments": 699
+    },
+    {
+      "z": 185.4,
+      "extrusionPath_mm": 272.5561378660311,
+      "filament_mm": 8.54549999999996,
+      "extrusionSeconds": 15.14200765922393,
+      "segments": 678
+    },
+    {
+      "z": 185.6,
+      "extrusionPath_mm": 274.31109569211947,
+      "filament_mm": 8.60101000000002,
+      "extrusionSeconds": 15.239505316228888,
+      "segments": 676
+    },
+    {
+      "z": 185.8,
+      "extrusionPath_mm": 263.35281612817806,
+      "filament_mm": 8.257210000000002,
+      "extrusionSeconds": 14.630712007121023,
+      "segments": 641
+    },
+    {
+      "z": 186,
+      "extrusionPath_mm": 250.15960353977925,
+      "filament_mm": 7.843480000000002,
+      "extrusionSeconds": 13.897755752209946,
+      "segments": 618
+    },
+    {
+      "z": 186.2,
+      "extrusionPath_mm": 236.01234735800963,
+      "filament_mm": 7.3996800000000045,
+      "extrusionSeconds": 13.111797075444969,
+      "segments": 581
+    },
+    {
+      "z": 186.4,
+      "extrusionPath_mm": 225.42741585102414,
+      "filament_mm": 7.067939999999999,
+      "extrusionSeconds": 12.523745325056879,
+      "segments": 549
+    },
+    {
+      "z": 186.6,
+      "extrusionPath_mm": 215.40203892405358,
+      "filament_mm": 6.753649999999998,
+      "extrusionSeconds": 11.966779940225186,
+      "segments": 525
+    },
+    {
+      "z": 186.8,
+      "extrusionPath_mm": 188.22745597542522,
+      "filament_mm": 5.901810000000006,
+      "extrusionSeconds": 10.457080887523624,
+      "segments": 473
+    },
+    {
+      "z": 187,
+      "extrusionPath_mm": 174.6714953610634,
+      "filament_mm": 5.476640000000009,
+      "extrusionSeconds": 9.703971964503513,
+      "segments": 439
+    },
+    {
+      "z": 187.2,
+      "extrusionPath_mm": 161.41626938978766,
+      "filament_mm": 5.0612,
+      "extrusionSeconds": 8.967570521654867,
+      "segments": 390
+    },
+    {
+      "z": 187.4,
+      "extrusionPath_mm": 159.1039133504289,
+      "filament_mm": 4.988720000000001,
+      "extrusionSeconds": 8.839106297246046,
+      "segments": 386
+    },
+    {
+      "z": 187.6,
+      "extrusionPath_mm": 136.16048472132448,
+      "filament_mm": 4.269230000000003,
+      "extrusionSeconds": 7.564471373406925,
+      "segments": 332
+    },
+    {
+      "z": 187.8,
+      "extrusionPath_mm": 141.1475677164114,
+      "filament_mm": 4.42557,
+      "extrusionSeconds": 7.841531539800636,
+      "segments": 336
+    },
+    {
+      "z": 188,
+      "extrusionPath_mm": 121.24971884134347,
+      "filament_mm": 3.8017800000000026,
+      "extrusionSeconds": 6.7360954911857505,
+      "segments": 293
+    }
+  ],
+  "layerSpikes": [
+    {
+      "z": 121.4,
+      "previousZ": 121.2,
+      "pathRatio": 18.358474445548193,
+      "extrusionSeconds": 2844.1865886060064,
+      "meaning": "Inspection heuristic, not an automatic physical-failure certificate."
+    }
+  ],
+  "limitations": [
+    "Commanded ideal time omits acceleration, queue throughput, heating, homing and opaque macro internals. It includes literal dwell and E-only moves.",
+    "XY/Z bounds audit only visible literal commands, not firmware macros. Mass uses assumed 1.26 g/cm3 and commanded 1.75 mm filament."
+  ],
+  "boundsPass": true
+}

@@ -1,0 +1,256 @@
+{
+  "at": "2026-10-04T00:57:08.662Z",
+  "status": "DELIVERED_SOFTWARE_VERIFIED_NOT_PRINTED",
+  "files": [
+    {
+      "file": "specimens/2026-10-04_LIRA_A2L/design.mjs",
+      "bytes": 3529,
+      "sha256": "9e92b2134c75a207b7009fdfe335f3a14ae89a7db6b1a4d4b70c13cbd9013900"
+    },
+    {
+      "file": "specimens/2026-10-04_LIRA_A2L/preview.mjs",
+      "bytes": 20431,
+      "sha256": "69ae5db37bf828c6b5efe67de818b830d047785012265f993d091faa7ab7d416"
+    },
+    {
+      "file": "specimens/2026-10-04_LIRA_A2L/audit.mjs",
+      "bytes": 13887,
+      "sha256": "a03183a69e7a2b800c070e62d6322d8097ea496b292d1559b14ca832531c2dbf"
+    },
+    {
+      "file": "specimens/2026-10-04_LIRA_A2L/run-audit.mjs",
+      "bytes": 638,
+      "sha256": "4de88a8fe731cb2b3f29830b626364172e5cce7e5754db158eed6a5bf3679426"
+    },
+    {
+      "file": "specimens/2026-10-04_LIRA_A2L/finalize-thumbnail.mjs",
+      "bytes": 2133,
+      "sha256": "6d11a0deec079512c12d3280fb8c74adb8d031f1ecfe7a16538ac537eb53a13e"
+    },
+    {
+      "file": "specimens/2026-10-04_LIRA_A2L/README.md",
+      "bytes": 5508,
+      "sha256": "b2ac72207e1a692831782cca67a2981414910af264528e6c86b444d0b3141510"
+    },
+    {
+      "file": "specimens/2026-10-04_LIRA_A2L/ANALIZA.md",
+      "bytes": 5161,
+      "sha256": "d8517de43b28e9666538ba3cb7c87fd6138d8ee702cbf87ca009be73fdf6f0ec"
+    },
+    {
+      "file": "specimens/2026-10-04_LIRA_A2L/KNOWLEDGE.md",
+      "bytes": 1911,
+      "sha256": "6e7d3569236eb8764bb74a023e8e2c4217988e3f17ecd3496a7e2887e4f7f8b2"
+    },
+    {
+      "file": "specimens/2026-10-04_LIRA_A2L/LOG.md",
+      "bytes": 1702,
+      "sha256": "b0198a8203d878fe0a09585a94dbb3f6c6b055e813c2cdb42d06592cb2563e3a"
+    },
+    {
+      "file": "specimens/2026-10-04_LIRA_A2L/audit.json",
+      "bytes": 3683,
+      "sha256": "45998e010b3ba26c746f88588b72a9ea7e2547b0eda1ebab916b069ed5085e15"
+    },
+    {
+      "file": "specimens/2026-10-04_LIRA_A2L/pure-weft-check.txt",
+      "bytes": 398,
+      "sha256": "652c15dd6c6c1ccccf209e6277f4df721aff5a61e4ee5ab7e007d52208f7fc66"
+    },
+    {
+      "file": "specimens/2026-10-04_LIRA_A2L/preview.html",
+      "bytes": 44932025,
+      "sha256": "c0384944fe32e81142cb9060e436f8490ac23dbc6ab1db51f7666620685cc972"
+    },
+    {
+      "file": "specimens/2026-10-04_LIRA_A2L/preview_receipt.json",
+      "bytes": 4664,
+      "sha256": "1c491787eb4a6ca931ddd523ba8070e9ee17deeda4db14385def725477aaf7bc"
+    },
+    {
+      "file": "specimens/2026-10-04_LIRA_A2L/thumbnail.png",
+      "bytes": 141421,
+      "sha256": "2316e675172e2b3ea44456ff4e73edffebb265048c0f183c2a6b371244afa315"
+    },
+    {
+      "file": "specimens/2026-10-04_LIRA_A2L/LIRA_A2L_geometry.json",
+      "bytes": 66615527,
+      "sha256": "1fe4daa225b83764d37da3c9e7f283830a23d9ac06ccaf8f5914240435ad3fd1"
+    },
+    {
+      "file": "specimens/2026-10-04_LIRA_A2L/LIRA_A2L_summary.json",
+      "bytes": 77245,
+      "sha256": "d44152f1d581e29c4696d9eee761d440d5ed0518721612104afc663865bf9260"
+    },
+    {
+      "file": "specimens/2026-10-04_LIRA_A2L/LIRA_A2L_plan.json",
+      "bytes": 217720,
+      "sha256": "2aaab0873f2c0e0423e241b52e401a68c65c9da9b7fbec6945f0c0cc07de9244"
+    },
+    {
+      "file": "specimens/2026-10-04_LIRA_A2L/LIRA_A2L_program.svg",
+      "bytes": 511232,
+      "sha256": "838d3268ec2fb431aee9c336cb47312b9e2769d1c01ce01732ce2ed1d6149e59"
+    },
+    {
+      "file": "specimens/2026-10-04_LIRA_A2L/LIRA_A2L_preview.png",
+      "bytes": 459851,
+      "sha256": "f03319be18775df4cc96ab04fe2b7f9e88c195dc1dea6dfdb1e4b9f781d98044"
+    },
+    {
+      "file": "specimens/2026-10-04_LIRA_A2L/LIRA_A2L_front.png",
+      "bytes": 63572,
+      "sha256": "5b4ceec79ec28e9d055488d262617ecbf4b13983d424be1f15f28b9131502f4d"
+    },
+    {
+      "file": "specimens/2026-10-04_LIRA_A2L/LIRA_A2L_side.png",
+      "bytes": 60993,
+      "sha256": "7e03075fd0f6678c41c279cc132b2a0583f4bfd8a7886ce6aa0abb0f980d2fd6"
+    },
+    {
+      "file": "specimens/2026-10-04_LIRA_A2L/LIRA_A2L_top.png",
+      "bytes": 864476,
+      "sha256": "34f86a31e3a6f78815a588118aa459b11c1f558ce50dd2de59459ffcb24d225a"
+    },
+    {
+      "file": "specimens/2026-10-04_LIRA_A2L/probe_geometry.json",
+      "bytes": 5927334,
+      "sha256": "9c00c4b36b5446ef74f9c87435a0992ac91bf31336fa83853e939d4f4128b43b"
+    },
+    {
+      "file": "specimens/2026-10-04_LIRA_A2L/probe_summary.json",
+      "bytes": 9293,
+      "sha256": "3fe9757bec69ee10234ee4645db02beaed90b8c86cdf3d33c1d9cbc7c9b4272a"
+    },
+    {
+      "file": "specimens/2026-10-04_LIRA_A2L/probe_plan.json",
+      "bytes": 19547,
+      "sha256": "7a35a0147ccd2611441215b1f3bd994ba8579940a357c03c6fdea8e35355781e"
+    },
+    {
+      "file": "specimens/2026-10-04_LIRA_A2L/probe_program.svg",
+      "bytes": 226419,
+      "sha256": "15cc93e8c4504e04f09c59c9032d4620d0af4b2c7f2d4a3d53c690d2dfe4cae7"
+    },
+    {
+      "file": "specimens/2026-10-04_LIRA_A2L/attempts/01_refused_summary.json",
+      "bytes": 77357,
+      "sha256": "bcb33ff79583c8b9354fde95566f4d7b6cd36697c0703ddb4e277ed61c4f75c7"
+    },
+    {
+      "file": "specimens/2026-10-04_LIRA_A2L/attempts/01_design_source.txt",
+      "bytes": 3415,
+      "sha256": "28e70f1554e6e6ab7d1d3c188b9c39448d5752eafa0d327f81d7e90fde176fa7"
+    },
+    {
+      "file": "specimens/2026-10-04_LIRA_A2L/package/end-block.json",
+      "bytes": 366,
+      "sha256": "012bbad8c4756528efc576b9a94638c8c9acbef80fb36a276a5f9821f107e060"
+    },
+    {
+      "file": "specimens/2026-10-04_LIRA_A2L/package/LIRA_A2L.gcode",
+      "bytes": 120710778,
+      "sha256": "9349a90af2a537c9f201d327e52dc056076f53dd4b856e19f69f05efaf8c1dd0"
+    },
+    {
+      "file": "specimens/2026-10-04_LIRA_A2L/package/LIRA_A2L.gcode.3mf",
+      "bytes": 26447779,
+      "sha256": "6f5654726674b5f25ee050db763219915e3a51f3236832167685989648fc11b5"
+    },
+    {
+      "file": "specimens/2026-10-04_LIRA_A2L/package/LIRA_A2L_gate.json",
+      "bytes": 1539,
+      "sha256": "a3576bdfb7ad590261c841239c8945b4fb0e55e7adcd8dc84019fbf14aaf1193"
+    },
+    {
+      "file": "specimens/2026-10-04_LIRA_A2L/package/LIRA_A2L_gate_layers.json",
+      "bytes": 6607,
+      "sha256": "574ecaffc98094e2d5b3d2726a175595d01c055eee74cb0559562cec899c5d7d"
+    },
+    {
+      "file": "specimens/2026-10-04_LIRA_A2L/package/LIRA_A2L_package_gate.json",
+      "bytes": 1543,
+      "sha256": "d1c54f6d4812e6847d23cefbb528f47106b8d2476cc870d86f7aed446dcd8af3"
+    },
+    {
+      "file": "specimens/2026-10-04_LIRA_A2L/package/LIRA_A2L_report.json",
+      "bytes": 92876,
+      "sha256": "4f7a7a39c736ff0499775bb15126b5fda314fb67146382aa9dfdd09d2653ebc3"
+    },
+    {
+      "file": "specimens/2026-10-04_LIRA_A2L/package/manifest.json",
+      "bytes": 951,
+      "sha256": "8a70241dcb7150b60fc8436eb55f6e784f02bab303b93ebe10e21d51df8220e8"
+    },
+    {
+      "file": "specimens/2026-10-04_LIRA_A2L/package/thumbnail-receipt.json",
+      "bytes": 1274,
+      "sha256": "3b7d3ba383d43194cde3328c48ea779eee09b09f93597741fa615f8c836e316d"
+    },
+    {
+      "file": "specimens/2026-10-04_LIRA_A2L/probe_package/end-block.json",
+      "bytes": 366,
+      "sha256": "b90739a39ccf6ac8f2d5dff98e75feb9875ad11a3252ceb6ec03f99456f3491d"
+    },
+    {
+      "file": "specimens/2026-10-04_LIRA_A2L/probe_package/LIRA_ROOT_A2L.gcode",
+      "bytes": 7620628,
+      "sha256": "a78d8a32e253819774e3e64aae83c9f9d8e1dff62fa4adf0d6474d6d3f862730"
+    },
+    {
+      "file": "specimens/2026-10-04_LIRA_A2L/probe_package/LIRA_ROOT_A2L.gcode.3mf",
+      "bytes": 1934897,
+      "sha256": "c33be44b12303bdb82d57c60b5b4744128dcf35dcc3b4920ff21964f196c4745"
+    },
+    {
+      "file": "specimens/2026-10-04_LIRA_A2L/probe_package/LIRA_ROOT_A2L_gate.json",
+      "bytes": 1487,
+      "sha256": "143612c46c7c2bbb7777157041739d70fdb545a3d935f0e0b5303d7ed5c08cd2"
+    },
+    {
+      "file": "specimens/2026-10-04_LIRA_A2L/probe_package/LIRA_ROOT_A2L_gate_layers.json",
+      "bytes": 6587,
+      "sha256": "1dc2fdfe62adc943ba4e60db6487c69f4e53fb28e5b17eb288504d7997005e20"
+    },
+    {
+      "file": "specimens/2026-10-04_LIRA_A2L/probe_package/LIRA_ROOT_A2L_package_gate.json",
+      "bytes": 1491,
+      "sha256": "4aa8c9d1311919dd4f3dcd9e2e48395e8174a70a5f56a3eb2021858baf2ea4f2"
+    },
+    {
+      "file": "specimens/2026-10-04_LIRA_A2L/probe_package/LIRA_ROOT_A2L_report.json",
+      "bytes": 14522,
+      "sha256": "1f822ba3a5d9b91cc4ab7a3c3a12c80e61a2dd691181e81e57b2d0c767db7278"
+    },
+    {
+      "file": "specimens/2026-10-04_LIRA_A2L/probe_package/manifest.json",
+      "bytes": 978,
+      "sha256": "20b817581aaf0ef828a1646d10f1c0f1e96f266e408b82f688a8f0a826829f55"
+    },
+    {
+      "file": "ZA_STAMPU/A2L_Bambu/LIRA/LIRA_A2L.gcode.3mf",
+      "bytes": 26447779,
+      "sha256": "6f5654726674b5f25ee050db763219915e3a51f3236832167685989648fc11b5"
+    },
+    {
+      "file": "ZA_STAMPU/A2L_Bambu/LIRA/LIRA_A2L.gcode",
+      "bytes": 120710778,
+      "sha256": "9349a90af2a537c9f201d327e52dc056076f53dd4b856e19f69f05efaf8c1dd0"
+    },
+    {
+      "file": "ZA_STAMPU/A2L_Bambu/LIRA/LIRA_ROOT_A2L.gcode.3mf",
+      "bytes": 1934897,
+      "sha256": "c33be44b12303bdb82d57c60b5b4744128dcf35dcc3b4920ff21964f196c4745"
+    },
+    {
+      "file": "ZA_STAMPU/A2L_Bambu/LIRA/LIRA_ROOT_A2L.gcode",
+      "bytes": 7620628,
+      "sha256": "a78d8a32e253819774e3e64aae83c9f9d8e1dff62fa4adf0d6474d6d3f862730"
+    },
+    {
+      "file": "ZA_STAMPU/A2L_Bambu/LIRA/README.md",
+      "bytes": 1596,
+      "sha256": "9cb90be04fb543b19163fa063d4a4c66d2b938e8868372972edf0fdc350643c1"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+  layer 0/940 z=0 islands=1 temelj run=0 span=0 growth=0
+  layer 25/940 z=5 islands=1 kamen run=3.5 span=3.2 growth=0.01
+  layer 50/940 z=10 islands=5 grud run=0.5 span=1.9 growth=0
+  layer 75/940 z=15 islands=5 grud-talas run=0.4 span=2.3 growth=0.05
+  layer 100/940 z=20 islands=5 grud-talas run=0.9 span=2.6 growth=0.06
+  layer 125/940 z=25 islands=5 grud-resetka run=0.5 span=2 growth=0.07
+  layer 150/940 z=30 islands=5 grud-resetka run=0.5 span=2.2 growth=0.09
+  layer 175/940 z=35 islands=4 grud run=2 span=2.6 growth=0.17
+  layer 200/940 z=40 islands=4 grud run=1 span=2.3 growth=0.07
+  layer 225/940 z=45 islands=4 grud-talas run=2 span=3 growth=0.31
+  layer 250/940 z=50 islands=4 grud-pokrivka run=0.5 span=1.8 growth=0.06
+  layer 275/940 z=55 islands=4 grud-resetka run=3.5 span=3.3 growth=0.39
+  layer 300/940 z=60 islands=3 grud-resetka run=2 span=3 growth=0.15
+  layer 325/940 z=65 islands=3 grud-resetka run=1.5 span=2.6 growth=0.07
+  layer 350/940 z=70 islands=3 grud run=2 span=3.4 growth=0.12
+  layer 375/940 z=75 islands=3 grud run=0.9 span=2.5 growth=0.05
+  layer 400/940 z=80 islands=3 grud-talas run=3.8 span=4.6 growth=0.09
+  layer 425/940 z=85 islands=3 grud-talas run=2.8 span=3.6 growth=0.12
+  layer 450/940 z=90 islands=3 grud-resetka run=2.5 span=3.2 growth=0.05
+  layer 475/940 z=95 islands=3 grud-resetka run=2.5 span=3.2 growth=0.03
+  layer 500/940 z=100 islands=3 grud run=1.5 span=3.1 growth=0.02
+  layer 525/940 z=105 islands=3 grud run=1 span=2.7 growth=0.07
+  layer 550/940 z=110 islands=3 grud-talas run=1.3 span=2.7 growth=0.08
+  layer 575/940 z=115 islands=3 grud-talas run=3.8 span=4.4 growth=0.05
+  layer 600/940 z=120 islands=3 grud-pokrivka run=0 span=1.7 growth=0.17
+  layer 625/940 z=125 islands=1 grud-pokrivka run=0 span=1.8 growth=0.46
+  layer 650/940 z=130 islands=1 grud-pokrivka run=0 span=1.6 growth=0
+  layer 675/940 z=135 islands=1 vrat run=0 span=1.7 growth=0.04
+  layer 700/940 z=140 islands=1 vrat run=1 span=2 growth=0.01
+  layer 725/940 z=145 islands=1 vrat run=0 span=1.7 growth=0.05
+  layer 750/940 z=150 islands=1 vrat run=0 span=1.7 growth=0.36
+  layer 775/940 z=155 islands=1 glava run=0 span=1.7 growth=0.23
+  layer 800/940 z=160 islands=1 glava run=0 span=1.7 growth=0.26
+  layer 825/940 z=165 islands=1 glava run=0.3 span=1.8 growth=0.04
+  layer 850/940 z=170 islands=1 glava run=0 span=1.7 growth=0.02
+  layer 875/940 z=175 islands=1 kapa run=0 span=1.6 growth=0.16
+  layer 900/940 z=180 islands=1 kapa run=0.4 span=1.9 growth=0
+  layer 925/940 z=185 islands=1 kapa run=0 span=1.5 growth=0
+note: layer 284 z=56.8: section grows 0.63 mm outward (field estimate; measured run 1.5 mm)
+note: layer 285 z=57: section grows 0.73 mm outward (field estimate; measured run 1.9 mm)
+note: layer 286 z=57.2: section grows 0.94 mm outward (field estimate; measured run 2.3 mm)
+note: layer 287 z=57.4: section grows 4.03 mm outward (field estimate; measured run 4.2 mm)
+note: layer 288 z=57.6: section grows 0.72 mm outward (field estimate; measured run 8 mm)
+note: layer 289 z=57.8: section grows 0.64 mm outward (field estimate; measured run 1 mm)
+note: layer 606 z=121.2: section grows 1.04 mm outward (field estimate; measured run 2 mm)
+note: layer 607 z=121.4: section grows 1.08 mm outward (field estimate; measured run 1 mm)
+note: layer 608 z=121.6: section grows 1.49 mm outward (field estimate; measured run 0 mm)
+note: layer 610 z=122: section grows 1.09 mm outward (field estimate; measured run 0.3 mm)
+note: layer 611 z=122.2: section grows 1.17 mm outward (field estimate; measured run 0.5 mm)
+note: layer 612 z=122.4: section grows 0.66 mm outward (field estimate; measured run 0.9 mm)
+note: layer 613 z=122.6: section grows 1.66 mm outward (field estimate; measured run 0 mm)
+note: layer 615 z=123: section grows 0.74 mm outward (field estimate; measured run 1.5 mm)
+note: layer 616 z=123.2: section grows 1.13 mm outward (field estimate; measured run 0.8 mm)
+note: layer 617 z=123.4: section grows 0.86 mm outward (field estimate; measured run 2.2 mm)
+note: layer 618 z=123.6: section grows 1.12 mm outward (field estimate; measured run 1 mm)
+note: layer 619 z=123.8: section grows 1.39 mm outward (field estimate; measured run 1 mm)
+note: layer 620 z=124: section grows 1.18 mm outward (field estimate; measured run 1.8 mm)
+note: layer 621 z=124.2: section grows 0.91 mm outward (field estimate; measured run 1.3 mm)
+note: layer 623 z=124.6: section grows 0.78 mm outward (field estimate; measured run 1.3 mm)
+note: layer 627 z=125.4: section grows 0.6 mm outward (field estimate; measured run 0.9 mm)
+note: layer 882 z=176.4: section grows 1 mm outward (field estimate; measured run 1.4 mm)
+note: layer 883 z=176.6: section grows 2.3 mm outward (field estimate; measured run 1 mm)
+REFUSED:
+  * layer 896 z=179.2 (kapa): 10.9 mm of thread runs with nothing under it (gate ceiling 10.8 mm), best of 16 angles

@@ -1,0 +1,85 @@
+{
+  "schema": 1,
+  "recordedAt": "2026-10-04T15:58:47.433Z",
+  "physicalStatus": "USER_REPORTED_FAILED",
+  "userStatements": [
+    "Sokol pao sokol pao",
+    "Za ender najnoviji samp izanaliziraj i daj mk jednu manju skulpturu na creality za par sati da se stampa"
+  ],
+  "binding": {
+    "candidate": "ZA_STAMPU/CREALITY_Ender3V4/SOKOL_V2c/SOKOL_V2_ENDER.gcode",
+    "bytes": 120164432,
+    "sha256": "d7b09b685db757da401bf3d7b136b93aa00b9457287afc1120c155bcf4818832",
+    "confidence": "User identifies latest Ender print; corresponding newest delivered local candidate matched. Executed storage bytes/hash not supplied.",
+    "executedFileHash": null
+  },
+  "photos": [
+    {
+      "name": "1-1000146474.jpg",
+      "source": ".codex-remote-attachments/01a10450-84ee-7190-b6e6-1a05617b3b35/e483f59e-bb2b-4352-a474-9e3d4c963028/1-1000146474.jpg",
+      "copy": "originals/1-1000146474.jpg",
+      "bytes": 81979,
+      "sha256": "3c8962bc9bf1a6e83fcc2a849c795323336424f7c0404e1b579abd8a75d68eb0"
+    },
+    {
+      "name": "2-1000146473.jpg",
+      "source": ".codex-remote-attachments/01a10450-84ee-7190-b6e6-1a05617b3b35/e483f59e-bb2b-4352-a474-9e3d4c963028/2-1000146473.jpg",
+      "copy": "originals/2-1000146473.jpg",
+      "bytes": 95110,
+      "sha256": "43d9fb794e0f934dcc11b98bd626d422d7307cc2842a81be2fd283dfe55806a6"
+    },
+    {
+      "name": "3-1000146472.jpg",
+      "source": ".codex-remote-attachments/01a10450-84ee-7190-b6e6-1a05617b3b35/e483f59e-bb2b-4352-a474-9e3d4c963028/3-1000146472.jpg",
+      "copy": "originals/3-1000146472.jpg",
+      "bytes": 72267,
+      "sha256": "127a89577c651e686bea76b991d7e59187b438c9059d80aaca1b7fd7a7436260"
+    },
+    {
+      "name": "4-1000146471.jpg",
+      "source": ".codex-remote-attachments/01a10450-84ee-7190-b6e6-1a05617b3b35/e483f59e-bb2b-4352-a474-9e3d4c963028/4-1000146471.jpg",
+      "copy": "originals/4-1000146471.jpg",
+      "bytes": 103966,
+      "sha256": "bc3e8cdbd013a7500d9a3d967fbab5e75097886d463c9de28ea4aa3a22e0b7f5"
+    },
+    {
+      "name": "5-1000146463.jpg",
+      "source": ".codex-remote-attachments/01a10450-84ee-7190-b6e6-1a05617b3b35/e483f59e-bb2b-4352-a474-9e3d4c963028/5-1000146463.jpg",
+      "copy": "originals/5-1000146463.jpg",
+      "bytes": 111097,
+      "sha256": "e51dd0d7f128e3eb7059fc26d5328c8079f7bd968aba51e0f9137993a4d62499"
+    }
+  ],
+  "observed": [
+    "Base and lower white structure retain shape. On-printer photograph 4 shows the object standing on the build plate.",
+    "Several orderly red rows exist above the white/red transition. No clearly open crack is visible at that transition.",
+    "Upper red lattice carries loose loops, raised strips and long loose strands. Photograph 4 shows a large tangled red extrusion mass extending to the right.",
+    "The toolhead occludes part of the top in photograph 5."
+  ],
+  "uncertain": [
+    "Photo chronology and first failure event.",
+    "Failure Z and exact executed bytes.",
+    "Filament types, temperatures and actual flow/cooling at the printer.",
+    "Whether detached strands first arose from insufficient anchoring, process interruption, a collision, or a combination."
+  ],
+  "historicalArtifacts": "Original digital PASS reports and manifest are retained unchanged as historical records; this separate physical outcome supersedes any inference that PASS proved successful printing.",
+  "nextSpecimen": "private-studio/specimens/2026-10-04_SOKOL_MALI",
+  "sourceScope": "Five user-supplied photographs inspected. No continuous video or machine log supplied for this event.",
+  "digitalFinding": {
+    "scope": "Delivered candidate final bytes; physical onset unbound",
+    "z_mm": 121.4,
+    "extrudedPath_mm": 51195.359,
+    "extrusionSeconds": 2844.187,
+    "previousLayerPath_mm": 2788.65,
+    "lengthRatio": 18.358,
+    "nominalBridgeFindings": 284,
+    "longestNominalBridge_mm": 36.003,
+    "method": "<=0.35 mm midpoint samples against previous actual layer segments,0.42 mm nominal contact,12 mm bridge budget",
+    "finalFileLines": [
+      2648963,
+      2769154
+    ],
+    "details": "sokol-failure-AUDIT.md",
+    "independentTimeMinutes": 1274.984600524957
+  }
+}

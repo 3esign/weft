@@ -1,0 +1,17 @@
+{
+  "stage": "DELIVERED",
+  "at": "2026-10-03T20:59:33.215Z",
+  "geometry": "D:\\Svemir\\!Projekti\\weft\\specimens\\2026-10-03_sokol_ender\\sokol_v2c_geometry.json",
+  "out": "D:\\Svemir\\!Projekti\\weft\\specimens\\2026-10-03_sokol_ender\\v2c_package",
+  "buildExit": null,
+  "delivery": "D:\\Svemir\\!Projekti\\weft\\ZA_STAMPU\\CREALITY_Ender3V4\\SOKOL_V2c",
+  "gcode": "SOKOL_V2_ENDER.gcode",
+  "vector": "S2 INFO · S3 PASS · S4 PASS · S5 INFO · S7 INFO · S8 WARN · ORDER N/A",
+  "hashes": {
+    "SOKOL_V2_ENDER.gcode": "d7b09b685db757da401bf3d7b136b93aa00b9457287afc1120c155bcf4818832",
+    "SOKOL_V2_ENDER_gate.json": "cece9e2c1b84366d485453ab38f3708df76a09790c3ec43efa1fb754dbb761e1",
+    "SOKOL_V2_ENDER_gate_layers.json": "389495d4891837ae011cd69717d983b0c94952fff5636d427bbbf08b1365cae5",
+    "SOKOL_V2_ENDER_report.json": "8dc093ee68e9c6fb12ce44c85255788e60c4067978bdbbeb264bf413e0b304c7",
+    "manifest.json": "591f1280f9e7d9d1f34c06e39ae4881b6d753952afc9ee5c8f29e60636dbd246"
+  }
+}

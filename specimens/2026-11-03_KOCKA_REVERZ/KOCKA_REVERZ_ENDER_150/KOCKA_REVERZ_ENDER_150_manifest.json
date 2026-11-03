@@ -1,0 +1,88 @@
+{
+  "name": "KOCKA_REVERZ_ENDER_150",
+  "machineKey": "ender",
+  "machineLabel": "Creality Ender-3 V4",
+  "bead_mm": 0.42,
+  "beadSource": "ASSUMED",
+  "lh_mm": 0.2,
+  "layers": 750,
+  "size_mm": [
+    150,
+    150,
+    150
+  ],
+  "plate_mm": [
+    35.2,
+    35.2,
+    184.8,
+    184.8
+  ],
+  "fitsPlate": true,
+  "threadLength_m": 842.8,
+  "weldNodesPerLayer": 128,
+  "weldNodesTotal": 96000,
+  "minSeamGap_mm": 0.836,
+  "maxSeamGap_mm": 1.461,
+  "maxInterLayerTravel_mm": 0,
+  "bodyRetractions": 0,
+  "footerRetractedMm": 1.2,
+  "material": {
+    "mm": 26443.2,
+    "m": 26.44,
+    "cm3": 63.6,
+    "g": 78.87,
+    "positiveCommandMm": 26443.2,
+    "retractedMm": 1.2,
+    "unrecoveredRetractMm": 1.2,
+    "seconds": 44131,
+    "waitSeconds": 0,
+    "humanTime": "12h 16m"
+  },
+  "solidEnvelope_cm3": 3375,
+  "relativeDensity_pct": 1.88,
+  "hollowness_pct": 98.12,
+  "layerPatterns": [
+    "I-diagonal-truss",
+    "II-sine-mashrabiya",
+    "III-staple-arcade",
+    "IV-biharmonic-rosette",
+    "V-chevron-crown"
+  ],
+  "S1": {
+    "PASS": true,
+    "firstLayerPASS": true,
+    "firstLayerIslands": 1,
+    "floating": 0,
+    "long_bridge": 0,
+    "cantilever": 0,
+    "bridges": 95780,
+    "checked_points": 2175909
+  },
+  "S2_S8": {
+    "refuse": false,
+    "vector": "S2 INFO · S3 PASS · S4 PASS · S5 INFO · S7 INFO · S8 PASS · ORDER N/A",
+    "finding_count": 0,
+    "S2_worst_mm": {
+      "k": 3,
+      "z": 0.6,
+      "runs10": 0,
+      "free_mm": 0,
+      "longest_mm": 0
+    },
+    "S3_neverTied": 0,
+    "S4_overflights": 0,
+    "S5_ratio": 0.085,
+    "S8_periodTwoLayers": 0,
+    "S8_selfStackedLayers": 0,
+    "S8_medianCrossing_deg": 69.9
+  },
+  "pureWeftCheck": "KOCKA_REVERZ_ENDER_150.gcode: 750 body runs, 0 brim/skirt · thread 842.5 m · WALLS 0 · runs ending near their start 0\npure weft: no closed body path in any file",
+  "files": {
+    "specimenGcode": "C:\\Svemir\\!Projekti\\weft\\specimens\\2026-11-03_KOCKA_REVERZ\\KOCKA_REVERZ_ENDER_150\\KOCKA_REVERZ_ENDER_150.gcode",
+    "specimenGcodeSha256": "ea8612831d6afbc6e46c13600e39b170cfbf75f09db1b3c1cb0fda75d0b28931",
+    "specimen3mf": null,
+    "specimen3mfSha256": null,
+    "shelfGcode": "C:\\Svemir\\!Projekti\\weft\\ZA_STAMPU\\CREALITY_Ender3V4\\KOCKA_REVERZ_ENDER_150\\KOCKA_REVERZ_ENDER_150.gcode",
+    "shelf3mf": null
+  }
+}

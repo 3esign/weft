@@ -1,0 +1,6 @@
+2026-10-04 · tools/check_pure_weft.mjs · exit 0
+Input: package/LIRA_A2L.gcode.3mf; probe_package/LIRA_ROOT_A2L.gcode.3mf
+
+LIRA_A2L.gcode.3mf: 1864 body runs, 12 brim/skirt · thread 1463.0 m · WALLS 0 · runs ending near their start 0
+LIRA_ROOT_A2L.gcode.3mf: 320 body runs, 12 brim/skirt · thread 129.9 m · WALLS 0 · runs ending near their start 0
+pure weft: no closed body path in any file

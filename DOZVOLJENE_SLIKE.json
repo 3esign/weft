@@ -1,6 +1,6 @@
 {
   "schema": "svemir.media-allowlist.v1",
-  "updatedAt": "2026-11-03T13:50:11.601Z",
+  "updatedAt": "2026-11-03T19:55:53.402Z",
   "policy": "default-deny-unlisted-media",
   "approved": [
     {
@@ -1087,6 +1087,51 @@
       "bytes": 309604,
       "approvedBy": "Semir Poturak (G-3495 forensic audit)",
       "approvedAt": "2026-11-03T13:50:11.592Z"
+    },
+    {
+      "path": "specimens/2026-10-04_LIRA_A2L/LIRA_A2L_top.png",
+      "sha256": "34f86a31e3a6f78815a588118aa459b11c1f558ce50dd2de59459ffcb24d225a",
+      "bytes": 864476,
+      "removedMetadataBytes": 0,
+      "approvedBy": "Semir",
+      "approvedAt": "2026-11-03T19:55:53.174Z",
+      "reason": "G-3497 proceduralni render (preview.mjs) LIRA A2L primerak, bez EXIF/GPS, javna dokumentacija primera"
+    },
+    {
+      "path": "specimens/2026-10-04_LIRA_A2L/LIRA_A2L_preview.png",
+      "sha256": "f03319be18775df4cc96ab04fe2b7f9e88c195dc1dea6dfdb1e4b9f781d98044",
+      "bytes": 459851,
+      "removedMetadataBytes": 0,
+      "approvedBy": "Semir",
+      "approvedAt": "2026-11-03T19:55:53.244Z",
+      "reason": "G-3497 proceduralni render (preview.mjs) LIRA A2L primerak, bez EXIF/GPS, javna dokumentacija primera"
+    },
+    {
+      "path": "specimens/2026-10-04_LIRA_A2L/LIRA_A2L_front.png",
+      "sha256": "5b4ceec79ec28e9d055488d262617ecbf4b13983d424be1f15f28b9131502f4d",
+      "bytes": 63572,
+      "removedMetadataBytes": 0,
+      "approvedBy": "Semir",
+      "approvedAt": "2026-11-03T19:55:53.289Z",
+      "reason": "G-3497 proceduralni render (preview.mjs) LIRA A2L primerak, bez EXIF/GPS, javna dokumentacija primera"
+    },
+    {
+      "path": "specimens/2026-10-04_LIRA_A2L/LIRA_A2L_side.png",
+      "sha256": "7e03075fd0f6678c41c279cc132b2a0583f4bfd8a7886ce6aa0abb0f980d2fd6",
+      "bytes": 60993,
+      "removedMetadataBytes": 0,
+      "approvedBy": "Semir",
+      "approvedAt": "2026-11-03T19:55:53.352Z",
+      "reason": "G-3497 proceduralni render (preview.mjs) LIRA A2L primerak, bez EXIF/GPS, javna dokumentacija primera"
+    },
+    {
+      "path": "specimens/2026-10-04_LIRA_A2L/thumbnail.png",
+      "sha256": "2316e675172e2b3ea44456ff4e73edffebb265048c0f183c2a6b371244afa315",
+      "bytes": 141421,
+      "removedMetadataBytes": 0,
+      "approvedBy": "Semir",
+      "approvedAt": "2026-11-03T19:55:53.402Z",
+      "reason": "G-3497 proceduralni render (preview.mjs) LIRA A2L primerak, bez EXIF/GPS, javna dokumentacija primera"
     }
   ]
 }

@@ -1,0 +1,133 @@
+{
+ "file": "C:\\Svemir\\data\\brain\\scratch\\lira-a2l\\probe_package\\LIRA_ROOT_A2L.gcode.3mf",
+ "layers": 81,
+ "firstLayer": {
+  "PASS": true,
+  "version": 1,
+  "firstModelZ": 0.24,
+  "firstPreviewZ": 0.24,
+  "segments": 3103,
+  "length_mm": 4598.964,
+  "filament_mm": 214.98594,
+  "startupSegments": 0,
+  "issues": []
+ },
+ "params": {
+  "bead": 0.45,
+  "allow": 0.6,
+  "maxbridge": 12,
+  "res": 0.2,
+  "bedz": 0.5,
+  "maxislands": 4,
+  "maxcantilever": 3
+ },
+ "stats": {
+  "floating": 0,
+  "long_bridge": 0,
+  "cantilever": 0,
+  "bridges": 3577,
+  "bad_membrane": 0,
+  "unanchored_membrane": 0,
+  "checked_paths": 312,
+  "checked_points": 209622,
+  "exempt_layers": 3,
+  "first_layer_islands": 4
+ },
+ "byRole": {},
+ "worstGaps": [
+  [
+   12.48,
+   "bridge",
+   1,
+   1.2
+  ],
+  [
+   12.48,
+   "bridge",
+   1,
+   1.2
+  ],
+  [
+   12.48,
+   "bridge",
+   1,
+   1.2
+  ],
+  [
+   12.48,
+   "bridge",
+   1,
+   1.2
+  ],
+  [
+   12.96,
+   "bridge",
+   1,
+   1.2
+  ],
+  [
+   12.96,
+   "bridge",
+   1,
+   1.2
+  ],
+  [
+   12.96,
+   "bridge",
+   1,
+   1.2
+  ],
+  [
+   12.96,
+   "bridge",
+   1,
+   1.2
+  ],
+  [
+   13.44,
+   "bridge",
+   1.2,
+   1.2
+  ],
+  [
+   13.44,
+   "bridge",
+   1.2,
+   1.2
+  ],
+  [
+   13.44,
+   "bridge",
+   1,
+   1.2
+  ],
+  [
+   13.44,
+   "bridge",
+   1,
+   1.2
+  ],
+  [
+   13.92,
+   "bridge",
+   1.2,
+   1.2
+  ],
+  [
+   13.92,
+   "bridge",
+   1,
+   1.2
+  ],
+  [
+   13.92,
+   "bridge",
+   1.2,
+   1.2
+  ]
+ ],
+ "membranes": [],
+ "problems": [],
+ "problem_count": 0,
+ "PASS": true
+}

@@ -1,0 +1,55 @@
+{
+  "at": "2026-10-04T00:54:07.021Z",
+  "PASS": true,
+  "onlyThumbnailEntriesChanged": [
+    "Metadata/plate_1.png",
+    "Metadata/plate_1_small.png",
+    "Metadata/plate_no_light_1.png",
+    "Metadata/top_1.png",
+    "Metadata/pick_1.png"
+  ],
+  "nonImageEntriesByteIdentical": true,
+  "thumbnails": {
+    "PASS": true,
+    "images": [
+      {
+        "name": "Metadata/plate_1.png",
+        "width": 512,
+        "height": 512,
+        "depth": 8,
+        "colorType": 6
+      },
+      {
+        "name": "Metadata/plate_1_small.png",
+        "width": 128,
+        "height": 128,
+        "depth": 8,
+        "colorType": 6
+      },
+      {
+        "name": "Metadata/plate_no_light_1.png",
+        "width": 512,
+        "height": 512,
+        "depth": 8,
+        "colorType": 6
+      },
+      {
+        "name": "Metadata/top_1.png",
+        "width": 512,
+        "height": 512,
+        "depth": 8,
+        "colorType": 6
+      },
+      {
+        "name": "Metadata/pick_1.png",
+        "width": 512,
+        "height": 512,
+        "depth": 8,
+        "colorType": 6
+      }
+    ],
+    "issues": []
+  },
+  "packageSha256": "6f5654726674b5f25ee050db763219915e3a51f3236832167685989648fc11b5",
+  "gcodeSha256": "d7d43297963fe55d22f09e0f17160580e821255d98b4a760409c0dd589b48264"
+}
